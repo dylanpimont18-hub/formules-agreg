@@ -1,0 +1,1181 @@
+[
+  {
+    "id": "oe1-etat-equations",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Représentation d'état",
+    "tex": "\\dot{x} = [[A|B|C]]\\,x + [[B|A|D]]\\,u,\\quad y = [[C|A|D]]\\,x + [[D|B|0]]\\,u",
+    "legende": "x état (n), u entrée (m), y sortie (p) ; A matrice d'état, B commande, C observation, D transmission directe",
+    "source": "Fiche OE1.1"
+  },
+  {
+    "id": "oe1-etat-vers-transfert",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Fonction de transfert depuis l'état",
+    "tex": "H(p) = [[C|B|A]]\\,[[(pI_n - A)^{-1}|(A - pI_n)^{-1}|(pI_n + A)^{-1}]]\\,[[B|C|D]] + [[D|0|A]]",
+    "legende": "Passage état → transfert (unique) ; I_n matrice identité",
+    "source": "Fiche OE1.1"
+  },
+  {
+    "id": "oe1-poly-caracteristique",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Pôles = valeurs propres de A",
+    "tex": "\\det\\left([[pI_n - A|A - BK|pI_n + A]]\\right) = [[0|1|n]]",
+    "legende": "Polynôme caractéristique : ses racines sont les pôles de H(p) (hors simplification pôle/zéro)",
+    "source": "Fiche OE1.1"
+  },
+  {
+    "id": "oe1-stabilite-etat",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Stabilité interne (représentation d'état)",
+    "tex": "\\forall i,\\ [[\\mathrm{Re}|\\mathrm{Im}|\\lvert\\cdot\\rvert]]\\left(\\lambda_i(A)\\right) [[< 0|\\le 0|> 0]]",
+    "legende": "λ_i valeurs propres de la matrice d'état A",
+    "source": "Fiche OE1.1"
+  },
+  {
+    "id": "oe1-kalman-commandabilite",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Critère de Kalman (commandabilité)",
+    "tex": "Q_c = \\begin{pmatrix} B & AB & \\cdots & [[A^{n-1}B|A^{n}B|BA^{n-1}]] \\end{pmatrix},\\quad \\mathrm{rang}(Q_c) = [[n|m|n-1]]",
+    "legende": "(A,B) commandable ssi Q_c de rang plein n (ordre du système)",
+    "source": "Fiche OE1.1"
+  },
+  {
+    "id": "oe1-kalman-observabilite",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Critère d'observabilité",
+    "tex": "Q_o = \\begin{pmatrix} C \\\\ CA \\\\ \\vdots \\\\ [[CA^{n-1}|A^{n-1}C|CA^{n}]] \\end{pmatrix},\\quad \\mathrm{rang}(Q_o) = [[n|p|n-1]]",
+    "legende": "(A,C) observable ssi Q_o de rang n",
+    "source": "Fiche OE1.1"
+  },
+  {
+    "id": "oe1-dualite",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Dualité commandabilité / observabilité",
+    "tex": "(A,C)\\ \\text{observable} \\iff \\left([[A^T|A|A^{-1}]],\\ [[C^T|C|B^T]]\\right)\\ \\text{commandable}",
+    "legende": "A^T, C^T transposées",
+    "source": "Fiche OE1.1"
+  },
+  {
+    "id": "oe1-retour-etat",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Loi de commande par retour d'état",
+    "tex": "u = [[-K|K|-N]]\\,x + [[N|K|1]]\\,r",
+    "legende": "K gain de retour d'état (1×n en SISO), N gain de précommande, r consigne",
+    "source": "Fiche OE1.1"
+  },
+  {
+    "id": "oe1-retour-etat-bf",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Dynamique en boucle fermée (retour d'état)",
+    "tex": "\\dot{x} = \\left([[A - BK|A + BK|A - KC]]\\right)x + [[BN|N|B]]\\,r",
+    "legende": "Les pôles BF sont les valeurs propres de A − BK",
+    "source": "Fiche OE1.1"
+  },
+  {
+    "id": "oe1-ackermann",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Formule d'Ackermann (SISO)",
+    "tex": "K = \\begin{pmatrix} 0 & \\cdots & 0 & 1 \\end{pmatrix}\\,[[Q_c^{-1}|Q_c|Q_o^{-1}]]\\,[[P_d(A)|P_d(p)|A^n]]",
+    "legende": "Q_c matrice de commandabilité ; P_d polynôme caractéristique désiré évalué en A",
+    "source": "Fiche OE1.1"
+  },
+  {
+    "id": "oe1-observateur-luenberger",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Observateur de Luenberger",
+    "tex": "\\dot{\\hat{x}} = A\\hat{x} + Bu + [[L|K|B]]\\left([[y - C\\hat{x}|C\\hat{x} - y|y - \\hat{x}]]\\right)",
+    "legende": "x̂ état estimé, L gain d'observateur",
+    "source": "Fiche OE1.1 ; Classique programme"
+  },
+  {
+    "id": "oe1-observateur-erreur",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Dynamique de l'erreur d'estimation",
+    "tex": "\\dot{\\varepsilon} = \\left([[A - LC|A - BK|A + LC]]\\right)\\varepsilon,\\quad \\varepsilon = [[x - \\hat{x}|\\hat{x}|y - C\\hat{x}]]",
+    "legende": "Pôles de l'observateur = valeurs propres de A − LC (réglables si (A,C) observable)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-broida-modele",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Modèle de Broïda",
+    "tex": "G(p) = [[K|\\tau|T]]\\,\\frac{e^{[[-\\tau p|\\tau p|-Tp]]}}{1 + [[Tp|\\tau p|p/T]]}",
+    "legende": "K gain statique, τ retard (s), T constante de temps (s)",
+    "source": "Fiche OE1.1"
+  },
+  {
+    "id": "oe1-broida-T",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Broïda : constante de temps",
+    "tex": "T = [[5{,}5|2{,}8|1{,}8]]\\,\\left([[t_2 - t_1|t_1 - t_2|t_1 + t_2]]\\right)",
+    "legende": "t_1 instant à 28 %, t_2 instant à 40 % de la variation finale",
+    "source": "Fiche OE1.1"
+  },
+  {
+    "id": "oe1-broida-tau",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Broïda : retard",
+    "tex": "\\tau = [[2{,}8|5{,}5|1{,}8]]\\,t_1 - [[1{,}8|2{,}8|0{,}8]]\\,t_2",
+    "legende": "t_1 à 28 %, t_2 à 40 % ; si τ < 0, prendre τ = 0",
+    "source": "Fiche OE1.1"
+  },
+  {
+    "id": "oe1-broida-points",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Broïda : points de mesure",
+    "tex": "y(t_1) = [[0{,}28|0{,}40|0{,}63]]\\,\\Delta y_\\infty,\\quad y(t_2) = [[0{,}40|0{,}28|0{,}50]]\\,\\Delta y_\\infty",
+    "legende": "Δy_∞ variation finale de la sortie",
+    "source": "Fiche OE1.1"
+  },
+  {
+    "id": "oe1-gain-statique-identif",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Gain statique identifié",
+    "tex": "K = \\frac{[[\\Delta y_\\infty|\\Delta u|y(t_1)]]}{[[\\Delta u|\\Delta y_\\infty|t_1]]}",
+    "legende": "Δy_∞ variation finale de sortie, Δu amplitude de l'échelon d'entrée",
+    "source": "Fiche OE1.1"
+  },
+  {
+    "id": "oe1-premier-ordre",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Premier ordre",
+    "tex": "H(p) = \\frac{[[K|1|\\tau]]}{[[1 + \\tau p|\\tau + p|1 + p/\\tau]]}",
+    "legende": "K gain statique, τ constante de temps (s)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-premier-ordre-reponse",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Réponse indicielle du 1er ordre",
+    "tex": "s(t) = [[K E_0|E_0|K]]\\left(1 - e^{[[-t/\\tau|-\\tau t|t/\\tau]]}\\right)",
+    "legende": "Échelon d'amplitude E_0, conditions initiales nulles",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-premier-ordre-points",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Points remarquables du 1er ordre",
+    "tex": "s(\\tau) \\approx [[0{,}63|0{,}95|0{,}37]]\\,s_\\infty,\\quad s(3\\tau) \\approx [[0{,}95|0{,}99|0{,}86]]\\,s_\\infty",
+    "legende": "s_∞ valeur finale",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-premier-ordre-tr",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Temps de réponse à 5 % (1er ordre)",
+    "tex": "t_{r5\\%} = [[3|5|2{,}2]]\\,[[\\tau|1/\\tau|\\tau^2]]",
+    "legende": "τ constante de temps (s)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-premier-ordre-coupure",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Coupure du 1er ordre",
+    "tex": "\\omega_c = \\frac{[[1|2\\pi|1/2]]}{[[\\tau|2\\pi\\tau|\\tau^2]]},\\quad G_{dB}(\\omega_c) = 20\\log K [[- 3|- 6|- 20]]\\ \\mathrm{dB},\\ \\varphi(\\omega_c) = [[-45^\\circ|-90^\\circ|-30^\\circ]]",
+    "legende": "Pulsation de coupure à −3 dB (rad/s)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-second-ordre",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Second ordre canonique",
+    "tex": "H(p) = \\frac{K}{1 + [[\\frac{2\\xi}{\\omega_0}|\\frac{\\xi}{\\omega_0}|2\\xi\\omega_0]]\\,p + [[\\frac{p^2}{\\omega_0^2}|\\frac{p^2}{\\omega_0}|\\omega_0^2 p^2]]}",
+    "legende": "K gain statique, ξ (ou m) coefficient d'amortissement, ω_0 pulsation propre (rad/s)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-second-ordre-poles",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Pôles du 2e ordre sous-amorti",
+    "tex": "p_{1,2} = [[-\\xi\\omega_0|\\xi\\omega_0|-\\omega_0]] \\pm j\\,[[\\omega_0\\sqrt{1-\\xi^2}|\\omega_0|\\omega_0\\sqrt{1+\\xi^2}]]",
+    "legende": "ξ < 1",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-pseudo-pulsation",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Pseudo-pulsation",
+    "tex": "\\omega_p = [[\\omega_0|\\xi\\omega_0|2\\omega_0]]\\,[[\\sqrt{1-\\xi^2}|\\sqrt{1-2\\xi^2}|\\sqrt{1+\\xi^2}]]",
+    "legende": "Pulsation des oscillations amorties (ξ < 1)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-premier-depassement",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Premier dépassement relatif",
+    "tex": "D_1 = \\exp\\left(-\\frac{[[\\pi\\xi|2\\pi\\xi|\\pi\\sqrt{1-\\xi^2}]]}{[[\\sqrt{1-\\xi^2}|\\xi|\\sqrt{1-2\\xi^2}]]}\\right)",
+    "legende": "D_1 dépassement relatif à la valeur finale (ξ < 1)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-instant-depassement",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Instant du premier dépassement",
+    "tex": "t_1 = \\frac{[[\\pi|2\\pi|\\pi/2]]}{[[\\omega_0\\sqrt{1-\\xi^2}|\\omega_0|\\xi\\omega_0]]}",
+    "legende": "Demi-pseudo-période T_p/2",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-tr-optimal",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Temps de réponse minimal du 2e ordre",
+    "tex": "\\xi = [[0{,}69|0{,}5|1]] \\Rightarrow t_{r5\\%}\\,\\omega_0 \\approx [[3|1|6]]",
+    "legende": "Abaque du temps de réponse réduit : minimum pour ξ ≈ 0,7",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-tr-sous-amorti",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Temps de réponse approché (ξ faible)",
+    "tex": "t_{r5\\%} \\approx \\frac{[[3|5|1]]}{[[\\xi\\omega_0|\\omega_0|\\xi]]}",
+    "legende": "Valable pour ξ < 0,7 environ (enveloppe exponentielle)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-resonance",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Pulsation de résonance",
+    "tex": "\\omega_r = \\omega_0\\sqrt{[[1 - 2\\xi^2|1 - \\xi^2|1 + 2\\xi^2]]},\\quad \\text{existe si } \\xi < [[\\frac{\\sqrt{2}}{2}|\\frac{1}{2}|1]]",
+    "legende": "Résonance du 2e ordre",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-facteur-resonance",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Facteur de résonance",
+    "tex": "Q = \\frac{H_{\\max}}{K} = \\frac{[[1|2|\\xi]]}{[[2\\xi\\sqrt{1-\\xi^2}|\\xi\\sqrt{1-\\xi^2}|2\\xi]]}",
+    "legende": "Surtension relative à la résonance (ξ < √2/2)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-second-ordre-omega0",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "2e ordre en ω = ω0",
+    "tex": "\\lvert H(j\\omega_0)\\rvert = \\frac{K}{[[2\\xi|\\xi|\\sqrt{2}\\,\\xi]]},\\quad \\varphi(\\omega_0) = [[-90^\\circ|-180^\\circ|-45^\\circ]]",
+    "legende": "Module et phase à la pulsation propre",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-gain-db",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Gain en décibels",
+    "tex": "G_{dB} = [[20|10|40]]\\,\\log_{10}[[\\lvert H(j\\omega)\\rvert|H(p)|\\lvert H(j\\omega)\\rvert^2]]",
+    "legende": "Diagramme de Bode",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-pentes-bode",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Asymptotes de Bode",
+    "tex": "\\text{pente HF} = [[-20\\,n|-40\\,n|-20]]\\ \\mathrm{dB/déc},\\quad \\varphi_{HF} = [[-90^\\circ\\, n|-180^\\circ\\, n|-45^\\circ\\, n]]",
+    "legende": "n = degré du dénominateur − degré du numérateur (sans retard, minimum de phase)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-retard-pur",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Retard pur",
+    "tex": "H(p) = e^{-\\tau p}:\\quad \\lvert H(j\\omega)\\rvert = [[1|\\tau|e^{-\\tau}]],\\quad \\varphi = [[-\\omega\\tau|-\\tau/\\omega|-\\pi\\omega\\tau]]",
+    "legende": "τ retard (s), φ en rad",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-black-ftbf",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Formule de Black (FTBF)",
+    "tex": "H_{BF}(p) = \\frac{[[A(p)|1|B(p)]]}{1 + [[A(p)B(p)|A(p)|B(p)/A(p)]]}",
+    "legende": "A chaîne directe, B chaîne de retour ; FTBO = A·B",
+    "source": "Fiche TC3.5.1 ; Sujet 2022 E2 QB-4/6"
+  },
+  {
+    "id": "oe1-valeur-finale",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Théorème de la valeur finale",
+    "tex": "\\lim_{t \\to \\infty} s(t) = \\lim_{[[p \\to 0|p \\to \\infty|p \\to 1]]} [[p\\,S(p)|S(p)|S(p)/p]]",
+    "legende": "Valable si le système est stable",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-valeur-initiale",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Théorème de la valeur initiale",
+    "tex": "\\lim_{t \\to 0^+} s(t) = \\lim_{[[p \\to \\infty|p \\to 0|p \\to 1]]} [[p\\,S(p)|S(p)|S(p)/p]]",
+    "legende": "Laplace",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-erreur-statique",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Erreur statique (classe 0, échelon)",
+    "tex": "\\varepsilon_s = \\frac{[[E_0|1|K_{BO}]]}{[[1 + K_{BO}|K_{BO}|1 + K_{BF}]]}",
+    "legende": "Retour unitaire, échelon E_0, K_BO gain statique de la FTBO ; nulle si classe ≥ 1",
+    "source": "Fiche TC3.5.1"
+  },
+  {
+    "id": "oe1-erreur-trainage",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Erreur de traînage (classe 1, rampe)",
+    "tex": "\\varepsilon_v = \\frac{[[V_0|1|K_{BO}]]}{[[K_{BO}|1 + K_{BO}|2K_{BO}]]}",
+    "legende": "Rampe de pente V_0, K_BO gain de la FTBO hors intégrateur ; nulle si classe ≥ 2",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-marge-phase",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Marge de phase",
+    "tex": "M_\\varphi = [[180^\\circ|90^\\circ|-180^\\circ]] + \\arg H_{BO}(j\\omega_{c0}),\\quad G_{dB}(\\omega_{c0}) = [[0\\ \\mathrm{dB}|-3\\ \\mathrm{dB}|1\\ \\mathrm{dB}]]",
+    "legende": "ω_c0 pulsation de coupure à 0 dB de la FTBO",
+    "source": "Fiche TC3.5.1 ; Sujet 2022 E2 QB-14/16"
+  },
+  {
+    "id": "oe1-marge-gain",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Marge de gain",
+    "tex": "M_G = [[-G_{dB}(\\omega_{-180})|G_{dB}(\\omega_{-180})|-G_{dB}(\\omega_{c0})]],\\quad \\arg H_{BO}(j\\omega_{-180}) = [[-180^\\circ|-90^\\circ|0^\\circ]]",
+    "legende": "Marge de gain en dB",
+    "source": "Fiche TC3.5.1"
+  },
+  {
+    "id": "oe1-marges-usuelles",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Marges de stabilité usuelles",
+    "tex": "M_\\varphi \\ge [[45^\\circ|90^\\circ|10^\\circ]],\\quad M_G \\ge [[10\\ \\mathrm{dB}|3\\ \\mathrm{dB}|45\\ \\mathrm{dB}]]",
+    "legende": "Valeurs usuelles des cahiers des charges (Mφ 45° à 60°)",
+    "source": "Fiche TC3.5.1"
+  },
+  {
+    "id": "oe1-xi-marge-phase",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Lien amortissement / marge de phase",
+    "tex": "\\xi_{BF} \\approx \\frac{[[M_\\varphi|M_G|\\omega_{c0}]]}{[[100|180|90]]}",
+    "legende": "Mφ en degrés (approximation valable pour Mφ < 70° environ)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-tr-bande-passante",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Rapidité et pulsation de coupure",
+    "tex": "t_{r5\\%} \\approx \\frac{[[3|1|2\\pi]]}{[[\\omega_{c0}|f_{c0}|\\omega_0^2]]}",
+    "legende": "ω_c0 pulsation de coupure à 0 dB de la FTBO (ordre de grandeur)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-routh-ordre3",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Critère de Routh (ordre 3)",
+    "tex": "a_3p^3 + a_2p^2 + a_1p + a_0:\\ a_i > 0\\ \\text{et}\\ [[a_2 a_1|a_3 a_1|a_2 a_0]] > [[a_3 a_0|a_2 a_1|a_1 a_0]]",
+    "legende": "Stabilité d'un polynôme caractéristique de degré 3",
+    "source": "Fiche TC3.5.1"
+  },
+  {
+    "id": "oe1-pid",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Correcteur PID (forme mixte)",
+    "tex": "C(p) = K_p\\left([[1|0|p]] + \\frac{1}{[[T_i\\,p|T_i|T_d\\,p]]} + [[T_d\\,p|\\frac{1}{T_d\\,p}|T_i\\,p]]\\right)",
+    "legende": "T_i constante de temps d'intégration, T_d de dérivation (s)",
+    "source": "Fiche TC3.5.1"
+  },
+  {
+    "id": "oe1-avance-phase",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Correcteur à avance de phase",
+    "tex": "C(p) = K\\,\\frac{1 + [[aTp|Tp|Tp/a]]}{1 + [[Tp|aTp|ap]]},\\quad a [[> 1|< 1|= 1]]",
+    "legende": "a coefficient d'avance, T constante de temps (s)",
+    "source": "Sujet 2022 E2 QB-8/10"
+  },
+  {
+    "id": "oe1-avance-phase-max",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Phase maximale de l'avance de phase",
+    "tex": "\\sin\\varphi_m = \\frac{[[a - 1|a + 1|1 - a]]}{[[a + 1|a - 1|a]]}",
+    "legende": "φ_m apport maximal de phase",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-avance-phase-omega",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Pulsation de l'apport maximal",
+    "tex": "\\omega_m = \\frac{[[1|a|\\sqrt{a}]]}{[[T\\sqrt{a}|aT|T/\\sqrt{a}]]}",
+    "legende": "Moyenne géométrique de 1/(aT) et 1/T",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-ziegler-nichols",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Réglage de Ziegler-Nichols (PID, pompage)",
+    "tex": "K_p = [[0{,}6|0{,}5|0{,}45]]\\,K_{osc},\\quad T_i = [[\\frac{T_{osc}}{2}|T_{osc}|\\frac{T_{osc}}{8}]],\\quad T_d = [[\\frac{T_{osc}}{8}|\\frac{T_{osc}}{4}|\\frac{T_{osc}}{2}]]",
+    "legende": "K_osc gain critique (pompage), T_osc période des oscillations entretenues",
+    "source": "Fiche TC3.5.1"
+  },
+  {
+    "id": "oe1-superposition",
+    "bloc": "OE1",
+    "notion": "OE1.2 Systèmes asservis non linéaires",
+    "nom": "Principe de superposition (linéarité)",
+    "tex": "[[H(a x_1 + b x_2)|H(x_1 x_2)|a H(x_1)]] = [[a H(x_1) + b H(x_2)|H(x_1) + H(x_2)|ab\\,H(x_1 x_2)]]",
+    "legende": "Non vérifié ⇒ système non linéaire",
+    "source": "Fiche OE1.2"
+  },
+  {
+    "id": "oe1-linearisation",
+    "bloc": "OE1",
+    "notion": "OE1.2 Systèmes asservis non linéaires",
+    "nom": "Linéarisation au 1er ordre",
+    "tex": "y \\approx [[y_0|0|f(x)]] + [[f'(x_0)|f(x_0)|f'(x)]]\\cdot\\left([[x - x_0|x|x_0]]\\right)",
+    "legende": "Autour du point de fonctionnement (x_0, y_0), petites variations",
+    "source": "Fiche OE1.2"
+  },
+  {
+    "id": "oe1-linearisation-2var",
+    "bloc": "OE1",
+    "notion": "OE1.2 Systèmes asservis non linéaires",
+    "nom": "Linéarisation à deux variables",
+    "tex": "\\tilde{R} \\approx \\left(\\frac{\\partial R}{\\partial [[i|T|R]]}\\right)_{0}\\tilde{i} + \\left(\\frac{\\partial R}{\\partial [[T|i|t]]}\\right)_{0}[[\\tilde{T}|T_n|\\tilde{i}]]",
+    "legende": "Variations autour de (i_n, T_n), dérivées partielles évaluées au point de fonctionnement",
+    "source": "Fiche OE1.2 ; Sujet 2022 E2 (QC-6)"
+  },
+  {
+    "id": "oe1-frottement-sec",
+    "bloc": "OE1",
+    "notion": "OE1.2 Systèmes asservis non linéaires",
+    "nom": "Frottement sec (Coulomb)",
+    "tex": "C_f = [[-C_s|C_s|-f\\omega]]\\cdot[[\\mathrm{sign}(\\omega)|\\omega|\\omega^2]]",
+    "legende": "C_s couple de frottement sec (N·m), ω vitesse (rad/s)",
+    "source": "Fiche OE1.2"
+  },
+  {
+    "id": "oe1-frottement-visqueux",
+    "bloc": "OE1",
+    "notion": "OE1.2 Systèmes asservis non linéaires",
+    "nom": "Frottement visqueux",
+    "tex": "C_v = [[f|C_s|f^2]]\\cdot[[\\omega|\\omega^2|\\mathrm{sign}(\\omega)]]",
+    "legende": "f coefficient de frottement visqueux (N·m·s/rad) — linéaire",
+    "source": "Fiche OE1.2"
+  },
+  {
+    "id": "oe1-saturation",
+    "bloc": "OE1",
+    "notion": "OE1.2 Systèmes asservis non linéaires",
+    "nom": "Saturation (pente unitaire)",
+    "tex": "y = \\begin{cases} x & \\lvert x\\rvert \\le L \\\\ [[L\\,\\mathrm{sign}(x)|L|x]] & [[\\lvert x\\rvert > L|x > 0|\\lvert x\\rvert < L]] \\end{cases}",
+    "legende": "L niveau de saturation",
+    "source": "Fiche OE1.2"
+  },
+  {
+    "id": "oe1-quantification",
+    "bloc": "OE1",
+    "notion": "OE1.2 Systèmes asservis non linéaires",
+    "nom": "Pas de quantification",
+    "tex": "q = \\frac{[[\\mathrm{PE}|\\mathrm{PE}/2|2\\,\\mathrm{PE}]]}{[[2^n|2^n - 1|n^2]]},\\quad \\lvert\\varepsilon_q\\rvert \\le [[\\frac{q}{2}|q|2q]]",
+    "legende": "PE pleine échelle, n nombre de bits ; erreur de quantification par arrondi",
+    "source": "Fiche OE1.2"
+  },
+  {
+    "id": "oe1-gain-equivalent",
+    "bloc": "OE1",
+    "notion": "OE1.2 Systèmes asservis non linéaires",
+    "nom": "Gain complexe équivalent (1er harmonique)",
+    "tex": "N(a) = \\frac{[[b_1(a)|a_1(a)|a]] + j\\,[[a_1(a)|b_1(a)|a]]}{[[a|a^2|2a]]}",
+    "legende": "Entrée a·sin ωt ; sortie fondamentale b_1 sin ωt + a_1 cos ωt",
+    "source": "Fiche OE1.2"
+  },
+  {
+    "id": "oe1-cycle-limite",
+    "bloc": "OE1",
+    "notion": "OE1.2 Systèmes asservis non linéaires",
+    "nom": "Condition de cycle limite",
+    "tex": "[[1|-1|0]] + N(a)\\,G(j\\omega) = [[0|1|-1]]",
+    "legende": "G partie linéaire, N(a) gain équivalent de la non-linéarité",
+    "source": "Fiche OE1.2"
+  },
+  {
+    "id": "oe1-lieu-critique",
+    "bloc": "OE1",
+    "notion": "OE1.2 Systèmes asservis non linéaires",
+    "nom": "Lieu critique (premier harmonique)",
+    "tex": "[[G(j\\omega)|N(a)|H_{BF}(j\\omega)]] = [[-\\frac{1}{N(a)}|-N(a)|\\frac{1}{N(a)}]]",
+    "legende": "Intersection Nyquist de G / lieu critique → amplitude a et pulsation ω du cycle limite",
+    "source": "Fiche OE1.2"
+  },
+  {
+    "id": "oe1-relais-ideal",
+    "bloc": "OE1",
+    "notion": "OE1.2 Systèmes asservis non linéaires",
+    "nom": "Gain équivalent d'un relais idéal",
+    "tex": "N(a) = \\frac{[[4M|2M|M]]}{[[\\pi a|\\pi|2\\pi a]]}",
+    "legende": "Relais tout-ou-rien ±M, amplitude d'entrée a",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-saturation-gain-eq",
+    "bloc": "OE1",
+    "notion": "OE1.2 Systèmes asservis non linéaires",
+    "nom": "Gain équivalent d'une saturation",
+    "tex": "N(a) = \\frac{[[2k|k|4k]]}{[[\\pi|2\\pi|\\pi a]]}\\left(\\arcsin\\frac{x_s}{a} + \\frac{x_s}{a}\\sqrt{1 - [[\\frac{x_s^2}{a^2}|\\frac{x_s}{a}|\\frac{a^2}{x_s^2}]]}\\right)",
+    "legende": "Pente k, seuil de saturation x_s, valable pour a > x_s (N = k sinon)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-z-laplace",
+    "bloc": "OE1",
+    "notion": "OE1.3 Systèmes asservis linéaires échantillonnés",
+    "nom": "Correspondance Laplace / z",
+    "tex": "[[z|p|z^{-1}]] = e^{[[pT_e|p/T_e|-pT_e]]}",
+    "legende": "T_e période d'échantillonnage (s)",
+    "source": "Fiche OE1.3"
+  },
+  {
+    "id": "oe1-euler-arriere",
+    "bloc": "OE1",
+    "notion": "OE1.3 Systèmes asservis linéaires échantillonnés",
+    "nom": "Discrétisation d'Euler arrière",
+    "tex": "p \\approx \\frac{[[1 - z^{-1}|z - 1|1 + z^{-1}]]}{[[T_e|2T_e|T_e z]]}",
+    "legende": "Approximation de la dérivée par (x_k − x_{k−1})/T_e (la fiche la nomme « Euler avant » : c'est en réalité Euler arrière)",
+    "source": "Fiche OE1.3 (corrigée)"
+  },
+  {
+    "id": "oe1-euler-avant",
+    "bloc": "OE1",
+    "notion": "OE1.3 Systèmes asservis linéaires échantillonnés",
+    "nom": "Discrétisation d'Euler avant",
+    "tex": "p \\approx \\frac{[[z - 1|1 - z^{-1}|z + 1]]}{[[T_e|2T_e|T_e^2]]}",
+    "legende": "Approximation (x_{k+1} − x_k)/T_e ; peut rendre instable un système stable",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-tustin",
+    "bloc": "OE1",
+    "notion": "OE1.3 Systèmes asservis linéaires échantillonnés",
+    "nom": "Transformée bilinéaire (Tustin)",
+    "tex": "p = \\frac{[[2|1|1/2]]}{[[T_e|f_e|2T_e]]}\\cdot\\frac{[[1 - z^{-1}|1 + z^{-1}|z - 1]]}{[[1 + z^{-1}|1 - z^{-1}|z]]}",
+    "legende": "Conserve la stabilité ; distorsion fréquentielle (warping)",
+    "source": "Fiche OE1.3"
+  },
+  {
+    "id": "oe1-tustin-prewarping",
+    "bloc": "OE1",
+    "notion": "OE1.3 Systèmes asservis linéaires échantillonnés",
+    "nom": "Tustin avec pré-distorsion",
+    "tex": "\\frac{p}{[[\\omega_R|f_R|2\\omega_R]]} = \\frac{1}{[[\\tan\\left(\\pi f_R/f_e\\right)|\\tan\\left(2\\pi f_R/f_e\\right)|\\sin\\left(\\pi f_R/f_e\\right)]]}\\cdot\\frac{1 - z^{-1}}{1 + z^{-1}}",
+    "legende": "Fréquence f_R préservée exactement ; a = 1/tan(π f_R/f_e)",
+    "source": "Fiche OE1.3 ; Sujet 2023 E2 Q28-30"
+  },
+  {
+    "id": "oe1-tustin-warping",
+    "bloc": "OE1",
+    "notion": "OE1.3 Systèmes asservis linéaires échantillonnés",
+    "nom": "Distorsion fréquentielle de Tustin",
+    "tex": "\\omega_a = [[\\frac{2}{T_e}|\\frac{1}{T_e}|2T_e]]\\,\\tan\\left([[\\frac{\\omega_d T_e}{2}|\\omega_d T_e|\\frac{\\omega_d}{2T_e}]]\\right)",
+    "legende": "ω_d pulsation numérique, ω_a pulsation analogique correspondante",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-stabilite-z",
+    "bloc": "OE1",
+    "notion": "OE1.3 Systèmes asservis linéaires échantillonnés",
+    "nom": "Critère de stabilité en z",
+    "tex": "\\forall i,\\ \\lvert z_i\\rvert [[<|\\le|>]] [[1|0|-1]]",
+    "legende": "z_i pôles de la FT en boucle fermée : intérieur strict du cercle unité",
+    "source": "Fiche OE1.3"
+  },
+  {
+    "id": "oe1-pole-continu-discret",
+    "bloc": "OE1",
+    "notion": "OE1.3 Systèmes asservis linéaires échantillonnés",
+    "nom": "Image d'un pôle continu dans le plan z",
+    "tex": "\\lvert z\\rvert = e^{[[-\\xi\\omega_0 T_e|-\\omega_0 T_e|\\xi\\omega_0 T_e]]},\\quad \\arg z = [[\\omega_0\\sqrt{1-\\xi^2}\\,T_e|\\omega_0 T_e|\\xi\\omega_0 T_e]]",
+    "legende": "Pôle p = −ξω_0 ± jω_0√(1−ξ²) transformé par z = e^{pT_e}",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-z-retard-jf",
+    "bloc": "OE1",
+    "notion": "OE1.3 Systèmes asservis linéaires échantillonnés",
+    "nom": "Équivalence z^{-1} / fréquence",
+    "tex": "z^{-1} = e^{-j\\,[[\\frac{2\\pi f}{f_e}|\\frac{\\pi f}{f_e}|2\\pi f f_e]]} = e^{-j\\,[[\\omega T_e|\\omega/T_e|\\omega T_e/2]]}",
+    "legende": "Réponse fréquentielle d'un filtre numérique (z = e^{jωT_e})",
+    "source": "Fiche OE1.3 ; Rapport jury 2024"
+  },
+  {
+    "id": "oe1-bloqueur-ordre-0",
+    "bloc": "OE1",
+    "notion": "OE1.3 Systèmes asservis linéaires échantillonnés",
+    "nom": "Bloqueur d'ordre 0",
+    "tex": "B_0(p) = \\frac{[[1 - e^{-T_e p}|1 + e^{-T_e p}|e^{-T_e p}]]}{[[p|T_e p|p^2]]}",
+    "legende": "Maintien de l'échantillon pendant T_e (CNA)",
+    "source": "Fiche TC3.5.2"
+  },
+  {
+    "id": "oe1-bloqueur-retard",
+    "bloc": "OE1",
+    "notion": "OE1.3 Systèmes asservis linéaires échantillonnés",
+    "nom": "Retard équivalent du bloqueur d'ordre 0",
+    "tex": "B_0(j\\omega) \\approx [[T_e|1|1/T_e]]\\,e^{-j\\omega\\,[[T_e/2|T_e|2T_e]]}",
+    "legende": "Le BOZ introduit un retard moyen de T_e/2 (perte de phase)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-ft-echantillonnee",
+    "bloc": "OE1",
+    "notion": "OE1.3 Systèmes asservis linéaires échantillonnés",
+    "nom": "FT échantillonnée avec BOZ",
+    "tex": "H(z) = [[\\left(1 - z^{-1}\\right)|\\left(1 + z^{-1}\\right)|z]]\\,\\mathcal{Z}\\left\\{[[\\frac{H(p)}{p}|H(p)|p\\,H(p)]]\\right\\}",
+    "legende": "Procédé H(p) précédé d'un bloqueur d'ordre 0",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-z-echelon",
+    "bloc": "OE1",
+    "notion": "OE1.3 Systèmes asservis linéaires échantillonnés",
+    "nom": "Transformée en z de l'échelon",
+    "tex": "\\mathcal{Z}\\{u(k)\\} = \\frac{[[z|1|z - 1]]}{[[z - 1|z + 1|z]]}",
+    "legende": "Échelon unité discret",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-z-geometrique",
+    "bloc": "OE1",
+    "notion": "OE1.3 Systèmes asservis linéaires échantillonnés",
+    "nom": "Transformée en z de a^k",
+    "tex": "\\mathcal{Z}\\{a^k\\} = \\frac{[[z|a|1]]}{[[z - a|z + a|1 - az]]}",
+    "legende": "Suite géométrique ; pôle z = a",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-z-rampe",
+    "bloc": "OE1",
+    "notion": "OE1.3 Systèmes asservis linéaires échantillonnés",
+    "nom": "Transformée en z de la rampe",
+    "tex": "\\mathcal{Z}\\{kT_e\\} = \\frac{[[T_e z|z|T_e]]}{[[(z - 1)^2|z - 1|(z + 1)^2]]}",
+    "legende": "Rampe unitaire échantillonnée",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-z-retard",
+    "bloc": "OE1",
+    "notion": "OE1.3 Systèmes asservis linéaires échantillonnés",
+    "nom": "Théorème du retard en z",
+    "tex": "\\mathcal{Z}\\{x(k - [[n|1|k]])\\} = [[z^{-n}|z^{n}|-n\\,z]]\\,X(z)",
+    "legende": "Retard de n périodes d'échantillonnage",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-z-valeur-finale",
+    "bloc": "OE1",
+    "notion": "OE1.3 Systèmes asservis linéaires échantillonnés",
+    "nom": "Valeur finale en z",
+    "tex": "\\lim_{k \\to \\infty} x(k) = \\lim_{z \\to [[1|0|\\infty]]} [[\\left(1 - z^{-1}\\right)X(z)|X(z)|\\left(1 + z^{-1}\\right)X(z)]]",
+    "legende": "Si le système est stable",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-recurrence",
+    "bloc": "OE1",
+    "notion": "OE1.3 Systèmes asservis linéaires échantillonnés",
+    "nom": "Équation de récurrence d'un filtre d'ordre 2",
+    "tex": "y(n) = a_0 x(n) + a_1 x([[n - 1|n + 1|n]]) + a_2 x(n-2) [[- b_1|+ b_1|- a_1]]\\,y(n-1) [[- b_2|+ b_2|- a_2]]\\,y(n-2)",
+    "legende": "H(z) = (a_0 + a_1 z^{−1} + a_2 z^{−2}) / (1 + b_1 z^{−1} + b_2 z^{−2})",
+    "source": "Fiche OE1.3 ; Sujet 2023 E2 Q28-30"
+  },
+  {
+    "id": "oe1-rst",
+    "bloc": "OE1",
+    "notion": "OE1.3 Systèmes asservis linéaires échantillonnés",
+    "nom": "Loi de commande RST",
+    "tex": "[[S(z)|R(z)|T(z)]]\\,u = [[T(z)|R(z)|S(z)]]\\,y_c - [[R(z)|S(z)|T(z)]]\\,y",
+    "legende": "y_c consigne, y mesure ; R/S régulation, T poursuite (2 degrés de liberté)",
+    "source": "Fiche OE1.3"
+  },
+  {
+    "id": "oe1-bezout",
+    "bloc": "OE1",
+    "notion": "OE1.3 Systèmes asservis linéaires échantillonnés",
+    "nom": "Équation de Bézout (placement de pôles)",
+    "tex": "A(z)\\,[[S(z)|R(z)|T(z)]] + B(z)\\,[[R(z)|S(z)|T(z)]] = [[D(z)|1|T(z)]]",
+    "legende": "H(z) = B/A procédé, D polynôme caractéristique désiré de la BF",
+    "source": "Fiche OE1.3"
+  },
+  {
+    "id": "oe1-rst-gain-T",
+    "bloc": "OE1",
+    "notion": "OE1.3 Systèmes asservis linéaires échantillonnés",
+    "nom": "Réglage de T (gain statique unitaire)",
+    "tex": "T = \\frac{[[D(1)|D(0)|A(1)]]}{[[B(1)|B(0)|S(1)]]}",
+    "legende": "T constant, FTBF = B·T/D ; gain statique unitaire en z = 1",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-reponse-pile",
+    "bloc": "OE1",
+    "notion": "OE1.3 Systèmes asservis linéaires échantillonnés",
+    "nom": "Réponse pile (deadbeat)",
+    "tex": "D(z) = [[z^n|(z - 1)^n|z^{-n}]],\\quad \\text{erreur nulle après } [[n|2n|n - 1]]\\ \\text{périodes}",
+    "legende": "Tous les pôles BF à l'origine ; peu robuste, commande forte",
+    "source": "Fiche OE1.3"
+  },
+  {
+    "id": "oe1-choix-te",
+    "bloc": "OE1",
+    "notion": "OE1.3 Systèmes asservis linéaires échantillonnés",
+    "nom": "Choix de la période d'échantillonnage (Landau)",
+    "tex": "[[6|2|1]]\\,f_{BF} \\le f_e \\le [[25|100|10]]\\,f_{BF}",
+    "legende": "f_BF bande passante en boucle fermée visée",
+    "source": "Fiche OE1.3"
+  },
+  {
+    "id": "oe1-etat-discret",
+    "bloc": "OE1",
+    "notion": "OE1.3 Systèmes asservis linéaires échantillonnés",
+    "nom": "Discrétisation exacte de l'état",
+    "tex": "A_d = [[e^{AT_e}|I + AT_e|e^{-AT_e}]],\\quad B_d = \\int_0^{[[T_e|\\infty|1]]} e^{A\\tau}\\,\\mathrm{d}\\tau\\;B",
+    "legende": "x(k+1) = A_d x(k) + B_d u(k) avec BOZ",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-observateur-discret",
+    "bloc": "OE1",
+    "notion": "OE1.3 Systèmes asservis linéaires échantillonnés",
+    "nom": "Observateur discret (prédicteur-correcteur)",
+    "tex": "\\hat{x}(k+1) = A_d\\hat{x}(k) + B_d u(k) + [[L|K|B_d]]\\left([[y(k) - C\\hat{x}(k)|C\\hat{x}(k) - y(k)|y(k) - \\hat{x}(k)]]\\right)",
+    "legende": "L gain de l'observateur ; pôles = valeurs propres de A_d − LC",
+    "source": "Fiche OE1.3 ; Classique programme"
+  },
+  {
+    "id": "oe1-pid-discret",
+    "bloc": "OE1",
+    "notion": "OE1.4.1 Programmation par objets",
+    "nom": "PID numérique (code de la méthode calculer)",
+    "tex": "u_k = K_p e_k + K_i\\,[[T_e\\sum_{j=0}^{k} e_j|\\sum_{j=0}^{k} e_j|\\frac{1}{T_e}\\sum_{j=0}^{k} e_j]] + K_d\\,\\frac{[[e_k - e_{k-1}|e_k + e_{k-1}|e_k]]}{[[T_e|2T_e|T_e^2]]}",
+    "legende": "e_k = consigne − mesure ; intégrale par rectangles, dérivée par différence arrière",
+    "source": "Fiche OE1.4.1"
+  },
+  {
+    "id": "oe1-integrale-recursive",
+    "bloc": "OE1",
+    "notion": "OE1.4.1 Programmation par objets",
+    "nom": "Mise à jour de l'intégrale (attribut persistant)",
+    "tex": "I_k = [[I_{k-1}|0|I_{k+1}]] + [[T_e\\,e_k|e_k/T_e|e_k]]",
+    "legende": "self.integrale += erreur * Te",
+    "source": "Fiche OE1.4.1"
+  },
+  {
+    "id": "oe1-saturation-anti-windup",
+    "bloc": "OE1",
+    "notion": "OE1.4.1 Programmation par objets",
+    "nom": "Saturation de la commande",
+    "tex": "u_{sat} = \\max\\left([[-u_{\\max}|0|u_{\\max}]],\\ \\min\\left([[u_{\\max}|-u_{\\max}|u]],\\ u\\right)\\right)",
+    "legende": "Bornage de la commande à ±u_max (anti-emballement simplifié)",
+    "source": "Fiche OE1.4.1"
+  },
+  {
+    "id": "oe1-profondeur-recursion",
+    "bloc": "OE1",
+    "notion": "OE1.4.2 Architecture et programmation",
+    "nom": "Profondeur maximale de récursion",
+    "tex": "n_{\\max} = \\frac{[[T_{pile}|T_{contexte}|T_{tas}]]}{[[T_{contexte}|T_{pile}|T_{instr}]]}",
+    "legende": "T_pile taille de la pile, T_contexte taille d'un contexte d'appel (octets)",
+    "source": "Fiche OE1.4.2"
+  },
+  {
+    "id": "oe1-latences-memoire",
+    "bloc": "OE1",
+    "notion": "OE1.4.2 Architecture et programmation",
+    "nom": "Latences de la hiérarchie mémoire",
+    "tex": "t_{L1} \\approx [[1\\ \\mathrm{ns}|1\\ \\mu\\mathrm{s}|100\\ \\mathrm{ps}]],\\quad t_{L2} \\approx [[4\\ \\mathrm{ns}|40\\ \\mathrm{ns}|0{,}4\\ \\mathrm{ns}]],\\quad t_{RAM} \\approx [[100\\ \\mathrm{ns}|10\\ \\mathrm{ns}|1\\ \\mathrm{ms}]]",
+    "legende": "Ordres de grandeur (dépendants du matériel)",
+    "source": "Fiche OE1.4.2"
+  },
+  {
+    "id": "oe1-rapport-ram-l1",
+    "bloc": "OE1",
+    "notion": "OE1.4.2 Architecture et programmation",
+    "nom": "Facteur de latence RAM / cache L1",
+    "tex": "\\frac{[[t_{RAM}|t_{L1}|t_{L2}]]}{[[t_{L1}|t_{RAM}|t_{reg}]]} \\approx [[100|10|10^6]]",
+    "legende": "Un défaut de cache coûte ~100 accès L1",
+    "source": "Fiche OE1.4.2"
+  },
+  {
+    "id": "oe1-simd",
+    "bloc": "OE1",
+    "notion": "OE1.4.2 Architecture et programmation",
+    "nom": "Gain idéal SIMD",
+    "tex": "T_{SIMD} \\approx \\frac{[[T_{scal}|w|T_{scal}^2]]}{[[w|T_{scal}|w^2]]},\\quad w = \\frac{[[32|16|64]]}{b}",
+    "legende": "w voies parallèles dans un registre 32 bits (Cortex-M4), b taille d'une donnée en bits",
+    "source": "Fiche OE1.4.2"
+  },
+  {
+    "id": "oe1-arbre-calcul",
+    "bloc": "OE1",
+    "notion": "OE1.4.2 Architecture et programmation",
+    "nom": "Arbre de calcul binaire",
+    "tex": "n_{op} = [[n_f - 1|n_f|n_f + 1]],\\quad n_{noeuds} = [[2n_f - 1|2n_f|n_f^2]]",
+    "legende": "n_f feuilles (opérandes), n_op nœuds internes (opérateurs binaires)",
+    "source": "Fiche OE1.4.2"
+  },
+  {
+    "id": "oe1-pipeline",
+    "bloc": "OE1",
+    "notion": "OE1.4.2 Architecture et programmation",
+    "nom": "Accélération d'un pipeline",
+    "tex": "S = \\frac{[[kN|N|k]]}{[[k + N - 1|k + N|N - 1]]} \\xrightarrow[N \\to \\infty]{} [[k|N|1]]",
+    "legende": "k étages, N instructions, sans aléa",
+    "source": "Fiche TC5.4"
+  },
+  {
+    "id": "oe1-temps-acces-moyen",
+    "bloc": "OE1",
+    "notion": "OE1.4.2 Architecture et programmation",
+    "nom": "Temps d'accès moyen avec cache",
+    "tex": "t_{moy} = [[t_{hit}|t_{RAM}|0]] + [[\\tau_{miss}|1 - \\tau_{miss}|\\tau_{hit}]]\\cdot[[t_{pen}|t_{hit}|\\tau_{miss}]]",
+    "legende": "t_hit temps d'accès cache, τ_miss taux de défaut, t_pen pénalité de défaut",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-nb-hotes",
+    "bloc": "OE1",
+    "notion": "OE1.4.3 Réseaux",
+    "nom": "Nombre d'hôtes d'un sous-réseau",
+    "tex": "N_{h\\hat{o}tes} = [[2^{32-n}|2^{n}|2^{32-n+1}]] - [[2|1|0]]",
+    "legende": "Masque /n (CIDR) ; on retire adresse réseau et adresse de diffusion",
+    "source": "Fiche OE1.4.3"
+  },
+  {
+    "id": "oe1-adresse-reseau",
+    "bloc": "OE1",
+    "notion": "OE1.4.3 Réseaux",
+    "nom": "Adresse réseau",
+    "tex": "@_{r\\acute{e}seau} = @_{IP}\\ [[\\land|\\lor|\\oplus]]\\ [[\\text{masque}|\\overline{\\text{masque}}|\\text{passerelle}]]",
+    "legende": "ET logique bit à bit",
+    "source": "Fiche OE1.4.3"
+  },
+  {
+    "id": "oe1-adresse-diffusion",
+    "bloc": "OE1",
+    "notion": "OE1.4.3 Réseaux",
+    "nom": "Adresse de diffusion (broadcast)",
+    "tex": "@_{diff} = @_{IP}\\ [[\\lor|\\land|\\oplus]]\\ [[\\overline{\\text{masque}}|\\text{masque}|@_{r\\acute{e}seau}]]",
+    "legende": "Tous les bits hôte à 1",
+    "source": "Fiche OE1.4.3 ; Classique programme"
+  },
+  {
+    "id": "oe1-tailles-adresses",
+    "bloc": "OE1",
+    "notion": "OE1.4.3 Réseaux",
+    "nom": "Tailles d'adresses",
+    "tex": "\\text{IPv4}: [[32|48|16]]\\ \\text{bits},\\quad \\text{MAC}: [[48|32|64]]\\ \\text{bits},\\quad \\text{IPv6}: [[128|64|256]]\\ \\text{bits}",
+    "legende": "IPv6 : classique programme",
+    "source": "Fiche OE1.4.3"
+  },
+  {
+    "id": "oe1-trame-ethernet",
+    "bloc": "OE1",
+    "notion": "OE1.4.3 Réseaux",
+    "nom": "Taille d'une trame Ethernet",
+    "tex": "[[64|46|72]] \\le N_{trame} \\le [[1518|1500|1526]]\\ \\text{octets}",
+    "legende": "IEEE 802.3, hors préambule/SFD",
+    "source": "Fiche OE1.4.3"
+  },
+  {
+    "id": "oe1-ethernet-donnees",
+    "bloc": "OE1",
+    "notion": "OE1.4.3 Réseaux",
+    "nom": "Charge utile Ethernet",
+    "tex": "[[46|64|0]] \\le N_{donn\\acute{e}es} \\le [[1500|1518|1460]]\\ \\text{octets}",
+    "legende": "MTU Ethernet = 1500 octets",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-ethernet-champs",
+    "bloc": "OE1",
+    "notion": "OE1.4.3 Réseaux",
+    "nom": "Champs de synchronisation et de contrôle Ethernet",
+    "tex": "\\text{préambule} = [[7|8|6]]\\ \\text{octets},\\quad \\text{SFD} = [[1|2|4]]\\ \\text{octet},\\quad \\text{FCS (CRC-32)} = [[4|32|2]]\\ \\text{octets}",
+    "legende": "Adresses MAC destination/source : 6 octets chacune",
+    "source": "Fiche OE1.4.3"
+  },
+  {
+    "id": "oe1-ethernet-debit-portee",
+    "bloc": "OE1",
+    "notion": "OE1.4.3 Réseaux",
+    "nom": "Ethernet cuivre : débit et portée",
+    "tex": "D \\in \\{10;\\,100;\\,[[1000|500|10\\,000]]\\}\\ \\mathrm{Mbit/s},\\quad d_{\\max} = [[100\\ \\mathrm{m}|10\\ \\mathrm{m}|1\\ \\mathrm{km}]]",
+    "legende": "10BASE-T / 100BASE-TX / 1000BASE-T, paire torsadée cat. 5/5e",
+    "source": "Fiche OE1.4.3"
+  },
+  {
+    "id": "oe1-wifi-debits",
+    "bloc": "OE1",
+    "notion": "OE1.4.3 Réseaux",
+    "nom": "Débits WiFi 802.11",
+    "tex": "\\text{b}: [[11|54|2]]\\ \\mathrm{Mbit/s},\\quad \\text{a/g}: [[54|11|300]]\\ \\mathrm{Mbit/s},\\quad \\text{n}: [[600|54|150]]\\ \\mathrm{Mbit/s}",
+    "legende": "Débits théoriques max ; portée intérieure ≈ 35 m",
+    "source": "Fiche OE1.4.3"
+  },
+  {
+    "id": "oe1-bluetooth",
+    "bloc": "OE1",
+    "notion": "OE1.4.3 Réseaux",
+    "nom": "Bluetooth classique et BLE",
+    "tex": "\\text{BT}: [[1\\ \\text{à}\\ 3|10\\ \\text{à}\\ 30|0{,}1]]\\ \\mathrm{Mbit/s},\\ d \\approx [[10|1|1000]]\\ \\mathrm{m}\\ (\\text{cl. 2});\\quad \\text{BLE 5}: [[2|20|0{,}25]]\\ \\mathrm{Mbit/s}",
+    "legende": "BLE : portée fiable ≈ 30-50 m, basse consommation",
+    "source": "Fiche OE1.4.3"
+  },
+  {
+    "id": "oe1-temps-transmission",
+    "bloc": "OE1",
+    "notion": "OE1.4.3 Réseaux",
+    "nom": "Durée de transmission",
+    "tex": "t = \\frac{[[N_{bits}|D|N_{octets}]]}{[[D|N_{bits}|8D]]}",
+    "legende": "N_bits taille de la trame (bits), D débit (bit/s)",
+    "source": "Fiche TC5.5 ; Sujet 2023 E1 Q2"
+  },
+  {
+    "id": "oe1-conversion-hexa",
+    "bloc": "OE1",
+    "notion": "OE1.4.3 Réseaux",
+    "nom": "Conversion hexadécimal → décimal",
+    "tex": "N_{10} = \\sum_i [[h_i|i]]\\cdot[[16^{i}|16\\,i|2^{i}]]",
+    "legende": "h_i chiffre hexadécimal de rang i (poids faible i = 0)",
+    "source": "Fiche OE1.4.3 ; Sujet 2025 E1 Q28-29"
+  },
+  {
+    "id": "oe1-cycle-automate",
+    "bloc": "OE1",
+    "notion": "OE1.4.4 Mise en œuvre des automates industriels",
+    "nom": "Composition du cycle automate",
+    "tex": "T_{cycle} = [[T_{lect}|T_{wd}|T_e]] + [[T_{trait}|T_{diff}|T_{com}]] + [[T_{\\acute{e}cr}|T_{imm}|T_{bus}]]",
+    "legende": "Lecture des entrées → traitement du programme → écriture des sorties",
+    "source": "Fiche OE1.4.4"
+  },
+  {
+    "id": "oe1-cycle-ordre-grandeur",
+    "bloc": "OE1",
+    "notion": "OE1.4.4 Mise en œuvre des automates industriels",
+    "nom": "Ordre de grandeur du temps de cycle",
+    "tex": "T_{cycle} \\approx [[5|0{,}05|500]]\\ \\text{à}\\ [[50|5000|0{,}5]]\\ \\mathrm{ms}\\quad (\\text{usuel} \\approx [[20|200|2]]\\ \\mathrm{ms})",
+    "legende": "Dépend du nombre d'E/S, de la taille du programme et de l'UC",
+    "source": "Fiche OE1.4.4"
+  },
+  {
+    "id": "oe1-cycle-vs-procede",
+    "bloc": "OE1",
+    "notion": "OE1.4.4 Mise en œuvre des automates industriels",
+    "nom": "Compatibilité cycle / dynamique du procédé",
+    "tex": "T_{cycle} \\le \\frac{[[\\tau_{proc}|T_{cycle}|f_{proc}]]}{[[5\\ \\text{à}\\ 10|2|100]]}",
+    "legende": "τ_proc constante de temps la plus rapide du procédé surveillé",
+    "source": "Fiche OE1.4.4"
+  },
+  {
+    "id": "oe1-temps-reaction-api",
+    "bloc": "OE1",
+    "notion": "OE1.4.4 Mise en œuvre des automates industriels",
+    "nom": "Temps de réaction maximal d'un API",
+    "tex": "t_{r,\\max} \\approx [[2|1|4]]\\,[[T_{cycle}|T_{wd}|T_e]]",
+    "legende": "Pire cas : changement d'entrée juste après la phase de lecture",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-sensibilite",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Sensibilité d'un capteur",
+    "tex": "S = \\frac{[[\\Delta s|\\Delta e|s]]}{[[\\Delta e|\\Delta s|e]]}",
+    "legende": "Δs variation de sortie, Δe variation du mesurande (portion linéaire)",
+    "source": "Fiche OE1.5"
+  },
+  {
+    "id": "oe1-linearite",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Erreur de linéarité",
+    "tex": "\\varepsilon_L = \\frac{[[\\Delta_{\\max}|\\mathrm{EM}|\\Delta_{\\min}]]}{[[\\mathrm{EM}|\\Delta_{\\max}|s_{\\max}]]}\\times[[100|10|1000]]",
+    "legende": "Δ_max écart max à la droite idéale, EM étendue de mesure ; en % PE",
+    "source": "Fiche OE1.5"
+  },
+  {
+    "id": "oe1-boucle-4-20",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Boucle de courant 4-20 mA",
+    "tex": "I = [[4|0|20]] + [[16|20|4]]\\cdot\\frac{[[x - x_{\\min}|x|x_{\\max} - x]]}{[[x_{\\max} - x_{\\min}|x_{\\max}|x_{\\min}]]}\\ \\ (\\mathrm{mA})",
+    "legende": "x mesurande ; 4 mA = zéro vivant (0 mA ⇒ défaut)",
+    "source": "Fiche OE1.5 ; Fiche TC3.4.1 ; Sujet 2024 E1 Q23"
+  },
+  {
+    "id": "oe1-boucle-4-20-inverse",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Mesurande depuis la boucle 4-20 mA",
+    "tex": "x = x_{\\min} + \\frac{[[I - 4|I|I - 20]]}{[[16|20|4]]}\\,\\left([[x_{\\max} - x_{\\min}|x_{\\max}|x_{\\min}]]\\right)",
+    "legende": "I en mA",
+    "source": "Fiche OE1.5 ; Classique programme"
+  },
+  {
+    "id": "oe1-fsr",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Modèle d'un capteur de force résistif (FSR)",
+    "tex": "R_{FSR}(F) = [[R_0|\\beta|0]] + \\frac{[[\\beta|R_0|F]]}{[[F|F^2|\\beta]]}",
+    "legende": "R_0, β paramètres identifiés sur la courbe d'étalonnage",
+    "source": "Fiche OE1.5 ; Sujet 2024 E2 Q9"
+  },
+  {
+    "id": "oe1-pont-jauge-mvv",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Sortie d'un capteur à pont (sensibilité en mV/V)",
+    "tex": "V_o = [[S|1/S|S^2]]\\cdot[[V_{exc}|I_{exc}|V_o]]\\cdot\\frac{[[F|F_{PE}|1]]}{[[F_{PE}|F|F_{\\min}]]}",
+    "legende": "S en mV/V, V_exc tension d'excitation, F_PE pleine échelle (ex. 2 mV/V × 5 V = 10 mV à 445 N)",
+    "source": "Fiche OE1.5 ; Sujet 2024 E2 Q6"
+  },
+  {
+    "id": "oe1-wheatstone-equilibre",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Équilibre du pont de Wheatstone",
+    "tex": "[[R_1 R_4|R_1 R_3|R_1 R_2]] = [[R_2 R_3|R_2 R_4|R_3 R_4]]",
+    "legende": "Pont R_1-R_2 / R_3-R_4, R_1 et R_4 opposées ; tension de déséquilibre nulle",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-wheatstone-quart",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Quart de pont (une jauge active)",
+    "tex": "V_m \\approx \\frac{[[E|2E|E/2]]}{[[4|2|8]]}\\cdot\\frac{[[\\Delta R|R|\\Delta R^2]]}{[[R|\\Delta R|R^2]]}",
+    "legende": "E alimentation du pont, ΔR ≪ R ; demi-pont : E/2·ΔR/R ; pont complet : E·ΔR/R",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-jauge-contrainte",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Jauge de déformation",
+    "tex": "\\frac{\\Delta R}{R} = [[K|1/K|K^2]]\\,[[\\varepsilon|\\sigma|E]],\\quad K \\approx [[2|200|0{,}5]]",
+    "legende": "K facteur de jauge, ε déformation relative",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-pt100",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Sonde Pt100",
+    "tex": "R(\\theta) = [[R_0|R_{100}|\\alpha]]\\left(1 + [[\\alpha\\,\\theta|\\alpha/\\theta|\\alpha\\,\\theta^2]]\\right),\\quad R_0 = [[100\\ \\Omega|1000\\ \\Omega|10\\ \\Omega]],\\ \\alpha \\approx [[3{,}85\\cdot 10^{-3}|3{,}85\\cdot 10^{-2}|0{,}385]]\\ \\mathrm{K^{-1}}",
+    "legende": "θ en °C ; approximation linéaire entre 0 et 100 °C",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-thermocouple",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Thermocouple (effet Seebeck)",
+    "tex": "V = [[S|1/S|\\alpha R_0]]\\,\\left([[\\theta_c - \\theta_f|\\theta_c + \\theta_f|\\theta_c]]\\right),\\quad S_K \\approx [[41\\ \\mu\\mathrm{V/K}|41\\ \\mathrm{mV/K}|4\\ \\mu\\mathrm{V/K}]]",
+    "legende": "θ_c soudure chaude, θ_f soudure froide (compensation nécessaire) ; type K",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-effet-hall",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Tension de Hall",
+    "tex": "V_H = \\frac{[[I\\,B|I/B|B]]}{[[n\\,e\\,d|n\\,e\\,d^2|e\\,d]]}",
+    "legende": "I courant, B induction (T), n densité de porteurs, e charge élémentaire, d épaisseur",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-codeur-incremental",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Résolution d'un codeur incrémental",
+    "tex": "\\Delta\\theta = \\frac{[[360^\\circ|180^\\circ|90^\\circ]]}{[[4N|N|2N]]}",
+    "legende": "N points par tour, comptage ×4 (fronts des voies A et B)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-codeur-vitesse",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Vitesse par comptage d'impulsions",
+    "tex": "\\Omega = \\frac{2\\pi\\,[[\\Delta n|N|T_m]]}{[[4N\\,T_m|N\\,T_m|4\\Delta n\\,T_m]]}",
+    "legende": "Δn fronts comptés (×4) pendant T_m, N points par tour ; Ω en rad/s",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-capteur-bande-passante",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Bande passante d'un capteur du 1er ordre",
+    "tex": "f_c = \\frac{[[1|2\\pi|\\tau]]}{[[2\\pi\\tau|\\tau|\\pi\\tau]]}",
+    "legende": "τ constante de temps du capteur (s)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-incertitude-type-b",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Incertitude-type de type B (loi uniforme)",
+    "tex": "u = \\frac{[[a|2a|a/2]]}{[[\\sqrt{3}|\\sqrt{2}|3]]}",
+    "legende": "a demi-étendue de l'intervalle (ex. demi-résolution, tolérance constructeur)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "oe1-incertitude-elargie",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Incertitude élargie",
+    "tex": "U = [[k|1/k|k^2]]\\,[[u|u^2|\\sqrt{u}]],\\quad k = [[2|3|1]]\\ (95\\,\\%)",
+    "legende": "u incertitude-type composée, k facteur d'élargissement",
+    "source": "Classique programme"
+  }
+]

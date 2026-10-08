@@ -1,0 +1,533 @@
+[
+  {
+    "id": "tc1-valeur-analyse",
+    "bloc": "TC1",
+    "notion": "TC1.1 Analyse des constituants",
+    "nom": "Valeur (analyse de la valeur)",
+    "tex": "[[V]] = \\frac{[[\\text{satisfaction du besoin}|\\text{coût}|\\text{performance}]]}{[[\\text{coût}|\\text{satisfaction du besoin}|\\text{prix de vente}]]}",
+    "legende": "V valeur d'un produit ou d'une fonction ; satisfaction du besoin (fonctions rendues) ; coût pour l'obtenir",
+    "source": "Classique programme (analyse de la valeur, NF EN 16271 / NF EN 12973)"
+  },
+  {
+    "id": "tc1-critere-niveau-flexibilite",
+    "bloc": "TC1",
+    "notion": "TC1.1 Analyse des constituants",
+    "nom": "Critère d'une fonction de service",
+    "tex": "\\text{Critère} : [[\\text{niveau}|\\text{flexibilité}|\\text{coût}]] \\pm [[\\text{flexibilité}|\\text{niveau}|\\text{classe}]]",
+    "legende": "Niveau : valeur cible du critère ; flexibilité : tolérance admise autour du niveau (classes F0 à F3)",
+    "source": "Fiche TC1.1 (NF X50-151 / NF EN 16271)"
+  },
+  {
+    "id": "tc1-lcc",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Coût de cycle de vie (coût global de possession)",
+    "tex": "[[\\mathrm{LCC}]] = [[\\mathrm{CAPEX}|\\mathrm{OPEX}]] + \\sum_{n=1}^{[[N|n|i]]} [[\\mathrm{OPEX}_n|\\mathrm{CAPEX}_n|\\frac{\\mathrm{OPEX}_n}{N}]]",
+    "legende": "LCC coût global (€) ; CAPEX investissement initial (€) ; OPEX_n coûts de fonctionnement de l'année n (€) ; N durée de vie (ans)",
+    "source": "Fiche TC1.2"
+  },
+  {
+    "id": "tc1-lcc-actualise",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Coût de cycle de vie actualisé",
+    "tex": "[[\\mathrm{LCC}]] = [[\\mathrm{CAPEX}|\\mathrm{OPEX}_0]] + \\sum_{n=1}^{N} \\frac{[[\\mathrm{OPEX}_n|\\mathrm{CAPEX}]]}{[[(1+i)^n|(1+i)^{-n}|(1+n)^i|1+n\\,i]]}",
+    "legende": "i taux d'actualisation (8 à 12 % en industrie, 2,5 à 4 % projet public) ; n année ; OPEX_n en €",
+    "source": "Classique programme ; Fiche TC1.2 (taux usuels)"
+  },
+  {
+    "id": "tc1-roi-fiche",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Retour sur investissement (taux annuel)",
+    "tex": "[[\\mathrm{ROI}]] = \\frac{[[G_{\\text{annuel net}}|I_0|G_{\\text{annuel net}} \\cdot N]]}{[[I_0|G_{\\text{annuel net}}|I_0 \\cdot N]]}",
+    "legende": "ROI (an⁻¹ ou %/an) ; G gain annuel net (€/an), calculé sur un différentiel entre solutions ; I_0 investissement initial (€)",
+    "source": "Fiche TC1.2"
+  },
+  {
+    "id": "tc1-roi-global",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Retour sur investissement global",
+    "tex": "[[\\mathrm{ROI}]] = \\frac{[[G_{\\text{tot}} - I_0|G_{\\text{tot}} + I_0|I_0 - G_{\\text{tot}}]]}{[[I_0|G_{\\text{tot}}|G_{\\text{tot}} - I_0]]}",
+    "legende": "G_tot gains cumulés sur la durée d'étude (€) ; I_0 investissement initial (€) ; ROI sans dimension (%)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc1-temps-retour-brut",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Temps de retour brut (payback)",
+    "tex": "[[T_r|\\mathrm{ROI}|\\mathrm{VAN}]] = \\frac{[[\\Delta I_0|\\Delta G|I_0 \\cdot i]]}{[[\\Delta G|\\Delta I_0|\\Delta G \\cdot N]]}",
+    "legende": "T_r temps de retour (ans) ; ΔI_0 surinvestissement (€) ; ΔG économie annuelle d'OPEX (€/an)",
+    "source": "Fiche TC1.2"
+  },
+  {
+    "id": "tc1-temps-retour-actualise",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Temps de retour actualisé",
+    "tex": "\\sum_{n=1}^{[[T_{ra}|N|\\mathrm{TRI}]]} \\frac{[[F_n|C_0|F_n \\cdot n]]}{(1+i)^n} = [[C_0|0|\\mathrm{VAN}]]",
+    "legende": "T_ra durée au bout de laquelle les flux actualisés F_n (€) remboursent l'investissement C_0 (€) ; i taux d'actualisation",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc1-van",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Valeur actuelle nette (VAN)",
+    "tex": "[[\\mathrm{VAN}]] = [[-C_0|C_0|-C_0 \\cdot (1+i)]] + \\sum_{n=1}^{N} \\frac{[[F_n|C_0|n F_n]]}{[[(1+i)^n|(1+i)^{-n}|(1-i)^n|(1+i) n]]}",
+    "legende": "C_0 investissement initial (€) ; F_n flux net de l'année n (€) ; i taux d'actualisation ; N horizon (ans). Projet rentable si VAN > 0",
+    "source": "Fiche TC1.2"
+  },
+  {
+    "id": "tc1-van-flux-constants",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "VAN à flux constants (annuité)",
+    "tex": "[[\\mathrm{VAN}]] = -C_0 + [[F|F N|F (1+i)]] \\cdot \\frac{[[1-(1+i)^{-N}|1-(1+i)^{N}|(1+i)^{N}-1]]}{[[i|1+i|N]]}",
+    "legende": "F flux annuel constant (€) ; i taux d'actualisation ; N nombre d'années ; C_0 investissement initial (€)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc1-tri",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Taux de rentabilité interne (TRI)",
+    "tex": "-C_0 + \\sum_{n=1}^{N} \\frac{F_n}{(1+[[\\mathrm{TRI}|i|\\mathrm{VAN}]])^{[[n|N|1]]}} = [[0|C_0|1]]",
+    "legende": "TRI : taux d'actualisation qui annule la VAN ; projet acceptable si TRI > taux d'actualisation exigé",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc1-actualisation",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Valeur actuelle d'un flux futur",
+    "tex": "[[V_0|V_n]] = \\frac{[[V_n|V_0]]}{[[(1+i)^n|1+n\\,i|(1+i)^{-n}|(1-i)^n]]}",
+    "legende": "V_0 valeur actuelle (€) ; V_n valeur dans n années (€) ; i taux d'actualisation",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc1-capitalisation",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Capitalisation (intérêts composés)",
+    "tex": "[[V_n|V_0]] = [[V_0|V_n]] \\cdot [[(1+i)^n|(1+n\\,i)|(1+i)^{-n}|n(1+i)]]",
+    "legende": "V_0 capital placé (€) ; V_n valeur acquise après n années (€) ; i taux annuel",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc1-indice-profitabilite",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Indice de profitabilité",
+    "tex": "[[\\mathrm{IP}]] = [[1|0|C_0]] + \\frac{[[\\mathrm{VAN}|C_0|\\mathrm{TRI}]]}{[[C_0|\\mathrm{VAN}|N]]}",
+    "legende": "IP = somme des flux actualisés / C_0 ; projet rentable si IP > 1 ; C_0 investissement initial (€)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc1-amortissement-lineaire",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Annuité d'amortissement linéaire",
+    "tex": "[[A|V_0|\\mathrm{VNC}]] = \\frac{[[V_0|A|V_0 \\cdot N]]}{[[N|N-1|2N]]}",
+    "legende": "A annuité d'amortissement (€/an) ; V_0 valeur d'origine (€) ; N durée d'amortissement (5 à 10 ans pour du matériel industriel)",
+    "source": "Classique programme ; Fiche TC1.2 (durée usuelle)"
+  },
+  {
+    "id": "tc1-taux-degressif",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Taux d'amortissement dégressif",
+    "tex": "[[t_d|t_l]] = [[k|\\frac{1}{k}|2]] \\cdot \\frac{[[1|100]]}{[[N|N-1|k]]}",
+    "legende": "t_d taux dégressif ; k coefficient fiscal (1,25 pour 3-4 ans ; 1,75 pour 5-6 ans ; 2,25 au-delà) ; N durée (ans)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc1-annuite-degressive",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Annuité d'amortissement dégressif",
+    "tex": "[[A_n|\\mathrm{VNC}_n]] = [[\\mathrm{VNC}_{n-1}|V_0|\\mathrm{VNC}_n]] \\cdot [[t_d|t_l|\\frac{1}{N}]]",
+    "legende": "A_n annuité de l'année n (€) ; VNC valeur nette comptable en début d'année (€) ; t_d taux dégressif (bascule en linéaire quand plus favorable)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc1-vnc",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Valeur nette comptable",
+    "tex": "[[\\mathrm{VNC}_n]] = [[V_0|A_n]] - \\sum_{k=1}^{[[n|N]]} [[A_k|V_k]]",
+    "legende": "VNC_n valeur nette comptable après n années (€) ; V_0 valeur d'origine ; A_k annuités d'amortissement",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc1-cout-energie",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Coût de l'énergie consommée (OPEX énergie)",
+    "tex": "[[C_E]] = \\frac{[[P_u|P_{abs}|P_u \\cdot \\eta]]}{[[\\eta|\\eta^2|1-\\eta]]} \\cdot [[t|\\frac{1}{t}]] \\cdot [[c_{kWh}|\\frac{1}{c_{kWh}}]]",
+    "legende": "C_E coût (€) ; P_u puissance utile (kW) ; η rendement ; t durée de fonctionnement (h) ; c_kWh prix de l'énergie (€/kWh)",
+    "source": "Classique programme ; Fiche TC1.2 (énergie ≈ 95 % du LCC d'un moteur)"
+  },
+  {
+    "id": "tc1-economie-rendement",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Économie d'énergie par gain de rendement",
+    "tex": "[[\\Delta E]] = [[P_u|P_{abs}]] \\, t \\left( [[\\frac{1}{\\eta_1}|\\eta_1|\\frac{1}{\\eta_2}]] - [[\\frac{1}{\\eta_2}|\\eta_2|\\frac{1}{\\eta_1}]] \\right)",
+    "legende": "ΔE énergie économisée (kWh) ; P_u puissance utile (kW) ; t durée (h) ; η_1 < η_2 rendements ancienne/nouvelle solution",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc1-cout-revient-unitaire",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Coût de revient unitaire",
+    "tex": "[[C_u]] = \\frac{[[C_F|C_{Vu}|C_F \\cdot Q]]}{[[Q|C_F|Q^2]]} + [[C_{Vu}|\\frac{C_{Vu}}{Q}|C_F]]",
+    "legende": "C_u coût unitaire (€) ; C_F coûts fixes (€) ; Q quantité produite ; C_Vu coût variable unitaire (€)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc1-seuil-rentabilite",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Seuil de rentabilité (point mort en quantité)",
+    "tex": "[[Q^*]] = \\frac{[[C_F|C_{Vu}|p]]}{[[p - C_{Vu}|p + C_{Vu}|C_{Vu} - p|p]]}",
+    "legende": "Q* quantité à vendre pour couvrir les coûts ; C_F coûts fixes (€) ; p prix de vente unitaire (€) ; C_Vu coût variable unitaire (€)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc1-fiabilite-exp",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Fiabilité à taux de défaillance constant",
+    "tex": "[[R(t)|F(t)|\\lambda(t)]] = [[e^{-\\lambda t}|1-e^{-\\lambda t}|e^{\\lambda t}|e^{-t/\\lambda}]]",
+    "legende": "R(t) probabilité de fonctionner sans défaillance sur [0, t] ; λ taux de défaillance constant (h⁻¹) ; t temps (h)",
+    "source": "Classique programme (fiabilité, coût de maintenance)"
+  },
+  {
+    "id": "tc1-mtbf-lambda",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "MTBF à λ constant",
+    "tex": "[[\\mathrm{MTBF}|\\mathrm{MTTR}|\\lambda]] = \\frac{[[1|2|\\ln 2]]}{[[\\lambda|\\lambda^2|\\mu]]}",
+    "legende": "MTBF moyenne des temps de bon fonctionnement (h) ; λ taux de défaillance (h⁻¹). R(MTBF) = e⁻¹ ≈ 37 %",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc1-defaillance-f",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Probabilité de défaillance",
+    "tex": "[[F(t)|R(t)]] = [[1|0]] - [[R(t)|F(t)|\\lambda t]]",
+    "legende": "F(t) fonction de répartition des défaillances ; R(t) fiabilité",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc1-taux-defaillance-def",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Taux de défaillance instantané",
+    "tex": "[[\\lambda(t)]] = \\frac{[[f(t)|F(t)|R(t)]]}{[[R(t)|F(t)|f(t)]]} = [[-\\frac{1}{R}\\frac{\\mathrm{d}R}{\\mathrm{d}t}|\\frac{1}{R}\\frac{\\mathrm{d}R}{\\mathrm{d}t}|-\\frac{\\mathrm{d}R}{\\mathrm{d}t}]]",
+    "legende": "λ(t) taux de défaillance (h⁻¹) ; f(t) = dF/dt densité de défaillance ; R(t) fiabilité",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc1-lambda-estime",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Estimation du taux de défaillance",
+    "tex": "[[\\lambda]] = \\frac{[[n_d|T_{cumul}|N]]}{[[T_{cumul}|n_d|n_d \\cdot T_{cumul}]]}",
+    "legende": "n_d nombre de défaillances observées ; T_cumul temps cumulé de bon fonctionnement de l'ensemble des matériels (h)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc1-fiabilite-serie",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Fiabilité d'un système série",
+    "tex": "[[R_s]] = [[\\prod_{i=1}^{n} R_i|\\sum_{i=1}^{n} R_i|1-\\prod_{i=1}^{n} (1-R_i)|\\min R_i]]",
+    "legende": "R_s fiabilité du système ; R_i fiabilité de chaque composant (tous nécessaires)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc1-lambda-serie",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Taux de défaillance d'un système série",
+    "tex": "[[\\lambda_s]] = [[\\sum_{i=1}^{n} \\lambda_i|\\prod_{i=1}^{n} \\lambda_i|\\frac{1}{\\sum 1/\\lambda_i}|\\max \\lambda_i]]",
+    "legende": "λ_s taux de défaillance du système série (h⁻¹), λ_i constants ; MTBF_s = 1/λ_s",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc1-fiabilite-parallele",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Fiabilité d'un système parallèle (redondance active)",
+    "tex": "[[R_p]] = [[1|0]] - [[\\prod_{i=1}^{n} (1-R_i)|\\sum_{i=1}^{n} (1-R_i)|\\prod_{i=1}^{n} R_i]]",
+    "legende": "R_p fiabilité du système (un seul composant suffit) ; R_i fiabilité de chaque branche",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc1-mtbf-redondance-2",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "MTBF de deux composants identiques en redondance active",
+    "tex": "[[\\mathrm{MTBF}_p]] = \\frac{[[3|2|1]]}{[[2\\lambda|\\lambda|3\\lambda]]}",
+    "legende": "Deux composants identiques de taux λ constant en parallèle : MTBF_p = 1/λ + 1/(2λ)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc1-disponibilite",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Disponibilité intrinsèque",
+    "tex": "[[D|A_r|R]] = \\frac{[[\\mathrm{MTBF}|\\mathrm{MTTR}]]}{[[\\mathrm{MTBF} + \\mathrm{MTTR}|\\mathrm{MTTR}|\\mathrm{MTBF} - \\mathrm{MTTR}]]}",
+    "legende": "D disponibilité (sans dimension) ; MTBF temps moyen de bon fonctionnement (h) ; MTTR temps moyen de réparation (h)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc1-maintenabilite",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Maintenabilité à taux de réparation constant",
+    "tex": "[[M(t)]] = [[1 - e^{-\\mu t}|e^{-\\mu t}|1 - e^{-\\lambda t}]] \\quad ; \\quad [[\\mu|\\lambda]] = \\frac{1}{[[\\mathrm{MTTR}|\\mathrm{MTBF}]]}",
+    "legende": "M(t) probabilité que la réparation soit achevée avant t ; μ taux de réparation (h⁻¹) ; MTTR temps moyen de réparation (h)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc1-weibull",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Loi de Weibull (fiabilité)",
+    "tex": "[[R(t)]] = \\exp\\left[ [[-|+]] \\left( \\frac{t - [[\\gamma|\\eta|\\beta]]}{[[\\eta|\\beta|\\gamma]]} \\right)^{[[\\beta|\\eta|2]]} \\right]",
+    "legende": "β paramètre de forme (β < 1 jeunesse, β = 1 exponentielle, β > 1 usure) ; η paramètre d'échelle (h) ; γ paramètre de position (h)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc1-mtbf-mttf",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Décomposition du MTBF",
+    "tex": "[[\\mathrm{MTBF}|\\mathrm{MTTF}]] \\approx [[\\mathrm{MTTF}|\\mathrm{MTBF}|\\mathrm{MDT}]] + [[\\mathrm{MTTR}|\\mathrm{MUT}|\\mathrm{MTBF}]]",
+    "legende": "MTBF temps moyen entre défaillances ; MTTF temps moyen de fonctionnement avant défaillance ; MTTR temps moyen de réparation (h)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc1-trs",
+    "bloc": "TC1",
+    "notion": "TC1.2 Contraintes technico-économiques",
+    "nom": "Taux de rendement synthétique (TRS)",
+    "tex": "[[\\mathrm{TRS}]] = [[T_D|T_D + T_P]] \\times [[T_P|T_Q|\\frac{1}{T_P}]] \\times [[T_Q|1 - T_Q]]",
+    "legende": "T_D taux de disponibilité opérationnelle ; T_P taux de performance ; T_Q taux de qualité (sans dimension)",
+    "source": "Classique programme (NF E60-182)"
+  },
+  {
+    "id": "tc1-empreinte-carbone",
+    "bloc": "TC1",
+    "notion": "TC1.3 Développement durable",
+    "nom": "Empreinte carbone (bilan GES)",
+    "tex": "[[E_{CO_2e}]] = \\sum_k [[A_k|\\frac{A_k}{FE_k}|A_k^2]] \\times [[FE_k|\\frac{1}{FE_k}|PRG_k]]",
+    "legende": "E en kgCO2e ; A_k donnée d'activité (kWh, kg, km…) ; FE_k facteur d'émission (kgCO2e/unité d'activité, Base Empreinte ADEME)",
+    "source": "Classique programme (méthode Bilan Carbone / GHG Protocol)"
+  },
+  {
+    "id": "tc1-co2e-prg",
+    "bloc": "TC1",
+    "notion": "TC1.3 Développement durable",
+    "nom": "Équivalent CO2 d'un mélange de gaz à effet de serre",
+    "tex": "[[m_{CO_2e}]] = \\sum_g [[m_g|\\frac{1}{m_g}]] \\cdot [[\\mathrm{PRG}_g|\\frac{1}{\\mathrm{PRG}_g}|FE_g]]",
+    "legende": "m_g masse émise du gaz g (kg) ; PRG_g pouvoir de réchauffement global à 100 ans (CO2 = 1, CH4 ≈ 28-30, N2O ≈ 265-273)",
+    "source": "Classique programme (GIEC)"
+  },
+  {
+    "id": "tc1-emission-electricite",
+    "bloc": "TC1",
+    "notion": "TC1.3 Développement durable",
+    "nom": "Émissions liées à la consommation électrique",
+    "tex": "[[m_{CO_2e}]] = [[E_{el}|P_{el}]] \\cdot [[FE_{el}|\\frac{1}{FE_{el}}|\\eta]]",
+    "legende": "E_el énergie consommée (kWh) ; FE_el facteur d'émission du mix électrique (≈ 0,05 à 0,06 kgCO2e/kWh en France, ≈ 0,4 en moyenne UE)",
+    "source": "Fiche OE3.6"
+  },
+  {
+    "id": "tc1-acv-caracterisation",
+    "bloc": "TC1",
+    "notion": "TC1.3 Développement durable",
+    "nom": "Indicateur d'impact ACV (caractérisation)",
+    "tex": "[[I_c]] = \\sum_i [[m_i|\\frac{1}{m_i}]] \\cdot [[FC_{c,i}|\\frac{1}{FC_{c,i}}|m_{c}]]",
+    "legende": "I_c impact sur la catégorie c (ex. kgCO2e, kg SO2e, kg Sb eq) ; m_i flux de l'inventaire (ICV) ; FC_{c,i} facteur de caractérisation",
+    "source": "Fiche TC1.3 (ACV multicritère, ISO 14040/14044) ; Classique programme"
+  },
+  {
+    "id": "tc1-acv-unite-fonctionnelle",
+    "bloc": "TC1",
+    "notion": "TC1.3 Développement durable",
+    "nom": "Impact ramené à l'unité fonctionnelle",
+    "tex": "[[I_{UF}]] = \\frac{[[I_{tot}|N_{UF}]]}{[[N_{UF}|I_{tot}|N_{UF} \\cdot t]]}",
+    "legende": "I_UF impact par unité fonctionnelle ; I_tot impact sur tout le cycle de vie ; N_UF nombre d'unités fonctionnelles rendues sur la durée de vie",
+    "source": "Fiche TC1.3 (unité fonctionnelle, ISO 14040) ; Classique programme"
+  },
+  {
+    "id": "tc1-ic-construction",
+    "bloc": "TC1",
+    "notion": "TC1.3 Développement durable",
+    "nom": "Indicateur carbone RE2020 (Ic construction)",
+    "tex": "[[I_{c,\\text{construction}}]] = \\frac{\\sum_k [[Q_k|S_{ref}]] \\cdot [[FE_k|\\frac{1}{FE_k}]]}{[[S_{ref}|Q_k|50]]}",
+    "legende": "Ic en kgCO2e/m² sur une période de référence de 50 ans ; Q_k quantité du produit k ; FE_k impact du produit (FDES base INIES) ; S_ref surface de référence (m²)",
+    "source": "Fiche TC1.3 (RE2020) ; Classique programme"
+  },
+  {
+    "id": "tc1-temps-retour-energetique",
+    "bloc": "TC1",
+    "notion": "TC1.3 Développement durable",
+    "nom": "Temps de retour énergétique",
+    "tex": "[[T_{RE}|E_{grise}]] = \\frac{[[E_{grise}|E_{an}]]}{[[E_{an}|E_{grise}|E_{an} \\cdot N]]}",
+    "legende": "T_RE (ans) ; E_grise énergie grise de fabrication/installation/fin de vie (kWh) ; E_an énergie produite ou économisée par an (kWh/an)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc2-ddl-pivot",
+    "bloc": "TC2",
+    "notion": "TC2.2 Graphes, croquis, dessins techniques",
+    "nom": "Degrés de liberté : pivot, glissière, hélicoïdale",
+    "tex": "n_c(\\text{pivot}) = [[1|2|0]] \\; ; \\; n_c(\\text{glissière}) = [[1\\,\\text{(T)}|1\\,\\text{(R)}|2]] \\; ; \\; n_c(\\text{hélicoïdale}) = [[1\\,\\text{(R et T liées)}|2\\,\\text{(R + T)}|0]]",
+    "legende": "Pivot : 1 rotation ; glissière : 1 translation ; hélicoïdale : rotation et translation liées par le pas",
+    "source": "Fiche TC2.2"
+  },
+  {
+    "id": "tc2-ddl-rotule",
+    "bloc": "TC2",
+    "notion": "TC2.2 Graphes, croquis, dessins techniques",
+    "nom": "Degrés de liberté : pivot glissant, rotule, appui plan, encastrement",
+    "tex": "n_c(\\text{pivot glissant}) = [[2|1|3]] \\; ; \\; n_c(\\text{rotule}) = [[3\\,\\text{(3R)}|3\\,\\text{(2R+1T)}|2\\,\\text{(2R)}]] \\; ; \\; n_c(\\text{appui plan}) = [[3\\,\\text{(2T+1R)}|3\\,\\text{(1T+2R)}|2\\,\\text{(2T)}]] \\; ; \\; n_c(\\text{encastrement}) = [[0|6]]",
+    "legende": "Pivot glissant : 1R + 1T même axe ; rotule : 3 rotations ; appui plan : 2 translations + 1 rotation ; encastrement : aucun mouvement",
+    "source": "Fiche TC2.2"
+  },
+  {
+    "id": "tc2-hyperstatisme-cinematique",
+    "bloc": "TC2",
+    "notion": "TC2.2 Graphes, croquis, dessins techniques",
+    "nom": "Degré d'hyperstatisme (approche cinématique)",
+    "tex": "[[h]] = [[m|-m]] - [[I_c|N_s|E_c]] + [[6\\gamma|6(p-1)|3\\gamma]]",
+    "legende": "h degré d'hyperstatisme ; m mobilité ; I_c = Σ n_c inconnues cinématiques ; E_c = 6γ équations cinématiques (3γ en plan)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc2-hyperstatisme-statique",
+    "bloc": "TC2",
+    "notion": "TC2.2 Graphes, croquis, dessins techniques",
+    "nom": "Degré d'hyperstatisme (approche statique)",
+    "tex": "[[h]] = [[m|-m]] + [[N_s|I_c|E_s]] - [[6(p-1)|6\\gamma|6p]]",
+    "legende": "N_s = Σ n_s inconnues statiques ; p nombre de classes d'équivalence (bâti compris) ; 6(p−1) équations de la statique (3(p−1) en plan) ; m mobilité",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc2-helicoidale",
+    "bloc": "TC2",
+    "notion": "TC2.2 Graphes, croquis, dessins techniques",
+    "nom": "Loi de la liaison hélicoïdale",
+    "tex": "[[x|\\theta]] = \\frac{[[p_h|2\\pi]]}{[[2\\pi|\\pi|p_h]]} \\, [[\\theta|x|\\omega]]",
+    "legende": "x translation (m) ; θ rotation (rad) ; p_h pas de l'hélice (m/tour). En vitesse : v = p_h ω / 2π",
+    "source": "Fiche TC2.2 (hélicoïdale : R et T liées par le pas) ; Classique programme"
+  },
+  {
+    "id": "tc2-diametre-primitif",
+    "bloc": "TC2",
+    "notion": "TC2.2 Graphes, croquis, dessins techniques",
+    "nom": "Diamètre primitif d'une roue dentée",
+    "tex": "[[d]] = [[m|\\pi m|\\frac{m}{2}]] \\cdot [[Z|\\frac{Z}{2}|Z+2]]",
+    "legende": "d diamètre primitif (mm) ; m module (mm) ; Z nombre de dents",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc2-pignon-cremaillere",
+    "bloc": "TC2",
+    "notion": "TC2.2 Graphes, croquis, dessins techniques",
+    "nom": "Pignon-crémaillère",
+    "tex": "[[v]] = [[R|D|2R]] \\cdot [[\\omega|N|2\\pi\\omega]] = \\frac{[[m Z|2 m Z|\\pi m Z]]}{2} \\, \\omega",
+    "legende": "v vitesse de la crémaillère (m/s) ; R rayon primitif du pignon (m) ; ω vitesse angulaire (rad/s) ; m module ; Z dents du pignon",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc2-intervalle-tolerance",
+    "bloc": "TC2",
+    "notion": "TC2.2 Graphes, croquis, dessins techniques",
+    "nom": "Intervalle de tolérance",
+    "tex": "[[IT]] = [[c_{max}|c_{nom}|ES]] - [[c_{min}|c_{nom}|EI]] = [[ES - EI|ES + EI|EI - ES]]",
+    "legende": "IT intervalle de tolérance (mm ou µm) ; c_max, c_min cotes limites ; ES, EI écarts supérieur et inférieur (es, ei pour un arbre)",
+    "source": "Fiche TC2.2 (cotes fonctionnelles) ; Classique programme"
+  },
+  {
+    "id": "tc2-cote-limite",
+    "bloc": "TC2",
+    "notion": "TC2.2 Graphes, croquis, dessins techniques",
+    "nom": "Cotes limites d'une cote tolérancée",
+    "tex": "[[c_{max}|c_{min}]] = [[c_{nom}|IT]] + [[ES|EI|IT]] \\quad ; \\quad [[c_{min}|c_{max}]] = c_{nom} + [[EI|ES|-IT]]",
+    "legende": "c_nom cote nominale ; ES écart supérieur ; EI écart inférieur (algébriques)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc2-jeu-max",
+    "bloc": "TC2",
+    "notion": "TC2.2 Graphes, croquis, dessins techniques",
+    "nom": "Jeu maximal d'un ajustement",
+    "tex": "[[J_{max}|J_{min}]] = [[ES|EI|es]] - [[ei|es|EI]]",
+    "legende": "J_max = alésage max − arbre min ; ES écart supérieur de l'alésage ; ei écart inférieur de l'arbre",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc2-jeu-min",
+    "bloc": "TC2",
+    "notion": "TC2.2 Graphes, croquis, dessins techniques",
+    "nom": "Jeu minimal d'un ajustement",
+    "tex": "[[J_{min}|J_{max}]] = [[EI|ES|ei]] - [[es|ei|ES]]",
+    "legende": "J_min = alésage min − arbre max ; EI écart inférieur de l'alésage ; es écart supérieur de l'arbre (J_min < 0 : serrage)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc2-chaine-cotes-it",
+    "bloc": "TC2",
+    "notion": "TC2.2 Graphes, croquis, dessins techniques",
+    "nom": "Chaîne de cotes : tolérance de la condition (pire des cas)",
+    "tex": "[[IT_J]] = [[\\sum_i IT_i|\\sqrt{\\sum_i IT_i^2}|\\max IT_i|\\sum_i IT_i^2]]",
+    "legende": "IT_J tolérance de la condition fonctionnelle J ; IT_i tolérances des cotes composantes (méthode arithmétique, au pire des cas)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc2-chaine-cotes-stat",
+    "bloc": "TC2",
+    "notion": "TC2.2 Graphes, croquis, dessins techniques",
+    "nom": "Chaîne de cotes : tolérance statistique (quadratique)",
+    "tex": "[[IT_J]] = [[\\sqrt{\\sum_i IT_i^2}|\\sum_i IT_i|\\sum_i \\sqrt{IT_i}|\\frac{1}{n}\\sum_i IT_i]]",
+    "legende": "Cotation statistique (cotes indépendantes, centrées, grandes séries) : IT_J plus faible qu'en cotation au pire des cas",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc2-chaine-cotes-jmax",
+    "bloc": "TC2",
+    "notion": "TC2.2 Graphes, croquis, dessins techniques",
+    "nom": "Chaîne de cotes : condition maximale",
+    "tex": "[[J_{max}|J_{min}]] = \\sum [[A_{max}^{+}|A_{min}^{+}|A_{max}^{-}]] - \\sum [[A_{min}^{-}|A_{max}^{-}|A_{min}^{+}]]",
+    "legende": "A⁺ cotes de même sens que la condition J (vecteur positif), A⁻ cotes de sens opposé",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc2-chaine-cotes-jmin",
+    "bloc": "TC2",
+    "notion": "TC2.2 Graphes, croquis, dessins techniques",
+    "nom": "Chaîne de cotes : condition minimale",
+    "tex": "[[J_{min}|J_{max}]] = \\sum [[A_{min}^{+}|A_{max}^{+}|A_{min}^{-}]] - \\sum [[A_{max}^{-}|A_{min}^{-}|A_{max}^{+}]]",
+    "legende": "A⁺ cotes de même sens que la condition J, A⁻ cotes de sens opposé ; chaque cote ne doit apparaître qu'une fois (chaîne minimale)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc2-echelle",
+    "bloc": "TC2",
+    "notion": "TC2.2 Graphes, croquis, dessins techniques",
+    "nom": "Échelle d'un dessin",
+    "tex": "[[E]] = \\frac{[[L_{\\text{dessin}}|L_{\\text{réelle}}]]}{[[L_{\\text{réelle}}|L_{\\text{dessin}}]]}",
+    "legende": "E échelle (ex. 1:2 réduction, 2:1 agrandissement) ; longueurs dans la même unité",
+    "source": "Classique programme"
+  }
+]

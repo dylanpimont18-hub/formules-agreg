@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formules Agrég SII</title>
+  <meta name="description" content="Entraînement par QCM aux formules à connaître par cœur pour l'agrégation SII ingénierie électrique.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>∑</text></svg>">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo">∑</span> Formules Agrég SII</div>
+    <nav class="tabs" role="tablist">
+      <button class="tab active" data-view="entrainement">Entraînement</button>
+      <button class="tab" data-view="formulaire">Formulaire</button>
+      <button class="tab" data-view="progres">Progrès</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Réglages -->
+    <section id="view-entrainement" class="view active">
+      <div id="setup" class="card">
+        <h1>Que veux-tu réviser&nbsp;?</h1>
+        <p class="muted" id="stats-global"></p>
+        <div class="bloc-actions">
+          <button class="link" id="tout">Tout cocher</button> · <button class="link" id="rien">Tout décocher</button>
+        </div>
+        <div id="blocs" class="blocs"></div>
+        <div class="row">
+          <label>Questions par série
+            <select id="longueur">
+              <option value="10">10</option>
+              <option value="20" selected>20</option>
+              <option value="50">50</option>
+              <option value="0">Illimité</option>
+            </select>
+          </label>
+          <label class="check"><input type="checkbox" id="priorite" checked> Insister sur mes erreurs</label>
+        </div>
+        <button id="go" class="primary big">Commencer</button>
+      </div>
+
+      <!-- Quiz -->
+      <div id="quiz" class="hidden">
+        <div class="quiz-head">
+          <button class="link" id="stop">← Arrêter</button>
+          <div class="progress"><div id="bar"></div></div>
+          <div id="score" class="score"></div>
+        </div>
+        <div class="card question">
+          <div class="meta"><span id="q-bloc" class="pill"></span><span id="q-notion" class="muted"></span></div>
+          <div id="q-tex" class="formula"></div>
+          <div id="options" class="options"></div>
+          <div id="feedback" class="feedback hidden">
+            <div id="fb-verdict" class="verdict"></div>
+            <div id="fb-nom" class="fb-nom"></div>
+            <div id="fb-tex" class="formula small"></div>
+            <div id="fb-legende" class="muted"></div>
+            <div id="fb-source" class="source"></div>
+            <button id="next" class="primary">Suivante <kbd>Entrée</kbd></button>
+          </div>
+        </div>
+        <p class="hint muted">Raccourcis : <kbd>1</kbd>–<kbd>4</kbd> pour répondre, <kbd>Entrée</kbd> pour continuer.</p>
+      </div>
+
+      <!-- Bilan -->
+      <div id="bilan" class="card hidden">
+        <h1 id="bilan-titre"></h1>
+        <p id="bilan-texte" class="muted"></p>
+        <div id="bilan-erreurs"></div>
+        <div class="row">
+          <button id="rejouer" class="primary">Nouvelle série</button>
+          <button id="retour" class="secondary">Changer de thèmes</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulaire -->
+    <section id="view-formulaire" class="view">
+      <div class="card">
+        <input id="recherche" type="search" placeholder="Rechercher (nom, notion, grandeur…)">
+        <div id="liste"></div>
+      </div>
+    </section>
+
+    <!-- Progrès -->
+    <section id="view-progres" class="view">
+      <div class="card">
+        <h1>Progrès</h1>
+        <div id="progres"></div>
+        <button id="reset" class="secondary danger">Réinitialiser ma progression</button>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

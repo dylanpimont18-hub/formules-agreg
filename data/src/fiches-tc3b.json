@@ -1,0 +1,1028 @@
+[
+  {
+    "id": "tc3-thermique-fourier-densite",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Loi de Fourier (densité de flux)",
+    "tex": "[[\\vec{j}]] = [[-\\lambda|\\lambda|-\\frac{1}{\\lambda}]] \\, [[\\overrightarrow{\\mathrm{grad}}\\,T|\\overrightarrow{\\mathrm{grad}}\\,\\lambda|\\Delta T]]",
+    "legende": "j densité de flux thermique (W·m⁻²), λ conductivité (W·m⁻¹·K⁻¹), T température (K) — la fiche TC3.3.3 écrit φ au lieu de j",
+    "source": "Fiche TC3.3.1 ; Fiche TC3.3.3"
+  },
+  {
+    "id": "tc3-thermique-fourier-1d",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Loi de Fourier 1D (flux)",
+    "tex": "[[\\varphi]] = [[-\\lambda|\\lambda|-\\frac{1}{\\lambda}]] \\, [[S]] \\, [[\\frac{\\mathrm{d}T}{\\mathrm{d}x}|\\frac{\\mathrm{d}x}{\\mathrm{d}T}|\\frac{\\mathrm{d}^2T}{\\mathrm{d}x^2}]]",
+    "legende": "φ flux thermique (W), λ conductivité (W·m⁻¹·K⁻¹), S surface (m²), x abscisse (m)",
+    "source": "Fiche TC3.3.1"
+  },
+  {
+    "id": "tc3-thermique-ohm-thermique",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Analogie électrique (loi d'Ohm thermique)",
+    "tex": "[[T_1 - T_2|T_1 + T_2]] = [[R_{th}|\\frac{1}{R_{th}}]] \\cdot [[\\varphi|\\varphi^2]]",
+    "legende": "T₁−T₂ écart de température (K), R_th résistance thermique (K·W⁻¹), φ flux (W)",
+    "source": "Fiche TC3.3.1 ; Sujet 2022 E1 Q37-39"
+  },
+  {
+    "id": "tc3-thermique-resistance-conduction",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Résistance thermique de conduction (plaque)",
+    "tex": "[[R_{cond}]] = \\frac{[[e|e^2|\\lambda]]}{[[\\lambda S|\\frac{\\lambda}{S}|e\\,S]]}",
+    "legende": "R résistance globale (K·W⁻¹), e épaisseur (m), λ conductivité (W·m⁻¹·K⁻¹), S surface (m²)",
+    "source": "Fiche TC3.3.1 ; Sujet 2022 E1 Q37"
+  },
+  {
+    "id": "tc3-thermique-resistance-surfacique",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Résistance thermique surfacique d'une couche",
+    "tex": "[[R']] = \\frac{[[e]]}{[[\\lambda|\\lambda S|\\lambda^2]]}",
+    "legende": "R′ résistance surfacique (m²·K·W⁻¹), e épaisseur (m), λ conductivité (W·m⁻¹·K⁻¹) — ne pas confondre avec R en K·W⁻¹",
+    "source": "Fiche TC3.3.1"
+  },
+  {
+    "id": "tc3-thermique-resistance-cylindre",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Résistance de conduction d'un cylindre creux",
+    "tex": "[[R_{cyl}]] = \\frac{[[\\ln(r_2/r_1)|r_2 - r_1|\\ln(r_1/r_2)]]}{[[2\\pi|4\\pi|\\pi]] \\, [[\\lambda L|\\frac{\\lambda}{L}|\\lambda r_1]]}",
+    "legende": "r₁, r₂ rayons intérieur/extérieur (m), λ conductivité (W·m⁻¹·K⁻¹), L longueur du tube (m)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-thermique-newton-convection",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Loi de Newton (convection)",
+    "tex": "[[\\varphi]] = [[h|\\frac{1}{h}|\\lambda]] \\, [[S]] \\, [[\\Delta T|\\Delta T^2|\\Delta T^4]]",
+    "legende": "φ flux (W), h coefficient d'échange convectif (W·m⁻²·K⁻¹), S surface (m²), ΔT écart paroi/fluide (K)",
+    "source": "Fiche TC3.3.1 ; Fiche TC3.3.3"
+  },
+  {
+    "id": "tc3-thermique-resistance-convection",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Résistance thermique de convection",
+    "tex": "[[R_{conv}]] = [[\\frac{1}{h S}|h S|\\frac{h}{S}|\\frac{S}{h}]]",
+    "legende": "R résistance (K·W⁻¹), h coefficient convectif (W·m⁻²·K⁻¹), S surface (m²)",
+    "source": "Fiche TC3.3.1 ; Sujet 2024 E1 Q36-41"
+  },
+  {
+    "id": "tc3-thermique-stefan-boltzmann",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Loi de Stefan-Boltzmann (corps noir)",
+    "tex": "[[M^0]] = [[\\sigma]] \\, [[T^4|T^2|T^3]]",
+    "legende": "M⁰ émittance du corps noir (W·m⁻²), σ constante de Stefan-Boltzmann, T température absolue (K)",
+    "source": "Fiche TC3.3.1"
+  },
+  {
+    "id": "tc3-thermique-sigma",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Constante de Stefan-Boltzmann",
+    "tex": "\\sigma \\approx [[5{,}67 \\times 10^{-8}|5{,}67 \\times 10^{8}|6{,}67 \\times 10^{-11}]] \\ [[\\mathrm{W\\cdot m^{-2}\\cdot K^{-4}}|\\mathrm{W\\cdot m^{-1}\\cdot K^{-1}}|\\mathrm{W\\cdot m^{-2}\\cdot K^{-1}}]]",
+    "legende": "σ constante de Stefan-Boltzmann",
+    "source": "Fiche TC3.3.1"
+  },
+  {
+    "id": "tc3-thermique-rayonnement-echange",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Flux radiatif net (surface grise dans grande enceinte)",
+    "tex": "[[\\varphi_{ray}]] = [[\\varepsilon|1-\\varepsilon|\\frac{1}{\\varepsilon}]] \\, \\sigma \\, S \\, ([[T_1^4 - T_2^4|T_1^2 - T_2^2|(T_1 - T_2)^4]])",
+    "legende": "ε émissivité de la surface, σ = 5,67·10⁻⁸ W·m⁻²·K⁻⁴, S surface (m²), T₁ surface, T₂ enceinte (K)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-thermique-rayonnement-lineaire",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Coefficient de rayonnement linéarisé",
+    "tex": "[[h_r]] \\approx [[4|2|3]] \\, \\varepsilon \\, \\sigma \\, [[T_m^3|T_m^4|T_m^2]]",
+    "legende": "h_r coefficient d'échange radiatif (W·m⁻²·K⁻¹), T_m température moyenne absolue (K)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-thermique-serie",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Résistances thermiques en série (même flux)",
+    "tex": "[[R_{eq}]] = [[\\sum_i R_i|\\sum_i \\frac{1}{R_i}|\\prod_i R_i]]",
+    "legende": "couches d'une même paroi traversées par le même flux (K·W⁻¹)",
+    "source": "Fiche TC3.3.1 ; Sujet 2022 E1 Q37"
+  },
+  {
+    "id": "tc3-thermique-parallele",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Résistances thermiques en parallèle (même ΔT)",
+    "tex": "[[\\frac{1}{R_{eq}}]] = [[\\sum_i \\frac{1}{R_i}|\\sum_i R_i|\\prod_i \\frac{1}{R_i}]]",
+    "legende": "parois distinctes (mur, toit, vitrage) soumises au même écart de température",
+    "source": "Fiche TC3.3.1 ; Rapport jury 2024"
+  },
+  {
+    "id": "tc3-thermique-coef-u-paroi",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Coefficient de transmission surfacique U d'une paroi",
+    "tex": "[[\\frac{1}{U_p}]] = [[R_{si}|h_i]] + [[\\sum_i \\frac{e_i}{\\lambda_i}|\\sum_i \\frac{\\lambda_i}{e_i}|\\sum_i e_i \\lambda_i]] + [[R_{se}|h_e]]",
+    "legende": "U_p (W·m⁻²·K⁻¹), R_si, R_se résistances superficielles intérieure/extérieure (m²·K·W⁻¹), e_i épaisseurs (m), λ_i conductivités",
+    "source": "Fiche TC3.3.1"
+  },
+  {
+    "id": "tc3-thermique-rsi-rse",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Résistances superficielles usuelles (paroi verticale)",
+    "tex": "R_{si} \\approx [[0{,}13|0{,}04|1{,}3]] \\ \\mathrm{m^2\\cdot K\\cdot W^{-1}} \\quad ; \\quad R_{se} \\approx [[0{,}04|0{,}13|0{,}4]] \\ \\mathrm{m^2\\cdot K\\cdot W^{-1}}",
+    "legende": "flux horizontal (paroi verticale) — R_si = 1/h_i, R_se = 1/h_e",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-thermique-flux-paroi",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Flux traversant une paroi",
+    "tex": "[[\\varphi_p]] = [[U_p|\\frac{1}{U_p}]] \\, [[S_p]] \\, [[\\Delta T|\\Delta T^2]]",
+    "legende": "φ_p (W), U_p coefficient de transmission (W·m⁻²·K⁻¹), S_p surface (m²), ΔT = T_int − T_ext (K)",
+    "source": "Fiche TC3.3.1"
+  },
+  {
+    "id": "tc3-thermique-deperditions-transmission",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Coefficient de déperdition par transmission (avec ponts thermiques)",
+    "tex": "[[H_T]] = \\sum_i [[U_i S_i|\\frac{U_i}{S_i}|\\frac{S_i}{U_i}]] + \\sum_j [[\\psi_j L_j|\\psi_j S_j|\\frac{\\psi_j}{L_j}]]",
+    "legende": "H_T (W·K⁻¹), U_i (W·m⁻²·K⁻¹), S_i (m²), ψ_j ponts thermiques linéiques (W·m⁻¹·K⁻¹), L_j longueurs (m)",
+    "source": "Fiche TC3.3.1 ; Classique programme"
+  },
+  {
+    "id": "tc3-thermique-renouvellement-air",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Déperditions par renouvellement d'air",
+    "tex": "[[\\Phi_{air}]] = [[0{,}34|1{,}2|0{,}034|3{,}4]] \\, [[q_v]] \\, [[\\Delta T]]",
+    "legende": "Φ (W), 0,34 Wh·m⁻³·K⁻¹ capacité thermique volumique de l'air, q_v débit d'air (m³·h⁻¹), ΔT (K)",
+    "source": "Fiche TC3.3.1"
+  },
+  {
+    "id": "tc3-thermique-puissance-sensible-debit",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Puissance thermique transportée par un débit de fluide",
+    "tex": "[[\\Phi]] = [[\\rho|\\frac{1}{\\rho}]] \\, [[c_p|c_v]] \\, [[q_v]] \\, [[\\Delta T|T]]",
+    "legende": "Φ (W), ρ masse volumique (kg·m⁻³), c_p capacité thermique massique (J·kg⁻¹·K⁻¹), q_v débit (m³·s⁻¹), ΔT (K) — aussi Φ = q_m c_p ΔT",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-thermique-bilan-chauffage",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Bilan de puissance de chauffage en régime stationnaire",
+    "tex": "[[\\Phi_{ch}]] = \\left([[\\sum_i U_i S_i|\\sum_i \\frac{U_i}{S_i}]] + [[0{,}34\\, q_v|1{,}2\\, q_v]]\\right)(T_{int} - T_{ext}) [[- \\Phi_{apports}|+ \\Phi_{apports}]]",
+    "legende": "Φ_ch puissance de chauffage (W), U_i S_i transmission (W·K⁻¹), q_v (m³·h⁻¹), Φ_apports apports gratuits (W)",
+    "source": "Fiche TC3.3.1"
+  },
+  {
+    "id": "tc3-thermique-energie-dju",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Besoin annuel de chauffage par les degrés-jours",
+    "tex": "[[Q_{an}]] = [[24|3600|365]] \\, [[H]] \\, [[\\mathrm{DJU}]]",
+    "legende": "Q_an (Wh), H coefficient de déperdition total (W·K⁻¹), DJU degrés-jours unifiés (K·jour)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-thermique-constante-temps",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Constante de temps thermique (inertie)",
+    "tex": "[[\\tau]] = [[R_{th}\\, C_{th}|\\frac{R_{th}}{C_{th}}|\\frac{C_{th}}{R_{th}}]] = \\frac{[[C_{th}]]}{[[H|H^2]]}",
+    "legende": "τ (s), R_th (K·W⁻¹), C_th capacité thermique (J·K⁻¹), H = 1/R_th coefficient de déperdition (W·K⁻¹)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-thermique-capacite",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Capacité thermique d'un élément",
+    "tex": "[[C_{th}]] = [[\\rho|\\frac{1}{\\rho}]] \\, [[c]] \\, [[V|S]]",
+    "legende": "C_th (J·K⁻¹), ρ masse volumique (kg·m⁻³), c capacité thermique massique (J·kg⁻¹·K⁻¹), V volume (m³)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-thermique-reponse-transitoire",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Évolution de température (modèle RC du premier ordre)",
+    "tex": "[[T(t)]] = [[T_\\infty]] + ([[T_0 - T_\\infty|T_\\infty - T_0]]) \\, [[e^{-t/\\tau}|e^{-\\tau/t}|1 - e^{-t/\\tau}]]",
+    "legende": "T₀ température initiale, T_∞ température finale (K), τ constante de temps (s)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-thermique-diffusivite",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Diffusivité thermique",
+    "tex": "[[a]] = \\frac{[[\\lambda|\\lambda^2]]}{[[\\rho\\, c|\\frac{\\rho}{c}|\\lambda c]]}",
+    "legende": "a diffusivité (m²·s⁻¹), λ conductivité (W·m⁻¹·K⁻¹), ρ (kg·m⁻³), c (J·kg⁻¹·K⁻¹)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-thermique-effusivite",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Effusivité thermique",
+    "tex": "[[E_f]] = [[\\sqrt{\\lambda \\rho c}|\\lambda \\rho c|\\sqrt{\\frac{\\lambda}{\\rho c}}]]",
+    "legende": "E_f effusivité (J·m⁻²·K⁻¹·s⁻¹ᐟ²) : aptitude d'un matériau à échanger de la chaleur (inertie de surface)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-energie-bilan-puissance",
+    "bloc": "TC3",
+    "notion": "TC3.3.2 Flux et efficacité énergétique",
+    "nom": "Bilan de puissance sur un maillon",
+    "tex": "[[P_a]] = [[P_u]] + [[\\sum P_{pertes}|-\\sum P_{pertes}]]",
+    "legende": "P_a puissance absorbée, P_u puissance utile, P_pertes pertes (W)",
+    "source": "Fiche TC3.3.2"
+  },
+  {
+    "id": "tc3-energie-rendement",
+    "bloc": "TC3",
+    "notion": "TC3.3.2 Flux et efficacité énergétique",
+    "nom": "Rendement d'un maillon",
+    "tex": "[[\\eta]] = [[\\frac{P_u}{P_a}|\\frac{P_a}{P_u}|\\frac{P_a - P_u}{P_a}]]",
+    "legende": "η sans unité, toujours < 1",
+    "source": "Fiche TC3.3.2"
+  },
+  {
+    "id": "tc3-energie-rendement-pertes",
+    "bloc": "TC3",
+    "notion": "TC3.3.2 Flux et efficacité énergétique",
+    "nom": "Rendement à partir des pertes",
+    "tex": "[[\\eta]] = \\frac{[[P_u]]}{[[P_u + \\sum p|P_u - \\sum p|\\sum p]]}",
+    "legende": "P_u puissance utile (W), Σp somme des pertes (W)",
+    "source": "Fiche TC3.3.2"
+  },
+  {
+    "id": "tc3-energie-rendement-chaine",
+    "bloc": "TC3",
+    "notion": "TC3.3.2 Flux et efficacité énergétique",
+    "nom": "Rendement global d'une chaîne en série",
+    "tex": "[[\\eta_{global}]] = [[\\prod_i \\eta_i|\\sum_i \\eta_i|\\frac{1}{n}\\sum_i \\eta_i|\\min_i \\eta_i]]",
+    "legende": "produit des rendements des maillons traversés successivement",
+    "source": "Fiche TC3.3.2 ; Sujet 2021 E1 ; Fiche TC3.2.3 ; Fiche TC2.1 (exemple 2021, valeurs du bdd du tunnelier) ; Fiche OE3.5 ; Fiche OE3.6"
+  },
+  {
+    "id": "tc3-energie-rendement-etages",
+    "bloc": "TC3",
+    "notion": "TC3.3.2 Flux et efficacité énergétique",
+    "nom": "Rendement de n étages identiques",
+    "tex": "[[\\eta_{global}]] = [[\\rho^n|n\\,\\rho|\\rho^{1/n}]]",
+    "legende": "ρ rendement d'un étage, n nombre d'étages (ex. 0,985⁴ ≈ 0,941)",
+    "source": "Fiche TC3.3.2 ; Sujet 2021 E1"
+  },
+  {
+    "id": "tc3-energie-pertes-joule-tri",
+    "bloc": "TC3",
+    "notion": "TC3.3.2 Flux et efficacité énergétique",
+    "nom": "Pertes Joule en triphasé (R par phase, couplage étoile)",
+    "tex": "[[p_J]] = [[3|\\sqrt{3}|\\frac{3}{2}]] \\, R \\, [[I^2|I]]",
+    "legende": "R résistance d'une phase (Ω), I courant en ligne (A)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-mcc-tension-dynamique",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "MCC — équation électrique dynamique",
+    "tex": "[[u(t)]] = [[e(t)]] + [[R\\, i(t)]] + [[L \\frac{\\mathrm{d}i}{\\mathrm{d}t}|\\frac{1}{L}\\int i \\,\\mathrm{d}t|L\\, i]]",
+    "legende": "u tension d'induit, e fcém (V), R (Ω), L inductance d'induit (H), i courant (A)",
+    "source": "Fiche TC3.3.3"
+  },
+  {
+    "id": "tc3-mcc-puissance-absorbee",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "MCC — bilan de puissance à l'induit",
+    "tex": "[[P_a]] = [[U I]] = [[R I^2]] + [[P_{em}|P_u]]",
+    "legende": "P_a puissance absorbée (W), RI² pertes Joule d'induit, P_em puissance électromagnétique",
+    "source": "Fiche TC3.3.3"
+  },
+  {
+    "id": "tc3-meca-pfd-rotation",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Principe fondamental de la dynamique en rotation",
+    "tex": "[[J \\frac{\\mathrm{d}\\Omega}{\\mathrm{d}t}|J\\,\\Omega|\\frac{1}{J}\\frac{\\mathrm{d}\\Omega}{\\mathrm{d}t}]] = C_{em} [[- C_r|+ C_r]] [[- f\\,\\Omega|+ f\\,\\Omega|- f\\,\\Omega^2]]",
+    "legende": "J moment d'inertie (kg·m²), C_em couple moteur, C_r couple résistant (N·m), f frottement visqueux (N·m·s·rad⁻¹)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-mcc-constante-temps-meca",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "MCC — constante de temps électromécanique",
+    "tex": "[[\\tau_m]] = \\frac{[[R\\, J|\\frac{R}{J}|L\\, J]]}{[[(k\\Phi)^2|k\\Phi|\\sqrt{k\\Phi}]]}",
+    "legende": "τ_m (s), R résistance d'induit (Ω), J inertie (kg·m²), kΦ constante (N·m·A⁻¹) — L et frottements négligés",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-thermo-premier-principe",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Premier principe (système fermé)",
+    "tex": "[[\\Delta U|\\Delta H]] = [[W|-W]] + [[Q|-Q]]",
+    "legende": "ΔU variation d'énergie interne, W travail et Q chaleur reçus par le système (J)",
+    "source": "Fiche TC3.3.3 ; Rapport jury 2022"
+  },
+  {
+    "id": "tc3-thermo-premier-principe-ouvert",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Premier principe pour un système ouvert en écoulement permanent",
+    "tex": "[[\\Delta h|\\Delta u]] + \\Delta e_c + \\Delta e_p = [[w_u|w_p]] + [[q]]",
+    "legende": "grandeurs massiques (J·kg⁻¹) : h enthalpie, w_u travail utile (indiqué), q chaleur reçue",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-thermo-travail-pression",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Travail des forces de pression",
+    "tex": "[[\\delta W]] = [[-p_{ext}\\, \\mathrm{d}V|p_{ext}\\, \\mathrm{d}V|-V\\,\\mathrm{d}p]]",
+    "legende": "W travail reçu (J), p_ext pression extérieure (Pa), V volume (m³)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-thermo-chaleur-latente",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Chaleur latente de changement d'état",
+    "tex": "[[Q]] = [[m]] \\, [[L|L\\,\\Delta T|c\\,\\Delta T]]",
+    "legende": "Q (J), m masse (kg), L chaleur latente massique (J·kg⁻¹)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-thermo-gaz-parfait",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Équation d'état des gaz parfaits",
+    "tex": "[[p V]] = [[n]] \\, [[R]] \\, [[T|\\theta]]",
+    "legende": "p (Pa), V (m³), n quantité de matière (mol), R = 8,314 J·mol⁻¹·K⁻¹, T température absolue (K)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-thermo-mayer",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Relation de Mayer (capacités massiques)",
+    "tex": "[[c_p - c_v|c_p + c_v|\\frac{c_p}{c_v}]] = [[\\frac{R}{M}|R|R M]]",
+    "legende": "c_p, c_v (J·kg⁻¹·K⁻¹), R = 8,314 J·mol⁻¹·K⁻¹, M masse molaire (kg·mol⁻¹)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-thermo-gamma",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Coefficient isentropique",
+    "tex": "[[\\gamma]] = \\frac{[[c_p|c_v]]}{[[c_v|c_p]]}",
+    "legende": "γ ≈ 1,4 pour l'air (gaz diatomique)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-thermo-laplace",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Lois de Laplace (isentropique, gaz parfait)",
+    "tex": "[[p]] \\, [[V^{\\gamma}|V^{\\gamma-1}|V]] = \\text{cste} \\quad ; \\quad [[T]] \\, [[V^{\\gamma-1}|V^{\\gamma}|V^{1-\\gamma}]] = \\text{cste}",
+    "legende": "transformation adiabatique réversible d'un gaz parfait, γ = c_p/c_v",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-thermo-entropie",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Variation d'entropie (transformation réversible)",
+    "tex": "[[\\mathrm{d}S]] = \\frac{[[\\delta Q_{rev}|\\delta W]]}{[[T|\\Delta T|T^2]]}",
+    "legende": "S entropie (J·K⁻¹), δQ_rev chaleur reçue réversiblement (J), T température absolue (K)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-thermo-carnot-moteur",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Rendement de Carnot (moteur ditherme)",
+    "tex": "[[\\eta_C]] = [[1|2]] - \\frac{[[T_f|T_c]]}{[[T_c|T_f|T_c - T_f]]}",
+    "legende": "T_c, T_f températures absolues des sources chaude/froide (K) — borne supérieure du rendement",
+    "source": "Fiche TC3.3.3"
+  },
+  {
+    "id": "tc3-thermo-rendement-moteur",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Rendement d'un moteur ditherme (convention récepteur)",
+    "tex": "[[\\eta]] = \\frac{[[-W|W]]}{[[Q_c|Q_f]]} = [[1 + \\frac{Q_f}{Q_c}|1 - \\frac{Q_f}{Q_c}|\\frac{Q_f}{Q_c}]]",
+    "legende": "W < 0 travail reçu, Q_c > 0 chaleur reçue de la source chaude, Q_f < 0 (J)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-thermo-cop-pac",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "COP d'une pompe à chaleur",
+    "tex": "[[\\mathrm{COP}_{PAC}]] = \\frac{[[Q_c|Q_f]]}{[[W|Q_c - Q_f|Q_f]]}",
+    "legende": "valeurs absolues : Q_c chaleur fournie à la source chaude, W travail (ou énergie électrique) absorbé",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-thermo-cop-carnot-pac",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "COP de Carnot d'une pompe à chaleur",
+    "tex": "[[\\mathrm{COP}_{PAC,max}]] = \\frac{[[T_c|T_f]]}{[[T_c - T_f|T_f|T_c + T_f]]}",
+    "legende": "T_c, T_f températures absolues (K)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-thermo-eer-frigo",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Efficacité d'une machine frigorifique (EER)",
+    "tex": "[[\\mathrm{EER}]] = \\frac{[[Q_f|Q_c]]}{[[W|Q_c]]} \\le \\frac{[[T_f]]}{[[T_c - T_f|T_c]]}",
+    "legende": "valeurs absolues : Q_f chaleur prélevée à la source froide, W travail absorbé ; T en K",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-thermo-cop-eer",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Lien COP pompe à chaleur / efficacité frigorifique",
+    "tex": "[[\\mathrm{COP}_{PAC}]] = [[\\mathrm{EER}]] + [[1|2|-1]]",
+    "legende": "même machine fonctionnant entre les mêmes sources (bilan Q_c = Q_f + W en valeurs absolues)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-fluide-hydrostatique",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Loi de l'hydrostatique",
+    "tex": "[[p(h)]] = [[p_0]] + [[\\rho g h|\\rho h|\\frac{\\rho g}{h}]]",
+    "legende": "p pression (Pa) à la profondeur h (m), p₀ pression en surface, ρ masse volumique (kg·m⁻³), g = 9,81 m·s⁻²",
+    "source": "Fiche TC3.3.3 ; Sujet 2021 E3 Q4"
+  },
+  {
+    "id": "tc3-fluide-debit-volumique",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Débit volumique dans une conduite circulaire",
+    "tex": "[[q_v]] = [[v]] \\, \\frac{\\pi \\, [[D^2|D|r^2]]}{[[4|2|1]]}",
+    "legende": "q_v (m³·s⁻¹), v vitesse moyenne (m·s⁻¹), D diamètre intérieur (m)",
+    "source": "Sujet 2021 E3 Q1-3"
+  },
+  {
+    "id": "tc3-fluide-debit-massique",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Débit massique",
+    "tex": "[[q_m]] = [[\\rho|\\frac{1}{\\rho}]] \\, [[q_v]]",
+    "legende": "q_m (kg·s⁻¹), ρ (kg·m⁻³), q_v (m³·s⁻¹)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-fluide-continuite",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Conservation du débit (fluide incompressible)",
+    "tex": "[[v_1 S_1]] = [[v_2 S_2|\\frac{v_2}{S_2}|v_2 S_1]]",
+    "legende": "v vitesses moyennes (m·s⁻¹), S sections (m²)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-fluide-bernoulli",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Équation de Bernoulli (fluide parfait)",
+    "tex": "[[p]] + [[\\rho g z|\\rho z|g z]] + [[\\frac{1}{2}\\rho v^2|\\rho v^2|\\frac{1}{2}\\rho v]] = \\text{cste}",
+    "legende": "p pression (Pa), z altitude (m), v vitesse (m·s⁻¹) — écoulement permanent, incompressible, le long d'une ligne de courant",
+    "source": "Fiche TC3.3.3 ; Sujet 2021 E3 Q1-3"
+  },
+  {
+    "id": "tc3-fluide-bernoulli-generalise",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Bernoulli généralisé en hauteurs (pompe + pertes de charge)",
+    "tex": "[[\\frac{p_1}{\\rho g}|\\frac{p_1}{\\rho}|p_1]] + z_1 + [[\\frac{v_1^2}{2g}|\\frac{v_1^2}{g}|\\frac{v_1}{2g}]] + [[H_{p}|-H_p]] = \\frac{p_2}{\\rho g} + z_2 + \\frac{v_2^2}{2g} + [[\\Delta H_{1\\to 2}|-\\Delta H_{1\\to 2}]]",
+    "legende": "hauteurs en m de colonne de fluide : H_p hauteur manométrique de la pompe, ΔH pertes de charge entre 1 et 2",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-fluide-torricelli",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Formule de Torricelli",
+    "tex": "[[v]] = [[\\sqrt{2 g h}|2 g h|\\sqrt{g h}]]",
+    "legende": "v vitesse de sortie (m·s⁻¹), h hauteur de chute (m)",
+    "source": "Fiche OE3.7 ; Sujet 2021 E3 Q9"
+  },
+  {
+    "id": "tc3-fluide-reynolds",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Nombre de Reynolds",
+    "tex": "[[\\mathrm{Re}]] = \\frac{[[\\rho v D|\\rho v^2 D|\\rho D]]}{[[\\mu|\\nu]]} = \\frac{[[v D]]}{[[\\nu]]}",
+    "legende": "ρ (kg·m⁻³), v vitesse (m·s⁻¹), D diamètre (m), μ viscosité dynamique (Pa·s), ν = μ/ρ viscosité cinématique (m²·s⁻¹)",
+    "source": "Fiche TC3.3.3 ; Sujet 2021 E3 Q5-7"
+  },
+  {
+    "id": "tc3-fluide-regimes",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Régimes d'écoulement en conduite",
+    "tex": "\\mathrm{Re} < [[2000|200|20\\,000]] : \\text{laminaire} \\quad ; \\quad \\mathrm{Re} > [[4000|40\\,000|400]] : \\text{turbulent}",
+    "legende": "transition admise vers 2000-2300, zone instable jusqu'à ~4000",
+    "source": "Fiche TC3.3.3"
+  },
+  {
+    "id": "tc3-fluide-darcy-weisbach",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Pertes de charge linéaires (Darcy-Weisbach)",
+    "tex": "[[\\Delta H_{lin}]] = [[\\lambda]] \\, \\frac{[[L|L^2]]}{[[D|D^2]]} \\, \\frac{[[v^2|v]]}{[[2g|g]]}",
+    "legende": "ΔH (m), λ coefficient de perte de charge linéaire, L longueur (m), D diamètre (m), v vitesse (m·s⁻¹)",
+    "source": "Fiche TC3.3.3 ; Sujet 2021 E3 Q5-7"
+  },
+  {
+    "id": "tc3-fluide-darcy-pression",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Pertes de charge linéaires en pression",
+    "tex": "[[\\Delta p_{lin}]] = \\lambda \\, \\frac{L}{D} \\, [[\\frac{\\rho v^2}{2}|\\rho v^2|\\frac{\\rho v}{2}]] = [[\\rho g\\, \\Delta H_{lin}|\\rho\\, \\Delta H_{lin}|g\\,\\Delta H_{lin}]]",
+    "legende": "Δp (Pa), ρ (kg·m⁻³), v (m·s⁻¹), ΔH (m)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-fluide-lambda-laminaire",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Coefficient de perte de charge en régime laminaire (Poiseuille)",
+    "tex": "[[\\lambda]] = \\frac{[[64|16|32]]}{[[\\mathrm{Re}|\\sqrt{\\mathrm{Re}}|\\mathrm{Re}^2]]}",
+    "legende": "valable pour Re < 2000 (conduite circulaire)",
+    "source": "Fiche TC3.3.3 ; Sujet 2021 E3 Annexe 2"
+  },
+  {
+    "id": "tc3-fluide-blasius",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Formule de Blasius (turbulent lisse)",
+    "tex": "[[\\lambda]] = [[0{,}316|0{,}0316|3{,}16]] \\, [[\\mathrm{Re}^{-0{,}25}|\\mathrm{Re}^{-0{,}5}|\\mathrm{Re}^{0{,}25}]]",
+    "legende": "conduite hydrauliquement lisse, 4000 < Re < 10⁵",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-fluide-pertes-singulieres",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Pertes de charge singulières",
+    "tex": "[[\\Delta H_{sing}]] = [[\\zeta|\\zeta^2]] \\, \\frac{[[v^2|v]]}{[[2 g|g]]}",
+    "legende": "ΔH (m), ζ coefficient de perte singulière (coude, vanne, changement de section)",
+    "source": "Fiche TC3.3.3"
+  },
+  {
+    "id": "tc3-fluide-pertes-quadratiques",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Caractéristique d'un réseau hydraulique (turbulent)",
+    "tex": "[[\\Delta H_{reseau}]] = [[H_{geo}]] + [[k]] \\, [[q_v^2|q_v|\\sqrt{q_v}]]",
+    "legende": "H_geo hauteur géométrique (m), k coefficient de pertes du réseau, q_v débit (m³·s⁻¹)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-fluide-puissance-hydraulique",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Puissance hydraulique",
+    "tex": "[[P_h]] = [[\\rho g|\\rho]] \\, [[q_v|q_m]] \\, [[H|H^2]]",
+    "legende": "P_h (W), ρg (N·m⁻³), q_v débit (m³·s⁻¹), H hauteur manométrique/de chute (m)",
+    "source": "Fiche OE3.7 ; Sujet 2021 E3 Q12"
+  },
+  {
+    "id": "tc3-fluide-puissance-hydraulique-dp",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Puissance hydraulique (forme pression)",
+    "tex": "[[P_h]] = [[\\Delta p]] \\, [[q_v|q_m]]",
+    "legende": "P_h (W), Δp différence de pression (Pa), q_v débit volumique (m³·s⁻¹)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-fluide-puissance-pompe",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Puissance absorbée par une pompe",
+    "tex": "[[P_{abs}]] = \\frac{[[\\rho g q_v H|\\rho q_v H]]}{[[\\eta_p|\\frac{1}{\\eta_p}]]}",
+    "legende": "P_abs puissance mécanique sur l'arbre (W), η_p rendement de la pompe",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-fluide-puissance-turbine",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Puissance fournie par une turbine hydraulique",
+    "tex": "[[P_{u}]] = [[\\eta_t|\\frac{1}{\\eta_t}]] \\, [[\\rho g q_v H_n|\\rho q_v H_n]]",
+    "legende": "H_n hauteur nette = chute brute − pertes de charge (m), η_t rendement de la turbine",
+    "source": "Sujet 2021 E3 ; Classique programme"
+  },
+  {
+    "id": "tc3-fluide-similitude",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Lois de similitude des pompes centrifuges",
+    "tex": "\\frac{q_{v2}}{q_{v1}} = [[\\frac{N_2}{N_1}|\\left(\\frac{N_2}{N_1}\\right)^2]] \\ ; \\ \\frac{H_2}{H_1} = [[\\left(\\frac{N_2}{N_1}\\right)^2|\\left(\\frac{N_2}{N_1}\\right)^3]] \\ ; \\ \\frac{P_2}{P_1} = [[\\left(\\frac{N_2}{N_1}\\right)^3|\\left(\\frac{N_2}{N_1}\\right)^2]]",
+    "legende": "N vitesse de rotation, q_v débit, H hauteur manométrique, P puissance (même pompe)",
+    "source": "Fiche OE3.6"
+  },
+  {
+    "id": "tc3-commande-mli-4q",
+    "bloc": "TC3",
+    "notion": "TC3.4.1 Organisation fonctionnelle de la commande des systèmes",
+    "nom": "Valeur moyenne en sortie d'un pont en H (MLI bipolaire)",
+    "tex": "[[\\langle u \\rangle]] = ([[2\\alpha - 1|\\alpha|1 - 2\\alpha]]) \\, [[E]]",
+    "legende": "E tension d'alimentation (V), α rapport cyclique (commande bipolaire 4 quadrants)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-commande-wheatstone",
+    "bloc": "TC3",
+    "notion": "TC3.4.1 Organisation fonctionnelle de la commande des systèmes",
+    "nom": "Pont de Wheatstone",
+    "tex": "[[\\frac{V_s}{V_e}]] = \\frac{[[R_3]]}{[[R_3 + R_1|R_1]]} - \\frac{[[R_j]]}{[[R_j + R_2|R_2]]}",
+    "legende": "V_e tension d'alimentation du pont, V_s tension de déséquilibre, R_j jauge (Ω)",
+    "source": "Sujet 2024 E1 Q23"
+  },
+  {
+    "id": "tc3-logique-de-morgan-somme",
+    "bloc": "TC3",
+    "notion": "TC3.4.2 Modélisation des commandes logiques des systèmes à évènements",
+    "nom": "Loi de De Morgan (somme)",
+    "tex": "[[\\overline{A + B}|\\overline{A} + B]] = [[\\overline{A} \\cdot \\overline{B}|\\overline{A} + \\overline{B}|\\overline{A \\cdot B}]]",
+    "legende": "complément d'une somme = produit des compléments",
+    "source": "Fiche TC3.4.2 ; Fiche TC5.4"
+  },
+  {
+    "id": "tc3-logique-de-morgan-produit",
+    "bloc": "TC3",
+    "notion": "TC3.4.2 Modélisation des commandes logiques des systèmes à évènements",
+    "nom": "Loi de De Morgan (produit)",
+    "tex": "[[\\overline{A \\cdot B}|\\overline{A} \\cdot B]] = [[\\overline{A} + \\overline{B}|\\overline{A} \\cdot \\overline{B}|\\overline{A + B}]]",
+    "legende": "complément d'un produit = somme des compléments",
+    "source": "Fiche TC3.4.2 ; Fiche TC5.4"
+  },
+  {
+    "id": "tc3-logique-xor",
+    "bloc": "TC3",
+    "notion": "TC3.4.2 Modélisation des commandes logiques des systèmes à évènements",
+    "nom": "OU exclusif (XOR)",
+    "tex": "[[A \\oplus B]] = [[A \\cdot \\overline{B}|A \\cdot B|\\overline{A} \\cdot \\overline{B}]] + [[\\overline{A} \\cdot B|\\overline{A}\\cdot\\overline{B}|A + B]]",
+    "legende": "vaut 1 si une seule des deux entrées vaut 1",
+    "source": "Fiche TC3.4.2"
+  },
+  {
+    "id": "tc3-logique-xnor",
+    "bloc": "TC3",
+    "notion": "TC3.4.2 Modélisation des commandes logiques des systèmes à évènements",
+    "nom": "Coïncidence (XNOR)",
+    "tex": "[[\\overline{A \\oplus B}]] = [[A \\cdot B|A \\cdot \\overline{B}]] + [[\\overline{A} \\cdot \\overline{B}|\\overline{A} \\cdot B]]",
+    "legende": "vaut 1 si les deux entrées sont égales",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-logique-complementation",
+    "bloc": "TC3",
+    "notion": "TC3.4.2 Modélisation des commandes logiques des systèmes à évènements",
+    "nom": "Complémentarité",
+    "tex": "A + \\overline{A} = [[1|0|A]] \\quad ; \\quad A \\cdot \\overline{A} = [[0|1|\\overline{A}]]",
+    "legende": "algèbre de Boole",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-logique-elements-neutres",
+    "bloc": "TC3",
+    "notion": "TC3.4.2 Modélisation des commandes logiques des systèmes à évènements",
+    "nom": "Éléments absorbants et neutres",
+    "tex": "A + 1 = [[1|A]] \\quad ; \\quad A \\cdot 0 = [[0|A]] \\quad ; \\quad A + 0 = [[A|0|1]]",
+    "legende": "algèbre de Boole",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-logique-absorption",
+    "bloc": "TC3",
+    "notion": "TC3.4.2 Modélisation des commandes logiques des systèmes à évènements",
+    "nom": "Absorption",
+    "tex": "[[A + A \\cdot B]] = [[A|B|A \\cdot B]]",
+    "legende": "algèbre de Boole (aussi A·(A + B) = A)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-logique-absorption-complement",
+    "bloc": "TC3",
+    "notion": "TC3.4.2 Modélisation des commandes logiques des systèmes à évènements",
+    "nom": "Absorption du complément",
+    "tex": "[[A + \\overline{A} \\cdot B]] = [[A + B|A|A \\cdot B]]",
+    "legende": "algèbre de Boole",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-logique-distributivite",
+    "bloc": "TC3",
+    "notion": "TC3.4.2 Modélisation des commandes logiques des systèmes à évènements",
+    "nom": "Distributivité de + sur · (propre à l'algèbre de Boole)",
+    "tex": "[[A + B \\cdot C]] = [[(A + B) \\cdot (A + C)|A \\cdot B + A \\cdot C|(A + B) \\cdot C]]",
+    "legende": "algèbre de Boole",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-logique-table-verite",
+    "bloc": "TC3",
+    "notion": "TC3.4.2 Modélisation des commandes logiques des systèmes à évènements",
+    "nom": "Taille d'une table de vérité",
+    "tex": "[[N_{lignes}]] = [[2^n|n^2|2n]]",
+    "legende": "n nombre d'entrées booléennes",
+    "source": "Fiche TC3.4.2"
+  },
+  {
+    "id": "tc3-logique-karnaugh",
+    "bloc": "TC3",
+    "notion": "TC3.4.2 Modélisation des commandes logiques des systèmes à évènements",
+    "nom": "Groupement de Karnaugh",
+    "tex": "\\text{groupement de } [[2^k|k^2|2k]] \\text{ cases} \\Rightarrow [[k|2^k|k-1]] \\text{ variables éliminées}",
+    "legende": "cases adjacentes à 1, par puissances de 2",
+    "source": "Fiche TC3.4.2"
+  },
+  {
+    "id": "tc3-logique-multiplexeur",
+    "bloc": "TC3",
+    "notion": "TC3.4.2 Modélisation des commandes logiques des systèmes à évènements",
+    "nom": "Bits d'adresse d'un multiplexeur/décodeur",
+    "tex": "[[n]] = [[\\lceil \\log_2 N \\rceil|\\lceil \\log_{10} N \\rceil|\\frac{N}{2}]] \\quad \\Leftrightarrow \\quad N \\le [[2^n|n^2|2n]]",
+    "legende": "n bits d'adresse, N voies (ou sorties en décodage 1 parmi N)",
+    "source": "Fiche TC3.4.2 ; Sujet 2024 E2 DT4"
+  },
+  {
+    "id": "tc3-logique-gray",
+    "bloc": "TC3",
+    "notion": "TC3.4.2 Modélisation des commandes logiques des systèmes à évènements",
+    "nom": "Conversion binaire naturel → Gray",
+    "tex": "[[g_i]] = [[b_i \\oplus b_{i+1}|b_i \\cdot b_{i+1}|b_i + b_{i+1}]] \\quad ; \\quad g_{n-1} = [[b_{n-1}|\\overline{b_{n-1}}]]",
+    "legende": "b_i bits du binaire naturel, g_i bits du code Gray (un seul bit change entre deux mots consécutifs)",
+    "source": "Fiche TC3.4.2 ; Classique programme"
+  },
+  {
+    "id": "tc3-logique-moore-mealy",
+    "bloc": "TC3",
+    "notion": "TC3.4.2 Modélisation des commandes logiques des systèmes à évènements",
+    "nom": "Sorties d'une machine de Moore / de Mealy",
+    "tex": "S_{Moore} = f([[\\text{état}|\\text{entrée}|\\text{état, entrée}]]) \\quad ; \\quad S_{Mealy} = f([[\\text{état, entrée}|\\text{entrée}|\\text{état}]])",
+    "legende": "Moore : actions liées à l'état ; Mealy : actions liées aussi à la transition",
+    "source": "Fiche TC3.4.2"
+  },
+  {
+    "id": "tc3-asservi-fonction-transfert",
+    "bloc": "TC3",
+    "notion": "TC3.5.1 Modélisation des systèmes asservis continus",
+    "nom": "Fonction de transfert",
+    "tex": "[[H(p)]] = \\frac{[[S(p)]]}{[[E(p)]]}",
+    "legende": "S sortie, E entrée en Laplace, conditions initiales nulles",
+    "source": "Fiche TC3.5.1"
+  },
+  {
+    "id": "tc3-asservi-laplace-derivee",
+    "bloc": "TC3",
+    "notion": "TC3.5.1 Modélisation des systèmes asservis continus",
+    "nom": "Transformée de Laplace d'une dérivée et d'une intégrale",
+    "tex": "\\mathcal{L}\\left\\{\\frac{\\mathrm{d}f}{\\mathrm{d}t}\\right\\} = [[p\\,F(p) - f(0^+)|\\frac{F(p)}{p}|p\\,F(p) + f(0^+)]] \\quad ; \\quad \\mathcal{L}\\left\\{\\int_0^t f\\right\\} = [[\\frac{F(p)}{p}|p\\,F(p)|F(p) - p]]",
+    "legende": "F(p) transformée de f(t)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-asservi-laplace-usuelles",
+    "bloc": "TC3",
+    "notion": "TC3.5.1 Modélisation des systèmes asservis continus",
+    "nom": "Transformées de Laplace usuelles",
+    "tex": "\\mathcal{L}\\{u(t)\\} = [[\\frac{1}{p}|1|\\frac{1}{p^2}]] \\ ; \\ \\mathcal{L}\\{t\\,u(t)\\} = [[\\frac{1}{p^2}|\\frac{2}{p^3}|p^2]] \\ ; \\ \\mathcal{L}\\{e^{-at}u(t)\\} = [[\\frac{1}{p + a}|\\frac{1}{p - a}|\\frac{a}{p+a}]]",
+    "legende": "u échelon unitaire, t·u rampe unitaire",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-asservi-laplace-retard",
+    "bloc": "TC3",
+    "notion": "TC3.5.1 Modélisation des systèmes asservis continus",
+    "nom": "Théorème du retard",
+    "tex": "\\mathcal{L}\\{f(t - T)\\} = [[e^{-T p}|e^{T p}|\\frac{1}{1 + T p}]] \\, [[F(p)|F(p - T)]]",
+    "legende": "T retard pur (s)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-asservi-serie-parallele",
+    "bloc": "TC3",
+    "notion": "TC3.5.1 Modélisation des systèmes asservis continus",
+    "nom": "Réduction série / parallèle",
+    "tex": "H_{serie} = [[H_1 \\cdot H_2|H_1 + H_2|\\frac{H_1}{H_2}]] \\quad ; \\quad H_{parallele} = [[H_1 \\pm H_2|H_1 \\cdot H_2|\\frac{H_1 H_2}{H_1 + H_2}]]",
+    "legende": "blocs en cascade / branches sommées sur un même comparateur",
+    "source": "Fiche TC3.5.1"
+  },
+  {
+    "id": "tc3-asservi-ftbo",
+    "bloc": "TC3",
+    "notion": "TC3.5.1 Modélisation des systèmes asservis continus",
+    "nom": "Fonction de transfert en boucle ouverte",
+    "tex": "[[\\mathrm{FTBO}(p)]] = [[A(p)\\, B(p)|\\frac{A(p)}{B(p)}|\\frac{A(p)}{1 + A(p)B(p)}]]",
+    "legende": "boucle coupée au niveau du comparateur",
+    "source": "Fiche TC3.5.1"
+  },
+  {
+    "id": "tc3-asservi-bf-correcteur",
+    "bloc": "TC3",
+    "notion": "TC3.5.1 Modélisation des systèmes asservis continus",
+    "nom": "Boucle fermée avec correcteur",
+    "tex": "[[H(p)]] = \\frac{[[C(p)\\, G(p)]]}{1 + C(p) G(p) [[H_r(p)|\\frac{1}{H_r(p)}]]}",
+    "legende": "C correcteur, G procédé, H_r capteur (retour)",
+    "source": "Fiche TC3.5.1"
+  },
+  {
+    "id": "tc3-asservi-superposition-perturbation",
+    "bloc": "TC3",
+    "notion": "TC3.5.1 Modélisation des systèmes asservis continus",
+    "nom": "Superposition consigne + perturbation (retour unitaire)",
+    "tex": "[[Y(p)]] = \\frac{[[C(p) G(p)]]}{1 + C(p) G(p)} R(p) + \\frac{[[G(p)|C(p)|C(p) G(p)]]}{[[1 + C(p) G(p)|1 + G(p)|1 - C(p) G(p)]]} D(p)",
+    "legende": "R consigne, D perturbation additive à l'entrée du procédé G, C correcteur",
+    "source": "Fiche TC3.5.1 ; Classique programme"
+  },
+  {
+    "id": "tc3-asservi-ecart",
+    "bloc": "TC3",
+    "notion": "TC3.5.1 Modélisation des systèmes asservis continus",
+    "nom": "Écart de consigne",
+    "tex": "[[\\varepsilon(p)]] = [[R(p) - Y(p)|Y(p) - R(p)|R(p) + Y(p)]]",
+    "legende": "R consigne, Y sortie mesurée",
+    "source": "Fiche TC3.5.1"
+  },
+  {
+    "id": "tc3-asservi-erreur-classe1",
+    "bloc": "TC3",
+    "notion": "TC3.5.1 Modélisation des systèmes asservis continus",
+    "nom": "Erreurs d'un système de classe 1",
+    "tex": "[[\\varepsilon_s]] = [[0|\\frac{E_0}{1 + K_{BO}}|\\infty]] \\quad ; \\quad [[\\varepsilon_v]] = \\frac{a}{[[K_{BO}|1 + K_{BO}|K_{BO}^2]]}",
+    "legende": "ε_s erreur à un échelon, ε_v erreur de traînage à une rampe de pente a, K_BO gain de la FTBO (retour unitaire)",
+    "source": "Fiche TC3.5.1"
+  },
+  {
+    "id": "tc3-asservi-classe2",
+    "bloc": "TC3",
+    "notion": "TC3.5.1 Modélisation des systèmes asservis continus",
+    "nom": "Erreurs d'un système de classe 2",
+    "tex": "\\varepsilon_s = \\varepsilon_v = [[0|\\frac{a}{K_{BO}}|\\infty]] \\quad ; \\quad \\varepsilon_{acc} = \\frac{[[b]]}{[[K_{BO}|1 + K_{BO}|K_{BO}^2]]}",
+    "legende": "entrée parabolique b·t²/2 → erreur d'accélération finie ; ε nulle pour échelon et rampe",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-asservi-premier-ordre-temps",
+    "bloc": "TC3",
+    "notion": "TC3.5.1 Modélisation des systèmes asservis continus",
+    "nom": "Premier ordre — repères temporels",
+    "tex": "s(\\tau) = [[0{,}63|0{,}37|0{,}5]] \\, s_\\infty \\quad ; \\quad t_{5\\%} = [[3\\tau|5\\tau|2{,}2\\tau]]",
+    "legende": "s_∞ valeur finale, t_5% temps de réponse à 5 %",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-asservi-resonance",
+    "bloc": "TC3",
+    "notion": "TC3.5.1 Modélisation des systèmes asservis continus",
+    "nom": "Second ordre — pulsation et facteur de résonance",
+    "tex": "[[\\omega_r]] = \\omega_0 [[\\sqrt{1 - 2\\xi^2}|\\sqrt{1 - \\xi^2}]] \\ ; \\ [[M_r]] = \\frac{1}{[[2\\xi\\sqrt{1 - \\xi^2}|2\\xi|\\xi\\sqrt{1 - \\xi^2}]]} \\ (\\xi < [[\\tfrac{\\sqrt{2}}{2}|1|\\tfrac{1}{2}]])",
+    "legende": "résonance seulement si ξ < √2/2 ≈ 0,707",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-asservi-second-ordre-bode",
+    "bloc": "TC3",
+    "notion": "TC3.5.1 Modélisation des systèmes asservis continus",
+    "nom": "Second ordre — repères de Bode",
+    "tex": "\\varphi(\\omega_0) = [[-90^\\circ|-45^\\circ|-180^\\circ]] \\ ; \\ \\text{pente HF} = [[-40|-20|-60]] \\ \\mathrm{dB/déc} \\ ; \\ \\varphi_{HF} \\to [[-180^\\circ|-270^\\circ]]",
+    "legende": "second ordre sans zéro",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-asservi-integrateur-bode",
+    "bloc": "TC3",
+    "notion": "TC3.5.1 Modélisation des systèmes asservis continus",
+    "nom": "Intégrateur pur — Bode",
+    "tex": "H = \\frac{K}{p} : \\ \\varphi = [[-90^\\circ|-180^\\circ|-45^\\circ]] \\ ; \\ \\text{pente} = [[-20|-40|-6]] \\ \\mathrm{dB/déc}",
+    "legende": "gain nul (0 dB) en ω = K",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-asservi-stabilite-poles",
+    "bloc": "TC3",
+    "notion": "TC3.5.1 Modélisation des systèmes asservis continus",
+    "nom": "Condition de stabilité",
+    "tex": "\\mathrm{Re}(p_i) [[< 0|> 0|\\le 0]] \\quad \\forall\\ p_i \\text{ pôle de } [[H_{BF}(p)|\\mathrm{FTBO}(p)]]",
+    "legende": "système linéaire continu",
+    "source": "Fiche TC3.5.1"
+  },
+  {
+    "id": "tc3-asservi-pi",
+    "bloc": "TC3",
+    "notion": "TC3.5.1 Modélisation des systèmes asservis continus",
+    "nom": "Correcteur PI",
+    "tex": "[[C_{PI}(p)]] = K_p \\, \\frac{[[1 + T_i p|1 + p|T_i p]]}{[[T_i p|1 + T_i p|T_i]]}",
+    "legende": "annule l'erreur statique (classe +1), apporte −90° en basse fréquence",
+    "source": "Fiche TC3.5.1"
+  },
+  {
+    "id": "tc3-asservi-avance-phase-max",
+    "bloc": "TC3",
+    "notion": "TC3.5.1 Modélisation des systèmes asservis continus",
+    "nom": "Avance de phase maximale",
+    "tex": "[[\\sin \\varphi_{max}]] = \\frac{[[a - 1]]}{[[a + 1|a|2a]]} \\quad ; \\quad [[\\omega_{max}]] = \\frac{1}{[[\\tau \\sqrt{a}|\\tau a|\\sqrt{\\tau a}]]}",
+    "legende": "C(p) = K(1 + aτp)/(1 + τp), φ_max atteinte en ω_max (moyenne géométrique de 1/(aτ) et 1/τ)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-asservi-ziegler-nichols-bo",
+    "bloc": "TC3",
+    "notion": "TC3.5.1 Modélisation des systèmes asservis continus",
+    "nom": "Ziegler-Nichols — méthode en boucle ouverte",
+    "tex": "K_p = [[1{,}2|0{,}9|0{,}6]] \\, \\frac{[[T]]}{[[L]]} \\ ; \\ T_i = [[2L|L|3{,}3L]] \\ ; \\ T_d = [[0{,}5L|0{,}25L|2L]]",
+    "legende": "L retard apparent, T constante de temps de la réponse indicielle BO",
+    "source": "Fiche TC3.5.1"
+  },
+  {
+    "id": "tc3-discret-choix-te",
+    "bloc": "TC3",
+    "notion": "TC3.5.2 Modélisation des systèmes discrets",
+    "nom": "Choix empirique de la période d'échantillonnage",
+    "tex": "[[T_e]] \\approx \\frac{[[t_r|\\tau|t_{5\\%}]]}{[[10\\ \\text{à}\\ 20|2|100]]}",
+    "legende": "t_r temps de montée du système (10 à 20 échantillons pendant la montée)",
+    "source": "Fiche TC3.5.2"
+  },
+  {
+    "id": "tc3-discret-retard-echantillonnage",
+    "bloc": "TC3",
+    "notion": "TC3.5.2 Modélisation des systèmes discrets",
+    "nom": "Retard équivalent dû à l'échantillonnage-blocage",
+    "tex": "[[\\tau_{eq}]] \\approx [[\\frac{T_e}{2}|T_e|2 T_e]] \\ \\Rightarrow \\ \\Delta\\varphi = [[-\\omega \\frac{T_e}{2}|-\\omega T_e|-\\frac{\\pi}{2}]]",
+    "legende": "le BOZ introduit un retard moyen de T_e/2 qui consomme de la marge de phase",
+    "source": "Fiche TC3.5.2"
+  },
+  {
+    "id": "tc3-discret-transformee-z",
+    "bloc": "TC3",
+    "notion": "TC3.5.2 Modélisation des systèmes discrets",
+    "nom": "Transformée en z (définition)",
+    "tex": "[[X(z)]] = [[\\sum_{k=0}^{+\\infty}|\\prod_{k=0}^{+\\infty}|\\int_0^{+\\infty}]] [[x(k T_e)]] \\, [[z^{-k}|z^{k}|e^{-k}]]",
+    "legende": "x(kT_e) échantillons du signal, signal causal",
+    "source": "Fiche TC3.5.2 ; Classique programme"
+  },
+  {
+    "id": "tc3-discret-retard-z",
+    "bloc": "TC3",
+    "notion": "TC3.5.2 Modélisation des systèmes discrets",
+    "nom": "Opérateur retard en z",
+    "tex": "\\mathcal{Z}\\{x_{k-1}\\} = [[z^{-1}|z|1 - z^{-1}]] \\, [[X(z)|X(z^{-1})]]",
+    "legende": "z⁻¹ = retard d'une période T_e",
+    "source": "Fiche TC3.5.2"
+  },
+  {
+    "id": "tc3-discret-z-usuelles",
+    "bloc": "TC3",
+    "notion": "TC3.5.2 Modélisation des systèmes discrets",
+    "nom": "Transformées en z usuelles",
+    "tex": "\\mathcal{Z}\\{u_k\\} = [[\\frac{z}{z - 1}|\\frac{1}{z - 1}|\\frac{z - 1}{z}]] \\ ; \\ \\mathcal{Z}\\{k T_e\\} = [[\\frac{T_e\\, z}{(z - 1)^2}|\\frac{z}{(z - 1)^2}|\\frac{T_e}{z - 1}]] \\ ; \\ \\mathcal{Z}\\{e^{-a k T_e}\\} = [[\\frac{z}{z - e^{-a T_e}}|\\frac{z}{z - e^{a T_e}}|\\frac{1}{z - e^{-a T_e}}]]",
+    "legende": "échelon unité, rampe, exponentielle échantillonnés",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-discret-premier-ordre-boz",
+    "bloc": "TC3",
+    "notion": "TC3.5.2 Modélisation des systèmes discrets",
+    "nom": "Premier ordre discrétisé avec BOZ",
+    "tex": "[[G(z)]] = \\frac{K\\left([[1 - a|1 + a|a]]\\right)}{[[z - a|z + a|1 - a z]]} \\quad , \\quad a = [[e^{-T_e/\\tau}|e^{-\\tau/T_e}|1 - \\frac{\\tau}{T_e}]]",
+    "legende": "G(p) = K/(1 + τp), T_e période d'échantillonnage",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-discret-pi-recurrence",
+    "bloc": "TC3",
+    "notion": "TC3.5.2 Modélisation des systèmes discrets",
+    "nom": "Équation de récurrence d'un PI numérique (Euler arrière)",
+    "tex": "[[u_k]] = [[u_{k-1}|0|u_{k+1}]] + K_p\\left([[\\varepsilon_k - \\varepsilon_{k-1}|\\varepsilon_k + \\varepsilon_{k-1}|\\varepsilon_k]]\\right) + \\frac{K_p\\, [[T_e]]}{[[T_i]]} \\, \\varepsilon_k",
+    "legende": "C(p) = K_p(1 + 1/(T_i p)) discrétisé par p ≈ (1 − z⁻¹)/T_e",
+    "source": "Classique programme"
+  }
+]

@@ -1,0 +1,344 @@
+[
+  {
+    "id": "oe1-s23-beer-lambert",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Loi de Beer-Lambert (atténuation exponentielle)",
+    "tex": "[[I|I_0]] = [[I_0|\\frac{1}{I_0}]] \\cdot e^{-[[\\alpha\\, d|\\frac{d}{\\alpha}|\\alpha\\, d^2]]}",
+    "legende": "I intensité transmise, I_0 intensité incidente, α coefficient d'absorption (m⁻¹), d épaisseur traversée (m)",
+    "source": "Sujet 2023 E2 (Q3, Q14)"
+  },
+  {
+    "id": "oe1-s23-absorbance",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Absorbance (Beer-Lambert molaire)",
+    "tex": "A = \\log_{10}\\left(\\frac{[[I_0|I]]}{[[I|I_0]]}\\right) = [[\\varepsilon|\\frac{1}{\\varepsilon}]] \\cdot [[\\ell|\\ell^2]] \\cdot [[c|\\frac{1}{c}|c^2]]",
+    "legende": "A absorbance, ε coefficient d'extinction molaire (L·mol⁻¹·cm⁻¹), ℓ longueur traversée (cm), c concentration (mol·L⁻¹)",
+    "source": "Sujet 2023 E2 (Q4, Q14)"
+  },
+  {
+    "id": "oe1-s23-bande-passante-tr",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Bande passante d'un capteur à partir du temps de montée",
+    "tex": "[[f_c|t_r|\\omega_c]] \\approx \\frac{[[0{,}35|2{,}2|3]]}{[[t_r|2\\pi t_r|t_r^2]]}",
+    "legende": "f_c fréquence de coupure à −3 dB (Hz), t_r temps de montée 10 %–90 % (s) — système du 1er ordre (t_r = 2,2 τ)",
+    "source": "Sujet 2023 E2 (Q18)"
+  },
+  {
+    "id": "oe1-s23-photodiode-courant",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Courant d'une photodiode (sensibilité spectrale)",
+    "tex": "[[I_{ph}|P]] = [[S_\\lambda|\\frac{1}{S_\\lambda}]] \\cdot [[P|P^2|\\sqrt{P}]]",
+    "legende": "I_ph photocourant (A), S_λ sensibilité spectrale (A/W), P puissance lumineuse reçue (W)",
+    "source": "Sujet 2023 E2 (Q15)"
+  },
+  {
+    "id": "oe1-s23-ctn",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Thermistance CTN (loi en B)",
+    "tex": "R(T) = [[R_0|\\frac{1}{R_0}]] \\cdot \\exp\\left([[B|-B|\\frac{1}{B}]]\\left(\\frac{1}{[[T|T^2]]} - \\frac{1}{[[T_0|R_0 T_0]]}\\right)\\right)",
+    "legende": "R_0 résistance à la température de référence T_0, B constante du matériau (K), T température absolue (K)",
+    "source": "Sujet 2023 E2 (Q43)"
+  },
+  {
+    "id": "oe1-s23-ctn-alpha",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Coefficient de température d'une CTN",
+    "tex": "\\alpha = \\frac{1}{R}\\frac{\\mathrm{d}R}{\\mathrm{d}T} = [[-|+]]\\frac{[[B|B^2|\\frac{1}{B}]]}{[[T^2|T|T^3]]}",
+    "legende": "α coefficient de température (K⁻¹), négatif pour une CTN ; B constante du matériau (K), T température absolue (K)",
+    "source": "Sujet 2023 E2 (Q43)"
+  },
+  {
+    "id": "oe1-s23-sensibilite-resonance",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Sensibilité de la fréquence de résonance LC à l'inductance",
+    "tex": "\\frac{\\Delta f_r}{f_r} = [[-\\frac{1}{2}|-2|\\frac{1}{2}|-1]] \\cdot \\frac{[[\\Delta L|\\Delta C]]}{[[L|C]]}",
+    "legende": "f_r = 1/(2π√(LC)) ; variation relative de fréquence pour une petite variation relative d'inductance (capteur inductif)",
+    "source": "Sujet 2023 E2 (Q39)"
+  },
+  {
+    "id": "oe1-s23-amplificateur-charge",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Amplificateur de charge",
+    "tex": "[[V_s|Q]] = [[-|+]]\\frac{[[Q|Q^2|C_g]]}{[[C_g|R_g|Q]]}",
+    "legende": "V_s tension de sortie (V), Q charge fournie par le capteur (C), C_g capacité de contre-réaction (F) — AOP parfait, R_g infinie",
+    "source": "Sujet 2023 E2 (Q53)"
+  },
+  {
+    "id": "oe2-s23-transimpedance",
+    "bloc": "OE2",
+    "notion": "OE2.1 Fonctions élémentaires de l'électronique",
+    "nom": "Amplificateur transimpédance (convertisseur courant-tension)",
+    "tex": "[[v_s|i_e]] = [[-|+]][[R|\\frac{1}{R}|R^2]] \\cdot [[i_e|v_s]]",
+    "legende": "v_s tension de sortie (V), R résistance de contre-réaction (Ω), i_e courant injecté sur l'entrée inverseuse (photodiode) (A)",
+    "source": "Sujet 2023 E2 (Q17)"
+  },
+  {
+    "id": "oe2-s23-rejecteur",
+    "bloc": "OE2",
+    "notion": "OE2.1 Fonctions élémentaires de l'électronique",
+    "nom": "Filtre réjecteur (coupe-bande) du 2e ordre",
+    "tex": "\\underline{H}(jf) = \\frac{[[1 + \\left(\\frac{jf}{f_R}\\right)^2|\\frac{jf}{f_R}|1]]}{1 + \\frac{jf}{[[Q f_R|\\frac{f_R}{Q}|2 Q f_R]]} + \\left(\\frac{jf}{f_R}\\right)^2}",
+    "legende": "f_R fréquence de réjection (H(f_R) = 0), Q facteur de qualité (Q élevé = réjection étroite)",
+    "source": "Sujet 2023 E2 (Q22)"
+  },
+  {
+    "id": "oe2-s23-butterworth-ordre",
+    "bloc": "OE2",
+    "notion": "OE2.1 Fonctions élémentaires de l'électronique",
+    "nom": "Ordre minimal d'un filtre de Butterworth",
+    "tex": "n \\geq \\frac{\\log_{10}\\left(10^{[[A/10|A/20|A]]} - 1\\right)}{[[2|1|20]]\\,\\log_{10}\\left(\\frac{[[f_a|f_c]]}{[[f_c|f_a]]}\\right)}",
+    "legende": "n ordre, A atténuation exigée (dB) à la fréquence f_a, f_c fréquence de coupure à −3 dB",
+    "source": "Sujet 2023 E2 (Q25)"
+  },
+  {
+    "id": "oe2-s23-sallen-key-omega0",
+    "bloc": "OE2",
+    "notion": "OE2.1 Fonctions élémentaires de l'électronique",
+    "nom": "Cellule de Sallen-Key passe-bas (gain unité, R égales) : pulsation propre",
+    "tex": "\\omega_0 = \\frac{[[1|2]]}{[[R|R^2]]\\,[[\\sqrt{C_1 C_2}|C_1 C_2|C_1 + C_2]]}",
+    "legende": "R résistances égales (Ω), C_1 capacité vers la masse, C_2 capacité de contre-réaction (F)",
+    "source": "Sujet 2023 E2 (Q26-27)"
+  },
+  {
+    "id": "oe2-s23-sallen-key-m",
+    "bloc": "OE2",
+    "notion": "OE2.1 Fonctions élémentaires de l'électronique",
+    "nom": "Cellule de Sallen-Key passe-bas (gain unité, R égales) : amortissement",
+    "tex": "m = [[\\sqrt{\\frac{C_1}{C_2}}|\\sqrt{\\frac{C_2}{C_1}}|\\frac{C_1}{C_2}|\\frac{1}{2}\\sqrt{\\frac{C_1}{C_2}}]] \\quad ; \\quad H(p) = \\frac{1}{1 + [[2RC_1|RC_2|2RC_2]]\\,p + R^2 C_1 C_2\\, p^2}",
+    "legende": "m coefficient d'amortissement, C_1 capacité entre entrée + et masse, C_2 capacité de contre-réaction",
+    "source": "Sujet 2023 E2 (Q26-27)"
+  },
+  {
+    "id": "oe2-s23-rlc-parallele",
+    "bloc": "OE2",
+    "notion": "OE2.1 Fonctions élémentaires de l'électronique",
+    "nom": "Admittance d'un circuit RLC parallèle",
+    "tex": "\\underline{Y} = \\frac{1}{[[R_p|jR_p]]} + [[jC\\omega|\\frac{1}{jC\\omega}|C\\omega]] + [[\\frac{1}{jL\\omega}|jL\\omega|L\\omega]]",
+    "legende": "Y = 1/Z admittance (S) ; à la résonance ω_r = 1/√(LC), Z = R_p (maximum)",
+    "source": "Sujet 2023 E2 (Q36-37)"
+  },
+  {
+    "id": "oe2-s23-q-parallele",
+    "bloc": "OE2",
+    "notion": "OE2.1 Fonctions élémentaires de l'électronique",
+    "nom": "Facteur de qualité d'un RLC parallèle",
+    "tex": "Q = [[R_p|\\frac{1}{R_p}]]\\,[[\\sqrt{\\frac{C}{L}}|\\sqrt{\\frac{L}{C}}|\\sqrt{LC}]] = R_p\\,C\\,[[\\omega_r|\\frac{1}{\\omega_r}]]",
+    "legende": "Q facteur de qualité (coefficient de surintensité I_C/I_R), R_p résistance parallèle (Ω), ω_r = 1/√(LC)",
+    "source": "Sujet 2023 E2 (Q40)"
+  },
+  {
+    "id": "oe2-s23-serie-parallele",
+    "bloc": "OE2",
+    "notion": "OE2.1 Fonctions élémentaires de l'électronique",
+    "nom": "Résistance parallèle équivalente des pertes d'une bobine",
+    "tex": "[[R_p|R_s]] = \\frac{[[L|C]]}{[[R_s\\, C|R_s\\, L|C]]} = [[Q^2|Q|\\sqrt{Q}]]\\, R_s",
+    "legende": "R_s résistance série de la bobine (Ω), R_p résistance parallèle équivalente au voisinage de la résonance, Q = Lω_r/R_s",
+    "source": "Sujet 2023 E2 (Q35-41)"
+  },
+  {
+    "id": "oe2-s23-moyenne-glissante",
+    "bloc": "OE2",
+    "notion": "OE2.2.1 Analyse spectrale",
+    "nom": "Filtre à moyenne glissante (RIF)",
+    "tex": "y[n] = [[\\frac{1}{M}|\\frac{1}{M-1}|M]] \\sum_{j=0}^{[[M-1|M|M+1]]} x[n - j]",
+    "legende": "M nombre d'échantillons moyennés ; filtre RIF passe-bas, toujours stable",
+    "source": "Sujet 2023 E2 (Q34, Q62)"
+  },
+  {
+    "id": "oe3-s23-charge-condensateur",
+    "bloc": "OE3",
+    "notion": "OE3.2 Modélisations électriques et énergétiques",
+    "nom": "Charge d'un condensateur",
+    "tex": "[[Q|C]] = [[C|\\frac{1}{C}|C^2]] \\cdot [[U|U^2|\\frac{U}{2}]]",
+    "legende": "Q charge (C), C capacité (F), U tension aux bornes (V)",
+    "source": "Sujet 2023 E2 (Q51)"
+  },
+  {
+    "id": "oe3-s23-charge-rc-duree",
+    "bloc": "OE3",
+    "notion": "OE3.2 Modélisations électriques et énergétiques",
+    "nom": "Durée de charge RC entre deux tensions",
+    "tex": "t_1 - t_0 = [[RC|\\frac{1}{RC}|2RC]] \\cdot \\ln\\left(\\frac{E - [[V_0|V_1]]}{E - [[V_1|V_0]]}\\right)",
+    "legende": "charge d'un condensateur sous tension E à travers R : v(t) passe de V_0 à V_1 ; τ = RC (s)",
+    "source": "Sujet 2023 E3 (Q44)"
+  },
+  {
+    "id": "oe3-s23-transfo-rs-tri",
+    "bloc": "OE3",
+    "notion": "OE3.2 Modélisations électriques et énergétiques",
+    "nom": "Essai en court-circuit d'un transformateur triphasé : résistance par phase",
+    "tex": "R_s = \\frac{[[P_{cc}|\\sqrt{3}P_{cc}]]}{[[3|\\sqrt{3}|1]]\\,[[I_{2n}^2|I_{2n}]]}",
+    "legende": "R_s résistance par phase ramenée au secondaire (modèle étoile), P_cc pertes totales en court-circuit (W), I_2n courant secondaire nominal (A)",
+    "source": "Sujet 2023 E1 (Q47)"
+  },
+  {
+    "id": "oe3-s23-transfo-zs-ucc",
+    "bloc": "OE3",
+    "notion": "OE3.2 Modélisations électriques et énergétiques",
+    "nom": "Impédance ramenée au secondaire à partir de u_cc",
+    "tex": "Z_s = [[u_{cc}|\\frac{1}{u_{cc}}|u_{cc}^2]] \\cdot \\frac{[[V_{2n}|I_{2n}]]}{[[I_{2n}|V_{2n}]]}",
+    "legende": "u_cc tension de court-circuit relative, V_2n tension simple secondaire nominale (V), I_2n courant secondaire nominal (A)",
+    "source": "Sujet 2023 E1 (Q47)"
+  },
+  {
+    "id": "oe3-s23-flyback-imax",
+    "bloc": "OE3",
+    "notion": "OE3.4 Électronique de puissance",
+    "nom": "Flyback discontinu : courant primaire crête",
+    "tex": "I_{1\\max} = \\frac{[[\\alpha|1-\\alpha|\\frac{\\alpha}{1-\\alpha}]]\\, E}{[[L_1|\\frac{1}{L_1}]]\\, [[f_H|\\frac{1}{f_H}|2f_H]]}",
+    "legende": "α rapport cyclique, E tension primaire (V), L_1 inductance primaire (H), f_H fréquence de hachage (Hz) — circuit démagnétisé au début de chaque période",
+    "source": "Sujet 2023 E3 (Q27)"
+  },
+  {
+    "id": "oe3-s23-flyback-puissance",
+    "bloc": "OE3",
+    "notion": "OE3.4 Électronique de puissance",
+    "nom": "Flyback discontinu : puissance transférée",
+    "tex": "P = [[\\frac{1}{2}|2|1]]\\, L_1\\, [[I_{1\\max}^2|I_{1\\max}]]\\, [[f_H|\\frac{1}{f_H}]]",
+    "legende": "énergie ½L_1I²_1max stockée puis restituée à chaque période ; f_H fréquence de hachage (Hz)",
+    "source": "Sujet 2023 E3 (Q27-29)"
+  },
+  {
+    "id": "oe3-s23-onduleur-composee-eff",
+    "bloc": "OE3",
+    "notion": "OE3.4 Électronique de puissance",
+    "nom": "Onduleur triphasé pleine onde (180°) : valeur efficace de la tension composée",
+    "tex": "U = [[\\sqrt{\\frac{2}{3}}|\\frac{\\sqrt{6}}{\\pi}|\\frac{2}{3}|\\frac{1}{\\sqrt{3}}]]\\, [[U_{Bat}|\\frac{U_{Bat}}{2}]] \\approx 0{,}816\\, U_{Bat}",
+    "legende": "U valeur efficace de u_AB (créneaux ±U_Bat de largeur 2π/3), U_Bat tension du bus continu",
+    "source": "Sujet 2023 E3 (Q18)"
+  },
+  {
+    "id": "oe3-s23-pertes-comm-mise-echelle",
+    "bloc": "OE3",
+    "notion": "OE3.4 Électronique de puissance",
+    "nom": "Pertes de commutation ramenées aux conditions réelles",
+    "tex": "P_{comm} = f_{dec}\\left(E_{on} + E_{off} + E_{rec}\\right) \\cdot \\frac{[[I_{K0}|I_{ref}]]}{[[I_{ref}|I_{K0}]]} \\cdot \\frac{[[U_{DC}|U_{ref}]]}{[[U_{ref}|U_{DC}]]}",
+    "legende": "énergies données par le constructeur à (I_ref, U_ref) ; I_K0 courant moyen commuté, U_DC tension du bus, f_dec fréquence de découpage",
+    "source": "Sujet 2023 E3 (Q46-47)"
+  },
+  {
+    "id": "oe3-s23-moyenne-sinus",
+    "bloc": "OE3",
+    "notion": "OE3.4 Électronique de puissance",
+    "nom": "Valeurs moyennes d'une sinusoïde redressée",
+    "tex": "\\langle i \\rangle_{\\text{simple alt.}} = \\frac{\\hat{I}}{[[\\pi|2\\pi|\\sqrt{2}]]} \\quad ; \\quad \\langle i \\rangle_{\\text{double alt.}} = \\frac{[[2\\hat{I}|\\hat{I}|\\sqrt{2}\\hat{I}]]}{\\pi}",
+    "legende": "Î amplitude (valeur crête) du courant sinusoïdal ; Î = I√2",
+    "source": "Sujet 2023 E3 (Q46)"
+  },
+  {
+    "id": "oe3-s23-angle-solide-cone",
+    "bloc": "OE3",
+    "notion": "OE3.6 Utilisation de l'énergie électrique et procédés associés",
+    "nom": "Angle solide d'un cône",
+    "tex": "\\Omega = [[2\\pi|4\\pi|\\pi]]\\left(1 - [[\\cos\\varphi|\\sin\\varphi|\\cos^2\\varphi]]\\right)",
+    "legende": "Ω angle solide (sr), φ demi-angle au sommet du cône ; demi-espace : Ω = 2π sr",
+    "source": "Sujet 2023 E2 (Q12)"
+  },
+  {
+    "id": "oe3-s23-intensite-energetique",
+    "bloc": "OE3",
+    "notion": "OE3.6 Utilisation de l'énergie électrique et procédés associés",
+    "nom": "Intensité (énergétique ou lumineuse) d'une source",
+    "tex": "[[I|\\Phi]] = \\frac{\\mathrm{d}[[\\Phi|I]]}{\\mathrm{d}[[\\Omega|S]]} \\quad \\Rightarrow \\quad \\Phi = I\\,\\Omega\\ \\text{(émission uniforme)}",
+    "legende": "I intensité (W/sr ou cd), Φ flux (W ou lm), Ω angle solide (sr)",
+    "source": "Sujet 2023 E2 (Q13)"
+  },
+  {
+    "id": "oe3-s23-batterie-association",
+    "bloc": "OE3",
+    "notion": "OE3.6 Utilisation de l'énergie électrique et procédés associés",
+    "nom": "Association de cellules d'une batterie",
+    "tex": "U_{bat} = [[N_s|N_p|N_s N_p]]\\, U_{cell} \\quad ; \\quad Q_{bat} = [[N_p|N_s|\\frac{1}{N_p}]]\\, Q_{cell} \\quad ; \\quad E = [[N_s N_p|N_s + N_p]]\\, U_{cell}\\, Q_{cell}",
+    "legende": "N_s cellules en série, N_p branches en parallèle, U_cell tension (V) et Q_cell capacité (A·h) d'une cellule, E énergie (Wh)",
+    "source": "Sujet 2023 E3 (Q8-9)"
+  },
+  {
+    "id": "tc3-s23-sabine",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Temps de réverbération (formule de Sabine)",
+    "tex": "[[T_r|A]] = [[0{,}16|0{,}016|1{,}6]] \\cdot \\frac{[[V|S]]}{[[A|V]]}",
+    "legende": "T_r temps de décroissance de 60 dB (s), V volume du local (m³), A aire d'absorption équivalente (m²)",
+    "source": "Sujet 2023 E1 (Q15-16)"
+  },
+  {
+    "id": "tc3-s23-aire-absorption",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Aire d'absorption acoustique équivalente",
+    "tex": "A = \\sum_i [[\\alpha_i|\\frac{1}{\\alpha_i}|1-\\alpha_i]] \\, [[S_i|S_i^2|V_i]] = [[\\bar{\\alpha}|\\alpha_{\\max}]]\\, S_{tot}",
+    "legende": "α_i coefficient d'absorption (0 à 1) de la surface S_i (m²), ᾱ coefficient moyen, A en m² (sabins métriques)",
+    "source": "Sujet 2023 E1 (Q15-16)"
+  },
+  {
+    "id": "tc3-s23-niveau-acoustique",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Niveau de pression acoustique",
+    "tex": "L_p = [[20|10|40]]\\,\\log_{10}\\left(\\frac{p_{\\mathrm{eff}}}{p_0}\\right) \\quad ; \\quad p_0 = [[2\\cdot 10^{-5}|10^{-12}|2\\cdot 10^{-3}]]\\ \\mathrm{Pa}",
+    "legende": "L_p niveau (dB), p_eff pression acoustique efficace (Pa), p_0 seuil d'audibilité (20 µPa)",
+    "source": "Sujet 2023 E1 (Q15)"
+  },
+  {
+    "id": "tc3-s23-moment-polaire-tube-mince",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Moment quadratique polaire d'un tube mince",
+    "tex": "I_0 \\approx \\frac{\\pi\\, [[D^3|D^4|D^2]]\\, [[e|e^3]]}{[[4|32|2]]}",
+    "legende": "D diamètre moyen (m), e épaisseur (m) avec e ≪ D ; équivaut à I_0 ≈ 2πR³e",
+    "source": "Sujet 2023 E1 (Q27)"
+  },
+  {
+    "id": "tc3-s23-pulsation-propre",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Pulsation propre d'un oscillateur masse-ressort",
+    "tex": "\\omega_0 = [[\\sqrt{\\frac{k}{m}}|\\sqrt{\\frac{m}{k}}|\\frac{k}{m}]] \\quad ; \\quad f_0 = \\frac{1}{[[2\\pi|\\pi|4\\pi]]}\\sqrt{\\frac{k}{m}}",
+    "legende": "k raideur (N/m), m masse (kg) ; en torsion : ω_0 = √(k_t/J)",
+    "source": "Sujet 2023 E1 (Q30)"
+  },
+  {
+    "id": "tc3-s23-centre-gravite",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Centre de gravité d'un ensemble (barycentre)",
+    "tex": "\\overrightarrow{OG} = \\frac{\\sum_i [[m_i|1]]\\, [[\\overrightarrow{OG_i}|\\overrightarrow{G_iO}]]}{[[\\sum_i m_i|m_i|\\sum_i G_i]]}",
+    "legende": "m_i masse du sous-ensemble i (kg), G_i son centre de gravité",
+    "source": "Sujet 2023 E1 (Q33)"
+  },
+  {
+    "id": "tc3-s23-mouflage",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Mouflage (palan) à n brins porteurs",
+    "tex": "F = [[n|\\frac{1}{n}|2n]]\\, T \\quad ; \\quad v_{charge} = [[\\frac{v_{c\\hat{a}ble}}{n}|n\\, v_{c\\hat{a}ble}|\\frac{v_{c\\hat{a}ble}}{n^2}]]",
+    "legende": "F effort sur la charge (N), T tension d'un brin (N), n nombre de brins porteurs, v vitesses (m/s) — mouflage idéal (poulie mobile simple : n = 2)",
+    "source": "Sujet 2023 E1 (Q31, Q34)"
+  },
+  {
+    "id": "tc5-s23-taille-video",
+    "bloc": "TC5",
+    "notion": "TC5.4 Architecture de l'ordinateur",
+    "nom": "Taille d'une vidéo numérique",
+    "tex": "N_{octets} = \\frac{[[N_x N_y|N_x + N_y]] \\cdot [[n_o|8 n_o]] \\cdot [[f_i|\\frac{1}{f_i}]] \\cdot \\Delta t}{[[k_c|\\frac{1}{k_c}]]}",
+    "legende": "N_x×N_y pixels, n_o octets par pixel (3 en RGB), f_i fréquence d'images (Hz), Δt durée (s), k_c taux de compression",
+    "source": "Sujet 2023 E1 (Q1)"
+  },
+  {
+    "id": "tc5-s23-trame-uart",
+    "bloc": "TC5",
+    "notion": "TC5.5 Utilisation d'un réseau",
+    "nom": "Nombre de bits d'un caractère en liaison série asynchrone",
+    "tex": "n_{bits} = [[1|0|2]]_{\\text{START}} + [[n_d|2n_d|8]]_{\\text{données}} + n_{\\text{parité}} + [[n_{\\text{STOP}}|2n_{\\text{STOP}}]]",
+    "legende": "1 bit de START, n_d bits de données (LSB en premier), 0 ou 1 bit de parité, 1 ou 2 bits de STOP ; durée = n_bits/D",
+    "source": "Sujet 2023 E1 (Q2)"
+  }
+]

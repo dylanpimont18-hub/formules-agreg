@@ -1,0 +1,362 @@
+[
+  {
+    "id": "tc3-s22-poussee-hydrostatique-paroi",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Résultante de la poussée hydrostatique sur une paroi verticale",
+    "tex": "[[R|p_{max}|F]] = \\frac{[[\\rho \\, g \\, L \\, h^2|\\rho \\, g \\, L \\, h|\\rho \\, g \\, h^2]]}{[[2|3|4]]}",
+    "legende": "R résultante (N), ρ masse volumique du fluide (kg/m³), g (m/s²), L largeur de la paroi (m), h hauteur de fluide (m) — pression triangulaire p = ρg(h − z)",
+    "source": "Sujet 2022 E1 (Q8-Q9)"
+  },
+  {
+    "id": "tc3-s22-centre-poussee",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Point d'application de la poussée hydrostatique (paroi verticale)",
+    "tex": "[[z_Q|z_G|h_Q]] = \\frac{[[h|2h|h^2]]}{[[3|2|4]]}",
+    "legende": "z_Q hauteur du centre de poussée mesurée depuis le fond (m), h hauteur de fluide (m) — barycentre du triangle de pression",
+    "source": "Sujet 2022 E1 (Q10)"
+  },
+  {
+    "id": "tc3-s22-fleche-console-force-a",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Flèche en bout de console, force appliquée à la distance a de l'encastrement",
+    "tex": "[[f]] = \\frac{F \\, [[a^2|a^3|a]] \\left([[3L - a|2L - a|3L + a]]\\right)}{[[6|3|2]] \\, E \\, I}",
+    "legende": "f flèche à l'extrémité libre (m), F force (N), a distance encastrement–force (m), L longueur de la poutre (m), E module d'Young (Pa), I moment quadratique (m⁴) — redonne FL³/3EI pour a = L",
+    "source": "Sujet 2022 E1 (Q12-Q14)"
+  },
+  {
+    "id": "tc3-s22-conductivite-equivalente",
+    "bloc": "TC3",
+    "notion": "TC3.3.1 Thermique du bâtiment",
+    "nom": "Conductivité thermique équivalente d'une paroi multicouche",
+    "tex": "[[\\lambda_{eq}|R_{eq}|U]] = \\frac{[[\\sum_i e_i|e_{max}|\\sum_i \\lambda_i]]}{[[\\sum_i \\frac{e_i}{\\lambda_i}|\\sum_i \\frac{\\lambda_i}{e_i}|\\sum_i e_i \\lambda_i]]}",
+    "legende": "λ_eq conductivité équivalente (W·m⁻¹·K⁻¹), e_i épaisseur de la couche i (m), λ_i sa conductivité — couches en série",
+    "source": "Sujet 2022 E1 (Q37)"
+  },
+  {
+    "id": "tc3-s22-mgd-robot-plan-2r",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Modèle géométrique direct d'un bras plan à 2 axes (2R)",
+    "tex": "x_P = a_1 [[\\cos\\theta_1|\\sin\\theta_1]] + a_2 [[\\cos(\\theta_1 + \\theta_2)|\\cos\\theta_2|\\sin(\\theta_1 + \\theta_2)]],\\quad y_P = a_1 [[\\sin\\theta_1|\\cos\\theta_1|\\tan\\theta_1]] + a_2 [[\\sin(\\theta_1 + \\theta_2)|\\sin\\theta_2|\\cos(\\theta_1 + \\theta_2)]]",
+    "legende": "a_1, a_2 longueurs des segments (m), θ_1 angle absolu du bras, θ_2 angle relatif avant-bras/bras (rad), P extrémité",
+    "source": "Sujet 2022 E1 (Q21-Q22)"
+  },
+  {
+    "id": "oe1-s22-temps-de-vol",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Télémétrie par temps de vol (Lidar, ultrasons)",
+    "tex": "[[d]] = \\frac{[[c \\, \\Delta t|2 c \\, \\Delta t|\\frac{\\Delta t}{c}]]}{[[2|4|\\sqrt{2}]]}",
+    "legende": "d distance à l'obstacle (m), c célérité de l'onde (m/s), Δt durée de l'aller-retour (s)",
+    "source": "Sujet 2022 E1 (Q32)"
+  },
+  {
+    "id": "oe1-s22-codeur-absolu-resolution",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Résolution d'un codeur absolu n bits",
+    "tex": "[[\\Delta\\theta|q]] = \\frac{[[360^\\circ|180^\\circ|90^\\circ]]}{[[2^n|4 \\cdot 2^n|n]]}",
+    "legende": "Δθ plus petit angle discernable, n nombre de bits du codeur absolu (2ⁿ positions par tour)",
+    "source": "Sujet 2022 E1 (Q27)"
+  },
+  {
+    "id": "oe1-s22-codeur-frequence",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Fréquence des signaux d'un codeur incrémental",
+    "tex": "[[f_{codeur}|f_e]] = \\frac{[[N \\, \\Omega|4 N \\, \\Omega|\\Omega]]}{[[2\\pi|60|\\pi]]}",
+    "legende": "f fréquence d'une voie A ou B (Hz), N nombre d'impulsions par tour, Ω vitesse de rotation (rad/s)",
+    "source": "Sujet 2022 E3 (Q13)"
+  },
+  {
+    "id": "oe3-s22-ms-couple-psi",
+    "bloc": "OE3",
+    "notion": "OE3.3 Convertisseurs électromécaniques",
+    "nom": "Couple d'une machine synchrone autopilotée (angle ψ entre I et E)",
+    "tex": "[[C_{em}|P_{em}]] = \\frac{[[3|\\sqrt{3}|1]] \\, E \\, I \\, [[\\cos\\psi|\\sin\\psi|\\tan\\psi]]}{[[\\Omega|\\omega|p \\, \\omega]]}",
+    "legende": "E, I valeurs efficaces (V, A) par phase, ψ angle entre I et E, Ω vitesse mécanique (rad/s) ; avec E = K_E Ω : C_em = 3 K_E I cos ψ",
+    "source": "Sujet 2022 E1 (Q29-Q30)"
+  },
+  {
+    "id": "oe3-s22-ms-psi-nul",
+    "bloc": "OE3",
+    "notion": "OE3.3 Convertisseurs électromécaniques",
+    "nom": "Tension d'alimentation d'une machine synchrone pilotée à ψ = 0",
+    "tex": "[[V^2|V|V^2 + E^2]] = \\left(E + [[R \\, I|X \\, I|L \\, I]]\\right)^2 + \\left([[X \\, I|R \\, I|E \\, I]]\\right)^2",
+    "legende": "V tension efficace par phase (V), E fem (V), R résistance (Ω), X = L_c ω réactance synchrone (Ω), I courant en phase avec E (couple max par ampère)",
+    "source": "Sujet 2022 E1 (Q29)"
+  },
+  {
+    "id": "oe3-s22-mcc-caracteristique-couple",
+    "bloc": "OE3",
+    "notion": "OE3.3 Convertisseurs électromécaniques",
+    "nom": "Couple d'une MCC en fonction de la tension et de la vitesse (L négligée)",
+    "tex": "[[C_m]] = \\frac{[[K_c|K_e|R]]}{[[R|L|K_c]]} \\left(U - [[K_e \\, \\Omega|R \\, I|K_c \\, \\Omega]]\\right)",
+    "legende": "C_m couple (N·m), K_c constante de couple (N·m/A), K_e constante de fem (V·s/rad), R résistance d'induit (Ω), U tension d'induit (V), Ω vitesse (rad/s)",
+    "source": "Sujet 2022 E2 (QB-1, QB-2)"
+  },
+  {
+    "id": "tc3-s22-archimede",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Poussée d'Archimède",
+    "tex": "[[F_a|P]] = [[\\rho_{fluide}|\\rho_{corps}|\\rho_{moyen}]] \\cdot [[V_{\\text{imm}}|V_{fluide}|S]] \\cdot [[g|\\frac{1}{g}|g^2]]",
+    "legende": "F_a poussée verticale vers le haut (N), ρ_fluide masse volumique du fluide déplacé (kg/m³), V volume immergé (m³), g (m/s²)",
+    "source": "Sujet 2022 E2 (QA-1 à QA-5) ; Sujet 2024 E1 (Q13)"
+  },
+  {
+    "id": "tc3-s22-masse-volumique-gaz-parfait",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Masse volumique d'un gaz parfait",
+    "tex": "[[\\rho]] = \\frac{[[P \\, M|P|M \\, R]]}{[[R \\, T|T|P \\, T]]}",
+    "legende": "ρ (kg/m³), P pression (Pa), M masse molaire (kg/mol), R = 8,31 J·K⁻¹·mol⁻¹, T température (K)",
+    "source": "Sujet 2022 E2 (QA-5)"
+  },
+  {
+    "id": "tc3-s22-atmosphere-isotherme",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Pression dans une atmosphère isotherme (nivellement barométrique)",
+    "tex": "P(z) = P_0 \\, [[e^{-z/z_e}|e^{z/z_e}|1 - \\frac{z}{z_e}]],\\quad z_e = \\frac{[[R \\, T|R|T]]}{[[M \\, g|M|g]]}",
+    "legende": "P pression (Pa), z altitude (m), z_e hauteur caractéristique (≈ 8 km pour l'air), M masse molaire (kg/mol), T température (K)",
+    "source": "Sujet 2022 E2 (QA-6, QA-7)"
+  },
+  {
+    "id": "tc3-s22-oscillateur-torsion",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Pulsation propre d'un oscillateur de torsion (inertie + raideur)",
+    "tex": "[[\\omega_0|f_0]] = [[\\sqrt{\\frac{k}{J}}|\\sqrt{\\frac{J}{k}}|\\frac{k}{J}]]",
+    "legende": "ω_0 pulsation propre (rad/s), k raideur de torsion (N·m/rad), J moment d'inertie (kg·m²) — issu de J θ'' + k θ = 0",
+    "source": "Sujet 2022 E2 (QB-3, QB-11)"
+  },
+  {
+    "id": "oe3-s22-norton-thevenin",
+    "bloc": "OE3",
+    "notion": "OE3.2 Modélisations électriques et énergétiques",
+    "nom": "Équivalence Norton → Thévenin",
+    "tex": "[[E_{th}]] = [[R_N \\, I_N|\\frac{I_N}{R_N}|\\frac{R_N}{I_N}]],\\quad [[R_{th}]] = [[R_N|\\frac{1}{R_N}|2 R_N]]",
+    "legende": "Source de courant I_N (A) en parallèle avec R_N (Ω) ≡ source de tension E_th (V) en série avec R_th (Ω)",
+    "source": "Sujet 2022 E2 (QC-2)"
+  },
+  {
+    "id": "tc3-s22-bilan-thermique-capacitif",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Bilan énergétique d'un corps à capacité thermique (1er principe)",
+    "tex": "[[C_{th}]] \\, \\frac{\\mathrm{d}T}{\\mathrm{d}t} = [[P_{\\text{reçue}}]] - [[G \\left(T - T_0\\right)|\\frac{T - T_0}{G}|G \\, T]]",
+    "legende": "C_th = m c capacité thermique (J/K), P reçue (W), G conductance thermique vers la source froide (W/K), T_0 température de la source (K)",
+    "source": "Sujet 2022 E2 (QC-1)"
+  },
+  {
+    "id": "oe1-s22-polynome-caracteristique-2x2",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Polynôme caractéristique d'une matrice 2×2",
+    "tex": "\\lambda^2 - [[\\mathrm{tr}(M)|\\det(M)|-\\mathrm{tr}(M)]] \\, \\lambda + [[\\det(M)|\\mathrm{tr}(M)|-\\det(M)]] = 0",
+    "legende": "λ valeurs propres (pôles) de M ; stabilité d'un système d'ordre 2 ⇔ tr(M) < 0 et det(M) > 0",
+    "source": "Sujet 2022 E2 (QC-13, QC-14)"
+  },
+  {
+    "id": "oe1-s22-reponse-libre-etat",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Régime libre d'un système d'état",
+    "tex": "x(t) = [[e^{A(t - t_0)}|e^{-A(t - t_0)}|A \\, e^{t - t_0}]] \\, [[x(t_0)|\\dot{x}(t_0)|x(0)]]",
+    "legende": "x vecteur d'état, A matrice d'état, e^{At} exponentielle de matrice — solution de ẋ = A x pour t ≥ t_0",
+    "source": "Sujet 2022 E2 (QC-14, Eq. 2)"
+  },
+  {
+    "id": "oe1-s22-critere-nyquist",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Critère de Nyquist (complet)",
+    "tex": "[[Z_{BF}|P_{BF}]] = [[P_{BO}|Z_{BO}]] - [[N|2N|-N]]",
+    "legende": "Z_BF pôles instables en BF, P_BO pôles instables de la FTBO, N nombre de tours du lieu de Nyquist autour de −1 dans le sens trigonométrique (ω de −∞ à +∞) ; BF stable ⇔ N = P_BO",
+    "source": "Sujet 2022 E2 (QB-14)"
+  },
+  {
+    "id": "tc4-s22-euler-explicite-etat",
+    "bloc": "TC4",
+    "notion": "TC4 Simulation numérique de systèmes pluri-techniques",
+    "nom": "Schéma d'Euler explicite pour une représentation d'état",
+    "tex": "x_{k} = \\left([[I + \\Delta t \\, A|I - \\Delta t \\, A|\\Delta t \\, A]]\\right) x_{k-1} + [[\\Delta t \\, B|B|\\frac{B}{\\Delta t}]] \\, u_{k-1}",
+    "legende": "Discrétisation de ẋ = A x + B u au pas Δt (s), I matrice identité",
+    "source": "Sujet 2022 E2 (QC-15)"
+  },
+  {
+    "id": "tc4-s22-stabilite-euler-general",
+    "bloc": "TC4",
+    "notion": "TC4 Simulation numérique de systèmes pluri-techniques",
+    "nom": "Stabilité du schéma d'Euler explicite (cas général)",
+    "tex": "\\forall i,\\quad \\lvert [[1 + \\lambda_i \\, \\Delta t|1 - \\lambda_i \\, \\Delta t|\\lambda_i \\, \\Delta t]] \\rvert [[<|>|=]] [[1|2|0]]",
+    "legende": "λ_i valeurs propres de la matrice d'état A, Δt pas de calcul — pour λ = −1/τ on retrouve Δt < 2τ",
+    "source": "Sujet 2022 E2 (QC-16)"
+  },
+  {
+    "id": "tc4-s22-moindres-carres",
+    "bloc": "TC4",
+    "notion": "TC4 Simulation numérique de systèmes pluri-techniques",
+    "nom": "Solution des moindres carrés (équations normales)",
+    "tex": "[[\\hat{\\theta}|y]] = \\left([[A^T A|A A^T|A^T y]]\\right)^{[[-1|T|2]]} \\, [[A^T y|A \\, y|y^T A]]",
+    "legende": "Modèle y = A θ + bruit ; θ̂ minimise ‖y − Aθ‖² ; A matrice d'observation (n mesures × p paramètres)",
+    "source": "Sujet 2022 E2 (QD-5) ; Sujet 2023 E1 (Q9)"
+  },
+  {
+    "id": "oe2-s22-convolution-fourier",
+    "bloc": "OE2",
+    "notion": "OE2.2.1 Analyse spectrale",
+    "nom": "Produit de convolution et transformée de Fourier",
+    "tex": "y(t) = \\int x(\\lambda) \\, h\\left([[t - \\lambda|\\lambda - t|t + \\lambda]]\\right) \\mathrm{d}\\lambda \\;\\Rightarrow\\; Y(\\omega) = [[X(\\omega) \\, H(\\omega)|X(\\omega) + H(\\omega)|\\frac{X(\\omega)}{H(\\omega)}]]",
+    "legende": "h réponse impulsionnelle du système linéaire, H sa transformée de Fourier (réponse fréquentielle)",
+    "source": "Sujet 2022 E2 (QD-9)"
+  },
+  {
+    "id": "oe2-s22-filtre-wiener",
+    "bloc": "OE2",
+    "notion": "OE2.2.1 Analyse spectrale",
+    "nom": "Filtre de Wiener (déconvolution optimale)",
+    "tex": "[[G_{opt}(\\omega)]] = \\frac{[[H^*(\\omega)|H(\\omega)|1]] \\, s_\\phi(\\omega)}{[[H(\\omega) H^*(\\omega) \\, s_\\phi(\\omega)|H(\\omega) \\, s_\\phi(\\omega)|s_\\phi(\\omega)]] + [[s_b(\\omega)|s_b^2(\\omega)|\\sigma_b]]}",
+    "legende": "H transfert du capteur, s_φ DSP du signal, s_b DSP du bruit ; sans bruit (s_b = 0) on retrouve le filtre inverse 1/H",
+    "source": "Sujet 2022 E2 (QD-14)"
+  },
+  {
+    "id": "tc3-s22-mrua-position",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Mouvement rectiligne uniformément accéléré (position)",
+    "tex": "x(t) = [[\\frac{1}{2}|2|1]] \\, a \\, [[t^2|t|t^3]] + [[v_0 \\, t|v_0|a \\, t]] + x_0",
+    "legende": "x position (m), a accélération constante (m/s²), v_0 vitesse initiale (m/s), x_0 position initiale (m)",
+    "source": "Sujet 2022 E3 (Q2)"
+  },
+  {
+    "id": "tc3-s22-mrua-vitesse-distance",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Relation vitesse–distance en mouvement uniformément accéléré",
+    "tex": "[[v^2 - v_0^2|v - v_0|v^2 + v_0^2]] = [[2 \\, a \\, \\Delta x|a \\, \\Delta x|\\frac{a \\, \\Delta x}{2}]]",
+    "legende": "v, v_0 vitesses finale et initiale (m/s), a accélération (m/s²), Δx distance parcourue (m) — distance de mise en vitesse : V²/(2a)",
+    "source": "Sujet 2022 E3 (Q2, Q4)"
+  },
+  {
+    "id": "tc3-s22-profil-trapeze-duree",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Durée d'un déplacement en profil trapézoïdal de vitesse",
+    "tex": "[[t_{tot}]] = \\frac{[[d|2d|\\frac{d}{2}]]}{V} + \\frac{V}{[[a|2a|\\frac{a}{2}]]}",
+    "legende": "d distance totale (m), V vitesse de palier (m/s), a accélération = décélération (m/s²) ; valable si d ≥ V²/a",
+    "source": "Sujet 2022 E3 (Q2, Q4)"
+  },
+  {
+    "id": "tc3-s22-reducteur-charge-entrainante",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Couple ramené sur le moteur via un réducteur, charge entraînante (freinage)",
+    "tex": "[[C_m]] = [[k \\, \\eta|\\frac{k}{\\eta}|\\frac{\\eta}{k}]] \\, [[C_{ch}|C_m|\\Omega_{ch}]]",
+    "legende": "k = ω_s/ω_e < 1 rapport de réduction, η rendement, C_ch couple côté charge ; en moteur (puissance moteur → charge) : C_m = k C_ch / η",
+    "source": "Sujet 2022 E3 (Q6) ; Sujet 2024 E1 (Q16, Q20)"
+  },
+  {
+    "id": "oe3-s22-inductance-cyclique",
+    "bloc": "OE3",
+    "notion": "OE3.3 Convertisseurs électromécaniques",
+    "nom": "Inductance et mutuelle cycliques (machine triphasée, Concordia)",
+    "tex": "[[L_{cs}|L_s|M_s]] = [[L_s - M_s|L_s + M_s|L_s - 2 M_s]],\\quad [[M_{cyc}|M_0]] = [[\\frac{3}{2}|\\frac{2}{3}|\\sqrt{3}]] \\, M_0",
+    "legende": "L_s inductance propre d'une phase, M_s mutuelle entre phases statoriques (M_s < 0), M_0 mutuelle maximale stator-rotor (H)",
+    "source": "Sujet 2022 E3 (Q14-Q15)"
+  },
+  {
+    "id": "oe3-s22-concordia",
+    "bloc": "OE3",
+    "notion": "OE3.3 Convertisseurs électromécaniques",
+    "nom": "Transformation de Concordia (abc → αβ, conservation de la puissance)",
+    "tex": "x_\\alpha = [[\\sqrt{\\frac{2}{3}}|\\frac{2}{3}|\\sqrt{\\frac{3}{2}}]] \\left(x_a - [[\\frac{1}{2}|\\frac{\\sqrt{3}}{2}|1]] \\, x_b - \\frac{1}{2} \\, x_c\\right),\\quad x_\\beta = \\sqrt{\\frac{2}{3}} \\, [[\\frac{\\sqrt{3}}{2}|\\frac{1}{2}|\\frac{\\sqrt{2}}{2}]] \\left(x_b - x_c\\right)",
+    "legende": "x_a, x_b, x_c grandeurs triphasées ; x_α, x_β grandeurs diphasées ; Park = Concordia suivie d'une rotation d'angle ζ",
+    "source": "Sujet 2022 E3 (Q14-Q15)"
+  },
+  {
+    "id": "oe3-s22-loi-pulsations-mas",
+    "bloc": "OE3",
+    "notion": "OE3.3 Convertisseurs électromécaniques",
+    "nom": "Loi d'autopilotage des pulsations (machine asynchrone)",
+    "tex": "[[\\omega_s]] = [[p \\, \\Omega|\\Omega|\\frac{\\Omega}{p}]] + [[\\omega_r|g \\, \\Omega|-\\omega_r]]",
+    "legende": "ω_s pulsation statorique, ω_r = g ω_s pulsation rotorique (rad/s), p paires de pôles, Ω vitesse mécanique (rad/s)",
+    "source": "Sujet 2022 E3 (Q16-Q21)"
+  },
+  {
+    "id": "oe3-s22-park-tensions",
+    "bloc": "OE3",
+    "notion": "OE3.3 Convertisseurs électromécaniques",
+    "nom": "Équations des tensions statoriques dans le repère de Park",
+    "tex": "v_{sd} = R_s i_{sd} + \\frac{\\mathrm{d}\\psi_{sd}}{\\mathrm{d}t} [[-|+]] \\, \\omega_s [[\\psi_{sq}|\\psi_{sd}|i_{sq}]],\\quad v_{sq} = R_s i_{sq} + \\frac{\\mathrm{d}\\psi_{sq}}{\\mathrm{d}t} [[+\\,|-\\,]] \\, \\omega_s [[\\psi_{sd} \\,|\\psi_{sq} \\,|i_{sd} \\,]]",
+    "legende": "v, i, ψ tensions (V), courants (A), flux (Wb) dans le repère dq tournant à ω_s ; termes ± ω_s ψ = fem de rotation (couplage d/q)",
+    "source": "Sujet 2022 E3 (Q17)"
+  },
+  {
+    "id": "oe3-s22-mas-couple-flux-oriente",
+    "bloc": "OE3",
+    "notion": "OE3.3 Convertisseurs électromécaniques",
+    "nom": "Couple de la MAS en commande vectorielle à flux rotorique orienté",
+    "tex": "[[C_{em}]] = [[p|\\frac{3}{2} \\, p|\\frac{1}{p}]] \\, \\frac{[[M|L_s]]}{[[L_r|R_r|M]]} \\, [[\\psi_{rd} \\, i_{sq}|\\psi_{rd} \\, i_{sd}|\\psi_{rq} \\, i_{sq}]]",
+    "legende": "p paires de pôles, M mutuelle cyclique, L_r inductance cyclique rotorique (H), ψ_rd flux rotorique (Wb), i_sq courant statorique d'axe q (A) — cas général : p(M/L_r)(ψ_rd i_sq − ψ_rq i_sd)",
+    "source": "Sujet 2022 E3 (Q19)"
+  },
+  {
+    "id": "oe3-s22-flux-rotorique-estime",
+    "bloc": "OE3",
+    "notion": "OE3.3 Convertisseurs électromécaniques",
+    "nom": "Estimation du flux rotorique (flux orienté)",
+    "tex": "[[\\psi_{rd}]] = \\frac{[[M|L_r|R_r]] \\, i_{sd}}{1 + [[\\tau_r|\\tau_s|\\frac{1}{\\tau_r}]] \\, s},\\quad \\tau_r = \\frac{[[L_r|M|R_r]]}{[[R_r|R_s|L_r]]}",
+    "legende": "ψ_rd flux rotorique (Wb), M mutuelle cyclique (H), i_sd courant d'axe d (A), τ_r constante de temps rotorique (s), s variable de Laplace",
+    "source": "Sujet 2022 E3 (Q20)"
+  },
+  {
+    "id": "oe3-s22-pulsation-rotorique-estimee",
+    "bloc": "OE3",
+    "notion": "OE3.3 Convertisseurs électromécaniques",
+    "nom": "Pulsation rotorique en commande à flux rotorique orienté",
+    "tex": "[[\\omega_r]] = \\frac{[[M \\, i_{sq}|M \\, i_{sd}|L_r \\, i_{sq}]]}{[[\\tau_r \\, \\psi_{rd}|\\psi_{rd}|R_r \\, \\psi_{rd}]]}",
+    "legende": "ω_r pulsation de glissement (rad/s), τ_r = L_r/R_r (s), ψ_rd flux rotorique (Wb), i_sq courant d'axe q (A) ; ζ_s = ∫(pΩ + ω_r) dt",
+    "source": "Sujet 2022 E3 (Q21)"
+  },
+  {
+    "id": "oe3-s22-association-serie-modules",
+    "bloc": "OE3",
+    "notion": "OE3.6 Utilisation de l'énergie électrique et procédés associés",
+    "nom": "Association de n condensateurs (supercondensateurs) identiques en série",
+    "tex": "[[C_{eq}]] = \\frac{C}{[[n|n^2|\\sqrt{n}]]},\\quad [[R_{eq}]] = [[n \\, R|\\frac{R}{n}|n^2 R]]",
+    "legende": "C capacité d'un module (F), R résistance série d'un module (Ω), n modules en série (tension totale n U)",
+    "source": "Sujet 2022 E3 (Q28, Q30)"
+  },
+  {
+    "id": "oe3-s22-valeur-efficace-par-morceaux",
+    "bloc": "OE3",
+    "notion": "OE3.2 Modélisations électriques et énergétiques",
+    "nom": "Valeur efficace d'un courant constant par morceaux",
+    "tex": "[[I_{eff}^2|I_{eff}|I_{moy}]] = \\frac{1}{[[T|\\Delta t_k|2T]]} \\sum_k [[I_k^2|I_k]] \\, \\Delta t_k",
+    "legende": "I_k courant pendant la phase k de durée Δt_k, T durée du cycle ; pertes Joule moyennes P = R I_eff²",
+    "source": "Sujet 2022 E3 (Q31)"
+  },
+  {
+    "id": "oe3-s22-hacheur-entrelace",
+    "bloc": "OE3",
+    "notion": "OE3.4 Électronique de puissance",
+    "nom": "Hacheur entrelacé à n bras : fréquence apparente et ondulation maximale",
+    "tex": "[[f_{app}]] = [[n|2n|\\frac{1}{n}]] \\, f_d,\\quad \\Delta I_{L,max} = \\frac{U_e}{[[4 \\, n|4 \\, n^2|4]] \\, L \\, f_d}",
+    "legende": "n bras décalés de T_d/n, f_d fréquence de découpage (Hz), L inductance d'un bras (H), U_e tension d'entrée (V), ΔI ondulation du courant total",
+    "source": "Sujet 2022 E3 (Q41-Q43)"
+  },
+  {
+    "id": "oe3-s22-interrupteur-courant-trapeze",
+    "bloc": "OE3",
+    "notion": "OE3.4 Électronique de puissance",
+    "nom": "Courants moyen et efficace d'un interrupteur (courant trapézoïdal I_min → I_max)",
+    "tex": "I_{K,moy} = \\alpha \\, \\frac{[[I_{min} + I_{max}|I_{max} - I_{min}|I_{max}]]}{[[2|3|4]]},\\quad I_{K,eff} = \\sqrt{\\frac{\\alpha}{[[3|2|4]]} \\left([[I_{min}^2 + I_{min} I_{max} + I_{max}^2|I_{min}^2 + I_{max}^2|I_{min} I_{max}]]\\right)}",
+    "legende": "α rapport cyclique, I_min et I_max courants de début et de fin de conduction (A) ; si I_min = I_max = I : α I et √α I",
+    "source": "Sujet 2022 E3 (Q42)"
+  }
+]

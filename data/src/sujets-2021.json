@@ -1,0 +1,236 @@
+[
+  {
+    "id": "oe1-s21-profibus-limites",
+    "bloc": "OE1",
+    "notion": "OE1.4.3 Réseaux",
+    "nom": "Profibus DP (RS485) : nombre de participants",
+    "tex": "N_{\\text{segment}} \\le [[32|16|64|128]] \\quad ; \\quad N_{\\text{réseau}} \\le [[126|127|255|32]]",
+    "legende": "Participants par segment (sans répéteur) et par réseau Profibus DP ; segments reliés par répéteurs, terminaisons Rt à chaque extrémité",
+    "source": "Sujet 2021 E1 (Q17)"
+  },
+  {
+    "id": "oe1-s21-i2c-octet-adresse",
+    "bloc": "OE1",
+    "notion": "OE1.4.3 Réseaux",
+    "nom": "Octet d'adressage I²C (adresse 7 bits + R/W)",
+    "tex": "\\text{octet} = [[2|1|4]] \\cdot \\mathrm{SAD} + [[R/\\overline{W}|\\mathrm{ACK}|\\mathrm{START}]] \\quad ; \\quad N_{\\text{adresses}} = [[2^7|2^8|2^{16}]]",
+    "legende": "SAD adresse esclave sur 7 bits décalée d'un rang, bit de poids faible = 1 en lecture, 0 en écriture",
+    "source": "Sujet 2021 E2 (Q3)"
+  },
+  {
+    "id": "oe1-s21-i2c-duree",
+    "bloc": "OE1",
+    "notion": "OE1.4.3 Réseaux",
+    "nom": "Durée d'un échange I²C",
+    "tex": "t \\approx \\frac{[[9|8|10]]\\,N_{\\text{octets}}}{[[f_{SCL}|2f_{SCL}|T_{SCL}]]}",
+    "legende": "Chaque octet transmis occupe 9 coups d'horloge (8 bits de données + 1 bit d'acquittement) ; conditions START/STOP négligées ; f_SCL = 100 ou 400 kHz",
+    "source": "Sujet 2021 E2 (Q6, Q8)"
+  },
+  {
+    "id": "oe2-s21-frequence-instantanee",
+    "bloc": "OE2",
+    "notion": "OE2.2.2 Communications et radiofréquences",
+    "nom": "Fréquence instantanée",
+    "tex": "f_i(t) = [[\\frac{1}{2\\pi}|2\\pi|\\frac{1}{\\pi}]] \\, [[\\frac{\\mathrm{d}\\varphi_i}{\\mathrm{d}t}|\\int \\varphi_i\\,\\mathrm{d}t|\\varphi_i(t)]]",
+    "legende": "x(t) = cos[φ_i(t)] ; φ_i phase instantanée (rad), f_i fréquence instantanée (Hz), ω_i = dφ_i/dt",
+    "source": "Sujet 2021 E2 (Q24-Q25)"
+  },
+  {
+    "id": "oe2-s21-chirp",
+    "bloc": "OE2",
+    "notion": "OE2.2.2 Communications et radiofréquences",
+    "nom": "Signal chirp (fréquence linéaire)",
+    "tex": "x(t) = \\cos\\left[2\\pi\\left([[\\frac{a}{2}|a|2a]]\\,t + [[f_0|f_0 t|\\frac{f_0}{2}]]\\right)t\\right] \\quad ; \\quad a = [[\\frac{\\mathrm{d}f}{\\mathrm{d}t}|\\frac{\\mathrm{d}\\varphi}{\\mathrm{d}t}|\\frac{f}{t}]]",
+    "legende": "Fréquence instantanée f_i(t) = a·t + f_0 ; a vitesse de variation de fréquence (Hz/s), f_0 fréquence à t = 0",
+    "source": "Sujet 2021 E2 (Q25)"
+  },
+  {
+    "id": "oe2-s21-lora-duree-symbole",
+    "bloc": "OE2",
+    "notion": "OE2.2.2 Communications et radiofréquences",
+    "nom": "LoRa : durée d'un symbole",
+    "tex": "T_s = \\frac{[[2^{SF}|SF|2^{SF-1}]]}{[[BW|2\\,BW|\\frac{BW}{2}]]}",
+    "legende": "SF facteur d'étalement (7 à 12, bits par symbole), BW largeur de bande du chirp (125 ou 250 kHz)",
+    "source": "Sujet 2021 E2 (Q23, Q48)"
+  },
+  {
+    "id": "oe2-s21-lora-debit",
+    "bloc": "OE2",
+    "notion": "OE2.2.2 Communications et radiofréquences",
+    "nom": "LoRa : débit binaire brut",
+    "tex": "R_b = [[SF|2^{SF}|\\log_2 SF]] \\cdot \\frac{BW}{[[2^{SF}|SF|2^{SF+1}]]}",
+    "legende": "R_s = BW/2^SF symboles/s, chaque symbole portant SF bits ; R_b en bit/s",
+    "source": "Sujet 2021 E2 (Q48)"
+  },
+  {
+    "id": "oe2-s21-coding-rate",
+    "bloc": "OE2",
+    "notion": "OE2.2.2 Communications et radiofréquences",
+    "nom": "Débit utile avec code correcteur (coding rate)",
+    "tex": "R_{bu} = [[CR|\\frac{1}{CR}|1 - CR]] \\cdot R_b \\quad ; \\quad CR = \\frac{[[k|n|n-k]]}{[[n|k|n+k]]}",
+    "legende": "CR rendement de code : k bits utiles pour n bits transmis (ex. 4/7 : 3 bits de redondance pour 4 bits utiles)",
+    "source": "Sujet 2021 E2 (Q48)"
+  },
+  {
+    "id": "oe2-s21-modulateur-iq",
+    "bloc": "OE2",
+    "notion": "OE2.2.2 Communications et radiofréquences",
+    "nom": "Modulateur IQ",
+    "tex": "s(t) = [[i(t)|q(t)]]\\,\\cos(2\\pi f_c t) [[-|+]] [[q(t)\\,\\sin(2\\pi f_c t)|q(t)\\,\\cos(2\\pi f_c t)|i(t)\\,\\sin(2\\pi f_c t)]]",
+    "legende": "i(t) et q(t) signaux de bande de base (en phase et en quadrature), f_c fréquence porteuse",
+    "source": "Sujet 2021 E2 (Q28-Q32)"
+  },
+  {
+    "id": "oe2-s21-bilan-liaison-max",
+    "bloc": "OE2",
+    "notion": "OE2.2.2 Communications et radiofréquences",
+    "nom": "Bilan de liaison maximal (link budget)",
+    "tex": "LB_{\\mathrm{dB}} = [[P_{E,\\max}|P_{R}|G_E]] - [[S_{\\min}|P_{E,\\min}|\\mathrm{FSPL}]]",
+    "legende": "P_E,max puissance d'émission max (dBm), S_min sensibilité du récepteur (dBm, négative) ; affaiblissement total admissible entre émetteur et récepteur",
+    "source": "Sujet 2021 E2 (Q45-Q46)"
+  },
+  {
+    "id": "oe2-s21-tfd-symetrie",
+    "bloc": "OE2",
+    "notion": "OE2.2.1 Analyse spectrale",
+    "nom": "Symétrie hermitienne de la TFD d'un signal réel",
+    "tex": "x_n \\in \\mathbb{R} \\Rightarrow X_{[[N-k|k-N|N/2-k]]} = [[X_k^*|X_k|-X_k]]",
+    "legende": "Le module est pair, la phase impaire : seules les N/2 premières valeurs X_0 … X_{N/2-1} sont utiles",
+    "source": "Sujet 2021 E2 (Q16)"
+  },
+  {
+    "id": "oe2-s21-fft-papillon",
+    "bloc": "OE2",
+    "notion": "OE2.2.1 Analyse spectrale",
+    "nom": "Papillon FFT radix-2 (décimation temporelle)",
+    "tex": "X_k = E_k + [[W_N^k|W_N^{2k}|W_N^{-k}]]\\,O_k \\quad ; \\quad X_{k+N/2} = E_k [[-|+]] W_N^k\\,O_k \\quad ; \\quad W_N = [[e^{-j\\frac{2\\pi}{N}}|e^{j\\frac{2\\pi}{N}}|e^{-j\\frac{\\pi}{N}}]]",
+    "legende": "E_k, O_k TFD sur N/2 points des échantillons pairs et impairs (lemme de Danielson-Lanczos) ; W_N facteur de rotation (twiddle factor)",
+    "source": "Sujet 2021 E2 (Q12-Q15)"
+  },
+  {
+    "id": "oe2-s21-integration-spectrale",
+    "bloc": "OE2",
+    "notion": "OE2.2.1 Analyse spectrale",
+    "nom": "Spectre de vitesse à partir du spectre d'accélération",
+    "tex": "\\lVert V_k \\rVert = \\frac{\\lVert A_k \\rVert}{[[2\\pi f_k|f_k|(2\\pi f_k)^2]]} \\quad ; \\quad f_k = [[\\frac{k\\,F_e}{N}|k\\,F_e|\\frac{k}{N}]]",
+    "legende": "Intégrer revient à diviser par jω dans le domaine fréquentiel ; F_e fréquence d'échantillonnage, N nombre de points de la FFT",
+    "source": "Sujet 2021 E2 (Q20, Q22)"
+  },
+  {
+    "id": "oe3-s21-mas-ptr-modele",
+    "bloc": "OE3",
+    "notion": "OE3.3 Convertisseurs électromécaniques",
+    "nom": "Puissance transmise au rotor (modèle à fuites ramenées au stator)",
+    "tex": "P_{tr} = [[3|\\sqrt{3}|1]]\\,V^2\\,\\frac{[[r/g|r g|g/r]]}{[[(r/g)^2 + X^2|r/g + X|(r/g)^2 - X^2]]}",
+    "legende": "V tension simple efficace, r résistance rotorique ramenée, g glissement, X réactance de fuite ; pertes Joule stator négligées",
+    "source": "Sujet 2021 E1 (Q20)"
+  },
+  {
+    "id": "oe3-s21-mas-couple-lineaire",
+    "bloc": "OE3",
+    "notion": "OE3.3 Convertisseurs électromécaniques",
+    "nom": "Couple asynchrone linéarisé en fonction de la vitesse (g ≪ 1)",
+    "tex": "C_u \\approx \\frac{3\\,V^2}{r\\,[[\\Omega_s^2|\\Omega_s|\\Omega^2]]}\\,\\left([[\\Omega_s - \\Omega|\\Omega - \\Omega_s|\\Omega_s + \\Omega]]\\right)",
+    "legende": "Partie linéaire de la caractéristique C(Ω) : C = a·Ω + b avec a = −3V²/(rΩ_s²) ; Ω_s vitesse de synchronisme (rad/s)",
+    "source": "Sujet 2021 E1 (Q21-Q22)"
+  },
+  {
+    "id": "oe3-s21-forward-spires",
+    "bloc": "OE3",
+    "notion": "OE3.4 Électronique de puissance",
+    "nom": "Forward : nombre de spires primaires (non-saturation)",
+    "tex": "n_1 \\ge \\frac{V_e\\,[[\\alpha|1-\\alpha|\\frac{1}{\\alpha}]]}{[[f_d|2 f_d|\\frac{1}{f_d}]]\\,B_{\\max}\\,[[A_\\varphi|2A_\\varphi|\\frac{A_\\varphi}{2}]]}",
+    "legende": "Loi de Faraday sur αT : n₁·A·ΔB = V_e·αT avec ΔB ≤ B_max (flux partant de 0) ; A section de la colonne centrale, f_d fréquence de découpage",
+    "source": "Sujet 2021 E3 (Q19, Q21) ; Sujet 2023 E3 (Q31)"
+  },
+  {
+    "id": "oe3-s21-forward-alpha-max",
+    "bloc": "OE3",
+    "notion": "OE3.4 Électronique de puissance",
+    "nom": "Forward : rapport cyclique maximal (démagnétisation)",
+    "tex": "\\alpha_{\\max} = \\frac{[[n_1|n_3|n_2]]}{[[n_1 + n_3|n_3|n_1 + n_2]]} \\quad ; \\quad n_1 = n_3 \\Rightarrow \\alpha < [[\\frac{1}{2}|\\frac{1}{3}|1]]",
+    "legende": "Le noyau doit se démagnétiser via l'enroulement 3 pendant (1−α)T : α·n₃ ≤ (1−α)·n₁",
+    "source": "Sujet 2021 E3 (Q20)"
+  },
+  {
+    "id": "oe3-s21-forward-vq-max",
+    "bloc": "OE3",
+    "notion": "OE3.4 Électronique de puissance",
+    "nom": "Forward : tension maximale sur le transistor",
+    "tex": "V_{Q,\\max} = V_e\\left(1 + [[\\frac{n_1}{n_3}|\\frac{n_3}{n_1}|\\frac{n_2}{n_1}]]\\right) \\quad ; \\quad n_1 = n_3 \\Rightarrow V_{Q,\\max} = [[2V_e|V_e|\\sqrt{2}V_e]]",
+    "legende": "Pendant la démagnétisation, l'enroulement 3 impose −V_e·n₁/n₃ aux bornes du primaire",
+    "source": "Sujet 2021 E3 (Q20)"
+  },
+  {
+    "id": "oe3-s21-diode-roue-libre",
+    "bloc": "OE3",
+    "notion": "OE3.4 Électronique de puissance",
+    "nom": "Courants dans la diode de roue libre (courant lissé)",
+    "tex": "I_{D,\\mathrm{moy}} = [[(1-\\alpha)|\\alpha|\\sqrt{1-\\alpha}]]\\,I_s \\quad ; \\quad I_{D,\\mathrm{eff}} = [[\\sqrt{1-\\alpha}|1-\\alpha|\\sqrt{\\alpha}]]\\,I_s",
+    "legende": "Diode de roue libre d'un hacheur série / forward conduisant pendant (1−α)T, I_s courant de sortie supposé constant",
+    "source": "Sujet 2021 E3 (Q28)"
+  },
+  {
+    "id": "tc3-s21-engrenage-interieur",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Rapport d'un engrenage intérieur (pignon-couronne)",
+    "tex": "\\frac{\\omega_2}{\\omega_1} = [[+|-]]\\,\\frac{[[Z_1|Z_2]]}{[[Z_2|Z_1|Z_1 + Z_2]]}",
+    "legende": "Pignon 1 engrenant à l'intérieur d'une couronne 2 : même sens de rotation ; entraxe a = m(Z₂ − Z₁)/2",
+    "source": "Sujet 2021 E1 (Q11)"
+  },
+  {
+    "id": "tc3-s21-epicycloidal-couronne-fixe",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Réducteur épicycloïdal à couronne fixe (entrée planétaire, sortie porte-satellites)",
+    "tex": "\\frac{\\omega_{PS}}{\\omega_{P}} = \\frac{[[Z_P|Z_C|Z_S]]}{[[Z_P + Z_C|Z_C - Z_P|Z_C]]}",
+    "legende": "Z_P dents du planétaire (soleil), Z_C dents de la couronne fixe ; déduit de Willis avec λ = −Z_P/Z_C et ω_C = 0",
+    "source": "Sujet 2021 E1 (Q12-Q13)"
+  },
+  {
+    "id": "tc3-s21-vis-archimede",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Débit d'une vis d'Archimède (convoyeur à vis)",
+    "tex": "Q = [[\\eta|\\frac{1}{\\eta}]]\\,\\frac{\\pi\\left([[D_e^2 - D_i^2|D_e^2 + D_i^2|(D_e - D_i)^2]]\\right)}{4}\\,[[p|2\\pi p|\\frac{p}{2\\pi}]]\\,N",
+    "legende": "η taux de remplissage, D_e et D_i diamètres extérieur et intérieur (m), p pas (m), N fréquence de rotation (tr/s) ; épaisseur du filet négligée",
+    "source": "Sujet 2021 E1 (Q6)"
+  },
+  {
+    "id": "tc3-s21-verin",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Effort développé par un vérin",
+    "tex": "F = [[p|\\rho g p|\\frac{p}{2}]] \\cdot \\frac{\\pi\\,[[D^2|D|2D^2]]}{[[4|2|8]]}",
+    "legende": "p pression d'alimentation (Pa), D diamètre du piston (m) ; en rentrée (simple tige) section annulaire π(D² − d²)/4",
+    "source": "Sujet 2021 E1 (Q43)"
+  },
+  {
+    "id": "tc3-s21-force-paroi-plane",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Résultante d'une pression linéaire sur une paroi plane",
+    "tex": "F = [[p(G)|p_{\\max}|\\frac{p_{\\max}}{2}]] \\cdot S = \\rho\\,g\\,[[h_G|h_{\\max}|\\frac{h_G}{2}]]\\,S",
+    "legende": "Pour un champ de pression affine (hydrostatique), la résultante vaut la pression au centre de surface G multipliée par l'aire S",
+    "source": "Sujet 2021 E1 (Q39-Q40)"
+  },
+  {
+    "id": "tc3-s21-rugosite-relative",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Rugosité relative (diagramme de Moody)",
+    "tex": "R_u = \\frac{[[\\varepsilon|D|\\lambda]]}{[[D|\\varepsilon|L]]}",
+    "legende": "ε rugosité absolue de la paroi (m), D diamètre intérieur (m) ; avec Re, elle fixe λ en régime turbulent (Moody)",
+    "source": "Sujet 2021 E3 (Q6-Q7)"
+  },
+  {
+    "id": "tc4-s21-regression-puissance",
+    "bloc": "TC4",
+    "notion": "TC4 Simulation numérique de systèmes pluri-techniques",
+    "nom": "Régression de type puissance par linéarisation logarithmique",
+    "tex": "y = a\\,x^b \\iff \\ln y = [[\\ln a|a|b \\ln a]] + [[b \\ln x|\\ln b + \\ln x|x \\ln b]]",
+    "legende": "Les coefficients a et b s'obtiennent par moindres carrés linéaires sur les points (ln x, ln y)",
+    "source": "Sujet 2021 E1 (DT7, Q16)"
+  }
+]

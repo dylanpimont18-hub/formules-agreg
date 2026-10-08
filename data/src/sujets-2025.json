@@ -1,0 +1,299 @@
+[
+  {
+    "id": "oe1-s25-inclinometre",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Accéléromètre utilisé en inclinomètre",
+    "tex": "a_X = g\\,[[\\sin\\theta|\\cos\\theta|\\tan\\theta]] \\approx g\\,[[\\theta|1|\\theta^2]] \\quad ; \\quad a_Z = g\\cos\\theta \\approx g\\left(1 - [[\\dfrac{\\theta^2}{2}|2\\theta|\\theta^3]]\\right)",
+    "legende": "θ inclinaison (rad, petite) ; axe X quasi horizontal : sensibilité au 1er ordre ; axe Z quasi vertical : variation du 2e ordre seulement",
+    "source": "Sujet 2025 E2 (Q6-Q7)"
+  },
+  {
+    "id": "oe1-s25-accelerometre-statique",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Déplacement statique d'un accéléromètre masse-ressort",
+    "tex": "x = \\dfrac{[[m|k|c]]\\,a}{[[k|m|\\omega_n]]} = \\dfrac{a}{[[\\omega_n^2|\\omega_n|2\\omega_n]]}",
+    "legende": "x déplacement de la masse sismique (m), a accélération (m/s²), m masse (kg), k raideur (N/m), ω_n pulsation propre (rad/s)",
+    "source": "Sujet 2025 E2 (Q22)"
+  },
+  {
+    "id": "oe1-s25-variance",
+    "bloc": "OE1",
+    "notion": "OE1.5 Capteurs",
+    "nom": "Variance et écart-type d'une série de mesures",
+    "tex": "[[\\sigma_x^2|\\sigma_x|\\bar{x}]] = \\dfrac{1}{[[N|N^2|2N]]}\\sum_{n=0}^{N-1}\\left(x(n) - \\bar{x}\\right)^{[[2|1|1/2]]}",
+    "legende": "σ_x écart-type (déviation standard) = racine carrée de la variance σ_x², x̄ moyenne des N échantillons",
+    "source": "Sujet 2025 E2 (Q9)"
+  },
+  {
+    "id": "oe1-s25-pi-compensation-pole",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "PI par compensation du pôle dominant",
+    "tex": "[[T_i|T_d|K_p]] = \\tau \\;\\Rightarrow\\; \\tau_{BF} = \\dfrac{\\tau}{[[K\\,K_p|1 + K\\,K_p|K_p]]}",
+    "legende": "Procédé K/(1+τp), correcteur K_p(1+T_i p)/(T_i p) : la FTBO devient K K_p/(τp), la BF est un 1er ordre de gain unitaire et de constante de temps τ_BF",
+    "source": "Sujet 2025 E3 (Q44)"
+  },
+  {
+    "id": "oe1-s25-boucle-courant-rl",
+    "bloc": "OE1",
+    "notion": "OE1.1 Systèmes asservis",
+    "nom": "Correcteur P d'une boucle de courant sur charge R-L",
+    "tex": "\\mathrm{FTBO} = \\dfrac{K_p}{R_f + L_f\\,p} \\;\\Rightarrow\\; K_p \\approx [[2\\pi f_c|f_c|\\omega_c^2]]\\,[[L_f|R_f|1/L_f]]",
+    "legende": "f_c fréquence de transition (≈ bande passante BF) imposée, R_f négligeable devant L_f ω_c ; K_p en Ω (V/A)",
+    "source": "Sujet 2025 E3 (Q46)"
+  },
+  {
+    "id": "oe2-s25-mode-commun-differentiel",
+    "bloc": "OE2",
+    "notion": "OE2.1 Fonctions élémentaires de l'électronique",
+    "nom": "Tensions différentielle et de mode commun",
+    "tex": "V_d = [[V_{e1} - V_{e2}|V_{e1} + V_{e2}|V_{e2} - V_{e1}]] \\quad ; \\quad V_c = \\dfrac{[[V_{e1} + V_{e2}|V_{e1} \\cdot V_{e2}]]}{[[2|1|\\sqrt{2}]]}",
+    "legende": "V_e1, V_e2 tensions d'entrée (V) ; V_s = A_d V_d + A_MC V_c pour un amplificateur différentiel réel",
+    "source": "Sujet 2025 E1 (Q24-Q27)"
+  },
+  {
+    "id": "oe2-s25-duree-exponentielle",
+    "bloc": "OE2",
+    "notion": "OE2.1 Fonctions élémentaires de l'électronique",
+    "nom": "Durée d'une évolution exponentielle entre deux niveaux",
+    "tex": "t_{0 \\to 1} = [[\\tau|2\\tau|1/\\tau]]\\,\\ln\\left(\\dfrac{[[V_\\infty - V_0|V_0 - V_1|V_0]]}{[[V_\\infty - V_1|V_1 - V_0|V_1]]}\\right)",
+    "legende": "Circuit du 1er ordre de constante τ allant de V_0 vers l'asymptote V_∞, durée pour atteindre V_1 (oscillateur à relaxation, période d'un comparateur à hystérésis)",
+    "source": "Sujet 2025 E2 (Q51-Q52)"
+  },
+  {
+    "id": "oe2-s25-sigma-delta-ordre1",
+    "bloc": "OE2",
+    "notion": "OE2.1 Fonctions élémentaires de l'électronique",
+    "nom": "Modulateur sigma-delta du 1er ordre (STF et NTF)",
+    "tex": "V_s(z) = [[z^{-1}|1 - z^{-1}|z]]\\,V_e(z) + [[\\left(1 - z^{-1}\\right)|z^{-1}|\\left(1 + z^{-1}\\right)]]\\,B(z)",
+    "legende": "B bruit de quantification ; ordre M : fonction de transfert du bruit H_B(z) = (1 − z⁻¹)^M (mise en forme vers les hautes fréquences)",
+    "source": "Sujet 2025 E2 (Q34-Q37)"
+  },
+  {
+    "id": "oe2-s25-sigma-delta-bruit",
+    "bloc": "OE2",
+    "notion": "OE2.1 Fonctions élémentaires de l'électronique",
+    "nom": "Bruit de quantification dans la bande utile d'un sigma-delta d'ordre M",
+    "tex": "P_b = \\dfrac{q^2}{[[12|6|\\sqrt{12}]]}\\cdot\\dfrac{\\pi^{[[2M|M|2M - 1]]}}{(2M + 1)\\,\\mathrm{OSR}^{[[2M + 1|M + 1|2M + 2]]}}",
+    "legende": "q pas de quantification, M ordre du modulateur, OSR taux de suréchantillonnage",
+    "source": "Sujet 2025 E2 (Q37)"
+  },
+  {
+    "id": "oe2-s25-detection-synchrone",
+    "bloc": "OE2",
+    "notion": "OE2.2.2 Communications et radiofréquences",
+    "nom": "Détection synchrone (multiplieur + passe-bas)",
+    "tex": "v_F = \\dfrac{k\\,[[A\\,B|A^2|A + B]]}{[[2|4|\\sqrt{2}]]}\\,[[\\cos\\varphi|\\sin\\varphi|\\cos 2\\varphi]]",
+    "legende": "Produit k·A sin(ωt)·B sin(ωt+φ) filtré passe-bas : seule la composante continue subsiste (image de la partie réelle si B sin(ωt+φ) est la réponse d'une impédance)",
+    "source": "Sujet 2025 E2 (Q62-Q64)"
+  },
+  {
+    "id": "oe3-s25-statisme",
+    "bloc": "OE3",
+    "notion": "OE3.7 Génération électrique",
+    "nom": "Statisme d'un groupe de production",
+    "tex": "[[s|K|\\eta]] = \\dfrac{[[\\Delta f / f_n|\\Delta f|f_n / \\Delta f]]}{[[\\Delta P / P_n|\\Delta P|P_n / \\Delta P]]}",
+    "legende": "s statisme (sans dimension, réglementairement 3 à 12 %), écarts relatifs de fréquence et de puissance en valeurs réduites (pu)",
+    "source": "Sujet 2025 E1 (Q4-Q6)"
+  },
+  {
+    "id": "oe3-s25-reglage-primaire",
+    "bloc": "OE3",
+    "notion": "OE3.7 Génération électrique",
+    "nom": "Loi du réglage primaire de fréquence",
+    "tex": "[[P - P_c|P_c - P|P]] = [[-K|K|-1/K]]\\,\\left([[f - f_n|f_n - f|f]]\\right)",
+    "legende": "P puissance fournie (MW), P_c puissance de consigne à f_n, K énergie réglante (MW/Hz), f fréquence mesurée, f_n = 50 Hz",
+    "source": "Sujet 2025 E1 (Q2)"
+  },
+  {
+    "id": "oe3-s25-energie-reglante",
+    "bloc": "OE3",
+    "notion": "OE3.7 Génération électrique",
+    "nom": "Énergie réglante et statisme",
+    "tex": "[[K|s|P_c]] = \\dfrac{[[P_n|f_n|\\Delta P]]}{[[s\\,f_n|s\\,P_n|f_n / s]]}",
+    "legende": "K énergie réglante (MW/Hz), P_n puissance nominale (MW), s statisme, f_n fréquence nominale (Hz)",
+    "source": "Sujet 2025 E1 (Q4-Q6)"
+  },
+  {
+    "id": "oe3-s25-tension-composee-complexe",
+    "bloc": "OE3",
+    "notion": "OE3.1 Transport et distribution de l'énergie électrique",
+    "nom": "Tension composée en complexe (système direct)",
+    "tex": "\\underline{U}_{12} = \\underline{V}_1 - \\underline{V}_2 = [[\\sqrt{3}|\\sqrt{2}|3]]\\,\\underline{V}_1\\,e^{[[j\\pi/6|-j\\pi/6|j\\pi/3|j2\\pi/3]]}",
+    "legende": "u_12 est en avance de 30° sur v_1 ; v_1(t) = V√2 cos ωt, u_12(t) = U√2 cos(ωt + π/6)",
+    "source": "Sujet 2025 E1 (Q8)"
+  },
+  {
+    "id": "oe3-s25-puissance-instantanee-tri",
+    "bloc": "OE3",
+    "notion": "OE3.1 Transport et distribution de l'énergie électrique",
+    "nom": "Puissance instantanée d'un système triphasé équilibré",
+    "tex": "p(t) = [[v_a i_a + v_b i_b + v_c i_c|V_a I_a + V_b I_b + V_c I_c]] = [[3|\\sqrt{3}|\\dfrac{3}{2}]]\\,V I\\,[[\\cos\\varphi|\\sin\\varphi|\\tan\\varphi]] = \\text{cte}",
+    "legende": "V, I valeurs efficaces simples ; en triphasé équilibré la puissance instantanée est constante (pas de pulsation à 2ω)",
+    "source": "Sujet 2025 E3 (Q41)"
+  },
+  {
+    "id": "oe3-s25-courant-admissible-corrige",
+    "bloc": "OE3",
+    "notion": "OE3.1 Transport et distribution de l'énergie électrique",
+    "nom": "Courant admissible corrigé d'une canalisation",
+    "tex": "I'_z = \\dfrac{[[I_B|I_n|I_z]]}{[[K|1/K|K^2]]}",
+    "legende": "I_B courant d'emploi (A), K produit des facteurs de correction (pose, température, groupement) < 1 ; on choisit la section dont I_z tabulé ≥ I'_z",
+    "source": "Sujet 2025 E3 (Q33-Q34)"
+  },
+  {
+    "id": "oe3-s25-constantes-temps-rc-rl",
+    "bloc": "OE3",
+    "notion": "OE3.2 Modélisations électriques et énergétiques",
+    "nom": "Constantes de temps des circuits RC et RL",
+    "tex": "\\tau_{RC} = [[R\\,C|R / C|C / R]] \\quad ; \\quad \\tau_{RL} = [[L / R|R / L|L\\,R]]",
+    "legende": "τ en s, R (Ω), C (F), L (H)",
+    "source": "Sujet 2025 E2 (Q50)"
+  },
+  {
+    "id": "oe3-s25-lc-reponse-libre",
+    "bloc": "OE3",
+    "notion": "OE3.2 Modélisations électriques et énergétiques",
+    "nom": "Réponse libre d'un circuit LC",
+    "tex": "v_C(t) = V_0\\cos\\left(\\omega_0 t\\right) + [[I_0\\sqrt{\\dfrac{L}{C}}|I_0\\sqrt{\\dfrac{C}{L}}|I_0 L \\omega_0]]\\,\\sin\\left(\\omega_0 t\\right), \\quad \\omega_0 = \\dfrac{1}{[[\\sqrt{L\\,C}|L\\,C|\\sqrt{L/C}]]}",
+    "legende": "Conditions initiales v_C(0) = V_0 et i_C(0) = C dv/dt(0) = I_0 ; √(L/C) impédance caractéristique (Ω) ; base de l'étude d'une commutation ZVS",
+    "source": "Sujet 2025 E3 (Q30-Q31)"
+  },
+  {
+    "id": "oe3-s25-resistance-entre-phases",
+    "bloc": "OE3",
+    "notion": "OE3.3 Convertisseurs électromécaniques",
+    "nom": "Résistance d'une phase mesurée entre deux bornes (couplage étoile)",
+    "tex": "R = \\dfrac{[[U_{mes}|2\\,U_{mes}|3\\,U_{mes}]]}{[[2\\,I_{mes}|I_{mes}|\\sqrt{3}\\,I_{mes}]]}",
+    "legende": "Méthode voltampèremétrique en continu entre deux phases : deux enroulements en série (en triangle : R = 3U_mes / 2I_mes)",
+    "source": "Sujet 2025 E1 (Q9)"
+  },
+  {
+    "id": "oe3-s25-pd3-fondamental",
+    "bloc": "OE3",
+    "notion": "OE3.4 Électronique de puissance",
+    "nom": "PD3 débit lissé : fondamental et harmoniques du courant de ligne",
+    "tex": "I_1 = [[\\dfrac{\\sqrt{6}}{\\pi}|\\dfrac{\\sqrt{3}}{\\pi}|\\dfrac{2\\sqrt{2}}{\\pi}|\\dfrac{4}{\\pi}]]\\,I_0 \\quad ; \\quad I_n = \\dfrac{I_1}{[[n|n^2|\\sqrt{n}]]}\\quad (n = 6k \\pm 1)",
+    "legende": "I_0 courant continu parfaitement lissé, I_1 et I_n valeurs efficaces du fondamental et de l'harmonique n",
+    "source": "Sujet 2025 E3 (Q37-Q40)"
+  },
+  {
+    "id": "oe3-s25-pd3-thd",
+    "bloc": "OE3",
+    "notion": "OE3.4 Électronique de puissance",
+    "nom": "Taux de distorsion du courant absorbé par un PD3 (débit lissé)",
+    "tex": "\\mathrm{THD}_F = \\sqrt{\\dfrac{\\pi^2}{[[9|3|6]]} - 1} \\approx [[31\\,\\%|48\\,\\%|5\\,\\%]]",
+    "legende": "THD rapporté au fondamental, I_eff = √(2/3) I_0 et I_1 = (√6/π) I_0 d'où I_eff / I_1 = π/3",
+    "source": "Sujet 2025 E3 (Q39)"
+  },
+  {
+    "id": "oe3-s25-commutation-pmax",
+    "bloc": "OE3",
+    "notion": "OE3.4 Électronique de puissance",
+    "nom": "Puissance instantanée maximale en commutation linéaire",
+    "tex": "p_{\\max} = \\dfrac{[[V\\,I|V\\,I^2|V^2\\,I]]}{[[4|2|8]]}",
+    "legende": "Tension V et courant I commutés évoluant linéairement et simultanément (croisement à mi-durée), pertes maximales à l'instant t_r/2",
+    "source": "Sujet 2025 E3 (Q29)"
+  },
+  {
+    "id": "oe3-s25-duree-charge-soc",
+    "bloc": "OE3",
+    "notion": "OE3.6 Utilisation de l'énergie électrique et procédés associés",
+    "nom": "Durée de charge d'une batterie à puissance variable",
+    "tex": "T_c = \\int_{SoC_1}^{SoC_2} \\dfrac{[[E_u|P_c|U\\,I]]}{[[P_c(SoC)|E_u|SoC]]}\\,[[\\mathrm{d}SoC|\\mathrm{d}t|\\mathrm{d}P]]",
+    "legende": "E_u énergie utile (× SoH si batterie vieillie), P_c(SoC) puissance de charge imposée par le BMS, SoC état de charge (0 à 1)",
+    "source": "Sujet 2025 E3 (Q13-Q14)"
+  },
+  {
+    "id": "oe3-s25-clarke",
+    "bloc": "OE3",
+    "notion": "OE3.5 Chaînes de conversion électromécanique",
+    "nom": "Transformation de Clarke (conservation des amplitudes)",
+    "tex": "x_\\alpha = [[\\dfrac{2}{3}|\\dfrac{3}{2}|\\sqrt{\\dfrac{2}{3}}]]\\left(x_a - \\dfrac{x_b + x_c}{2}\\right) \\quad ; \\quad x_\\beta = [[\\dfrac{1}{\\sqrt{3}}|\\dfrac{\\sqrt{3}}{2}|\\dfrac{2}{\\sqrt{3}}]]\\left(x_b - x_c\\right)",
+    "legende": "Passage triphasé (a, b, c) → diphasé fixe (α, β) sans composante homopolaire ; pour un système équilibré x_α = x_a",
+    "source": "Sujet 2025 E3 (Q48)"
+  },
+  {
+    "id": "oe3-s25-park-rotation",
+    "bloc": "OE3",
+    "notion": "OE3.5 Chaînes de conversion électromécanique",
+    "nom": "Rotation de Park (repère αβ → dq)",
+    "tex": "x_d = x_\\alpha\\,[[\\cos\\theta|\\sin\\theta|-\\cos\\theta]] + x_\\beta\\,[[\\sin\\theta|-\\sin\\theta|\\cos\\theta]] \\quad ; \\quad x_q = [[-x_\\alpha\\sin\\theta|x_\\alpha\\sin\\theta|x_\\alpha\\cos\\theta]] + x_\\beta\\cos\\theta",
+    "legende": "θ angle du repère tournant ; en complexe x_dq = x_αβ e^{−jθ} : un système direct de pulsation ω_0 devient continu si θ = ω_0 t",
+    "source": "Sujet 2025 E3 (Q48-Q49)"
+  },
+  {
+    "id": "oe3-s25-pi-repere-tournant",
+    "bloc": "OE3",
+    "notion": "OE3.5 Chaînes de conversion électromécanique",
+    "nom": "Correcteur PI en repère de Park vu du repère fixe",
+    "tex": "[[C_{\\alpha\\beta}(j\\omega)|C_{dq}(j\\omega)]] = C_{PI}\\left(j\\left([[\\omega - \\omega_0|\\omega + \\omega_0|\\omega_0 - 2\\omega]]\\right)\\right)",
+    "legende": "Translation fréquentielle X_αβ(ω) = X_dq(ω − ω_0) ; gain infini en ω = ω_0 : suivi sans erreur d'une sinusoïde à ω_0",
+    "source": "Sujet 2025 E3 (Q49-Q50)"
+  },
+  {
+    "id": "tc3-s25-masse-ressort-amortisseur",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Système masse-ressort-amortisseur : paramètres canoniques",
+    "tex": "\\omega_n = \\sqrt{\\dfrac{[[k|c|2k]]}{[[m|2m|m^2]]}} \\quad ; \\quad \\xi = \\dfrac{[[c|2c|c^2]]}{[[2\\sqrt{k\\,m}|\\sqrt{k\\,m}|2\\,k\\,m]]} \\quad ; \\quad G = \\dfrac{1}{k}",
+    "legende": "m ẍ + c ẋ + k x = F : X/F = G / (1 + 2ξp/ω_n + p²/ω_n²) ; m (kg), k (N/m), c (N·s/m)",
+    "source": "Sujet 2025 E2 (Q15-Q19)"
+  },
+  {
+    "id": "tc3-s25-equilibrage",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Conditions d'équilibrage d'un rotor d'axe (O, z)",
+    "tex": "\\text{statique} : [[x_G = y_G = 0|z_G = 0|x_G = z_G = 0]] \\quad ; \\quad \\text{dynamique} : [[D = E = 0|F = 0|A = B]]",
+    "legende": "G sur l'axe de rotation et produits d'inertie D = ∫yz dm et E = ∫xz dm nuls : (O, z) axe principal central d'inertie, actions des paliers indépendantes de la rotation",
+    "source": "Sujet 2025 E1 (Q51-Q53)"
+  },
+  {
+    "id": "tc3-s25-mf-ponctuelle-excentree",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Poutre sur deux appuis, charge ponctuelle non centrée",
+    "tex": "R_A = \\dfrac{F\\,[[b|a|L]]}{L} \\quad ; \\quad M_{f,\\max} = \\dfrac{F\\,[[a\\,b|a^2|a + b]]}{[[L|2L|L^2]]}",
+    "legende": "F appliquée à la distance a de l'appui A et b de l'appui B (a + b = L) ; moment maximal sous la charge",
+    "source": "Sujet 2025 E1 (Q60-Q61)"
+  },
+  {
+    "id": "tc3-s25-pression-diametrale",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Pression diamétrale dans un palier lisse",
+    "tex": "p = \\dfrac{[[F|2F|F/2]]}{[[2\\,r\\,l|\\pi\\,r\\,l|r\\,l]]}",
+    "legende": "F charge radiale (N), r rayon (m) et l longueur (m) du coussinet : pression rapportée à la surface projetée d·l, comparée à la pression admissible",
+    "source": "Sujet 2025 E1 (Q49)"
+  },
+  {
+    "id": "tc3-s25-portance",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Portance (et traînée) d'un profil",
+    "tex": "F_z = [[\\dfrac{1}{2}|2|\\dfrac{1}{4}]]\\,\\rho\\,S\\,[[C_z|C_x|C_p]]\\,[[V^2|V|V^3]]",
+    "legende": "Portance perpendiculaire à la vitesse relative du fluide ; traînée F_x = ½ ρ S C_x V² parallèle ; ρ (kg/m³), S surface (m²), V vitesse relative (m/s)",
+    "source": "Sujet 2025 E1 (Q39-Q40)"
+  },
+  {
+    "id": "tc3-s25-compressibilite-verin",
+    "bloc": "TC3",
+    "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
+    "nom": "Débit d'un vérin avec compressibilité du fluide",
+    "tex": "q = [[S|V_0|B]]\\,\\dfrac{\\mathrm{d}x}{\\mathrm{d}t} + \\dfrac{[[V_0|S|q]]}{[[B|V_0|S]]}\\,\\dfrac{\\mathrm{d}p}{\\mathrm{d}t}",
+    "legende": "q débit (m³/s), S section du piston (m²), V_0 volume de fluide sous pression (m³), B module de compressibilité (Pa), p pression dans la chambre (Pa)",
+    "source": "Sujet 2025 E1 (Q30)"
+  },
+  {
+    "id": "tc4-s25-interpolation-lineaire",
+    "bloc": "TC4",
+    "notion": "TC4 Simulation numérique de systèmes pluri-techniques",
+    "nom": "Interpolation linéaire entre deux points",
+    "tex": "y = y_1 + \\left([[y_2 - y_1|y_1 - y_2|y_2]]\\right)\\dfrac{[[x - x_1|x - x_2|x]]}{[[x_2 - x_1|x_2 + x_1|x_1 - x_2]]}",
+    "legende": "Valeur estimée y en x ∈ [x_1 ; x_2] à partir des points (x_1, y_1) et (x_2, y_2) ; α = (x − x_1)/(x_2 − x_1) coefficient d'interpolation",
+    "source": "Sujet 2025 E1 (Q22)"
+  }
+]

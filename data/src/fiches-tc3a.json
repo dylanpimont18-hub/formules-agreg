@@ -1,0 +1,1055 @@
+[
+  {
+    "id": "tc3-mat-hooke",
+    "bloc": "TC3",
+    "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
+    "nom": "Loi de Hooke",
+    "tex": "[[\\sigma]] = [[E|G|\\frac{1}{E}]] \\cdot [[\\varepsilon|\\varepsilon^2|\\Delta L]]",
+    "legende": "σ contrainte normale (Pa), E module d'Young (Pa), ε déformation relative (sans unité)",
+    "source": "Fiche TC3.1.1 ; Fiche TC3.1.2 ; Fiche TC3.2.1"
+  },
+  {
+    "id": "tc3-mat-coef-securite",
+    "bloc": "TC3",
+    "notion": "TC3.1.1 Matériaux",
+    "nom": "Coefficient de sécurité",
+    "tex": "[[s]] = \\frac{[[R_e|R_m|\\sigma_{\\max}]]}{[[\\sigma_{\\max}|R_e|\\sigma_{\\mathrm{adm}}]]}",
+    "legende": "s coefficient de sécurité (sans unité), Re limite d'élasticité (Pa), σmax contrainte maximale calculée (Pa)",
+    "source": "Fiche TC3.1.1 ; Fiche TC3.2.1 ; Sujet 2023 E1 Q20-24"
+  },
+  {
+    "id": "tc3-mat-flux-thermique",
+    "bloc": "TC3",
+    "notion": "TC3.1.1 Matériaux",
+    "nom": "Flux thermique conduit (loi de Fourier, paroi plane)",
+    "tex": "[[\\Phi_{\\mathrm{th}}]] = \\frac{[[\\lambda|\\rho|\\frac{1}{\\lambda}]] \\cdot [[S|e]] \\cdot [[\\Delta T|T|\\Delta T^2]]}{[[e|S|e^2]]}",
+    "legende": "Φth flux thermique (W), λ conductivité thermique (W·m⁻¹·K⁻¹), S surface (m²), ΔT écart de température (K), e épaisseur (m)",
+    "source": "Fiche TC3.1.1"
+  },
+  {
+    "id": "tc3-mat-taux-recyclage",
+    "bloc": "TC3",
+    "notion": "TC3.1.1 Matériaux",
+    "nom": "Taux de recyclage",
+    "tex": "[[\\tau_{\\mathrm{recyclage}}]] = \\frac{[[m_{\\mathrm{recyclée}}|m_{\\mathrm{totale}}|m_{\\mathrm{primaire}}]]}{[[m_{\\mathrm{totale}}|m_{\\mathrm{recyclée}}|m_{\\mathrm{primaire}}]]}",
+    "legende": "τ taux de recyclage (sans unité), masses de matière recyclée et totale (kg)",
+    "source": "Fiche TC3.1.1"
+  },
+  {
+    "id": "tc3-mat-masse-volumique",
+    "bloc": "TC3",
+    "notion": "TC3.1.1 Matériaux",
+    "nom": "Masse volumique",
+    "tex": "[[\\rho]] = \\frac{[[m|V|P]]}{[[V|m|S]]}",
+    "legende": "ρ masse volumique (kg/m³), m masse (kg), V volume (m³)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-mat-resistivite-temperature",
+    "bloc": "TC3",
+    "notion": "TC3.1.1 Matériaux",
+    "nom": "Résistivité en fonction de la température",
+    "tex": "[[\\rho(T)]] = [[\\rho_0|\\rho_0^2|\\frac{1}{\\rho_0}]] \\left(1 + [[\\alpha|\\lambda|\\beta]] \\, [[(T - T_0)|(T + T_0)|T]]\\right)",
+    "legende": "ρ0 résistivité à T0 (Ω·m), α coefficient de température (K⁻¹), T température (°C ou K) — Cu : α ≈ 3,9·10⁻³ K⁻¹",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-mat-spires-transfo",
+    "bloc": "TC3",
+    "notion": "TC3.1.1 Matériaux",
+    "nom": "Nombre de spires d'un bobinage (non-saturation)",
+    "tex": "[[n]] = \\frac{[[L|L^2|\\sqrt{L}]] \\cdot [[I_{\\max}|I_{\\mathrm{eff}}|I_{\\max}^2]]}{[[B_{\\max}|H_{\\max}|\\mu_0]] \\cdot [[A_e|l_e|A_e^2]]}",
+    "legende": "n nombre de spires, L inductance (H), Imax courant crête (A), Bmax induction maximale (T), Ae section effective du noyau (m²)",
+    "source": "Fiche TC3.1.1 ; Sujet 2023 E3 Q33"
+  },
+  {
+    "id": "tc3-mat-ashby-tirant-rigide",
+    "bloc": "TC3",
+    "notion": "TC3.1.1 Matériaux",
+    "nom": "Indice d'Ashby — tirant léger et rigide",
+    "tex": "[[M]] = \\frac{[[E|E^{1/2}|E^{1/3}]]}{[[\\rho|\\rho^2|\\sqrt{\\rho}]]}",
+    "legende": "M indice de performance à maximiser, E module d'Young (Pa), ρ masse volumique (kg/m³)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-mat-ashby-poutre-rigide",
+    "bloc": "TC3",
+    "notion": "TC3.1.1 Matériaux",
+    "nom": "Indice d'Ashby — poutre légère et rigide (flexion)",
+    "tex": "[[M]] = \\frac{[[E^{1/2}|E|E^{1/3}]]}{[[\\rho|\\rho^2|\\rho^{1/2}]]}",
+    "legende": "M indice de performance à maximiser, E module d'Young (Pa), ρ masse volumique (kg/m³)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-mat-ashby-plaque-rigide",
+    "bloc": "TC3",
+    "notion": "TC3.1.1 Matériaux",
+    "nom": "Indice d'Ashby — plaque légère et rigide (flexion)",
+    "tex": "[[M]] = \\frac{[[E^{1/3}|E^{1/2}|E]]}{[[\\rho|\\rho^3|\\rho^{1/3}]]}",
+    "legende": "M indice de performance à maximiser, E module d'Young (Pa), ρ masse volumique (kg/m³)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-mat-ashby-tirant-resistant",
+    "bloc": "TC3",
+    "notion": "TC3.1.1 Matériaux",
+    "nom": "Indice d'Ashby — tirant léger et résistant",
+    "tex": "[[M]] = \\frac{[[\\sigma_e|\\sigma_e^{2/3}|E]]}{[[\\rho|\\rho^2|\\sqrt{\\rho}]]}",
+    "legende": "M indice de performance à maximiser, σe limite d'élasticité (Pa), ρ masse volumique (kg/m³)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-mat-ashby-poutre-resistante",
+    "bloc": "TC3",
+    "notion": "TC3.1.1 Matériaux",
+    "nom": "Indice d'Ashby — poutre légère et résistante (flexion)",
+    "tex": "[[M]] = \\frac{[[\\sigma_e^{2/3}|\\sigma_e|\\sigma_e^{1/2}]]}{[[\\rho|\\rho^{2/3}|\\rho^2]]}",
+    "legende": "M indice de performance à maximiser, σe limite d'élasticité (Pa), ρ masse volumique (kg/m³)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-mat-deformation",
+    "bloc": "TC3",
+    "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
+    "nom": "Déformation (allongement relatif)",
+    "tex": "[[\\varepsilon]] = \\frac{[[\\Delta L|L_0|L]]}{[[L_0|\\Delta L|S_0]]}",
+    "legende": "ε déformation (sans unité), ΔL allongement (m), L0 longueur initiale (m)",
+    "source": "Fiche TC3.1.2"
+  },
+  {
+    "id": "tc3-mat-non-plastification",
+    "bloc": "TC3",
+    "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
+    "nom": "Condition de non-plastification",
+    "tex": "[[\\sigma]] [[\\leq|\\geq|=]] [[R_e|R_m|E]]",
+    "legende": "σ contrainte calculée (Pa), Re limite d'élasticité (Pa) — jamais Rm",
+    "source": "Fiche TC3.1.2"
+  },
+  {
+    "id": "tc3-mat-allongement-traction",
+    "bloc": "TC3",
+    "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
+    "nom": "Allongement d'une barre en traction",
+    "tex": "[[\\Delta L]] = \\frac{[[N|E|S]] \\cdot [[L_0|S|L_0^2]]}{[[E S|E L_0|G S]]}",
+    "legende": "ΔL allongement (m), N effort normal (N), L0 longueur (m), E module d'Young (Pa), S section (m²)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-mat-raideur-barre",
+    "bloc": "TC3",
+    "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
+    "nom": "Raideur d'une barre en traction",
+    "tex": "[[k]] = \\frac{[[E|G|\\sigma]] \\cdot [[S|I|L]]}{[[L|S|L^3]]}",
+    "legende": "k raideur (N/m), E module d'Young (Pa), S section (m²), L longueur (m)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-mat-newton-fluide",
+    "bloc": "TC3",
+    "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
+    "nom": "Loi de Newton des fluides visqueux",
+    "tex": "[[\\tau]] = [[\\mu|\\nu|\\frac{1}{\\mu}]] \\cdot [[\\frac{\\mathrm{d}v}{\\mathrm{d}y}|\\frac{\\mathrm{d}y}{\\mathrm{d}v}|v]]",
+    "legende": "τ contrainte de cisaillement (Pa), μ viscosité dynamique (Pa·s), dv/dy gradient de vitesse (s⁻¹)",
+    "source": "Fiche TC3.1.2"
+  },
+  {
+    "id": "tc3-mat-viscosite-cinematique",
+    "bloc": "TC3",
+    "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
+    "nom": "Viscosité cinématique",
+    "tex": "[[\\nu]] = \\frac{[[\\mu|\\rho|\\eta]]}{[[\\rho|\\mu|g]]}",
+    "legende": "ν viscosité cinématique (m²/s), μ viscosité dynamique (Pa·s), ρ masse volumique (kg/m³)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-mat-ressort",
+    "bloc": "TC3",
+    "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
+    "nom": "Modèle ressort (élasticité pure)",
+    "tex": "[[F]] = [[k|c|\\frac{1}{k}]] \\, [[\\Delta x|\\dot{x}|\\ddot{x}]]",
+    "legende": "F effort (N), k raideur (N/m), Δx allongement (m)",
+    "source": "Fiche TC3.1.2"
+  },
+  {
+    "id": "tc3-mat-amortisseur",
+    "bloc": "TC3",
+    "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
+    "nom": "Modèle amortisseur (viscosité pure)",
+    "tex": "[[F]] = [[c|k|m]] \\, [[\\dot{x}|x|\\ddot{x}]]",
+    "legende": "F effort (N), c coefficient d'amortissement visqueux (N·s/m), ẋ vitesse (m/s)",
+    "source": "Fiche TC3.1.2"
+  },
+  {
+    "id": "tc3-mat-energie-ressort",
+    "bloc": "TC3",
+    "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
+    "nom": "Énergie élastique d'un ressort",
+    "tex": "[[E_p]] = [[\\frac{1}{2}|2|1]] \\, [[k|c|m]] \\, [[x^2|x|\\dot{x}^2]]",
+    "legende": "Ep énergie potentielle élastique (J), k raideur (N/m), x allongement (m)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-mat-kelvin-voigt",
+    "bloc": "TC3",
+    "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
+    "nom": "Modèle de Kelvin-Voigt (ressort ∥ amortisseur)",
+    "tex": "[[\\sigma]] = [[E \\varepsilon|\\frac{\\sigma}{E}|E \\dot{\\varepsilon}]] + [[\\eta \\dot{\\varepsilon}|\\eta \\varepsilon|\\frac{\\varepsilon}{\\eta}]]",
+    "legende": "σ contrainte (Pa), E module (Pa), η viscosité (Pa·s), ε déformation, ε̇ vitesse de déformation (s⁻¹) — les contraintes s'ajoutent",
+    "source": "Fiche TC3.1.2 ; Classique programme"
+  },
+  {
+    "id": "tc3-mat-maxwell",
+    "bloc": "TC3",
+    "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
+    "nom": "Modèle de Maxwell (ressort en série avec amortisseur)",
+    "tex": "[[\\dot{\\varepsilon}]] = \\frac{[[\\dot{\\sigma}|\\sigma|\\ddot{\\sigma}]]}{[[E|\\eta|G]]} + \\frac{[[\\sigma|\\dot{\\sigma}|\\varepsilon]]}{[[\\eta|E|\\mu]]}",
+    "legende": "ε̇ vitesse de déformation (s⁻¹), σ contrainte (Pa), E module (Pa), η viscosité (Pa·s) — les déformations s'ajoutent",
+    "source": "Fiche TC3.1.2 ; Classique programme"
+  },
+  {
+    "id": "tc3-mat-poisson",
+    "bloc": "TC3",
+    "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
+    "nom": "Coefficient de Poisson (contraction transversale)",
+    "tex": "[[\\varepsilon_t]] = [[-\\nu|\\nu|-\\frac{1}{\\nu}]] \\, [[\\varepsilon_l|\\sigma|\\varepsilon_t]]",
+    "legende": "εt déformation transversale, εl déformation longitudinale, ν coefficient de Poisson (≈ 0,3 pour l'acier)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-mat-module-coulomb",
+    "bloc": "TC3",
+    "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
+    "nom": "Relation entre modules E, G et ν",
+    "tex": "[[G]] = \\frac{[[E|\\nu|2E]]}{[[2(1 + \\nu)|2(1 - \\nu)|1 + \\nu]]}",
+    "legende": "G module de cisaillement / de Coulomb (Pa), E module d'Young (Pa), ν coefficient de Poisson — acier G ≈ 80 GPa",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-mat-hooke-cisaillement",
+    "bloc": "TC3",
+    "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
+    "nom": "Loi de Hooke en cisaillement",
+    "tex": "[[\\tau]] = [[G|E|\\nu]] \\cdot [[\\gamma|\\varepsilon|\\theta]]",
+    "legende": "τ contrainte de cisaillement (Pa), G module de Coulomb (Pa), γ glissement (rad)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-rdm-traction",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Contrainte normale en traction/compression",
+    "tex": "[[\\sigma]] = \\frac{[[N|T|M_f]]}{[[S|I|I_0]]}",
+    "legende": "σ contrainte normale (MPa), N effort normal (N), S section (mm²)",
+    "source": "Fiche TC3.2.1"
+  },
+  {
+    "id": "tc3-rdm-flexion",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Contrainte normale maximale en flexion plane",
+    "tex": "[[\\sigma_{\\max}]] = \\frac{[[M_f|M_t|T]] \\cdot [[v|r|v^2]]}{[[I_{Gz}|I_0|S]]}",
+    "legende": "Mf moment fléchissant (N·mm), v = y_max distance à la fibre neutre (mm), I_Gz moment quadratique (mm⁴)",
+    "source": "Fiche TC3.2.1 ; Sujet 2023 E1 Q20-24"
+  },
+  {
+    "id": "tc3-rdm-torsion",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Contrainte de cisaillement maximale en torsion",
+    "tex": "[[\\tau_{\\max}]] = \\frac{[[M_t|M_f|T]] \\cdot [[r|v|r^2]]}{[[I_0|I_{Gz}|S]]}",
+    "legende": "τ contrainte tangentielle (MPa), Mt moment de torsion (N·mm), r rayon extérieur (mm), I0 moment quadratique polaire (mm⁴)",
+    "source": "Fiche TC3.2.1"
+  },
+  {
+    "id": "tc3-rdm-cisaillement",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Contrainte de cisaillement moyenne",
+    "tex": "[[\\tau_{\\mathrm{moy}}]] = \\frac{[[T|N|M_t]]}{[[S|I_0|2S]]}",
+    "legende": "τmoy contrainte tangentielle moyenne (MPa), T effort tranchant (N), S section cisaillée (mm²)",
+    "source": "Fiche TC3.2.1"
+  },
+  {
+    "id": "tc3-rdm-contrainte-admissible",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Contrainte admissible",
+    "tex": "[[\\sigma_{\\mathrm{adm}}]] = \\frac{[[R_e|R_m|E]]}{[[s|s^2|2]]}",
+    "legende": "σadm contrainte admissible (MPa), Re limite élastique (MPa), s coefficient de sécurité (2 à 5 usuel)",
+    "source": "Fiche TC3.2.1"
+  },
+  {
+    "id": "tc3-rdm-angle-torsion",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Angle de torsion total",
+    "tex": "[[\\Delta\\theta]] = \\frac{[[M_t|M_f|\\tau]] \\cdot [[L|L^2|r]]}{[[G|E|\\nu]] \\cdot [[I_0|I_{Gz}|S]]}",
+    "legende": "Δθ angle de torsion (rad), Mt moment de torsion (N·m), L longueur (m), G module de Coulomb (Pa), I0 moment quadratique polaire (m⁴)",
+    "source": "Fiche TC3.2.1"
+  },
+  {
+    "id": "tc3-rdm-angle-unitaire",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Angle unitaire de torsion",
+    "tex": "[[\\alpha]] = \\frac{[[M_t|M_f|\\tau_{\\max}]]}{[[G I_0|E I_0|G I_{Gz}]]}",
+    "legende": "α angle unitaire de torsion (rad/m), Mt moment de torsion (N·m), G module de Coulomb (Pa), I0 (m⁴)",
+    "source": "Fiche TC3.2.1"
+  },
+  {
+    "id": "tc3-rdm-i0-cercle",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Moment quadratique polaire d'une section circulaire pleine",
+    "tex": "[[I_0]] = \\frac{[[\\pi|2\\pi|\\pi^2]] [[d^4|d^3|d^2]]}{[[32|64|16]]}",
+    "legende": "I0 moment quadratique polaire (m⁴), d diamètre (m) — équivaut à πR⁴/2",
+    "source": "Fiche TC3.2.1"
+  },
+  {
+    "id": "tc3-rdm-igz-cercle",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Moment quadratique d'une section circulaire pleine (flexion)",
+    "tex": "[[I_{Gz}]] = \\frac{[[\\pi|2\\pi|\\pi^2]] [[d^4|d^3|d^2]]}{[[64|32|12]]}",
+    "legende": "I_Gz moment quadratique par rapport à un diamètre (m⁴), d diamètre (m) — I0 = 2 I_Gz",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-rdm-i0-tube",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Moment quadratique polaire d'un tube",
+    "tex": "[[I_0]] = \\frac{[[\\pi|2\\pi]] \\left([[D^4 - d^4|(D - d)^4|D^4 + d^4]]\\right)}{[[32|64|16]]}",
+    "legende": "I0 (m⁴), D diamètre extérieur (m), d diamètre intérieur (m)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-rdm-igz-rectangle",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Moment quadratique d'un rectangle (axe de flexion parallèle à b)",
+    "tex": "[[I_{Gz}]] = \\frac{[[b|b^3|b^2]] \\, [[h^3|h|h^2]]}{[[12|6|3]]}",
+    "legende": "I_Gz (m⁴), b largeur (m), h hauteur dans le plan de flexion (m)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-rdm-module-rectangle",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Module de flexion d'un rectangle",
+    "tex": "[[\\frac{I_{Gz}}{v}]] = \\frac{[[b|b^2|b^3]] \\, [[h^2|h^3|h]]}{[[6|12|3]]}",
+    "legende": "I/v module de flexion (m³), b largeur (m), h hauteur (m), v = h/2",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-rdm-torsion-arbre-plein",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Contrainte de torsion maximale d'un arbre plein",
+    "tex": "[[\\tau_{\\max}]] = \\frac{[[16|32|8]] \\, [[M_t|M_f|T]]}{[[\\pi d^3|\\pi d^4|\\pi d^2]]}",
+    "legende": "τmax (Pa), Mt moment de torsion (N·m), d diamètre (m)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-rdm-flexion-arbre-plein",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Contrainte de flexion maximale d'un arbre plein",
+    "tex": "[[\\sigma_{\\max}]] = \\frac{[[32|16|64]] \\, [[M_f|M_t|N]]}{[[\\pi d^3|\\pi d^4|\\pi d^2]]}",
+    "legende": "σmax (Pa), Mf moment fléchissant (N·m), d diamètre (m)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-rdm-huygens-surface",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Théorème de Huygens (moments quadratiques)",
+    "tex": "[[I_{\\Delta}]] = [[I_{G}|I_0|S]] + [[S|S^2|I_G]] \\, [[d^2|d|d^4]]",
+    "legende": "IΔ moment quadratique / axe Δ (m⁴), IG / axe parallèle passant par G (m⁴), S aire (m²), d distance entre axes (m)",
+    "source": "Fiche TC3.2.1 ; Sujet 2023 E1 Q20 ; Classique programme"
+  },
+  {
+    "id": "tc3-rdm-tranchant-moment",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Relation effort tranchant / moment fléchissant",
+    "tex": "[[T_y]] = [[-|+|2]] \\, \\frac{\\mathrm{d} [[M_{fz}|M_t|N]]}{\\mathrm{d} [[x|y|t]]}",
+    "legende": "Ty effort tranchant (N), Mfz moment fléchissant (N·m), x abscisse le long de la poutre (m) — convention torseur de cohésion « partie droite sur partie gauche »",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-rdm-deformee",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Équation de la déformée",
+    "tex": "[[E|G|\\nu]] \\, [[I_{Gz}|I_0|S]] \\, [[y''(x)|y'(x)|y(x)]] = [[M_{fz}(x)|T_y(x)|N(x)]]",
+    "legende": "E module d'Young (Pa), I_Gz (m⁴), y(x) flèche (m), Mfz moment fléchissant (N·m)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-rdm-fleche-console-ponctuelle",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Flèche d'une poutre console, charge ponctuelle en bout",
+    "tex": "[[f]] = \\frac{[[F|p|M]] \\, [[L^3|L^2|L^4]]}{[[3|48|8]] \\, [[E I|G I_0|E S]]}",
+    "legende": "f flèche maximale (m), F charge (N), L longueur (m), E module d'Young (Pa), I moment quadratique (m⁴)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-rdm-fleche-console-repartie",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Flèche d'une poutre console, charge uniformément répartie",
+    "tex": "[[f]] = \\frac{[[p|F|M]] \\, [[L^4|L^3|L^2]]}{[[8|3|384]] \\, [[E I|G I_0|E S]]}",
+    "legende": "f flèche maximale (m), p charge linéique (N/m), L longueur (m), E (Pa), I (m⁴)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-rdm-fleche-appuis-ponctuelle",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Flèche d'une poutre sur deux appuis, charge ponctuelle centrée",
+    "tex": "[[f]] = \\frac{[[F|p|M]] \\, [[L^3|L^2|L^4]]}{[[48|3|384]] \\, [[E I|G I_0|E S]]}",
+    "legende": "f flèche à mi-portée (m), F charge (N), L portée (m), E (Pa), I (m⁴)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-rdm-fleche-appuis-repartie",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Flèche d'une poutre sur deux appuis, charge uniformément répartie",
+    "tex": "[[f]] = \\frac{[[5|1|3]] \\, [[p|F|M]] \\, [[L^4|L^3|L^2]]}{[[384|48|8]] \\, [[E I|G I_0|E S]]}",
+    "legende": "f flèche à mi-portée (m), p charge linéique (N/m), L portée (m), E (Pa), I (m⁴)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-rdm-mf-appuis-ponctuelle",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Moment fléchissant maximal, poutre sur deux appuis, charge centrée",
+    "tex": "[[M_{f,\\max}]] = \\frac{[[F|p|F^2]] \\, [[L|L^2|\\frac{L}{2}]]}{[[4|8|2]]}",
+    "legende": "Mf,max moment fléchissant à mi-portée (N·m), F charge (N), L portée (m)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-rdm-mf-appuis-repartie",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Moment fléchissant maximal, poutre sur deux appuis, charge répartie",
+    "tex": "[[M_{f,\\max}]] = \\frac{[[p|F|p^2]] \\, [[L^2|L|L^3]]}{[[8|4|2]]}",
+    "legende": "Mf,max moment fléchissant à mi-portée (N·m), p charge linéique (N/m), L portée (m)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-rdm-mf-console",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Moment fléchissant maximal d'une console (encastrement), charge en bout",
+    "tex": "[[M_{f,\\max}]] = [[F|\\frac{F}{2}|p]] \\cdot [[L|L^2|\\frac{L}{2}]]",
+    "legende": "Mf,max moment à l'encastrement (N·m), F charge en bout (N), L longueur (m)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-rdm-euler",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Charge critique de flambement d'Euler",
+    "tex": "[[F_c]] = \\frac{[[\\pi^2|\\pi|2\\pi]] \\, [[E|G|R_e]] \\, [[I_{\\min}|I_{\\max}|I_0]]}{[[L_f^2|L_f|L_f^3]]}",
+    "legende": "Fc charge critique (N), E module d'Young (Pa), Imin moment quadratique minimal (m⁴), Lf longueur de flambement (m)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-rdm-lf-encastre-libre",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Longueur de flambement — encastrée / libre",
+    "tex": "[[L_f]] = [[2|1|0{,}5|0{,}7]] \\, [[L|L^2]]",
+    "legende": "Lf longueur de flambement (m), L longueur réelle (m) ; articulée-articulée : L ; encastrée-encastrée : 0,5 L ; encastrée-articulée : 0,7 L",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-rdm-lf-encastre-encastre",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Longueur de flambement — encastrée / encastrée",
+    "tex": "[[L_f]] = [[0{,}5|2|1|0{,}7]] \\, [[L|L^2]]",
+    "legende": "Lf longueur de flambement (m), L longueur réelle (m)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-rdm-elancement",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Élancement d'une poutre",
+    "tex": "[[\\lambda]] = \\frac{[[L_f|L|I]]}{[[\\rho_g|I|S]]} \\quad \\text{avec} \\quad \\rho_g = \\sqrt{\\frac{[[I_{\\min}|I_0|I_{\\max}]]}{[[S|L_f|E]]}}",
+    "legende": "λ élancement (sans unité), Lf longueur de flambement (m), ρg rayon de giration (m), Imin (m⁴), S section (m²)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-rdm-von-mises",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Contrainte équivalente de von Mises (flexion + torsion)",
+    "tex": "[[\\sigma_{\\mathrm{eq}}]] = \\sqrt{[[\\sigma^2|\\sigma|2\\sigma^2]] + [[3|4|2]] \\, [[\\tau^2|\\tau|\\sigma\\tau]]}",
+    "legende": "σeq contrainte équivalente (Pa), σ contrainte normale (Pa), τ contrainte tangentielle (Pa) — Tresca : facteur 4",
+    "source": "Fiche TC3.2.1 ; Classique programme"
+  },
+  {
+    "id": "tc3-rdm-tresca",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Contrainte équivalente de Tresca (flexion + torsion)",
+    "tex": "[[\\sigma_{\\mathrm{eq}}]] = \\sqrt{[[\\sigma^2|\\sigma|3\\sigma^2]] + [[4|3|2]] \\, [[\\tau^2|\\tau|\\sigma\\tau]]}",
+    "legende": "σeq contrainte équivalente (Pa), σ contrainte normale (Pa), τ contrainte tangentielle (Pa)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-rdm-concentration",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Concentration de contraintes",
+    "tex": "[[\\sigma_{\\max}]] = [[K_t|\\frac{1}{K_t}|s]] \\cdot [[\\sigma_{\\mathrm{nom}}|R_e|\\sigma_{\\mathrm{adm}}]]",
+    "legende": "σmax contrainte réelle locale (Pa), Kt coefficient de concentration de contrainte (> 1), σnom contrainte nominale (Pa)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-rdm-fem",
+    "bloc": "TC3",
+    "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
+    "nom": "Système linéaire des éléments finis",
+    "tex": "[[\\mathbf{K}|\\mathbf{M}|\\mathbf{C}]] \\, [[\\mathbf{U}|\\mathbf{F}|\\dot{\\mathbf{U}}]] = [[\\mathbf{F}|\\mathbf{U}|\\mathbf{0}]]",
+    "legende": "[K] matrice de rigidité globale, {U} déplacements nodaux, {F} efforts nodaux",
+    "source": "Fiche TC3.2.1"
+  },
+  {
+    "id": "tc3-meca-dualite-liaison",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Dualité d'une liaison parfaite",
+    "tex": "[[m_c|N_c]] + [[N_c|h]] = [[6|3|12]]",
+    "legende": "mc nombre de mobilités, Nc nombre d'inconnues statiques de la liaison",
+    "source": "Fiche TC3.2.2 ; Fiche TC2.2 (tableau des liaisons)"
+  },
+  {
+    "id": "tc3-meca-cyclomatique",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Nombre cyclomatique",
+    "tex": "[[\\gamma]] = [[L|n|N_c]] - [[(n - 1)|n|(n + 1)]]",
+    "legende": "γ nombre de boucles indépendantes, L nombre de liaisons, n nombre de solides (bâti compris)",
+    "source": "Fiche TC3.2.2 ; Fiche TC2.2 (graphe des liaisons, chaîne fermée = cycle)"
+  },
+  {
+    "id": "tc3-meca-hyperstatisme",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Mobilité et degré d'hyperstatisme",
+    "tex": "[[m]] - [[h]] = [[6\\gamma|6(n - 1)|3\\gamma]] - [[\\sum N_c|\\sum m_c|N_s]]",
+    "legende": "m mobilité, h degré d'hyperstatisme, γ nombre cyclomatique, Nc inconnues statiques de chaque liaison (en 3D)",
+    "source": "Fiche TC3.2.2"
+  },
+  {
+    "id": "tc3-meca-varignon",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Relation de Varignon (champ des vitesses)",
+    "tex": "[[\\vec{V}(Q,S/R)]] = [[\\vec{V}(P,S/R)|\\vec{V}(Q,R/S)]] + [[\\overrightarrow{QP}|\\overrightarrow{PQ}]] \\wedge [[\\vec{\\Omega}(S/R)|\\vec{\\Omega}(R/S)]]",
+    "legende": "V vitesse d'un point lié au solide S (m/s), Ω vecteur rotation de S/R (rad/s)",
+    "source": "Fiche TC3.2.2"
+  },
+  {
+    "id": "tc3-meca-transport-moment",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Transport du moment (torseur d'actions)",
+    "tex": "[[\\vec{M}_B]] = [[\\vec{M}_A|\\vec{M}_O]] + [[\\overrightarrow{BA}|\\overrightarrow{AB}]] \\wedge [[\\vec{R}|\\vec{\\Omega}|\\vec{V}]]",
+    "legende": "M moment (N·m), R résultante (N) — même structure que Varignon (« BABAR »)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-meca-composition-vitesses",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Composition des vitesses",
+    "tex": "[[\\vec{V}(M,2/0)]] = [[\\vec{V}(M,2/1)|\\vec{V}(M,1/2)]] + [[\\vec{V}(M,1/0)|\\vec{V}(M,0/1)]]",
+    "legende": "V vitesse du point M (m/s) dans chaque mouvement relatif",
+    "source": "Fiche TC3.2.2"
+  },
+  {
+    "id": "tc3-meca-composition-rotations",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Composition des vecteurs rotation",
+    "tex": "[[\\vec{\\Omega}(2/0)]] = [[\\vec{\\Omega}(2/1)|\\vec{\\Omega}(1/2)]] + [[\\vec{\\Omega}(1/0)|\\vec{\\Omega}(0/1)]]",
+    "legende": "Ω vecteurs rotation (rad/s)",
+    "source": "Fiche TC3.2.2"
+  },
+  {
+    "id": "tc3-meca-derivation-vectorielle",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Formule de dérivation vectorielle (Bour)",
+    "tex": "\\left[\\frac{\\mathrm{d}\\vec{u}}{\\mathrm{d}t}\\right]_{[[R_0|R_1]]} = \\left[\\frac{\\mathrm{d}\\vec{u}}{\\mathrm{d}t}\\right]_{[[R_1|R_0]]} + [[\\vec{\\Omega}(R_1/R_0)|\\vec{\\Omega}(R_0/R_1)]] \\wedge [[\\vec{u}|\\dot{\\vec{u}}]]",
+    "legende": "u vecteur quelconque, Ω(R1/R0) vecteur rotation de R1 par rapport à R0 (rad/s)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-meca-pfs-resultante",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "PFS — théorème de la résultante statique",
+    "tex": "[[\\sum \\vec{F}_{\\mathrm{ext}}]] = [[\\vec{0}|m\\vec{a}(G)|\\vec{\\delta}]]",
+    "legende": "Fext actions extérieures au système isolé (N), référentiel galiléen",
+    "source": "Fiche TC3.2.2"
+  },
+  {
+    "id": "tc3-meca-pfs-moment",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "PFS — théorème du moment statique",
+    "tex": "[[\\sum \\vec{M}_O(\\vec{F}_{\\mathrm{ext}})]] = [[\\vec{0}|\\vec{\\delta}(O)|\\vec{\\sigma}(O)]] \\quad [[\\forall O|\\text{en } G \\text{ seulement}]]",
+    "legende": "MO moment en O des actions extérieures (N·m), en tout point O",
+    "source": "Fiche TC3.2.2"
+  },
+  {
+    "id": "tc3-meca-trd",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Théorème de la résultante dynamique",
+    "tex": "[[\\sum \\vec{F}_{\\mathrm{ext}}]] = [[m|J|\\frac{1}{2}m]] \\, [[\\vec{a}(G,\\Sigma/R)|\\vec{V}(G,\\Sigma/R)|\\vec{a}(A,\\Sigma/R)]]",
+    "legende": "m masse (kg), a(G) accélération du centre d'inertie (m/s²), R galiléen",
+    "source": "Fiche TC3.2.2"
+  },
+  {
+    "id": "tc3-meca-tmd",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Théorème du moment dynamique",
+    "tex": "[[\\sum \\vec{M}_A(\\vec{F}_{\\mathrm{ext}})]] = [[\\vec{\\delta}(A,\\Sigma/R)|\\vec{\\sigma}(A,\\Sigma/R)|\\vec{0}]]",
+    "legende": "MA moment des actions extérieures (N·m), δ moment dynamique (N·m), A fixe dans R ou A = G",
+    "source": "Fiche TC3.2.2"
+  },
+  {
+    "id": "tc3-meca-moment-cinetique",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Moment cinétique d'un solide (A fixe ou A = G)",
+    "tex": "[[\\vec{\\sigma}(A,\\Sigma/R)]] = [[I(A,\\Sigma)|m|J_G]] \\cdot [[\\vec{\\Omega}(\\Sigma/R)|\\vec{V}(A,\\Sigma/R)|\\dot{\\vec{\\Omega}}]]",
+    "legende": "σ moment cinétique (kg·m²/s), I(A,Σ) matrice d'inertie en A (kg·m²), Ω vecteur rotation (rad/s)",
+    "source": "Fiche TC3.2.2"
+  },
+  {
+    "id": "tc3-meca-moment-dynamique",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Moment dynamique (A fixe dans R)",
+    "tex": "[[\\vec{\\delta}(A,\\Sigma/R)]] = \\left[\\frac{\\mathrm{d}}{\\mathrm{d}t} [[\\vec{\\sigma}(A,\\Sigma/R)|\\vec{V}(A,\\Sigma/R)|\\vec{\\Omega}(\\Sigma/R)]]\\right]_{[[R|\\Sigma]]}",
+    "legende": "δ moment dynamique (N·m), σ moment cinétique (kg·m²/s), dérivée dans le référentiel galiléen R",
+    "source": "Fiche TC3.2.2"
+  },
+  {
+    "id": "tc3-meca-tmd-axe-fixe",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "TMD projeté sur un axe fixe",
+    "tex": "[[\\sum M_{\\Delta}]] = [[J_{\\Delta}|m|J_G]] \\, [[\\ddot{\\theta}|\\dot{\\theta}|\\dot{\\theta}^2]]",
+    "legende": "MΔ moments des actions extérieures sur l'axe (N·m), JΔ moment d'inertie (kg·m²), θ̈ accélération angulaire (rad/s²)",
+    "source": "Fiche TC3.2.2 ; Sujet 2025 E1 Q42-43"
+  },
+  {
+    "id": "tc3-meca-ec-translation",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Énergie cinétique d'un solide en translation",
+    "tex": "[[E_c]] = [[\\frac{1}{2}|2|1]] \\, [[m|J|m^2]] \\, [[V^2|V|\\omega^2]]",
+    "legende": "Ec énergie cinétique (J), m masse (kg), V vitesse (m/s)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-meca-ec-rotation",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Énergie cinétique d'un solide en rotation autour d'un axe fixe",
+    "tex": "[[E_c]] = [[\\frac{1}{2}|2|1]] \\, [[J_{\\Delta}|m|J_{\\Delta}^2]] \\, [[\\omega^2|\\omega|V^2]]",
+    "legende": "Ec énergie cinétique (J), JΔ moment d'inertie (kg·m²), ω vitesse angulaire (rad/s)",
+    "source": "Fiche OE3.6"
+  },
+  {
+    "id": "tc3-meca-ec-general",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Énergie cinétique d'un solide (théorème de Koenig)",
+    "tex": "[[E_c]] = \\frac{1}{2} [[m|J_G|m^2]] \\, [[V_G^2|V_G|\\omega^2]] + \\frac{1}{2} [[J_G|m|J_O]] \\, [[\\omega^2|\\omega|V_G^2]]",
+    "legende": "m masse (kg), VG vitesse du centre d'inertie (m/s), JG inertie autour de l'axe passant par G (kg·m²), ω (rad/s) — mouvement plan",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-meca-tec",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Théorème de l'énergie cinétique",
+    "tex": "\\frac{\\mathrm{d} [[E_c|E_p|P]]}{\\mathrm{d}t} = [[P_{\\mathrm{ext}}|P_{\\mathrm{int}}|0]] + [[P_{\\mathrm{int}}|P_{\\mathrm{pertes}}|E_c]]",
+    "legende": "Ec énergie cinétique de l'ensemble (J), Pext puissance des actions extérieures (W), Pint puissance des inter-efforts (W, ≤ 0 si dissipatifs)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-meca-puissance-rotation",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Puissance mécanique en rotation",
+    "tex": "[[P]] = [[C|F|J]] \\cdot [[\\omega|N|\\dot{\\omega}]]",
+    "legende": "P puissance (W), C couple (N·m), ω vitesse angulaire (rad/s)",
+    "source": "Fiche TC3.2.3"
+  },
+  {
+    "id": "tc3-meca-puissance-translation",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Puissance mécanique en translation",
+    "tex": "[[P]] = [[\\vec{F}|m|\\vec{C}]] \\cdot [[\\vec{V}|\\vec{a}|\\vec{\\Omega}]]",
+    "legende": "P puissance (W), F effort (N), V vitesse du point d'application (m/s)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-meca-omega-n",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Vitesse angulaire et fréquence de rotation",
+    "tex": "[[\\omega]] = \\frac{[[2\\pi|\\pi|60]] \\, [[N|f|n]]}{[[60|2\\pi|30]]}",
+    "legende": "ω (rad/s), N fréquence de rotation (tr/min)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-meca-inertie-cylindre",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Moment d'inertie d'un cylindre plein (axe de révolution)",
+    "tex": "[[J]] = [[\\frac{1}{2}|\\frac{2}{5}|1]] \\, [[m|\\rho|m^2]] \\, [[R^2|R|R^4]]",
+    "legende": "J (kg·m²), m masse (kg), R rayon (m)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-meca-inertie-cylindre-creux",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Moment d'inertie d'un cylindre creux épais (axe de révolution)",
+    "tex": "[[J]] = [[\\frac{1}{2}|\\frac{1}{4}|1]] \\, [[m|\\rho|m^2]] \\left([[R^2 + r^2|R^2 - r^2|(R - r)^2]]\\right)",
+    "legende": "J (kg·m²), m masse (kg), R rayon extérieur (m), r rayon intérieur (m) — couronne mince : J = mR²",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-meca-inertie-sphere",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Moment d'inertie d'une sphère pleine (axe diamétral)",
+    "tex": "[[J]] = [[\\frac{2}{5}|\\frac{1}{2}|\\frac{2}{3}]] \\, [[m|\\rho|m^2]] \\, [[R^2|R|R^3]]",
+    "legende": "J (kg·m²), m masse (kg), R rayon (m)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-meca-inertie-tige-centre",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Moment d'inertie d'une tige (axe perpendiculaire par le centre)",
+    "tex": "[[J_G]] = \\frac{[[m|\\rho|m^2]] \\, [[L^2|L|L^3]]}{[[12|3|2]]}",
+    "legende": "JG (kg·m²), m masse (kg), L longueur (m)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-meca-inertie-tige-extremite",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Moment d'inertie d'une tige (axe perpendiculaire par une extrémité)",
+    "tex": "[[J_O]] = \\frac{[[m|\\rho|m^2]] \\, [[L^2|L|L^3]]}{[[3|12|2]]}",
+    "legende": "JO (kg·m²), m masse (kg), L longueur (m)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-meca-huygens",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Théorème de Huygens (moments d'inertie)",
+    "tex": "[[J_{\\Delta}]] = [[J_{G}|J_O|m]] + [[m|m^2|J_G]] \\, [[d^2|d|d^4]]",
+    "legende": "JΔ inertie / axe Δ (kg·m²), JG inertie / axe parallèle passant par G (kg·m²), m masse (kg), d distance entre axes (m)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-meca-inertie-equivalente",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Inertie équivalente ramenée sur l'arbre moteur",
+    "tex": "[[J_{\\mathrm{eq}}]] = [[J_m|J_c|m]] + [[k^2|k|\\frac{1}{k^2}]] \\, [[J_c|J_m|m]] + [[M|J_c|M^2]] \\left(\\frac{[[V|\\omega_m|a]]}{[[\\omega_m|V|R]]}\\right)^2",
+    "legende": "Jm inertie moteur, Jc inertie de la charge tournante, k = ωc/ωm rapport de réduction, M masse en translation (kg), V sa vitesse (m/s)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-meca-coulomb-glissement",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Loi de Coulomb — glissement",
+    "tex": "[[T]] = [[f|\\frac{1}{f}|\\tan\\varphi^2]] \\, [[N|T_0|m]]",
+    "legende": "T effort tangentiel (N), N effort normal (N), f coefficient de frottement — en adhérence : T ≤ f N",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-meca-coulomb-adherence",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Loi de Coulomb — adhérence",
+    "tex": "[[T]] [[\\leq|\\geq|=]] [[f N|\\frac{N}{f}|f T]]",
+    "legende": "T effort tangentiel (N), N effort normal (N), f coefficient d'adhérence/frottement",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-meca-angle-frottement",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Angle de frottement",
+    "tex": "[[f]] = [[\\tan|\\sin|\\cos]] \\, [[\\varphi|2\\varphi|\\frac{\\varphi}{2}]]",
+    "legende": "f coefficient de frottement, φ demi-angle au sommet du cône de frottement (rad)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-meca-couple-frein",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Couple transmissible par un frein/embrayage à disques",
+    "tex": "[[C]] = [[n|2n|\\frac{n}{2}]] \\, [[f|\\frac{1}{f}|\\mu]] \\, [[F|p|F^2]] \\, [[R_{\\mathrm{moy}}|R_{\\max}|D]]",
+    "legende": "C couple (N·m), n nombre de surfaces de frottement, f coefficient de frottement, F effort presseur (N), Rmoy rayon moyen (m) = (R + r)/2 en usure uniforme",
+    "source": "Fiche TC3.2.2 (Sujet 2025 E1 Q44-46) ; Classique programme"
+  },
+  {
+    "id": "tc3-meca-pression-contact",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Pression de contact moyenne",
+    "tex": "[[p]] = \\frac{[[F|C|m]]}{[[S|L|S^2]]}",
+    "legende": "p pression (Pa), F effort normal (N), S surface de contact projetée (m²)",
+    "source": "Fiche TC3.2.2 (Sujet 2025 E1 Q48-49) ; Classique programme"
+  },
+  {
+    "id": "tc3-meca-acceleration-normale",
+    "bloc": "TC3",
+    "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
+    "nom": "Accélération normale (centripète) en rotation",
+    "tex": "[[a_n]] = [[R|\\frac{1}{R}|R^2]] \\, [[\\omega^2|\\omega|\\dot{\\omega}]]",
+    "legende": "an accélération normale (m/s²), R rayon (m), ω vitesse angulaire (rad/s) — tangentielle : at = R ω̇",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-trans-rapport",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Rapport de réduction / transmission",
+    "tex": "[[k]] = \\frac{[[\\omega_s|\\omega_e|C_s]]}{[[\\omega_e|\\omega_s|C_e]]}",
+    "legende": "k rapport (sans unité, < 1 pour un réducteur), ωs, ωe vitesses de sortie et d'entrée (rad/s)",
+    "source": "Fiche TC3.2.3"
+  },
+  {
+    "id": "tc3-trans-conservation-puissance",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Conservation de la puissance (transmission idéale)",
+    "tex": "[[C_e]] \\, [[\\omega_e|\\omega_s]] = [[C_s]] \\, [[\\omega_s|\\omega_e]]",
+    "legende": "C couples (N·m), ω vitesses angulaires (rad/s), indices e entrée / s sortie",
+    "source": "Fiche TC3.2.3"
+  },
+  {
+    "id": "tc3-trans-rendement",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Rendement d'un étage de transmission",
+    "tex": "[[\\eta]] = \\frac{[[P_s|P_e]]}{[[P_e|P_s]]} = \\frac{[[C_s \\omega_s|C_e \\omega_e|C_s \\omega_e]]}{[[C_e \\omega_e|C_s \\omega_s|C_e \\omega_s]]}",
+    "legende": "η rendement (< 1), P puissances (W), C couples (N·m), ω vitesses (rad/s)",
+    "source": "Fiche TC3.2.3"
+  },
+  {
+    "id": "tc3-trans-couple-sortie",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Couple de sortie réel d'un réducteur",
+    "tex": "[[C_s]] = \\frac{[[\\eta|\\frac{1}{\\eta}|1 - \\eta]] \\cdot [[C_e|C_s|\\omega_e]]}{[[k|k^2|\\frac{1}{k}]]}",
+    "legende": "Cs couple de sortie (N·m), η rendement, Ce couple d'entrée (N·m), k = ωs/ωe",
+    "source": "Fiche TC3.2.3"
+  },
+  {
+    "id": "tc3-trans-k-tot",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Rapport de réduction global d'une chaîne",
+    "tex": "[[k_{\\mathrm{tot}}]] = [[\\prod_{i=1}^{n} k_i|\\sum_{i=1}^{n} k_i|\\frac{1}{n}\\sum_{i=1}^{n} k_i]]",
+    "legende": "ktot rapport global, ki rapport de chaque étage en série",
+    "source": "Fiche TC3.2.3"
+  },
+  {
+    "id": "tc3-trans-pertes",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Puissance perdue dans une transmission",
+    "tex": "[[P_{\\mathrm{pertes}}]] = \\left([[1 - \\eta|\\eta|1 + \\eta]]\\right) [[P_e|P_s|C_e]]",
+    "legende": "Ppertes puissance dissipée (W), η rendement, Pe puissance d'entrée (W)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-trans-engrenage",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Rapport d'un engrenage extérieur",
+    "tex": "[[k]] = \\frac{[[\\omega_2|\\omega_1]]}{[[\\omega_1|\\omega_2]]} = [[-|+]] \\, \\frac{[[Z_1|Z_2|D_2]]}{[[Z_2|Z_1|D_1]]}",
+    "legende": "k rapport, ω1 pignon menant, ω2 roue menée (rad/s), Z nombres de dents — signe + pour un engrenage intérieur",
+    "source": "Fiche TC3.2.3 ; Sujet 2024 E3 Q9 ; Fiche TC2.2 (exemple 2021, r_c = ω4/0 / ω3c/0)"
+  },
+  {
+    "id": "tc3-trans-train-simple",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Rapport d'un train d'engrenages simple",
+    "tex": "[[k]] = [[(-1)^n|(-1)^{n+1}|-1]] \\, \\frac{[[\\prod Z_{\\mathrm{menantes}}|\\prod Z_{\\mathrm{menées}}|\\sum Z_{\\mathrm{menantes}}]]}{[[\\prod Z_{\\mathrm{menées}}|\\prod Z_{\\mathrm{menantes}}|\\sum Z_{\\mathrm{menées}}]]}",
+    "legende": "n nombre de contacts extérieurs, Z nombres de dents des roues menantes et menées",
+    "source": "Fiche TC2.2 (exemple 2021, rapport global)"
+  },
+  {
+    "id": "tc3-trans-entraxe",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Entraxe d'un engrenage extérieur",
+    "tex": "[[a]] = \\frac{[[m|\\pi m|2m]] \\left([[Z_1 + Z_2|Z_2 - Z_1|Z_1 Z_2]]\\right)}{[[2|1|4]]}",
+    "legende": "a entraxe (mm), m module (mm), Z1, Z2 nombres de dents — intérieur : Z2 − Z1",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-trans-effort-tangentiel",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Effort tangentiel sur une denture",
+    "tex": "[[F_t]] = \\frac{[[2|1|\\frac{1}{2}]] \\, [[C|P|\\omega]]}{[[d|R|d^2]]}",
+    "legende": "Ft effort tangentiel (N), C couple sur la roue (N·m), d diamètre primitif (m)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-trans-effort-radial",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Effort radial sur une denture droite",
+    "tex": "[[F_r]] = [[F_t|F_a|C]] \\, [[\\tan\\alpha|\\sin\\alpha|\\cos\\alpha]]",
+    "legende": "Fr effort radial (N), Ft effort tangentiel (N), α angle de pression (20° usuel)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-trans-effort-axial",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Effort axial d'une denture hélicoïdale",
+    "tex": "[[F_a]] = [[F_t|F_r|C]] \\, [[\\tan\\beta|\\cos\\beta|\\sin\\beta]]",
+    "legende": "Fa effort axial (N), Ft effort tangentiel (N), β angle d'hélice",
+    "source": "Fiche TC3.2.3 ; Classique programme"
+  },
+  {
+    "id": "tc3-trans-poulies",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Rapport d'une transmission poulies-courroie",
+    "tex": "[[k]] = \\frac{[[\\omega_2|\\omega_1]]}{[[\\omega_1|\\omega_2]]} = \\frac{[[D_1|D_2|Z_2]]}{[[D_2|D_1|Z_1]]}",
+    "legende": "k rapport (sans glissement), D1 poulie menante, D2 poulie menée (m) — sens de rotation conservé",
+    "source": "Fiche TC3.2.3"
+  },
+  {
+    "id": "tc3-trans-vitesse-courroie",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Vitesse linéaire d'une courroie (sans glissement)",
+    "tex": "[[V]] = [[R_1|D_1|R_2]] \\, [[\\omega_1|\\omega_2|N_1]] = [[R_2|D_2|R_1]] \\, [[\\omega_2|\\omega_1|N_2]]",
+    "legende": "V vitesse de la courroie (m/s), R rayons primitifs (m), ω vitesses angulaires (rad/s)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-trans-couple-courroie",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Couple transmis par une courroie",
+    "tex": "[[C]] = \\left([[T_1 - T_2|T_1 + T_2|T_1 T_2]]\\right) \\cdot [[R|D|R^2]]",
+    "legende": "C couple (N·m), T1 tension brin tendu, T2 tension brin mou (N), R rayon de la poulie (m)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-trans-euler-courroie",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Relation d'Euler (limite de glissement d'une courroie plate)",
+    "tex": "\\frac{[[T_1|T_2]]}{[[T_2|T_1]]} = [[e|10|\\pi]]^{[[f \\theta|\\frac{\\theta}{f}|f/\\theta]]}",
+    "legende": "T1 tension brin tendu, T2 brin mou (N), f coefficient de frottement, θ angle d'enroulement (rad)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-trans-pignon-cremaillere",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Pignon-crémaillère / roue-rail",
+    "tex": "[[V]] = [[R|D|\\frac{1}{R}]] \\cdot [[\\omega|N|\\dot{\\omega}]]",
+    "legende": "V vitesse linéaire (m/s), R rayon primitif ou rayon de roue (m), ω vitesse angulaire (rad/s)",
+    "source": "Fiche TC3.2.3 (Sujet 2024 E3 Q30-34) ; Classique programme"
+  },
+  {
+    "id": "tc3-trans-effort-jante",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Effort à la jante d'une roue motrice",
+    "tex": "[[F]] = \\frac{[[C_{\\mathrm{roue}}|C_m|P]]}{[[R_j|D_j|R_j^2]]}",
+    "legende": "F effort tangentiel à la jante (N), C couple sur l'essieu (N·m), Rj rayon de jante (m)",
+    "source": "Fiche TC3.2.3 (Sujet 2024 E3 Q30-34) ; Classique programme"
+  },
+  {
+    "id": "tc3-trans-vis-ecrou-vitesse",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Système vis-écrou — vitesse de translation",
+    "tex": "[[V]] = \\frac{[[p|\\pi p|2p]] \\, [[\\omega|N|\\dot{\\omega}]]}{[[2\\pi|\\pi|60]]}",
+    "legende": "V vitesse de translation (m/s), p pas de la vis (m), ω vitesse angulaire (rad/s)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-trans-vis-ecrou-effort",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Système vis-écrou — effort axial",
+    "tex": "[[F]] = \\frac{[[2\\pi|\\pi|2]] \\, [[\\eta|\\frac{1}{\\eta}|1 - \\eta]] \\, [[C|P|\\omega]]}{[[p|p^2|2\\pi p]]}",
+    "legende": "F effort axial (N), η rendement, C couple sur la vis (N·m), p pas (m)",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-trans-roue-vis",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Rapport d'un système roue et vis sans fin",
+    "tex": "[[k]] = \\frac{[[\\omega_{\\mathrm{roue}}|\\omega_{\\mathrm{vis}}]]}{[[\\omega_{\\mathrm{vis}}|\\omega_{\\mathrm{roue}}]]} = \\frac{[[Z_{\\mathrm{vis}}|Z_{\\mathrm{roue}}|1]]}{[[Z_{\\mathrm{roue}}|Z_{\\mathrm{vis}}|p]]}",
+    "legende": "Zvis nombre de filets, Zroue nombre de dents de la roue",
+    "source": "Classique programme"
+  },
+  {
+    "id": "tc3-trans-willis",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Formule de Willis (train épicycloïdal)",
+    "tex": "\\frac{[[\\omega_{s} - \\omega_{PS}|\\omega_{s} + \\omega_{PS}|\\omega_{s}]]}{[[\\omega_{e} - \\omega_{PS}|\\omega_{e} + \\omega_{PS}|\\omega_{e}]]} = [[\\lambda|\\frac{1}{\\lambda}|1 - \\lambda]]",
+    "legende": "ωs, ωe vitesses des planétaires, ωPS vitesse du porte-satellites, λ raison basique (rapport du train à porte-satellites fixe)",
+    "source": "Fiche TC2.2 (exemple 2021, réducteur épicycloïdal 3 étages)"
+  },
+  {
+    "id": "tc3-trans-cardan",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Joint de cardan simple — loi entrée-sortie",
+    "tex": "[[\\tan\\theta_s]] = [[\\cos\\delta|\\sin\\delta|\\frac{1}{\\cos\\delta}]] \\cdot [[\\tan\\theta_e|\\sin\\theta_e|\\theta_e]]",
+    "legende": "θs, θe angles de rotation des fourches (rad), δ angle entre les arbres — non homocinétique dès δ ≠ 0",
+    "source": "Fiche TC3.2.3"
+  },
+  {
+    "id": "tc3-trans-cardan-fluctuation",
+    "bloc": "TC3",
+    "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
+    "nom": "Joint de cardan simple — bornes du rapport instantané",
+    "tex": "[[\\cos\\delta|\\sin\\delta|\\cos^2\\delta]] \\leq \\frac{\\omega_s}{\\omega_e} \\leq [[\\frac{1}{\\cos\\delta}|\\frac{1}{\\sin\\delta}|1]]",
+    "legende": "ωs/ωe rapport instantané (oscille deux fois par tour), δ angle entre arbres",
+    "source": "Fiche TC3.2.3 ; Classique programme"
+  }
+]

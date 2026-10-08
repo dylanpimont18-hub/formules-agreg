@@ -1,0 +1,12 @@
+{
+  "name": "formules-agreg",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "serve": "npx --yes http-server -p 8080 -c-1 ."
+  },
+  "devDependencies": {
+    "katex": "0.16.11"
+  }
+}
