@@ -22,6 +22,7 @@ Moteur pur (sans DOM) : découpe des formules et génération des QCM.
 Interface : sélection des notions, déroulé du quiz, bilan, formulaire, progrès (localStorage).
 - renderBlocs() — cases à cocher blocs/notions
 - start() / next() / answer(i) / finish() — cycle d'une série
+- startGeneral() — 20 questions, bloc tiré à chaque question
 - renderListe(filtre) — formulaire filtrable
 - renderProgres() — maîtrise par bloc
 

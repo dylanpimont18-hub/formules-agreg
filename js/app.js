@@ -73,7 +73,15 @@ function start() {
   store.set('fa-notions', [...notions]);
   session.pool = questions.filter(q => notions.has(q.formule.notion));
   if (!session.pool.length) { alert('Coche au moins une notion.'); return; }
-  Object.assign(session, { n: 0, ok: 0, errors: [], current: null, max: +$('#longueur').value });
+  Object.assign(session, { n: 0, ok: 0, errors: [], current: null, max: +$('#longueur').value, general: false });
+  show('#quiz');
+  next();
+}
+
+// Série générale : 20 questions, tous thèmes, un bloc tiré au sort à chaque question.
+function startGeneral() {
+  session.pool = questions;
+  Object.assign(session, { n: 0, ok: 0, errors: [], current: null, max: 20, general: true });
   show('#quiz');
   next();
 }
@@ -81,9 +89,15 @@ function start() {
 function next() {
   if (session.max && session.n >= session.max) return finish();
   const avoid = session.current?.key;
+  let pool = session.pool;
+  if (session.general) {
+    const blocs = [...new Set(pool.map(q => q.formule.bloc))].filter(b => b !== session.current?.formule.bloc);
+    const bloc = shuffle(blocs)[0];
+    pool = pool.filter(q => q.formule.bloc === bloc);
+  }
   session.current = $('#priorite').checked
-    ? pickWeighted(session.pool, stats, avoid)
-    : shuffle(session.pool.filter(q => q.key !== avoid || session.pool.length === 1))[0];
+    ? pickWeighted(pool, stats, avoid)
+    : shuffle(pool.filter(q => q.key !== avoid || pool.length === 1))[0];
   const q = session.current, f = q.formule;
   session.Q = buildQuestion(db, q);
   session.answered = false;
@@ -205,7 +219,8 @@ function bindUI() {
   $('#go').onclick = start;
   $('#next').onclick = next;
   $('#stop').onclick = () => session.n ? finish() : show('#setup');
-  $('#rejouer').onclick = start;
+  $('#general').onclick = startGeneral;
+  $('#rejouer').onclick = () => session.general ? startGeneral() : start();
   $('#retour').onclick = () => show('#setup');
   $('#tout').onclick = () => setAll(true);
   $('#rien').onclick = () => setAll(false);
