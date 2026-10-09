@@ -1,5 +1,5 @@
 // Généré par scripts/build.mjs — ne pas éditer.
-const CACHE = 'formules-6a1e403312';
+const CACHE = 'formules-e6e4d354c9';
 const FICHIERS = [
  "./",
  "index.html",
@@ -7,6 +7,7 @@ const FICHIERS = [
  "data/formules.json",
  "css/style.css",
  "js/app.js",
+ "js/icones.js",
  "js/quiz.js",
  "js/srs.js",
  "js/unites.js",

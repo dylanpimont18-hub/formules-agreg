@@ -46,11 +46,19 @@ Interface : accueil, séries, quiz, bilan, formulaire, progrès (localStorage), 
 - renderAccueil() — compteurs du jour, erreurs, flamme
 - lancer(mode) — jour / erreurs / general / carte
 - choisir() / next() / answer(i) / finish() — cycle d'une série
-- ajuster(el) — réduit une formule à la largeur
+- restaurerReglages() — mémorise erreurs / passage auto
+- ajuster(el) / ajusterTout(racine) — réduit à la largeur, après polices
+- marquerDebordement(el) — dégradé si défilement horizontal
 - texteRiche(el, s) — texte avec $…$ en KaTeX
-- renderLegende(el, f) — grandeurs et unités
+- renderGrandeurs(el, f) — indice : grandeurs et unités
+- montrerVerdict() / suspendreAuto() — défilement, passage auto
 - lienSignalement(q) — issue GitHub pré-remplie
 - renderListe(filtre) / renderProgres() — formulaire, progrès
+
+## js/icones.js
+Icônes SVG (tracés Lucide) d'une seule famille.
+- icone(nom, classe) — code SVG décoratif
+- poserIcones(racine) — remplace les <i data-icone>
 
 ## scripts/build.mjs
 Valide data/src/*.json (champs, cases, KaTeX, légendes, grandeurs, doublons, 4 options par question) → data/formules.json, puis génère sw.js.

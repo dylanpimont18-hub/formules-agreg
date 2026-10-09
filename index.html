@@ -20,7 +20,7 @@
 <body>
   <header class="topbar">
     <div class="brand"><span class="logo">∑</span> Formules Agrég SII</div>
-    <div id="flamme" class="flamme" title="Jours de révision consécutifs"></div>
+    <div id="flamme" class="flamme hidden" title="Jours de révision consécutifs"><i data-icone="flamme"></i><span id="flamme-nb"></span></div>
   </header>
 
   <main>
@@ -61,30 +61,33 @@
                 <option value="0">Illimité</option>
               </select>
             </label>
-            <label class="check"><input type="checkbox" id="priorite" checked> Insister sur mes erreurs</label>
           </div>
-          <button id="go" class="primary big">Commencer</button>
+          <h3>Réglages (toutes les séries)</h3>
+          <div class="types">
+            <label class="check"><input type="checkbox" id="priorite" checked> Insister sur mes erreurs</label>
+            <label class="check"><input type="checkbox" id="auto" checked> Passer à la suite après une bonne réponse</label>
+          </div>
+          <button id="go" class="primary big go">Commencer</button>
         </details>
       </div>
 
       <!-- Quiz -->
       <div id="quiz" class="hidden">
         <div class="quiz-head">
-          <button class="link" id="stop">✕ Arrêter</button>
+          <button class="link" id="stop"><i data-icone="ko"></i> Arrêter</button>
           <div class="progress"><div id="bar"></div></div>
           <div id="score" class="score"></div>
         </div>
         <div class="card question">
           <div class="meta">
             <span id="q-bloc" class="pill"></span>
-            <span class="spacer"></span><span id="q-num" class="muted"></span>
           </div>
           <div id="q-notion" class="muted notion"></div>
           <h2 id="q-nom" class="q-nom"></h2>
           <div class="q-sous"><span id="q-consigne"></span><span id="q-historique" class="historique"></span></div>
           <div id="q-tex" class="formula"></div>
           <details id="q-indice" class="indice">
-            <summary>💡 Indice : signification des grandeurs</summary>
+            <summary><i data-icone="ampoule"></i> Indice : signification des grandeurs</summary>
             <div id="q-legende"></div>
           </details>
           <div id="options" class="options"></div>
@@ -94,7 +97,7 @@
             <div id="fb-tex" class="formula small"></div>
             <div id="fb-legende" class="legende"></div>
             <div id="fb-source" class="source"></div>
-            <a id="fb-signaler" class="signaler" target="_blank" rel="noopener">⚠︎ Signaler une erreur</a>
+            <a id="fb-signaler" class="signaler" target="_blank" rel="noopener"><i data-icone="alerte"></i> Signaler une erreur</a>
           </div>
         </div>
       </div>
@@ -133,13 +136,13 @@
   </main>
 
   <div id="actionbar" class="actionbar hidden">
-    <button id="next" class="primary big">Suivante</button>
+    <button id="next" class="primary big"><span class="remplissage"></span><span class="libelle">Suivante</span></button>
   </div>
 
   <nav class="tabbar" role="tablist">
-    <button class="tab active" data-view="entrainement"><span class="ico">◎</span>Réviser</button>
-    <button class="tab" data-view="formulaire"><span class="ico">∑</span>Formulaire</button>
-    <button class="tab" data-view="progres"><span class="ico">▲</span>Progrès</button>
+    <button class="tab active" data-view="entrainement"><i data-icone="cible"></i>Réviser</button>
+    <button class="tab" data-view="formulaire"><i data-icone="sigma"></i>Formulaire</button>
+    <button class="tab" data-view="progres"><i data-icone="graphique"></i>Progrès</button>
   </nav>
 
   <script type="module" src="js/app.js"></script>

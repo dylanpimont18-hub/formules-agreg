@@ -1,6 +1,7 @@
 // Interface : révision du jour, séries, déroulé du QCM, formulaire, progrès.
 import { prepare, allQuestions, buildQuestion, pickWeighted, pickType, shuffle, consigne, completeTex, TYPES } from './quiz.js';
 import { enregistrer, estAcquise, estDue, fileDuJour, majJour, serieActuelle, nouvellesDuJour } from './srs.js';
+import { icone, poserIcones } from './icones.js';
 
 const BLOCS = {
   OE1: 'Automatique', OE2: 'Électronique', OE3: 'Électrotechnique',
@@ -9,6 +10,7 @@ const BLOCS = {
 };
 const NOUVELLES_PAR_JOUR = 15;
 const TAILLE_SERIE_JOUR = 20;
+const AUTO_MS = 1100;
 const DEPOT = 'https://github.com/dylanpimont18-hub/formules-agreg';
 const $ = s => document.querySelector(s);
 
@@ -27,19 +29,33 @@ function texteRiche(el, s) {
     el.append(span);
   });
 }
-/** Réduit la taille d'une formule pour qu'elle tienne dans la largeur de son conteneur. */
+/** Réduit la taille d'une formule pour qu'elle tienne dans la largeur de son conteneur
+ *  (le conteneur défile horizontalement : scrollWidth mesure la largeur réelle du contenu). */
 function ajuster(el) {
-  if (!el || !el.isConnected) return;
+  if (!el || !el.isConnected || !el.querySelector('.katex')) return;
   el.style.fontSize = '';
-  const k = el.querySelector('.katex-html') || el.querySelector('.katex');
-  if (!k) return;
-  const dispo = el.clientWidth, besoin = k.scrollWidth;
-  if (dispo > 0 && besoin > dispo) {
-    const base = parseFloat(getComputedStyle(el).fontSize);
-    el.style.fontSize = Math.max(base * 0.5, base * dispo / besoin * 0.98) + 'px';
+  const base = parseFloat(getComputedStyle(el).fontSize);
+  for (let i = 0; i < 3 && el.clientWidth > 0 && el.scrollWidth > el.clientWidth + 1; i++) {
+    const actuelle = parseFloat(el.style.fontSize) || base;
+    el.style.fontSize = Math.max(base * 0.5, actuelle * el.clientWidth / el.scrollWidth * 0.97) + 'px';
+  }
+  marquerDebordement(el);
+}
+/** Dégradé sur le bord droit tant qu'il reste du contenu à faire défiler. */
+function marquerDebordement(el) {
+  const reste = el.scrollWidth - el.clientWidth - el.scrollLeft > 2;
+  el.classList.toggle('deborde', reste);
+  if (!el.dataset.ecoute) {
+    el.dataset.ecoute = '1';
+    el.addEventListener('scroll', () => marquerDebordement(el), { passive: true });
   }
 }
-const ajusterTout = (racine = document) => racine.querySelectorAll('.formula, .opt-tex.math').forEach(ajuster);
+/** Ajuste tout de suite, puis à nouveau une fois les polices KaTeX chargées (la largeur change). */
+function ajusterTout(racine = document) {
+  const faire = () => racine.querySelectorAll('.formula, .opt-tex.math').forEach(ajuster);
+  requestAnimationFrame(faire);
+  document.fonts?.ready.then(() => requestAnimationFrame(faire));
+}
 
 // --- Stockage local ---
 const store = {
@@ -59,13 +75,14 @@ async function init() {
   db = prepare(formules);
   questions = allQuestions(db);
   $('#stats-global').textContent = `${formules.length} formules · ${questions.length} questions`;
+  poserIcones();
   renderBlocs();
   renderTypes();
+  restaurerReglages();
   renderAccueil();
   bindUI();
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
   navigator.storage?.persist?.().catch(() => {});
-  document.fonts?.ready.then(() => ajusterTout());
 }
 
 // --- Accueil : révision du jour ---
@@ -91,7 +108,19 @@ function renderAccueil() {
   $('#erreurs').textContent = `Mes erreurs (${err})`;
   $('#erreurs').disabled = !err;
   const serie = serieActuelle(jour, Date.now());
-  $('#flamme').textContent = serie ? `🔥 ${serie} j` : '';
+  $('#flamme').classList.toggle('hidden', !serie);
+  $('#flamme-nb').textContent = `${serie} j`;
+}
+
+/** Réglages communs à toutes les séries, mémorisés d'une visite à l'autre. */
+function restaurerReglages() {
+  const r = store.get('fa-reglages', {});
+  for (const id of ['priorite', 'auto']) {
+    if (typeof r[id] === 'boolean') $('#' + id).checked = r[id];
+    $('#' + id).addEventListener('change', () => {
+      store.set('fa-reglages', { priorite: $('#priorite').checked, auto: $('#auto').checked });
+    });
+  }
 }
 
 // --- Choix des thèmes et des types ---
@@ -102,12 +131,21 @@ function renderBlocs() {
     const fs = db.list.filter(f => f.bloc === b);
     if (!fs.length) continue;
     const notions = [...new Set(fs.map(f => f.notion))];
-    const d = document.createElement('details');
+    // La case coche le bloc ; seul le bouton chevron déplie la liste des notions.
+    const d = document.createElement('div');
     d.className = 'bloc';
-    d.innerHTML = `<summary><label class="check"><input type="checkbox" class="bloc-cb" data-bloc="${b}">
-      <b>${b}</b> ${BLOCS[b]}</label><span class="muted">${fs.length}</span></summary>
-      <div class="notions">${notions.map(n => `<label class="check"><input type="checkbox" class="notion-cb" data-bloc="${b}" value="${esc(n)}">
-      ${esc(n)}</label>`).join('')}</div>`;
+    d.innerHTML = `<div class="bloc-tete">
+        <label class="check"><input type="checkbox" class="bloc-cb" data-bloc="${b}">
+          <span><b>${b}</b> ${BLOCS[b]}<span class="muted bloc-nb">${fs.length} formules</span></span></label>
+        <button type="button" class="deplier" aria-expanded="false" aria-label="Choisir les notions de ${b}">${icone('chevron')}</button>
+      </div>
+      <div class="notions" hidden>${notions.map(n => `<label class="check"><input type="checkbox" class="notion-cb" data-bloc="${b}" value="${esc(n)}">
+      <span>${esc(n)}</span></label>`).join('')}</div>`;
+    d.querySelector('.deplier').onclick = e => {
+      const ouvert = e.currentTarget.getAttribute('aria-expanded') === 'true';
+      e.currentTarget.setAttribute('aria-expanded', String(!ouvert));
+      d.querySelector('.notions').hidden = ouvert;
+    };
     box.append(d);
     d.querySelectorAll('.notion-cb').forEach(cb => { cb.checked = saved.size ? saved.has(cb.value) : true; });
     syncBloc(b);
@@ -182,6 +220,8 @@ function choisir() {
 }
 
 function next() {
+  clearTimeout(session.minuteur);
+  $('#actionbar').classList.remove('auto');
   const fileVide = (session.mode === 'jour' || session.mode === 'erreurs') && !session.file.length;
   if ((session.max && session.n >= session.max) || fileVide) return finish();
   const q = session.current = choisir(), f = q.formule;
@@ -190,19 +230,20 @@ function next() {
 
   $('#q-bloc').textContent = `${f.bloc} · ${BLOCS[f.bloc]}`;
   $('#q-notion').textContent = f.notion;
-  $('#q-num').textContent = `${session.n + 1}${session.max ? ' / ' + session.max : ''}`;
   $('#q-nom').textContent = q.type === 'nom' ? 'Quelle est cette formule ?' : f.nom;
   $('#q-consigne').textContent = consigne(q);
   const s = stats[q.key];
-  $('#q-historique').textContent = !s ? 'Nouvelle' : estAcquise(s) ? 'Acquise' : `Vue ${s.seen}× · ${s.seen - s.wrong} ✓`;
+  $('#q-historique').textContent = !s ? 'Nouvelle' : estAcquise(s) ? 'Acquise' : `Vue ${s.seen}× · ${s.seen - s.wrong} juste${s.seen - s.wrong > 1 ? 's' : ''}`;
   $('#q-historique').className = 'historique ' + (!s ? 'new' : estAcquise(s) ? 'ok' : s.wrong ? 'ko' : '');
 
   $('#q-tex').classList.toggle('hidden', session.Q.enonce === null);
   if (session.Q.enonce !== null) tex($('#q-tex'), session.Q.enonce);
-  // L'indice donnerait la réponse pour une question d'unité.
-  $('#q-indice').classList.toggle('hidden', q.type === 'unite');
+  // Indice = liste des grandeurs uniquement (la légende complète contient souvent la réponse) ;
+  // masqué s'il n'y en a pas, ou pour une question d'unité qu'il trancherait.
+  const indice = q.type !== 'unite' && f.grandeurs?.length > 0;
+  $('#q-indice').classList.toggle('hidden', !indice);
   $('#q-indice').open = false;
-  renderLegende($('#q-legende'), f);
+  if (indice) renderGrandeurs($('#q-legende'), f);
 
   const opts = $('#options');
   opts.innerHTML = '';
@@ -210,7 +251,7 @@ function next() {
   session.Q.options.forEach((o, i) => {
     const b = document.createElement('button');
     b.className = 'option';
-    b.innerHTML = `<span class="num">${i + 1}</span><span class="opt-tex"></span>`;
+    b.innerHTML = `<span class="num">${i + 1}</span><span class="opt-tex"></span><span class="marque"></span>`;
     const span = b.querySelector('.opt-tex');
     if (session.Q.texte) span.textContent = o;
     else { span.classList.add('math'); tex(span, '\\displaystyle ' + o, false); }
@@ -221,7 +262,7 @@ function next() {
   $('#actionbar').classList.add('hidden');
   updateHead();
   window.scrollTo({ top: 0 });
-  requestAnimationFrame(() => ajusterTout($('#quiz')));
+  ajusterTout($('#quiz'));
 }
 
 function answer(i) {
@@ -244,12 +285,13 @@ function answer(i) {
     }
   }
 
+  // Juste / faux signalé par la couleur ET par une icône (pas la couleur seule).
   [...$('#options').children].forEach((b, j) => {
     b.disabled = true;
-    if (j === Q.correct) b.classList.add('good');
-    else if (j === i) b.classList.add('bad');
+    if (j === Q.correct) { b.classList.add('good'); b.querySelector('.marque').innerHTML = icone('ok'); b.setAttribute('aria-label', 'Bonne réponse'); }
+    else if (j === i) { b.classList.add('bad'); b.querySelector('.marque').innerHTML = icone('ko'); b.setAttribute('aria-label', 'Ta réponse, fausse'); }
   });
-  $('#fb-verdict').textContent = ok ? '✓ Bonne réponse' : '✗ Raté';
+  $('#fb-verdict').innerHTML = ok ? `${icone('ok')} Bonne réponse` : `${icone('ko')} Raté`;
   $('#fb-verdict').className = 'verdict ' + (ok ? 'ok' : 'ko');
   $('#fb-nom').textContent = f.nom;
   tex($('#fb-tex'), Q.complete);
@@ -258,11 +300,28 @@ function answer(i) {
   $('#fb-signaler').href = lienSignalement(q);
   $('#feedback').classList.remove('hidden');
   $('#actionbar').classList.remove('hidden');
-  requestAnimationFrame(() => {
-    ajuster($('#fb-tex'));
-    $('#feedback').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  });
+  ajusterTout($('#feedback'));
   updateHead();
+
+  if (ok && $('#auto').checked) {
+    // Bonne réponse : on enchaîne seul ; le bouton se remplit pendant l'attente.
+    $('#actionbar').classList.add('auto');
+    session.minuteur = setTimeout(next, AUTO_MS);
+  } else {
+    requestAnimationFrame(montrerVerdict);
+  }
+}
+
+/** Fait juste assez défiler pour voir le verdict au-dessus de la barre « Suivante », sans perdre les réponses. */
+function montrerVerdict() {
+  const bas = innerHeight - $('#actionbar').offsetHeight - 16;
+  const cible = $('#fb-tex').getBoundingClientRect().bottom;
+  if (cible > bas) scrollBy({ top: cible - bas, behavior: 'smooth' });
+}
+
+function suspendreAuto() {
+  clearTimeout(session.minuteur);
+  $('#actionbar').classList.remove('auto');
 }
 
 function lienSignalement(q) {
@@ -272,28 +331,25 @@ function lienSignalement(q) {
   return `${DEPOT}/issues/new?title=${encodeURIComponent(titre)}&body=${encodeURIComponent(corps)}`;
 }
 
-function renderLegende(el, f) {
+function renderGrandeurs(el, f) {
   el.innerHTML = '';
-  if (f.grandeurs?.length) {
-    const ul = document.createElement('ul');
-    ul.className = 'grandeurs';
-    for (const g of f.grandeurs) {
-      const li = document.createElement('li');
-      const s = document.createElement('span'), u = document.createElement('span');
-      tex(s, g.s, false);
-      u.className = 'muted';
-      if (g.u) tex(u, '\\mathrm{' + g.u + '}', false); else u.textContent = 'sans dimension';
-      li.append(s, ` ${g.nom} `, u);
-      ul.append(li);
-    }
-    el.append(ul);
-  } else {
-    texteRiche(el, f.legende);
+  const ul = document.createElement('ul');
+  ul.className = 'grandeurs';
+  for (const g of f.grandeurs) {
+    const li = document.createElement('li');
+    const s = document.createElement('span'), u = document.createElement('span');
+    tex(s, g.s, false);
+    u.className = 'muted';
+    if (g.u) tex(u, '\\mathrm{' + g.u + '}', false); else u.textContent = 'sans dimension';
+    li.append(s, ` ${g.nom} `, u);
+    ul.append(li);
   }
+  el.append(ul);
 }
 
 function updateHead() {
-  $('#score').textContent = `${session.ok} / ${session.n}`;
+  const num = session.answered ? session.n : session.n + 1;
+  $('#score').innerHTML = `${num}${session.max ? ' / ' + session.max : ''} <span class="score-ok">${icone('ok')}${session.ok}</span>`;
   $('#bar').style.width = session.max ? `${100 * session.n / session.max}%` : '0';
 }
 
@@ -357,11 +413,11 @@ function renderProgres() {
   const vues = actives.filter(q => stats[q.key]).length;
   const dues = actives.filter(q => estDue(stats[q.key], now)).length;
   $('#progres-resume').innerHTML = [
-    ['🔥', serieActuelle(jour, now), 'jours d\'affilée'],
-    ['✓', acquises, 'acquises'],
-    ['👁', vues, 'vues'],
-    ['⏰', dues, 'à revoir'],
-  ].map(([i, v, l]) => `<div><span class="r-ico">${i}</span><b>${v}</b><span class="muted">${l}</span></div>`).join('');
+    ['flamme', serieActuelle(jour, now), 'jours d\'affilée'],
+    ['ok', acquises, 'acquises'],
+    ['oeil', vues, 'vues'],
+    ['horloge', dues, 'à revoir'],
+  ].map(([i, v, l]) => `<div><span class="r-ico">${icone(i)}</span><b>${v}</b><span class="muted">${l}</span></div>`).join('');
   $('#progres').innerHTML = Object.keys(BLOCS).map(b => {
     const qs = actives.filter(q => q.formule.bloc === b);
     if (!qs.length) return '';
@@ -393,7 +449,10 @@ function bindUI() {
   $('#general').onclick = () => lancer('general');
   $('#go').onclick = () => lancer('carte');
   $('#next').onclick = next;
-  $('#stop').onclick = () => session.n ? finish() : show('#setup');
+  $('#stop').onclick = () => { suspendreAuto(); session.n ? finish() : show('#setup'); };
+  // Toucher la correction (pour la lire) ou signaler une erreur suspend le passage automatique.
+  $('#feedback').addEventListener('touchstart', suspendreAuto, { passive: true });
+  $('#feedback').addEventListener('click', suspendreAuto);
   $('#rejouer').onclick = () => lancer(session.mode);
   $('#retour').onclick = () => show('#setup');
   $('#tout').onclick = () => setAll(true);
