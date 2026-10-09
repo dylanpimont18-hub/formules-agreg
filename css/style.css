@@ -74,6 +74,17 @@ kbd { font: 12px ui-monospace, monospace; padding: 1px 5px; border-radius: 4px; 
 .score { font-variant-numeric: tabular-nums; font-weight: 600; }
 .meta { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
 .pill { background: var(--pill); padding: 2px 8px; border-radius: 999px; font-size: .8em; font-weight: 700; }
+.spacer { flex: 1; }
+.q-nom { font-size: 1.25rem; color: var(--ink); margin: 14px 0 4px; }
+.q-sous { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; color: var(--muted); }
+.historique { font-size: .78em; padding: 1px 8px; border-radius: 999px; background: var(--pill); color: var(--muted); }
+.historique.new { color: var(--accent); }
+.historique.ok { background: var(--good-bg); color: var(--good); }
+.historique.ko { background: var(--bad-bg); color: var(--bad); }
+.indice { margin: -6px 0 18px; font-size: .92em; }
+.indice summary { cursor: pointer; color: var(--accent); list-style: none; }
+.indice summary::-webkit-details-marker { display: none; }
+.indice p { margin: 8px 0 0; padding: 10px 12px; border-left: 3px solid var(--accent); background: var(--pill); border-radius: 0 8px 8px 0; color: var(--ink); }
 .formula { font-size: 1.45rem; margin: 22px 0; overflow-x: auto; overflow-y: hidden; }
 .formula.small { font-size: 1.1rem; margin: 8px 0; }
 .options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }

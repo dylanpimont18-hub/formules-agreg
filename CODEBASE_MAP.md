@@ -16,6 +16,7 @@ Moteur pur (sans DOM) : découpe des formules et génération des QCM.
 - allQuestions(db, blocs) — une question par case
 - buildQuestion(db, q, rand) — énoncé, 4 options, bonne réponse
 - pickWeighted(questions, stats, avoidKey) — tirage pondéré par erreurs
+- consigne(q) — phrase selon la case masquée
 - shuffle(arr, rand) — mélange Fisher-Yates
 
 ## js/app.js

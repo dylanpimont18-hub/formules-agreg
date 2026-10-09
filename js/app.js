@@ -1,5 +1,5 @@
 // Interface : réglages, déroulé du QCM, formulaire, progrès.
-import { prepare, allQuestions, buildQuestion, pickWeighted, shuffle } from './quiz.js';
+import { prepare, allQuestions, buildQuestion, pickWeighted, shuffle, consigne } from './quiz.js';
 
 const BLOCS = {
   OE1: 'Automatique', OE2: 'Électronique', OE3: 'Électrotechnique',
@@ -101,8 +101,18 @@ function next() {
   const q = session.current, f = q.formule;
   session.Q = buildQuestion(db, q);
   session.answered = false;
-  $('#q-bloc').textContent = f.bloc;
+  $('#q-bloc').textContent = `${f.bloc} · ${BLOCS[f.bloc]}`;
   $('#q-notion').textContent = f.notion;
+  $('#q-num').textContent = `Question ${session.n + 1}${session.max ? ' / ' + session.max : ''}`;
+  $('#q-nom').textContent = f.nom;
+  $('#q-consigne').textContent = consigne(q);
+  const s = stats[q.key];
+  $('#q-historique').textContent = s
+    ? `Déjà vue ${s.seen} fois · ${s.seen - s.wrong} réussite${s.seen - s.wrong > 1 ? 's' : ''}${s.streak >= 2 ? ' · acquise' : ''}`
+    : 'Nouvelle question';
+  $('#q-historique').className = 'historique ' + (!s ? 'new' : s.streak >= 2 ? 'ok' : s.wrong ? 'ko' : '');
+  $('#q-legende').textContent = f.legende;
+  $('#q-indice').open = false;
   tex($('#q-tex'), session.Q.enonce);
   const opts = $('#options');
   opts.innerHTML = '';
@@ -232,6 +242,7 @@ function bindUI() {
   document.addEventListener('keydown', e => {
     if ($('#quiz').classList.contains('hidden') || e.target.tagName === 'INPUT') return;
     if (!session.answered && /^[1-4]$/.test(e.key)) answer(+e.key - 1);
+    else if (!session.answered && e.key.toLowerCase() === 'i') $('#q-indice').open = !$('#q-indice').open;
     else if (session.answered && e.key === 'Enter') { e.preventDefault(); next(); }
   });
 }

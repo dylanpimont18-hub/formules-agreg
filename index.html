@@ -54,8 +54,17 @@
           <div id="score" class="score"></div>
         </div>
         <div class="card question">
-          <div class="meta"><span id="q-bloc" class="pill"></span><span id="q-notion" class="muted"></span></div>
+          <div class="meta">
+            <span id="q-bloc" class="pill"></span><span id="q-notion" class="muted"></span>
+            <span class="spacer"></span><span id="q-num" class="muted"></span>
+          </div>
+          <h2 id="q-nom" class="q-nom"></h2>
+          <div class="q-sous"><span id="q-consigne"></span><span id="q-historique" class="historique"></span></div>
           <div id="q-tex" class="formula"></div>
+          <details id="q-indice" class="indice">
+            <summary>💡 Indice : signification des grandeurs <kbd>I</kbd></summary>
+            <p id="q-legende"></p>
+          </details>
           <div id="options" class="options"></div>
           <div id="feedback" class="feedback hidden">
             <div id="fb-verdict" class="verdict"></div>

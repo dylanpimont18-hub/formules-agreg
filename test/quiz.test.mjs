@@ -1,6 +1,6 @@
 // Tests du moteur de questions : node test/quiz.test.mjs
 import assert from 'node:assert/strict';
-import { parseTex, prepare, allQuestions, buildQuestion, isConstant } from '../js/quiz.js';
+import { parseTex, prepare, allQuestions, buildQuestion, isConstant, consigne } from '../js/quiz.js';
 
 const p = parseTex(String.raw`[[U]] = [[R|R^2|\frac{1}{R}]] \cdot [[x[n]|x[n-1]]]`);
 assert.deepEqual(p.filter(s => s.slot).map(s => s.answer), ['U', 'R', 'x[n]']);
@@ -29,4 +29,8 @@ for (const q of qs) for (let k = 0; k < 20; k++) {
 // Une constante est concurrencée par des constantes, pas par des lettres.
 const qc = qs.find(q => q.key === 'b#2');
 for (let k = 0; k < 20; k++) assert.ok(buildQuestion(db, qc).options.every(isConstant));
+// Consigne selon la case masquée.
+assert.match(consigne(qs.find(q => q.key === 'b#0')), /calculer/);
+assert.match(consigne(qs.find(q => q.key === 'b#2')), /constante/);
+assert.match(consigne(qs.find(q => q.key === 'b#4')), /terme manque/);
 console.log('OK');

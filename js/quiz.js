@@ -107,6 +107,15 @@ export function buildQuestion(db, q, rand = Math.random) {
   return { enonce, options, correct: options.indexOf(answer), complete: f.parts.map(p => p.slot ? '{' + p.answer + '}' : p.text).join('') };
 }
 
+/** Consigne lisible selon la case masquée : constante, membre de gauche ou de droite. */
+export function consigne(q) {
+  const parts = q.formule.parts, answer = parts[q.idx].answer;
+  if (isConstant(answer)) return 'Quel coefficient ou quelle constante numérique manque ?';
+  const rel = parts.findIndex(p => !p.slot && /=|\\approx|\\simeq|\\le|\\ge|<|>|\\propto|\\equiv|\\Leftrightarrow|\\Rightarrow/.test(p.text));
+  if (rel !== -1 && q.idx < rel) return 'Quelle grandeur cette relation permet-elle de calculer ?';
+  return 'Quel terme manque dans la relation ?';
+}
+
 export function shuffle(arr, rand = Math.random) {
   const a = arr.slice();
   for (let i = a.length - 1; i > 0; i--) {
