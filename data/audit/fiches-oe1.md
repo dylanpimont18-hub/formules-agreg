@@ -1,0 +1,15 @@
+# Audit fiches-oe1.json — corrections de fond
+
+- oe1-etat-equations : piège « 0 » pour $D$ → « C » (D = 0 est correct pour tout système strictement propre)
+- oe1-etat-vers-transfert : piège « 0 » pour $D$ → « C » (même raison)
+- oe1-frottement-sec : $C_f = [[-C_s|C_s|...]]\cdot\mathrm{sign}(\omega)$ → $C_f = -[[C_s|f|C_s\omega]]\cdot\mathrm{sign}(\omega)$ (le piège $+C_s$ est juste si $C_f$ désigne le couple résistant soustrait dans le PFD)
+- oe1-frottement-visqueux : $C_v = f\omega$ → $C_v = -f\omega$ (convention de signe alignée sur le frottement sec : couple exercé sur l'arbre)
+- oe1-quantification : piège $2^n - 1$ → $2n$ ($q = \mathrm{PE}/(2^n-1)$ est une convention courante)
+- oe1-bloqueur-retard : piège « 1 » pour le gain → $T_e^2$ (gain 1 correct avec la convention échantillonneur + BOZ normalisé)
+- oe1-ethernet-debit-portee : piège 10 000 Mbit/s → 2000 (10GBASE-T est de l'Ethernet cuivre à 100 m)
+- oe1-cycle-vs-procede : piège dénominateur 100 → 1 (100 respecte aussi l'inégalité, donc non faux)
+- oe1-temps-acces-moyen : piège $\tau_{miss}$ dans la case pénalité → $t_{hit} + t_{pen}$ (doublon de case, peu plausible)
+- oe1-simd : $w = 32/b$ → $w = L_{reg}/b$ (généralisé, 32 bits propre au Cortex-M4 du sujet)
+- oe1-second-ordre : ajout de la case $K$ (grandeur significative non masquée)
+- oe1-cycle-ordre-grandeur : supprimée (ordres de grandeur 5-50 ms / « usuel 20 ms » invérifiables ; le piège 2 ms est réaliste sur un API moderne)
+- oe1-fsr : supprimée (modèle $R_0 + \beta/F$ identifié sur un sujet, non généralisable)

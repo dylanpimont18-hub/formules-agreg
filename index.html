@@ -2,91 +2,112 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Formules Agrég SII</title>
   <meta name="description" content="Entraînement par QCM aux formules à connaître par cœur pour l'agrégation SII ingénierie électrique.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>∑</text></svg>">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <meta name="theme-color" content="#1f4e8c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Formules">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  <link rel="stylesheet" href="vendor/katex/katex.min.css">
+  <script defer src="vendor/katex/katex.min.js"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="topbar">
     <div class="brand"><span class="logo">∑</span> Formules Agrég SII</div>
-    <nav class="tabs" role="tablist">
-      <button class="tab active" data-view="entrainement">Entraînement</button>
-      <button class="tab" data-view="formulaire">Formulaire</button>
-      <button class="tab" data-view="progres">Progrès</button>
-    </nav>
+    <div id="flamme" class="flamme" title="Jours de révision consécutifs"></div>
   </header>
 
   <main>
-    <!-- Réglages -->
+    <!-- Accueil / réglages -->
     <section id="view-entrainement" class="view active">
-      <div id="setup" class="card">
-        <h1>Que veux-tu réviser&nbsp;?</h1>
-        <p class="muted" id="stats-global"></p>
-        <div class="bloc-actions">
-          <button class="link" id="tout">Tout cocher</button> · <button class="link" id="rien">Tout décocher</button>
+      <div id="setup">
+        <div class="card du-jour">
+          <div class="du-jour-tete">
+            <div>
+              <h1>Révision du jour</h1>
+              <p id="du-jour-texte" class="muted"></p>
+            </div>
+            <div id="du-jour-nb" class="gros-nb"></div>
+          </div>
+          <button id="daily" class="primary big">Réviser maintenant</button>
+          <button id="erreurs" class="secondary big">Mes erreurs</button>
         </div>
-        <div id="blocs" class="blocs"></div>
-        <div class="row">
-          <label>Questions par série
-            <select id="longueur">
-              <option value="10">10</option>
-              <option value="20" selected>20</option>
-              <option value="50">50</option>
-              <option value="0">Illimité</option>
-            </select>
-          </label>
-          <label class="check"><input type="checkbox" id="priorite" checked> Insister sur mes erreurs</label>
+
+        <div class="card">
+          <button id="general" class="secondary big">Série générale <span class="sub">20 questions, tous les thèmes mélangés</span></button>
         </div>
-        <button id="go" class="primary big">Commencer</button>
-        <div class="ou"><span>ou</span></div>
-        <button id="general" class="secondary big">Série générale <span class="sub">20 questions, tous les thèmes mélangés</span></button>
+
+        <details class="card carte" id="carte">
+          <summary><h2>Série à la carte</h2><span class="muted" id="stats-global"></span></summary>
+          <div class="bloc-actions">
+            <button class="link" id="tout">Tout cocher</button> · <button class="link" id="rien">Tout décocher</button>
+          </div>
+          <div id="blocs" class="blocs"></div>
+          <h3>Types de questions</h3>
+          <div id="types" class="types"></div>
+          <div class="row">
+            <label>Questions
+              <select id="longueur">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="20" selected>20</option>
+                <option value="50">50</option>
+                <option value="0">Illimité</option>
+              </select>
+            </label>
+            <label class="check"><input type="checkbox" id="priorite" checked> Insister sur mes erreurs</label>
+          </div>
+          <button id="go" class="primary big">Commencer</button>
+        </details>
       </div>
 
       <!-- Quiz -->
       <div id="quiz" class="hidden">
         <div class="quiz-head">
-          <button class="link" id="stop">← Arrêter</button>
+          <button class="link" id="stop">✕ Arrêter</button>
           <div class="progress"><div id="bar"></div></div>
           <div id="score" class="score"></div>
         </div>
         <div class="card question">
           <div class="meta">
-            <span id="q-bloc" class="pill"></span><span id="q-notion" class="muted"></span>
+            <span id="q-bloc" class="pill"></span>
             <span class="spacer"></span><span id="q-num" class="muted"></span>
           </div>
+          <div id="q-notion" class="muted notion"></div>
           <h2 id="q-nom" class="q-nom"></h2>
           <div class="q-sous"><span id="q-consigne"></span><span id="q-historique" class="historique"></span></div>
           <div id="q-tex" class="formula"></div>
           <details id="q-indice" class="indice">
-            <summary>💡 Indice : signification des grandeurs <kbd>I</kbd></summary>
-            <p id="q-legende"></p>
+            <summary>💡 Indice : signification des grandeurs</summary>
+            <div id="q-legende"></div>
           </details>
           <div id="options" class="options"></div>
           <div id="feedback" class="feedback hidden">
             <div id="fb-verdict" class="verdict"></div>
             <div id="fb-nom" class="fb-nom"></div>
             <div id="fb-tex" class="formula small"></div>
-            <div id="fb-legende" class="muted"></div>
+            <div id="fb-legende" class="legende"></div>
             <div id="fb-source" class="source"></div>
-            <button id="next" class="primary">Suivante <kbd>Entrée</kbd></button>
+            <a id="fb-signaler" class="signaler" target="_blank" rel="noopener">⚠︎ Signaler une erreur</a>
           </div>
         </div>
-        <p class="hint muted">Raccourcis : <kbd>1</kbd>–<kbd>4</kbd> pour répondre, <kbd>Entrée</kbd> pour continuer.</p>
       </div>
 
       <!-- Bilan -->
       <div id="bilan" class="card hidden">
         <h1 id="bilan-titre"></h1>
         <p id="bilan-texte" class="muted"></p>
-        <div id="bilan-erreurs"></div>
         <div class="row">
-          <button id="rejouer" class="primary">Nouvelle série</button>
-          <button id="retour" class="secondary">Changer de thèmes</button>
+          <button id="rejouer" class="primary">Continuer</button>
+          <button id="retour" class="secondary">Accueil</button>
         </div>
+        <div id="bilan-erreurs"></div>
       </div>
     </section>
 
@@ -102,11 +123,24 @@
     <section id="view-progres" class="view">
       <div class="card">
         <h1>Progrès</h1>
+        <div id="progres-resume" class="resume"></div>
         <div id="progres"></div>
+        <p class="muted aide">Une question est « acquise » après 3 bonnes réponses espacées (revue au bout de 1, 3 puis 7 jours). Une erreur la fait revenir dès aujourd'hui.</p>
+        <p class="muted aide" id="install-aide"></p>
         <button id="reset" class="secondary danger">Réinitialiser ma progression</button>
       </div>
     </section>
   </main>
+
+  <div id="actionbar" class="actionbar hidden">
+    <button id="next" class="primary big">Suivante</button>
+  </div>
+
+  <nav class="tabbar" role="tablist">
+    <button class="tab active" data-view="entrainement"><span class="ico">◎</span>Réviser</button>
+    <button class="tab" data-view="formulaire"><span class="ico">∑</span>Formulaire</button>
+    <button class="tab" data-view="progres"><span class="ico">▲</span>Progrès</button>
+  </nav>
 
   <script type="module" src="js/app.js"></script>
 </body>

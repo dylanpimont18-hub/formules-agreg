@@ -5,7 +5,29 @@
     "notion": "OE1.5 Capteurs",
     "nom": "Accéléromètre utilisé en inclinomètre",
     "tex": "a_X = g\\,[[\\sin\\theta|\\cos\\theta|\\tan\\theta]] \\approx g\\,[[\\theta|1|\\theta^2]] \\quad ; \\quad a_Z = g\\cos\\theta \\approx g\\left(1 - [[\\dfrac{\\theta^2}{2}|2\\theta|\\theta^3]]\\right)",
-    "legende": "θ inclinaison (rad, petite) ; axe X quasi horizontal : sensibilité au 1er ordre ; axe Z quasi vertical : variation du 2e ordre seulement",
+    "legende": "$\\theta$ inclinaison (rad, petite), $g$ pesanteur ; axe X quasi horizontal : sensibilité au 1er ordre ; axe Z quasi vertical : variation du 2e ordre seulement",
+    "grandeurs": [
+      {
+        "s": "a_X",
+        "nom": "accélération mesurée sur l'axe X",
+        "u": "m\\cdot s^{-2}"
+      },
+      {
+        "s": "g",
+        "nom": "accélération de la pesanteur",
+        "u": "m\\cdot s^{-2}"
+      },
+      {
+        "s": "\\theta",
+        "nom": "inclinaison",
+        "u": "rad"
+      },
+      {
+        "s": "a_Z",
+        "nom": "accélération mesurée sur l'axe Z",
+        "u": "m\\cdot s^{-2}"
+      }
+    ],
     "source": "Sujet 2025 E2 (Q6-Q7)"
   },
   {
@@ -14,7 +36,34 @@
     "notion": "OE1.5 Capteurs",
     "nom": "Déplacement statique d'un accéléromètre masse-ressort",
     "tex": "x = \\dfrac{[[m|k|c]]\\,a}{[[k|m|\\omega_n]]} = \\dfrac{a}{[[\\omega_n^2|\\omega_n|2\\omega_n]]}",
-    "legende": "x déplacement de la masse sismique (m), a accélération (m/s²), m masse (kg), k raideur (N/m), ω_n pulsation propre (rad/s)",
+    "legende": "$x$ déplacement de la masse sismique (m), $a$ accélération (m/s²), $m$ masse (kg), $k$ raideur (N/m), $\\omega_n$ pulsation propre (rad/s)",
+    "grandeurs": [
+      {
+        "s": "x",
+        "nom": "déplacement de la masse sismique",
+        "u": "m"
+      },
+      {
+        "s": "m",
+        "nom": "masse sismique",
+        "u": "kg"
+      },
+      {
+        "s": "a",
+        "nom": "accélération",
+        "u": "m\\cdot s^{-2}"
+      },
+      {
+        "s": "k",
+        "nom": "raideur",
+        "u": "N\\cdot m^{-1}"
+      },
+      {
+        "s": "\\omega_n",
+        "nom": "pulsation propre",
+        "u": "rad\\cdot s^{-1}"
+      }
+    ],
     "source": "Sujet 2025 E2 (Q22)"
   },
   {
@@ -23,7 +72,19 @@
     "notion": "OE1.5 Capteurs",
     "nom": "Variance et écart-type d'une série de mesures",
     "tex": "[[\\sigma_x^2|\\sigma_x|\\bar{x}]] = \\dfrac{1}{[[N|N^2|2N]]}\\sum_{n=0}^{N-1}\\left(x(n) - \\bar{x}\\right)^{[[2|1|1/2]]}",
-    "legende": "σ_x écart-type (déviation standard) = racine carrée de la variance σ_x², x̄ moyenne des N échantillons",
+    "legende": "$\\sigma_x$ écart-type, $\\sigma_x^2$ variance, $\\bar{x}$ moyenne des $N$ échantillons $x(n)$ (estimateur non biaisé : $\\frac{1}{N-1}$)",
+    "grandeurs": [
+      {
+        "s": "\\sigma_x",
+        "nom": "écart-type",
+        "u": ""
+      },
+      {
+        "s": "N",
+        "nom": "nombre d'échantillons",
+        "u": ""
+      }
+    ],
     "source": "Sujet 2025 E2 (Q9)"
   },
   {
@@ -32,7 +93,34 @@
     "notion": "OE1.1 Systèmes asservis",
     "nom": "PI par compensation du pôle dominant",
     "tex": "[[T_i|T_d|K_p]] = \\tau \\;\\Rightarrow\\; \\tau_{BF} = \\dfrac{\\tau}{[[K\\,K_p|1 + K\\,K_p|K_p]]}",
-    "legende": "Procédé K/(1+τp), correcteur K_p(1+T_i p)/(T_i p) : la FTBO devient K K_p/(τp), la BF est un 1er ordre de gain unitaire et de constante de temps τ_BF",
+    "legende": "Procédé $K/(1 + \\tau p)$, correcteur $K_p(1 + T_i p)/(T_i p)$ : la FTBO devient $KK_p/(\\tau p)$, BF du 1er ordre de gain unitaire et de constante de temps $\\tau_{BF}$ (s)",
+    "grandeurs": [
+      {
+        "s": "T_i",
+        "nom": "constante de temps d'intégration",
+        "u": "s"
+      },
+      {
+        "s": "\\tau",
+        "nom": "constante de temps du procédé",
+        "u": "s"
+      },
+      {
+        "s": "\\tau_{BF}",
+        "nom": "constante de temps en boucle fermée",
+        "u": "s"
+      },
+      {
+        "s": "K",
+        "nom": "gain statique du procédé",
+        "u": ""
+      },
+      {
+        "s": "K_p",
+        "nom": "gain proportionnel",
+        "u": ""
+      }
+    ],
     "source": "Sujet 2025 E3 (Q44)"
   },
   {
@@ -41,7 +129,29 @@
     "notion": "OE1.1 Systèmes asservis",
     "nom": "Correcteur P d'une boucle de courant sur charge R-L",
     "tex": "\\mathrm{FTBO} = \\dfrac{K_p}{R_f + L_f\\,p} \\;\\Rightarrow\\; K_p \\approx [[2\\pi f_c|f_c|\\omega_c^2]]\\,[[L_f|R_f|1/L_f]]",
-    "legende": "f_c fréquence de transition (≈ bande passante BF) imposée, R_f négligeable devant L_f ω_c ; K_p en Ω (V/A)",
+    "legende": "$f_c$ fréquence de transition imposée (≈ bande passante BF) (Hz), $L_f$ inductance (H), $R_f$ négligeable devant $L_f\\omega_c$ ; $K_p$ en Ω (V/A)",
+    "grandeurs": [
+      {
+        "s": "K_p",
+        "nom": "gain proportionnel",
+        "u": "\\Omega"
+      },
+      {
+        "s": "R_f",
+        "nom": "résistance de la charge",
+        "u": "\\Omega"
+      },
+      {
+        "s": "L_f",
+        "nom": "inductance de la charge",
+        "u": "H"
+      },
+      {
+        "s": "f_c",
+        "nom": "fréquence de transition",
+        "u": "Hz"
+      }
+    ],
     "source": "Sujet 2025 E3 (Q46)"
   },
   {
@@ -49,8 +159,30 @@
     "bloc": "OE2",
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Tensions différentielle et de mode commun",
-    "tex": "V_d = [[V_{e1} - V_{e2}|V_{e1} + V_{e2}|V_{e2} - V_{e1}]] \\quad ; \\quad V_c = \\dfrac{[[V_{e1} + V_{e2}|V_{e1} \\cdot V_{e2}]]}{[[2|1|\\sqrt{2}]]}",
-    "legende": "V_e1, V_e2 tensions d'entrée (V) ; V_s = A_d V_d + A_MC V_c pour un amplificateur différentiel réel",
+    "tex": "V_d = [[V_{e1} - V_{e2}|V_{e1} + V_{e2}|\\frac{V_{e1} - V_{e2}}{2}]] \\quad ; \\quad V_c = \\dfrac{[[V_{e1} + V_{e2}|V_{e1} \\cdot V_{e2}]]}{[[2|1|\\sqrt{2}]]}",
+    "legende": "$V_{e1}$, $V_{e2}$ tensions d'entrée (V), $V_d$ tension différentielle, $V_c$ tension de mode commun ; $V_s = A_d V_d + A_{MC} V_c$ pour un amplificateur différentiel réel",
+    "grandeurs": [
+      {
+        "s": "V_d",
+        "nom": "tension différentielle",
+        "u": "V"
+      },
+      {
+        "s": "V_{e1}",
+        "nom": "tension d'entrée 1",
+        "u": "V"
+      },
+      {
+        "s": "V_{e2}",
+        "nom": "tension d'entrée 2",
+        "u": "V"
+      },
+      {
+        "s": "V_c",
+        "nom": "tension de mode commun",
+        "u": "V"
+      }
+    ],
     "source": "Sujet 2025 E1 (Q24-Q27)"
   },
   {
@@ -59,7 +191,34 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Durée d'une évolution exponentielle entre deux niveaux",
     "tex": "t_{0 \\to 1} = [[\\tau|2\\tau|1/\\tau]]\\,\\ln\\left(\\dfrac{[[V_\\infty - V_0|V_0 - V_1|V_0]]}{[[V_\\infty - V_1|V_1 - V_0|V_1]]}\\right)",
-    "legende": "Circuit du 1er ordre de constante τ allant de V_0 vers l'asymptote V_∞, durée pour atteindre V_1 (oscillateur à relaxation, période d'un comparateur à hystérésis)",
+    "legende": "Circuit du 1er ordre de constante $\\tau$ (s) partant de $V_0$ vers l'asymptote $V_\\infty$ : durée pour atteindre $V_1$ (oscillateur à relaxation, comparateur à hystérésis)",
+    "grandeurs": [
+      {
+        "s": "t_{0 \\to 1}",
+        "nom": "durée de l'évolution",
+        "u": "s"
+      },
+      {
+        "s": "\\tau",
+        "nom": "constante de temps",
+        "u": "s"
+      },
+      {
+        "s": "V_\\infty",
+        "nom": "valeur asymptotique",
+        "u": "V"
+      },
+      {
+        "s": "V_0",
+        "nom": "valeur initiale",
+        "u": "V"
+      },
+      {
+        "s": "V_1",
+        "nom": "valeur finale atteinte",
+        "u": "V"
+      }
+    ],
     "source": "Sujet 2025 E2 (Q51-Q52)"
   },
   {
@@ -68,7 +227,8 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Modulateur sigma-delta du 1er ordre (STF et NTF)",
     "tex": "V_s(z) = [[z^{-1}|1 - z^{-1}|z]]\\,V_e(z) + [[\\left(1 - z^{-1}\\right)|z^{-1}|\\left(1 + z^{-1}\\right)]]\\,B(z)",
-    "legende": "B bruit de quantification ; ordre M : fonction de transfert du bruit H_B(z) = (1 − z⁻¹)^M (mise en forme vers les hautes fréquences)",
+    "legende": "Intégrateur retardé ; $B$ bruit de quantification ; à l'ordre $M$, fonction de transfert du bruit $(1 - z^{-1})^M$ (bruit repoussé vers les hautes fréquences)",
+    "grandeurs": [],
     "source": "Sujet 2025 E2 (Q34-Q37)"
   },
   {
@@ -77,7 +237,29 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Bruit de quantification dans la bande utile d'un sigma-delta d'ordre M",
     "tex": "P_b = \\dfrac{q^2}{[[12|6|\\sqrt{12}]]}\\cdot\\dfrac{\\pi^{[[2M|M|2M - 1]]}}{(2M + 1)\\,\\mathrm{OSR}^{[[2M + 1|M + 1|2M + 2]]}}",
-    "legende": "q pas de quantification, M ordre du modulateur, OSR taux de suréchantillonnage",
+    "legende": "$P_b$ puissance de bruit dans la bande utile, $q$ pas de quantification (V), $M$ ordre du modulateur, $\\mathrm{OSR}$ taux de suréchantillonnage",
+    "grandeurs": [
+      {
+        "s": "P_b",
+        "nom": "puissance de bruit dans la bande",
+        "u": "V^2"
+      },
+      {
+        "s": "q",
+        "nom": "pas de quantification",
+        "u": "V"
+      },
+      {
+        "s": "M",
+        "nom": "ordre du modulateur",
+        "u": ""
+      },
+      {
+        "s": "\\mathrm{OSR}",
+        "nom": "taux de suréchantillonnage",
+        "u": ""
+      }
+    ],
     "source": "Sujet 2025 E2 (Q37)"
   },
   {
@@ -86,7 +268,34 @@
     "notion": "OE2.2.2 Communications et radiofréquences",
     "nom": "Détection synchrone (multiplieur + passe-bas)",
     "tex": "v_F = \\dfrac{k\\,[[A\\,B|A^2|A + B]]}{[[2|4|\\sqrt{2}]]}\\,[[\\cos\\varphi|\\sin\\varphi|\\cos 2\\varphi]]",
-    "legende": "Produit k·A sin(ωt)·B sin(ωt+φ) filtré passe-bas : seule la composante continue subsiste (image de la partie réelle si B sin(ωt+φ) est la réponse d'une impédance)",
+    "legende": "Produit $k\\,A\\sin(\\omega t)\\cdot B\\sin(\\omega t + \\varphi)$ filtré passe-bas : seule la composante continue subsiste ; $k$ gain du multiplieur (V⁻¹), $A$, $B$ amplitudes (V)",
+    "grandeurs": [
+      {
+        "s": "v_F",
+        "nom": "tension filtrée",
+        "u": "V"
+      },
+      {
+        "s": "k",
+        "nom": "gain du multiplieur",
+        "u": "V^{-1}"
+      },
+      {
+        "s": "A",
+        "nom": "amplitude de la référence",
+        "u": "V"
+      },
+      {
+        "s": "B",
+        "nom": "amplitude du signal",
+        "u": "V"
+      },
+      {
+        "s": "\\varphi",
+        "nom": "déphasage",
+        "u": "rad"
+      }
+    ],
     "source": "Sujet 2025 E2 (Q62-Q64)"
   },
   {
@@ -95,7 +304,34 @@
     "notion": "OE3.7 Génération électrique",
     "nom": "Statisme d'un groupe de production",
     "tex": "[[s|K|\\eta]] = \\dfrac{[[\\Delta f / f_n|\\Delta f|f_n / \\Delta f]]}{[[\\Delta P / P_n|\\Delta P|P_n / \\Delta P]]}",
-    "legende": "s statisme (sans dimension, réglementairement 3 à 12 %), écarts relatifs de fréquence et de puissance en valeurs réduites (pu)",
+    "legende": "$s$ statisme (3 à 12 %), $\\Delta f/f_n$ et $\\Delta P/P_n$ écarts relatifs de fréquence et de puissance (pu)",
+    "grandeurs": [
+      {
+        "s": "s",
+        "nom": "statisme",
+        "u": ""
+      },
+      {
+        "s": "\\Delta f",
+        "nom": "écart de fréquence",
+        "u": "Hz"
+      },
+      {
+        "s": "f_n",
+        "nom": "fréquence nominale",
+        "u": "Hz"
+      },
+      {
+        "s": "\\Delta P",
+        "nom": "écart de puissance",
+        "u": "W"
+      },
+      {
+        "s": "P_n",
+        "nom": "puissance nominale",
+        "u": "W"
+      }
+    ],
     "source": "Sujet 2025 E1 (Q4-Q6)"
   },
   {
@@ -104,7 +340,34 @@
     "notion": "OE3.7 Génération électrique",
     "nom": "Loi du réglage primaire de fréquence",
     "tex": "[[P - P_c|P_c - P|P]] = [[-K|K|-1/K]]\\,\\left([[f - f_n|f_n - f|f]]\\right)",
-    "legende": "P puissance fournie (MW), P_c puissance de consigne à f_n, K énergie réglante (MW/Hz), f fréquence mesurée, f_n = 50 Hz",
+    "legende": "$P$ puissance fournie (MW), $P_c$ puissance de consigne à $f_n$, $K$ énergie réglante (MW/Hz), $f$ fréquence mesurée, $f_n = 50$ Hz",
+    "grandeurs": [
+      {
+        "s": "P",
+        "nom": "puissance fournie",
+        "u": "W"
+      },
+      {
+        "s": "P_c",
+        "nom": "puissance de consigne",
+        "u": "W"
+      },
+      {
+        "s": "K",
+        "nom": "énergie réglante",
+        "u": "W\\cdot Hz^{-1}"
+      },
+      {
+        "s": "f",
+        "nom": "fréquence du réseau",
+        "u": "Hz"
+      },
+      {
+        "s": "f_n",
+        "nom": "fréquence nominale",
+        "u": "Hz"
+      }
+    ],
     "source": "Sujet 2025 E1 (Q2)"
   },
   {
@@ -113,7 +376,29 @@
     "notion": "OE3.7 Génération électrique",
     "nom": "Énergie réglante et statisme",
     "tex": "[[K|s|P_c]] = \\dfrac{[[P_n|f_n|\\Delta P]]}{[[s\\,f_n|s\\,P_n|f_n / s]]}",
-    "legende": "K énergie réglante (MW/Hz), P_n puissance nominale (MW), s statisme, f_n fréquence nominale (Hz)",
+    "legende": "$K$ énergie réglante (MW/Hz), $P_n$ puissance nominale (MW), $s$ statisme, $f_n$ fréquence nominale (Hz)",
+    "grandeurs": [
+      {
+        "s": "K",
+        "nom": "énergie réglante",
+        "u": "W\\cdot Hz^{-1}"
+      },
+      {
+        "s": "P_n",
+        "nom": "puissance nominale",
+        "u": "W"
+      },
+      {
+        "s": "s",
+        "nom": "statisme",
+        "u": ""
+      },
+      {
+        "s": "f_n",
+        "nom": "fréquence nominale",
+        "u": "Hz"
+      }
+    ],
     "source": "Sujet 2025 E1 (Q4-Q6)"
   },
   {
@@ -122,7 +407,19 @@
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Tension composée en complexe (système direct)",
     "tex": "\\underline{U}_{12} = \\underline{V}_1 - \\underline{V}_2 = [[\\sqrt{3}|\\sqrt{2}|3]]\\,\\underline{V}_1\\,e^{[[j\\pi/6|-j\\pi/6|j\\pi/3|j2\\pi/3]]}",
-    "legende": "u_12 est en avance de 30° sur v_1 ; v_1(t) = V√2 cos ωt, u_12(t) = U√2 cos(ωt + π/6)",
+    "legende": "$\\underline{U}_{12}$ en avance de 30° sur $\\underline{V}_1$ : $v_1 = V\\sqrt{2}\\cos\\omega t$, $u_{12} = U\\sqrt{2}\\cos(\\omega t + \\pi/6)$ avec $U = \\sqrt{3}\\,V$",
+    "grandeurs": [
+      {
+        "s": "\\underline{U}_{12}",
+        "nom": "tension composée complexe",
+        "u": "V"
+      },
+      {
+        "s": "\\underline{V}_1",
+        "nom": "tension simple complexe",
+        "u": "V"
+      }
+    ],
     "source": "Sujet 2025 E1 (Q8)"
   },
   {
@@ -131,7 +428,29 @@
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Puissance instantanée d'un système triphasé équilibré",
     "tex": "p(t) = [[v_a i_a + v_b i_b + v_c i_c|V_a I_a + V_b I_b + V_c I_c]] = [[3|\\sqrt{3}|\\dfrac{3}{2}]]\\,V I\\,[[\\cos\\varphi|\\sin\\varphi|\\tan\\varphi]] = \\text{cte}",
-    "legende": "V, I valeurs efficaces simples ; en triphasé équilibré la puissance instantanée est constante (pas de pulsation à 2ω)",
+    "legende": "$v$, $i$ valeurs instantanées, $V$, $I$ valeurs efficaces simples, $\\varphi$ déphasage ; en triphasé équilibré, $p(t)$ est constante (pas de pulsation à $2\\omega$)",
+    "grandeurs": [
+      {
+        "s": "p",
+        "nom": "puissance instantanée",
+        "u": "W"
+      },
+      {
+        "s": "V",
+        "nom": "tension simple efficace",
+        "u": "V"
+      },
+      {
+        "s": "I",
+        "nom": "courant de ligne efficace",
+        "u": "A"
+      },
+      {
+        "s": "\\varphi",
+        "nom": "déphasage",
+        "u": "rad"
+      }
+    ],
     "source": "Sujet 2025 E3 (Q41)"
   },
   {
@@ -139,8 +458,25 @@
     "bloc": "OE3",
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Courant admissible corrigé d'une canalisation",
-    "tex": "I'_z = \\dfrac{[[I_B|I_n|I_z]]}{[[K|1/K|K^2]]}",
-    "legende": "I_B courant d'emploi (A), K produit des facteurs de correction (pose, température, groupement) < 1 ; on choisit la section dont I_z tabulé ≥ I'_z",
+    "tex": "I'_z = \\dfrac{[[I_z|I_z^2|\\sqrt{3}\\,I_z]]}{[[K|1/K|K^2]]}",
+    "legende": "$I'_z$ courant fictif à chercher dans les tableaux (A), $I_z$ courant que doit admettre la canalisation (A) ($I_z \\ge I_n$ du disjoncteur, $I_n \\ge I_B$ courant d'emploi), $K$ produit des facteurs de correction < 1",
+    "grandeurs": [
+      {
+        "s": "I'_z",
+        "nom": "courant admissible fictif",
+        "u": "A"
+      },
+      {
+        "s": "I_z",
+        "nom": "courant admissible requis",
+        "u": "A"
+      },
+      {
+        "s": "K",
+        "nom": "facteur de correction global",
+        "u": ""
+      }
+    ],
     "source": "Sujet 2025 E3 (Q33-Q34)"
   },
   {
@@ -149,7 +485,34 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Constantes de temps des circuits RC et RL",
     "tex": "\\tau_{RC} = [[R\\,C|R / C|C / R]] \\quad ; \\quad \\tau_{RL} = [[L / R|R / L|L\\,R]]",
-    "legende": "τ en s, R (Ω), C (F), L (H)",
+    "legende": "$\\tau$ (s), $R$ (Ω), $C$ (F), $L$ (H)",
+    "grandeurs": [
+      {
+        "s": "\\tau_{RC}",
+        "nom": "constante de temps RC",
+        "u": "s"
+      },
+      {
+        "s": "R",
+        "nom": "résistance",
+        "u": "\\Omega"
+      },
+      {
+        "s": "C",
+        "nom": "capacité",
+        "u": "F"
+      },
+      {
+        "s": "\\tau_{RL}",
+        "nom": "constante de temps RL",
+        "u": "s"
+      },
+      {
+        "s": "L",
+        "nom": "inductance",
+        "u": "H"
+      }
+    ],
     "source": "Sujet 2025 E2 (Q50)"
   },
   {
@@ -157,8 +520,40 @@
     "bloc": "OE3",
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Réponse libre d'un circuit LC",
-    "tex": "v_C(t) = V_0\\cos\\left(\\omega_0 t\\right) + [[I_0\\sqrt{\\dfrac{L}{C}}|I_0\\sqrt{\\dfrac{C}{L}}|I_0 L \\omega_0]]\\,\\sin\\left(\\omega_0 t\\right), \\quad \\omega_0 = \\dfrac{1}{[[\\sqrt{L\\,C}|L\\,C|\\sqrt{L/C}]]}",
-    "legende": "Conditions initiales v_C(0) = V_0 et i_C(0) = C dv/dt(0) = I_0 ; √(L/C) impédance caractéristique (Ω) ; base de l'étude d'une commutation ZVS",
+    "tex": "v_C(t) = V_0\\cos\\left(\\omega_0 t\\right) + [[I_0\\sqrt{\\dfrac{L}{C}}|I_0\\sqrt{\\dfrac{C}{L}}|I_0 \\sqrt{L C}]]\\,\\sin\\left(\\omega_0 t\\right), \\quad \\omega_0 = \\dfrac{1}{[[\\sqrt{L\\,C}|L\\,C|\\sqrt{L/C}]]}",
+    "legende": "Conditions initiales $v_C(0) = V_0$ et $i_C(0) = C\\,\\mathrm{d}v_C/\\mathrm{d}t(0) = I_0$ ; $\\sqrt{L/C}$ impédance caractéristique (Ω) ; base de l'étude d'une commutation ZVS",
+    "grandeurs": [
+      {
+        "s": "v_C",
+        "nom": "tension du condensateur",
+        "u": "V"
+      },
+      {
+        "s": "V_0",
+        "nom": "tension initiale",
+        "u": "V"
+      },
+      {
+        "s": "\\omega_0",
+        "nom": "pulsation propre",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "I_0",
+        "nom": "courant initial",
+        "u": "A"
+      },
+      {
+        "s": "L",
+        "nom": "inductance",
+        "u": "H"
+      },
+      {
+        "s": "C",
+        "nom": "capacité",
+        "u": "F"
+      }
+    ],
     "source": "Sujet 2025 E3 (Q30-Q31)"
   },
   {
@@ -167,7 +562,24 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Résistance d'une phase mesurée entre deux bornes (couplage étoile)",
     "tex": "R = \\dfrac{[[U_{mes}|2\\,U_{mes}|3\\,U_{mes}]]}{[[2\\,I_{mes}|I_{mes}|\\sqrt{3}\\,I_{mes}]]}",
-    "legende": "Méthode voltampèremétrique en continu entre deux phases : deux enroulements en série (en triangle : R = 3U_mes / 2I_mes)",
+    "legende": "Mesure voltampèremétrique en continu entre deux bornes : deux enroulements en série ; en triangle $R = 3U_{mes}/(2I_{mes})$",
+    "grandeurs": [
+      {
+        "s": "R",
+        "nom": "résistance d'une phase",
+        "u": "\\Omega"
+      },
+      {
+        "s": "U_{mes}",
+        "nom": "tension mesurée",
+        "u": "V"
+      },
+      {
+        "s": "I_{mes}",
+        "nom": "courant mesuré",
+        "u": "A"
+      }
+    ],
     "source": "Sujet 2025 E1 (Q9)"
   },
   {
@@ -176,7 +588,29 @@
     "notion": "OE3.4 Électronique de puissance",
     "nom": "PD3 débit lissé : fondamental et harmoniques du courant de ligne",
     "tex": "I_1 = [[\\dfrac{\\sqrt{6}}{\\pi}|\\dfrac{\\sqrt{3}}{\\pi}|\\dfrac{2\\sqrt{2}}{\\pi}|\\dfrac{4}{\\pi}]]\\,I_0 \\quad ; \\quad I_n = \\dfrac{I_1}{[[n|n^2|\\sqrt{n}]]}\\quad (n = 6k \\pm 1)",
-    "legende": "I_0 courant continu parfaitement lissé, I_1 et I_n valeurs efficaces du fondamental et de l'harmonique n",
+    "legende": "$I_0$ courant continu parfaitement lissé (A), $I_1$ et $I_n$ valeurs efficaces du fondamental et de l'harmonique de rang $n$ (A)",
+    "grandeurs": [
+      {
+        "s": "I_1",
+        "nom": "courant fondamental efficace",
+        "u": "A"
+      },
+      {
+        "s": "I_0",
+        "nom": "courant continu lissé",
+        "u": "A"
+      },
+      {
+        "s": "I_n",
+        "nom": "courant harmonique efficace de rang n",
+        "u": "A"
+      },
+      {
+        "s": "n",
+        "nom": "rang de l'harmonique",
+        "u": ""
+      }
+    ],
     "source": "Sujet 2025 E3 (Q37-Q40)"
   },
   {
@@ -185,7 +619,14 @@
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Taux de distorsion du courant absorbé par un PD3 (débit lissé)",
     "tex": "\\mathrm{THD}_F = \\sqrt{\\dfrac{\\pi^2}{[[9|3|6]]} - 1} \\approx [[31\\,\\%|48\\,\\%|5\\,\\%]]",
-    "legende": "THD rapporté au fondamental, I_eff = √(2/3) I_0 et I_1 = (√6/π) I_0 d'où I_eff / I_1 = π/3",
+    "legende": "THD rapporté au fondamental ; $I_{eff} = \\sqrt{2/3}\\,I_0$ et $I_1 = (\\sqrt{6}/\\pi)\\,I_0$ d'où $I_{eff}/I_1 = \\pi/3$",
+    "grandeurs": [
+      {
+        "s": "\\mathrm{THD}_F",
+        "nom": "taux de distorsion harmonique",
+        "u": "\\%"
+      }
+    ],
     "source": "Sujet 2025 E3 (Q39)"
   },
   {
@@ -194,7 +635,24 @@
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Puissance instantanée maximale en commutation linéaire",
     "tex": "p_{\\max} = \\dfrac{[[V\\,I|V\\,I^2|V^2\\,I]]}{[[4|2|8]]}",
-    "legende": "Tension V et courant I commutés évoluant linéairement et simultanément (croisement à mi-durée), pertes maximales à l'instant t_r/2",
+    "legende": "Tension $V$ (V) et courant $I$ (A) commutés évoluant linéairement et simultanément : pertes instantanées maximales à mi-durée de la commutation",
+    "grandeurs": [
+      {
+        "s": "p_{\\max}",
+        "nom": "puissance instantanée maximale",
+        "u": "W"
+      },
+      {
+        "s": "V",
+        "nom": "tension commutée",
+        "u": "V"
+      },
+      {
+        "s": "I",
+        "nom": "courant commuté",
+        "u": "A"
+      }
+    ],
     "source": "Sujet 2025 E3 (Q29)"
   },
   {
@@ -203,7 +661,29 @@
     "notion": "OE3.6 Utilisation de l'énergie électrique et procédés associés",
     "nom": "Durée de charge d'une batterie à puissance variable",
     "tex": "T_c = \\int_{SoC_1}^{SoC_2} \\dfrac{[[E_u|P_c|U\\,I]]}{[[P_c(SoC)|E_u|SoC]]}\\,[[\\mathrm{d}SoC|\\mathrm{d}t|\\mathrm{d}P]]",
-    "legende": "E_u énergie utile (× SoH si batterie vieillie), P_c(SoC) puissance de charge imposée par le BMS, SoC état de charge (0 à 1)",
+    "legende": "$T_c$ durée de charge (h), $E_u$ énergie utile (Wh, × SoH si batterie vieillie), $P_c(SoC)$ puissance de charge imposée par le BMS (W), $SoC$ état de charge (0 à 1)",
+    "grandeurs": [
+      {
+        "s": "T_c",
+        "nom": "durée de charge",
+        "u": "h"
+      },
+      {
+        "s": "E_u",
+        "nom": "énergie utile",
+        "u": "W\\cdot h"
+      },
+      {
+        "s": "P_c",
+        "nom": "puissance de charge",
+        "u": "W"
+      },
+      {
+        "s": "SoC",
+        "nom": "état de charge",
+        "u": ""
+      }
+    ],
     "source": "Sujet 2025 E3 (Q13-Q14)"
   },
   {
@@ -211,8 +691,9 @@
     "bloc": "OE3",
     "notion": "OE3.5 Chaînes de conversion électromécanique",
     "nom": "Transformation de Clarke (conservation des amplitudes)",
-    "tex": "x_\\alpha = [[\\dfrac{2}{3}|\\dfrac{3}{2}|\\sqrt{\\dfrac{2}{3}}]]\\left(x_a - \\dfrac{x_b + x_c}{2}\\right) \\quad ; \\quad x_\\beta = [[\\dfrac{1}{\\sqrt{3}}|\\dfrac{\\sqrt{3}}{2}|\\dfrac{2}{\\sqrt{3}}]]\\left(x_b - x_c\\right)",
-    "legende": "Passage triphasé (a, b, c) → diphasé fixe (α, β) sans composante homopolaire ; pour un système équilibré x_α = x_a",
+    "tex": "\\text{Clarke : } x_\\alpha = [[\\dfrac{2}{3}|\\dfrac{3}{2}|\\sqrt{\\dfrac{2}{3}}]]\\left(x_a - \\dfrac{x_b + x_c}{2}\\right) \\quad ; \\quad x_\\beta = [[\\dfrac{1}{\\sqrt{3}}|\\dfrac{\\sqrt{3}}{2}|\\dfrac{2}{\\sqrt{3}}]]\\left(x_b - x_c\\right)",
+    "legende": "Conservation des amplitudes : triphasé $(a, b, c)$ → diphasé fixe $(\\alpha, \\beta)$ sans composante homopolaire ; système équilibré : $x_\\alpha = x_a$",
+    "grandeurs": [],
     "source": "Sujet 2025 E3 (Q48)"
   },
   {
@@ -221,7 +702,14 @@
     "notion": "OE3.5 Chaînes de conversion électromécanique",
     "nom": "Rotation de Park (repère αβ → dq)",
     "tex": "x_d = x_\\alpha\\,[[\\cos\\theta|\\sin\\theta|-\\cos\\theta]] + x_\\beta\\,[[\\sin\\theta|-\\sin\\theta|\\cos\\theta]] \\quad ; \\quad x_q = [[-x_\\alpha\\sin\\theta|x_\\alpha\\sin\\theta|x_\\alpha\\cos\\theta]] + x_\\beta\\cos\\theta",
-    "legende": "θ angle du repère tournant ; en complexe x_dq = x_αβ e^{−jθ} : un système direct de pulsation ω_0 devient continu si θ = ω_0 t",
+    "legende": "$\\theta$ angle du repère tournant ; en complexe $x_{dq} = x_{\\alpha\\beta}\\,e^{-j\\theta}$ : un système direct de pulsation $\\omega_0$ devient continu si $\\theta = \\omega_0 t$",
+    "grandeurs": [
+      {
+        "s": "\\theta",
+        "nom": "angle du repère tournant",
+        "u": "rad"
+      }
+    ],
     "source": "Sujet 2025 E3 (Q48-Q49)"
   },
   {
@@ -230,7 +718,19 @@
     "notion": "OE3.5 Chaînes de conversion électromécanique",
     "nom": "Correcteur PI en repère de Park vu du repère fixe",
     "tex": "[[C_{\\alpha\\beta}(j\\omega)|C_{dq}(j\\omega)]] = C_{PI}\\left(j\\left([[\\omega - \\omega_0|\\omega + \\omega_0|\\omega_0 - 2\\omega]]\\right)\\right)",
-    "legende": "Translation fréquentielle X_αβ(ω) = X_dq(ω − ω_0) ; gain infini en ω = ω_0 : suivi sans erreur d'une sinusoïde à ω_0",
+    "legende": "Translation fréquentielle $X_{\\alpha\\beta}(\\omega) = X_{dq}(\\omega - \\omega_0)$ ; gain infini en $\\omega = \\omega_0$ : suivi sans erreur d'une sinusoïde directe à $\\omega_0$",
+    "grandeurs": [
+      {
+        "s": "\\omega",
+        "nom": "pulsation",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "\\omega_0",
+        "nom": "pulsation du repère tournant",
+        "u": "rad\\cdot s^{-1}"
+      }
+    ],
     "source": "Sujet 2025 E3 (Q49-Q50)"
   },
   {
@@ -239,7 +739,39 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Système masse-ressort-amortisseur : paramètres canoniques",
     "tex": "\\omega_n = \\sqrt{\\dfrac{[[k|c|2k]]}{[[m|2m|m^2]]}} \\quad ; \\quad \\xi = \\dfrac{[[c|2c|c^2]]}{[[2\\sqrt{k\\,m}|\\sqrt{k\\,m}|2\\,k\\,m]]} \\quad ; \\quad G = \\dfrac{1}{k}",
-    "legende": "m ẍ + c ẋ + k x = F : X/F = G / (1 + 2ξp/ω_n + p²/ω_n²) ; m (kg), k (N/m), c (N·s/m)",
+    "legende": "$m\\ddot{x} + c\\dot{x} + kx = F$ : $X/F = G/(1 + 2\\xi p/\\omega_n + p^2/\\omega_n^2)$ ; $m$ (kg), $k$ (N/m), $c$ (N·s/m)",
+    "grandeurs": [
+      {
+        "s": "\\omega_n",
+        "nom": "pulsation propre",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "k",
+        "nom": "raideur",
+        "u": "N\\cdot m^{-1}"
+      },
+      {
+        "s": "m",
+        "nom": "masse",
+        "u": "kg"
+      },
+      {
+        "s": "\\xi",
+        "nom": "coefficient d'amortissement",
+        "u": ""
+      },
+      {
+        "s": "c",
+        "nom": "coefficient de frottement visqueux",
+        "u": "N\\cdot s\\cdot m^{-1}"
+      },
+      {
+        "s": "G",
+        "nom": "gain statique (souplesse)",
+        "u": "m\\cdot N^{-1}"
+      }
+    ],
     "source": "Sujet 2025 E2 (Q15-Q19)"
   },
   {
@@ -248,7 +780,29 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Conditions d'équilibrage d'un rotor d'axe (O, z)",
     "tex": "\\text{statique} : [[x_G = y_G = 0|z_G = 0|x_G = z_G = 0]] \\quad ; \\quad \\text{dynamique} : [[D = E = 0|F = 0|A = B]]",
-    "legende": "G sur l'axe de rotation et produits d'inertie D = ∫yz dm et E = ∫xz dm nuls : (O, z) axe principal central d'inertie, actions des paliers indépendantes de la rotation",
+    "legende": "$G$ sur l'axe de rotation et produits d'inertie $D = \\int yz\\,\\mathrm{d}m$ et $E = \\int xz\\,\\mathrm{d}m$ nuls : $(O, \\vec z)$ axe principal central d'inertie",
+    "grandeurs": [
+      {
+        "s": "x_G",
+        "nom": "abscisse du centre de gravité",
+        "u": "m"
+      },
+      {
+        "s": "y_G",
+        "nom": "ordonnée du centre de gravité",
+        "u": "m"
+      },
+      {
+        "s": "D",
+        "nom": "produit d'inertie yz",
+        "u": "kg\\cdot m^2"
+      },
+      {
+        "s": "E",
+        "nom": "produit d'inertie xz",
+        "u": "kg\\cdot m^2"
+      }
+    ],
     "source": "Sujet 2025 E1 (Q51-Q53)"
   },
   {
@@ -257,7 +811,39 @@
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Poutre sur deux appuis, charge ponctuelle non centrée",
     "tex": "R_A = \\dfrac{F\\,[[b|a|L]]}{L} \\quad ; \\quad M_{f,\\max} = \\dfrac{F\\,[[a\\,b|a^2|a + b]]}{[[L|2L|L^2]]}",
-    "legende": "F appliquée à la distance a de l'appui A et b de l'appui B (a + b = L) ; moment maximal sous la charge",
+    "legende": "$F$ (N) appliquée à $a$ de l'appui A et $b$ de l'appui B, $a + b = L$ (m) ; $R_A$ réaction en A (N), moment fléchissant maximal sous la charge (N·m)",
+    "grandeurs": [
+      {
+        "s": "R_A",
+        "nom": "réaction de l'appui A",
+        "u": "N"
+      },
+      {
+        "s": "F",
+        "nom": "charge ponctuelle",
+        "u": "N"
+      },
+      {
+        "s": "b",
+        "nom": "distance de la charge à l'appui B",
+        "u": "m"
+      },
+      {
+        "s": "L",
+        "nom": "portée",
+        "u": "m"
+      },
+      {
+        "s": "M_{f,\\max}",
+        "nom": "moment fléchissant maximal",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "a",
+        "nom": "distance de la charge à l'appui A",
+        "u": "m"
+      }
+    ],
     "source": "Sujet 2025 E1 (Q60-Q61)"
   },
   {
@@ -266,7 +852,29 @@
     "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
     "nom": "Pression diamétrale dans un palier lisse",
     "tex": "p = \\dfrac{[[F|2F|F/2]]}{[[2\\,r\\,l|\\pi\\,r\\,l|r\\,l]]}",
-    "legende": "F charge radiale (N), r rayon (m) et l longueur (m) du coussinet : pression rapportée à la surface projetée d·l, comparée à la pression admissible",
+    "legende": "$p$ pression diamétrale (Pa), $F$ charge radiale (N), $r$ rayon (m) et $l$ longueur (m) du coussinet : pression rapportée à la surface projetée $d\\cdot l$",
+    "grandeurs": [
+      {
+        "s": "p",
+        "nom": "pression diamétrale",
+        "u": "Pa"
+      },
+      {
+        "s": "F",
+        "nom": "charge radiale",
+        "u": "N"
+      },
+      {
+        "s": "r",
+        "nom": "rayon du coussinet",
+        "u": "m"
+      },
+      {
+        "s": "l",
+        "nom": "longueur du coussinet",
+        "u": "m"
+      }
+    ],
     "source": "Sujet 2025 E1 (Q49)"
   },
   {
@@ -275,7 +883,34 @@
     "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
     "nom": "Portance (et traînée) d'un profil",
     "tex": "F_z = [[\\dfrac{1}{2}|2|\\dfrac{1}{4}]]\\,\\rho\\,S\\,[[C_z|C_x|C_p]]\\,[[V^2|V|V^3]]",
-    "legende": "Portance perpendiculaire à la vitesse relative du fluide ; traînée F_x = ½ ρ S C_x V² parallèle ; ρ (kg/m³), S surface (m²), V vitesse relative (m/s)",
+    "legende": "$F_z$ portance perpendiculaire à la vitesse relative (N) ; traînée $F_x = \\frac{1}{2}\\rho S C_x V^2$ ; $\\rho$ (kg/m³), $S$ surface de référence (m²), $C_z$ coefficient de portance, $V$ vitesse relative (m/s)",
+    "grandeurs": [
+      {
+        "s": "F_z",
+        "nom": "portance",
+        "u": "N"
+      },
+      {
+        "s": "\\rho",
+        "nom": "masse volumique du fluide",
+        "u": "kg\\cdot m^{-3}"
+      },
+      {
+        "s": "S",
+        "nom": "surface de référence",
+        "u": "m^2"
+      },
+      {
+        "s": "C_z",
+        "nom": "coefficient de portance",
+        "u": ""
+      },
+      {
+        "s": "V",
+        "nom": "vitesse relative",
+        "u": "m\\cdot s^{-1}"
+      }
+    ],
     "source": "Sujet 2025 E1 (Q39-Q40)"
   },
   {
@@ -284,7 +919,39 @@
     "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
     "nom": "Débit d'un vérin avec compressibilité du fluide",
     "tex": "q = [[S|V_0|B]]\\,\\dfrac{\\mathrm{d}x}{\\mathrm{d}t} + \\dfrac{[[V_0|S|q]]}{[[B|V_0|S]]}\\,\\dfrac{\\mathrm{d}p}{\\mathrm{d}t}",
-    "legende": "q débit (m³/s), S section du piston (m²), V_0 volume de fluide sous pression (m³), B module de compressibilité (Pa), p pression dans la chambre (Pa)",
+    "legende": "$q$ débit (m³/s), $S$ section du piston (m²), $x$ position (m), $V_0$ volume de fluide sous pression (m³), $B$ module de compressibilité (Pa), $p$ pression dans la chambre (Pa)",
+    "grandeurs": [
+      {
+        "s": "q",
+        "nom": "débit volumique",
+        "u": "m^3\\cdot s^{-1}"
+      },
+      {
+        "s": "S",
+        "nom": "section du piston",
+        "u": "m^2"
+      },
+      {
+        "s": "x",
+        "nom": "position du piston",
+        "u": "m"
+      },
+      {
+        "s": "V_0",
+        "nom": "volume de fluide sous pression",
+        "u": "m^3"
+      },
+      {
+        "s": "B",
+        "nom": "module de compressibilité",
+        "u": "Pa"
+      },
+      {
+        "s": "p",
+        "nom": "pression dans la chambre",
+        "u": "Pa"
+      }
+    ],
     "source": "Sujet 2025 E1 (Q30)"
   },
   {
@@ -293,7 +960,8 @@
     "notion": "TC4 Simulation numérique de systèmes pluri-techniques",
     "nom": "Interpolation linéaire entre deux points",
     "tex": "y = y_1 + \\left([[y_2 - y_1|y_1 - y_2|y_2]]\\right)\\dfrac{[[x - x_1|x - x_2|x]]}{[[x_2 - x_1|x_2 + x_1|x_1 - x_2]]}",
-    "legende": "Valeur estimée y en x ∈ [x_1 ; x_2] à partir des points (x_1, y_1) et (x_2, y_2) ; α = (x − x_1)/(x_2 − x_1) coefficient d'interpolation",
+    "legende": "Valeur estimée $y$ en $x \\in [x_1 ; x_2]$ à partir des points $(x_1, y_1)$ et $(x_2, y_2)$ ; $(x - x_1)/(x_2 - x_1)$ coefficient d'interpolation",
+    "grandeurs": [],
     "source": "Sujet 2025 E1 (Q22)"
   }
 ]

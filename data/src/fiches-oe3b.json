@@ -4,8 +4,15 @@
     "bloc": "OE3",
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Pertes en conduction d'un interrupteur",
-    "tex": "[[P_{\\mathrm{cond}}]] = [[R_{\\mathrm{on}}|r_d|R_{\\mathrm{th}}]] [[I_{\\mathrm{eff}}^2|I_{\\mathrm{moy}}^2|I_{\\mathrm{eff}}]] + [[V_0 I_{\\mathrm{moy}}|V_0 I_{\\mathrm{eff}}|V_0 I_{\\mathrm{eff}}^2]]",
-    "legende": "R_on résistance à l'état passant (Ω), V_0 tension de seuil (V, nulle pour un MOSFET), I_eff courant efficace, I_moy courant moyen (A)",
+    "tex": "[[P_{\\mathrm{cond}}]] = [[R_{\\mathrm{on}}|R_{\\mathrm{th}}|\\frac{1}{R_{\\mathrm{on}}}]] [[I_{\\mathrm{eff}}^2|I_{\\mathrm{moy}}^2|I_{\\mathrm{eff}}]] + [[V_0 I_{\\mathrm{moy}}|V_0 I_{\\mathrm{eff}}|V_0 I_{\\mathrm{eff}}^2]]",
+    "legende": "$P_{\\mathrm{cond}}$ pertes en conduction (W), $R_{\\mathrm{on}}$ résistance à l'état passant ou dynamique (Ω), $V_0$ tension de seuil (V, nulle pour un MOSFET), $I_{\\mathrm{eff}}$ courant efficace, $I_{\\mathrm{moy}}$ courant moyen (A)",
+    "grandeurs": [
+      { "s": "P_{\\mathrm{cond}}", "nom": "pertes en conduction", "u": "W" },
+      { "s": "R_{\\mathrm{on}}", "nom": "résistance à l'état passant", "u": "\\Omega" },
+      { "s": "I_{\\mathrm{eff}}", "nom": "courant efficace dans l'interrupteur", "u": "A" },
+      { "s": "V_0", "nom": "tension de seuil", "u": "V" },
+      { "s": "I_{\\mathrm{moy}}", "nom": "courant moyen dans l'interrupteur", "u": "A" }
+    ],
     "source": "Fiche OE3.4 ; Sujet 2024 E3"
   },
   {
@@ -14,16 +21,30 @@
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Pertes en commutation (énergies constructeur)",
     "tex": "[[P_{\\mathrm{comm}}]] = [[f_{\\mathrm{dec}}|\\frac{1}{f_{\\mathrm{dec}}}|2f_{\\mathrm{dec}}]] \\left( [[E_{\\mathrm{on}} + E_{\\mathrm{off}}|E_{\\mathrm{on}} - E_{\\mathrm{off}}|E_{\\mathrm{on}} \\cdot E_{\\mathrm{off}}]] \\right)",
-    "legende": "f_dec fréquence de découpage (Hz), E_on/E_off énergies dissipées à l'amorçage/au blocage (J)",
+    "legende": "$P_{\\mathrm{comm}}$ pertes en commutation (W), $f_{\\mathrm{dec}}$ fréquence de découpage (Hz), $E_{\\mathrm{on}}$, $E_{\\mathrm{off}}$ énergies dissipées à l'amorçage et au blocage (J)",
+    "grandeurs": [
+      { "s": "P_{\\mathrm{comm}}", "nom": "pertes en commutation", "u": "W" },
+      { "s": "f_{\\mathrm{dec}}", "nom": "fréquence de découpage", "u": "Hz" },
+      { "s": "E_{\\mathrm{on}}", "nom": "énergie dissipée à l'amorçage", "u": "J" },
+      { "s": "E_{\\mathrm{off}}", "nom": "énergie dissipée au blocage", "u": "J" }
+    ],
     "source": "Fiche OE3.4"
   },
   {
     "id": "oe3-pertes-commutation-lineaire",
     "bloc": "OE3",
     "notion": "OE3.4 Électronique de puissance",
-    "nom": "Pertes en commutation (modèle linéaire)",
-    "tex": "P_{\\mathrm{comm}} = [[\\frac{1}{2}|\\frac{1}{4}|2]] [[V I|V I^2|V^2 I]] \\left( [[t_{\\mathrm{on}} + t_{\\mathrm{off}}|t_{\\mathrm{on}} \\cdot t_{\\mathrm{off}}]] \\right) [[f_{\\mathrm{dec}}|T_{\\mathrm{dec}}]]",
-    "legende": "V tension commutée (V), I courant commuté (A), t_on/t_off durées de commutation (s), f_dec fréquence de découpage (Hz)",
+    "nom": "Pertes en commutation (modèle linéaire, charge inductive)",
+    "tex": "[[P_{\\mathrm{comm}}]] = [[\\frac{1}{2}|\\frac{1}{4}|2]] [[V I|V I^2|V^2 I]] \\left( [[t_{\\mathrm{on}} + t_{\\mathrm{off}}|t_{\\mathrm{on}} \\cdot t_{\\mathrm{off}}|t_{\\mathrm{on}} - t_{\\mathrm{off}}]] \\right) [[f_{\\mathrm{dec}}|T_{\\mathrm{dec}}|\\frac{1}{f_{\\mathrm{dec}}}]]",
+    "legende": "$V$ tension commutée (V), $I$ courant commuté (A), $t_{\\mathrm{on}}$, $t_{\\mathrm{off}}$ durées de commutation (s), $f_{\\mathrm{dec}}$ fréquence de découpage (Hz) ; commutation dure sur charge inductive, variations linéaires",
+    "grandeurs": [
+      { "s": "P_{\\mathrm{comm}}", "nom": "pertes en commutation", "u": "W" },
+      { "s": "V", "nom": "tension commutée", "u": "V" },
+      { "s": "I", "nom": "courant commuté", "u": "A" },
+      { "s": "t_{\\mathrm{on}}", "nom": "durée de mise en conduction", "u": "s" },
+      { "s": "t_{\\mathrm{off}}", "nom": "durée de blocage", "u": "s" },
+      { "s": "f_{\\mathrm{dec}}", "nom": "fréquence de découpage", "u": "Hz" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -32,7 +53,12 @@
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Rapport cyclique",
     "tex": "[[\\alpha]] = \\frac{[[t_{\\mathrm{on}}|t_{\\mathrm{off}}|T]]}{[[T|t_{\\mathrm{on}}|t_{\\mathrm{off}}]]}",
-    "legende": "t_on durée de conduction de l'interrupteur commandé (s), T période de découpage (s)",
+    "legende": "$\\alpha$ rapport cyclique, $t_{\\mathrm{on}}$ durée de conduction de l'interrupteur commandé (s), $T$ période de découpage (s)",
+    "grandeurs": [
+      { "s": "\\alpha", "nom": "rapport cyclique", "u": "" },
+      { "s": "t_{\\mathrm{on}}", "nom": "durée de conduction", "u": "s" },
+      { "s": "T", "nom": "période de découpage", "u": "s" }
+    ],
     "source": "Fiche TC3.4.1"
   },
   {
@@ -41,7 +67,12 @@
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Tension moyenne glissante d'un bras de pont MLI (référence borne −)",
     "tex": "[[\\overline{v}_2(t)]] = [[\\alpha(t)|1-\\alpha(t)|\\frac{\\alpha(t)}{2}]] \\cdot [[V_{\\mathrm{DC}}|\\frac{V_{\\mathrm{DC}}}{2}|2V_{\\mathrm{DC}}]]",
-    "legende": "α(t) rapport cyclique de l'interrupteur haut, V_DC tension du bus continu (V) ; tension mesurée par rapport à la borne négative du bus",
+    "legende": "$\\overline{v}_2$ tension moyenne glissante du bras, mesurée par rapport à la borne négative du bus (V), $\\alpha$ rapport cyclique de l'interrupteur haut, $V_{\\mathrm{DC}}$ tension du bus continu (V)",
+    "grandeurs": [
+      { "s": "\\overline{v}_2", "nom": "tension moyenne glissante du bras", "u": "V" },
+      { "s": "\\alpha", "nom": "rapport cyclique de l'interrupteur haut", "u": "" },
+      { "s": "V_{\\mathrm{DC}}", "nom": "tension du bus continu", "u": "V" }
+    ],
     "source": "Fiche OE3.4 ; Sujet 2024 E1"
   },
   {
@@ -50,16 +81,26 @@
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Tension moyenne glissante d'un bras par rapport au point milieu",
     "tex": "[[\\overline{v}_{A0}]] = \\left( [[2\\alpha - 1|\\alpha - 1|1 - 2\\alpha]] \\right) [[\\frac{V_{\\mathrm{DC}}}{2}|V_{\\mathrm{DC}}|\\frac{V_{\\mathrm{DC}}}{4}]]",
-    "legende": "α rapport cyclique, V_DC tension de bus (V), 0 point milieu capacitif du bus",
+    "legende": "$\\overline{v}_{A0}$ tension moyenne glissante entre le bras $A$ et le point milieu capacitif $0$ du bus (V), $\\alpha$ rapport cyclique de l'interrupteur haut, $V_{\\mathrm{DC}}$ tension du bus (V)",
+    "grandeurs": [
+      { "s": "\\overline{v}_{A0}", "nom": "tension moyenne glissante bras-point milieu", "u": "V" },
+      { "s": "\\alpha", "nom": "rapport cyclique de l'interrupteur haut", "u": "" },
+      { "s": "V_{\\mathrm{DC}}", "nom": "tension du bus continu", "u": "V" }
+    ],
     "source": "Classique programme"
   },
   {
     "id": "oe3-mli-sinus-amplitude-max",
     "bloc": "OE3",
     "notion": "OE3.4 Électronique de puissance",
-    "nom": "Amplitude maximale du fondamental en MLI sinus-triangle",
-    "tex": "[[\\hat{V}_{1,\\max}]] = [[\\frac{V_{\\mathrm{DC}}}{2}|V_{\\mathrm{DC}}|\\frac{V_{\\mathrm{DC}}}{\\sqrt{3}}]] \\quad (m = [[1|0{,}5]] \\text{ en notation } \\hat{V}_1 = m \\tfrac{V_{\\mathrm{DC}}}{2})",
-    "legende": "Tension simple (bras/point milieu) ; V_DC tension de bus (V) ; m indice de modulation, linéaire jusqu'à 1",
+    "nom": "Amplitude maximale du fondamental en MLI sinus-triangle (zone linéaire)",
+    "tex": "[[\\hat{V}_{1,\\max}]] = [[\\frac{V_{\\mathrm{DC}}}{2}|V_{\\mathrm{DC}}|\\frac{V_{\\mathrm{DC}}}{\\sqrt{3}}]] \\quad (\\hat{V}_1 = m \\tfrac{V_{\\mathrm{DC}}}{2}, \\; m \\le [[1|0{,}5|\\tfrac{2}{\\sqrt{3}}]])",
+    "legende": "$\\hat{V}_1$ amplitude du fondamental de la tension bras/point milieu (V), $V_{\\mathrm{DC}}$ tension du bus (V), $m$ indice de modulation (zone linéaire)",
+    "grandeurs": [
+      { "s": "\\hat{V}_{1,\\max}", "nom": "amplitude maximale du fondamental", "u": "V" },
+      { "s": "V_{\\mathrm{DC}}", "nom": "tension du bus continu", "u": "V" },
+      { "s": "m", "nom": "indice de modulation", "u": "" }
+    ],
     "source": "Fiche OE3.4 ; Rapport jury 2024"
   },
   {
@@ -68,7 +109,11 @@
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Amplitude maximale avec injection d'harmonique 3",
     "tex": "[[\\hat{V}_{1,\\max}]] = [[\\frac{V_{\\mathrm{DC}}}{\\sqrt{3}}|\\frac{V_{\\mathrm{DC}}}{2}|\\frac{V_{\\mathrm{DC}}}{\\sqrt{2}}]] \\;\\Rightarrow\\; \\text{gain } [[\\frac{2}{\\sqrt{3}}|\\sqrt{3}|\\sqrt{2}]] \\approx 1{,}15",
-    "legende": "Injection d'une composante homopolaire de rang 3 (annulée dans les tensions composées) ; tension composée max égale à V_DC",
+    "legende": "$\\hat{V}_{1,\\max}$ amplitude maximale du fondamental de la tension simple (V), $V_{\\mathrm{DC}}$ tension du bus (V) ; composante homopolaire de rang 3 annulée dans les tensions composées",
+    "grandeurs": [
+      { "s": "\\hat{V}_{1,\\max}", "nom": "amplitude maximale du fondamental", "u": "V" },
+      { "s": "V_{\\mathrm{DC}}", "nom": "tension du bus continu", "u": "V" }
+    ],
     "source": "Fiche OE3.4 ; Rapport jury 2024"
   },
   {
@@ -77,7 +122,12 @@
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Onduleur monophasé en pont pleine onde : fondamental",
     "tex": "[[\\hat{V}_1]] = \\frac{[[4|2|\\sqrt{2}]] E}{[[\\pi|2\\pi|\\sqrt{3}]]} \\quad ; \\quad V_{1,\\mathrm{eff}} = \\frac{[[2\\sqrt{2}|\\sqrt{2}|4]]}{\\pi} E \\approx 0{,}9\\,E",
-    "legende": "E tension continue d'entrée (V), créneau ±E de rapport 1/2",
+    "legende": "$\\hat{V}_1$ amplitude, $V_{1,\\mathrm{eff}}$ valeur efficace du fondamental (V), $E$ tension continue d'entrée (V) ; créneau $\\pm E$ de rapport cyclique 1/2",
+    "grandeurs": [
+      { "s": "\\hat{V}_1", "nom": "amplitude du fondamental", "u": "V" },
+      { "s": "V_{1,\\mathrm{eff}}", "nom": "valeur efficace du fondamental", "u": "V" },
+      { "s": "E", "nom": "tension continue d'entrée", "u": "V" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -85,8 +135,13 @@
     "bloc": "OE3",
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Onduleur pleine onde : amplitude des harmoniques",
-    "tex": "[[\\hat{V}_n]] = \\frac{4E}{[[n \\pi|n^2 \\pi|\\pi]]} \\quad \\text{pour } n \\; [[\\text{impair}|\\text{pair}|\\text{multiple de 3}]]",
-    "legende": "E tension continue (V), n rang harmonique ; spectre en 1/n, rangs pairs nuls",
+    "tex": "[[\\hat{V}_n]] = \\frac{[[4|2|\\sqrt{2}]] E}{[[n \\pi|n^2 \\pi|\\pi]]} \\quad \\text{pour } n \\; [[\\text{impair}|\\text{pair}|\\text{multiple de 3}]]",
+    "legende": "$\\hat{V}_n$ amplitude de l'harmonique de rang $n$ (V), $E$ tension continue (V) ; créneau $\\pm E$, spectre en $1/n$, rangs pairs nuls",
+    "grandeurs": [
+      { "s": "\\hat{V}_n", "nom": "amplitude de l'harmonique de rang n", "u": "V" },
+      { "s": "E", "nom": "tension continue d'entrée", "u": "V" },
+      { "s": "n", "nom": "rang harmonique", "u": "" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -95,7 +150,12 @@
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Onduleur triphasé pleine onde (180°) : fondamental",
     "tex": "[[\\hat{V}_1]] = \\frac{[[2|4|\\sqrt{3}]] E}{\\pi} \\quad ; \\quad U_{1,\\mathrm{eff}} = \\frac{[[\\sqrt{6}|\\sqrt{3}|2\\sqrt{2}]]}{\\pi} E \\approx 0{,}78\\,E",
-    "legende": "E tension de bus (V), V_1 fondamental de la tension simple, U_1 de la tension composée ; harmoniques restantes de rang 6k±1",
+    "legende": "$\\hat{V}_1$ amplitude du fondamental de la tension simple (V), $U_{1,\\mathrm{eff}}$ valeur efficace du fondamental de la tension composée (V), $E$ tension du bus (V)",
+    "grandeurs": [
+      { "s": "\\hat{V}_1", "nom": "amplitude du fondamental de la tension simple", "u": "V" },
+      { "s": "U_{1,\\mathrm{eff}}", "nom": "valeur efficace du fondamental de la tension composée", "u": "V" },
+      { "s": "E", "nom": "tension du bus continu", "u": "V" }
+    ],
     "source": "Fiche OE3.4 ; Sujet 2024 E1"
   },
   {
@@ -103,8 +163,11 @@
     "bloc": "OE3",
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Rangs harmoniques de l'onduleur triphasé pleine onde",
-    "tex": "n = [[6k \\pm 1|2k+1|3k \\pm 1]] \\quad (k \\in \\mathbb{N}^*) \\quad ; \\quad \\text{rangs } [[3k|2k|6k]] \\text{ absents des tensions composées}",
-    "legende": "Les harmoniques multiples de 3 (homopolaires) s'annulent entre phases",
+    "tex": "n = [[6k \\pm 1|2k+1|3k \\pm 1]] \\quad (k \\in \\mathbb{N}^*) \\quad ; \\quad \\text{rangs } [[3k|2k+1|6k \\pm 1]] \\text{ absents des tensions composées}",
+    "legende": "$n$ rang des harmoniques présents, $k$ entier ; les rangs multiples de 3 (homopolaires) s'annulent entre phases, les rangs pairs sont nuls par symétrie",
+    "grandeurs": [
+      { "s": "n", "nom": "rang harmonique", "u": "" }
+    ],
     "source": "Fiche OE3.4 ; Sujet 2024 E1"
   },
   {
@@ -113,7 +176,11 @@
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Redresseur monophasé simple alternance (P1)",
     "tex": "[[U_{d0}]] = \\frac{[[\\sqrt{2}|2\\sqrt{2}|\\sqrt{3}]] V}{[[\\pi|2\\pi|2]]} \\approx 0{,}45\\,V",
-    "legende": "V tension efficace d'entrée (V)",
+    "legende": "$U_{d0}$ tension redressée moyenne (V), $V$ tension efficace d'entrée (V)",
+    "grandeurs": [
+      { "s": "U_{d0}", "nom": "tension redressée moyenne", "u": "V" },
+      { "s": "V", "nom": "tension efficace d'entrée", "u": "V" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -121,8 +188,12 @@
     "bloc": "OE3",
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Redresseur PD2 à diodes : valeur moyenne",
-    "tex": "[[U_{d0}]] = \\frac{[[2\\sqrt{2}|\\sqrt{2}|3\\sqrt{6}]]}{[[\\pi|2\\pi|\\sqrt{3}]]} [[V|U|\\hat{V}]] \\approx 0{,}9\\,V",
-    "legende": "V tension efficace d'alimentation monophasée (V)",
+    "tex": "[[U_{d0}]] = \\frac{[[2\\sqrt{2}|\\sqrt{2}|3\\sqrt{6}]]}{[[\\pi|2\\pi|\\sqrt{3}]]} [[V|\\hat{V}|\\frac{V}{\\sqrt{2}}]] \\approx 0{,}9\\,V",
+    "legende": "$U_{d0}$ tension redressée moyenne (V), $V$ tension efficace d'alimentation monophasée (V)",
+    "grandeurs": [
+      { "s": "U_{d0}", "nom": "tension redressée moyenne", "u": "V" },
+      { "s": "V", "nom": "tension efficace d'alimentation", "u": "V" }
+    ],
     "source": "Fiche OE3.4"
   },
   {
@@ -131,7 +202,12 @@
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Redresseur PD3 à diodes : valeur moyenne",
     "tex": "[[U_{d0}]] = \\frac{[[3\\sqrt{6}|3\\sqrt{2}|2\\sqrt{2}]]}{\\pi} V = \\frac{[[3\\sqrt{2}|3\\sqrt{6}|\\sqrt{6}]]}{\\pi} U \\approx 2{,}34\\,V",
-    "legende": "V tension simple efficace, U tension composée efficace (V) ; U_d0 ≈ 1,35 U",
+    "legende": "$U_{d0}$ tension redressée moyenne (V), $V$ tension simple efficace, $U$ tension composée efficace (V) ; $U_{d0} \\approx 1{,}35\\,U$",
+    "grandeurs": [
+      { "s": "U_{d0}", "nom": "tension redressée moyenne", "u": "V" },
+      { "s": "V", "nom": "tension simple efficace", "u": "V" },
+      { "s": "U", "nom": "tension composée efficace", "u": "V" }
+    ],
     "source": "Fiche OE3.4 ; Sujet 2024 E1 Q30"
   },
   {
@@ -140,7 +216,11 @@
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Redresseur triphasé simple alternance (P3)",
     "tex": "[[U_{d0}]] = \\frac{[[3\\sqrt{6}|3\\sqrt{2}|3\\sqrt{3}]]}{[[2\\pi|\\pi|3\\pi]]} V \\approx 1{,}17\\,V",
-    "legende": "V tension simple efficace (V)",
+    "legende": "$U_{d0}$ tension redressée moyenne (V), $V$ tension simple efficace (V)",
+    "grandeurs": [
+      { "s": "U_{d0}", "nom": "tension redressée moyenne", "u": "V" },
+      { "s": "V", "nom": "tension simple efficace", "u": "V" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -149,7 +229,12 @@
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Redresseur commandé tout thyristors",
     "tex": "[[U_{d\\psi}]] = [[U_{d0}|\\frac{U_{d0}}{2}|2U_{d0}]] [[\\cos\\psi|\\sin\\psi|(1+\\cos\\psi)]]",
-    "legende": "U_d0 valeur moyenne à diodes (V), ψ angle d'amorçage ; ψ > 90° : onduleur assisté",
+    "legende": "$U_{d\\psi}$ tension redressée moyenne (V), $U_{d0}$ valeur moyenne du pont à diodes (V), $\\psi$ angle d'amorçage (rad) ; conduction continue, $\\psi > 90°$ : onduleur assisté",
+    "grandeurs": [
+      { "s": "U_{d\\psi}", "nom": "tension redressée moyenne", "u": "V" },
+      { "s": "U_{d0}", "nom": "valeur moyenne du pont à diodes", "u": "V" },
+      { "s": "\\psi", "nom": "angle d'amorçage", "u": "rad" }
+    ],
     "source": "Fiche OE3.4"
   },
   {
@@ -158,7 +243,12 @@
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Redresseur mixte (pont mixte) : valeur moyenne",
     "tex": "[[U_{d\\psi}]] = [[\\frac{U_{d0}}{2}|U_{d0}|2U_{d0}]] \\left( [[1 + \\cos\\psi|\\cos\\psi|1 - \\cos\\psi]] \\right)",
-    "legende": "U_d0 valeur moyenne à diodes (V), ψ angle d'amorçage ; U_d ≥ 0, non réversible",
+    "legende": "$U_{d\\psi}$ tension redressée moyenne (V), $U_{d0}$ valeur moyenne du pont à diodes (V), $\\psi$ angle d'amorçage (rad) ; $U_{d\\psi} \\ge 0$, non réversible",
+    "grandeurs": [
+      { "s": "U_{d\\psi}", "nom": "tension redressée moyenne", "u": "V" },
+      { "s": "U_{d0}", "nom": "valeur moyenne du pont à diodes", "u": "V" },
+      { "s": "\\psi", "nom": "angle d'amorçage", "u": "rad" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -167,16 +257,26 @@
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Fréquence d'ondulation en sortie de redresseur",
     "tex": "[[f_{\\mathrm{ond}}]] = [[p|2p|\\frac{p}{2}]] \\cdot [[f|\\omega|2f]]",
-    "legende": "p indice de pulsation (2 pour PD2, 3 pour P3, 6 pour PD3), f fréquence réseau (Hz)",
+    "legende": "$f_{\\mathrm{ond}}$ fréquence d'ondulation (Hz), $p$ indice de pulsation (1 pour P1, 2 pour PD2, 3 pour P3, 6 pour PD3), $f$ fréquence du réseau (Hz)",
+    "grandeurs": [
+      { "s": "f_{\\mathrm{ond}}", "nom": "fréquence d'ondulation", "u": "Hz" },
+      { "s": "p", "nom": "indice de pulsation", "u": "" },
+      { "s": "f", "nom": "fréquence du réseau", "u": "Hz" }
+    ],
     "source": "Fiche OE3.4 ; Classique programme"
   },
   {
     "id": "oe3-redresseur-taux-ondulation",
     "bloc": "OE3",
     "notion": "OE3.4 Électronique de puissance",
-    "nom": "Taux d'ondulation",
+    "nom": "Taux d'ondulation (définition de la fiche)",
     "tex": "[[\\tau]] = \\frac{[[\\Delta U|U_{\\max}|U_{\\mathrm{eff}}]]}{[[U_{d0}|U_{\\max}|U_{\\mathrm{eff}}]]}",
-    "legende": "ΔU ondulation crête-à-crête (V), U_d0 valeur moyenne (V)",
+    "legende": "$\\tau$ taux d'ondulation, $\\Delta U$ ondulation crête-à-crête (V), $U_{d0}$ valeur moyenne de la tension redressée (V)",
+    "grandeurs": [
+      { "s": "\\tau", "nom": "taux d'ondulation", "u": "" },
+      { "s": "\\Delta U", "nom": "ondulation crête-à-crête", "u": "V" },
+      { "s": "U_{d0}", "nom": "valeur moyenne de la tension redressée", "u": "V" }
+    ],
     "source": "Fiche OE3.4"
   },
   {
@@ -185,7 +285,12 @@
     "notion": "OE3.4 Électronique de puissance",
     "nom": "PD3 débit lissé : courant de ligne et facteur de puissance",
     "tex": "[[I_{\\mathrm{eff}}]] = [[\\sqrt{\\tfrac{2}{3}}|\\tfrac{1}{\\sqrt{3}}|\\sqrt{2}]] I_d \\quad ; \\quad f_p = [[\\frac{3}{\\pi}|\\frac{2\\sqrt{2}}{\\pi}|\\frac{\\pi}{3}]] \\approx 0{,}955",
-    "legende": "I_d courant continu lissé (A), créneaux 120° ; f_p facteur de puissance (diodes)",
+    "legende": "$I_{\\mathrm{eff}}$ courant de ligne efficace (A), $I_d$ courant continu lissé (A), créneaux de 120° ; $f_p$ facteur de puissance (pont à diodes)",
+    "grandeurs": [
+      { "s": "I_{\\mathrm{eff}}", "nom": "courant de ligne efficace", "u": "A" },
+      { "s": "I_d", "nom": "courant continu lissé", "u": "A" },
+      { "s": "f_p", "nom": "facteur de puissance", "u": "" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -194,7 +299,13 @@
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Ondulation de tension avec condensateur de filtrage",
     "tex": "[[\\Delta U]] \\approx \\frac{[[I_d|I_d^2|U_d]]}{[[C f_{\\mathrm{ond}}|2 C f_{\\mathrm{ond}}|L f_{\\mathrm{ond}}]]}",
-    "legende": "I_d courant de charge (A), C capacité (F), f_ond fréquence d'ondulation (Hz) — décharge à courant constant",
+    "legende": "$\\Delta U$ ondulation crête-à-crête (V), $I_d$ courant de charge (A), $C$ capacité (F), $f_{\\mathrm{ond}}$ fréquence d'ondulation (Hz) ; décharge à courant constant sur toute la période",
+    "grandeurs": [
+      { "s": "\\Delta U", "nom": "ondulation crête-à-crête", "u": "V" },
+      { "s": "I_d", "nom": "courant de charge", "u": "A" },
+      { "s": "C", "nom": "capacité de filtrage", "u": "F" },
+      { "s": "f_{\\mathrm{ond}}", "nom": "fréquence d'ondulation", "u": "Hz" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -202,8 +313,13 @@
     "bloc": "OE3",
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Hacheur série (Buck)",
-    "tex": "[[U_s]] = [[\\alpha|1-\\alpha|\\frac{1}{1-\\alpha}]] [[U_e|I_e|U_s]]",
-    "legende": "α rapport cyclique, U_e tension d'entrée, U_s tension de sortie (V) — conduction continue",
+    "tex": "[[U_s]] = [[\\alpha|1-\\alpha|\\frac{1}{1-\\alpha}]] [[U_e|I_e|\\frac{U_e}{2}]]",
+    "legende": "$U_s$ tension de sortie moyenne (V), $\\alpha$ rapport cyclique, $U_e$ tension d'entrée (V) ; conduction continue",
+    "grandeurs": [
+      { "s": "U_s", "nom": "tension de sortie moyenne", "u": "V" },
+      { "s": "\\alpha", "nom": "rapport cyclique", "u": "" },
+      { "s": "U_e", "nom": "tension d'entrée", "u": "V" }
+    ],
     "source": "Fiche OE3.4 ; Fiche TC3.4.1"
   },
   {
@@ -211,8 +327,13 @@
     "bloc": "OE3",
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Hacheur série : courants (bilan de puissance)",
-    "tex": "[[I_e]] = [[\\alpha|1-\\alpha|\\frac{1}{\\alpha}]] [[I_s|U_s|I_L]]",
-    "legende": "I_e courant moyen absorbé, I_s courant moyen de sortie (A) — convertisseur sans pertes",
+    "tex": "[[I_e]] = [[\\alpha|1-\\alpha|\\frac{1}{\\alpha}]] [[I_s|U_s|\\alpha I_s]]",
+    "legende": "$I_e$ courant moyen absorbé (A), $\\alpha$ rapport cyclique, $I_s$ courant moyen de sortie (A) ; convertisseur sans pertes",
+    "grandeurs": [
+      { "s": "I_e", "nom": "courant moyen d'entrée", "u": "A" },
+      { "s": "\\alpha", "nom": "rapport cyclique", "u": "" },
+      { "s": "I_s", "nom": "courant moyen de sortie", "u": "A" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -221,7 +342,12 @@
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Hacheur parallèle (Boost)",
     "tex": "[[U_s]] = \\frac{[[U_e|\\alpha U_e|I_e]]}{[[1-\\alpha|\\alpha|1+\\alpha]]}",
-    "legende": "α rapport cyclique (< 1), U_e entrée, U_s sortie (V) — conduction continue",
+    "legende": "$U_s$ tension de sortie (V), $U_e$ tension d'entrée (V), $\\alpha$ rapport cyclique ($< 1$) ; conduction continue",
+    "grandeurs": [
+      { "s": "U_s", "nom": "tension de sortie", "u": "V" },
+      { "s": "U_e", "nom": "tension d'entrée", "u": "V" },
+      { "s": "\\alpha", "nom": "rapport cyclique", "u": "" }
+    ],
     "source": "Fiche OE3.4"
   },
   {
@@ -229,8 +355,13 @@
     "bloc": "OE3",
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Hacheur à stockage inductif (Buck-Boost)",
-    "tex": "[[U_s]] = [[-|+]] \\frac{[[\\alpha|1-\\alpha|1]]}{[[1-\\alpha|\\alpha|1+\\alpha]]} U_e",
-    "legende": "Sortie de polarité inversée ; α rapport cyclique, U_e entrée (V)",
+    "tex": "[[\\lvert U_s \\rvert]] = \\frac{[[\\alpha|1-\\alpha|1]]}{[[1-\\alpha|\\alpha|1+\\alpha]]} [[U_e|I_e|\\alpha U_e]]",
+    "legende": "$U_s$ tension de sortie, de polarité inversée (V), $\\alpha$ rapport cyclique, $U_e$ tension d'entrée (V) ; conduction continue",
+    "grandeurs": [
+      { "s": "U_s", "nom": "tension de sortie", "u": "V" },
+      { "s": "\\alpha", "nom": "rapport cyclique", "u": "" },
+      { "s": "U_e", "nom": "tension d'entrée", "u": "V" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -239,7 +370,14 @@
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Hacheur série : ondulation du courant dans l'inductance",
     "tex": "[[\\Delta I_L]] = \\frac{[[\\alpha (1-\\alpha)|\\alpha|1-\\alpha]] U_e}{[[L f_{\\mathrm{dec}}|C f_{\\mathrm{dec}}|2 L f_{\\mathrm{dec}}]]}",
-    "legende": "ΔI_L ondulation crête-à-crête (A), U_e entrée (V), L inductance (H), f_dec fréquence de découpage (Hz)",
+    "legende": "$\\Delta I_L$ ondulation crête-à-crête du courant (A), $\\alpha$ rapport cyclique, $U_e$ tension d'entrée (V), $L$ inductance (H), $f_{\\mathrm{dec}}$ fréquence de découpage (Hz)",
+    "grandeurs": [
+      { "s": "\\Delta I_L", "nom": "ondulation crête-à-crête du courant", "u": "A" },
+      { "s": "\\alpha", "nom": "rapport cyclique", "u": "" },
+      { "s": "U_e", "nom": "tension d'entrée", "u": "V" },
+      { "s": "L", "nom": "inductance", "u": "H" },
+      { "s": "f_{\\mathrm{dec}}", "nom": "fréquence de découpage", "u": "Hz" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -248,7 +386,14 @@
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Hacheur série : ondulation de courant maximale",
     "tex": "[[\\Delta I_{L,\\max}]] = \\frac{U_e}{[[4|2|8]] [[L f_{\\mathrm{dec}}|L \\omega|C f_{\\mathrm{dec}}]]} \\quad \\text{pour } \\alpha = [[\\frac{1}{2}|1|\\frac{1}{4}]]",
-    "legende": "U_e entrée (V), L inductance (H), f_dec fréquence de découpage (Hz)",
+    "legende": "$\\Delta I_{L,\\max}$ ondulation crête-à-crête maximale (A), $U_e$ tension d'entrée (V), $L$ inductance (H), $f_{\\mathrm{dec}}$ fréquence de découpage (Hz), $\\alpha$ rapport cyclique",
+    "grandeurs": [
+      { "s": "\\Delta I_{L,\\max}", "nom": "ondulation de courant maximale", "u": "A" },
+      { "s": "U_e", "nom": "tension d'entrée", "u": "V" },
+      { "s": "L", "nom": "inductance", "u": "H" },
+      { "s": "f_{\\mathrm{dec}}", "nom": "fréquence de découpage", "u": "Hz" },
+      { "s": "\\alpha", "nom": "rapport cyclique", "u": "" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -257,7 +402,13 @@
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Hacheur série : ondulation de tension en sortie (filtre LC)",
     "tex": "[[\\Delta U_s]] = \\frac{[[\\Delta I_L|I_s|\\alpha I_s]]}{[[8|4|2]] [[C f_{\\mathrm{dec}}|L f_{\\mathrm{dec}}|C \\omega]]}",
-    "legende": "ΔI_L ondulation de courant (A), C capacité de sortie (F), f_dec fréquence de découpage (Hz)",
+    "legende": "$\\Delta U_s$ ondulation crête-à-crête de la tension de sortie (V), $\\Delta I_L$ ondulation du courant d'inductance (A), $C$ capacité de sortie (F), $f_{\\mathrm{dec}}$ fréquence de découpage (Hz)",
+    "grandeurs": [
+      { "s": "\\Delta U_s", "nom": "ondulation de la tension de sortie", "u": "V" },
+      { "s": "\\Delta I_L", "nom": "ondulation du courant d'inductance", "u": "A" },
+      { "s": "C", "nom": "capacité de sortie", "u": "F" },
+      { "s": "f_{\\mathrm{dec}}", "nom": "fréquence de découpage", "u": "Hz" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -265,8 +416,15 @@
     "bloc": "OE3",
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Hacheur parallèle : ondulation du courant d'entrée",
-    "tex": "[[\\Delta I_L]] = \\frac{[[\\alpha|\\alpha(1-\\alpha)|1-\\alpha]] [[U_e|U_s]]}{L f_{\\mathrm{dec}}}",
-    "legende": "U_e tension d'entrée (V), L inductance (H), f_dec fréquence de découpage (Hz)",
+    "tex": "[[\\Delta I_L]] = \\frac{[[\\alpha|1-\\alpha|\\alpha^2]] [[U_e|U_s|I_e]]}{[[L f_{\\mathrm{dec}}|C f_{\\mathrm{dec}}|2 L f_{\\mathrm{dec}}]]}",
+    "legende": "$\\Delta I_L$ ondulation crête-à-crête du courant d'inductance (A), $\\alpha$ rapport cyclique, $U_e$ tension d'entrée (V), $L$ inductance (H), $f_{\\mathrm{dec}}$ fréquence de découpage (Hz)",
+    "grandeurs": [
+      { "s": "\\Delta I_L", "nom": "ondulation crête-à-crête du courant", "u": "A" },
+      { "s": "\\alpha", "nom": "rapport cyclique", "u": "" },
+      { "s": "U_e", "nom": "tension d'entrée", "u": "V" },
+      { "s": "L", "nom": "inductance", "u": "H" },
+      { "s": "f_{\\mathrm{dec}}", "nom": "fréquence de découpage", "u": "Hz" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -275,7 +433,14 @@
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Hacheur parallèle : ondulation de tension de sortie",
     "tex": "[[\\Delta U_s]] = \\frac{[[\\alpha|1-\\alpha|\\alpha(1-\\alpha)]] [[I_s|I_e|U_s]]}{[[C f_{\\mathrm{dec}}|8 C f_{\\mathrm{dec}}|L f_{\\mathrm{dec}}]]}",
-    "legende": "I_s courant de sortie (A), C capacité (F), f_dec fréquence de découpage (Hz)",
+    "legende": "$\\Delta U_s$ ondulation crête-à-crête de la tension de sortie (V), $\\alpha$ rapport cyclique, $I_s$ courant de sortie (A), $C$ capacité (F), $f_{\\mathrm{dec}}$ fréquence de découpage (Hz)",
+    "grandeurs": [
+      { "s": "\\Delta U_s", "nom": "ondulation de la tension de sortie", "u": "V" },
+      { "s": "\\alpha", "nom": "rapport cyclique", "u": "" },
+      { "s": "I_s", "nom": "courant de sortie", "u": "A" },
+      { "s": "C", "nom": "capacité de sortie", "u": "F" },
+      { "s": "f_{\\mathrm{dec}}", "nom": "fréquence de découpage", "u": "Hz" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -284,7 +449,13 @@
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Courants dans l'interrupteur d'un hacheur série (courant lissé)",
     "tex": "[[I_{K,\\mathrm{moy}}]] = [[\\alpha|\\sqrt{\\alpha}|1-\\alpha]] I_s \\quad ; \\quad I_{K,\\mathrm{eff}} = [[\\sqrt{\\alpha}|\\alpha^2|\\sqrt{1-\\alpha}]] I_s",
-    "legende": "I_s courant de charge lissé (A), α rapport cyclique",
+    "legende": "$I_{K,\\mathrm{moy}}$, $I_{K,\\mathrm{eff}}$ courants moyen et efficace dans l'interrupteur (A), $\\alpha$ rapport cyclique, $I_s$ courant de charge lissé (A)",
+    "grandeurs": [
+      { "s": "I_{K,\\mathrm{moy}}", "nom": "courant moyen dans l'interrupteur", "u": "A" },
+      { "s": "I_{K,\\mathrm{eff}}", "nom": "courant efficace dans l'interrupteur", "u": "A" },
+      { "s": "\\alpha", "nom": "rapport cyclique", "u": "" },
+      { "s": "I_s", "nom": "courant de charge lissé", "u": "A" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -292,8 +463,14 @@
     "bloc": "OE3",
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Alimentation Flyback (conduction continue)",
-    "tex": "[[U_s]] = [[m|\\frac{1}{m}]] \\frac{[[\\alpha|1-\\alpha]]}{[[1-\\alpha|\\alpha|1+\\alpha]]} U_e",
-    "legende": "m = N_2/N_1 rapport de transformation, α rapport cyclique, U_e entrée (V)",
+    "tex": "[[U_s]] = [[m|\\frac{1}{m}|m^2]] \\frac{[[\\alpha|1-\\alpha|1]]}{[[1-\\alpha|\\alpha|1+\\alpha]]} U_e",
+    "legende": "$U_s$ tension de sortie (V), $m = N_2/N_1$ rapport de transformation, $\\alpha$ rapport cyclique, $U_e$ tension d'entrée (V)",
+    "grandeurs": [
+      { "s": "U_s", "nom": "tension de sortie", "u": "V" },
+      { "s": "m", "nom": "rapport de transformation", "u": "" },
+      { "s": "\\alpha", "nom": "rapport cyclique", "u": "" },
+      { "s": "U_e", "nom": "tension d'entrée", "u": "V" }
+    ],
     "source": "Fiche OE3.4 ; Classique programme"
   },
   {
@@ -302,7 +479,13 @@
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Alimentation Forward",
     "tex": "[[U_s]] = [[m|\\frac{1}{m}|m^2]] [[\\alpha|1-\\alpha|\\frac{\\alpha}{1-\\alpha}]] U_e",
-    "legende": "m = N_2/N_1 rapport de transformation, α rapport cyclique (< 0,5 avec démagnétisation 1:1), U_e entrée (V)",
+    "legende": "$U_s$ tension de sortie (V), $m = N_2/N_1$ rapport de transformation, $\\alpha$ rapport cyclique ($< 0{,}5$ avec démagnétisation 1:1), $U_e$ tension d'entrée (V)",
+    "grandeurs": [
+      { "s": "U_s", "nom": "tension de sortie", "u": "V" },
+      { "s": "m", "nom": "rapport de transformation", "u": "" },
+      { "s": "\\alpha", "nom": "rapport cyclique", "u": "" },
+      { "s": "U_e", "nom": "tension d'entrée", "u": "V" }
+    ],
     "source": "Fiche OE3.4 ; Classique programme"
   },
   {
@@ -310,8 +493,14 @@
     "bloc": "OE3",
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Chaîne de résistances thermiques jonction-ambiant",
-    "tex": "[[R_{\\mathrm{th,ja}}]] = [[R_{\\mathrm{th,jc}}]] + [[R_{\\mathrm{th,cs}}]] + [[R_{\\mathrm{th,sa}}]]",
-    "legende": "jc jonction-boîtier, cs boîtier-radiateur (interface), sa radiateur-ambiant (°C/W ou K/W)",
+    "tex": "[[R_{\\mathrm{th,ja}}|\\frac{1}{R_{\\mathrm{th,ja}}}]] = [[R_{\\mathrm{th,jc}}|\\frac{1}{R_{\\mathrm{th,jc}}}]] + [[R_{\\mathrm{th,cs}}|\\frac{1}{R_{\\mathrm{th,cs}}}]] + [[R_{\\mathrm{th,sa}}|\\frac{1}{R_{\\mathrm{th,sa}}}]]",
+    "legende": "Résistances thermiques en série (K/W) : $R_{\\mathrm{th,jc}}$ jonction-boîtier, $R_{\\mathrm{th,cs}}$ boîtier-radiateur (interface), $R_{\\mathrm{th,sa}}$ radiateur-ambiant, $R_{\\mathrm{th,ja}}$ totale",
+    "grandeurs": [
+      { "s": "R_{\\mathrm{th,ja}}", "nom": "résistance thermique jonction-ambiant", "u": "K\\cdot W^{-1}" },
+      { "s": "R_{\\mathrm{th,jc}}", "nom": "résistance thermique jonction-boîtier", "u": "K\\cdot W^{-1}" },
+      { "s": "R_{\\mathrm{th,cs}}", "nom": "résistance thermique boîtier-radiateur", "u": "K\\cdot W^{-1}" },
+      { "s": "R_{\\mathrm{th,sa}}", "nom": "résistance thermique radiateur-ambiant", "u": "K\\cdot W^{-1}" }
+    ],
     "source": "Fiche OE3.4 ; Rapport jury 2024"
   },
   {
@@ -320,7 +509,13 @@
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Température de jonction",
     "tex": "[[T_j]] = [[T_a|T_c|0]] + [[R_{\\mathrm{th,ja}}|\\frac{1}{R_{\\mathrm{th,ja}}}|R_{\\mathrm{th,jc}}]] \\cdot [[P|P^2|I]]",
-    "legende": "T_a température ambiante (°C), R_th,ja résistance thermique totale (°C/W), P = P_cond + P_comm puissance dissipée (W)",
+    "legende": "$T_j$ température de jonction (°C), $T_a$ température ambiante (°C), $R_{\\mathrm{th,ja}}$ résistance thermique jonction-ambiant (K/W), $P = P_{\\mathrm{cond}} + P_{\\mathrm{comm}}$ puissance dissipée (W)",
+    "grandeurs": [
+      { "s": "T_j", "nom": "température de jonction", "u": "^{\\circ}C" },
+      { "s": "T_a", "nom": "température ambiante", "u": "^{\\circ}C" },
+      { "s": "R_{\\mathrm{th,ja}}", "nom": "résistance thermique jonction-ambiant", "u": "K\\cdot W^{-1}" },
+      { "s": "P", "nom": "puissance dissipée", "u": "W" }
+    ],
     "source": "Fiche OE3.4 ; Sujet 2024 E3 ; Rapport jury 2024"
   },
   {
@@ -329,16 +524,29 @@
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Résistance thermique maximale du radiateur",
     "tex": "[[R_{\\mathrm{th,sa}}]] \\le \\frac{[[T_{j\\max} - T_a|T_{j\\max} + T_a|T_{j\\max}]]}{[[P|P^2|I]]} - [[R_{\\mathrm{th,jc}} + R_{\\mathrm{th,cs}}|R_{\\mathrm{th,jc}}|R_{\\mathrm{th,ja}}]]",
-    "legende": "T_jmax température de jonction admissible, T_a ambiante (°C), P puissance dissipée (W)",
+    "legende": "$R_{\\mathrm{th,sa}}$ résistance thermique radiateur-ambiant (K/W), $T_{j\\max}$ température de jonction admissible (°C), $T_a$ température ambiante (°C), $P$ puissance dissipée (W), $R_{\\mathrm{th,jc}}$, $R_{\\mathrm{th,cs}}$ résistances jonction-boîtier et boîtier-radiateur (K/W)",
+    "grandeurs": [
+      { "s": "R_{\\mathrm{th,sa}}", "nom": "résistance thermique radiateur-ambiant", "u": "K\\cdot W^{-1}" },
+      { "s": "T_{j\\max}", "nom": "température de jonction maximale", "u": "^{\\circ}C" },
+      { "s": "T_a", "nom": "température ambiante", "u": "^{\\circ}C" },
+      { "s": "P", "nom": "puissance dissipée", "u": "W" },
+      { "s": "R_{\\mathrm{th,jc}}", "nom": "résistance thermique jonction-boîtier", "u": "K\\cdot W^{-1}" },
+      { "s": "R_{\\mathrm{th,cs}}", "nom": "résistance thermique boîtier-radiateur", "u": "K\\cdot W^{-1}" }
+    ],
     "source": "Fiche OE3.4"
   },
   {
     "id": "oe3-harmoniques-thd",
     "bloc": "OE3",
     "notion": "OE3.4 Électronique de puissance",
-    "nom": "Taux de distorsion harmonique",
-    "tex": "[[\\mathrm{THD}]] = \\frac{\\sqrt{\\sum_{n \\ge 2} [[X_n^2|X_n|X_n^3]]}}{[[X_1|X_{\\mathrm{eff}}|X_n]]}",
-    "legende": "X_n valeur efficace de l'harmonique de rang n, X_1 du fondamental",
+    "nom": "Taux de distorsion harmonique (rapporté au fondamental)",
+    "tex": "[[\\mathrm{THD}]] = \\frac{\\sqrt{\\sum_{n \\ge 2} [[X_n^2|X_n|X_n^3]]}}{[[X_1|X_1^2|X_n]]}",
+    "legende": "$\\mathrm{THD}$ taux de distorsion harmonique, $X_n$ valeur efficace de l'harmonique de rang $n$, $X_1$ valeur efficace du fondamental",
+    "grandeurs": [
+      { "s": "\\mathrm{THD}", "nom": "taux de distorsion harmonique", "u": "" },
+      { "s": "X_n", "nom": "valeur efficace de l'harmonique de rang n", "u": "" },
+      { "s": "X_1", "nom": "valeur efficace du fondamental", "u": "" }
+    ],
     "source": "Fiche OE3.1"
   },
   {
@@ -347,7 +555,15 @@
     "notion": "OE3.4 Électronique de puissance",
     "nom": "Facteur de puissance en régime non sinusoïdal (tension sinusoïdale)",
     "tex": "[[f_p]] = \\frac{P}{[[S|Q|D]]} = \\frac{[[I_1|I|I_{\\max}]]}{[[I|I_1|I_{\\mathrm{moy}}]]} [[\\cos\\varphi_1|\\sin\\varphi_1|\\tan\\varphi_1]]",
-    "legende": "I_1 courant fondamental efficace, I courant efficace total (A), φ_1 déphasage du fondamental",
+    "legende": "$f_p$ facteur de puissance, $P$ puissance active (W), $S$ puissance apparente (VA), $I_1$ courant fondamental efficace, $I$ courant efficace total (A), $\\varphi_1$ déphasage du fondamental du courant sur la tension",
+    "grandeurs": [
+      { "s": "f_p", "nom": "facteur de puissance", "u": "" },
+      { "s": "P", "nom": "puissance active", "u": "W" },
+      { "s": "S", "nom": "puissance apparente", "u": "V\\cdot A" },
+      { "s": "I_1", "nom": "courant fondamental efficace", "u": "A" },
+      { "s": "I", "nom": "courant efficace total", "u": "A" },
+      { "s": "\\varphi_1", "nom": "déphasage du fondamental", "u": "rad" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -356,7 +572,13 @@
     "notion": "OE3.5 Chaînes de conversion électromécanique",
     "nom": "Transposition vitesse moteur / vitesse linéaire de la charge",
     "tex": "[[V]] = [[r_r|\\frac{1}{r_r}|r_r^2]] \\, [[\\Omega_{\\mathrm{mot}}|N_{\\mathrm{mot}}|\\omega_s]] \\, [[R_j|D_j|2\\pi R_j]]",
-    "legende": "V vitesse linéaire (m/s), r_r rapport de réduction (<1), Ω_mot vitesse moteur (rad/s), R_j rayon de jante (m)",
+    "legende": "$V$ vitesse linéaire (m/s), $r_r = \\Omega_{\\mathrm{roue}}/\\Omega_{\\mathrm{mot}}$ rapport de réduction ($< 1$), $\\Omega_{\\mathrm{mot}}$ vitesse angulaire du moteur (rad/s), $R_j$ rayon de jante (m)",
+    "grandeurs": [
+      { "s": "V", "nom": "vitesse linéaire de la charge", "u": "m\\cdot s^{-1}" },
+      { "s": "r_r", "nom": "rapport de réduction", "u": "" },
+      { "s": "\\Omega_{\\mathrm{mot}}", "nom": "vitesse angulaire du moteur", "u": "rad\\cdot s^{-1}" },
+      { "s": "R_j", "nom": "rayon de jante", "u": "m" }
+    ],
     "source": "Fiche OE3.5 ; Sujet 2024 E3 Q34"
   },
   {
@@ -364,8 +586,15 @@
     "bloc": "OE3",
     "notion": "OE3.5 Chaînes de conversion électromécanique",
     "nom": "Effort transmis à la charge par un réducteur",
-    "tex": "[[F_e]] = \\frac{[[\\eta_r|\\frac{1}{\\eta_r}]] \\, [[C_{\\mathrm{mot}}|P_{\\mathrm{mot}}]]}{[[r_r R_j|R_j|\\frac{R_j}{r_r}]]}",
-    "legende": "F_e effort à la jante (N), η_r rendement de transmission, C_mot couple moteur (N·m), r_r rapport de réduction, R_j rayon (m)",
+    "tex": "[[F_e]] = \\frac{[[\\eta_r|\\frac{1}{\\eta_r}|\\eta_r^2]] \\, [[C_{\\mathrm{mot}}|P_{\\mathrm{mot}}|\\Omega_{\\mathrm{mot}}]]}{[[r_r R_j|R_j|\\frac{R_j}{r_r}]]}",
+    "legende": "$F_e$ effort à la jante (N), $\\eta_r$ rendement de la transmission, $C_{\\mathrm{mot}}$ couple moteur (N·m), $r_r = \\Omega_{\\mathrm{roue}}/\\Omega_{\\mathrm{mot}}$ rapport de réduction ($< 1$), $R_j$ rayon de jante (m)",
+    "grandeurs": [
+      { "s": "F_e", "nom": "effort à la jante", "u": "N" },
+      { "s": "\\eta_r", "nom": "rendement de la transmission", "u": "" },
+      { "s": "C_{\\mathrm{mot}}", "nom": "couple moteur", "u": "N\\cdot m" },
+      { "s": "r_r", "nom": "rapport de réduction", "u": "" },
+      { "s": "R_j", "nom": "rayon de jante", "u": "m" }
+    ],
     "source": "Fiche OE3.5 ; Sujet 2024 E3 Q34"
   },
   {
@@ -373,8 +602,14 @@
     "bloc": "OE3",
     "notion": "OE3.5 Chaînes de conversion électromécanique",
     "nom": "Couple de charge ramené sur l'arbre moteur (fonctionnement moteur)",
-    "tex": "[[C_{r}']] = \\frac{[[r|\\frac{1}{r}|r^2]] \\, C_{\\mathrm{ch}}}{[[\\eta|\\eta^2|1]]}",
-    "legende": "r = Ω_ch/Ω_mot rapport de réduction, C_ch couple résistant côté charge (N·m), η rendement du réducteur",
+    "tex": "[[C_{r}']] = \\frac{[[r|\\frac{1}{r}|r^2]] \\, [[C_{\\mathrm{ch}}|J_{\\mathrm{ch}}|\\Omega_{\\mathrm{ch}}]]}{[[\\eta|\\eta^2|1-\\eta]]}",
+    "legende": "$C_r'$ couple résistant ramené sur l'arbre moteur (N·m), $r = \\Omega_{\\mathrm{ch}}/\\Omega_{\\mathrm{mot}}$ rapport de réduction, $C_{\\mathrm{ch}}$ couple résistant côté charge (N·m), $\\eta$ rendement du réducteur",
+    "grandeurs": [
+      { "s": "C_{r}'", "nom": "couple résistant ramené sur l'arbre moteur", "u": "N\\cdot m" },
+      { "s": "r", "nom": "rapport de réduction", "u": "" },
+      { "s": "C_{\\mathrm{ch}}", "nom": "couple résistant côté charge", "u": "N\\cdot m" },
+      { "s": "\\eta", "nom": "rendement du réducteur", "u": "" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -382,8 +617,14 @@
     "bloc": "OE3",
     "notion": "OE3.5 Chaînes de conversion électromécanique",
     "nom": "PFD appliqué à la masse virtuelle",
-    "tex": "[[F_t]] = [[M_v|M|\\frac{M_v}{2}]] \\, [[a|v|\\frac{v^2}{2}]] + [[R_{\\mathrm{av}}|-R_{\\mathrm{av}}]]",
-    "legende": "F_t effort de traction (N), M_v masse virtuelle (kg), a accélération (m/s²), R_av résistance à l'avancement (N)",
+    "tex": "[[F_t]] = [[M_v|M|\\frac{M_v}{2}]] \\, [[a|v|\\frac{v^2}{2}]] + [[R_{\\mathrm{av}}|-R_{\\mathrm{av}}|M_v g]]",
+    "legende": "$F_t$ effort de traction (N), $M_v$ masse virtuelle (kg), $a$ accélération (m/s²), $R_{\\mathrm{av}}$ résistance à l'avancement (N)",
+    "grandeurs": [
+      { "s": "F_t", "nom": "effort de traction", "u": "N" },
+      { "s": "M_v", "nom": "masse virtuelle", "u": "kg" },
+      { "s": "a", "nom": "accélération", "u": "m\\cdot s^{-2}" },
+      { "s": "R_{\\mathrm{av}}", "nom": "résistance à l'avancement", "u": "N" }
+    ],
     "source": "Fiche OE3.5 ; Sujet 2024 E3 ; Rapport jury 2024"
   },
   {
@@ -392,7 +633,14 @@
     "notion": "OE3.5 Chaînes de conversion électromécanique",
     "nom": "Masse virtuelle (inertie moteur ramenée en translation)",
     "tex": "[[M_v]] = M + \\frac{[[J_{\\mathrm{mot}}|J_{\\mathrm{mot}}^2|\\sqrt{J_{\\mathrm{mot}}}]]}{([[r_r R_j|R_j|\\frac{R_j}{r_r}]])^{[[2|1|3]]}}",
-    "legende": "M masse en translation (kg), J_mot moment d'inertie ramené à l'arbre moteur (kg·m²), r_r rapport de réduction, R_j rayon (m)",
+    "legende": "$M_v$ masse virtuelle (kg), $M$ masse en translation (kg), $J_{\\mathrm{mot}}$ moment d'inertie des masses tournantes ramené à l'arbre moteur (kg·m²), $r_r = \\Omega_{\\mathrm{roue}}/\\Omega_{\\mathrm{mot}}$ rapport de réduction, $R_j$ rayon de jante (m)",
+    "grandeurs": [
+      { "s": "M_v", "nom": "masse virtuelle", "u": "kg" },
+      { "s": "M", "nom": "masse en translation", "u": "kg" },
+      { "s": "J_{\\mathrm{mot}}", "nom": "moment d'inertie ramené à l'arbre moteur", "u": "kg\\cdot m^2" },
+      { "s": "r_r", "nom": "rapport de réduction", "u": "" },
+      { "s": "R_j", "nom": "rayon de jante", "u": "m" }
+    ],
     "source": "Fiche OE3.5 ; Classique programme"
   },
   {
@@ -400,8 +648,14 @@
     "bloc": "OE3",
     "notion": "OE3.5 Chaînes de conversion électromécanique",
     "nom": "Inertie de la charge ramenée sur l'arbre moteur",
-    "tex": "[[J_{\\mathrm{eq}}]] = J_{\\mathrm{mot}} + [[r^2|r|\\frac{1}{r^2}]] \\, [[J_{\\mathrm{ch}}|M_{\\mathrm{ch}}]]",
-    "legende": "r = Ω_ch/Ω_mot rapport de réduction, J inerties (kg·m²) — conservation de l'énergie cinétique",
+    "tex": "[[J_{\\mathrm{eq}}]] = J_{\\mathrm{mot}} + [[r^2|r|\\frac{1}{r^2}]] \\, [[J_{\\mathrm{ch}}|M_{\\mathrm{ch}}|\\sqrt{J_{\\mathrm{ch}}}]]",
+    "legende": "$J_{\\mathrm{eq}}$ inertie équivalente sur l'arbre moteur (kg·m²), $J_{\\mathrm{mot}}$ inertie du moteur, $J_{\\mathrm{ch}}$ inertie de la charge (kg·m²), $r = \\Omega_{\\mathrm{ch}}/\\Omega_{\\mathrm{mot}}$ rapport de réduction ; conservation de l'énergie cinétique",
+    "grandeurs": [
+      { "s": "J_{\\mathrm{eq}}", "nom": "inertie équivalente ramenée au moteur", "u": "kg\\cdot m^2" },
+      { "s": "J_{\\mathrm{mot}}", "nom": "inertie du moteur", "u": "kg\\cdot m^2" },
+      { "s": "r", "nom": "rapport de réduction", "u": "" },
+      { "s": "J_{\\mathrm{ch}}", "nom": "inertie de la charge", "u": "kg\\cdot m^2" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -409,8 +663,14 @@
     "bloc": "OE3",
     "notion": "OE3.5 Chaînes de conversion électromécanique",
     "nom": "Masse en translation ramenée en inertie sur l'arbre moteur",
-    "tex": "[[J_{\\mathrm{eq}}]] = [[M|\\frac{M}{2}|2M]] \\, ([[r R|\\frac{R}{r}|r]])^2",
-    "legende": "M masse en translation (kg), R rayon du tambour/roue (m), r rapport de réduction (Ω_ch/Ω_mot)",
+    "tex": "[[J_{\\mathrm{eq}}]] = [[M|\\frac{M}{2}|2M]] \\, ([[r R|\\frac{R}{r}|r]])^{[[2|1|3]]}",
+    "legende": "$J_{\\mathrm{eq}}$ inertie équivalente sur l'arbre moteur (kg·m²), $M$ masse en translation (kg), $R$ rayon du tambour ou de la roue (m), $r = \\Omega_{\\mathrm{ch}}/\\Omega_{\\mathrm{mot}}$ rapport de réduction",
+    "grandeurs": [
+      { "s": "J_{\\mathrm{eq}}", "nom": "inertie équivalente ramenée au moteur", "u": "kg\\cdot m^2" },
+      { "s": "M", "nom": "masse en translation", "u": "kg" },
+      { "s": "r", "nom": "rapport de réduction", "u": "" },
+      { "s": "R", "nom": "rayon du tambour ou de la roue", "u": "m" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -418,8 +678,15 @@
     "bloc": "OE3",
     "notion": "OE3.5 Chaînes de conversion électromécanique",
     "nom": "Durée de démarrage à couple d'accélération constant",
-    "tex": "[[t_d]] = \\frac{[[J|J^2|\\frac{J}{2}]] \\, [[\\Delta\\Omega|\\Delta\\Omega^2|\\Omega]]}{[[C_m - C_r|C_m|C_m + C_r]]}",
-    "legende": "J inertie ramenée (kg·m²), ΔΩ variation de vitesse (rad/s), C_m − C_r couple d'accélération (N·m)",
+    "tex": "[[t_d]] = \\frac{[[J|J^2|\\frac{J}{2}]] \\, [[\\Delta\\Omega|\\Delta\\Omega^2|\\frac{1}{\\Delta\\Omega}]]}{[[C_m - C_r|C_m|C_m + C_r]]}",
+    "legende": "$t_d$ durée de démarrage (s), $J$ inertie ramenée à l'arbre moteur (kg·m²), $\\Delta\\Omega$ variation de vitesse (rad/s), $C_m - C_r$ couple d'accélération (N·m)",
+    "grandeurs": [
+      { "s": "t_d", "nom": "durée de démarrage", "u": "s" },
+      { "s": "J", "nom": "inertie ramenée à l'arbre moteur", "u": "kg\\cdot m^2" },
+      { "s": "\\Delta\\Omega", "nom": "variation de vitesse angulaire", "u": "rad\\cdot s^{-1}" },
+      { "s": "C_m", "nom": "couple moteur", "u": "N\\cdot m" },
+      { "s": "C_r", "nom": "couple résistant", "u": "N\\cdot m" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -428,7 +695,12 @@
     "notion": "OE3.5 Chaînes de conversion électromécanique",
     "nom": "Puissance mécanique et quadrant de fonctionnement",
     "tex": "[[P]] = [[C|F|J]] \\, [[\\Omega|v|\\omega_s]] \\quad ; \\quad P [[<|>]] 0 \\Rightarrow \\text{frein/génératrice}",
-    "legende": "C couple (N·m), Ω vitesse (rad/s) ; quadrants 1/3 moteur (P>0), 2/4 générateur (P<0)",
+    "legende": "$P$ puissance mécanique (W), $C$ couple (N·m), $\\Omega$ vitesse angulaire (rad/s) ; quadrants 1 et 3 : moteur ($P > 0$), 2 et 4 : générateur ($P < 0$)",
+    "grandeurs": [
+      { "s": "P", "nom": "puissance mécanique", "u": "W" },
+      { "s": "C", "nom": "couple", "u": "N\\cdot m" },
+      { "s": "\\Omega", "nom": "vitesse angulaire", "u": "rad\\cdot s^{-1}" }
+    ],
     "source": "Fiche OE3.5"
   },
   {
@@ -436,8 +708,13 @@
     "bloc": "OE3",
     "notion": "OE3.5 Chaînes de conversion électromécanique",
     "nom": "Puissance de traction en translation",
-    "tex": "[[P]] = [[F_t|M_v|R_{\\mathrm{av}}]] \\cdot [[v|a|v^2]]",
-    "legende": "F_t effort de traction (N), v vitesse (m/s)",
+    "tex": "[[P]] = [[F_t|M_v|R_{\\mathrm{av}} - F_t]] \\cdot [[v|a|v^2]]",
+    "legende": "$P$ puissance de traction (W), $F_t$ effort de traction (N), $v$ vitesse (m/s)",
+    "grandeurs": [
+      { "s": "P", "nom": "puissance de traction", "u": "W" },
+      { "s": "F_t", "nom": "effort de traction", "u": "N" },
+      { "s": "v", "nom": "vitesse", "u": "m\\cdot s^{-1}" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -445,8 +722,14 @@
     "bloc": "OE3",
     "notion": "OE3.5 Chaînes de conversion électromécanique",
     "nom": "Effort maximal transmissible par adhérence (loi de Coulomb)",
-    "tex": "[[F_{e\\max}]] = [[\\lambda_t|\\frac{1}{\\lambda_t}|\\tan\\lambda_t]] \\cdot [[M_a|M_v]] \\cdot [[g_0|a]]",
-    "legende": "λ_t coefficient d'adhérence, M_a masse adhérente (sur essieux moteurs, kg), g_0 = 9,81 m/s²",
+    "tex": "[[F_{e\\max}]] = [[\\lambda_t|\\frac{1}{\\lambda_t}|\\tan\\lambda_t]] \\cdot [[M_a|M_v|\\frac{M_a}{2}]] \\cdot [[g_0|a|\\frac{1}{g_0}]]",
+    "legende": "$F_{e\\max}$ effort maximal transmissible (N), $\\lambda_t$ coefficient d'adhérence, $M_a$ masse adhérente portée par les essieux moteurs (kg), $g_0 = 9{,}81$ m/s²",
+    "grandeurs": [
+      { "s": "F_{e\\max}", "nom": "effort maximal transmissible", "u": "N" },
+      { "s": "\\lambda_t", "nom": "coefficient d'adhérence", "u": "" },
+      { "s": "M_a", "nom": "masse adhérente", "u": "kg" },
+      { "s": "g_0", "nom": "accélération de la pesanteur", "u": "m\\cdot s^{-2}" }
+    ],
     "source": "Fiche OE3.5 ; Rapport jury 2024"
   },
   {
@@ -454,8 +737,14 @@
     "bloc": "OE3",
     "notion": "OE3.5 Chaînes de conversion électromécanique",
     "nom": "Résistance due à la pente",
-    "tex": "[[F_p]] = [[M|M_v]] \\, g \\, [[\\sin\\alpha|\\cos\\alpha|\\tan\\alpha]]",
-    "legende": "M masse (kg), g = 9,81 m/s², α angle de pente (sin α ≈ p pour faible pente)",
+    "tex": "[[F_p]] = [[M|M_v|\\frac{M}{2}]] \\, [[g|\\frac{1}{g}|g^2]] \\, [[\\sin\\alpha|\\cos\\alpha|\\frac{1}{\\sin\\alpha}]]",
+    "legende": "$F_p$ effort résistant dû à la pente (N), $M$ masse (kg), $g = 9{,}81$ m/s², $\\alpha$ angle de la pente ($\\sin\\alpha \\approx p$ pour une faible pente)",
+    "grandeurs": [
+      { "s": "F_p", "nom": "effort résistant dû à la pente", "u": "N" },
+      { "s": "M", "nom": "masse", "u": "kg" },
+      { "s": "g", "nom": "accélération de la pesanteur", "u": "m\\cdot s^{-2}" },
+      { "s": "\\alpha", "nom": "angle de la pente", "u": "rad" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -463,8 +752,15 @@
     "bloc": "OE3",
     "notion": "OE3.5 Chaînes de conversion électromécanique",
     "nom": "Résistance aérodynamique",
-    "tex": "[[F_a]] = [[\\frac{1}{2}|2|\\frac{1}{4}]] \\rho \\, [[S C_x|S|C_x]] \\, [[v^2|v|v^3]]",
-    "legende": "ρ masse volumique de l'air (kg/m³), S maître-couple (m²), C_x coefficient de traînée, v vitesse (m/s)",
+    "tex": "[[F_a]] = [[\\frac{1}{2}|2|\\frac{1}{4}]] [[\\rho|\\rho g|\\frac{1}{\\rho}]] \\, [[S C_x|S|C_x]] \\, [[v^2|v|v^3]]",
+    "legende": "$F_a$ résistance aérodynamique (N), $\\rho$ masse volumique de l'air (kg/m³), $S$ maître-couple (m²), $C_x$ coefficient de traînée, $v$ vitesse relative à l'air (m/s)",
+    "grandeurs": [
+      { "s": "F_a", "nom": "résistance aérodynamique", "u": "N" },
+      { "s": "\\rho", "nom": "masse volumique de l'air", "u": "kg\\cdot m^{-3}" },
+      { "s": "S", "nom": "maître-couple", "u": "m^2" },
+      { "s": "C_x", "nom": "coefficient de traînée", "u": "" },
+      { "s": "v", "nom": "vitesse relative à l'air", "u": "m\\cdot s^{-1}" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -473,7 +769,13 @@
     "notion": "OE3.5 Chaînes de conversion électromécanique",
     "nom": "Résistance au roulement",
     "tex": "[[F_r]] = [[C_{rr}|\\frac{1}{C_{rr}}|\\lambda_t]] \\, [[M g|M a|M v]]",
-    "legende": "C_rr coefficient de résistance au roulement, M masse (kg), g = 9,81 m/s²",
+    "legende": "$F_r$ résistance au roulement (N), $C_{rr}$ coefficient de résistance au roulement, $M$ masse (kg), $g = 9{,}81$ m/s² (sol horizontal)",
+    "grandeurs": [
+      { "s": "F_r", "nom": "résistance au roulement", "u": "N" },
+      { "s": "C_{rr}", "nom": "coefficient de résistance au roulement", "u": "" },
+      { "s": "M", "nom": "masse", "u": "kg" },
+      { "s": "g", "nom": "accélération de la pesanteur", "u": "m\\cdot s^{-2}" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -481,8 +783,13 @@
     "bloc": "OE3",
     "notion": "OE3.5 Chaînes de conversion électromécanique",
     "nom": "Couple thermique équivalent sur un cycle (dimensionnement moteur)",
-    "tex": "[[C_{\\mathrm{eff}}]] = \\sqrt{\\frac{1}{[[T|T^2]]} \\int_0^T [[C^2(t)|C(t)|C^3(t)]] \\, \\mathrm{d}t}",
-    "legende": "T durée du cycle (s), C(t) couple instantané (N·m) ; à comparer au couple nominal du moteur",
+    "tex": "[[C_{\\mathrm{eff}}]] = \\sqrt{\\frac{1}{[[T|T^2|2T]]} \\int_0^T [[C^2(t)|C(t)|C^3(t)]] \\, \\mathrm{d}t}",
+    "legende": "$C_{\\mathrm{eff}}$ couple efficace (N·m), $T$ durée du cycle (s), $C(t)$ couple instantané (N·m) ; à comparer au couple nominal du moteur",
+    "grandeurs": [
+      { "s": "C_{\\mathrm{eff}}", "nom": "couple efficace", "u": "N\\cdot m" },
+      { "s": "T", "nom": "durée du cycle", "u": "s" },
+      { "s": "C(t)", "nom": "couple instantané", "u": "N\\cdot m" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -491,7 +798,12 @@
     "notion": "OE3.5 Chaînes de conversion électromécanique",
     "nom": "Rapport de réduction optimal (adaptation d'inertie)",
     "tex": "[[r_{\\mathrm{opt}}]] = \\sqrt{\\frac{[[J_{\\mathrm{mot}}|J_{\\mathrm{ch}}]]}{[[J_{\\mathrm{ch}}|J_{\\mathrm{mot}}]]}}",
-    "legende": "r = Ω_ch/Ω_mot ; maximise l'accélération de la charge (inertie ramenée = inertie moteur)",
+    "legende": "$r_{\\mathrm{opt}}$ rapport de réduction optimal avec $r = \\Omega_{\\mathrm{ch}}/\\Omega_{\\mathrm{mot}}$, $J_{\\mathrm{mot}}$ inertie du moteur, $J_{\\mathrm{ch}}$ inertie de la charge (kg·m²) ; inertie ramenée égale à l'inertie moteur, accélération de la charge maximale",
+    "grandeurs": [
+      { "s": "r_{\\mathrm{opt}}", "nom": "rapport de réduction optimal", "u": "" },
+      { "s": "J_{\\mathrm{mot}}", "nom": "inertie du moteur", "u": "kg\\cdot m^2" },
+      { "s": "J_{\\mathrm{ch}}", "nom": "inertie de la charge", "u": "kg\\cdot m^2" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -499,8 +811,14 @@
     "bloc": "OE3",
     "notion": "OE3.5 Chaînes de conversion électromécanique",
     "nom": "Loi U/f (variateur pour machine asynchrone, flux constant)",
-    "tex": "\\frac{[[U|I|P]]}{[[f|\\omega|n]]} = \\frac{[[U_n|I_n]]}{f_n} = \\text{cte}",
-    "legende": "U tension statorique (V), f fréquence d'alimentation (Hz), indice n : nominal — maintient le flux constant",
+    "tex": "\\frac{[[U|I|P]]}{[[f|f^2|\\sqrt{f}]]} = \\frac{[[U_n|I_n|P_n]]}{f_n} = \\text{cte}",
+    "legende": "$U$ tension statorique (V), $f$ fréquence d'alimentation (Hz), $U_n$, $f_n$ valeurs nominales ; maintient le flux constant (hors compensation de la chute ohmique à basse fréquence)",
+    "grandeurs": [
+      { "s": "U", "nom": "tension statorique", "u": "V" },
+      { "s": "f", "nom": "fréquence d'alimentation", "u": "Hz" },
+      { "s": "U_n", "nom": "tension nominale", "u": "V" },
+      { "s": "f_n", "nom": "fréquence nominale", "u": "Hz" }
+    ],
     "source": "Fiche OE3.5"
   },
   {
@@ -509,7 +827,14 @@
     "notion": "OE3.5 Chaînes de conversion électromécanique",
     "nom": "Vitesse de synchronisme imposée par le variateur",
     "tex": "[[\\Omega_s]] = \\frac{[[2\\pi f|f|\\omega^2]]}{[[p|2p|p^2]]} \\quad ; \\quad \\Omega = ([[1-g|1+g|g]]) \\Omega_s",
-    "legende": "f fréquence délivrée par l'onduleur (Hz), p nombre de paires de pôles, g glissement",
+    "legende": "$\\Omega_s$ vitesse de synchronisme (rad/s), $f$ fréquence délivrée par l'onduleur (Hz), $p$ nombre de paires de pôles, $\\Omega$ vitesse du rotor (rad/s), $g$ glissement",
+    "grandeurs": [
+      { "s": "\\Omega_s", "nom": "vitesse de synchronisme", "u": "rad\\cdot s^{-1}" },
+      { "s": "f", "nom": "fréquence d'alimentation", "u": "Hz" },
+      { "s": "p", "nom": "nombre de paires de pôles", "u": "" },
+      { "s": "\\Omega", "nom": "vitesse du rotor", "u": "rad\\cdot s^{-1}" },
+      { "s": "g", "nom": "glissement", "u": "" }
+    ],
     "source": "Fiche OE3.5 ; Classique programme"
   },
   {
@@ -518,7 +843,12 @@
     "notion": "OE3.5 Chaînes de conversion électromécanique",
     "nom": "Énergie cinétique récupérable au freinage",
     "tex": "[[E_c]] = [[\\frac{1}{2}|2|1]] \\, [[M_v|M|J]] \\, [[v^2|v|a^2]]",
-    "legende": "M_v masse virtuelle (kg), v vitesse (m/s)",
+    "legende": "$E_c$ énergie cinétique (J), $M_v$ masse virtuelle incluant les masses tournantes (kg), $v$ vitesse (m/s)",
+    "grandeurs": [
+      { "s": "E_c", "nom": "énergie cinétique", "u": "J" },
+      { "s": "M_v", "nom": "masse virtuelle", "u": "kg" },
+      { "s": "v", "nom": "vitesse", "u": "m\\cdot s^{-1}" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -527,7 +857,12 @@
     "notion": "OE3.5 Chaînes de conversion électromécanique",
     "nom": "Puissance dissipée dans le rhéostat de freinage",
     "tex": "[[P_{\\mathrm{rh}}]] = \\frac{[[U_{\\mathrm{bus}}^2|U_{\\mathrm{bus}}|I^2]]}{[[R|R^2|2R]]}",
-    "legende": "U_bus tension du bus continu (V), R résistance du rhéostat (Ω)",
+    "legende": "$P_{\\mathrm{rh}}$ puissance dissipée (W), $U_{\\mathrm{bus}}$ tension du bus continu (V), $R$ résistance du rhéostat (Ω)",
+    "grandeurs": [
+      { "s": "P_{\\mathrm{rh}}", "nom": "puissance dissipée dans le rhéostat", "u": "W" },
+      { "s": "U_{\\mathrm{bus}}", "nom": "tension du bus continu", "u": "V" },
+      { "s": "R", "nom": "résistance du rhéostat", "u": "\\Omega" }
+    ],
     "source": "Fiche OE3.5 ; Sujet 2024 E3"
   },
   {
@@ -536,7 +871,12 @@
     "notion": "OE3.6 Utilisation de l'énergie électrique et procédés associés",
     "nom": "Effet Joule (en courant)",
     "tex": "[[P]] = [[R|\\frac{1}{R}|R^2]] \\, [[I^2|I|\\sqrt{I}]]",
-    "legende": "R résistance (Ω), I courant efficace (A)",
+    "legende": "$P$ puissance dissipée (W), $R$ résistance (Ω), $I$ courant efficace (A)",
+    "grandeurs": [
+      { "s": "P", "nom": "puissance dissipée", "u": "W" },
+      { "s": "R", "nom": "résistance", "u": "\\Omega" },
+      { "s": "I", "nom": "courant efficace", "u": "A" }
+    ],
     "source": "Fiche OE3.6 ; Fiche TC3.3.2"
   },
   {
@@ -545,7 +885,12 @@
     "notion": "OE3.6 Utilisation de l'énergie électrique et procédés associés",
     "nom": "Effet Joule (en tension)",
     "tex": "[[P]] = \\frac{[[U^2|U|I^2]]}{[[R|R^2|\\sqrt{R}]]}",
-    "legende": "U tension efficace aux bornes de la résistance (V), R résistance (Ω)",
+    "legende": "$P$ puissance dissipée (W), $U$ tension efficace aux bornes de la résistance (V), $R$ résistance (Ω)",
+    "grandeurs": [
+      { "s": "P", "nom": "puissance dissipée", "u": "W" },
+      { "s": "U", "nom": "tension efficace", "u": "V" },
+      { "s": "R", "nom": "résistance", "u": "\\Omega" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -554,7 +899,13 @@
     "notion": "OE3.6 Utilisation de l'énergie électrique et procédés associés",
     "nom": "Énergie pour élever la température d'un corps",
     "tex": "[[Q]] = [[m|\\rho|V]] \\, [[c|\\lambda|L]] \\, [[\\Delta T|T|\\Delta T^2]]",
-    "legende": "m masse (kg), c capacité thermique massique (J·kg⁻¹·K⁻¹), ΔT élévation de température (K)",
+    "legende": "$Q$ énergie thermique (J), $m$ masse (kg), $c$ capacité thermique massique (J·kg⁻¹·K⁻¹), $\\Delta T$ élévation de température (K), sans changement d'état",
+    "grandeurs": [
+      { "s": "Q", "nom": "énergie thermique", "u": "J" },
+      { "s": "m", "nom": "masse", "u": "kg" },
+      { "s": "c", "nom": "capacité thermique massique", "u": "J\\cdot kg^{-1}\\cdot K^{-1}" },
+      { "s": "\\Delta T", "nom": "élévation de température", "u": "K" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -562,8 +913,16 @@
     "bloc": "OE3",
     "notion": "OE3.6 Utilisation de l'énergie électrique et procédés associés",
     "nom": "Puissance électrique nécessaire pour un chauffage en durée t",
-    "tex": "[[P_{\\mathrm{elec}}]] = \\frac{m \\, c \\, \\Delta T}{[[\\eta|\\frac{1}{\\eta}|\\eta^2]] \\, [[t|t^2|\\frac{1}{t}]]}",
-    "legende": "m masse (kg), c capacité thermique massique, ΔT (K), η rendement de chauffage, t durée (s)",
+    "tex": "[[P_{\\mathrm{elec}}]] = \\frac{[[m \\, c \\, \\Delta T|m \\, c \\, T|\\frac{m \\, c}{\\Delta T}]]}{[[\\eta|\\frac{1}{\\eta}|\\eta^2]] \\, [[t|t^2|\\frac{1}{t}]]}",
+    "legende": "$P_{\\mathrm{elec}}$ puissance électrique absorbée (W), $m$ masse (kg), $c$ capacité thermique massique (J·kg⁻¹·K⁻¹), $\\Delta T$ élévation de température (K), $\\eta$ rendement de chauffage, $t$ durée de chauffe (s)",
+    "grandeurs": [
+      { "s": "P_{\\mathrm{elec}}", "nom": "puissance électrique absorbée", "u": "W" },
+      { "s": "m", "nom": "masse", "u": "kg" },
+      { "s": "c", "nom": "capacité thermique massique", "u": "J\\cdot kg^{-1}\\cdot K^{-1}" },
+      { "s": "\\Delta T", "nom": "élévation de température", "u": "K" },
+      { "s": "\\eta", "nom": "rendement de chauffage", "u": "" },
+      { "s": "t", "nom": "durée de chauffe", "u": "s" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -571,8 +930,15 @@
     "bloc": "OE3",
     "notion": "OE3.6 Utilisation de l'énergie électrique et procédés associés",
     "nom": "Puissance rayonnée (loi de Stefan-Boltzmann)",
-    "tex": "[[P]] = [[\\varepsilon|\\frac{1}{\\varepsilon}]] \\, \\sigma \\, S \\, [[T^4|T^2|T^3]]",
-    "legende": "ε émissivité, σ = 5,67·10⁻⁸ W·m⁻²·K⁻⁴, S surface (m²), T température absolue (K)",
+    "tex": "[[P]] = [[\\varepsilon|\\frac{1}{\\varepsilon}|1-\\varepsilon]] \\, [[\\sigma|k|\\frac{1}{\\sigma}]] \\, S \\, [[T^4|T^2|T^3]]",
+    "legende": "$P$ puissance rayonnée (W), $\\varepsilon$ émissivité, $\\sigma = 5{,}67\\cdot 10^{-8}$ W·m⁻²·K⁻⁴ constante de Stefan-Boltzmann, $S$ surface émettrice (m²), $T$ température absolue (K)",
+    "grandeurs": [
+      { "s": "P", "nom": "puissance rayonnée", "u": "W" },
+      { "s": "\\varepsilon", "nom": "émissivité", "u": "" },
+      { "s": "\\sigma", "nom": "constante de Stefan-Boltzmann", "u": "W\\cdot m^{-2}\\cdot K^{-4}" },
+      { "s": "S", "nom": "surface émettrice", "u": "m^2" },
+      { "s": "T", "nom": "température absolue", "u": "K" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -580,8 +946,16 @@
     "bloc": "OE3",
     "notion": "OE3.6 Utilisation de l'énergie électrique et procédés associés",
     "nom": "Résistance thermique de conduction d'une paroi",
-    "tex": "[[R_{\\mathrm{th}}]] = \\frac{[[e|S|\\lambda]]}{[[\\lambda S|e S|\\lambda e]]} \\quad ; \\quad [[\\Phi|P]] = \\frac{\\Delta T}{R_{\\mathrm{th}}}",
-    "legende": "e épaisseur (m), λ conductivité thermique (W·m⁻¹·K⁻¹), S surface (m²), Φ flux thermique (W)",
+    "tex": "[[R_{\\mathrm{th}}]] = \\frac{[[e|S|\\lambda]]}{[[\\lambda S|e S|\\lambda e]]} \\quad ; \\quad \\Phi = [[\\frac{\\Delta T}{R_{\\mathrm{th}}}|R_{\\mathrm{th}} \\, \\Delta T|\\frac{R_{\\mathrm{th}}}{\\Delta T}]]",
+    "legende": "$R_{\\mathrm{th}}$ résistance thermique (K/W), $e$ épaisseur (m), $\\lambda$ conductivité thermique (W·m⁻¹·K⁻¹), $S$ surface (m²), $\\Phi$ flux thermique (W), $\\Delta T$ écart de température entre les faces (K)",
+    "grandeurs": [
+      { "s": "R_{\\mathrm{th}}", "nom": "résistance thermique", "u": "K\\cdot W^{-1}" },
+      { "s": "e", "nom": "épaisseur", "u": "m" },
+      { "s": "\\lambda", "nom": "conductivité thermique", "u": "W\\cdot m^{-1}\\cdot K^{-1}" },
+      { "s": "S", "nom": "surface", "u": "m^2" },
+      { "s": "\\Phi", "nom": "flux thermique", "u": "W" },
+      { "s": "\\Delta T", "nom": "écart de température", "u": "K" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -589,8 +963,14 @@
     "bloc": "OE3",
     "notion": "OE3.6 Utilisation de l'énergie électrique et procédés associés",
     "nom": "Rendement d'un procédé",
-    "tex": "[[\\eta]] = \\frac{[[P_{\\mathrm{utile}}|P_{\\mathrm{abs}}|P_{\\mathrm{pertes}}]]}{[[P_{\\mathrm{abs}}|P_{\\mathrm{utile}}|P_{\\mathrm{pertes}}]]} = 1 - \\frac{[[P_{\\mathrm{pertes}}|P_{\\mathrm{utile}}]]}{P_{\\mathrm{abs}}}",
-    "legende": "P_utile puissance utile, P_abs puissance absorbée, P_pertes = P_abs − P_utile (W)",
+    "tex": "[[\\eta]] = \\frac{[[P_{\\mathrm{utile}}|P_{\\mathrm{abs}}|P_{\\mathrm{pertes}}]]}{[[P_{\\mathrm{abs}}|P_{\\mathrm{utile}}|P_{\\mathrm{pertes}}]]} = 1 - \\frac{[[P_{\\mathrm{pertes}}|P_{\\mathrm{utile}}|P_{\\mathrm{abs}}]]}{P_{\\mathrm{abs}}}",
+    "legende": "$\\eta$ rendement, $P_{\\mathrm{utile}}$ puissance utile, $P_{\\mathrm{abs}}$ puissance absorbée, $P_{\\mathrm{pertes}} = P_{\\mathrm{abs}} - P_{\\mathrm{utile}}$ pertes (W)",
+    "grandeurs": [
+      { "s": "\\eta", "nom": "rendement", "u": "" },
+      { "s": "P_{\\mathrm{utile}}", "nom": "puissance utile", "u": "W" },
+      { "s": "P_{\\mathrm{abs}}", "nom": "puissance absorbée", "u": "W" },
+      { "s": "P_{\\mathrm{pertes}}", "nom": "pertes", "u": "W" }
+    ],
     "source": "Fiche OE3.6"
   },
   {
@@ -599,7 +979,12 @@
     "notion": "OE3.6 Utilisation de l'énergie électrique et procédés associés",
     "nom": "Efficacité lumineuse",
     "tex": "[[\\eta_{\\mathrm{lum}}]] = \\frac{[[\\Phi|E|I_v]]}{[[P|S|\\Phi]]}",
-    "legende": "Φ flux lumineux (lm), P puissance électrique absorbée (W) ; LED ~90-150 lm/W",
+    "legende": "$\\eta_{\\mathrm{lum}}$ efficacité lumineuse (lm/W), $\\Phi$ flux lumineux émis (lm), $P$ puissance électrique absorbée (W) ; LED : 90 à 150 lm/W",
+    "grandeurs": [
+      { "s": "\\eta_{\\mathrm{lum}}", "nom": "efficacité lumineuse", "u": "lm\\cdot W^{-1}" },
+      { "s": "\\Phi", "nom": "flux lumineux", "u": "lm" },
+      { "s": "P", "nom": "puissance électrique absorbée", "u": "W" }
+    ],
     "source": "Fiche OE3.6"
   },
   {
@@ -608,7 +993,12 @@
     "notion": "OE3.6 Utilisation de l'énergie électrique et procédés associés",
     "nom": "Éclairement moyen",
     "tex": "[[E]] = \\frac{[[\\Phi|I_v|P]]}{[[S|S^2|d^2]]}",
-    "legende": "E éclairement (lx), Φ flux lumineux reçu (lm), S surface (m²)",
+    "legende": "$E$ éclairement (lx), $\\Phi$ flux lumineux reçu (lm), $S$ surface éclairée (m²)",
+    "grandeurs": [
+      { "s": "E", "nom": "éclairement", "u": "lx" },
+      { "s": "\\Phi", "nom": "flux lumineux reçu", "u": "lm" },
+      { "s": "S", "nom": "surface éclairée", "u": "m^2" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -616,8 +1006,14 @@
     "bloc": "OE3",
     "notion": "OE3.6 Utilisation de l'énergie électrique et procédés associés",
     "nom": "Éclairement ponctuel (loi de Lambert / inverse carré)",
-    "tex": "[[E]] = \\frac{[[I_v|\\Phi|E_0]] \\, [[\\cos\\theta|\\sin\\theta|\\tan\\theta]]}{[[d^2|d|d^3]]}",
-    "legende": "I_v intensité lumineuse (cd), θ angle d'incidence, d distance source-point (m)",
+    "tex": "[[E]] = \\frac{[[I_v|\\Phi|P]] \\, [[\\cos\\theta|\\sin\\theta|\\tan\\theta]]}{[[d^2|d|d^3]]}",
+    "legende": "$E$ éclairement (lx), $I_v$ intensité lumineuse dans la direction du point (cd), $\\theta$ angle d'incidence par rapport à la normale, $d$ distance source-point (m)",
+    "grandeurs": [
+      { "s": "E", "nom": "éclairement", "u": "lx" },
+      { "s": "I_v", "nom": "intensité lumineuse", "u": "cd" },
+      { "s": "\\theta", "nom": "angle d'incidence", "u": "rad" },
+      { "s": "d", "nom": "distance source-point", "u": "m" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -625,8 +1021,16 @@
     "bloc": "OE3",
     "notion": "OE3.6 Utilisation de l'énergie électrique et procédés associés",
     "nom": "Nombre de luminaires (méthode des flux)",
-    "tex": "[[N]] = \\frac{[[E \\, S|E|\\Phi S]]}{[[\\Phi_{\\mathrm{lum}}|E_{\\mathrm{lum}}]] \\, [[U \\, M|\\frac{U}{M}|U+M]]}",
-    "legende": "E éclairement visé (lx), S surface (m²), Φ_lum flux d'un luminaire (lm), U facteur d'utilisation, M facteur de maintenance",
+    "tex": "[[N]] = \\frac{[[E \\, S|E|\\Phi S]]}{[[\\Phi_{\\mathrm{lum}}|E_{\\mathrm{lum}}|P_{\\mathrm{lum}}]] \\, [[U \\, M|\\frac{U}{M}|U+M]]}",
+    "legende": "$N$ nombre de luminaires, $E$ éclairement moyen visé (lx), $S$ surface (m²), $\\Phi_{\\mathrm{lum}}$ flux d'un luminaire (lm), $U$ facteur d'utilisation, $M$ facteur de maintenance ($\\le 1$)",
+    "grandeurs": [
+      { "s": "N", "nom": "nombre de luminaires", "u": "" },
+      { "s": "E", "nom": "éclairement moyen visé", "u": "lx" },
+      { "s": "S", "nom": "surface du local", "u": "m^2" },
+      { "s": "\\Phi_{\\mathrm{lum}}", "nom": "flux lumineux d'un luminaire", "u": "lm" },
+      { "s": "U", "nom": "facteur d'utilisation", "u": "" },
+      { "s": "M", "nom": "facteur de maintenance", "u": "" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -635,7 +1039,12 @@
     "notion": "OE3.6 Utilisation de l'énergie électrique et procédés associés",
     "nom": "Temps de charge d'une batterie",
     "tex": "[[T_{\\mathrm{ch}}]] = \\frac{[[E_u|P_{\\max}|Q]]}{[[P_{\\max}|E_u|U]]}",
-    "legende": "E_u énergie utile (Wh), P_max puissance de charge réellement disponible (W)",
+    "legende": "$T_{\\mathrm{ch}}$ durée de charge (h), $E_u$ énergie utile à recharger (Wh), $P_{\\max}$ puissance de charge réellement disponible (W)",
+    "grandeurs": [
+      { "s": "T_{\\mathrm{ch}}", "nom": "durée de charge", "u": "s" },
+      { "s": "E_u", "nom": "énergie utile", "u": "J" },
+      { "s": "P_{\\max}", "nom": "puissance de charge disponible", "u": "W" }
+    ],
     "source": "Fiche OE3.6 ; Sujet 2025 E3 Q2 ; Rapport jury 2025"
   },
   {
@@ -644,7 +1053,12 @@
     "notion": "OE3.6 Utilisation de l'énergie électrique et procédés associés",
     "nom": "Énergie massique",
     "tex": "[[w_m]] = \\frac{[[E_u|P|Q]]}{[[m|V|t]]}",
-    "legende": "E_u énergie utile (Wh), m masse (kg) ; Li-ion cellule 150-250 Wh/kg, pack ~130 Wh/kg",
+    "legende": "$w_m$ énergie massique (Wh/kg), $E_u$ énergie utile (Wh), $m$ masse (kg) ; Li-ion : 150 à 250 Wh/kg par cellule, environ 130 Wh/kg par pack",
+    "grandeurs": [
+      { "s": "w_m", "nom": "énergie massique", "u": "J\\cdot kg^{-1}" },
+      { "s": "E_u", "nom": "énergie utile", "u": "J" },
+      { "s": "m", "nom": "masse", "u": "kg" }
+    ],
     "source": "Fiche OE3.6 ; Sujet 2025 E3"
   },
   {
@@ -652,8 +1066,13 @@
     "bloc": "OE3",
     "notion": "OE3.6 Utilisation de l'énergie électrique et procédés associés",
     "nom": "Énergie d'une batterie",
-    "tex": "[[E]] = [[Q|C|I]] \\cdot [[U_{\\mathrm{nom}}|U_{\\mathrm{nom}}^2|\\frac{U_{\\mathrm{nom}}}{2}]]",
-    "legende": "Q capacité (Ah), U_nom tension nominale (V), E en Wh",
+    "tex": "[[E]] = [[Q|I|Q^2]] \\cdot [[U_{\\mathrm{nom}}|U_{\\mathrm{nom}}^2|\\frac{U_{\\mathrm{nom}}}{2}]]",
+    "legende": "$E$ énergie stockée (Wh), $Q$ capacité (Ah), $U_{\\mathrm{nom}}$ tension nominale (V)",
+    "grandeurs": [
+      { "s": "E", "nom": "énergie stockée", "u": "J" },
+      { "s": "Q", "nom": "capacité de la batterie", "u": "C" },
+      { "s": "U_{\\mathrm{nom}}", "nom": "tension nominale", "u": "V" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -662,7 +1081,12 @@
     "notion": "OE3.6 Utilisation de l'énergie électrique et procédés associés",
     "nom": "Autonomie d'un véhicule électrique",
     "tex": "[[d]] = \\frac{[[E_u|P|Q]]}{[[c_{\\mathrm{moy}}|v|P]]}",
-    "legende": "E_u énergie utile (Wh), c_moy consommation moyenne (Wh/km), d autonomie (km)",
+    "legende": "$d$ autonomie (km), $E_u$ énergie utile (Wh), $c_{\\mathrm{moy}}$ consommation moyenne (Wh/km)",
+    "grandeurs": [
+      { "s": "d", "nom": "autonomie", "u": "m" },
+      { "s": "E_u", "nom": "énergie utile", "u": "J" },
+      { "s": "c_{\\mathrm{moy}}", "nom": "consommation moyenne par unité de distance", "u": "J\\cdot m^{-1}" }
+    ],
     "source": "Fiche OE3.6"
   },
   {
@@ -670,8 +1094,14 @@
     "bloc": "OE3",
     "notion": "OE3.6 Utilisation de l'énergie électrique et procédés associés",
     "nom": "Énergie utile d'un volant entre deux vitesses",
-    "tex": "[[\\Delta E]] = \\frac{1}{2} J \\left( [[\\Omega_{\\max}^2 - \\Omega_{\\min}^2|(\\Omega_{\\max} - \\Omega_{\\min})^2|\\Omega_{\\max}^2]] \\right)",
-    "legende": "J moment d'inertie (kg·m²), Ω_max/Ω_min vitesses extrêmes (rad/s)",
+    "tex": "[[\\Delta E]] = [[\\frac{1}{2}|2|\\frac{1}{4}]] J \\left( [[\\Omega_{\\max}^2 - \\Omega_{\\min}^2|(\\Omega_{\\max} - \\Omega_{\\min})^2|\\Omega_{\\max}^2]] \\right)",
+    "legende": "$\\Delta E$ énergie utile (J), $J$ moment d'inertie du volant (kg·m²), $\\Omega_{\\max}$, $\\Omega_{\\min}$ vitesses extrêmes (rad/s)",
+    "grandeurs": [
+      { "s": "\\Delta E", "nom": "énergie utile", "u": "J" },
+      { "s": "J", "nom": "moment d'inertie du volant", "u": "kg\\cdot m^2" },
+      { "s": "\\Omega_{\\max}", "nom": "vitesse angulaire maximale", "u": "rad\\cdot s^{-1}" },
+      { "s": "\\Omega_{\\min}", "nom": "vitesse angulaire minimale", "u": "rad\\cdot s^{-1}" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -679,8 +1109,14 @@
     "bloc": "OE3",
     "notion": "OE3.6 Utilisation de l'énergie électrique et procédés associés",
     "nom": "Énergie utile d'un supercondensateur",
-    "tex": "[[\\Delta E]] = \\frac{1}{2} C \\left( [[U_{\\max}^2 - U_{\\min}^2|(U_{\\max} - U_{\\min})^2|U_{\\max}^2]] \\right)",
-    "legende": "C capacité (F), U_max/U_min tensions extrêmes d'utilisation (V) — 75 % de l'énergie pour U_min = U_max/2",
+    "tex": "[[\\Delta E]] = [[\\frac{1}{2}|2|\\frac{1}{4}]] C \\left( [[U_{\\max}^2 - U_{\\min}^2|(U_{\\max} - U_{\\min})^2|U_{\\max}^2]] \\right)",
+    "legende": "$\\Delta E$ énergie utile (J), $C$ capacité (F), $U_{\\max}$, $U_{\\min}$ tensions extrêmes d'utilisation (V) ; 75 % de l'énergie pour $U_{\\min} = U_{\\max}/2$",
+    "grandeurs": [
+      { "s": "\\Delta E", "nom": "énergie utile", "u": "J" },
+      { "s": "C", "nom": "capacité", "u": "F" },
+      { "s": "U_{\\max}", "nom": "tension maximale d'utilisation", "u": "V" },
+      { "s": "U_{\\min}", "nom": "tension minimale d'utilisation", "u": "V" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -689,7 +1125,13 @@
     "notion": "OE3.6 Utilisation de l'énergie électrique et procédés associés",
     "nom": "Durée de charge d'un condensateur à courant constant",
     "tex": "[[\\Delta t]] = \\frac{[[C|\\frac{1}{C}|L]] \\, [[\\Delta U|U^2|\\Delta I]]}{[[I|U|P]]}",
-    "legende": "C capacité (F), ΔU variation de tension (V), I courant constant (A)",
+    "legende": "$\\Delta t$ durée de charge (s), $C$ capacité (F), $\\Delta U$ variation de tension (V), $I$ courant constant (A)",
+    "grandeurs": [
+      { "s": "\\Delta t", "nom": "durée de charge", "u": "s" },
+      { "s": "C", "nom": "capacité", "u": "F" },
+      { "s": "\\Delta U", "nom": "variation de tension", "u": "V" },
+      { "s": "I", "nom": "courant de charge", "u": "A" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -697,8 +1139,14 @@
     "bloc": "OE3",
     "notion": "OE3.6 Utilisation de l'énergie électrique et procédés associés",
     "nom": "Énergie consommée",
-    "tex": "[[E]] = [[P|U|I]] \\cdot [[t|\\frac{1}{t}|t^2]] \\quad (\\text{ou } E = \\int [[p(t)|P^2]] \\, \\mathrm{d}t)",
-    "legende": "P puissance (W), t durée (h ou s) ; 1 kWh = 3,6 MJ",
+    "tex": "[[E]] = [[P|U|I]] \\cdot [[t|\\frac{1}{t}|t^2]] \\quad (\\text{ou } E = \\int [[p(t)|p^2(t)|\\frac{1}{p(t)}]] \\, \\mathrm{d}t)",
+    "legende": "$E$ énergie (J ou Wh), $P$ puissance constante (W), $p(t)$ puissance instantanée (W), $t$ durée (s ou h) ; 1 kWh = 3,6 MJ",
+    "grandeurs": [
+      { "s": "E", "nom": "énergie consommée", "u": "J" },
+      { "s": "P", "nom": "puissance", "u": "W" },
+      { "s": "t", "nom": "durée", "u": "s" },
+      { "s": "p(t)", "nom": "puissance instantanée", "u": "W" }
+    ],
     "source": "Fiche OE3.6 ; Rapport jury 2021"
   },
   {
@@ -707,7 +1155,16 @@
     "notion": "OE3.7 Génération électrique",
     "nom": "Puissance électrique d'une centrale hydraulique",
     "tex": "[[P_{\\mathrm{elec}}]] = [[\\eta_t \\eta_a|\\eta_t + \\eta_a|\\frac{\\eta_t}{\\eta_a}]] \\, [[\\rho g Q H|\\frac{1}{2}\\rho Q H|\\rho Q H]]",
-    "legende": "η_t rendement turbine, η_a rendement alternateur (produit étage par étage)",
+    "legende": "$P_{\\mathrm{elec}}$ puissance électrique (W), $\\eta_t$ rendement de la turbine, $\\eta_a$ rendement de l'alternateur, $\\rho$ masse volumique de l'eau (kg/m³), $g = 9{,}81$ m/s², $Q$ débit volumique (m³/s), $H$ hauteur de chute nette (m)",
+    "grandeurs": [
+      { "s": "P_{\\mathrm{elec}}", "nom": "puissance électrique", "u": "W" },
+      { "s": "\\eta_t", "nom": "rendement de la turbine", "u": "" },
+      { "s": "\\eta_a", "nom": "rendement de l'alternateur", "u": "" },
+      { "s": "\\rho", "nom": "masse volumique de l'eau", "u": "kg\\cdot m^{-3}" },
+      { "s": "g", "nom": "accélération de la pesanteur", "u": "m\\cdot s^{-2}" },
+      { "s": "Q", "nom": "débit volumique", "u": "m^3\\cdot s^{-1}" },
+      { "s": "H", "nom": "hauteur de chute nette", "u": "m" }
+    ],
     "source": "Fiche OE3.7"
   },
   {
@@ -716,7 +1173,13 @@
     "notion": "OE3.7 Génération électrique",
     "nom": "Hauteur de chute équivalente à une pression",
     "tex": "[[H]] = \\frac{[[p|\\rho|g]]}{[[\\rho g|\\rho|g]]}",
-    "legende": "p pression statique (Pa), ρ masse volumique (kg/m³), g = 9,81 m/s² — 1 bar ≈ 10,2 m d'eau",
+    "legende": "$H$ hauteur de colonne d'eau (m), $p$ pression statique (Pa), $\\rho$ masse volumique (kg/m³), $g = 9{,}81$ m/s² ; 1 bar ≈ 10,2 m d'eau",
+    "grandeurs": [
+      { "s": "H", "nom": "hauteur de colonne d'eau", "u": "m" },
+      { "s": "p", "nom": "pression statique", "u": "Pa" },
+      { "s": "\\rho", "nom": "masse volumique", "u": "kg\\cdot m^{-3}" },
+      { "s": "g", "nom": "accélération de la pesanteur", "u": "m\\cdot s^{-2}" }
+    ],
     "source": "Fiche OE3.7 ; Sujet 2021 E3"
   },
   {
@@ -725,7 +1188,13 @@
     "notion": "OE3.7 Génération électrique",
     "nom": "Turbine Pelton : vitesse optimale des augets",
     "tex": "[[u_{\\mathrm{opt}}]] = [[\\frac{v}{2}|v|\\frac{v}{3}]] \\quad ; \\quad \\Omega_{\\mathrm{opt}} = \\frac{v}{[[2R|R|3R]]}",
-    "legende": "v vitesse du jet (m/s), R rayon du cercle des augets (m)",
+    "legende": "$u_{\\mathrm{opt}}$ vitesse optimale des augets (m/s), $v$ vitesse du jet (m/s), $\\Omega_{\\mathrm{opt}}$ vitesse de rotation optimale (rad/s), $R$ rayon du cercle des augets (m)",
+    "grandeurs": [
+      { "s": "u_{\\mathrm{opt}}", "nom": "vitesse optimale des augets", "u": "m\\cdot s^{-1}" },
+      { "s": "v", "nom": "vitesse du jet", "u": "m\\cdot s^{-1}" },
+      { "s": "\\Omega_{\\mathrm{opt}}", "nom": "vitesse de rotation optimale", "u": "rad\\cdot s^{-1}" },
+      { "s": "R", "nom": "rayon du cercle des augets", "u": "m" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -734,7 +1203,12 @@
     "notion": "OE3.7 Génération électrique",
     "nom": "Débit volumique",
     "tex": "[[Q]] = [[S|\\pi d|S^2]] \\cdot [[v|v^2|\\sqrt{v}]]",
-    "legende": "S section (m²), v vitesse moyenne de l'écoulement (m/s)",
+    "legende": "$Q$ débit volumique (m³/s), $S$ section de l'écoulement (m²), $v$ vitesse moyenne de l'écoulement (m/s)",
+    "grandeurs": [
+      { "s": "Q", "nom": "débit volumique", "u": "m^3\\cdot s^{-1}" },
+      { "s": "S", "nom": "section de l'écoulement", "u": "m^2" },
+      { "s": "v", "nom": "vitesse moyenne de l'écoulement", "u": "m\\cdot s^{-1}" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -742,8 +1216,14 @@
     "bloc": "OE3",
     "notion": "OE3.7 Génération électrique",
     "nom": "Puissance du vent",
-    "tex": "[[P_{\\mathrm{vent}}]] = [[\\frac{1}{2}|2|\\frac{1}{3}]] \\, [[\\rho|\\rho g]] \\, [[S|S^2|R]] \\, [[v^3|v^2|v]]",
-    "legende": "ρ masse volumique de l'air (≈1,225 kg/m³), S = πR² surface balayée (m²), v vitesse du vent (m/s)",
+    "tex": "[[P_{\\mathrm{vent}}]] = [[\\frac{1}{2}|2|\\frac{1}{3}]] \\, [[\\rho|\\rho g|\\frac{1}{\\rho}]] \\, [[S|S^2|R]] \\, [[v^3|v^2|v]]",
+    "legende": "$P_{\\mathrm{vent}}$ puissance cinétique du vent (W), $\\rho$ masse volumique de l'air (≈ 1,225 kg/m³), $S = \\pi R^2$ surface balayée (m²), $v$ vitesse du vent (m/s)",
+    "grandeurs": [
+      { "s": "P_{\\mathrm{vent}}", "nom": "puissance du vent", "u": "W" },
+      { "s": "\\rho", "nom": "masse volumique de l'air", "u": "kg\\cdot m^{-3}" },
+      { "s": "S", "nom": "surface balayée", "u": "m^2" },
+      { "s": "v", "nom": "vitesse du vent", "u": "m\\cdot s^{-1}" }
+    ],
     "source": "Fiche OE3.7"
   },
   {
@@ -751,8 +1231,14 @@
     "bloc": "OE3",
     "notion": "OE3.7 Génération électrique",
     "nom": "Puissance du vent en fonction du rayon du rotor",
-    "tex": "[[P_{\\mathrm{vent}}]] = \\frac{1}{2} \\rho \\, [[\\pi R^2|2\\pi R|\\pi R]] \\, v^3",
-    "legende": "R rayon des pales (m) ; la puissance croît comme R² et v³",
+    "tex": "[[P_{\\mathrm{vent}}]] = [[\\frac{1}{2}|2|\\frac{1}{4}]] \\rho \\, [[\\pi R^2|2\\pi R|\\pi R]] \\, [[v^3|v^2|v]]",
+    "legende": "$P_{\\mathrm{vent}}$ puissance du vent (W), $\\rho$ masse volumique de l'air (kg/m³), $R$ rayon des pales (m), $v$ vitesse du vent (m/s) ; la puissance croît comme $R^2$ et $v^3$",
+    "grandeurs": [
+      { "s": "P_{\\mathrm{vent}}", "nom": "puissance du vent", "u": "W" },
+      { "s": "\\rho", "nom": "masse volumique de l'air", "u": "kg\\cdot m^{-3}" },
+      { "s": "R", "nom": "rayon des pales", "u": "m" },
+      { "s": "v", "nom": "vitesse du vent", "u": "m\\cdot s^{-1}" }
+    ],
     "source": "Fiche OE3.7 ; Classique programme"
   },
   {
@@ -760,8 +1246,13 @@
     "bloc": "OE3",
     "notion": "OE3.7 Génération électrique",
     "nom": "Puissance récupérée par l'éolienne",
-    "tex": "[[P_{\\mathrm{recup}}]] = [[C_p|\\frac{1}{C_p}|C_p^2]] \\cdot [[P_{\\mathrm{vent}}|P_{\\mathrm{elec}}]]",
-    "legende": "C_p coefficient de puissance (fonction de λ et de l'angle de calage)",
+    "tex": "[[P_{\\mathrm{recup}}]] = [[C_p|\\frac{1}{C_p}|C_p^2]] \\cdot [[P_{\\mathrm{vent}}|P_{\\mathrm{elec}}|\\frac{P_{\\mathrm{vent}}}{2}]]",
+    "legende": "$P_{\\mathrm{recup}}$ puissance mécanique captée par le rotor (W), $C_p$ coefficient de puissance (fonction de $\\lambda$ et de l'angle de calage), $P_{\\mathrm{vent}}$ puissance du vent (W)",
+    "grandeurs": [
+      { "s": "P_{\\mathrm{recup}}", "nom": "puissance captée par le rotor", "u": "W" },
+      { "s": "C_p", "nom": "coefficient de puissance", "u": "" },
+      { "s": "P_{\\mathrm{vent}}", "nom": "puissance du vent", "u": "W" }
+    ],
     "source": "Fiche OE3.7"
   },
   {
@@ -770,7 +1261,10 @@
     "notion": "OE3.7 Génération électrique",
     "nom": "Limite de Betz",
     "tex": "[[C_{p,\\max}]] = \\frac{[[16|8|27]]}{[[27|16|9]]} \\approx [[0{,}593|0{,}5|0{,}667]]",
-    "legende": "Coefficient de puissance maximal théorique ; Cp réel ≈ 0,48-0,52",
+    "legende": "$C_{p,\\max}$ coefficient de puissance maximal théorique ; $C_p$ réel des grandes éoliennes ≈ 0,45 à 0,50",
+    "grandeurs": [
+      { "s": "C_{p,\\max}", "nom": "coefficient de puissance maximal", "u": "" }
+    ],
     "source": "Fiche OE3.7"
   },
   {
@@ -779,7 +1273,12 @@
     "notion": "OE3.7 Génération électrique",
     "nom": "Betz : vitesse en aval au point optimal",
     "tex": "[[v_2]] = \\frac{[[v_1|2v_1]]}{[[3|2|4]]} \\quad ; \\quad v_{\\mathrm{rotor}} = \\frac{v_1 + v_2}{[[2|3]]}",
-    "legende": "v_1 vitesse amont, v_2 vitesse aval du tube de courant (m/s)",
+    "legende": "$v_1$ vitesse amont, $v_2$ vitesse aval du tube de courant, $v_{\\mathrm{rotor}}$ vitesse au niveau du rotor (m/s)",
+    "grandeurs": [
+      { "s": "v_2", "nom": "vitesse aval", "u": "m\\cdot s^{-1}" },
+      { "s": "v_1", "nom": "vitesse amont", "u": "m\\cdot s^{-1}" },
+      { "s": "v_{\\mathrm{rotor}}", "nom": "vitesse au niveau du rotor", "u": "m\\cdot s^{-1}" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -788,7 +1287,13 @@
     "notion": "OE3.7 Génération électrique",
     "nom": "Vitesse spécifique (TSR)",
     "tex": "[[\\lambda]] = \\frac{[[R \\, \\Omega|\\Omega|2\\pi R]]}{[[v|v^2|R]]}",
-    "legende": "R rayon des pales (m), Ω vitesse de rotation (rad/s), v vitesse du vent (m/s)",
+    "legende": "$\\lambda$ vitesse spécifique en bout de pale, $R$ rayon des pales (m), $\\Omega$ vitesse de rotation (rad/s), $v$ vitesse du vent (m/s)",
+    "grandeurs": [
+      { "s": "\\lambda", "nom": "vitesse spécifique", "u": "" },
+      { "s": "R", "nom": "rayon des pales", "u": "m" },
+      { "s": "\\Omega", "nom": "vitesse de rotation", "u": "rad\\cdot s^{-1}" },
+      { "s": "v", "nom": "vitesse du vent", "u": "m\\cdot s^{-1}" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -797,7 +1302,17 @@
     "notion": "OE3.7 Génération électrique",
     "nom": "Couple éolien",
     "tex": "[[C_{\\mathrm{eol}}]] = \\frac{[[P_{\\mathrm{recup}}|P_{\\mathrm{vent}}]]}{[[\\Omega|v|\\lambda]]} = \\frac{1}{2} \\rho \\pi R^{[[3|2|4]]} v^2 \\frac{C_p}{\\lambda}",
-    "legende": "Ω vitesse du rotor (rad/s), λ vitesse spécifique, R rayon (m)",
+    "legende": "$C_{\\mathrm{eol}}$ couple sur l'arbre du rotor (N·m), $P_{\\mathrm{recup}}$ puissance captée (W), $\\Omega$ vitesse du rotor (rad/s), $\\rho$ masse volumique de l'air (kg/m³), $R$ rayon (m), $v$ vitesse du vent (m/s), $C_p$ coefficient de puissance, $\\lambda$ vitesse spécifique",
+    "grandeurs": [
+      { "s": "C_{\\mathrm{eol}}", "nom": "couple éolien", "u": "N\\cdot m" },
+      { "s": "P_{\\mathrm{recup}}", "nom": "puissance captée", "u": "W" },
+      { "s": "\\Omega", "nom": "vitesse du rotor", "u": "rad\\cdot s^{-1}" },
+      { "s": "\\rho", "nom": "masse volumique de l'air", "u": "kg\\cdot m^{-3}" },
+      { "s": "R", "nom": "rayon des pales", "u": "m" },
+      { "s": "v", "nom": "vitesse du vent", "u": "m\\cdot s^{-1}" },
+      { "s": "C_p", "nom": "coefficient de puissance", "u": "" },
+      { "s": "\\lambda", "nom": "vitesse spécifique", "u": "" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -806,7 +1321,12 @@
     "notion": "OE3.7 Génération électrique",
     "nom": "Puissance crête d'un panneau PV",
     "tex": "[[P_c]] = [[V_{\\mathrm{mpp}}|V_{\\mathrm{co}}]] \\cdot [[I_{\\mathrm{mpp}}|I_{\\mathrm{cc}}]] \\quad \\text{(STC : } [[1000|100|500]] \\ \\mathrm{W/m^2}\\text{, 25 °C)}",
-    "legende": "V_mpp, I_mpp tension et courant au point de puissance maximale (STC, AM1,5)",
+    "legende": "$P_c$ puissance crête (Wc), $V_{\\mathrm{mpp}}$, $I_{\\mathrm{mpp}}$ tension (V) et courant (A) au point de puissance maximale, conditions STC (AM1,5)",
+    "grandeurs": [
+      { "s": "P_c", "nom": "puissance crête", "u": "W" },
+      { "s": "V_{\\mathrm{mpp}}", "nom": "tension au point de puissance maximale", "u": "V" },
+      { "s": "I_{\\mathrm{mpp}}", "nom": "courant au point de puissance maximale", "u": "A" }
+    ],
     "source": "Fiche OE3.7"
   },
   {
@@ -814,8 +1334,14 @@
     "bloc": "OE3",
     "notion": "OE3.7 Génération électrique",
     "nom": "Rendement d'un panneau photovoltaïque",
-    "tex": "[[\\eta_{\\mathrm{PV}}]] = \\frac{[[P_c|P_{\\mathrm{vent}}|V_{\\mathrm{co}} I_{\\mathrm{cc}}]]}{[[G \\cdot S|G|S]]}",
-    "legende": "P_c puissance crête (W), G irradiance (1000 W/m² en STC), S surface du panneau (m²) ; mono 20-24 %",
+    "tex": "[[\\eta_{\\mathrm{PV}}]] = \\frac{[[P_c|V_{\\mathrm{co}} I_{\\mathrm{cc}}|P_c S]]}{[[G \\cdot S|G|S]]}",
+    "legende": "$\\eta_{\\mathrm{PV}}$ rendement du panneau, $P_c$ puissance crête (W), $G$ irradiance (1000 W/m² en STC), $S$ surface du panneau (m²) ; monocristallin 20 à 24 %",
+    "grandeurs": [
+      { "s": "\\eta_{\\mathrm{PV}}", "nom": "rendement du panneau", "u": "" },
+      { "s": "P_c", "nom": "puissance crête", "u": "W" },
+      { "s": "G", "nom": "irradiance", "u": "W\\cdot m^{-2}" },
+      { "s": "S", "nom": "surface du panneau", "u": "m^2" }
+    ],
     "source": "Fiche OE3.7 ; Classique programme"
   },
   {
@@ -824,16 +1350,31 @@
     "notion": "OE3.7 Génération électrique",
     "nom": "Facteur de forme d'une cellule PV",
     "tex": "[[FF]] = \\frac{[[V_{\\mathrm{mpp}} I_{\\mathrm{mpp}}|V_{\\mathrm{co}} I_{\\mathrm{cc}}]]}{[[V_{\\mathrm{co}} I_{\\mathrm{cc}}|V_{\\mathrm{mpp}} I_{\\mathrm{mpp}}]]}",
-    "legende": "V_co tension de circuit ouvert, I_cc courant de court-circuit",
+    "legende": "$FF$ facteur de forme, $V_{\\mathrm{mpp}}$, $I_{\\mathrm{mpp}}$ tension et courant au point de puissance maximale, $V_{\\mathrm{co}}$ tension de circuit ouvert (V), $I_{\\mathrm{cc}}$ courant de court-circuit (A)",
+    "grandeurs": [
+      { "s": "FF", "nom": "facteur de forme", "u": "" },
+      { "s": "V_{\\mathrm{mpp}}", "nom": "tension au point de puissance maximale", "u": "V" },
+      { "s": "I_{\\mathrm{mpp}}", "nom": "courant au point de puissance maximale", "u": "A" },
+      { "s": "V_{\\mathrm{co}}", "nom": "tension de circuit ouvert", "u": "V" },
+      { "s": "I_{\\mathrm{cc}}", "nom": "courant de court-circuit", "u": "A" }
+    ],
     "source": "Classique programme"
   },
   {
     "id": "oe3-pv-modele-diode",
     "bloc": "OE3",
     "notion": "OE3.7 Génération électrique",
-    "nom": "Modèle à une diode d'une cellule PV",
-    "tex": "[[I]] = [[I_{ph}|I_s|I_{cc}]] - I_s \\left( [[e^{\\frac{V}{n V_T}}|e^{\\frac{n V_T}{V}}|e^{\\frac{V}{V_T}}]] - [[1|V]] \\right)",
-    "legende": "I_ph photocourant (∝ éclairement), I_s courant de saturation, n facteur d'idéalité, V_T = kT/q",
+    "nom": "Modèle à une diode d'une cellule PV (sans résistances parasites)",
+    "tex": "[[I]] = [[I_{ph}|I_s|I_{\\mathrm{mpp}}]] - I_s \\left( [[e^{\\frac{V}{n V_T}}|e^{\\frac{n V_T}{V}}|e^{-\\frac{V}{n V_T}}]] - [[1|V|n]] \\right)",
+    "legende": "$I$ courant débité (A), $V$ tension aux bornes (V), $I_{ph}$ photocourant proportionnel à l'éclairement (A), $I_s$ courant de saturation de la diode (A), $n$ facteur d'idéalité, $V_T = kT/q$ tension thermique (V)",
+    "grandeurs": [
+      { "s": "I", "nom": "courant débité", "u": "A" },
+      { "s": "I_{ph}", "nom": "photocourant", "u": "A" },
+      { "s": "I_s", "nom": "courant de saturation", "u": "A" },
+      { "s": "V", "nom": "tension aux bornes de la cellule", "u": "V" },
+      { "s": "n", "nom": "facteur d'idéalité", "u": "" },
+      { "s": "V_T", "nom": "tension thermique", "u": "V" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -842,7 +1383,13 @@
     "notion": "OE3.7 Génération électrique",
     "nom": "Tension thermique",
     "tex": "[[V_T]] = \\frac{[[k T|k|q T]]}{[[q|k|T]]} \\approx 26\\ \\mathrm{mV} \\text{ à } 300\\ \\mathrm{K}",
-    "legende": "k = 1,38·10⁻²³ J/K, T température (K), q = 1,6·10⁻¹⁹ C",
+    "legende": "$V_T$ tension thermique (V), $k = 1{,}38\\cdot 10^{-23}$ J/K constante de Boltzmann, $T$ température absolue (K), $q = 1{,}6\\cdot 10^{-19}$ C charge élémentaire",
+    "grandeurs": [
+      { "s": "V_T", "nom": "tension thermique", "u": "V" },
+      { "s": "k", "nom": "constante de Boltzmann", "u": "J\\cdot K^{-1}" },
+      { "s": "T", "nom": "température absolue", "u": "K" },
+      { "s": "q", "nom": "charge élémentaire", "u": "C" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -850,8 +1397,14 @@
     "bloc": "OE3",
     "notion": "OE3.7 Génération électrique",
     "nom": "Productible annuel PV (heures équivalentes)",
-    "tex": "[[E_{\\mathrm{an}}]] = [[P_c|P_{\\mathrm{mpp}}]] \\times [[N_h|8760|\\frac{1}{N_h}]] \\times [[PR|\\frac{1}{PR}]]",
-    "legende": "P_c puissance crête (kWc), N_h heures équivalentes d'ensoleillement (h/an), PR ratio de performance",
+    "tex": "[[E_{\\mathrm{an}}]] = [[P_c|S|\\frac{1}{P_c}]] \\times [[N_h|8760|\\frac{1}{N_h}]] \\times [[PR|\\frac{1}{PR}|1 - PR]]",
+    "legende": "$E_{\\mathrm{an}}$ énergie produite par an (kWh), $P_c$ puissance crête (kWc), $N_h$ heures équivalentes de plein ensoleillement (h/an, irradiation annuelle / 1 kW/m²), $PR$ ratio de performance",
+    "grandeurs": [
+      { "s": "E_{\\mathrm{an}}", "nom": "énergie produite par an", "u": "J" },
+      { "s": "P_c", "nom": "puissance crête", "u": "W" },
+      { "s": "N_h", "nom": "heures équivalentes d'ensoleillement", "u": "s" },
+      { "s": "PR", "nom": "ratio de performance", "u": "" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -860,7 +1413,12 @@
     "notion": "OE3.7 Génération électrique",
     "nom": "Facteur de charge d'une installation",
     "tex": "[[FC]] = \\frac{[[E_{\\mathrm{an}}|P_n]]}{[[P_n|E_{\\mathrm{an}}]] \\times [[8760|365|24]]}",
-    "legende": "E_an énergie produite sur l'année (Wh), P_n puissance nominale (W), 8760 h/an",
+    "legende": "$FC$ facteur de charge, $E_{\\mathrm{an}}$ énergie produite sur l'année (Wh), $P_n$ puissance nominale (W), 8760 h dans une année",
+    "grandeurs": [
+      { "s": "FC", "nom": "facteur de charge", "u": "" },
+      { "s": "E_{\\mathrm{an}}", "nom": "énergie produite sur l'année", "u": "J" },
+      { "s": "P_n", "nom": "puissance nominale", "u": "W" }
+    ],
     "source": "Classique programme"
   },
   {
@@ -869,7 +1427,12 @@
     "notion": "OE3.7 Génération électrique",
     "nom": "Énergie produite à partir des puissances moyennes",
     "tex": "[[E]] = [[\\sum_i P_i \\, \\Delta t_i|\\sum_i P_i|\\frac{\\sum_i P_i}{\\Delta t_i}]]",
-    "legende": "P_i puissance moyenne sur la période i (W), Δt_i durée de la période (h) — piège jury 2021",
+    "legende": "$E$ énergie produite (Wh), $P_i$ puissance moyenne sur la période $i$ (W), $\\Delta t_i$ durée de la période (h) ; piège relevé par le jury 2021",
+    "grandeurs": [
+      { "s": "E", "nom": "énergie produite", "u": "J" },
+      { "s": "P_i", "nom": "puissance moyenne sur la période i", "u": "W" },
+      { "s": "\\Delta t_i", "nom": "durée de la période i", "u": "s" }
+    ],
     "source": "Fiche OE3.7 ; Rapport jury 2021"
   },
   {
@@ -878,7 +1441,13 @@
     "notion": "OE3.7 Génération électrique",
     "nom": "Rendement global de cogénération",
     "tex": "[[\\eta_{\\mathrm{cogen}}]] = \\frac{[[W_{\\mathrm{elec}} + Q_{\\mathrm{utile}}|W_{\\mathrm{elec}}|Q_{\\mathrm{utile}}]]}{[[E_{\\mathrm{primaire}}|W_{\\mathrm{elec}}|Q_{\\mathrm{utile}}]]}",
-    "legende": "W_elec électricité produite, Q_utile chaleur valorisée, E_primaire énergie du combustible (J) ; 75-85 %",
+    "legende": "$\\eta_{\\mathrm{cogen}}$ rendement global, $W_{\\mathrm{elec}}$ électricité produite, $Q_{\\mathrm{utile}}$ chaleur valorisée, $E_{\\mathrm{primaire}}$ énergie du combustible (J) ; typiquement 75 à 85 %",
+    "grandeurs": [
+      { "s": "\\eta_{\\mathrm{cogen}}", "nom": "rendement global de cogénération", "u": "" },
+      { "s": "W_{\\mathrm{elec}}", "nom": "énergie électrique produite", "u": "J" },
+      { "s": "Q_{\\mathrm{utile}}", "nom": "chaleur valorisée", "u": "J" },
+      { "s": "E_{\\mathrm{primaire}}", "nom": "énergie primaire du combustible", "u": "J" }
+    ],
     "source": "Fiche OE3.7"
   },
   {
@@ -886,8 +1455,15 @@
     "bloc": "OE3",
     "notion": "OE3.7 Génération électrique",
     "nom": "Énergie stockée par une STEP",
-    "tex": "[[E]] = [[\\rho|\\frac{\\rho}{2}]] \\, [[g|g^2]] \\, [[V|Q]] \\, [[H|H^2]]",
-    "legende": "ρ masse volumique (kg/m³), V volume d'eau stocké (m³), H dénivelé (m) ; E en J",
+    "tex": "[[E]] = [[\\rho|\\frac{\\rho}{2}|\\frac{1}{\\rho}]] \\, [[g|g^2|\\frac{1}{g}]] \\, [[V|Q|S]] \\, [[H|H^2|\\frac{H}{2}]]",
+    "legende": "$E$ énergie potentielle stockée (J), $\\rho$ masse volumique de l'eau (kg/m³), $g = 9{,}81$ m/s², $V$ volume d'eau stocké (m³), $H$ dénivelé (m)",
+    "grandeurs": [
+      { "s": "E", "nom": "énergie potentielle stockée", "u": "J" },
+      { "s": "\\rho", "nom": "masse volumique de l'eau", "u": "kg\\cdot m^{-3}" },
+      { "s": "g", "nom": "accélération de la pesanteur", "u": "m\\cdot s^{-2}" },
+      { "s": "V", "nom": "volume d'eau stocké", "u": "m^3" },
+      { "s": "H", "nom": "dénivelé", "u": "m" }
+    ],
     "source": "Fiche OE3.7 ; Classique programme"
   },
   {
@@ -896,7 +1472,12 @@
     "notion": "OE3.7 Génération électrique",
     "nom": "Rendement aller-retour d'une STEP",
     "tex": "[[\\eta_{\\mathrm{STEP}}]] = [[\\eta_{\\mathrm{pompage}}|1 - \\eta_{\\mathrm{pompage}}]] \\times [[\\eta_{\\mathrm{turbinage}}|\\frac{1}{\\eta_{\\mathrm{turbinage}}}]] \\approx [[0{,}75|0{,}95|0{,}5]]",
-    "legende": "Rendement aller-retour typique 70-85 %",
+    "legende": "$\\eta_{\\mathrm{STEP}}$ rendement aller-retour, $\\eta_{\\mathrm{pompage}}$ rendement du pompage, $\\eta_{\\mathrm{turbinage}}$ rendement du turbinage ; typiquement 70 à 85 %",
+    "grandeurs": [
+      { "s": "\\eta_{\\mathrm{STEP}}", "nom": "rendement aller-retour", "u": "" },
+      { "s": "\\eta_{\\mathrm{pompage}}", "nom": "rendement du pompage", "u": "" },
+      { "s": "\\eta_{\\mathrm{turbinage}}", "nom": "rendement du turbinage", "u": "" }
+    ],
     "source": "Fiche OE3.7"
   },
   {
@@ -904,17 +1485,28 @@
     "bloc": "OE3",
     "notion": "OE3.7 Génération électrique",
     "nom": "Fréquence produite par un alternateur",
-    "tex": "[[f]] = [[p|2p|\\frac{p}{2}]] \\, \\frac{[[n|\\Omega|N]]}{[[60|2\\pi|3600]]}",
-    "legende": "p nombre de paires de pôles, n vitesse de rotation (tr/min)",
+    "tex": "[[f]] = [[p|2p|\\frac{p}{2}]] \\, \\frac{[[n|\\Omega|\\frac{1}{n}]]}{[[60|2\\pi|3600]]}",
+    "legende": "$f$ fréquence produite (Hz), $p$ nombre de paires de pôles, $n$ vitesse de rotation (tr/min)",
+    "grandeurs": [
+      { "s": "f", "nom": "fréquence produite", "u": "Hz" },
+      { "s": "p", "nom": "nombre de paires de pôles", "u": "" },
+      { "s": "n", "nom": "vitesse de rotation (tr/min)", "u": "tr\\cdot min^{-1}" }
+    ],
     "source": "Classique programme"
   },
   {
     "id": "oe3-groupe-electrogene-rendement",
     "bloc": "OE3",
     "notion": "OE3.7 Génération électrique",
-    "nom": "Rendement d'un groupe électrogène",
-    "tex": "[[\\eta]] = \\frac{[[P_e|P_{\\mathrm{th}}]]}{[[q_m|q_V|\\frac{1}{q_m}]] \\cdot [[PCI|PCS|c]]}",
-    "legende": "P_e puissance électrique (W), q_m débit massique de combustible (kg/s), PCI pouvoir calorifique inférieur (J/kg)",
+    "nom": "Rendement d'un groupe électrogène (sur PCI)",
+    "tex": "[[\\eta]] = \\frac{[[P_e|P_{\\mathrm{th}}]]}{[[q_m|q_V|\\frac{1}{q_m}]] \\cdot [[PCI|c|\\frac{1}{PCI}]]}",
+    "legende": "$\\eta$ rendement global, $P_e$ puissance électrique (W), $q_m$ débit massique de combustible (kg/s), $PCI$ pouvoir calorifique inférieur (J/kg)",
+    "grandeurs": [
+      { "s": "\\eta", "nom": "rendement global", "u": "" },
+      { "s": "P_e", "nom": "puissance électrique", "u": "W" },
+      { "s": "q_m", "nom": "débit massique de combustible", "u": "kg\\cdot s^{-1}" },
+      { "s": "PCI", "nom": "pouvoir calorifique inférieur", "u": "J\\cdot kg^{-1}" }
+    ],
     "source": "Classique programme"
   }
 ]

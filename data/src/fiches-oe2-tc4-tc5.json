@@ -5,7 +5,24 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Gain de l'amplificateur inverseur",
     "tex": "[[A_v]] = [[-\\dfrac{R_2}{R_1}|\\dfrac{R_2}{R_1}|-\\dfrac{R_1}{R_2}|1+\\dfrac{R_2}{R_1}]]",
-    "legende": "A_v gain en tension, R_1 résistance d'entrée, R_2 résistance de contre-réaction (AOP idéal)",
+    "legende": "$A_v$ gain en tension, $R_1$ résistance d'entrée (Ω), $R_2$ résistance de contre-réaction (Ω) ; AOP idéal",
+    "grandeurs": [
+      {
+        "s": "A_v",
+        "nom": "gain en tension",
+        "u": ""
+      },
+      {
+        "s": "R_1",
+        "nom": "résistance d'entrée",
+        "u": "\\Omega"
+      },
+      {
+        "s": "R_2",
+        "nom": "résistance de contre-réaction",
+        "u": "\\Omega"
+      }
+    ],
     "source": "Fiche OE2.1"
   },
   {
@@ -14,7 +31,19 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Impédance d'entrée de l'inverseur",
     "tex": "[[Z_{\\mathrm{in}}]] = [[R_1|R_2|R_1 + R_2|\\infty]]",
-    "legende": "Z_in impédance d'entrée du montage inverseur (Ω), R_1 résistance d'entrée",
+    "legende": "$Z_{\\mathrm{in}}$ impédance d'entrée du montage inverseur (Ω), $R_1$ résistance d'entrée (Ω)",
+    "grandeurs": [
+      {
+        "s": "Z_{\\mathrm{in}}",
+        "nom": "impédance d'entrée",
+        "u": "\\Omega"
+      },
+      {
+        "s": "R_1",
+        "nom": "résistance d'entrée",
+        "u": "\\Omega"
+      }
+    ],
     "source": "Fiche OE2.1"
   },
   {
@@ -23,7 +52,24 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Gain de l'amplificateur non inverseur",
     "tex": "[[A_v]] = [[1|-1|0]] + \\dfrac{[[R_2|R_1]]}{[[R_1|R_2|R_1+R_2]]}",
-    "legende": "A_v gain en tension, R_2 entre sortie et entrée −, R_1 entre entrée − et masse",
+    "legende": "$A_v$ gain en tension, $R_2$ entre la sortie et l'entrée $-$, $R_1$ entre l'entrée $-$ et la masse (Ω) ; AOP idéal",
+    "grandeurs": [
+      {
+        "s": "A_v",
+        "nom": "gain en tension",
+        "u": ""
+      },
+      {
+        "s": "R_1",
+        "nom": "résistance entrée inverseuse-masse",
+        "u": "\\Omega"
+      },
+      {
+        "s": "R_2",
+        "nom": "résistance de contre-réaction",
+        "u": "\\Omega"
+      }
+    ],
     "source": "Fiche OE2.1"
   },
   {
@@ -32,7 +78,34 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Amplificateur différentiel (soustracteur)",
     "tex": "[[v_s]] = [[\\dfrac{R_2}{R_1}|\\dfrac{R_1}{R_2}|1+\\dfrac{R_2}{R_1}]]\\,\\left([[v_2 - v_1|v_1 - v_2|v_1 + v_2]]\\right)",
-    "legende": "Montage à résistances appariées (R_1, R_2) ; v_2 sur l'entrée +, v_1 sur l'entrée −",
+    "legende": "$v_s$ tension de sortie (V), $v_2$ sur l'entrée $+$, $v_1$ sur l'entrée $-$ (V), $R_1$ et $R_2$ résistances appariées (Ω)",
+    "grandeurs": [
+      {
+        "s": "v_s",
+        "nom": "tension de sortie",
+        "u": "V"
+      },
+      {
+        "s": "v_1",
+        "nom": "tension sur l'entrée inverseuse",
+        "u": "V"
+      },
+      {
+        "s": "v_2",
+        "nom": "tension sur l'entrée non inverseuse",
+        "u": "V"
+      },
+      {
+        "s": "R_1",
+        "nom": "résistance d'entrée",
+        "u": "\\Omega"
+      },
+      {
+        "s": "R_2",
+        "nom": "résistance de contre-réaction",
+        "u": "\\Omega"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -41,7 +114,34 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Intégrateur inverseur à AOP",
     "tex": "[[v_s(t)]] = [[-\\dfrac{1}{RC}|\\dfrac{1}{RC}|-RC]] \\int [[v_e(t)|v_s(t)]]\\,\\mathrm{d}t",
-    "legende": "R résistance d'entrée, C condensateur de contre-réaction",
+    "legende": "$v_e$ tension d'entrée, $v_s$ tension de sortie (V), $R$ résistance d'entrée (Ω), $C$ capacité de contre-réaction (F)",
+    "grandeurs": [
+      {
+        "s": "v_s",
+        "nom": "tension de sortie",
+        "u": "V"
+      },
+      {
+        "s": "v_e",
+        "nom": "tension d'entrée",
+        "u": "V"
+      },
+      {
+        "s": "R",
+        "nom": "résistance d'entrée",
+        "u": "\\Omega"
+      },
+      {
+        "s": "C",
+        "nom": "capacité de contre-réaction",
+        "u": "F"
+      },
+      {
+        "s": "t",
+        "nom": "temps",
+        "u": "s"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -50,7 +150,29 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Gain en boucle ouverte d'un AOP réel (1er ordre)",
     "tex": "[[\\underline{A}(f)]] = \\dfrac{[[A_0|1|f_c]]}{1 + [[j\\dfrac{f}{f_c}|\\dfrac{f}{f_c}|j\\dfrac{f_c}{f}]]}",
-    "legende": "A_0 gain statique en boucle ouverte (≈2·10⁵ pour TL081), f_c fréquence de coupure en boucle ouverte",
+    "legende": "$\\underline{A}$ gain complexe en boucle ouverte, $A_0$ gain statique (≈ $2\\cdot10^5$ pour un TL081), $f$ fréquence, $f_c$ fréquence de coupure en boucle ouverte (Hz)",
+    "grandeurs": [
+      {
+        "s": "\\underline{A}",
+        "nom": "gain complexe en boucle ouverte",
+        "u": ""
+      },
+      {
+        "s": "A_0",
+        "nom": "gain statique en boucle ouverte",
+        "u": ""
+      },
+      {
+        "s": "f",
+        "nom": "fréquence",
+        "u": "Hz"
+      },
+      {
+        "s": "f_c",
+        "nom": "fréquence de coupure en boucle ouverte",
+        "u": "Hz"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -59,7 +181,24 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Produit gain × bande passante",
     "tex": "[[\\mathrm{GBW}]] = [[A_{v0}|A_{v0}^2|\\frac{1}{A_{v0}}]] \\cdot [[f_c|\\omega_c|\\frac{1}{f_c}]]",
-    "legende": "GBW constant pour un AOP compensé (3 MHz pour TL081), A_v0 gain statique, f_c fréquence de coupure",
+    "legende": "$\\mathrm{GBW}$ produit gain-bande (Hz), constant pour un AOP compensé (≈ 3 MHz pour un TL081), $A_{v0}$ gain statique, $f_c$ fréquence de coupure (Hz)",
+    "grandeurs": [
+      {
+        "s": "\\mathrm{GBW}",
+        "nom": "produit gain-bande passante",
+        "u": "Hz"
+      },
+      {
+        "s": "A_{v0}",
+        "nom": "gain statique",
+        "u": ""
+      },
+      {
+        "s": "f_c",
+        "nom": "fréquence de coupure",
+        "u": "Hz"
+      }
+    ],
     "source": "Fiche OE2.1"
   },
   {
@@ -68,7 +207,24 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Bande passante d'un montage bouclé",
     "tex": "[[f_{c,\\mathrm{BF}}]] = \\dfrac{[[\\mathrm{GBW}|A_v]]}{[[A_v|\\mathrm{GBW}|A_v^2]]}",
-    "legende": "f_c,BF bande passante du montage, A_v gain en boucle fermée (ex. gain 100, GBW 3 MHz → 30 kHz)",
+    "legende": "$f_{c,\\mathrm{BF}}$ bande passante du montage (Hz), $A_v$ gain en boucle fermée du non-inverseur (pour l'inverseur, utiliser $1 + R_2/R_1$) ; ex. gain 100, GBW 3 MHz → 30 kHz",
+    "grandeurs": [
+      {
+        "s": "f_{c,\\mathrm{BF}}",
+        "nom": "bande passante en boucle fermée",
+        "u": "Hz"
+      },
+      {
+        "s": "\\mathrm{GBW}",
+        "nom": "produit gain-bande passante",
+        "u": "Hz"
+      },
+      {
+        "s": "A_v",
+        "nom": "gain en boucle fermée",
+        "u": ""
+      }
+    ],
     "source": "Fiche OE2.1"
   },
   {
@@ -77,7 +233,14 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Pente asymptotique d'un filtre d'ordre n",
     "tex": "[[\\text{pente}]] = [[-20|-10|-6|-40]]\\,[[n|n^2|2n]]\\ \\text{dB/décade}",
-    "legende": "n ordre du filtre (hors bande passante, passe-bas) ; équivalent −6n dB/octave",
+    "legende": "$n$ ordre du filtre ; pente hors bande passante, soit $-6n$ dB/octave",
+    "grandeurs": [
+      {
+        "s": "n",
+        "nom": "ordre du filtre",
+        "u": ""
+      }
+    ],
     "source": "Fiche OE2.1"
   },
   {
@@ -86,7 +249,29 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Passe-bas du 1er ordre",
     "tex": "[[\\underline{H}(j\\omega)]] = \\dfrac{[[H_0|1+H_0]]}{1 + [[j\\dfrac{\\omega}{\\omega_c}|\\dfrac{\\omega}{\\omega_c}|j\\dfrac{\\omega_c}{\\omega}]]}",
-    "legende": "H_0 gain statique, ω_c pulsation de coupure à −3 dB (rad/s)",
+    "legende": "$\\underline{H}$ transmittance, $H_0$ gain statique, $\\omega$ pulsation, $\\omega_c$ pulsation de coupure à $-3$ dB (rad/s)",
+    "grandeurs": [
+      {
+        "s": "\\underline{H}",
+        "nom": "transmittance complexe",
+        "u": ""
+      },
+      {
+        "s": "H_0",
+        "nom": "gain statique",
+        "u": ""
+      },
+      {
+        "s": "\\omega",
+        "nom": "pulsation",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "\\omega_c",
+        "nom": "pulsation de coupure",
+        "u": "rad\\cdot s^{-1}"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -94,8 +279,25 @@
     "bloc": "OE2",
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Fréquence de coupure d'un circuit RC",
-    "tex": "[[f_c]] = \\dfrac{[[1]]}{[[2\\pi RC|RC|\\pi RC|2\\pi\\sqrt{RC}]]}",
-    "legende": "f_c fréquence de coupure (Hz), R (Ω), C (F) — ex. réjecteur 50 Hz : R = 68 kΩ, C = 47 nF",
+    "tex": "[[f_c]] = \\dfrac{1}{[[2\\pi|\\pi|4\\pi]]\\,[[RC|\\sqrt{RC}|\\dfrac{R}{C}]]}",
+    "legende": "$f_c$ fréquence de coupure à $-3$ dB (Hz), $R$ résistance (Ω), $C$ capacité (F)",
+    "grandeurs": [
+      {
+        "s": "f_c",
+        "nom": "fréquence de coupure",
+        "u": "Hz"
+      },
+      {
+        "s": "R",
+        "nom": "résistance",
+        "u": "\\Omega"
+      },
+      {
+        "s": "C",
+        "nom": "capacité",
+        "u": "F"
+      }
+    ],
     "source": "Fiche OE2.2.1 ; Sujet 2023 E2 Q23"
   },
   {
@@ -104,7 +306,34 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Passe-bas canonique du 2e ordre",
     "tex": "[[\\underline{H}]] = \\dfrac{H_0}{1 + [[2m|m|\\frac{1}{2m}]]\\,j\\dfrac{\\omega}{\\omega_0} + [[\\left(j\\dfrac{\\omega}{\\omega_0}\\right)^2|\\left(\\dfrac{\\omega}{\\omega_0}\\right)^2|j\\dfrac{\\omega^2}{\\omega_0}]]}",
-    "legende": "H_0 gain statique, m coefficient d'amortissement, ω_0 pulsation propre (Butterworth : m = √2/2)",
+    "legende": "$\\underline{H}$ transmittance, $H_0$ gain statique, $m$ coefficient d'amortissement, $\\omega_0$ pulsation propre (rad/s) ; Butterworth : $m = \\sqrt{2}/2$",
+    "grandeurs": [
+      {
+        "s": "\\underline{H}",
+        "nom": "transmittance complexe",
+        "u": ""
+      },
+      {
+        "s": "H_0",
+        "nom": "gain statique",
+        "u": ""
+      },
+      {
+        "s": "m",
+        "nom": "coefficient d'amortissement",
+        "u": ""
+      },
+      {
+        "s": "\\omega",
+        "nom": "pulsation",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "\\omega_0",
+        "nom": "pulsation propre",
+        "u": "rad\\cdot s^{-1}"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -113,7 +342,34 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Module d'un filtre de Butterworth d'ordre n",
     "tex": "[[\\lVert \\underline{H}(j\\omega) \\rVert]] = \\dfrac{H_0}{\\sqrt{1 + [[\\left(\\dfrac{\\omega}{\\omega_c}\\right)^{2n}|\\left(\\dfrac{\\omega}{\\omega_c}\\right)^{n}|\\left(\\dfrac{\\omega}{\\omega_c}\\right)^{2}]]}}",
-    "legende": "Réponse la plus plate en bande passante ; −3 dB à ω_c quel que soit n",
+    "legende": "$H_0$ gain statique, $\\omega_c$ pulsation de coupure (rad/s), $n$ ordre du filtre ; réponse la plus plate, $-3$ dB à $\\omega_c$ quel que soit $n$",
+    "grandeurs": [
+      {
+        "s": "\\underline{H}",
+        "nom": "transmittance complexe",
+        "u": ""
+      },
+      {
+        "s": "H_0",
+        "nom": "gain statique",
+        "u": ""
+      },
+      {
+        "s": "\\omega",
+        "nom": "pulsation",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "\\omega_c",
+        "nom": "pulsation de coupure",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "n",
+        "nom": "ordre du filtre",
+        "u": ""
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -122,7 +378,29 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Multiplieur analogique",
     "tex": "[[v_M(t)]] = [[k|\\frac{1}{k}]] \\cdot [[v_1(t) \\cdot v_2(t)|v_1(t) + v_2(t)|v_1(t)/v_2(t)]]",
-    "legende": "k constante du multiplieur (V⁻¹), v_1 et v_2 signaux d'entrée",
+    "legende": "$v_M$ tension de sortie, $v_1$ et $v_2$ tensions d'entrée (V), $k$ constante du multiplieur ($\\mathrm{V^{-1}}$)",
+    "grandeurs": [
+      {
+        "s": "v_M",
+        "nom": "tension de sortie",
+        "u": "V"
+      },
+      {
+        "s": "k",
+        "nom": "constante du multiplieur",
+        "u": "V^{-1}"
+      },
+      {
+        "s": "v_1",
+        "nom": "première tension d'entrée",
+        "u": "V"
+      },
+      {
+        "s": "v_2",
+        "nom": "seconde tension d'entrée",
+        "u": "V"
+      }
+    ],
     "source": "Fiche OE2.1"
   },
   {
@@ -131,7 +409,8 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Transposition de fréquence (produit de deux sinusoïdes)",
     "tex": "\\cos a \\cdot \\cos b = [[\\dfrac{1}{2}|2|1]]\\left[\\cos([[a-b|a \\cdot b]]) + \\cos([[a+b|2a]])\\right]",
-    "legende": "Le produit de f_1 et f_2 crée des raies à f_1 − f_2 et f_1 + f_2 (mélange, modulation, détection synchrone)",
+    "legende": "Le produit de signaux de fréquences $f_1$ et $f_2$ crée des raies à $f_1 - f_2$ et $f_1 + f_2$ (mélange, modulation, détection synchrone)",
+    "grandeurs": [],
     "source": "Classique programme"
   },
   {
@@ -139,8 +418,20 @@
     "bloc": "OE2",
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Condition de Barkhausen",
-    "tex": "[[\\lVert \\underline{A}\\,\\underline{\\beta} \\rVert]] = [[1|0|-1|\\infty]] \\quad ; \\quad \\arg(\\underline{A}\\,\\underline{\\beta}) = [[0|\\pi|\\frac{\\pi}{2}]] \\ (\\mathrm{mod}\\ 2\\pi)",
-    "legende": "A gain de la chaîne directe, β gain de la chaîne de retour, à la fréquence d'oscillation",
+    "tex": "[[\\lVert \\underline{A}\\,\\underline{\\beta} \\rVert]] = [[1|0|\\infty]] \\quad ; \\quad \\arg(\\underline{A}\\,\\underline{\\beta}) = [[0|\\frac{\\pi}{2}|-\\frac{\\pi}{2}]] \\ (\\mathrm{mod}\\ 2\\pi)",
+    "legende": "$\\underline{A}$ gain de la chaîne directe, $\\underline{\\beta}$ gain de la chaîne de retour (réaction positive, sans inversion de signe), à la fréquence d'oscillation",
+    "grandeurs": [
+      {
+        "s": "\\underline{A}",
+        "nom": "gain de la chaîne directe",
+        "u": ""
+      },
+      {
+        "s": "\\underline{\\beta}",
+        "nom": "gain de la chaîne de retour",
+        "u": ""
+      }
+    ],
     "source": "Fiche OE2.1"
   },
   {
@@ -149,7 +440,24 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Fréquence d'un oscillateur LC (VCO à varicap)",
     "tex": "[[f_0]] = \\dfrac{1}{[[2\\pi|\\pi|2]]\\sqrt{[[LC|L/C|RC]]}}",
-    "legende": "L inductance (H), C capacité (F) — la varicap fait varier C avec la tension de commande",
+    "legende": "$f_0$ fréquence d'oscillation (Hz), $L$ inductance (H), $C$ capacité (F) ; une varicap fait varier $C$ avec la tension de commande",
+    "grandeurs": [
+      {
+        "s": "f_0",
+        "nom": "fréquence d'oscillation",
+        "u": "Hz"
+      },
+      {
+        "s": "L",
+        "nom": "inductance",
+        "u": "H"
+      },
+      {
+        "s": "C",
+        "nom": "capacité",
+        "u": "F"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -158,7 +466,29 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Oscillateur à pont de Wien",
     "tex": "[[f_0]] = \\dfrac{1}{[[2\\pi RC|RC|2\\pi\\sqrt{RC}]]} \\quad ; \\quad A_{\\min} = [[3|2|1|\\frac{1}{3}]]",
-    "legende": "Cellule RC série-parallèle (β = 1/3 à f_0) : l'amplificateur doit avoir un gain d'au moins 3",
+    "legende": "$f_0$ fréquence d'oscillation (Hz), $R$ (Ω) et $C$ (F) de la cellule série-parallèle ($\\beta = 1/3$ à $f_0$), $A_{\\min}$ gain minimal de l'amplificateur",
+    "grandeurs": [
+      {
+        "s": "f_0",
+        "nom": "fréquence d'oscillation",
+        "u": "Hz"
+      },
+      {
+        "s": "R",
+        "nom": "résistance",
+        "u": "\\Omega"
+      },
+      {
+        "s": "C",
+        "nom": "capacité",
+        "u": "F"
+      },
+      {
+        "s": "A_{\\min}",
+        "nom": "gain minimal de l'amplificateur",
+        "u": ""
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -167,7 +497,29 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Seuils d'un comparateur à hystérésis non inverseur",
     "tex": "[[V_{T\\pm}]] = \\pm\\,[[\\dfrac{R_1}{R_2}|\\dfrac{R_2}{R_1}|\\dfrac{R_1}{R_1+R_2}]]\\,[[V_{\\mathrm{sat}}|V_{\\mathrm{ref}}]]",
-    "legende": "R_1 entre entrée et V+, R_2 entre sortie et V+ ; V_sat tension de saturation de l'AOP",
+    "legende": "$V_{T\\pm}$ seuils de basculement (V), $R_1$ entre l'entrée et $V^+$, $R_2$ entre la sortie et $V^+$ (Ω), $V_{\\mathrm{sat}}$ tension de saturation de l'AOP (V)",
+    "grandeurs": [
+      {
+        "s": "V_{T\\pm}",
+        "nom": "seuils de basculement",
+        "u": "V"
+      },
+      {
+        "s": "R_1",
+        "nom": "résistance entrée-V+",
+        "u": "\\Omega"
+      },
+      {
+        "s": "R_2",
+        "nom": "résistance sortie-V+",
+        "u": "\\Omega"
+      },
+      {
+        "s": "V_{\\mathrm{sat}}",
+        "nom": "tension de saturation",
+        "u": "V"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -176,7 +528,29 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Fréquence de sortie d'une DDS",
     "tex": "[[f_{\\mathrm{out}}]] = \\dfrac{[[\\mathrm{FTW}|N]] \\cdot [[f_{\\mathrm{clk}}|T_{\\mathrm{clk}}]]}{[[2^N|N|2N|2^{N-1}]]}",
-    "legende": "FTW mot de réglage de fréquence, f_clk horloge, N largeur de l'accumulateur de phase (bits)",
+    "legende": "$f_{\\mathrm{out}}$ fréquence de sortie (Hz), $\\mathrm{FTW}$ mot de réglage de fréquence, $f_{\\mathrm{clk}}$ fréquence d'horloge (Hz), $N$ largeur de l'accumulateur de phase (bits)",
+    "grandeurs": [
+      {
+        "s": "f_{\\mathrm{out}}",
+        "nom": "fréquence de sortie",
+        "u": "Hz"
+      },
+      {
+        "s": "\\mathrm{FTW}",
+        "nom": "mot de réglage de fréquence",
+        "u": ""
+      },
+      {
+        "s": "f_{\\mathrm{clk}}",
+        "nom": "fréquence d'horloge",
+        "u": "Hz"
+      },
+      {
+        "s": "N",
+        "nom": "largeur de l'accumulateur de phase",
+        "u": ""
+      }
+    ],
     "source": "Fiche OE2.1"
   },
   {
@@ -185,7 +559,24 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Résolution en fréquence d'une DDS",
     "tex": "[[\\Delta f]] = \\dfrac{[[f_{\\mathrm{clk}}|1]]}{[[2^N|N|2^{N-1}]]}",
-    "legende": "Ex. AD9850 : N = 32, f_clk = 125 MHz → Δf ≈ 0,029 Hz",
+    "legende": "$\\Delta f$ résolution (Hz), $f_{\\mathrm{clk}}$ fréquence d'horloge (Hz), $N$ bits de l'accumulateur ; ex. $N = 32$, $f_{\\mathrm{clk}} = 125$ MHz → $\\Delta f \\approx 0{,}029$ Hz",
+    "grandeurs": [
+      {
+        "s": "\\Delta f",
+        "nom": "résolution en fréquence",
+        "u": "Hz"
+      },
+      {
+        "s": "f_{\\mathrm{clk}}",
+        "nom": "fréquence d'horloge",
+        "u": "Hz"
+      },
+      {
+        "s": "N",
+        "nom": "largeur de l'accumulateur de phase",
+        "u": ""
+      }
+    ],
     "source": "Fiche OE2.1"
   },
   {
@@ -194,7 +585,19 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Condition de Nyquist-Shannon",
     "tex": "[[f_e]] \\geq [[2|\\sqrt{2}|1|4]]\\,[[f_{\\max}|f_{\\min}]]",
-    "legende": "f_e fréquence d'échantillonnage, f_max fréquence maximale du signal (sinon repliement)",
+    "legende": "$f_e$ fréquence d'échantillonnage (Hz), $f_{\\max}$ fréquence maximale du signal (Hz) ; sinon repliement de spectre",
+    "grandeurs": [
+      {
+        "s": "f_e",
+        "nom": "fréquence d'échantillonnage",
+        "u": "Hz"
+      },
+      {
+        "s": "f_{\\max}",
+        "nom": "fréquence maximale du signal",
+        "u": "Hz"
+      }
+    ],
     "source": "Fiche OE2.1 ; Fiche OE1.3 ; Fiche TC3.5.2 ; Sujet 2025 E2 Q29"
   },
   {
@@ -202,8 +605,25 @@
     "bloc": "OE2",
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Quantum d'un CAN/CNA",
-    "tex": "[[q]] = \\dfrac{[[V_{\\mathrm{PE}}|V_{\\mathrm{PE}}/2]]}{[[2^n|n|2^{n-1}|2^n - 1]]}",
-    "legende": "q quantum (LSB, V), V_PE tension pleine échelle, n nombre de bits (variante : V_PE/(2ⁿ−1) selon convention)",
+    "tex": "[[q]] = \\dfrac{[[V_{\\mathrm{PE}}|V_{\\mathrm{PE}}/2]]}{[[2^n|n|2^{n-1}]]}",
+    "legende": "$q$ quantum (LSB, V), $V_{\\mathrm{PE}}$ tension pleine échelle (V), $n$ nombre de bits (certains constructeurs : $V_{\\mathrm{PE}}/(2^n - 1)$)",
+    "grandeurs": [
+      {
+        "s": "q",
+        "nom": "quantum",
+        "u": "V"
+      },
+      {
+        "s": "V_{\\mathrm{PE}}",
+        "nom": "tension pleine échelle",
+        "u": "V"
+      },
+      {
+        "s": "n",
+        "nom": "nombre de bits",
+        "u": ""
+      }
+    ],
     "source": "Fiche OE2.1 ; Fiche OE1.5 ; Fiche TC3.4.1 ; Fiche TC3.5.2"
   },
   {
@@ -212,7 +632,19 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Erreur maximale de quantification (arrondi)",
     "tex": "[[\\lvert \\varepsilon_q \\rvert_{\\max}]] = [[\\dfrac{q}{2}|q|2q|\\dfrac{q}{\\sqrt{12}}]]",
-    "legende": "ε_q erreur de quantification, q quantum",
+    "legende": "$\\varepsilon_q$ erreur de quantification (V), $q$ quantum (V) ; quantification par arrondi",
+    "grandeurs": [
+      {
+        "s": "\\varepsilon_q",
+        "nom": "erreur de quantification",
+        "u": "V"
+      },
+      {
+        "s": "q",
+        "nom": "quantum",
+        "u": "V"
+      }
+    ],
     "source": "Fiche OE2.1 ; Fiche TC3.5.2 ; Sujet 2025 E2 Q27"
   },
   {
@@ -221,7 +653,19 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Puissance du bruit de quantification",
     "tex": "[[\\sigma_q^2]] = \\dfrac{[[q^2|q]]}{[[12|2|4|\\sqrt{12}]]}",
-    "legende": "Erreur uniformément répartie sur [−q/2 ; q/2] ; valeur efficace q/√12",
+    "legende": "$\\sigma_q^2$ puissance (variance) du bruit de quantification ($\\mathrm{V^2}$), $q$ quantum (V) ; erreur uniforme sur $[-q/2 ; q/2]$, valeur efficace $q/\\sqrt{12}$",
+    "grandeurs": [
+      {
+        "s": "\\sigma_q^2",
+        "nom": "puissance du bruit de quantification",
+        "u": "V^2"
+      },
+      {
+        "s": "q",
+        "nom": "quantum",
+        "u": "V"
+      }
+    ],
     "source": "Sujet 2025 E2 Q28"
   },
   {
@@ -230,7 +674,19 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "SNR de quantification d'un CAN idéal",
     "tex": "[[\\mathrm{SNR}_{\\mathrm{dB}}]] = [[6{,}02|3{,}01|20]]\\,[[N|2^N|\\log_2 N]] + [[1{,}76|3|6]]",
-    "legende": "N nombre de bits, sinus pleine échelle : environ 6 dB par bit",
+    "legende": "$\\mathrm{SNR}_{\\mathrm{dB}}$ rapport signal sur bruit de quantification (dB), $N$ nombre de bits ; sinus pleine échelle, environ 6 dB par bit",
+    "grandeurs": [
+      {
+        "s": "\\mathrm{SNR}_{\\mathrm{dB}}",
+        "nom": "rapport signal sur bruit",
+        "u": "\\text{dB}"
+      },
+      {
+        "s": "N",
+        "nom": "nombre de bits",
+        "u": ""
+      }
+    ],
     "source": "Fiche OE2.1 ; Fiche OE2.2.1 ; Sujet 2025 E2 Q33"
   },
   {
@@ -239,7 +695,24 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Débit binaire en sortie d'un CAN",
     "tex": "[[D]] = [[n|2^n|\\log_2 n]] \\cdot [[f_e|T_e|2f_e]]",
-    "legende": "D débit (bit/s), n bits par échantillon, f_e fréquence d'échantillonnage",
+    "legende": "$D$ débit (bit/s), $n$ nombre de bits par échantillon, $f_e$ fréquence d'échantillonnage (Hz)",
+    "grandeurs": [
+      {
+        "s": "D",
+        "nom": "débit binaire",
+        "u": "bit\\cdot s^{-1}"
+      },
+      {
+        "s": "n",
+        "nom": "nombre de bits par échantillon",
+        "u": ""
+      },
+      {
+        "s": "f_e",
+        "nom": "fréquence d'échantillonnage",
+        "u": "Hz"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -248,7 +721,29 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Relation de verrouillage d'une PLL",
     "tex": "[[F_{\\mathrm{RF}}]] = \\dfrac{[[N|R|N R]]}{[[R|N|1]]} \\cdot [[F_{\\mathrm{XTAL}}|F_{\\mathrm{RF}}]]",
-    "legende": "N diviseur dans la boucle de retour, R diviseur de référence, F_XTAL fréquence du quartz",
+    "legende": "$F_{\\mathrm{RF}}$ fréquence de sortie du VCO (Hz), $N$ diviseur de la boucle de retour, $R$ diviseur de référence, $F_{\\mathrm{XTAL}}$ fréquence du quartz (Hz)",
+    "grandeurs": [
+      {
+        "s": "F_{\\mathrm{RF}}",
+        "nom": "fréquence de sortie",
+        "u": "Hz"
+      },
+      {
+        "s": "N",
+        "nom": "rang du diviseur de retour",
+        "u": ""
+      },
+      {
+        "s": "R",
+        "nom": "rang du diviseur de référence",
+        "u": ""
+      },
+      {
+        "s": "F_{\\mathrm{XTAL}}",
+        "nom": "fréquence du quartz",
+        "u": "Hz"
+      }
+    ],
     "source": "Fiche OE2.1 ; Sujet 2024 E2 Q40-44"
   },
   {
@@ -257,7 +752,34 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Fréquence de comparaison d'une PLL",
     "tex": "[[F_{\\mathrm{PFD}}]] = \\dfrac{[[F_{\\mathrm{XTAL}}|F_{\\mathrm{RF}}]]}{[[R|N|NR]]} = \\dfrac{[[F_{\\mathrm{RF}}|F_{\\mathrm{XTAL}}]]}{[[N|R|NR]]}",
-    "legende": "Le diviseur R ne fixe que F_PFD : seul N intervient dans la FTBO de la boucle",
+    "legende": "$F_{\\mathrm{PFD}}$ fréquence de comparaison (Hz), $F_{\\mathrm{XTAL}}$ quartz, $F_{\\mathrm{RF}}$ sortie (Hz), $R$ et $N$ diviseurs ; seul $N$ intervient dans la FTBO de la boucle",
+    "grandeurs": [
+      {
+        "s": "F_{\\mathrm{PFD}}",
+        "nom": "fréquence de comparaison",
+        "u": "Hz"
+      },
+      {
+        "s": "F_{\\mathrm{XTAL}}",
+        "nom": "fréquence du quartz",
+        "u": "Hz"
+      },
+      {
+        "s": "F_{\\mathrm{RF}}",
+        "nom": "fréquence de sortie",
+        "u": "Hz"
+      },
+      {
+        "s": "R",
+        "nom": "rang du diviseur de référence",
+        "u": ""
+      },
+      {
+        "s": "N",
+        "nom": "rang du diviseur de retour",
+        "u": ""
+      }
+    ],
     "source": "Fiche OE2.1 ; Sujet 2024 E2 Q44"
   },
   {
@@ -266,7 +788,24 @@
     "notion": "OE2.2.1 Analyse spectrale",
     "nom": "Pulsation fondamentale",
     "tex": "[[\\omega_0]] = \\dfrac{[[2\\pi|\\pi|1]]}{[[T|f|T^2]]} = [[2\\pi f_0|f_0|\\pi f_0]]",
-    "legende": "ω_0 pulsation (rad/s), T période (s), f_0 fréquence fondamentale (Hz)",
+    "legende": "$\\omega_0$ pulsation fondamentale (rad/s), $T$ période (s), $f_0$ fréquence fondamentale (Hz)",
+    "grandeurs": [
+      {
+        "s": "\\omega_0",
+        "nom": "pulsation fondamentale",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "T",
+        "nom": "période",
+        "u": "s"
+      },
+      {
+        "s": "f_0",
+        "nom": "fréquence fondamentale",
+        "u": "Hz"
+      }
+    ],
     "source": "Fiche OE2.2.1"
   },
   {
@@ -274,8 +813,20 @@
     "bloc": "OE2",
     "notion": "OE2.2.1 Analyse spectrale",
     "nom": "Série de Fourier (forme réelle)",
-    "tex": "x(t) = [[a_0|\\frac{a_0}{2}|0]] + \\sum_{n=1}^{+\\infty}\\left([[a_n \\cos(n\\omega_0 t)|a_n \\sin(n\\omega_0 t)]] + [[b_n \\sin(n\\omega_0 t)|b_n \\cos(n\\omega_0 t)]]\\right)",
-    "legende": "a_0 valeur moyenne, a_n et b_n coefficients de Fourier, ω_0 pulsation fondamentale",
+    "tex": "x(t) = [[a_0|0]] + \\sum_{n=1}^{+\\infty}\\left([[a_n \\cos(n\\omega_0 t)|a_n \\sin(n\\omega_0 t)]] + [[b_n \\sin(n\\omega_0 t)|b_n \\cos(n\\omega_0 t)]]\\right)",
+    "legende": "$a_0$ valeur moyenne, $a_n$ et $b_n$ coefficients de Fourier, $\\omega_0$ pulsation fondamentale (rad/s)",
+    "grandeurs": [
+      {
+        "s": "\\omega_0",
+        "nom": "pulsation fondamentale",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "t",
+        "nom": "temps",
+        "u": "s"
+      }
+    ],
     "source": "Fiche OE2.2.1"
   },
   {
@@ -283,17 +834,46 @@
     "bloc": "OE2",
     "notion": "OE2.2.1 Analyse spectrale",
     "nom": "Valeur moyenne (coefficient a_0)",
-    "tex": "[[a_0]] = [[\\dfrac{1}{T}|\\dfrac{2}{T}|T]] \\int_0^T [[x(t)|x^2(t)]]\\,\\mathrm{d}t",
-    "legende": "a_0 valeur moyenne du signal périodique de période T",
+    "tex": "[[a_0]] = [[\\dfrac{1}{T}|\\dfrac{1}{2T}|T]] \\int_0^T [[x(t)|x^2(t)]]\\,\\mathrm{d}t",
+    "legende": "$a_0$ valeur moyenne du signal $x$ de période $T$ (s) (convention $x = a_0 + \\sum \\dots$)",
+    "grandeurs": [
+      {
+        "s": "T",
+        "nom": "période",
+        "u": "s"
+      },
+      {
+        "s": "t",
+        "nom": "temps",
+        "u": "s"
+      }
+    ],
     "source": "Classique programme"
   },
   {
     "id": "oe2-fourier-an",
     "bloc": "OE2",
     "notion": "OE2.2.1 Analyse spectrale",
-    "nom": "Coefficients a_n et b_n",
+    "nom": "Coefficient de Fourier réel (cosinus)",
     "tex": "[[a_n]] = [[\\dfrac{2}{T}|\\dfrac{1}{T}|\\dfrac{1}{2T}]] \\int_0^T x(t)\\,[[\\cos(n\\omega_0 t)|\\sin(n\\omega_0 t)|e^{jn\\omega_0 t}]]\\,\\mathrm{d}t",
-    "legende": "b_n : même expression avec sin(nω_0 t) ; signal pair → b_n = 0, impair → a_n = 0",
+    "legende": "$b_n$ : même expression avec $\\sin(n\\omega_0 t)$ ; signal pair → $b_n = 0$, impair → $a_n = 0$ ; $T$ période (s), $\\omega_0 = 2\\pi/T$",
+    "grandeurs": [
+      {
+        "s": "T",
+        "nom": "période",
+        "u": "s"
+      },
+      {
+        "s": "\\omega_0",
+        "nom": "pulsation fondamentale",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "t",
+        "nom": "temps",
+        "u": "s"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -302,7 +882,19 @@
     "notion": "OE2.2.1 Analyse spectrale",
     "nom": "Série de Fourier (forme complexe)",
     "tex": "x(t) = \\sum_{n=[[-\\infty|0|1]]}^{+\\infty} [[c_n|a_n]]\\,e^{[[j n \\omega_0 t|-j n \\omega_0 t|n \\omega_0 t]]}",
-    "legende": "c_n coefficients complexes (spectre de raies à n f_0)",
+    "legende": "$c_n$ coefficients complexes (spectre de raies à $n f_0$), $\\omega_0$ pulsation fondamentale (rad/s)",
+    "grandeurs": [
+      {
+        "s": "\\omega_0",
+        "nom": "pulsation fondamentale",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "t",
+        "nom": "temps",
+        "u": "s"
+      }
+    ],
     "source": "Fiche OE2.2.1"
   },
   {
@@ -311,7 +903,24 @@
     "notion": "OE2.2.1 Analyse spectrale",
     "nom": "Coefficients de Fourier complexes",
     "tex": "[[c_n]] = [[\\dfrac{1}{T}|\\dfrac{2}{T}|T]] \\int_0^T x(t)\\,e^{[[-jn\\omega_0 t|jn\\omega_0 t|-j\\omega_0 t]]}\\,\\mathrm{d}t",
-    "legende": "c_n = (a_n − j b_n)/2 pour n ≥ 1 ; amplitude ‖c_n‖, phase arg(c_n)",
+    "legende": "$T$ période (s) ; $c_n = (a_n - j b_n)/2$ pour $n \\geq 1$ ; amplitude $\\lvert c_n \\rvert$, phase $\\arg c_n$",
+    "grandeurs": [
+      {
+        "s": "T",
+        "nom": "période",
+        "u": "s"
+      },
+      {
+        "s": "\\omega_0",
+        "nom": "pulsation fondamentale",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "t",
+        "nom": "temps",
+        "u": "s"
+      }
+    ],
     "source": "Fiche OE2.2.1"
   },
   {
@@ -320,7 +929,19 @@
     "notion": "OE2.2.1 Analyse spectrale",
     "nom": "Transformée de Fourier",
     "tex": "[[X(f)]] = \\int_{-\\infty}^{+\\infty} x(t)\\,e^{[[-j2\\pi f t|j2\\pi f t|-j f t]]}\\,\\mathrm{d}[[t|f]]",
-    "legende": "X(f) spectre continu d'un signal apériodique d'énergie finie",
+    "legende": "$X(f)$ spectre continu d'un signal $x(t)$ apériodique d'énergie finie, $f$ fréquence (Hz), $t$ temps (s)",
+    "grandeurs": [
+      {
+        "s": "f",
+        "nom": "fréquence",
+        "u": "Hz"
+      },
+      {
+        "s": "t",
+        "nom": "temps",
+        "u": "s"
+      }
+    ],
     "source": "Fiche OE2.2.1"
   },
   {
@@ -329,7 +950,19 @@
     "notion": "OE2.2.1 Analyse spectrale",
     "nom": "Transformée de Fourier inverse",
     "tex": "[[x(t)]] = \\int_{-\\infty}^{+\\infty} X(f)\\,e^{[[j2\\pi f t|-j2\\pi f t|j f t]]}\\,\\mathrm{d}[[f|t|\\omega]]",
-    "legende": "Pas de facteur 1/2π en variable f (contrairement à la variable ω)",
+    "legende": "Pas de facteur $1/2\\pi$ en variable $f$ (contrairement à la variable $\\omega$) ; $f$ fréquence (Hz), $t$ temps (s)",
+    "grandeurs": [
+      {
+        "s": "f",
+        "nom": "fréquence",
+        "u": "Hz"
+      },
+      {
+        "s": "t",
+        "nom": "temps",
+        "u": "s"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -338,7 +971,19 @@
     "notion": "OE2.2.1 Analyse spectrale",
     "nom": "Théorème de Parseval (énergie)",
     "tex": "\\int_{-\\infty}^{+\\infty} [[\\lvert x(t) \\rvert^2|\\lvert x(t) \\rvert]]\\,\\mathrm{d}t = \\int_{-\\infty}^{+\\infty} [[\\lvert X(f) \\rvert^2|\\lvert X(f) \\rvert|2\\pi\\lvert X(f) \\rvert^2]]\\,\\mathrm{d}f",
-    "legende": "Conservation de l'énergie entre domaines temporel et fréquentiel",
+    "legende": "Conservation de l'énergie entre domaines temporel et fréquentiel ($x$ signal, $X$ sa transformée de Fourier)",
+    "grandeurs": [
+      {
+        "s": "t",
+        "nom": "temps",
+        "u": "s"
+      },
+      {
+        "s": "f",
+        "nom": "fréquence",
+        "u": "Hz"
+      }
+    ],
     "source": "Fiche OE2.2.1"
   },
   {
@@ -347,7 +992,14 @@
     "notion": "OE2.2.1 Analyse spectrale",
     "nom": "Théorème de Parseval (puissance d'un signal périodique)",
     "tex": "[[\\dfrac{1}{T}|\\dfrac{2}{T}|T]] \\int_0^T \\lvert x(t) \\rvert^2\\,\\mathrm{d}t = \\sum_{n=-\\infty}^{+\\infty} [[\\lvert c_n \\rvert^2|\\lvert c_n \\rvert|\\frac{\\lvert c_n \\rvert^2}{2}]]",
-    "legende": "Puissance moyenne = somme des puissances des raies",
+    "legende": "Puissance moyenne = somme des puissances des raies ; $T$ période (s), $c_n$ coefficients de Fourier complexes",
+    "grandeurs": [
+      {
+        "s": "T",
+        "nom": "période",
+        "u": "s"
+      }
+    ],
     "source": "Fiche OE2.2.1"
   },
   {
@@ -356,7 +1008,8 @@
     "notion": "OE2.2.1 Analyse spectrale",
     "nom": "Valeur efficace d'un signal périodique",
     "tex": "[[X_{\\mathrm{eff}}^2]] = [[a_0^2|\\frac{a_0^2}{2}]] + \\sum_{n \\geq 1} [[\\dfrac{a_n^2 + b_n^2}{2}|a_n^2 + b_n^2|\\sqrt{a_n^2 + b_n^2}]]",
-    "legende": "Forme réelle de Parseval : chaque harmonique d'amplitude A_n contribue A_n²/2",
+    "legende": "$X_{\\mathrm{eff}}$ valeur efficace, $a_0$ valeur moyenne, $a_n$, $b_n$ coefficients de Fourier : chaque harmonique d'amplitude $A_n$ contribue $A_n^2/2$",
+    "grandeurs": [],
     "source": "Classique programme"
   },
   {
@@ -365,7 +1018,24 @@
     "notion": "OE2.2.1 Analyse spectrale",
     "nom": "Spectre d'un signal carré symétrique ±E",
     "tex": "[[b_n]] = \\dfrac{[[4E|2E|E]]}{[[n\\pi|n^2\\pi|\\pi]]} \\quad (n\\ [[\\text{impair}|\\text{pair}|\\text{quelconque}]])",
-    "legende": "Signal carré impair d'amplitude E : harmoniques impaires uniquement, décroissance en 1/n",
+    "legende": "$b_n$ amplitude de l'harmonique de rang $n$, $E$ amplitude du signal carré impair (V) ; harmoniques impaires seulement, décroissance en $1/n$",
+    "grandeurs": [
+      {
+        "s": "b_n",
+        "nom": "amplitude de l'harmonique de rang n",
+        "u": "V"
+      },
+      {
+        "s": "E",
+        "nom": "amplitude du signal carré",
+        "u": "V"
+      },
+      {
+        "s": "n",
+        "nom": "rang de l'harmonique",
+        "u": ""
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -374,7 +1044,34 @@
     "notion": "OE2.2.1 Analyse spectrale",
     "nom": "DSP du bruit thermique (Johnson-Nyquist)",
     "tex": "\\dfrac{[[\\overline{v_n^2}|v_n]]}{[[B|B^2|\\sqrt{B}]]} = [[4|2|1]]\\,[[k|q]]\\,[[T|T^2]]\\,[[R|\\frac{1}{R}]]",
-    "legende": "v_n tension de bruit (V), B bande (Hz), k = 1,38·10⁻²³ J/K, T température (K), R résistance (Ω) — DSP monolatérale en V²/Hz",
+    "legende": "$\\overline{v_n^2}$ carré moyen de la tension de bruit ($\\mathrm{V^2}$), $B$ bande (Hz), $k = 1{,}38\\cdot10^{-23}$ J/K, $T$ température (K), $R$ résistance (Ω)",
+    "grandeurs": [
+      {
+        "s": "\\overline{v_n^2}",
+        "nom": "carré moyen de la tension de bruit",
+        "u": "V^2"
+      },
+      {
+        "s": "B",
+        "nom": "bande passante",
+        "u": "Hz"
+      },
+      {
+        "s": "k",
+        "nom": "constante de Boltzmann",
+        "u": "J\\cdot K^{-1}"
+      },
+      {
+        "s": "T",
+        "nom": "température",
+        "u": "K"
+      },
+      {
+        "s": "R",
+        "nom": "résistance",
+        "u": "\\Omega"
+      }
+    ],
     "source": "Fiche OE2.2.1 ; Sujet 2025 E2 Q8"
   },
   {
@@ -383,7 +1080,34 @@
     "notion": "OE2.2.1 Analyse spectrale",
     "nom": "Puissance de bruit thermique sur une bande équivalente",
     "tex": "[[\\sigma_b^2]] = [[4kTR|2kTR|kTR]]\\,[[B_e|\\sqrt{B_e}|B_e^2]]",
-    "legende": "σ_b² variance (V²) de la tension de bruit, B_e bande équivalente de bruit (Hz)",
+    "legende": "$\\sigma_b^2$ variance de la tension de bruit ($\\mathrm{V^2}$), $k$ constante de Boltzmann, $T$ température (K), $R$ résistance (Ω), $B_e$ bande équivalente de bruit (Hz)",
+    "grandeurs": [
+      {
+        "s": "\\sigma_b^2",
+        "nom": "variance de la tension de bruit",
+        "u": "V^2"
+      },
+      {
+        "s": "k",
+        "nom": "constante de Boltzmann",
+        "u": "J\\cdot K^{-1}"
+      },
+      {
+        "s": "T",
+        "nom": "température",
+        "u": "K"
+      },
+      {
+        "s": "R",
+        "nom": "résistance",
+        "u": "\\Omega"
+      },
+      {
+        "s": "B_e",
+        "nom": "bande équivalente de bruit",
+        "u": "Hz"
+      }
+    ],
     "source": "Fiche OE2.2.1"
   },
   {
@@ -392,7 +1116,29 @@
     "notion": "OE2.2.1 Analyse spectrale",
     "nom": "Densité de tension de bruit thermique",
     "tex": "[[e_n]] = [[\\sqrt{4kTR}|4kTR|\\sqrt{2kTR}]] \\approx [[4|1|40]]\\ \\mathrm{nV}/\\sqrt{\\mathrm{Hz}}\\ \\text{pour } 1\\ \\mathrm{k}\\Omega",
-    "legende": "e_n densité spectrale de tension (V/√Hz), à T = 290 K",
+    "legende": "$e_n$ densité spectrale de tension de bruit ($\\mathrm{V/\\sqrt{Hz}}$), $k$ constante de Boltzmann, $T$ température (K, ici 290 K), $R$ résistance (Ω)",
+    "grandeurs": [
+      {
+        "s": "e_n",
+        "nom": "densité spectrale de tension de bruit",
+        "u": "V\\cdot Hz^{-1/2}"
+      },
+      {
+        "s": "k",
+        "nom": "constante de Boltzmann",
+        "u": "J\\cdot K^{-1}"
+      },
+      {
+        "s": "T",
+        "nom": "température",
+        "u": "K"
+      },
+      {
+        "s": "R",
+        "nom": "résistance",
+        "u": "\\Omega"
+      }
+    ],
     "source": "Fiche OE2.2.1"
   },
   {
@@ -400,8 +1146,30 @@
     "bloc": "OE2",
     "notion": "OE2.2.1 Analyse spectrale",
     "nom": "Puissance de bruit disponible",
-    "tex": "[[P_n]] = [[k|4k|q]]\\,[[T|T_0]]\\,[[B|B^2]]",
-    "legende": "Puissance délivrée sur charge adaptée (W), indépendante de R ; −174 dBm/Hz à 290 K",
+    "tex": "[[P_n]] = [[k|4k|q]]\\,[[T|T^2]]\\,[[B|B^2|\\sqrt{B}]]",
+    "legende": "$P_n$ puissance de bruit disponible sur charge adaptée (W), indépendante de $R$ ; $k$ constante de Boltzmann, $T$ température (K), $B$ bande (Hz) ; $-174$ dBm/Hz à 290 K",
+    "grandeurs": [
+      {
+        "s": "P_n",
+        "nom": "puissance de bruit disponible",
+        "u": "W"
+      },
+      {
+        "s": "k",
+        "nom": "constante de Boltzmann",
+        "u": "J\\cdot K^{-1}"
+      },
+      {
+        "s": "T",
+        "nom": "température",
+        "u": "K"
+      },
+      {
+        "s": "B",
+        "nom": "bande passante",
+        "u": "Hz"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -410,7 +1178,29 @@
     "notion": "OE2.2.1 Analyse spectrale",
     "nom": "Bruit de grenaille (Schottky)",
     "tex": "[[\\overline{i_n^2}]] = [[2|4|1]]\\,[[q|k]]\\,[[I|I^2]]\\,[[B|\\sqrt{B}]]",
-    "legende": "q = 1,6·10⁻¹⁹ C charge élémentaire, I courant continu (A), B bande (Hz)",
+    "legende": "$\\overline{i_n^2}$ carré moyen du courant de bruit ($\\mathrm{A^2}$), $q = 1{,}6\\cdot10^{-19}$ C charge élémentaire, $I$ courant continu (A), $B$ bande (Hz)",
+    "grandeurs": [
+      {
+        "s": "\\overline{i_n^2}",
+        "nom": "carré moyen du courant de bruit",
+        "u": "A^2"
+      },
+      {
+        "s": "q",
+        "nom": "charge élémentaire",
+        "u": "C"
+      },
+      {
+        "s": "I",
+        "nom": "courant continu",
+        "u": "A"
+      },
+      {
+        "s": "B",
+        "nom": "bande passante",
+        "u": "Hz"
+      }
+    ],
     "source": "Fiche OE2.2.1"
   },
   {
@@ -419,7 +1209,19 @@
     "notion": "OE2.2.1 Analyse spectrale",
     "nom": "Bande équivalente de bruit d'un passe-bas du 1er ordre",
     "tex": "[[B_e]] = [[\\dfrac{\\pi}{2}|2\\pi|\\dfrac{1}{2}|\\dfrac{2}{\\pi}]]\\,[[f_c|\\omega_c]]",
-    "legende": "f_c fréquence de coupure à −3 dB",
+    "legende": "$B_e$ bande équivalente de bruit (Hz), $f_c$ fréquence de coupure à $-3$ dB (Hz)",
+    "grandeurs": [
+      {
+        "s": "B_e",
+        "nom": "bande équivalente de bruit",
+        "u": "Hz"
+      },
+      {
+        "s": "f_c",
+        "nom": "fréquence de coupure",
+        "u": "Hz"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -428,7 +1230,24 @@
     "notion": "OE2.2.1 Analyse spectrale",
     "nom": "Facteur de bruit",
     "tex": "[[F]] = \\dfrac{[[\\mathrm{SNR}_{\\mathrm{in}}|\\mathrm{SNR}_{\\mathrm{out}}]]}{[[\\mathrm{SNR}_{\\mathrm{out}}|\\mathrm{SNR}_{\\mathrm{in}}]]} \\geq [[1|0]]",
-    "legende": "F facteur de bruit linéaire d'un quadripôle (F = 1 : sans bruit propre)",
+    "legende": "$F$ facteur de bruit linéaire d'un quadripôle ($F = 1$ : sans bruit propre), rapports signal sur bruit en linéaire",
+    "grandeurs": [
+      {
+        "s": "F",
+        "nom": "facteur de bruit",
+        "u": ""
+      },
+      {
+        "s": "\\mathrm{SNR}_{\\mathrm{in}}",
+        "nom": "rapport signal sur bruit en entrée",
+        "u": ""
+      },
+      {
+        "s": "\\mathrm{SNR}_{\\mathrm{out}}",
+        "nom": "rapport signal sur bruit en sortie",
+        "u": ""
+      }
+    ],
     "source": "Fiche OE2.2.1"
   },
   {
@@ -437,7 +1256,19 @@
     "notion": "OE2.2.1 Analyse spectrale",
     "nom": "Facteur de bruit en dB",
     "tex": "[[\\mathrm{NF}]] = [[10|20]]\\,[[\\log_{10}|\\ln]]\\,([[F|F-1|\\frac{1}{F}]])",
-    "legende": "NF (dB), F facteur de bruit linéaire",
+    "legende": "$\\mathrm{NF}$ facteur de bruit en dB, $F$ facteur de bruit linéaire",
+    "grandeurs": [
+      {
+        "s": "\\mathrm{NF}",
+        "nom": "facteur de bruit en décibels",
+        "u": "\\text{dB}"
+      },
+      {
+        "s": "F",
+        "nom": "facteur de bruit linéaire",
+        "u": ""
+      }
+    ],
     "source": "Fiche OE2.2.1"
   },
   {
@@ -446,7 +1277,39 @@
     "notion": "OE2.2.1 Analyse spectrale",
     "nom": "Formule de Friis (bruit en cascade)",
     "tex": "[[F_{\\mathrm{tot}}]] = F_1 + \\dfrac{[[F_2 - 1|F_2|F_2 + 1]]}{[[G_1|G_2|F_1]]} + \\dfrac{F_3 - 1}{[[G_1 G_2|G_2|G_1 + G_2]]} + \\dots",
-    "legende": "F_i facteurs de bruit et G_i gains disponibles en linéaire : le 1er étage (LNA) domine",
+    "legende": "$F_i$ facteurs de bruit et $G_i$ gains disponibles des étages, en linéaire : le 1er étage (LNA) domine",
+    "grandeurs": [
+      {
+        "s": "F_{\\mathrm{tot}}",
+        "nom": "facteur de bruit total",
+        "u": ""
+      },
+      {
+        "s": "F_1",
+        "nom": "facteur de bruit du 1er étage",
+        "u": ""
+      },
+      {
+        "s": "F_2",
+        "nom": "facteur de bruit du 2e étage",
+        "u": ""
+      },
+      {
+        "s": "F_3",
+        "nom": "facteur de bruit du 3e étage",
+        "u": ""
+      },
+      {
+        "s": "G_1",
+        "nom": "gain du 1er étage",
+        "u": ""
+      },
+      {
+        "s": "G_2",
+        "nom": "gain du 2e étage",
+        "u": ""
+      }
+    ],
     "source": "Fiche OE2.2.1"
   },
   {
@@ -454,8 +1317,25 @@
     "bloc": "OE2",
     "notion": "OE2.2.1 Analyse spectrale",
     "nom": "Température de bruit équivalente",
-    "tex": "[[T_e]] = [[T_0|T]]\\,([[F - 1|F|F + 1|1 - F]]) \\quad ; \\quad T_0 = [[290|273|300]]\\ \\mathrm{K}",
-    "legende": "T_e température de bruit (K), F facteur de bruit linéaire, T_0 référence normalisée",
+    "tex": "[[T_e]] = [[T_0|T]]\\,([[F - 1|F|F + 1|1 - F]]) \\quad ; \\quad T_0 = [[290|273]]\\ \\mathrm{K}",
+    "legende": "$T_e$ température équivalente de bruit (K), $F$ facteur de bruit linéaire, $T_0$ température de référence normalisée (K)",
+    "grandeurs": [
+      {
+        "s": "T_e",
+        "nom": "température équivalente de bruit",
+        "u": "K"
+      },
+      {
+        "s": "T_0",
+        "nom": "température de référence",
+        "u": "K"
+      },
+      {
+        "s": "F",
+        "nom": "facteur de bruit linéaire",
+        "u": ""
+      }
+    ],
     "source": "Fiche OE2.2.1"
   },
   {
@@ -464,7 +1344,24 @@
     "notion": "OE2.2.1 Analyse spectrale",
     "nom": "Rapport signal sur bruit en dB",
     "tex": "[[\\mathrm{SNR}_{\\mathrm{dB}}]] = [[10|20]]\\,\\log_{10}\\left(\\dfrac{[[P_{\\mathrm{signal}}|P_{\\mathrm{bruit}}]]}{[[P_{\\mathrm{bruit}}|P_{\\mathrm{signal}}]]}\\right)",
-    "legende": "Rapport de puissances (20 log pour un rapport de valeurs efficaces de tensions)",
+    "legende": "$P_{\\mathrm{signal}}$ et $P_{\\mathrm{bruit}}$ puissances (W) ; $20\\log_{10}$ pour un rapport de valeurs efficaces de tensions",
+    "grandeurs": [
+      {
+        "s": "\\mathrm{SNR}_{\\mathrm{dB}}",
+        "nom": "rapport signal sur bruit",
+        "u": "\\text{dB}"
+      },
+      {
+        "s": "P_{\\mathrm{signal}}",
+        "nom": "puissance du signal",
+        "u": "W"
+      },
+      {
+        "s": "P_{\\mathrm{bruit}}",
+        "nom": "puissance du bruit",
+        "u": "W"
+      }
+    ],
     "source": "Fiche OE2.2.1"
   },
   {
@@ -473,7 +1370,19 @@
     "notion": "OE2.2.1 Analyse spectrale",
     "nom": "Transformée de Fourier discrète (TFD)",
     "tex": "[[X_k]] = \\sum_{n=0}^{[[N-1|N|N+1]]} x_n\\,e^{[[-j\\frac{2\\pi k n}{N}|j\\frac{2\\pi k n}{N}|-j 2\\pi k n]]}",
-    "legende": "N nombre d'échantillons, k indice fréquentiel (raie à f = k·f_e/N)",
+    "legende": "$N$ nombre d'échantillons $x_n$, $k$ indice fréquentiel (raie à $f = k f_e/N$)",
+    "grandeurs": [
+      {
+        "s": "N",
+        "nom": "nombre d'échantillons",
+        "u": ""
+      },
+      {
+        "s": "k",
+        "nom": "indice fréquentiel",
+        "u": ""
+      }
+    ],
     "source": "Classique programme ; Sujet 2022 E2 partie B1"
   },
   {
@@ -482,7 +1391,29 @@
     "notion": "OE2.2.1 Analyse spectrale",
     "nom": "Résolution fréquentielle d'une TFD/FFT",
     "tex": "[[\\Delta f]] = \\dfrac{[[f_e|1|T_e]]}{[[N|2N|N-1]]} = \\dfrac{1}{[[N T_e|T_e|2NT_e]]}",
-    "legende": "f_e fréquence d'échantillonnage, N nombre de points, N·T_e durée d'acquisition",
+    "legende": "$\\Delta f$ résolution (Hz), $f_e$ fréquence d'échantillonnage (Hz), $T_e$ période d'échantillonnage (s), $N$ nombre de points ; $N T_e$ durée d'acquisition",
+    "grandeurs": [
+      {
+        "s": "\\Delta f",
+        "nom": "résolution fréquentielle",
+        "u": "Hz"
+      },
+      {
+        "s": "f_e",
+        "nom": "fréquence d'échantillonnage",
+        "u": "Hz"
+      },
+      {
+        "s": "N",
+        "nom": "nombre de points",
+        "u": ""
+      },
+      {
+        "s": "T_e",
+        "nom": "période d'échantillonnage",
+        "u": "s"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -491,7 +1422,14 @@
     "notion": "OE2.2.1 Analyse spectrale",
     "nom": "Coût de la TFD directe et de la FFT",
     "tex": "\\text{TFD} : [[N^2|N|N\\log_2 N]] \\quad ; \\quad \\text{FFT} : [[\\dfrac{N}{2}\\log_2 N|N^2|N\\sqrt{N}]]\\ \\text{multiplications complexes}",
-    "legende": "N nombre de points (puissance de 2 pour la FFT radix-2)",
+    "legende": "$N$ nombre de points (puissance de 2 pour la FFT radix-2)",
+    "grandeurs": [
+      {
+        "s": "N",
+        "nom": "nombre de points",
+        "u": ""
+      }
+    ],
     "source": "Classique programme ; Sujet 2022 E2 partie B1"
   },
   {
@@ -500,7 +1438,34 @@
     "notion": "OE2.2.2 Communications et radiofréquences",
     "nom": "Signal AM avec porteuse",
     "tex": "[[s(t)]] = A\\left\\lbrack [[1|0]] + [[m|\\frac{1}{m}|m^2]]\\,x(t)\\right\\rbrack [[\\cos(2\\pi f_p t)|\\cos(2\\pi f_m t)|\\cos(f_p t)]]",
-    "legende": "A amplitude, m indice de modulation, x(t) message normalisé, f_p fréquence porteuse",
+    "legende": "$A$ amplitude (V), $m$ indice de modulation, $x(t)$ message normalisé ($\\lvert x \\rvert \\leq 1$), $f_p$ fréquence porteuse (Hz)",
+    "grandeurs": [
+      {
+        "s": "s",
+        "nom": "signal modulé",
+        "u": "V"
+      },
+      {
+        "s": "A",
+        "nom": "amplitude de la porteuse",
+        "u": "V"
+      },
+      {
+        "s": "m",
+        "nom": "indice de modulation",
+        "u": ""
+      },
+      {
+        "s": "f_p",
+        "nom": "fréquence porteuse",
+        "u": "Hz"
+      },
+      {
+        "s": "t",
+        "nom": "temps",
+        "u": "s"
+      }
+    ],
     "source": "Fiche OE2.2.2"
   },
   {
@@ -509,7 +1474,24 @@
     "notion": "OE2.2.2 Communications et radiofréquences",
     "nom": "Indice de modulation AM (oscilloscope)",
     "tex": "[[m]] = \\dfrac{[[A_{\\max} - A_{\\min}|A_{\\max} + A_{\\min}|A_{\\max}]]}{[[A_{\\max} + A_{\\min}|A_{\\max} - A_{\\min}|A_{\\min}]]}",
-    "legende": "A_max, A_min enveloppe max/min ; m > 1 : surmodulation",
+    "legende": "$A_{\\max}$ et $A_{\\min}$ amplitudes maximale et minimale de l'enveloppe (V) ; $m > 1$ : surmodulation",
+    "grandeurs": [
+      {
+        "s": "m",
+        "nom": "indice de modulation",
+        "u": ""
+      },
+      {
+        "s": "A_{\\max}",
+        "nom": "amplitude maximale de l'enveloppe",
+        "u": "V"
+      },
+      {
+        "s": "A_{\\min}",
+        "nom": "amplitude minimale de l'enveloppe",
+        "u": "V"
+      }
+    ],
     "source": "Fiche OE2.2.2"
   },
   {
@@ -518,7 +1500,24 @@
     "notion": "OE2.2.2 Communications et radiofréquences",
     "nom": "Bande occupée DSB et SSB",
     "tex": "[[B_{\\mathrm{DSB}}]] = [[2|1|4]]\\,f_m \\quad ; \\quad [[B_{\\mathrm{SSB}}]] = [[f_m|2f_m|\\frac{f_m}{2}]]",
-    "legende": "f_m fréquence maximale du message ; raies à f_p ± f_m",
+    "legende": "$f_m$ fréquence maximale du message (Hz) ; raies à $f_p \\pm f_m$",
+    "grandeurs": [
+      {
+        "s": "B_{\\mathrm{DSB}}",
+        "nom": "bande occupée double bande",
+        "u": "Hz"
+      },
+      {
+        "s": "B_{\\mathrm{SSB}}",
+        "nom": "bande occupée bande latérale unique",
+        "u": "Hz"
+      },
+      {
+        "s": "f_m",
+        "nom": "fréquence maximale du message",
+        "u": "Hz"
+      }
+    ],
     "source": "Fiche OE2.2.2"
   },
   {
@@ -527,7 +1526,24 @@
     "notion": "OE2.2.2 Communications et radiofréquences",
     "nom": "Puissance d'un signal AM (message sinusoïdal)",
     "tex": "[[P_t]] = [[P_p|P_m]]\\left(1 + [[\\dfrac{m^2}{2}|\\dfrac{m}{2}|m^2|\\dfrac{m^2}{4}]]\\right)",
-    "legende": "P_t puissance totale, P_p puissance de la porteuse, m indice ; chaque bande latérale porte m²P_p/4",
+    "legende": "$P_t$ puissance totale, $P_p$ puissance de la porteuse (W), $m$ indice de modulation ; chaque bande latérale porte $m^2 P_p/4$",
+    "grandeurs": [
+      {
+        "s": "P_t",
+        "nom": "puissance totale",
+        "u": "W"
+      },
+      {
+        "s": "P_p",
+        "nom": "puissance de la porteuse",
+        "u": "W"
+      },
+      {
+        "s": "m",
+        "nom": "indice de modulation",
+        "u": ""
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -536,7 +1552,19 @@
     "notion": "OE2.2.2 Communications et radiofréquences",
     "nom": "Rendement de modulation AM",
     "tex": "[[\\eta]] = \\dfrac{[[m^2|m|2m^2]]}{[[2 + m^2|1 + m^2|2]]}",
-    "legende": "Part de puissance utile dans les bandes latérales (max 1/3 pour m = 1)",
+    "legende": "$\\eta$ part de la puissance dans les bandes latérales, $m$ indice de modulation (max $1/3$ pour $m = 1$)",
+    "grandeurs": [
+      {
+        "s": "\\eta",
+        "nom": "rendement de modulation",
+        "u": ""
+      },
+      {
+        "s": "m",
+        "nom": "indice de modulation",
+        "u": ""
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -545,7 +1573,39 @@
     "notion": "OE2.2.2 Communications et radiofréquences",
     "nom": "Signal FM (message sinusoïdal)",
     "tex": "[[s(t)]] = A\\cos\\left(2\\pi [[f_p|f_m]] t + [[\\beta|m|\\Delta f]]\\,[[\\sin(2\\pi f_m t)|\\cos(2\\pi f_p t)]]\\right)",
-    "legende": "f_p porteuse, f_m fréquence du modulant, β indice de modulation FM",
+    "legende": "$A$ amplitude, $f_p$ fréquence porteuse, $f_m$ fréquence du message $\\cos(2\\pi f_m t)$ (Hz), $\\beta$ indice de modulation",
+    "grandeurs": [
+      {
+        "s": "s",
+        "nom": "signal modulé",
+        "u": "V"
+      },
+      {
+        "s": "A",
+        "nom": "amplitude",
+        "u": "V"
+      },
+      {
+        "s": "f_p",
+        "nom": "fréquence porteuse",
+        "u": "Hz"
+      },
+      {
+        "s": "\\beta",
+        "nom": "indice de modulation FM",
+        "u": ""
+      },
+      {
+        "s": "f_m",
+        "nom": "fréquence du modulant",
+        "u": "Hz"
+      },
+      {
+        "s": "t",
+        "nom": "temps",
+        "u": "s"
+      }
+    ],
     "source": "Fiche OE2.2.2"
   },
   {
@@ -554,7 +1614,24 @@
     "notion": "OE2.2.2 Communications et radiofréquences",
     "nom": "Indice de modulation FM",
     "tex": "[[\\beta]] = \\dfrac{[[\\Delta f|f_m|f_p]]}{[[f_m|\\Delta f|f_p]]}",
-    "legende": "Δf excursion maximale de fréquence (Hz), f_m fréquence du signal modulant",
+    "legende": "$\\Delta f$ excursion maximale de fréquence (Hz), $f_m$ fréquence du signal modulant (Hz)",
+    "grandeurs": [
+      {
+        "s": "\\beta",
+        "nom": "indice de modulation FM",
+        "u": ""
+      },
+      {
+        "s": "\\Delta f",
+        "nom": "excursion maximale de fréquence",
+        "u": "Hz"
+      },
+      {
+        "s": "f_m",
+        "nom": "fréquence du modulant",
+        "u": "Hz"
+      }
+    ],
     "source": "Fiche OE2.2.2"
   },
   {
@@ -563,7 +1640,24 @@
     "notion": "OE2.2.2 Communications et radiofréquences",
     "nom": "Règle de Carson",
     "tex": "[[B_{\\mathrm{Carson}}]] = [[2|1|4]]\\left([[\\Delta f|\\beta]] + [[f_m|f_p|2f_m]]\\right)",
-    "legende": "Bande contenant ≈ 98 % de la puissance ; Δf excursion, f_m fréquence modulante",
+    "legende": "$B_{\\mathrm{Carson}}$ bande contenant ≈ 98 % de la puissance (Hz), $\\Delta f$ excursion de fréquence, $f_m$ fréquence modulante (Hz)",
+    "grandeurs": [
+      {
+        "s": "B_{\\mathrm{Carson}}",
+        "nom": "bande occupée",
+        "u": "Hz"
+      },
+      {
+        "s": "\\Delta f",
+        "nom": "excursion maximale de fréquence",
+        "u": "Hz"
+      },
+      {
+        "s": "f_m",
+        "nom": "fréquence du modulant",
+        "u": "Hz"
+      }
+    ],
     "source": "Fiche OE2.2.2"
   },
   {
@@ -572,7 +1666,24 @@
     "notion": "OE2.2.2 Communications et radiofréquences",
     "nom": "Règle de Carson (forme en β)",
     "tex": "[[B_{\\mathrm{Carson}}]] = [[2f_m|f_m|2\\Delta f]]\\,([[\\beta + 1|\\beta|2\\beta + 1]])",
-    "legende": "β = Δf/f_m indice de modulation",
+    "legende": "$\\beta = \\Delta f/f_m$ indice de modulation, $f_m$ fréquence modulante (Hz)",
+    "grandeurs": [
+      {
+        "s": "B_{\\mathrm{Carson}}",
+        "nom": "bande occupée",
+        "u": "Hz"
+      },
+      {
+        "s": "f_m",
+        "nom": "fréquence du modulant",
+        "u": "Hz"
+      },
+      {
+        "s": "\\beta",
+        "nom": "indice de modulation FM",
+        "u": ""
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -581,7 +1692,24 @@
     "notion": "OE2.2.2 Communications et radiofréquences",
     "nom": "Débit binaire et rapidité de modulation",
     "tex": "[[D_b]] = [[D_s|B]] \\cdot [[\\log_2 M|M|\\log_{10} M|2^M]]",
-    "legende": "D_b débit (bit/s), D_s rapidité de modulation (bauds), M nombre d'états de la constellation",
+    "legende": "$D_b$ débit binaire (bit/s), $D_s$ rapidité de modulation (bauds), $M$ nombre d'états de la constellation (valence)",
+    "grandeurs": [
+      {
+        "s": "D_b",
+        "nom": "débit binaire",
+        "u": "bit\\cdot s^{-1}"
+      },
+      {
+        "s": "D_s",
+        "nom": "rapidité de modulation",
+        "u": "\\text{Bd}"
+      },
+      {
+        "s": "M",
+        "nom": "valence",
+        "u": ""
+      }
+    ],
     "source": "Fiche OE2.2.2"
   },
   {
@@ -589,8 +1717,20 @@
     "bloc": "OE2",
     "notion": "OE2.2.2 Communications et radiofréquences",
     "nom": "Rapidité de modulation maximale (critère de Nyquist)",
-    "tex": "[[D_{s,\\max}]] = [[2|1|4]]\\,[[B|f_e]]",
-    "legende": "B bande passante du canal (Hz), D_s en bauds (sans interférence entre symboles)",
+    "tex": "[[D_{s,\\max}]] = [[2|4|\\frac{1}{2}]]\\,[[B|f_e]]",
+    "legende": "$D_{s,\\max}$ rapidité maximale sans interférence entre symboles (bauds), $B$ bande passante d'un canal en bande de base (Hz)",
+    "grandeurs": [
+      {
+        "s": "D_{s,\\max}",
+        "nom": "rapidité de modulation maximale",
+        "u": "\\text{Bd}"
+      },
+      {
+        "s": "B",
+        "nom": "bande passante du canal",
+        "u": "Hz"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -599,7 +1739,29 @@
     "notion": "OE2.2.2 Communications et radiofréquences",
     "nom": "Capacité de Shannon",
     "tex": "[[C]] = [[B|2B]]\\,[[\\log_2|\\log_{10}|\\ln]]\\left([[1 + \\dfrac{S}{N}|\\dfrac{S}{N}|1 + \\dfrac{N}{S}]]\\right)",
-    "legende": "C capacité (bit/s), B bande passante (Hz), S/N rapport signal/bruit linéaire",
+    "legende": "$C$ capacité (bit/s), $B$ bande passante (Hz), $S/N$ rapport signal sur bruit en linéaire (pas en dB)",
+    "grandeurs": [
+      {
+        "s": "C",
+        "nom": "capacité du canal",
+        "u": "bit\\cdot s^{-1}"
+      },
+      {
+        "s": "B",
+        "nom": "bande passante",
+        "u": "Hz"
+      },
+      {
+        "s": "S",
+        "nom": "puissance du signal",
+        "u": "W"
+      },
+      {
+        "s": "N",
+        "nom": "puissance du bruit",
+        "u": "W"
+      }
+    ],
     "source": "Fiche OE2.2.2"
   },
   {
@@ -608,7 +1770,24 @@
     "notion": "OE2.2.2 Communications et radiofréquences",
     "nom": "Coefficient de réflexion",
     "tex": "[[\\Gamma]] = \\dfrac{[[Z_L - Z_0|Z_0 - Z_L|Z_L + Z_0]]}{[[Z_L + Z_0|Z_L - Z_0|Z_0]]}",
-    "legende": "Z_L impédance de charge, Z_0 impédance caractéristique (50 Ω RF, 75 Ω vidéo)",
+    "legende": "$\\Gamma$ coefficient de réflexion en tension, $Z_L$ impédance de charge, $Z_0$ impédance caractéristique (Ω ; 50 Ω en RF, 75 Ω en vidéo)",
+    "grandeurs": [
+      {
+        "s": "\\Gamma",
+        "nom": "coefficient de réflexion",
+        "u": ""
+      },
+      {
+        "s": "Z_L",
+        "nom": "impédance de charge",
+        "u": "\\Omega"
+      },
+      {
+        "s": "Z_0",
+        "nom": "impédance caractéristique",
+        "u": "\\Omega"
+      }
+    ],
     "source": "Fiche OE2.2.2"
   },
   {
@@ -617,7 +1796,19 @@
     "notion": "OE2.2.2 Communications et radiofréquences",
     "nom": "Rapport d'onde stationnaire",
     "tex": "[[\\mathrm{ROS}]] = \\dfrac{[[1 + \\lvert\\Gamma\\rvert|1 - \\lvert\\Gamma\\rvert|\\lvert\\Gamma\\rvert]]}{[[1 - \\lvert\\Gamma\\rvert|1 + \\lvert\\Gamma\\rvert|1 - \\lvert\\Gamma\\rvert^2]]}",
-    "legende": "ROS ≥ 1 ; ≤ 1,5 très bonne adaptation, ≤ 2 acceptable",
+    "legende": "$\\Gamma$ coefficient de réflexion ; $\\mathrm{ROS} \\geq 1$, $\\leq 1{,}5$ très bonne adaptation, $\\leq 2$ acceptable",
+    "grandeurs": [
+      {
+        "s": "\\mathrm{ROS}",
+        "nom": "rapport d'onde stationnaire",
+        "u": ""
+      },
+      {
+        "s": "\\Gamma",
+        "nom": "coefficient de réflexion",
+        "u": ""
+      }
+    ],
     "source": "Fiche OE2.2.2"
   },
   {
@@ -625,8 +1816,30 @@
     "bloc": "OE2",
     "notion": "OE2.2.2 Communications et radiofréquences",
     "nom": "Puissance réfléchie et affaiblissement de réflexion",
-    "tex": "\\dfrac{[[P_r]]}{P_i} = [[\\lvert\\Gamma\\rvert^2|\\lvert\\Gamma\\rvert|\\sqrt{\\lvert\\Gamma\\rvert}]] \\quad ; \\quad \\mathrm{RL} = [[-20|-10|20]]\\log_{10}\\lvert\\Gamma\\rvert",
-    "legende": "P_r puissance réfléchie, P_i incidente, RL return loss (dB)",
+    "tex": "\\dfrac{[[P_r]]}{P_i} = [[\\lvert\\Gamma\\rvert^2|\\lvert\\Gamma\\rvert|\\sqrt{\\lvert\\Gamma\\rvert}]] \\quad ; \\quad \\mathrm{RL} = [[-20|-10|10]]\\log_{10}\\lvert\\Gamma\\rvert",
+    "legende": "$P_r$ puissance réfléchie, $P_i$ puissance incidente (W), $\\Gamma$ coefficient de réflexion, $\\mathrm{RL}$ affaiblissement de réflexion (dB, positif)",
+    "grandeurs": [
+      {
+        "s": "P_r",
+        "nom": "puissance réfléchie",
+        "u": "W"
+      },
+      {
+        "s": "P_i",
+        "nom": "puissance incidente",
+        "u": "W"
+      },
+      {
+        "s": "\\Gamma",
+        "nom": "coefficient de réflexion",
+        "u": ""
+      },
+      {
+        "s": "\\mathrm{RL}",
+        "nom": "affaiblissement de réflexion",
+        "u": "\\text{dB}"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -635,7 +1848,34 @@
     "notion": "OE2.2.2 Communications et radiofréquences",
     "nom": "Matrice des paramètres S",
     "tex": "[[b_2]] = [[S_{21}|S_{12}|S_{22}]]\\,a_1 + [[S_{22}|S_{21}|S_{11}]]\\,a_2",
-    "legende": "a_i ondes incidentes, b_i ondes réfléchies ; b_1 = S_11 a_1 + S_12 a_2",
+    "legende": "$a_i$ ondes incidentes, $b_i$ ondes émergentes ($\\sqrt{\\mathrm{W}}$), $S_{ij}$ paramètres S ; $b_1 = S_{11} a_1 + S_{12} a_2$",
+    "grandeurs": [
+      {
+        "s": "b_2",
+        "nom": "onde émergente au port 2",
+        "u": "W^{1/2}"
+      },
+      {
+        "s": "a_1",
+        "nom": "onde incidente au port 1",
+        "u": "W^{1/2}"
+      },
+      {
+        "s": "a_2",
+        "nom": "onde incidente au port 2",
+        "u": "W^{1/2}"
+      },
+      {
+        "s": "S_{21}",
+        "nom": "transmission directe",
+        "u": ""
+      },
+      {
+        "s": "S_{22}",
+        "nom": "réflexion en sortie",
+        "u": ""
+      }
+    ],
     "source": "Fiche OE2.2.2"
   },
   {
@@ -644,7 +1884,34 @@
     "notion": "OE2.2.2 Communications et radiofréquences",
     "nom": "Paramètres S : réflexion et transmission",
     "tex": "[[S_{11}]] = \\left.\\dfrac{[[b_1|a_1|b_2]]}{[[a_1|b_1|a_2]]}\\right._{a_2=0} \\quad ; \\quad [[S_{21}]] = \\left.\\dfrac{[[b_2|a_2]]}{a_1}\\right._{a_2=0}",
-    "legende": "S_11 réflexion en entrée (port 2 adapté), S_21 transmission directe (gain)",
+    "legende": "$S_{11}$ réflexion en entrée et $S_{21}$ transmission directe, mesurées port 2 adapté ($a_2 = 0$) ; $a_i$ ondes incidentes, $b_i$ ondes émergentes",
+    "grandeurs": [
+      {
+        "s": "S_{11}",
+        "nom": "coefficient de réflexion en entrée",
+        "u": ""
+      },
+      {
+        "s": "S_{21}",
+        "nom": "coefficient de transmission directe",
+        "u": ""
+      },
+      {
+        "s": "a_1",
+        "nom": "onde incidente au port 1",
+        "u": "W^{1/2}"
+      },
+      {
+        "s": "b_1",
+        "nom": "onde émergente au port 1",
+        "u": "W^{1/2}"
+      },
+      {
+        "s": "b_2",
+        "nom": "onde émergente au port 2",
+        "u": "W^{1/2}"
+      }
+    ],
     "source": "Fiche OE2.2.2"
   },
   {
@@ -653,7 +1920,24 @@
     "notion": "OE2.2.2 Communications et radiofréquences",
     "nom": "Affaiblissement en espace libre",
     "tex": "[[\\mathrm{FSPL}_{\\mathrm{dB}}]] = [[20|10|40]]\\log_{10}\\left(\\dfrac{[[4\\pi d|2\\pi d|4\\pi d^2]]}{[[\\lambda|\\lambda^2|f]]}\\right)",
-    "legende": "d distance (m), λ longueur d'onde (m) ; +6 dB quand d double",
+    "legende": "$\\mathrm{FSPL}_{\\mathrm{dB}}$ affaiblissement en espace libre (dB), $d$ distance (m), $\\lambda$ longueur d'onde (m) ; +6 dB quand $d$ double",
+    "grandeurs": [
+      {
+        "s": "\\mathrm{FSPL}_{\\mathrm{dB}}",
+        "nom": "affaiblissement en espace libre",
+        "u": "\\text{dB}"
+      },
+      {
+        "s": "d",
+        "nom": "distance",
+        "u": "m"
+      },
+      {
+        "s": "\\lambda",
+        "nom": "longueur d'onde",
+        "u": "m"
+      }
+    ],
     "source": "Fiche OE2.2.2 ; Sujet 2021 E2 Q45"
   },
   {
@@ -662,7 +1946,39 @@
     "notion": "OE2.2.2 Communications et radiofréquences",
     "nom": "Équation de Friis (forme linéaire)",
     "tex": "\\dfrac{[[P_R]]}{P_E} = [[G_E G_R|G_E + G_R]]\\left(\\dfrac{[[\\lambda|4\\pi d]]}{[[4\\pi d|\\lambda|2\\pi d]]}\\right)^{[[2|1|4]]}",
-    "legende": "P_E, P_R puissances émise/reçue, G_E, G_R gains d'antenne linéaires, d distance",
+    "legende": "$P_E$ et $P_R$ puissances émise et reçue (W), $G_E$ et $G_R$ gains d'antenne linéaires, $\\lambda$ longueur d'onde (m), $d$ distance (m)",
+    "grandeurs": [
+      {
+        "s": "P_R",
+        "nom": "puissance reçue",
+        "u": "W"
+      },
+      {
+        "s": "P_E",
+        "nom": "puissance émise",
+        "u": "W"
+      },
+      {
+        "s": "G_E",
+        "nom": "gain de l'antenne d'émission",
+        "u": ""
+      },
+      {
+        "s": "G_R",
+        "nom": "gain de l'antenne de réception",
+        "u": ""
+      },
+      {
+        "s": "\\lambda",
+        "nom": "longueur d'onde",
+        "u": "m"
+      },
+      {
+        "s": "d",
+        "nom": "distance",
+        "u": "m"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -671,7 +1987,34 @@
     "notion": "OE2.2.2 Communications et radiofréquences",
     "nom": "Bilan de liaison (dB)",
     "tex": "[[P_R]] = P_E + [[G_E + G_R|G_E G_R|G_E - G_R]] [[-|+]] \\mathrm{FSPL} - \\text{pertes}",
-    "legende": "P en dBm, G en dBi, FSPL et pertes (câbles, connecteurs) en dB",
+    "legende": "$P_E$, $P_R$ en dBm, $G_E$, $G_R$ en dBi, $\\mathrm{FSPL}$ et pertes (câbles, connecteurs) en dB",
+    "grandeurs": [
+      {
+        "s": "P_R",
+        "nom": "puissance reçue",
+        "u": "\\text{dBm}"
+      },
+      {
+        "s": "P_E",
+        "nom": "puissance émise",
+        "u": "\\text{dBm}"
+      },
+      {
+        "s": "G_E",
+        "nom": "gain de l'antenne d'émission",
+        "u": "\\text{dBi}"
+      },
+      {
+        "s": "G_R",
+        "nom": "gain de l'antenne de réception",
+        "u": "\\text{dBi}"
+      },
+      {
+        "s": "\\mathrm{FSPL}",
+        "nom": "affaiblissement en espace libre",
+        "u": "\\text{dB}"
+      }
+    ],
     "source": "Fiche OE2.2.2 ; Sujet 2021 E2 Q45"
   },
   {
@@ -680,7 +2023,19 @@
     "notion": "OE2.2.2 Communications et radiofréquences",
     "nom": "Puissance en dBm",
     "tex": "[[P_{\\mathrm{dBm}}]] = [[10|20]]\\log_{10}\\left(\\dfrac{P}{[[1\\ \\mathrm{mW}|1\\ \\mathrm{W}|1\\ \\mu\\mathrm{W}]]}\\right)",
-    "legende": "0 dBm = 1 mW ; 30 dBm = 1 W",
+    "legende": "$P$ puissance (W) ; 0 dBm = 1 mW, 30 dBm = 1 W",
+    "grandeurs": [
+      {
+        "s": "P_{\\mathrm{dBm}}",
+        "nom": "puissance en dBm",
+        "u": "\\text{dBm}"
+      },
+      {
+        "s": "P",
+        "nom": "puissance",
+        "u": "W"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -689,7 +2044,24 @@
     "notion": "OE2.2.2 Communications et radiofréquences",
     "nom": "Longueur d'onde",
     "tex": "[[\\lambda]] = \\dfrac{[[c|f]]}{[[f|c|2\\pi f]]}",
-    "legende": "c = 3·10⁸ m/s, f fréquence (Hz) — ex. 433,8 MHz → λ ≈ 69 cm",
+    "legende": "$\\lambda$ longueur d'onde (m), $c = 3\\cdot10^8$ m/s célérité dans le vide, $f$ fréquence (Hz) ; ex. 433,8 MHz → $\\lambda \\approx 69$ cm",
+    "grandeurs": [
+      {
+        "s": "\\lambda",
+        "nom": "longueur d'onde",
+        "u": "m"
+      },
+      {
+        "s": "c",
+        "nom": "célérité de la lumière dans le vide",
+        "u": "m\\cdot s^{-1}"
+      },
+      {
+        "s": "f",
+        "nom": "fréquence",
+        "u": "Hz"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -697,8 +2069,30 @@
     "bloc": "OE2",
     "notion": "OE2.2.2 Communications et radiofréquences",
     "nom": "Impédance caractéristique d'une ligne sans pertes",
-    "tex": "[[Z_0]] = [[\\sqrt{\\dfrac{L}{C}}|\\sqrt{LC}|\\dfrac{L}{C}|\\sqrt{\\dfrac{C}{L}}]] \\quad ; \\quad v = \\dfrac{1}{[[\\sqrt{LC}|LC|\\sqrt{L/C}]]}",
-    "legende": "L et C inductance et capacité linéiques (H/m, F/m), v vitesse de propagation",
+    "tex": "[[Z_0]] = [[\\sqrt{\\dfrac{L}{C}}|\\sqrt{LC}|\\dfrac{L}{C}|\\sqrt{\\dfrac{C}{L}}]] \\quad ; \\quad [[v]] = \\dfrac{1}{[[\\sqrt{LC}|LC|\\sqrt{L/C}]]}",
+    "legende": "$Z_0$ impédance caractéristique (Ω), $L$ inductance linéique (H/m), $C$ capacité linéique (F/m), $v$ vitesse de propagation (m/s)",
+    "grandeurs": [
+      {
+        "s": "Z_0",
+        "nom": "impédance caractéristique",
+        "u": "\\Omega"
+      },
+      {
+        "s": "L",
+        "nom": "inductance linéique",
+        "u": "H\\cdot m^{-1}"
+      },
+      {
+        "s": "C",
+        "nom": "capacité linéique",
+        "u": "F\\cdot m^{-1}"
+      },
+      {
+        "s": "v",
+        "nom": "vitesse de propagation",
+        "u": "m\\cdot s^{-1}"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -707,7 +2101,34 @@
     "notion": "TC4 Simulation numérique de systèmes pluri-techniques",
     "nom": "Instants de discrétisation",
     "tex": "[[t_k]] = [[k|k+1|k^2]]\\,[[\\Delta t|\\frac{1}{\\Delta t}]] \\quad ; \\quad M = \\dfrac{[[T_{\\mathrm{sim}}|\\Delta t^2]]}{\\Delta t}",
-    "legende": "Δt pas de temps, M nombre de pas pour une durée simulée T_sim (ex. 5 jours / 30 s = 14 400)",
+    "legende": "$t_k$ instant n° $k$ (s), $\\Delta t$ pas de temps (s), $M$ nombre de pas pour une durée simulée $T_{\\mathrm{sim}}$ (s) ; ex. 5 jours / 30 s = 14 400",
+    "grandeurs": [
+      {
+        "s": "t_k",
+        "nom": "instant de rang k",
+        "u": "s"
+      },
+      {
+        "s": "k",
+        "nom": "rang du pas",
+        "u": ""
+      },
+      {
+        "s": "\\Delta t",
+        "nom": "pas de temps",
+        "u": "s"
+      },
+      {
+        "s": "M",
+        "nom": "nombre de pas",
+        "u": ""
+      },
+      {
+        "s": "T_{\\mathrm{sim}}",
+        "nom": "durée simulée",
+        "u": "s"
+      }
+    ],
     "source": "Fiche TC4 ; Sujet 2022 E1 Q44"
   },
   {
@@ -716,7 +2137,14 @@
     "notion": "TC4 Simulation numérique de systèmes pluri-techniques",
     "nom": "Schéma d'Euler explicite",
     "tex": "[[y_{n+1}]] = [[y_n|y_{n+1}|0]] + [[\\Delta t|\\frac{\\Delta t}{2}|\\frac{1}{\\Delta t}]] \\cdot f([[t_n, y_n|t_{n+1}, y_{n+1}]])",
-    "legende": "Résolution de dy/dt = f(t, y), ordre 1, erreur globale O(Δt)",
+    "legende": "Résolution de $\\mathrm{d}y/\\mathrm{d}t = f(t, y)$, $\\Delta t$ pas de temps ; ordre 1, erreur globale $O(\\Delta t)$",
+    "grandeurs": [
+      {
+        "s": "\\Delta t",
+        "nom": "pas de temps",
+        "u": "s"
+      }
+    ],
     "source": "Fiche TC4"
   },
   {
@@ -725,7 +2153,14 @@
     "notion": "TC4 Simulation numérique de systèmes pluri-techniques",
     "nom": "Schéma d'Euler implicite",
     "tex": "[[y_{n+1}]] = y_n + [[\\Delta t|\\frac{\\Delta t}{2}]] \\cdot f([[t_{n+1}, y_{n+1}|t_n, y_n]])",
-    "legende": "y_(n+1) des deux côtés : équation à résoudre à chaque pas, stabilité inconditionnelle (en général)",
+    "legende": "$y_{n+1}$ apparaît des deux côtés : équation à résoudre à chaque pas ; $\\Delta t$ pas de temps ; stable pour tout pas sur un système linéaire stable (A-stabilité)",
+    "grandeurs": [
+      {
+        "s": "\\Delta t",
+        "nom": "pas de temps",
+        "u": "s"
+      }
+    ],
     "source": "Fiche TC4"
   },
   {
@@ -734,7 +2169,14 @@
     "notion": "TC4 Simulation numérique de systèmes pluri-techniques",
     "nom": "Ordres de précision d'Euler et RK4",
     "tex": "\\text{Euler} : [[O(\\Delta t)|O(\\Delta t^2)|O(1)]] \\quad ; \\quad \\text{RK4} : [[O(\\Delta t^4)|O(\\Delta t^2)|O(\\Delta t^3)]]",
-    "legende": "Erreur globale de troncature en fonction du pas Δt",
+    "legende": "Erreur globale de troncature en fonction du pas $\\Delta t$",
+    "grandeurs": [
+      {
+        "s": "\\Delta t",
+        "nom": "pas de temps",
+        "u": "s"
+      }
+    ],
     "source": "Fiche TC4"
   },
   {
@@ -743,7 +2185,14 @@
     "notion": "TC4 Simulation numérique de systèmes pluri-techniques",
     "nom": "RK4 : pentes intermédiaires k_2 et k_3",
     "tex": "k_2 = f\\left(t_n + [[\\dfrac{\\Delta t}{2}|\\Delta t|\\dfrac{\\Delta t}{6}]],\\ y_n + \\dfrac{\\Delta t}{2}[[k_1|k_2]]\\right) \\quad ; \\quad k_3 = f\\left(t_n + \\dfrac{\\Delta t}{2},\\ y_n + \\dfrac{\\Delta t}{2}[[k_2|k_1|k_3]]\\right)",
-    "legende": "k_1 = f(t_n, y_n) ; k_2 et k_3 évaluées au milieu du pas",
+    "legende": "$k_1 = f(t_n, y_n)$ ; $k_2$ et $k_3$ évaluées au milieu du pas $\\Delta t$",
+    "grandeurs": [
+      {
+        "s": "\\Delta t",
+        "nom": "pas de temps",
+        "u": "s"
+      }
+    ],
     "source": "Fiche TC4"
   },
   {
@@ -752,7 +2201,14 @@
     "notion": "TC4 Simulation numérique de systèmes pluri-techniques",
     "nom": "RK4 : pente finale k_4",
     "tex": "[[k_4]] = f\\left(t_n + [[\\Delta t|\\dfrac{\\Delta t}{2}]],\\ y_n + [[\\Delta t\\,k_3|\\dfrac{\\Delta t}{2}k_3|\\Delta t\\,k_1]]\\right)",
-    "legende": "k_4 évaluée en fin de pas à partir de k_3",
+    "legende": "$k_4$ évaluée en fin de pas $\\Delta t$ à partir de $k_3$",
+    "grandeurs": [
+      {
+        "s": "\\Delta t",
+        "nom": "pas de temps",
+        "u": "s"
+      }
+    ],
     "source": "Fiche TC4"
   },
   {
@@ -760,8 +2216,15 @@
     "bloc": "TC4",
     "notion": "TC4 Simulation numérique de systèmes pluri-techniques",
     "nom": "RK4 : mise à jour",
-    "tex": "[[y_{n+1}]] = y_n + \\dfrac{\\Delta t}{[[6|4|3|2]]}\\left(k_1 + [[2]]k_2 + [[2k_3|k_3|4k_3]] + [[k_4|2k_4]]\\right)",
-    "legende": "Moyenne pondérée des 4 pentes (poids 1-2-2-1), ordre 4, 4 évaluations de f par pas",
+    "tex": "[[y_{n+1}]] = y_n + \\dfrac{\\Delta t}{[[6|4|3|2]]}\\left(k_1 + [[2|4|1]]k_2 + [[2k_3|k_3|4k_3]] + [[k_4|2k_4]]\\right)",
+    "legende": "Moyenne pondérée des 4 pentes (poids 1-2-2-1) ; ordre 4, 4 évaluations de $f$ par pas $\\Delta t$",
+    "grandeurs": [
+      {
+        "s": "\\Delta t",
+        "nom": "pas de temps",
+        "u": "s"
+      }
+    ],
     "source": "Fiche TC4"
   },
   {
@@ -770,7 +2233,14 @@
     "notion": "TC4 Simulation numérique de systèmes pluri-techniques",
     "nom": "Méthode de Heun (RK2)",
     "tex": "[[y_{n+1}]] = y_n + [[\\dfrac{\\Delta t}{2}|\\Delta t|\\dfrac{\\Delta t}{6}]]\\left(k_1 + k_2\\right),\\quad k_2 = f(t_n + [[\\Delta t|\\frac{\\Delta t}{2}]],\\ y_n + \\Delta t\\,k_1)",
-    "legende": "k_1 = f(t_n, y_n) ; schéma d'ordre 2 (trapèzes explicite)",
+    "legende": "$k_1 = f(t_n, y_n)$, $\\Delta t$ pas de temps ; schéma d'ordre 2 (trapèzes explicite)",
+    "grandeurs": [
+      {
+        "s": "\\Delta t",
+        "nom": "pas de temps",
+        "u": "s"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -779,7 +2249,19 @@
     "notion": "TC4 Simulation numérique de systèmes pluri-techniques",
     "nom": "Stabilité d'Euler explicite (système du 1er ordre)",
     "tex": "\\dot y = -\\dfrac{y}{\\tau} : \\quad [[\\Delta t]] < [[2\\tau|\\tau|\\frac{\\tau}{2}|4\\tau]]",
-    "legende": "Condition équivalente : ‖1 + λΔt‖ < 1 pour chaque valeur propre λ du système (distincte de la stabilité du modèle continu)",
+    "legende": "$\\tau$ constante de temps (s), $\\Delta t$ pas (s) ; cas général : $\\lvert 1 + \\lambda\\Delta t \\rvert < 1$ pour chaque valeur propre $\\lambda$ (distinct de la stabilité du modèle continu)",
+    "grandeurs": [
+      {
+        "s": "\\Delta t",
+        "nom": "pas de temps",
+        "u": "s"
+      },
+      {
+        "s": "\\tau",
+        "nom": "constante de temps",
+        "u": "s"
+      }
+    ],
     "source": "Classique programme ; Rapport jury 2022"
   },
   {
@@ -788,7 +2270,24 @@
     "notion": "TC4 Simulation numérique de systèmes pluri-techniques",
     "nom": "Récurrence d'un 1er ordre (Euler explicite)",
     "tex": "[[y_{n+1}]] = y_n + \\dfrac{[[\\Delta t|\\tau]]}{[[\\tau|\\Delta t]]}\\left([[K u_n - y_n|y_n - K u_n|K u_n]]\\right)",
-    "legende": "Discrétisation de τ dy/dt + y = K u ; K gain statique, τ constante de temps",
+    "legende": "Discrétisation de $\\tau\\,\\mathrm{d}y/\\mathrm{d}t + y = K u$ ; $K$ gain statique, $\\tau$ constante de temps (s), $\\Delta t$ pas (s)",
+    "grandeurs": [
+      {
+        "s": "\\Delta t",
+        "nom": "pas de temps",
+        "u": "s"
+      },
+      {
+        "s": "\\tau",
+        "nom": "constante de temps",
+        "u": "s"
+      },
+      {
+        "s": "K",
+        "nom": "gain statique",
+        "u": ""
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -797,7 +2296,39 @@
     "notion": "TC4 Simulation numérique de systèmes pluri-techniques",
     "nom": "Équation de la chaleur 1D",
     "tex": "[[\\lambda]]\\,\\dfrac{\\partial^2 T}{\\partial [[x^2|t^2]]} = [[\\rho C|\\rho|C]]\\,\\dfrac{\\partial T}{\\partial [[t|x]]}",
-    "legende": "λ conductivité (W/m/K), ρ masse volumique (kg/m³), C capacité thermique massique (J/kg/K)",
+    "legende": "$\\lambda$ conductivité thermique ($\\mathrm{W\\cdot m^{-1}\\cdot K^{-1}}$), $\\rho$ masse volumique ($\\mathrm{kg\\cdot m^{-3}}$), $C$ capacité thermique massique ($\\mathrm{J\\cdot kg^{-1}\\cdot K^{-1}}$), $T$ température (K)",
+    "grandeurs": [
+      {
+        "s": "\\lambda",
+        "nom": "conductivité thermique",
+        "u": "W\\cdot m^{-1}\\cdot K^{-1}"
+      },
+      {
+        "s": "\\rho",
+        "nom": "masse volumique",
+        "u": "kg\\cdot m^{-3}"
+      },
+      {
+        "s": "C",
+        "nom": "capacité thermique massique",
+        "u": "J\\cdot kg^{-1}\\cdot K^{-1}"
+      },
+      {
+        "s": "T",
+        "nom": "température",
+        "u": "K"
+      },
+      {
+        "s": "x",
+        "nom": "abscisse",
+        "u": "m"
+      },
+      {
+        "s": "t",
+        "nom": "temps",
+        "u": "s"
+      }
+    ],
     "source": "Fiche TC4 ; Sujet 2022 E1 Q42"
   },
   {
@@ -806,7 +2337,19 @@
     "notion": "TC4 Simulation numérique de systèmes pluri-techniques",
     "nom": "Dérivée seconde par différences finies centrées",
     "tex": "\\dfrac{\\partial^2 T}{\\partial x^2} \\approx \\dfrac{T_{i+1} - [[2T_i|T_i|4T_i]] + [[T_{i-1}|T_{i+1}]]}{[[\\Delta x^2|\\Delta x|2\\Delta x]]}",
-    "legende": "Δx pas d'espace, i indice de nœud",
+    "legende": "$T_i$ valeur au nœud $i$, $\\Delta x$ pas d'espace (m)",
+    "grandeurs": [
+      {
+        "s": "T",
+        "nom": "température",
+        "u": "K"
+      },
+      {
+        "s": "\\Delta x",
+        "nom": "pas d'espace",
+        "u": "m"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -814,8 +2357,15 @@
     "bloc": "TC4",
     "notion": "TC4 Simulation numérique de systèmes pluri-techniques",
     "nom": "Dérivée première par différence avant",
-    "tex": "\\dfrac{\\mathrm{d}y}{\\mathrm{d}t}\\bigg\\rvert_{t_n} \\approx \\dfrac{[[y_{n+1} - y_n|y_n - y_{n-1}|y_{n+1} + y_n]]}{[[\\Delta t|2\\Delta t|\\Delta t^2]]}",
-    "legende": "Base du schéma d'Euler explicite ; centrée : (y_(n+1) − y_(n−1))/(2Δt)",
+    "tex": "\\dfrac{\\mathrm{d}y}{\\mathrm{d}t}\\bigg\\rvert_{t_n} \\approx \\dfrac{[[y_{n+1} - y_n|y_{n+1} - y_{n-1}|y_{n+1} + y_n]]}{[[\\Delta t|2\\Delta t|\\Delta t^2]]}",
+    "legende": "Base du schéma d'Euler explicite ; $\\Delta t$ pas de temps (s) ; différence centrée : $(y_{n+1} - y_{n-1})/(2\\Delta t)$",
+    "grandeurs": [
+      {
+        "s": "\\Delta t",
+        "nom": "pas de temps",
+        "u": "s"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -824,7 +2374,19 @@
     "notion": "TC4 Simulation numérique de systèmes pluri-techniques",
     "nom": "Schéma explicite de l'équation de la chaleur",
     "tex": "[[T_i^{k+1}]] = [[r|2r|\\frac{r}{2}]]\\,T_{i-1}^k + ([[1 - 2r|1 - r|1 + 2r]])\\,T_i^k + r\\,T_{i+1}^k",
-    "legende": "k indice de temps, i indice d'espace, r nombre de Fourier du maillage",
+    "legende": "$T_i^k$ température au nœud $i$ à l'instant $k$, $r = \\lambda\\Delta t/(\\rho C\\Delta x^2)$ nombre de Fourier du maillage",
+    "grandeurs": [
+      {
+        "s": "T",
+        "nom": "température",
+        "u": "K"
+      },
+      {
+        "s": "r",
+        "nom": "nombre de Fourier du maillage",
+        "u": ""
+      }
+    ],
     "source": "Fiche TC4 ; Sujet 2022 E1 Q43"
   },
   {
@@ -833,7 +2395,39 @@
     "notion": "TC4 Simulation numérique de systèmes pluri-techniques",
     "nom": "Coefficient r du schéma (nombre de Fourier)",
     "tex": "[[r]] = \\dfrac{[[\\lambda|\\rho C]]\\,[[\\Delta t|\\Delta t^2]]}{[[\\rho C|\\lambda]]\\,[[\\Delta x^2|\\Delta x]]}",
-    "legende": "λ conductivité, ρC capacité volumique, Δt pas de temps, Δx pas d'espace ; a = λ/(ρC) diffusivité",
+    "legende": "$\\lambda$ conductivité ($\\mathrm{W\\cdot m^{-1}\\cdot K^{-1}}$), $\\rho C$ capacité thermique volumique ($\\mathrm{J\\cdot m^{-3}\\cdot K^{-1}}$), $\\Delta t$ pas de temps (s), $\\Delta x$ pas d'espace (m) ; $a = \\lambda/(\\rho C)$ diffusivité",
+    "grandeurs": [
+      {
+        "s": "r",
+        "nom": "nombre de Fourier du maillage",
+        "u": ""
+      },
+      {
+        "s": "\\lambda",
+        "nom": "conductivité thermique",
+        "u": "W\\cdot m^{-1}\\cdot K^{-1}"
+      },
+      {
+        "s": "\\rho",
+        "nom": "masse volumique",
+        "u": "kg\\cdot m^{-3}"
+      },
+      {
+        "s": "C",
+        "nom": "capacité thermique massique",
+        "u": "J\\cdot kg^{-1}\\cdot K^{-1}"
+      },
+      {
+        "s": "\\Delta t",
+        "nom": "pas de temps",
+        "u": "s"
+      },
+      {
+        "s": "\\Delta x",
+        "nom": "pas d'espace",
+        "u": "m"
+      }
+    ],
     "source": "Fiche TC4"
   },
   {
@@ -842,7 +2436,39 @@
     "notion": "TC4 Simulation numérique de systèmes pluri-techniques",
     "nom": "Condition de stabilité du schéma explicite (chaleur)",
     "tex": "r \\leq [[\\dfrac{1}{2}|1|\\dfrac{1}{4}|2]] \\iff [[\\Delta t]] \\leq \\dfrac{\\rho C\\,[[\\Delta x^2|\\Delta x]]}{[[2\\lambda|\\lambda|4\\lambda]]}",
-    "legende": "Pas de temps maximal (ex. polyuréthane : 90,1 s, béton : 42,6 s pour Δx = 10 mm)",
+    "legende": "Pas de temps maximal du schéma explicite ; $\\rho C$ capacité thermique volumique, $\\lambda$ conductivité, $\\Delta x$ pas d'espace (m)",
+    "grandeurs": [
+      {
+        "s": "r",
+        "nom": "nombre de Fourier du maillage",
+        "u": ""
+      },
+      {
+        "s": "\\Delta t",
+        "nom": "pas de temps",
+        "u": "s"
+      },
+      {
+        "s": "\\rho",
+        "nom": "masse volumique",
+        "u": "kg\\cdot m^{-3}"
+      },
+      {
+        "s": "C",
+        "nom": "capacité thermique massique",
+        "u": "J\\cdot kg^{-1}\\cdot K^{-1}"
+      },
+      {
+        "s": "\\Delta x",
+        "nom": "pas d'espace",
+        "u": "m"
+      },
+      {
+        "s": "\\lambda",
+        "nom": "conductivité thermique",
+        "u": "W\\cdot m^{-1}\\cdot K^{-1}"
+      }
+    ],
     "source": "Fiche TC4 ; Sujet 2022 E1 Q44"
   },
   {
@@ -851,7 +2477,8 @@
     "notion": "TC4 Simulation numérique de systèmes pluri-techniques",
     "nom": "Intégration numérique par la méthode des rectangles",
     "tex": "\\int_a^b f(x)\\,\\mathrm{d}x \\approx [[h|\\frac{1}{h}|\\frac{h}{2}]] \\sum_{i=0}^{[[n-1|n|n+1]]} f(a + i h), \\quad h = \\dfrac{[[b - a|a - b|b + a]]}{n}",
-    "legende": "h pas, n nombre de sous-intervalles (rectangles à gauche) — ex. somme += valeur(i)*h",
+    "legende": "$h$ pas, $n$ nombre de sous-intervalles de $[a ; b]$ (rectangles à gauche) ; en code : somme += f(x)*h",
+    "grandeurs": [],
     "source": "Fiche TC4 ; Sujet 2025 E3 Q11"
   },
   {
@@ -860,7 +2487,8 @@
     "notion": "TC4 Simulation numérique de systèmes pluri-techniques",
     "nom": "Intégration numérique par la méthode des trapèzes",
     "tex": "\\int_{x_i}^{x_{i+1}} f(x)\\,\\mathrm{d}x \\approx [[\\dfrac{h}{2}|h|2h]]\\left([[f(x_i) + f(x_{i+1})|f(x_i) \\cdot f(x_{i+1})|f(x_{i+1}) - f(x_i)]]\\right)",
-    "legende": "h = x_(i+1) − x_i ; méthode d'ordre 2 (vs ordre 1 pour les rectangles)",
+    "legende": "$h = x_{i+1} - x_i$ pas ; erreur globale en $O(h^2)$, contre $O(h)$ pour les rectangles",
+    "grandeurs": [],
     "source": "Classique programme"
   },
   {
@@ -868,8 +2496,15 @@
     "bloc": "TC4",
     "notion": "TC4 Simulation numérique de systèmes pluri-techniques",
     "nom": "Discrétisation d'un correcteur (Euler arrière / Tustin)",
-    "tex": "p \\approx \\dfrac{[[z - 1|z + 1|1 - z]]}{[[T_e|z T_e|2T_e]]} \\quad ; \\quad p \\approx [[\\dfrac{2}{T_e}|\\dfrac{1}{T_e}|\\dfrac{T_e}{2}]]\\,\\dfrac{z - 1}{z + 1}",
-    "legende": "Passage d'un correcteur continu C(p) à un algorithme discret ; T_e période d'échantillonnage (approx. Euler arrière : (z−1)/(zT_e))",
+    "tex": "\\text{Euler arrière} : p \\approx \\dfrac{[[z - 1|z + 1|1 - z]]}{[[z T_e|2T_e|(z + 1) T_e]]} \\quad ; \\quad \\text{Tustin} : p \\approx [[\\dfrac{2}{T_e}|\\dfrac{1}{T_e}|\\dfrac{T_e}{2}]]\\,\\dfrac{z - 1}{z + 1}",
+    "legende": "Passage d'un correcteur continu $C(p)$ à une récurrence ; $T_e$ période d'échantillonnage (s) ; Euler avant : $p \\approx (z - 1)/T_e$",
+    "grandeurs": [
+      {
+        "s": "T_e",
+        "nom": "période d'échantillonnage",
+        "u": "s"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -878,7 +2513,8 @@
     "notion": "TC5.1 Algorithmique",
     "nom": "Complexité de boucles bornées",
     "tex": "\\text{1 boucle sur } n : [[O(n)|O(1)|O(\\log n)]] \\quad ; \\quad \\text{2 boucles imbriquées sur } n : [[O(n^2)|O(2n)|O(n\\log n)]]",
-    "legende": "n taille des données ; boucles successives : les complexités s'additionnent, la plus grande domine",
+    "legende": "$n$ taille des données ; boucles successives : les complexités s'additionnent, la plus grande domine",
+    "grandeurs": [],
     "source": "Fiche TC5.1 ; Fiche TC5.2"
   },
   {
@@ -887,7 +2523,8 @@
     "notion": "TC5.1 Algorithmique",
     "nom": "Hiérarchie des classes de complexité",
     "tex": "O(1) < [[O(\\log n)|O(n)|O(n^2)]] < O(n) < [[O(n\\log n)|O(n^2)|O(\\log n)]] < O(n^2) < [[O(2^n)|O(n\\log n)|O(\\log n)]]",
-    "legende": "Classes usuelles par ordre croissant de coût",
+    "legende": "Classes usuelles par ordre croissant de coût ($n$ taille des données)",
+    "grandeurs": [],
     "source": "Fiche TC5.1"
   },
   {
@@ -896,7 +2533,8 @@
     "notion": "TC5.1 Algorithmique",
     "nom": "Nombre de passages d'une boucle triangulaire",
     "tex": "\\sum_{i=1}^{n} i = [[\\dfrac{n(n+1)}{2}|\\dfrac{n^2}{2}|n(n+1)|\\dfrac{n(n-1)}{2}]] \\Rightarrow [[O(n^2)|O(n)|O(n\\log n)]]",
-    "legende": "Boucle j de 1 à i imbriquée dans une boucle i de 1 à n",
+    "legende": "Boucle $j$ de 1 à $i$ imbriquée dans une boucle $i$ de 1 à $n$",
+    "grandeurs": [],
     "source": "Classique programme"
   },
   {
@@ -905,7 +2543,8 @@
     "notion": "TC5.1 Algorithmique",
     "nom": "Nombre d'itérations d'une recherche dichotomique",
     "tex": "[[k_{\\max}]] = \\lceil [[\\log_2|\\log_{10}|\\ln]]([[n + 1|n^2|n/2]]) \\rceil",
-    "legende": "n taille du tableau trié : environ log₂ n comparaisons (20 pour un million d'éléments)",
+    "legende": "$n$ taille du tableau trié, $k_{\\max}$ nombre maximal de comparaisons (20 pour un million d'éléments)",
+    "grandeurs": [],
     "source": "Classique programme"
   },
   {
@@ -914,7 +2553,8 @@
     "notion": "TC5.2 Utilisation de structures de données et algorithmes",
     "nom": "Complexités d'un tableau",
     "tex": "\\text{accès par indice} : [[O(1)|O(n)|O(\\log n)]] \\quad ; \\quad \\text{insertion en milieu} : [[O(n)|O(1)|O(n^2)]]",
-    "legende": "Tableau contigu : l'insertion impose de décaler les éléments suivants",
+    "legende": "Tableau contigu de $n$ éléments : l'insertion impose de décaler les éléments suivants",
+    "grandeurs": [],
     "source": "Fiche TC5.2"
   },
   {
@@ -923,7 +2563,8 @@
     "notion": "TC5.2 Utilisation de structures de données et algorithmes",
     "nom": "Complexités d'une liste chaînée",
     "tex": "\\text{accès au } k^{e} : [[O(n)|O(1)|O(\\log n)]] \\quad ; \\quad \\text{insertion à position connue} : [[O(1)|O(n)|O(\\log n)]]",
-    "legende": "Parcours obligatoire pour l'accès ; pas de décalage pour l'insertion (O(n) si la position doit être recherchée)",
+    "legende": "Liste de $n$ éléments : parcours obligatoire pour l'accès, pas de décalage pour l'insertion ($O(n)$ si la position doit être recherchée)",
+    "grandeurs": [],
     "source": "Fiche TC5.2"
   },
   {
@@ -932,7 +2573,8 @@
     "notion": "TC5.2 Utilisation de structures de données et algorithmes",
     "nom": "Recherche séquentielle et dichotomique",
     "tex": "\\text{séquentielle} : [[O(n)|O(\\log n)|O(1)]] \\quad ; \\quad \\text{dichotomique (tableau trié)} : [[O(\\log n)|O(n)|O(n\\log n)]]",
-    "legende": "n nombre d'éléments",
+    "legende": "$n$ nombre d'éléments",
+    "grandeurs": [],
     "source": "Fiche TC5.2"
   },
   {
@@ -941,7 +2583,8 @@
     "notion": "TC5.2 Utilisation de structures de données et algorithmes",
     "nom": "Opérations de pile et de file",
     "tex": "\\text{push/pop (pile } [[\\text{LIFO}|\\text{FIFO}]]) : [[O(1)|O(n)|O(\\log n)]]",
-    "legende": "Pile LIFO (dernier entré premier sorti) ; file FIFO : enqueue/dequeue en O(1) également",
+    "legende": "Pile LIFO (dernier entré, premier sorti) ; file FIFO : enfiler et défiler aussi en $O(1)$",
+    "grandeurs": [],
     "source": "Fiche TC5.2"
   },
   {
@@ -950,7 +2593,8 @@
     "notion": "TC5.2 Utilisation de structures de données et algorithmes",
     "nom": "Complexité d'un arbre binaire de recherche",
     "tex": "\\text{ABR équilibré} : [[O(\\log n)|O(n)|O(1)]] \\quad ; \\quad \\text{ABR dégénéré} : [[O(n)|O(\\log n)|O(n^2)]]",
-    "legende": "Recherche, insertion, suppression ; dégénéré = proche d'une liste chaînée",
+    "legende": "Recherche, insertion, suppression parmi $n$ nœuds ; dégénéré = proche d'une liste chaînée",
+    "grandeurs": [],
     "source": "Fiche TC5.2"
   },
   {
@@ -959,7 +2603,8 @@
     "notion": "TC5.2 Utilisation de structures de données et algorithmes",
     "nom": "Complexité d'une table de hachage",
     "tex": "\\text{moyenne} : [[O(1)|O(\\log n)|O(n)]] \\quad ; \\quad \\text{pire cas (collisions)} : [[O(n)|O(1)|O(n^2)]]",
-    "legende": "Accès, insertion, suppression par clé",
+    "legende": "Accès, insertion, suppression par clé parmi $n$ éléments",
+    "grandeurs": [],
     "source": "Fiche TC5.2"
   },
   {
@@ -968,7 +2613,8 @@
     "notion": "TC5.2 Utilisation de structures de données et algorithmes",
     "nom": "Complexité des tris",
     "tex": "\\text{fusion, tas} : [[O(n\\log n)|O(n^2)|O(n)]] \\quad ; \\quad \\text{bulles, sélection, insertion} : [[O(n^2)|O(n\\log n)|O(n^3)]]",
-    "legende": "Tri rapide : O(n log n) en moyenne, O(n²) au pire cas",
+    "legende": "Complexités au pire cas ; tri rapide : $O(n\\log n)$ en moyenne, $O(n^2)$ au pire",
+    "grandeurs": [],
     "source": "Fiche TC5.2"
   },
   {
@@ -977,7 +2623,8 @@
     "notion": "TC5.2 Utilisation de structures de données et algorithmes",
     "nom": "Récurrence « diviser pour régner »",
     "tex": "[[T(n)]] = [[a|b|1]]\\,T\\left(\\dfrac{n}{[[b|a|2]]}\\right) + [[f(n)|T(n-1)]]",
-    "legende": "a nombre de sous-problèmes, n/b taille de chacun, f(n) coût de division/fusion",
+    "legende": "$a$ nombre de sous-problèmes, $n/b$ taille de chacun, $f(n)$ coût de division et de fusion",
+    "grandeurs": [],
     "source": "Fiche TC5.2"
   },
   {
@@ -986,7 +2633,8 @@
     "notion": "TC5.2 Utilisation de structures de données et algorithmes",
     "nom": "Récurrence d'une récursion décroissant de 1",
     "tex": "[[T(n)]] = T([[n-1|n/2|n]]) + [[f(n)|T(n)]]",
-    "legende": "Ex. factorielle récursive : T(n) = T(n−1) + O(1) ⇒ O(n)",
+    "legende": "Ex. factorielle récursive : $T(n) = T(n-1) + O(1) \\Rightarrow O(n)$",
+    "grandeurs": [],
     "source": "Fiche TC5.2"
   },
   {
@@ -996,6 +2644,7 @@
     "nom": "Solutions de récurrences classiques",
     "tex": "T(n) = T(n-1) + O(1) \\Rightarrow [[O(n)|O(\\log n)|O(n^2)]] \\quad ; \\quad T(n) = T(n-1) + O(n) \\Rightarrow [[O(n^2)|O(n)|O(n\\log n)]]",
     "legende": "Récursion linéaire de coût constant ou linéaire par appel",
+    "grandeurs": [],
     "source": "Classique programme"
   },
   {
@@ -1004,7 +2653,8 @@
     "notion": "TC5.2 Utilisation de structures de données et algorithmes",
     "nom": "Récurrence du tri fusion / dichotomie",
     "tex": "T(n) = [[2|1|4]]\\,T(n/2) + O(n) \\Rightarrow [[O(n\\log n)|O(n)|O(n^2)]] \\quad ; \\quad T(n) = T(n/2) + O(1) \\Rightarrow [[O(\\log n)|O(1)|O(n)]]",
-    "legende": "Cas usuels du théorème maître",
+    "legende": "Cas usuels du théorème maître (tri fusion, recherche dichotomique)",
+    "grandeurs": [],
     "source": "Classique programme"
   },
   {
@@ -1013,7 +2663,8 @@
     "notion": "TC5.2 Utilisation de structures de données et algorithmes",
     "nom": "Théorème maître (cas d'équilibre)",
     "tex": "f(n) = \\Theta\\left(n^{[[\\log_b a|\\log_a b|a/b]]}\\right) \\Rightarrow T(n) = \\Theta\\left(n^{\\log_b a}\\,[[\\log n|n|1]]\\right)",
-    "legende": "Pour T(n) = a T(n/b) + f(n) ; si f domine : T = Θ(f(n)), si f est dominée : T = Θ(n^(log_b a))",
+    "legende": "Pour $T(n) = a\\,T(n/b) + f(n)$ ; si $f$ domine : $T = \\Theta(f(n))$, si $f$ est dominée : $T = \\Theta(n^{\\log_b a})$",
+    "grandeurs": [],
     "source": "Classique programme"
   },
   {
@@ -1022,7 +2673,8 @@
     "notion": "TC5.2 Utilisation de structures de données et algorithmes",
     "nom": "Complexité des opérations matricielles",
     "tex": "\\text{produit } (n{\\times}m)(m{\\times}p) : [[O(nmp)|O(nm)|O(n^2)]] \\quad ; \\quad \\text{inversion } n{\\times}n : [[O(n^3)|O(n^2)|O(n!)]]",
-    "legende": "Transposée n×m : O(nm)",
+    "legende": "Algorithmes classiques (inversion par pivot de Gauss) ; transposée $n \\times m$ : $O(nm)$",
+    "grandeurs": [],
     "source": "Fiche TC5.2 ; Sujet 2023 E1 Q12-13"
   },
   {
@@ -1030,8 +2682,9 @@
     "bloc": "TC5",
     "notion": "TC5.2 Utilisation de structures de données et algorithmes",
     "nom": "Hauteur et taille d'un arbre binaire",
-    "tex": "N_{\\max} = [[2^{h+1} - 1|2^h|2^h - 1|2h + 1]] \\quad ; \\quad h_{\\min} \\approx [[\\log_2 n|n|\\sqrt{n}]]",
-    "legende": "h hauteur (racine à h = 0), N_max nombre maximal de nœuds, n nombre de nœuds (arbre équilibré)",
+    "tex": "N_{\\max} = [[2^{h+1} - 1|2^{h+1}|2^h|2h + 1]] \\quad ; \\quad h_{\\min} \\approx [[\\log_2 n|n|\\sqrt{n}]]",
+    "legende": "$h$ hauteur (racine à $h = 0$), $N_{\\max}$ nombre maximal de nœuds, $n$ nombre de nœuds (arbre équilibré)",
+    "grandeurs": [],
     "source": "Classique programme"
   },
   {
@@ -1040,7 +2693,8 @@
     "notion": "TC5.3 Programmation d'un site web",
     "nom": "Ports par défaut HTTP / HTTPS",
     "tex": "\\text{HTTP} : \\text{port } [[80|8080|443|21]] \\quad ; \\quad \\text{HTTPS} : \\text{port } [[443|80|22|8443]]",
-    "legende": "Adresse de la forme 192.168.x.x:80",
+    "legende": "Ports TCP par défaut d'un serveur web (adresse de la forme 192.168.x.x:80)",
+    "grandeurs": [],
     "source": "Fiche TC5.3 ; Sujet 2024 E1 Q3"
   },
   {
@@ -1050,6 +2704,7 @@
     "nom": "Codes de statut HTTP usuels",
     "tex": "\\text{succès} : [[200|404|500|301]] \\quad ; \\quad \\text{introuvable} : [[404|403|500|200]] \\quad ; \\quad \\text{erreur serveur} : [[500|400|404]]",
     "legende": "200 OK, 404 Not Found, 500 Internal Server Error",
+    "grandeurs": [],
     "source": "Fiche TC5.3"
   },
   {
@@ -1059,6 +2714,7 @@
     "nom": "Classes de codes HTTP",
     "tex": "\\text{redirection} : [[\\text{3xx}|\\text{4xx}|\\text{2xx}]] \\quad ; \\quad \\text{erreur client} : [[\\text{4xx}|\\text{5xx}|\\text{3xx}]] \\quad ; \\quad \\text{erreur serveur} : [[\\text{5xx}|\\text{4xx}|\\text{1xx}]]",
     "legende": "1xx information, 2xx succès, 3xx redirection, 4xx erreur client, 5xx erreur serveur",
+    "grandeurs": [],
     "source": "Fiche TC5.3"
   },
   {
@@ -1067,7 +2723,8 @@
     "notion": "TC5.4 Architecture de l'ordinateur",
     "nom": "Nombre de valeurs codées sur n bits",
     "tex": "[[N_{\\mathrm{val}}]] = [[2^n|n^2|2n|2^n - 1]]",
-    "legende": "n nombre de bits (8 bits → 256 valeurs)",
+    "legende": "$N_{\\mathrm{val}}$ nombre de valeurs, $n$ nombre de bits (8 bits → 256 valeurs)",
+    "grandeurs": [],
     "source": "Fiche TC5.4"
   },
   {
@@ -1076,7 +2733,8 @@
     "notion": "TC5.4 Architecture de l'ordinateur",
     "nom": "Plage d'un entier non signé",
     "tex": "\\lbrack\\, [[0|-2^{n-1}|1]] \\,;\\, [[2^n - 1|2^n|2^{n-1}]] \\,\\rbrack",
-    "legende": "Entier non signé sur n bits",
+    "legende": "Entier non signé sur $n$ bits",
+    "grandeurs": [],
     "source": "Fiche TC5.4"
   },
   {
@@ -1085,7 +2743,8 @@
     "notion": "TC5.4 Architecture de l'ordinateur",
     "nom": "Plage d'un entier en complément à 2",
     "tex": "\\lbrack\\, [[-2^{n-1}|-2^{n-1} + 1|-2^n]] \\,;\\, [[2^{n-1} - 1|2^{n-1}|2^n - 1]] \\,\\rbrack",
-    "legende": "Entier signé sur n bits (8 bits : −128 à 127)",
+    "legende": "Entier signé sur $n$ bits (8 bits : de −128 à 127)",
+    "grandeurs": [],
     "source": "Fiche TC5.4"
   },
   {
@@ -1094,7 +2753,8 @@
     "notion": "TC5.4 Architecture de l'ordinateur",
     "nom": "Opposé en complément à 2",
     "tex": "[[-x]] = [[\\overline{x}|x]] + [[1|0|-1]]",
-    "legende": "Inversion bit à bit puis ajout de 1 (sur n bits)",
+    "legende": "$\\overline{x}$ inversion bit à bit de $x$, puis ajout de 1 (calcul modulo $2^n$)",
+    "grandeurs": [],
     "source": "Fiche TC5.4"
   },
   {
@@ -1103,7 +2763,8 @@
     "notion": "TC5.4 Architecture de l'ordinateur",
     "nom": "Valeur d'un entier binaire non signé",
     "tex": "[[N]] = \\sum_{i=0}^{[[n-1|n|n+1]]} b_i\\,[[2^i|2^{i+1}|i^2]]",
-    "legende": "b_i bit de rang i (b_0 = LSB)",
+    "legende": "$b_i$ bit de rang $i$ ($b_0$ LSB), $n$ nombre de bits",
+    "grandeurs": [],
     "source": "Classique programme"
   },
   {
@@ -1112,7 +2773,8 @@
     "notion": "TC5.4 Architecture de l'ordinateur",
     "nom": "Valeur d'un entier en complément à 2",
     "tex": "[[N]] = [[-b_{n-1}\\,2^{n-1}|b_{n-1}\\,2^{n-1}|-b_{n-1}\\,2^n]] + \\sum_{i=0}^{[[n-2|n-1]]} b_i\\,2^i",
-    "legende": "Le bit de poids fort a un poids négatif",
+    "legende": "$b_i$ bit de rang $i$ ; le bit de poids fort $b_{n-1}$ a un poids négatif",
+    "grandeurs": [],
     "source": "Classique programme"
   },
   {
@@ -1122,6 +2784,7 @@
     "nom": "Codage hexadécimal",
     "tex": "1\\ \\text{chiffre hexa} = [[4|8|2|16]]\\ \\text{bits} \\quad ; \\quad 1\\ \\text{octet} = [[2|1|4]]\\ \\text{chiffres hexa}",
     "legende": "Regroupement des bits par quartets",
+    "grandeurs": [],
     "source": "Fiche TC5.4"
   },
   {
@@ -1130,7 +2793,8 @@
     "notion": "TC5.4 Architecture de l'ordinateur",
     "nom": "Flottant IEEE 754 normalisé",
     "tex": "[[x]] = [[(-1)^S|-1^S|(-1)^{S+1}]] \\cdot [[1{,}M|0{,}M|M]] \\cdot 2^{[[E - \\text{biais}|E + \\text{biais}|E]]}",
-    "legende": "S bit de signe, M mantisse (bit implicite 1), E exposant biaisé",
+    "legende": "$S$ bit de signe, $M$ mantisse (bit implicite 1), $E$ exposant biaisé",
+    "grandeurs": [],
     "source": "Fiche TC5.4"
   },
   {
@@ -1140,6 +2804,7 @@
     "nom": "Format IEEE 754 simple précision (32 bits)",
     "tex": "32 = [[1|0|2]] + [[8|11|7]] + [[23|52|24]] \\quad ; \\quad \\text{biais} = [[127|128|1023]]",
     "legende": "Signe + exposant + mantisse (binary32)",
+    "grandeurs": [],
     "source": "Fiche TC5.4"
   },
   {
@@ -1149,6 +2814,7 @@
     "nom": "Format IEEE 754 double précision (64 bits)",
     "tex": "64 = 1 + [[11|8|12]] + [[52|53|23]] \\quad ; \\quad \\text{biais} = [[1023|1024|127]]",
     "legende": "Signe + exposant + mantisse (binary64)",
+    "grandeurs": [],
     "source": "Fiche TC5.4"
   },
   {
@@ -1157,7 +2823,8 @@
     "notion": "TC5.4 Architecture de l'ordinateur",
     "nom": "Biais de l'exposant IEEE 754",
     "tex": "[[\\text{biais}]] = [[2^{k-1} - 1|2^k - 1|2^{k-1}]]",
-    "legende": "k nombre de bits d'exposant (k = 8 → 127, k = 11 → 1023)",
+    "legende": "$k$ nombre de bits d'exposant ($k = 8$ → 127, $k = 11$ → 1023)",
+    "grandeurs": [],
     "source": "Classique programme"
   },
   {
@@ -1166,7 +2833,8 @@
     "notion": "TC5.4 Architecture de l'ordinateur",
     "nom": "Simplifications booléennes usuelles",
     "tex": "a + a\\,b = [[a|b|a\\,b|1]] \\quad ; \\quad a + \\overline{a}\\,b = [[a + b|b|a\\,b|1]]",
-    "legende": "Absorption et absorption du complément",
+    "legende": "Absorption et absorption du complément ($+$ : OU, produit : ET)",
+    "grandeurs": [],
     "source": "Classique programme"
   },
   {
@@ -1175,7 +2843,8 @@
     "notion": "TC5.4 Architecture de l'ordinateur",
     "nom": "Espace mémoire adressable",
     "tex": "[[N_{\\mathrm{adresses}}]] = [[2^{n_a}|n_a^2|2 n_a]]",
-    "legende": "n_a largeur du bus d'adresses (ex. 16 bits → 64 Ki adresses) ; capacité = N_adresses × largeur du bus de données",
+    "legende": "$n_a$ largeur du bus d'adresses (16 bits → 64 Ki adresses) ; capacité = $N_{\\mathrm{adresses}}$ × largeur du bus de données",
+    "grandeurs": [],
     "source": "Classique programme"
   },
   {
@@ -1184,7 +2853,24 @@
     "notion": "TC5.4 Architecture de l'ordinateur",
     "nom": "Débit d'un bus parallèle",
     "tex": "[[D]] = [[n_d|2^{n_d}|n_a]] \\cdot [[f_{\\mathrm{bus}}|T_{\\mathrm{bus}}]]",
-    "legende": "n_d largeur du bus de données (bits), f_bus fréquence de transfert (1 transfert/cycle)",
+    "legende": "$D$ débit (bit/s), $n_d$ largeur du bus de données (bits), $f_{\\mathrm{bus}}$ fréquence de transfert (Hz, 1 transfert par cycle)",
+    "grandeurs": [
+      {
+        "s": "D",
+        "nom": "débit",
+        "u": "bit\\cdot s^{-1}"
+      },
+      {
+        "s": "n_d",
+        "nom": "largeur du bus de données",
+        "u": ""
+      },
+      {
+        "s": "f_{\\mathrm{bus}}",
+        "nom": "fréquence de transfert",
+        "u": "Hz"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -1193,7 +2879,8 @@
     "notion": "TC5.4 Architecture de l'ordinateur",
     "nom": "Préfixes binaires",
     "tex": "1\\ \\text{Kio} = [[2^{10}|10^3|2^8]]\\ \\text{octets} \\quad ; \\quad 1\\ \\text{Mio} = [[2^{20}|10^6|2^{16}]]\\ \\text{octets}",
-    "legende": "Kio = 1024 octets (≠ ko = 1000 octets)",
+    "legende": "1 Kio = 1024 octets (≠ 1 ko = 1000 octets)",
+    "grandeurs": [],
     "source": "Classique programme"
   },
   {
@@ -1202,7 +2889,29 @@
     "notion": "TC5.4 Architecture de l'ordinateur",
     "nom": "Durée d'exécution avec pipeline",
     "tex": "[[T_{\\mathrm{pipe}}]] = ([[k + n - 1|k n|n - 1|k + n]])\\,[[\\tau|\\frac{1}{\\tau}]]",
-    "legende": "k nombre d'étages, n nombre d'instructions, τ durée d'un étage ; sans pipeline : n k τ",
+    "legende": "$k$ nombre d'étages, $n$ nombre d'instructions, $\\tau$ durée d'un étage (s) ; sans pipeline : $n k \\tau$",
+    "grandeurs": [
+      {
+        "s": "T_{\\mathrm{pipe}}",
+        "nom": "durée d'exécution",
+        "u": "s"
+      },
+      {
+        "s": "k",
+        "nom": "nombre d'étages",
+        "u": ""
+      },
+      {
+        "s": "n",
+        "nom": "nombre d'instructions",
+        "u": ""
+      },
+      {
+        "s": "\\tau",
+        "nom": "durée d'un étage",
+        "u": "s"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -1211,7 +2920,24 @@
     "notion": "TC5.4 Architecture de l'ordinateur",
     "nom": "Compteur binaire à n bascules",
     "tex": "\\text{modulo } [[2^n|n|2n]] \\quad ; \\quad f_{\\mathrm{MSB}} = \\dfrac{f_{\\mathrm{H}}}{2^{[[n|n-1|2n]]}}",
-    "legende": "Chaque bascule divise la fréquence par 2 ; n bascules D/JK",
+    "legende": "$n$ bascules D ou JK, chacune divise la fréquence par 2 ; $f_{\\mathrm{H}}$ fréquence d'horloge, $f_{\\mathrm{MSB}}$ fréquence du bit de poids fort (Hz)",
+    "grandeurs": [
+      {
+        "s": "n",
+        "nom": "nombre de bascules",
+        "u": ""
+      },
+      {
+        "s": "f_{\\mathrm{MSB}}",
+        "nom": "fréquence du bit de poids fort",
+        "u": "Hz"
+      },
+      {
+        "s": "f_{\\mathrm{H}}",
+        "nom": "fréquence d'horloge",
+        "u": "Hz"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -1220,7 +2946,19 @@
     "notion": "TC5.5 Utilisation d'un réseau",
     "nom": "Débit à partir de la durée d'un bit",
     "tex": "[[D]] = \\dfrac{[[1|2|8]]}{[[T_{\\mathrm{bit}}|T_{\\mathrm{trame}}|f_{\\mathrm{bit}}]]}",
-    "legende": "T_bit durée d'un bit mesurée à l'oscilloscope (ex. 104 µs → 9600 bauds)",
+    "legende": "$D$ débit (bit/s), $T_{\\mathrm{bit}}$ durée d'un bit mesurée à l'oscilloscope (s) ; ex. 104 µs → 9600 bit/s",
+    "grandeurs": [
+      {
+        "s": "D",
+        "nom": "débit",
+        "u": "bit\\cdot s^{-1}"
+      },
+      {
+        "s": "T_{\\mathrm{bit}}",
+        "nom": "durée d'un bit",
+        "u": "s"
+      }
+    ],
     "source": "Fiche TC5.5"
   },
   {
@@ -1230,6 +2968,7 @@
     "nom": "Trame série asynchrone 8N1",
     "tex": "n_{\\mathrm{bits}} = 1_{\\text{START}} + [[8|7|9]]_{\\text{données}} + [[1|2|0]]_{\\mathrm{STOP}} = [[10|8|9|11]]",
     "legende": "Sans parité, 1 bit de STOP ; LSB transmis en premier",
+    "grandeurs": [],
     "source": "Fiche TC5.5"
   },
   {
@@ -1238,7 +2977,29 @@
     "notion": "TC5.5 Utilisation d'un réseau",
     "nom": "Débit utile d'une liaison série",
     "tex": "[[D_{\\mathrm{utile}}]] = [[D|2D]] \\cdot \\dfrac{[[n_{\\text{données}}|n_{\\mathrm{trame}}]]}{[[n_{\\mathrm{trame}}|n_{\\text{données}}|8]]}",
-    "legende": "Ex. 8N1 : 80 % du débit brut (9600 bauds → 960 octets/s)",
+    "legende": "$D$ débit brut (bit/s), $n$ nombre de bits ; ex. 8N1 : 80 % du débit brut (9600 bit/s → 960 octets/s)",
+    "grandeurs": [
+      {
+        "s": "D_{\\mathrm{utile}}",
+        "nom": "débit utile",
+        "u": "bit\\cdot s^{-1}"
+      },
+      {
+        "s": "D",
+        "nom": "débit brut",
+        "u": "bit\\cdot s^{-1}"
+      },
+      {
+        "s": "n_{\\text{données}}",
+        "nom": "nombre de bits de données par trame",
+        "u": ""
+      },
+      {
+        "s": "n_{\\mathrm{trame}}",
+        "nom": "nombre de bits par trame",
+        "u": ""
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -1246,8 +3007,20 @@
     "bloc": "TC5",
     "notion": "TC5.5 Utilisation d'un réseau",
     "nom": "Limites de la norme EIA232/RS232",
-    "tex": "D_{\\max} \\approx [[20\\,000|115\\,200|1\\,000\\,000]]\\ \\mathrm{bit/s} \\quad ; \\quad L_{\\max} \\approx [[15|1200|100]]\\ \\mathrm{m}",
-    "legende": "Liaison point à point asynchrone ; débit et distance liés",
+    "tex": "D_{\\max} \\approx [[20\\,000|1\\,000\\,000|10\\,000\\,000]]\\ \\mathrm{bit/s} \\quad ; \\quad L_{\\max} \\approx [[15|1200|100]]\\ \\mathrm{m}",
+    "legende": "Valeurs de la norme TIA/EIA-232 : liaison point à point asynchrone, débit et distance liés",
+    "grandeurs": [
+      {
+        "s": "D_{\\max}",
+        "nom": "débit maximal",
+        "u": "bit\\cdot s^{-1}"
+      },
+      {
+        "s": "L_{\\max}",
+        "nom": "longueur maximale",
+        "u": "m"
+      }
+    ],
     "source": "Fiche TC5.5"
   },
   {
@@ -1256,7 +3029,8 @@
     "notion": "TC5.5 Utilisation d'un réseau",
     "nom": "Ports FTP",
     "tex": "\\text{FTP} : [[21|20|22]]\\ (\\text{contrôle}) \\quad ; \\quad [[20|21|23]]\\ (\\text{données})",
-    "legende": "File Transfer Protocol, données en clair",
+    "legende": "File Transfer Protocol (mode actif), données en clair",
+    "grandeurs": [],
     "source": "Fiche TC5.5"
   },
   {
@@ -1266,6 +3040,7 @@
     "nom": "Ports Telnet et SSH",
     "tex": "\\text{Telnet} : [[23|22|21]]\\ ([[\\text{en clair}|\\text{chiffré}]]) \\quad ; \\quad \\text{SSH} : [[22|23|443]]\\ ([[\\text{chiffré}|\\text{en clair}]])",
     "legende": "Sessions terminal distantes : préférer SSH pour la confidentialité",
+    "grandeurs": [],
     "source": "Fiche TC5.5"
   },
   {
@@ -1275,6 +3050,7 @@
     "nom": "Autres ports TCP/UDP usuels",
     "tex": "\\text{DNS} : [[53|25|67]] \\quad ; \\quad \\text{SMTP} : [[25|53|110]] \\quad ; \\quad \\text{Modbus TCP} : [[502|503|102]]",
     "legende": "Ports par défaut (Modbus TCP très présent en supervision industrielle)",
+    "grandeurs": [],
     "source": "Classique programme"
   },
   {
@@ -1283,7 +3059,8 @@
     "notion": "TC5.5 Utilisation d'un réseau",
     "nom": "Adresse réseau et adresse de diffusion",
     "tex": "@_{\\text{réseau}} = @_{\\mathrm{IP}}\\ [[\\text{ET}|\\text{OU}|\\text{XOR}]]\\ \\text{masque} \\quad ; \\quad @_{\\mathrm{diffusion}} = @_{\\mathrm{IP}}\\ [[\\text{OU}|\\text{ET}]]\\ \\overline{\\text{masque}}",
-    "legende": "Opérations bit à bit sur 32 bits",
+    "legende": "Opérations bit à bit sur les 32 bits de l'adresse IPv4",
+    "grandeurs": [],
     "source": "Classique programme"
   },
   {
@@ -1293,6 +3070,7 @@
     "nom": "Masques de sous-réseau usuels",
     "tex": "/24 = [[255.255.255.0|255.255.0.0|255.255.255.255]] \\quad ; \\quad /16 = [[255.255.0.0|255.0.0.0|255.255.255.0]]",
     "legende": "Le préfixe /n compte le nombre de bits à 1 du masque",
+    "grandeurs": [],
     "source": "Classique programme"
   },
   {
@@ -1300,8 +3078,9 @@
     "bloc": "TC5",
     "notion": "TC5.5 Utilisation d'un réseau",
     "nom": "Découpage en sous-réseaux",
-    "tex": "[[N_{\\text{sous-réseaux}}]] = [[2^s|s^2|2^s - 2]]",
-    "legende": "s nombre de bits empruntés à la partie hôte (le préfixe passe de /n à /(n+s))",
+    "tex": "[[N_{\\text{sous-réseaux}}]] = [[2^s|s^2|2s]]",
+    "legende": "$s$ nombre de bits empruntés à la partie hôte (le préfixe passe de /$n$ à /$(n+s)$)",
+    "grandeurs": [],
     "source": "Classique programme"
   },
   {
@@ -1311,6 +3090,7 @@
     "nom": "Plages d'adresses IPv4 privées",
     "tex": "10.0.0.0/[[8|16|24]] \\quad ; \\quad 172.16.0.0/[[12|16|8]] \\quad ; \\quad 192.168.0.0/[[16|24|8]]",
     "legende": "Adresses non routées sur Internet (RFC 1918)",
+    "grandeurs": [],
     "source": "Classique programme"
   },
   {
@@ -1318,8 +3098,25 @@
     "bloc": "TC5",
     "notion": "TC5.5 Utilisation d'un réseau",
     "nom": "Temps de propagation sur un support",
-    "tex": "[[t_p]] = \\dfrac{[[d|v]]}{[[v|d|D]]}",
-    "legende": "d longueur du support (m), v vitesse de propagation (≈ 2·10⁸ m/s dans un câble) — distinct du temps de transmission",
+    "tex": "[[t_p]] = \\dfrac{[[d|v|2d]]}{[[v|d|v^2]]}",
+    "legende": "$t_p$ temps de propagation (s), $d$ longueur du support (m), $v$ vitesse de propagation (≈ $2\\cdot10^8$ m/s dans un câble) ; distinct du temps de transmission",
+    "grandeurs": [
+      {
+        "s": "t_p",
+        "nom": "temps de propagation",
+        "u": "s"
+      },
+      {
+        "s": "d",
+        "nom": "longueur du support",
+        "u": "m"
+      },
+      {
+        "s": "v",
+        "nom": "vitesse de propagation",
+        "u": "m\\cdot s^{-1}"
+      }
+    ],
     "source": "Classique programme"
   }
 ]

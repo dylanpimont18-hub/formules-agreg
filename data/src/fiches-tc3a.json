@@ -5,7 +5,24 @@
     "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
     "nom": "Loi de Hooke",
     "tex": "[[\\sigma]] = [[E|G|\\frac{1}{E}]] \\cdot [[\\varepsilon|\\varepsilon^2|\\Delta L]]",
-    "legende": "σ contrainte normale (Pa), E module d'Young (Pa), ε déformation relative (sans unité)",
+    "legende": "$\\sigma$ contrainte normale (Pa), $E$ module d'Young (Pa), $\\varepsilon$ déformation relative (sans unité)",
+    "grandeurs": [
+      {
+        "s": "\\sigma",
+        "nom": "contrainte normale",
+        "u": "Pa"
+      },
+      {
+        "s": "E",
+        "nom": "module d'Young",
+        "u": "Pa"
+      },
+      {
+        "s": "\\varepsilon",
+        "nom": "déformation relative",
+        "u": ""
+      }
+    ],
     "source": "Fiche TC3.1.1 ; Fiche TC3.1.2 ; Fiche TC3.2.1"
   },
   {
@@ -13,8 +30,25 @@
     "bloc": "TC3",
     "notion": "TC3.1.1 Matériaux",
     "nom": "Coefficient de sécurité",
-    "tex": "[[s]] = \\frac{[[R_e|R_m|\\sigma_{\\max}]]}{[[\\sigma_{\\max}|R_e|\\sigma_{\\mathrm{adm}}]]}",
-    "legende": "s coefficient de sécurité (sans unité), Re limite d'élasticité (Pa), σmax contrainte maximale calculée (Pa)",
+    "tex": "[[s]] = \\frac{[[R_e|E|\\sigma_{\\max}]]}{[[\\sigma_{\\max}|R_e|s\\,\\sigma_{\\max}]]}",
+    "legende": "$s$ coefficient de sécurité (sans unité), $R_e$ limite d'élasticité (Pa), $\\sigma_{\\max}$ contrainte maximale calculée (Pa)",
+    "grandeurs": [
+      {
+        "s": "s",
+        "nom": "coefficient de sécurité",
+        "u": ""
+      },
+      {
+        "s": "R_e",
+        "nom": "limite d'élasticité",
+        "u": "Pa"
+      },
+      {
+        "s": "\\sigma_{\\max}",
+        "nom": "contrainte maximale calculée",
+        "u": "Pa"
+      }
+    ],
     "source": "Fiche TC3.1.1 ; Fiche TC3.2.1 ; Sujet 2023 E1 Q20-24"
   },
   {
@@ -23,7 +57,34 @@
     "notion": "TC3.1.1 Matériaux",
     "nom": "Flux thermique conduit (loi de Fourier, paroi plane)",
     "tex": "[[\\Phi_{\\mathrm{th}}]] = \\frac{[[\\lambda|\\rho|\\frac{1}{\\lambda}]] \\cdot [[S|e]] \\cdot [[\\Delta T|T|\\Delta T^2]]}{[[e|S|e^2]]}",
-    "legende": "Φth flux thermique (W), λ conductivité thermique (W·m⁻¹·K⁻¹), S surface (m²), ΔT écart de température (K), e épaisseur (m)",
+    "legende": "$\\Phi_{\\mathrm{th}}$ flux thermique (W), $\\lambda$ conductivité thermique (W·m⁻¹·K⁻¹), $S$ surface (m²), $\\Delta T$ écart de température entre faces (K), $e$ épaisseur (m)",
+    "grandeurs": [
+      {
+        "s": "\\Phi_{\\mathrm{th}}",
+        "nom": "flux thermique",
+        "u": "W"
+      },
+      {
+        "s": "\\lambda",
+        "nom": "conductivité thermique",
+        "u": "W\\cdot m^{-1}\\cdot K^{-1}"
+      },
+      {
+        "s": "S",
+        "nom": "surface",
+        "u": "m^2"
+      },
+      {
+        "s": "\\Delta T",
+        "nom": "écart de température",
+        "u": "K"
+      },
+      {
+        "s": "e",
+        "nom": "épaisseur",
+        "u": "m"
+      }
+    ],
     "source": "Fiche TC3.1.1"
   },
   {
@@ -32,7 +93,24 @@
     "notion": "TC3.1.1 Matériaux",
     "nom": "Taux de recyclage",
     "tex": "[[\\tau_{\\mathrm{recyclage}}]] = \\frac{[[m_{\\mathrm{recyclée}}|m_{\\mathrm{totale}}|m_{\\mathrm{primaire}}]]}{[[m_{\\mathrm{totale}}|m_{\\mathrm{recyclée}}|m_{\\mathrm{primaire}}]]}",
-    "legende": "τ taux de recyclage (sans unité), masses de matière recyclée et totale (kg)",
+    "legende": "$\\tau_{\\mathrm{recyclage}}$ taux de recyclage (sans unité), $m_{\\mathrm{recyclée}}$ masse de matière recyclée (kg), $m_{\\mathrm{totale}}$ masse totale (kg)",
+    "grandeurs": [
+      {
+        "s": "\\tau_{\\mathrm{recyclage}}",
+        "nom": "taux de recyclage",
+        "u": ""
+      },
+      {
+        "s": "m_{\\mathrm{recyclée}}",
+        "nom": "masse recyclée",
+        "u": "kg"
+      },
+      {
+        "s": "m_{\\mathrm{totale}}",
+        "nom": "masse totale",
+        "u": "kg"
+      }
+    ],
     "source": "Fiche TC3.1.1"
   },
   {
@@ -41,7 +119,24 @@
     "notion": "TC3.1.1 Matériaux",
     "nom": "Masse volumique",
     "tex": "[[\\rho]] = \\frac{[[m|V|P]]}{[[V|m|S]]}",
-    "legende": "ρ masse volumique (kg/m³), m masse (kg), V volume (m³)",
+    "legende": "$\\rho$ masse volumique (kg/m³), $m$ masse (kg), $V$ volume (m³)",
+    "grandeurs": [
+      {
+        "s": "\\rho",
+        "nom": "masse volumique",
+        "u": "kg\\cdot m^{-3}"
+      },
+      {
+        "s": "m",
+        "nom": "masse",
+        "u": "kg"
+      },
+      {
+        "s": "V",
+        "nom": "volume",
+        "u": "m^3"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -50,16 +145,70 @@
     "notion": "TC3.1.1 Matériaux",
     "nom": "Résistivité en fonction de la température",
     "tex": "[[\\rho(T)]] = [[\\rho_0|\\rho_0^2|\\frac{1}{\\rho_0}]] \\left(1 + [[\\alpha|\\lambda|\\beta]] \\, [[(T - T_0)|(T + T_0)|T]]\\right)",
-    "legende": "ρ0 résistivité à T0 (Ω·m), α coefficient de température (K⁻¹), T température (°C ou K) — Cu : α ≈ 3,9·10⁻³ K⁻¹",
+    "legende": "$\\rho(T)$ résistivité à $T$ (Ω·m), $\\rho_0$ résistivité à $T_0$ (Ω·m), $\\alpha$ coefficient de température (K⁻¹, Cu ≈ 3,9·10⁻³), $T$, $T_0$ températures (K ou °C)",
+    "grandeurs": [
+      {
+        "s": "\\rho(T)",
+        "nom": "résistivité à la température T",
+        "u": "\\Omega\\cdot m"
+      },
+      {
+        "s": "\\rho_0",
+        "nom": "résistivité de référence",
+        "u": "\\Omega\\cdot m"
+      },
+      {
+        "s": "\\alpha",
+        "nom": "coefficient de température",
+        "u": "K^{-1}"
+      },
+      {
+        "s": "T",
+        "nom": "température",
+        "u": "K"
+      },
+      {
+        "s": "T_0",
+        "nom": "température de référence",
+        "u": "K"
+      }
+    ],
     "source": "Classique programme"
   },
   {
     "id": "tc3-mat-spires-transfo",
     "bloc": "TC3",
     "notion": "TC3.1.1 Matériaux",
-    "nom": "Nombre de spires d'un bobinage (non-saturation)",
+    "nom": "Nombre minimal de spires d'une inductance (non-saturation)",
     "tex": "[[n]] = \\frac{[[L|L^2|\\sqrt{L}]] \\cdot [[I_{\\max}|I_{\\mathrm{eff}}|I_{\\max}^2]]}{[[B_{\\max}|H_{\\max}|\\mu_0]] \\cdot [[A_e|l_e|A_e^2]]}",
-    "legende": "n nombre de spires, L inductance (H), Imax courant crête (A), Bmax induction maximale (T), Ae section effective du noyau (m²)",
+    "legende": "$n$ nombre de spires, $L$ inductance (H), $I_{\\max}$ courant crête (A), $B_{\\max}$ induction maximale admissible (T), $A_e$ section effective du noyau (m²) — issu de $LI = n\\Phi = nBA_e$",
+    "grandeurs": [
+      {
+        "s": "n",
+        "nom": "nombre de spires",
+        "u": ""
+      },
+      {
+        "s": "L",
+        "nom": "inductance",
+        "u": "H"
+      },
+      {
+        "s": "I_{\\max}",
+        "nom": "courant crête",
+        "u": "A"
+      },
+      {
+        "s": "B_{\\max}",
+        "nom": "induction maximale",
+        "u": "T"
+      },
+      {
+        "s": "A_e",
+        "nom": "section effective du noyau",
+        "u": "m^2"
+      }
+    ],
     "source": "Fiche TC3.1.1 ; Sujet 2023 E3 Q33"
   },
   {
@@ -68,7 +217,24 @@
     "notion": "TC3.1.1 Matériaux",
     "nom": "Indice d'Ashby — tirant léger et rigide",
     "tex": "[[M]] = \\frac{[[E|E^{1/2}|E^{1/3}]]}{[[\\rho|\\rho^2|\\sqrt{\\rho}]]}",
-    "legende": "M indice de performance à maximiser, E module d'Young (Pa), ρ masse volumique (kg/m³)",
+    "legende": "$M$ indice de performance à maximiser, $E$ module d'Young (Pa), $\\rho$ masse volumique (kg/m³)",
+    "grandeurs": [
+      {
+        "s": "M",
+        "nom": "indice de performance",
+        "u": ""
+      },
+      {
+        "s": "E",
+        "nom": "module d'Young",
+        "u": "Pa"
+      },
+      {
+        "s": "\\rho",
+        "nom": "masse volumique",
+        "u": "kg\\cdot m^{-3}"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -77,7 +243,24 @@
     "notion": "TC3.1.1 Matériaux",
     "nom": "Indice d'Ashby — poutre légère et rigide (flexion)",
     "tex": "[[M]] = \\frac{[[E^{1/2}|E|E^{1/3}]]}{[[\\rho|\\rho^2|\\rho^{1/2}]]}",
-    "legende": "M indice de performance à maximiser, E module d'Young (Pa), ρ masse volumique (kg/m³)",
+    "legende": "$M$ indice de performance à maximiser, $E$ module d'Young (Pa), $\\rho$ masse volumique (kg/m³)",
+    "grandeurs": [
+      {
+        "s": "M",
+        "nom": "indice de performance",
+        "u": ""
+      },
+      {
+        "s": "E",
+        "nom": "module d'Young",
+        "u": "Pa"
+      },
+      {
+        "s": "\\rho",
+        "nom": "masse volumique",
+        "u": "kg\\cdot m^{-3}"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -86,7 +269,24 @@
     "notion": "TC3.1.1 Matériaux",
     "nom": "Indice d'Ashby — plaque légère et rigide (flexion)",
     "tex": "[[M]] = \\frac{[[E^{1/3}|E^{1/2}|E]]}{[[\\rho|\\rho^3|\\rho^{1/3}]]}",
-    "legende": "M indice de performance à maximiser, E module d'Young (Pa), ρ masse volumique (kg/m³)",
+    "legende": "$M$ indice de performance à maximiser, $E$ module d'Young (Pa), $\\rho$ masse volumique (kg/m³)",
+    "grandeurs": [
+      {
+        "s": "M",
+        "nom": "indice de performance",
+        "u": ""
+      },
+      {
+        "s": "E",
+        "nom": "module d'Young",
+        "u": "Pa"
+      },
+      {
+        "s": "\\rho",
+        "nom": "masse volumique",
+        "u": "kg\\cdot m^{-3}"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -95,7 +295,24 @@
     "notion": "TC3.1.1 Matériaux",
     "nom": "Indice d'Ashby — tirant léger et résistant",
     "tex": "[[M]] = \\frac{[[\\sigma_e|\\sigma_e^{2/3}|E]]}{[[\\rho|\\rho^2|\\sqrt{\\rho}]]}",
-    "legende": "M indice de performance à maximiser, σe limite d'élasticité (Pa), ρ masse volumique (kg/m³)",
+    "legende": "$M$ indice de performance à maximiser, $\\sigma_e$ limite d'élasticité (Pa), $\\rho$ masse volumique (kg/m³)",
+    "grandeurs": [
+      {
+        "s": "M",
+        "nom": "indice de performance",
+        "u": ""
+      },
+      {
+        "s": "\\sigma_e",
+        "nom": "limite d'élasticité",
+        "u": "Pa"
+      },
+      {
+        "s": "\\rho",
+        "nom": "masse volumique",
+        "u": "kg\\cdot m^{-3}"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -104,7 +321,24 @@
     "notion": "TC3.1.1 Matériaux",
     "nom": "Indice d'Ashby — poutre légère et résistante (flexion)",
     "tex": "[[M]] = \\frac{[[\\sigma_e^{2/3}|\\sigma_e|\\sigma_e^{1/2}]]}{[[\\rho|\\rho^{2/3}|\\rho^2]]}",
-    "legende": "M indice de performance à maximiser, σe limite d'élasticité (Pa), ρ masse volumique (kg/m³)",
+    "legende": "$M$ indice de performance à maximiser, $\\sigma_e$ limite d'élasticité (Pa), $\\rho$ masse volumique (kg/m³)",
+    "grandeurs": [
+      {
+        "s": "M",
+        "nom": "indice de performance",
+        "u": ""
+      },
+      {
+        "s": "\\sigma_e",
+        "nom": "limite d'élasticité",
+        "u": "Pa"
+      },
+      {
+        "s": "\\rho",
+        "nom": "masse volumique",
+        "u": "kg\\cdot m^{-3}"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -113,7 +347,24 @@
     "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
     "nom": "Déformation (allongement relatif)",
     "tex": "[[\\varepsilon]] = \\frac{[[\\Delta L|L_0|L]]}{[[L_0|\\Delta L|S_0]]}",
-    "legende": "ε déformation (sans unité), ΔL allongement (m), L0 longueur initiale (m)",
+    "legende": "$\\varepsilon$ déformation (sans unité), $\\Delta L$ allongement (m), $L_0$ longueur initiale (m)",
+    "grandeurs": [
+      {
+        "s": "\\varepsilon",
+        "nom": "déformation",
+        "u": ""
+      },
+      {
+        "s": "\\Delta L",
+        "nom": "allongement",
+        "u": "m"
+      },
+      {
+        "s": "L_0",
+        "nom": "longueur initiale",
+        "u": "m"
+      }
+    ],
     "source": "Fiche TC3.1.2"
   },
   {
@@ -122,7 +373,19 @@
     "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
     "nom": "Condition de non-plastification",
     "tex": "[[\\sigma]] [[\\leq|\\geq|=]] [[R_e|R_m|E]]",
-    "legende": "σ contrainte calculée (Pa), Re limite d'élasticité (Pa) — jamais Rm",
+    "legende": "$\\sigma$ contrainte calculée (Pa), $R_e$ limite d'élasticité (Pa) — jamais $R_m$",
+    "grandeurs": [
+      {
+        "s": "\\sigma",
+        "nom": "contrainte calculée",
+        "u": "Pa"
+      },
+      {
+        "s": "R_e",
+        "nom": "limite d'élasticité",
+        "u": "Pa"
+      }
+    ],
     "source": "Fiche TC3.1.2"
   },
   {
@@ -131,7 +394,34 @@
     "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
     "nom": "Allongement d'une barre en traction",
     "tex": "[[\\Delta L]] = \\frac{[[N|E|S]] \\cdot [[L_0|S|L_0^2]]}{[[E S|E L_0|G S]]}",
-    "legende": "ΔL allongement (m), N effort normal (N), L0 longueur (m), E module d'Young (Pa), S section (m²)",
+    "legende": "$\\Delta L$ allongement (m), $N$ effort normal (N), $L_0$ longueur initiale (m), $E$ module d'Young (Pa), $S$ section (m²)",
+    "grandeurs": [
+      {
+        "s": "\\Delta L",
+        "nom": "allongement",
+        "u": "m"
+      },
+      {
+        "s": "N",
+        "nom": "effort normal",
+        "u": "N"
+      },
+      {
+        "s": "L_0",
+        "nom": "longueur initiale",
+        "u": "m"
+      },
+      {
+        "s": "E",
+        "nom": "module d'Young",
+        "u": "Pa"
+      },
+      {
+        "s": "S",
+        "nom": "section",
+        "u": "m^2"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -140,7 +430,29 @@
     "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
     "nom": "Raideur d'une barre en traction",
     "tex": "[[k]] = \\frac{[[E|G|\\sigma]] \\cdot [[S|I|L]]}{[[L|S|L^3]]}",
-    "legende": "k raideur (N/m), E module d'Young (Pa), S section (m²), L longueur (m)",
+    "legende": "$k$ raideur (N/m), $E$ module d'Young (Pa), $S$ section (m²), $L$ longueur (m)",
+    "grandeurs": [
+      {
+        "s": "k",
+        "nom": "raideur",
+        "u": "N\\cdot m^{-1}"
+      },
+      {
+        "s": "E",
+        "nom": "module d'Young",
+        "u": "Pa"
+      },
+      {
+        "s": "S",
+        "nom": "section",
+        "u": "m^2"
+      },
+      {
+        "s": "L",
+        "nom": "longueur",
+        "u": "m"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -149,7 +461,24 @@
     "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
     "nom": "Loi de Newton des fluides visqueux",
     "tex": "[[\\tau]] = [[\\mu|\\nu|\\frac{1}{\\mu}]] \\cdot [[\\frac{\\mathrm{d}v}{\\mathrm{d}y}|\\frac{\\mathrm{d}y}{\\mathrm{d}v}|v]]",
-    "legende": "τ contrainte de cisaillement (Pa), μ viscosité dynamique (Pa·s), dv/dy gradient de vitesse (s⁻¹)",
+    "legende": "$\\tau$ contrainte de cisaillement (Pa), $\\mu$ viscosité dynamique (Pa·s), $\\frac{\\mathrm{d}v}{\\mathrm{d}y}$ gradient de vitesse (s⁻¹)",
+    "grandeurs": [
+      {
+        "s": "\\tau",
+        "nom": "contrainte de cisaillement",
+        "u": "Pa"
+      },
+      {
+        "s": "\\mu",
+        "nom": "viscosité dynamique",
+        "u": "Pa\\cdot s"
+      },
+      {
+        "s": "\\frac{\\mathrm{d}v}{\\mathrm{d}y}",
+        "nom": "gradient de vitesse",
+        "u": "s^{-1}"
+      }
+    ],
     "source": "Fiche TC3.1.2"
   },
   {
@@ -157,8 +486,25 @@
     "bloc": "TC3",
     "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
     "nom": "Viscosité cinématique",
-    "tex": "[[\\nu]] = \\frac{[[\\mu|\\rho|\\eta]]}{[[\\rho|\\mu|g]]}",
-    "legende": "ν viscosité cinématique (m²/s), μ viscosité dynamique (Pa·s), ρ masse volumique (kg/m³)",
+    "tex": "[[\\nu]] = \\frac{[[\\mu|\\rho|\\mu^2]]}{[[\\rho|\\mu|g]]}",
+    "legende": "$\\nu$ viscosité cinématique (m²/s), $\\mu$ viscosité dynamique (Pa·s), $\\rho$ masse volumique (kg/m³)",
+    "grandeurs": [
+      {
+        "s": "\\nu",
+        "nom": "viscosité cinématique",
+        "u": "m^2\\cdot s^{-1}"
+      },
+      {
+        "s": "\\mu",
+        "nom": "viscosité dynamique",
+        "u": "Pa\\cdot s"
+      },
+      {
+        "s": "\\rho",
+        "nom": "masse volumique",
+        "u": "kg\\cdot m^{-3}"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -167,7 +513,24 @@
     "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
     "nom": "Modèle ressort (élasticité pure)",
     "tex": "[[F]] = [[k|c|\\frac{1}{k}]] \\, [[\\Delta x|\\dot{x}|\\ddot{x}]]",
-    "legende": "F effort (N), k raideur (N/m), Δx allongement (m)",
+    "legende": "$F$ effort (N), $k$ raideur (N/m), $\\Delta x$ allongement (m)",
+    "grandeurs": [
+      {
+        "s": "F",
+        "nom": "effort",
+        "u": "N"
+      },
+      {
+        "s": "k",
+        "nom": "raideur",
+        "u": "N\\cdot m^{-1}"
+      },
+      {
+        "s": "\\Delta x",
+        "nom": "allongement",
+        "u": "m"
+      }
+    ],
     "source": "Fiche TC3.1.2"
   },
   {
@@ -176,7 +539,24 @@
     "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
     "nom": "Modèle amortisseur (viscosité pure)",
     "tex": "[[F]] = [[c|k|m]] \\, [[\\dot{x}|x|\\ddot{x}]]",
-    "legende": "F effort (N), c coefficient d'amortissement visqueux (N·s/m), ẋ vitesse (m/s)",
+    "legende": "$F$ effort (N), $c$ coefficient d'amortissement visqueux (N·s/m), $\\dot{x}$ vitesse relative (m/s)",
+    "grandeurs": [
+      {
+        "s": "F",
+        "nom": "effort",
+        "u": "N"
+      },
+      {
+        "s": "c",
+        "nom": "coefficient d'amortissement visqueux",
+        "u": "N\\cdot s\\cdot m^{-1}"
+      },
+      {
+        "s": "\\dot{x}",
+        "nom": "vitesse relative",
+        "u": "m\\cdot s^{-1}"
+      }
+    ],
     "source": "Fiche TC3.1.2"
   },
   {
@@ -185,7 +565,24 @@
     "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
     "nom": "Énergie élastique d'un ressort",
     "tex": "[[E_p]] = [[\\frac{1}{2}|2|1]] \\, [[k|c|m]] \\, [[x^2|x|\\dot{x}^2]]",
-    "legende": "Ep énergie potentielle élastique (J), k raideur (N/m), x allongement (m)",
+    "legende": "$E_p$ énergie potentielle élastique (J), $k$ raideur (N/m), $x$ allongement (m)",
+    "grandeurs": [
+      {
+        "s": "E_p",
+        "nom": "énergie potentielle élastique",
+        "u": "J"
+      },
+      {
+        "s": "k",
+        "nom": "raideur",
+        "u": "N\\cdot m^{-1}"
+      },
+      {
+        "s": "x",
+        "nom": "allongement",
+        "u": "m"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -193,8 +590,35 @@
     "bloc": "TC3",
     "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
     "nom": "Modèle de Kelvin-Voigt (ressort ∥ amortisseur)",
-    "tex": "[[\\sigma]] = [[E \\varepsilon|\\frac{\\sigma}{E}|E \\dot{\\varepsilon}]] + [[\\eta \\dot{\\varepsilon}|\\eta \\varepsilon|\\frac{\\varepsilon}{\\eta}]]",
-    "legende": "σ contrainte (Pa), E module (Pa), η viscosité (Pa·s), ε déformation, ε̇ vitesse de déformation (s⁻¹) — les contraintes s'ajoutent",
+    "tex": "[[\\sigma]] = [[E \\varepsilon|E \\varepsilon^2|E \\dot{\\varepsilon}]] + [[\\eta \\dot{\\varepsilon}|\\eta \\varepsilon|\\frac{\\varepsilon}{\\eta}]]",
+    "legende": "$\\sigma$ contrainte (Pa), $E$ module (Pa), $\\eta$ viscosité (Pa·s), $\\varepsilon$ déformation, $\\dot{\\varepsilon}$ vitesse de déformation (s⁻¹) — en parallèle, les contraintes s'ajoutent",
+    "grandeurs": [
+      {
+        "s": "\\sigma",
+        "nom": "contrainte",
+        "u": "Pa"
+      },
+      {
+        "s": "E",
+        "nom": "module élastique",
+        "u": "Pa"
+      },
+      {
+        "s": "\\varepsilon",
+        "nom": "déformation",
+        "u": ""
+      },
+      {
+        "s": "\\eta",
+        "nom": "viscosité",
+        "u": "Pa\\cdot s"
+      },
+      {
+        "s": "\\dot{\\varepsilon}",
+        "nom": "vitesse de déformation",
+        "u": "s^{-1}"
+      }
+    ],
     "source": "Fiche TC3.1.2 ; Classique programme"
   },
   {
@@ -203,7 +627,34 @@
     "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
     "nom": "Modèle de Maxwell (ressort en série avec amortisseur)",
     "tex": "[[\\dot{\\varepsilon}]] = \\frac{[[\\dot{\\sigma}|\\sigma|\\ddot{\\sigma}]]}{[[E|\\eta|G]]} + \\frac{[[\\sigma|\\dot{\\sigma}|\\varepsilon]]}{[[\\eta|E|\\mu]]}",
-    "legende": "ε̇ vitesse de déformation (s⁻¹), σ contrainte (Pa), E module (Pa), η viscosité (Pa·s) — les déformations s'ajoutent",
+    "legende": "$\\dot{\\varepsilon}$ vitesse de déformation (s⁻¹), $\\sigma$ contrainte (Pa), $E$ module (Pa), $\\eta$ viscosité (Pa·s) — en série, les déformations s'ajoutent",
+    "grandeurs": [
+      {
+        "s": "\\dot{\\varepsilon}",
+        "nom": "vitesse de déformation",
+        "u": "s^{-1}"
+      },
+      {
+        "s": "\\dot{\\sigma}",
+        "nom": "dérivée de la contrainte",
+        "u": "Pa\\cdot s^{-1}"
+      },
+      {
+        "s": "E",
+        "nom": "module élastique",
+        "u": "Pa"
+      },
+      {
+        "s": "\\sigma",
+        "nom": "contrainte",
+        "u": "Pa"
+      },
+      {
+        "s": "\\eta",
+        "nom": "viscosité",
+        "u": "Pa\\cdot s"
+      }
+    ],
     "source": "Fiche TC3.1.2 ; Classique programme"
   },
   {
@@ -212,7 +663,24 @@
     "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
     "nom": "Coefficient de Poisson (contraction transversale)",
     "tex": "[[\\varepsilon_t]] = [[-\\nu|\\nu|-\\frac{1}{\\nu}]] \\, [[\\varepsilon_l|\\sigma|\\varepsilon_t]]",
-    "legende": "εt déformation transversale, εl déformation longitudinale, ν coefficient de Poisson (≈ 0,3 pour l'acier)",
+    "legende": "$\\varepsilon_t$ déformation transversale, $\\varepsilon_l$ déformation longitudinale, $\\nu$ coefficient de Poisson (≈ 0,3 pour l'acier)",
+    "grandeurs": [
+      {
+        "s": "\\varepsilon_t",
+        "nom": "déformation transversale",
+        "u": ""
+      },
+      {
+        "s": "\\nu",
+        "nom": "coefficient de Poisson",
+        "u": ""
+      },
+      {
+        "s": "\\varepsilon_l",
+        "nom": "déformation longitudinale",
+        "u": ""
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -221,7 +689,24 @@
     "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
     "nom": "Relation entre modules E, G et ν",
     "tex": "[[G]] = \\frac{[[E|\\nu|2E]]}{[[2(1 + \\nu)|2(1 - \\nu)|1 + \\nu]]}",
-    "legende": "G module de cisaillement / de Coulomb (Pa), E module d'Young (Pa), ν coefficient de Poisson — acier G ≈ 80 GPa",
+    "legende": "$G$ module de cisaillement (de Coulomb) (Pa), $E$ module d'Young (Pa), $\\nu$ coefficient de Poisson — acier : $G \\approx 80$ GPa",
+    "grandeurs": [
+      {
+        "s": "G",
+        "nom": "module de cisaillement",
+        "u": "Pa"
+      },
+      {
+        "s": "E",
+        "nom": "module d'Young",
+        "u": "Pa"
+      },
+      {
+        "s": "\\nu",
+        "nom": "coefficient de Poisson",
+        "u": ""
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -230,7 +715,24 @@
     "notion": "TC3.1.2 Modèles de connaissance et de comportement des matériaux",
     "nom": "Loi de Hooke en cisaillement",
     "tex": "[[\\tau]] = [[G|E|\\nu]] \\cdot [[\\gamma|\\varepsilon|\\theta]]",
-    "legende": "τ contrainte de cisaillement (Pa), G module de Coulomb (Pa), γ glissement (rad)",
+    "legende": "$\\tau$ contrainte de cisaillement (Pa), $G$ module de Coulomb (Pa), $\\gamma$ glissement (rad)",
+    "grandeurs": [
+      {
+        "s": "\\tau",
+        "nom": "contrainte de cisaillement",
+        "u": "Pa"
+      },
+      {
+        "s": "G",
+        "nom": "module de Coulomb",
+        "u": "Pa"
+      },
+      {
+        "s": "\\gamma",
+        "nom": "glissement",
+        "u": "rad"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -239,7 +741,24 @@
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Contrainte normale en traction/compression",
     "tex": "[[\\sigma]] = \\frac{[[N|T|M_f]]}{[[S|I|I_0]]}",
-    "legende": "σ contrainte normale (MPa), N effort normal (N), S section (mm²)",
+    "legende": "$\\sigma$ contrainte normale (Pa ; MPa si $S$ en mm²), $N$ effort normal (N), $S$ section (m²)",
+    "grandeurs": [
+      {
+        "s": "\\sigma",
+        "nom": "contrainte normale",
+        "u": "Pa"
+      },
+      {
+        "s": "N",
+        "nom": "effort normal",
+        "u": "N"
+      },
+      {
+        "s": "S",
+        "nom": "section",
+        "u": "m^2"
+      }
+    ],
     "source": "Fiche TC3.2.1"
   },
   {
@@ -248,16 +767,60 @@
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Contrainte normale maximale en flexion plane",
     "tex": "[[\\sigma_{\\max}]] = \\frac{[[M_f|M_t|T]] \\cdot [[v|r|v^2]]}{[[I_{Gz}|I_0|S]]}",
-    "legende": "Mf moment fléchissant (N·mm), v = y_max distance à la fibre neutre (mm), I_Gz moment quadratique (mm⁴)",
+    "legende": "$\\sigma_{\\max}$ contrainte normale maximale (Pa), $M_f$ moment fléchissant (N·m), $v = \\lvert y \\rvert_{\\max}$ distance de la fibre la plus éloignée à la fibre neutre (m), $I_{Gz}$ moment quadratique (m⁴)",
+    "grandeurs": [
+      {
+        "s": "\\sigma_{\\max}",
+        "nom": "contrainte normale maximale",
+        "u": "Pa"
+      },
+      {
+        "s": "M_f",
+        "nom": "moment fléchissant",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "v",
+        "nom": "distance à la fibre neutre",
+        "u": "m"
+      },
+      {
+        "s": "I_{Gz}",
+        "nom": "moment quadratique de flexion",
+        "u": "m^4"
+      }
+    ],
     "source": "Fiche TC3.2.1 ; Sujet 2023 E1 Q20-24"
   },
   {
     "id": "tc3-rdm-torsion",
     "bloc": "TC3",
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
-    "nom": "Contrainte de cisaillement maximale en torsion",
+    "nom": "Contrainte de cisaillement maximale en torsion (section circulaire)",
     "tex": "[[\\tau_{\\max}]] = \\frac{[[M_t|M_f|T]] \\cdot [[r|v|r^2]]}{[[I_0|I_{Gz}|S]]}",
-    "legende": "τ contrainte tangentielle (MPa), Mt moment de torsion (N·mm), r rayon extérieur (mm), I0 moment quadratique polaire (mm⁴)",
+    "legende": "$\\tau_{\\max}$ contrainte tangentielle maximale (Pa), $M_t$ moment de torsion (N·m), $r$ rayon extérieur (m), $I_0$ moment quadratique polaire (m⁴) — arbres circulaires uniquement",
+    "grandeurs": [
+      {
+        "s": "\\tau_{\\max}",
+        "nom": "contrainte tangentielle maximale",
+        "u": "Pa"
+      },
+      {
+        "s": "M_t",
+        "nom": "moment de torsion",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "r",
+        "nom": "rayon extérieur",
+        "u": "m"
+      },
+      {
+        "s": "I_0",
+        "nom": "moment quadratique polaire",
+        "u": "m^4"
+      }
+    ],
     "source": "Fiche TC3.2.1"
   },
   {
@@ -266,7 +829,24 @@
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Contrainte de cisaillement moyenne",
     "tex": "[[\\tau_{\\mathrm{moy}}]] = \\frac{[[T|N|M_t]]}{[[S|I_0|2S]]}",
-    "legende": "τmoy contrainte tangentielle moyenne (MPa), T effort tranchant (N), S section cisaillée (mm²)",
+    "legende": "$\\tau_{\\mathrm{moy}}$ contrainte tangentielle moyenne (Pa), $T$ effort tranchant (N), $S$ section cisaillée (m²)",
+    "grandeurs": [
+      {
+        "s": "\\tau_{\\mathrm{moy}}",
+        "nom": "contrainte tangentielle moyenne",
+        "u": "Pa"
+      },
+      {
+        "s": "T",
+        "nom": "effort tranchant",
+        "u": "N"
+      },
+      {
+        "s": "S",
+        "nom": "section cisaillée",
+        "u": "m^2"
+      }
+    ],
     "source": "Fiche TC3.2.1"
   },
   {
@@ -274,8 +854,25 @@
     "bloc": "TC3",
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Contrainte admissible",
-    "tex": "[[\\sigma_{\\mathrm{adm}}]] = \\frac{[[R_e|R_m|E]]}{[[s|s^2|2]]}",
-    "legende": "σadm contrainte admissible (MPa), Re limite élastique (MPa), s coefficient de sécurité (2 à 5 usuel)",
+    "tex": "[[\\sigma_{\\mathrm{adm}}]] = \\frac{[[R_e|E|\\sigma_{\\max}]]}{[[s|s^2|2]]}",
+    "legende": "$\\sigma_{\\mathrm{adm}}$ contrainte admissible (Pa), $R_e$ limite d'élasticité (Pa), $s$ coefficient de sécurité (2 à 5 usuel)",
+    "grandeurs": [
+      {
+        "s": "\\sigma_{\\mathrm{adm}}",
+        "nom": "contrainte admissible",
+        "u": "Pa"
+      },
+      {
+        "s": "R_e",
+        "nom": "limite d'élasticité",
+        "u": "Pa"
+      },
+      {
+        "s": "s",
+        "nom": "coefficient de sécurité",
+        "u": ""
+      }
+    ],
     "source": "Fiche TC3.2.1"
   },
   {
@@ -284,7 +881,34 @@
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Angle de torsion total",
     "tex": "[[\\Delta\\theta]] = \\frac{[[M_t|M_f|\\tau]] \\cdot [[L|L^2|r]]}{[[G|E|\\nu]] \\cdot [[I_0|I_{Gz}|S]]}",
-    "legende": "Δθ angle de torsion (rad), Mt moment de torsion (N·m), L longueur (m), G module de Coulomb (Pa), I0 moment quadratique polaire (m⁴)",
+    "legende": "$\\Delta\\theta$ angle de torsion entre les sections extrêmes (rad), $M_t$ moment de torsion (N·m), $L$ longueur (m), $G$ module de Coulomb (Pa), $I_0$ moment quadratique polaire (m⁴)",
+    "grandeurs": [
+      {
+        "s": "\\Delta\\theta",
+        "nom": "angle de torsion",
+        "u": "rad"
+      },
+      {
+        "s": "M_t",
+        "nom": "moment de torsion",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "L",
+        "nom": "longueur",
+        "u": "m"
+      },
+      {
+        "s": "G",
+        "nom": "module de Coulomb",
+        "u": "Pa"
+      },
+      {
+        "s": "I_0",
+        "nom": "moment quadratique polaire",
+        "u": "m^4"
+      }
+    ],
     "source": "Fiche TC3.2.1"
   },
   {
@@ -293,7 +917,29 @@
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Angle unitaire de torsion",
     "tex": "[[\\alpha]] = \\frac{[[M_t|M_f|\\tau_{\\max}]]}{[[G I_0|E I_0|G I_{Gz}]]}",
-    "legende": "α angle unitaire de torsion (rad/m), Mt moment de torsion (N·m), G module de Coulomb (Pa), I0 (m⁴)",
+    "legende": "$\\alpha$ angle unitaire de torsion (rad/m), $M_t$ moment de torsion (N·m), $G$ module de Coulomb (Pa), $I_0$ moment quadratique polaire (m⁴)",
+    "grandeurs": [
+      {
+        "s": "\\alpha",
+        "nom": "angle unitaire de torsion",
+        "u": "rad\\cdot m^{-1}"
+      },
+      {
+        "s": "M_t",
+        "nom": "moment de torsion",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "G",
+        "nom": "module de Coulomb",
+        "u": "Pa"
+      },
+      {
+        "s": "I_0",
+        "nom": "moment quadratique polaire",
+        "u": "m^4"
+      }
+    ],
     "source": "Fiche TC3.2.1"
   },
   {
@@ -302,7 +948,19 @@
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Moment quadratique polaire d'une section circulaire pleine",
     "tex": "[[I_0]] = \\frac{[[\\pi|2\\pi|\\pi^2]] [[d^4|d^3|d^2]]}{[[32|64|16]]}",
-    "legende": "I0 moment quadratique polaire (m⁴), d diamètre (m) — équivaut à πR⁴/2",
+    "legende": "$I_0$ moment quadratique polaire (m⁴), $d$ diamètre (m) — équivaut à $\\frac{\\pi R^4}{2}$",
+    "grandeurs": [
+      {
+        "s": "I_0",
+        "nom": "moment quadratique polaire",
+        "u": "m^4"
+      },
+      {
+        "s": "d",
+        "nom": "diamètre",
+        "u": "m"
+      }
+    ],
     "source": "Fiche TC3.2.1"
   },
   {
@@ -311,7 +969,19 @@
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Moment quadratique d'une section circulaire pleine (flexion)",
     "tex": "[[I_{Gz}]] = \\frac{[[\\pi|2\\pi|\\pi^2]] [[d^4|d^3|d^2]]}{[[64|32|12]]}",
-    "legende": "I_Gz moment quadratique par rapport à un diamètre (m⁴), d diamètre (m) — I0 = 2 I_Gz",
+    "legende": "$I_{Gz}$ moment quadratique par rapport à un diamètre (m⁴), $d$ diamètre (m) — $I_0 = 2 I_{Gz}$",
+    "grandeurs": [
+      {
+        "s": "I_{Gz}",
+        "nom": "moment quadratique diamétral",
+        "u": "m^4"
+      },
+      {
+        "s": "d",
+        "nom": "diamètre",
+        "u": "m"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -319,8 +989,25 @@
     "bloc": "TC3",
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Moment quadratique polaire d'un tube",
-    "tex": "[[I_0]] = \\frac{[[\\pi|2\\pi]] \\left([[D^4 - d^4|(D - d)^4|D^4 + d^4]]\\right)}{[[32|64|16]]}",
-    "legende": "I0 (m⁴), D diamètre extérieur (m), d diamètre intérieur (m)",
+    "tex": "[[I_0]] = \\frac{[[\\pi|2\\pi|\\pi^2]] \\left([[D^4 - d^4|(D - d)^4|D^4 + d^4]]\\right)}{[[32|64|16]]}",
+    "legende": "$I_0$ moment quadratique polaire (m⁴), $D$ diamètre extérieur (m), $d$ diamètre intérieur (m)",
+    "grandeurs": [
+      {
+        "s": "I_0",
+        "nom": "moment quadratique polaire",
+        "u": "m^4"
+      },
+      {
+        "s": "D",
+        "nom": "diamètre extérieur",
+        "u": "m"
+      },
+      {
+        "s": "d",
+        "nom": "diamètre intérieur",
+        "u": "m"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -329,7 +1016,24 @@
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Moment quadratique d'un rectangle (axe de flexion parallèle à b)",
     "tex": "[[I_{Gz}]] = \\frac{[[b|b^3|b^2]] \\, [[h^3|h|h^2]]}{[[12|6|3]]}",
-    "legende": "I_Gz (m⁴), b largeur (m), h hauteur dans le plan de flexion (m)",
+    "legende": "$I_{Gz}$ moment quadratique (m⁴), $b$ largeur (m), $h$ hauteur dans le plan de flexion (m)",
+    "grandeurs": [
+      {
+        "s": "I_{Gz}",
+        "nom": "moment quadratique",
+        "u": "m^4"
+      },
+      {
+        "s": "b",
+        "nom": "largeur",
+        "u": "m"
+      },
+      {
+        "s": "h",
+        "nom": "hauteur",
+        "u": "m"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -338,7 +1042,24 @@
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Module de flexion d'un rectangle",
     "tex": "[[\\frac{I_{Gz}}{v}]] = \\frac{[[b|b^2|b^3]] \\, [[h^2|h^3|h]]}{[[6|12|3]]}",
-    "legende": "I/v module de flexion (m³), b largeur (m), h hauteur (m), v = h/2",
+    "legende": "$\\frac{I_{Gz}}{v}$ module de flexion (m³), $b$ largeur (m), $h$ hauteur dans le plan de flexion (m), $v = \\frac{h}{2}$",
+    "grandeurs": [
+      {
+        "s": "\\frac{I_{Gz}}{v}",
+        "nom": "module de flexion",
+        "u": "m^3"
+      },
+      {
+        "s": "b",
+        "nom": "largeur",
+        "u": "m"
+      },
+      {
+        "s": "h",
+        "nom": "hauteur",
+        "u": "m"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -347,7 +1068,24 @@
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Contrainte de torsion maximale d'un arbre plein",
     "tex": "[[\\tau_{\\max}]] = \\frac{[[16|32|8]] \\, [[M_t|M_f|T]]}{[[\\pi d^3|\\pi d^4|\\pi d^2]]}",
-    "legende": "τmax (Pa), Mt moment de torsion (N·m), d diamètre (m)",
+    "legende": "$\\tau_{\\max}$ contrainte tangentielle maximale (Pa), $M_t$ moment de torsion (N·m), $d$ diamètre (m)",
+    "grandeurs": [
+      {
+        "s": "\\tau_{\\max}",
+        "nom": "contrainte tangentielle maximale",
+        "u": "Pa"
+      },
+      {
+        "s": "M_t",
+        "nom": "moment de torsion",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "d",
+        "nom": "diamètre",
+        "u": "m"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -356,7 +1094,24 @@
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Contrainte de flexion maximale d'un arbre plein",
     "tex": "[[\\sigma_{\\max}]] = \\frac{[[32|16|64]] \\, [[M_f|M_t|N]]}{[[\\pi d^3|\\pi d^4|\\pi d^2]]}",
-    "legende": "σmax (Pa), Mf moment fléchissant (N·m), d diamètre (m)",
+    "legende": "$\\sigma_{\\max}$ contrainte normale maximale (Pa), $M_f$ moment fléchissant (N·m), $d$ diamètre (m)",
+    "grandeurs": [
+      {
+        "s": "\\sigma_{\\max}",
+        "nom": "contrainte normale maximale",
+        "u": "Pa"
+      },
+      {
+        "s": "M_f",
+        "nom": "moment fléchissant",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "d",
+        "nom": "diamètre",
+        "u": "m"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -365,7 +1120,29 @@
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Théorème de Huygens (moments quadratiques)",
     "tex": "[[I_{\\Delta}]] = [[I_{G}|I_0|S]] + [[S|S^2|I_G]] \\, [[d^2|d|d^4]]",
-    "legende": "IΔ moment quadratique / axe Δ (m⁴), IG / axe parallèle passant par G (m⁴), S aire (m²), d distance entre axes (m)",
+    "legende": "$I_{\\Delta}$ moment quadratique par rapport à l'axe $\\Delta$ (m⁴), $I_G$ par rapport à l'axe parallèle passant par $G$ (m⁴), $S$ aire (m²), $d$ distance entre les axes (m)",
+    "grandeurs": [
+      {
+        "s": "I_{\\Delta}",
+        "nom": "moment quadratique par rapport à l'axe Δ",
+        "u": "m^4"
+      },
+      {
+        "s": "I_{G}",
+        "nom": "moment quadratique par rapport à G",
+        "u": "m^4"
+      },
+      {
+        "s": "S",
+        "nom": "aire de la section",
+        "u": "m^2"
+      },
+      {
+        "s": "d",
+        "nom": "distance entre axes",
+        "u": "m"
+      }
+    ],
     "source": "Fiche TC3.2.1 ; Sujet 2023 E1 Q20 ; Classique programme"
   },
   {
@@ -373,8 +1150,25 @@
     "bloc": "TC3",
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Relation effort tranchant / moment fléchissant",
-    "tex": "[[T_y]] = [[-|+|2]] \\, \\frac{\\mathrm{d} [[M_{fz}|M_t|N]]}{\\mathrm{d} [[x|y|t]]}",
-    "legende": "Ty effort tranchant (N), Mfz moment fléchissant (N·m), x abscisse le long de la poutre (m) — convention torseur de cohésion « partie droite sur partie gauche »",
+    "tex": "[[T_y]] = - \\frac{\\mathrm{d} [[M_{fz}|M_t|N]]}{\\mathrm{d} [[x|y|t]]}",
+    "legende": "$T_y$ effort tranchant (N), $M_{fz}$ moment fléchissant (N·m), $x$ abscisse le long de la poutre (m) — convention : torseur de cohésion = actions de la partie droite sur la partie gauche (signe + avec la convention inverse)",
+    "grandeurs": [
+      {
+        "s": "T_y",
+        "nom": "effort tranchant",
+        "u": "N"
+      },
+      {
+        "s": "M_{fz}",
+        "nom": "moment fléchissant",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "x",
+        "nom": "abscisse",
+        "u": "m"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -383,7 +1177,29 @@
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Équation de la déformée",
     "tex": "[[E|G|\\nu]] \\, [[I_{Gz}|I_0|S]] \\, [[y''(x)|y'(x)|y(x)]] = [[M_{fz}(x)|T_y(x)|N(x)]]",
-    "legende": "E module d'Young (Pa), I_Gz (m⁴), y(x) flèche (m), Mfz moment fléchissant (N·m)",
+    "legende": "$E$ module d'Young (Pa), $I_{Gz}$ moment quadratique (m⁴), $y(x)$ flèche (m), $M_{fz}$ moment fléchissant (N·m) — $y$ compté selon l'axe de flexion",
+    "grandeurs": [
+      {
+        "s": "E",
+        "nom": "module d'Young",
+        "u": "Pa"
+      },
+      {
+        "s": "I_{Gz}",
+        "nom": "moment quadratique",
+        "u": "m^4"
+      },
+      {
+        "s": "y''(x)",
+        "nom": "dérivée seconde de la déformée",
+        "u": "m^{-1}"
+      },
+      {
+        "s": "M_{fz}(x)",
+        "nom": "moment fléchissant",
+        "u": "N\\cdot m"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -392,7 +1208,34 @@
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Flèche d'une poutre console, charge ponctuelle en bout",
     "tex": "[[f]] = \\frac{[[F|p|M]] \\, [[L^3|L^2|L^4]]}{[[3|48|8]] \\, [[E I|G I_0|E S]]}",
-    "legende": "f flèche maximale (m), F charge (N), L longueur (m), E module d'Young (Pa), I moment quadratique (m⁴)",
+    "legende": "$f$ flèche maximale en bout (m), $F$ charge (N), $L$ longueur (m), $E$ module d'Young (Pa), $I$ moment quadratique (m⁴)",
+    "grandeurs": [
+      {
+        "s": "f",
+        "nom": "flèche",
+        "u": "m"
+      },
+      {
+        "s": "F",
+        "nom": "charge ponctuelle",
+        "u": "N"
+      },
+      {
+        "s": "L",
+        "nom": "longueur",
+        "u": "m"
+      },
+      {
+        "s": "E",
+        "nom": "module d'Young",
+        "u": "Pa"
+      },
+      {
+        "s": "I",
+        "nom": "moment quadratique",
+        "u": "m^4"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -401,7 +1244,34 @@
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Flèche d'une poutre console, charge uniformément répartie",
     "tex": "[[f]] = \\frac{[[p|F|M]] \\, [[L^4|L^3|L^2]]}{[[8|3|384]] \\, [[E I|G I_0|E S]]}",
-    "legende": "f flèche maximale (m), p charge linéique (N/m), L longueur (m), E (Pa), I (m⁴)",
+    "legende": "$f$ flèche maximale en bout (m), $p$ charge linéique (N/m), $L$ longueur (m), $E$ module d'Young (Pa), $I$ moment quadratique (m⁴)",
+    "grandeurs": [
+      {
+        "s": "f",
+        "nom": "flèche",
+        "u": "m"
+      },
+      {
+        "s": "p",
+        "nom": "charge linéique",
+        "u": "N\\cdot m^{-1}"
+      },
+      {
+        "s": "L",
+        "nom": "longueur",
+        "u": "m"
+      },
+      {
+        "s": "E",
+        "nom": "module d'Young",
+        "u": "Pa"
+      },
+      {
+        "s": "I",
+        "nom": "moment quadratique",
+        "u": "m^4"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -410,7 +1280,34 @@
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Flèche d'une poutre sur deux appuis, charge ponctuelle centrée",
     "tex": "[[f]] = \\frac{[[F|p|M]] \\, [[L^3|L^2|L^4]]}{[[48|3|384]] \\, [[E I|G I_0|E S]]}",
-    "legende": "f flèche à mi-portée (m), F charge (N), L portée (m), E (Pa), I (m⁴)",
+    "legende": "$f$ flèche à mi-portée (m), $F$ charge (N), $L$ portée (m), $E$ module d'Young (Pa), $I$ moment quadratique (m⁴)",
+    "grandeurs": [
+      {
+        "s": "f",
+        "nom": "flèche",
+        "u": "m"
+      },
+      {
+        "s": "F",
+        "nom": "charge ponctuelle",
+        "u": "N"
+      },
+      {
+        "s": "L",
+        "nom": "portée",
+        "u": "m"
+      },
+      {
+        "s": "E",
+        "nom": "module d'Young",
+        "u": "Pa"
+      },
+      {
+        "s": "I",
+        "nom": "moment quadratique",
+        "u": "m^4"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -419,7 +1316,34 @@
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Flèche d'une poutre sur deux appuis, charge uniformément répartie",
     "tex": "[[f]] = \\frac{[[5|1|3]] \\, [[p|F|M]] \\, [[L^4|L^3|L^2]]}{[[384|48|8]] \\, [[E I|G I_0|E S]]}",
-    "legende": "f flèche à mi-portée (m), p charge linéique (N/m), L portée (m), E (Pa), I (m⁴)",
+    "legende": "$f$ flèche à mi-portée (m), $p$ charge linéique (N/m), $L$ portée (m), $E$ module d'Young (Pa), $I$ moment quadratique (m⁴)",
+    "grandeurs": [
+      {
+        "s": "f",
+        "nom": "flèche",
+        "u": "m"
+      },
+      {
+        "s": "p",
+        "nom": "charge linéique",
+        "u": "N\\cdot m^{-1}"
+      },
+      {
+        "s": "L",
+        "nom": "portée",
+        "u": "m"
+      },
+      {
+        "s": "E",
+        "nom": "module d'Young",
+        "u": "Pa"
+      },
+      {
+        "s": "I",
+        "nom": "moment quadratique",
+        "u": "m^4"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -428,7 +1352,24 @@
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Moment fléchissant maximal, poutre sur deux appuis, charge centrée",
     "tex": "[[M_{f,\\max}]] = \\frac{[[F|p|F^2]] \\, [[L|L^2|\\frac{L}{2}]]}{[[4|8|2]]}",
-    "legende": "Mf,max moment fléchissant à mi-portée (N·m), F charge (N), L portée (m)",
+    "legende": "$M_{f,\\max}$ moment fléchissant à mi-portée (N·m), $F$ charge centrée (N), $L$ portée (m)",
+    "grandeurs": [
+      {
+        "s": "M_{f,\\max}",
+        "nom": "moment fléchissant maximal",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "F",
+        "nom": "charge ponctuelle",
+        "u": "N"
+      },
+      {
+        "s": "L",
+        "nom": "portée",
+        "u": "m"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -437,7 +1378,24 @@
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Moment fléchissant maximal, poutre sur deux appuis, charge répartie",
     "tex": "[[M_{f,\\max}]] = \\frac{[[p|F|p^2]] \\, [[L^2|L|L^3]]}{[[8|4|2]]}",
-    "legende": "Mf,max moment fléchissant à mi-portée (N·m), p charge linéique (N/m), L portée (m)",
+    "legende": "$M_{f,\\max}$ moment fléchissant à mi-portée (N·m), $p$ charge linéique (N/m), $L$ portée (m)",
+    "grandeurs": [
+      {
+        "s": "M_{f,\\max}",
+        "nom": "moment fléchissant maximal",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "p",
+        "nom": "charge linéique",
+        "u": "N\\cdot m^{-1}"
+      },
+      {
+        "s": "L",
+        "nom": "portée",
+        "u": "m"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -446,7 +1404,24 @@
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Moment fléchissant maximal d'une console (encastrement), charge en bout",
     "tex": "[[M_{f,\\max}]] = [[F|\\frac{F}{2}|p]] \\cdot [[L|L^2|\\frac{L}{2}]]",
-    "legende": "Mf,max moment à l'encastrement (N·m), F charge en bout (N), L longueur (m)",
+    "legende": "$M_{f,\\max}$ moment à l'encastrement (N·m), $F$ charge en bout (N), $L$ longueur (m)",
+    "grandeurs": [
+      {
+        "s": "M_{f,\\max}",
+        "nom": "moment fléchissant maximal",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "F",
+        "nom": "charge en bout",
+        "u": "N"
+      },
+      {
+        "s": "L",
+        "nom": "longueur",
+        "u": "m"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -455,7 +1430,29 @@
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Charge critique de flambement d'Euler",
     "tex": "[[F_c]] = \\frac{[[\\pi^2|\\pi|2\\pi]] \\, [[E|G|R_e]] \\, [[I_{\\min}|I_{\\max}|I_0]]}{[[L_f^2|L_f|L_f^3]]}",
-    "legende": "Fc charge critique (N), E module d'Young (Pa), Imin moment quadratique minimal (m⁴), Lf longueur de flambement (m)",
+    "legende": "$F_c$ charge critique (N), $E$ module d'Young (Pa), $I_{\\min}$ moment quadratique minimal (m⁴), $L_f$ longueur de flambement (m)",
+    "grandeurs": [
+      {
+        "s": "F_c",
+        "nom": "charge critique de flambement",
+        "u": "N"
+      },
+      {
+        "s": "E",
+        "nom": "module d'Young",
+        "u": "Pa"
+      },
+      {
+        "s": "I_{\\min}",
+        "nom": "moment quadratique minimal",
+        "u": "m^4"
+      },
+      {
+        "s": "L_f",
+        "nom": "longueur de flambement",
+        "u": "m"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -464,7 +1461,19 @@
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Longueur de flambement — encastrée / libre",
     "tex": "[[L_f]] = [[2|1|0{,}5|0{,}7]] \\, [[L|L^2]]",
-    "legende": "Lf longueur de flambement (m), L longueur réelle (m) ; articulée-articulée : L ; encastrée-encastrée : 0,5 L ; encastrée-articulée : 0,7 L",
+    "legende": "$L_f$ longueur de flambement (m), $L$ longueur réelle (m) ; articulée-articulée : $L$ ; encastrée-encastrée : $0{,}5L$ ; encastrée-articulée : $0{,}7L$",
+    "grandeurs": [
+      {
+        "s": "L_f",
+        "nom": "longueur de flambement",
+        "u": "m"
+      },
+      {
+        "s": "L",
+        "nom": "longueur réelle",
+        "u": "m"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -473,7 +1482,19 @@
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Longueur de flambement — encastrée / encastrée",
     "tex": "[[L_f]] = [[0{,}5|2|1|0{,}7]] \\, [[L|L^2]]",
-    "legende": "Lf longueur de flambement (m), L longueur réelle (m)",
+    "legende": "$L_f$ longueur de flambement (m), $L$ longueur réelle (m)",
+    "grandeurs": [
+      {
+        "s": "L_f",
+        "nom": "longueur de flambement",
+        "u": "m"
+      },
+      {
+        "s": "L",
+        "nom": "longueur réelle",
+        "u": "m"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -482,7 +1503,34 @@
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Élancement d'une poutre",
     "tex": "[[\\lambda]] = \\frac{[[L_f|L|I]]}{[[\\rho_g|I|S]]} \\quad \\text{avec} \\quad \\rho_g = \\sqrt{\\frac{[[I_{\\min}|I_0|I_{\\max}]]}{[[S|L_f|E]]}}",
-    "legende": "λ élancement (sans unité), Lf longueur de flambement (m), ρg rayon de giration (m), Imin (m⁴), S section (m²)",
+    "legende": "$\\lambda$ élancement (sans unité), $L_f$ longueur de flambement (m), $\\rho_g$ rayon de giration (m), $I_{\\min}$ moment quadratique minimal (m⁴), $S$ section (m²)",
+    "grandeurs": [
+      {
+        "s": "\\lambda",
+        "nom": "élancement",
+        "u": ""
+      },
+      {
+        "s": "L_f",
+        "nom": "longueur de flambement",
+        "u": "m"
+      },
+      {
+        "s": "\\rho_g",
+        "nom": "rayon de giration",
+        "u": "m"
+      },
+      {
+        "s": "I_{\\min}",
+        "nom": "moment quadratique minimal",
+        "u": "m^4"
+      },
+      {
+        "s": "S",
+        "nom": "section",
+        "u": "m^2"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -491,7 +1539,24 @@
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Contrainte équivalente de von Mises (flexion + torsion)",
     "tex": "[[\\sigma_{\\mathrm{eq}}]] = \\sqrt{[[\\sigma^2|\\sigma|2\\sigma^2]] + [[3|4|2]] \\, [[\\tau^2|\\tau|\\sigma\\tau]]}",
-    "legende": "σeq contrainte équivalente (Pa), σ contrainte normale (Pa), τ contrainte tangentielle (Pa) — Tresca : facteur 4",
+    "legende": "$\\sigma_{\\mathrm{eq}}$ contrainte équivalente (Pa), $\\sigma$ contrainte normale (Pa), $\\tau$ contrainte tangentielle (Pa) — Tresca : facteur 4",
+    "grandeurs": [
+      {
+        "s": "\\sigma_{\\mathrm{eq}}",
+        "nom": "contrainte équivalente",
+        "u": "Pa"
+      },
+      {
+        "s": "\\sigma",
+        "nom": "contrainte normale",
+        "u": "Pa"
+      },
+      {
+        "s": "\\tau",
+        "nom": "contrainte tangentielle",
+        "u": "Pa"
+      }
+    ],
     "source": "Fiche TC3.2.1 ; Classique programme"
   },
   {
@@ -500,7 +1565,24 @@
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Contrainte équivalente de Tresca (flexion + torsion)",
     "tex": "[[\\sigma_{\\mathrm{eq}}]] = \\sqrt{[[\\sigma^2|\\sigma|3\\sigma^2]] + [[4|3|2]] \\, [[\\tau^2|\\tau|\\sigma\\tau]]}",
-    "legende": "σeq contrainte équivalente (Pa), σ contrainte normale (Pa), τ contrainte tangentielle (Pa)",
+    "legende": "$\\sigma_{\\mathrm{eq}}$ contrainte équivalente (Pa), $\\sigma$ contrainte normale (Pa), $\\tau$ contrainte tangentielle (Pa) — von Mises : facteur 3",
+    "grandeurs": [
+      {
+        "s": "\\sigma_{\\mathrm{eq}}",
+        "nom": "contrainte équivalente",
+        "u": "Pa"
+      },
+      {
+        "s": "\\sigma",
+        "nom": "contrainte normale",
+        "u": "Pa"
+      },
+      {
+        "s": "\\tau",
+        "nom": "contrainte tangentielle",
+        "u": "Pa"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -509,7 +1591,24 @@
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Concentration de contraintes",
     "tex": "[[\\sigma_{\\max}]] = [[K_t|\\frac{1}{K_t}|s]] \\cdot [[\\sigma_{\\mathrm{nom}}|R_e|\\sigma_{\\mathrm{adm}}]]",
-    "legende": "σmax contrainte réelle locale (Pa), Kt coefficient de concentration de contrainte (> 1), σnom contrainte nominale (Pa)",
+    "legende": "$\\sigma_{\\max}$ contrainte réelle locale (Pa), $K_t$ coefficient de concentration de contraintes (> 1), $\\sigma_{\\mathrm{nom}}$ contrainte nominale (Pa)",
+    "grandeurs": [
+      {
+        "s": "\\sigma_{\\max}",
+        "nom": "contrainte locale maximale",
+        "u": "Pa"
+      },
+      {
+        "s": "K_t",
+        "nom": "coefficient de concentration de contraintes",
+        "u": ""
+      },
+      {
+        "s": "\\sigma_{\\mathrm{nom}}",
+        "nom": "contrainte nominale",
+        "u": "Pa"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -518,7 +1617,24 @@
     "notion": "TC3.2.1 Modèles de connaissance et de comportement des structures",
     "nom": "Système linéaire des éléments finis",
     "tex": "[[\\mathbf{K}|\\mathbf{M}|\\mathbf{C}]] \\, [[\\mathbf{U}|\\mathbf{F}|\\dot{\\mathbf{U}}]] = [[\\mathbf{F}|\\mathbf{U}|\\mathbf{0}]]",
-    "legende": "[K] matrice de rigidité globale, {U} déplacements nodaux, {F} efforts nodaux",
+    "legende": "$\\mathbf{K}$ matrice de rigidité globale (N/m), $\\mathbf{U}$ vecteur des déplacements nodaux (m), $\\mathbf{F}$ vecteur des efforts nodaux (N)",
+    "grandeurs": [
+      {
+        "s": "\\mathbf{K}",
+        "nom": "matrice de rigidité",
+        "u": "N\\cdot m^{-1}"
+      },
+      {
+        "s": "\\mathbf{U}",
+        "nom": "déplacements nodaux",
+        "u": "m"
+      },
+      {
+        "s": "\\mathbf{F}",
+        "nom": "efforts nodaux",
+        "u": "N"
+      }
+    ],
     "source": "Fiche TC3.2.1"
   },
   {
@@ -526,8 +1642,20 @@
     "bloc": "TC3",
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Dualité d'une liaison parfaite",
-    "tex": "[[m_c|N_c]] + [[N_c|h]] = [[6|3|12]]",
-    "legende": "mc nombre de mobilités, Nc nombre d'inconnues statiques de la liaison",
+    "tex": "[[m_c|N_c]] + [[N_c|h]] = [[6|12|5]]",
+    "legende": "$m_c$ nombre de mobilités de la liaison, $N_c$ nombre d'inconnues statiques de la liaison — modèle spatial (3D)",
+    "grandeurs": [
+      {
+        "s": "m_c",
+        "nom": "nombre de mobilités de la liaison",
+        "u": ""
+      },
+      {
+        "s": "N_c",
+        "nom": "nombre d'inconnues statiques de la liaison",
+        "u": ""
+      }
+    ],
     "source": "Fiche TC3.2.2 ; Fiche TC2.2 (tableau des liaisons)"
   },
   {
@@ -536,16 +1664,55 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Nombre cyclomatique",
     "tex": "[[\\gamma]] = [[L|n|N_c]] - [[(n - 1)|n|(n + 1)]]",
-    "legende": "γ nombre de boucles indépendantes, L nombre de liaisons, n nombre de solides (bâti compris)",
+    "legende": "$\\gamma$ nombre cyclomatique (boucles indépendantes), $L$ nombre de liaisons, $n$ nombre de solides (bâti compris)",
+    "grandeurs": [
+      {
+        "s": "\\gamma",
+        "nom": "nombre cyclomatique",
+        "u": ""
+      },
+      {
+        "s": "L",
+        "nom": "nombre de liaisons",
+        "u": ""
+      },
+      {
+        "s": "n",
+        "nom": "nombre de solides",
+        "u": ""
+      }
+    ],
     "source": "Fiche TC3.2.2 ; Fiche TC2.2 (graphe des liaisons, chaîne fermée = cycle)"
   },
   {
     "id": "tc3-meca-hyperstatisme",
     "bloc": "TC3",
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
-    "nom": "Mobilité et degré d'hyperstatisme",
-    "tex": "[[m]] - [[h]] = [[6\\gamma|6(n - 1)|3\\gamma]] - [[\\sum N_c|\\sum m_c|N_s]]",
-    "legende": "m mobilité, h degré d'hyperstatisme, γ nombre cyclomatique, Nc inconnues statiques de chaque liaison (en 3D)",
+    "nom": "Mobilité et degré d'hyperstatisme (approche statique)",
+    "tex": "[[m|h]] - [[h|m]] = [[6(n - 1)|6\\gamma|6n]] - [[\\sum N_c|\\sum m_c|N_s]]",
+    "legende": "$m$ mobilité, $h$ degré d'hyperstatisme, $n$ nombre de solides (bâti compris), $N_c$ inconnues statiques de chaque liaison (3D) — approche cinématique : $m - h = \\sum m_c - 6\\gamma$",
+    "grandeurs": [
+      {
+        "s": "m",
+        "nom": "mobilité",
+        "u": ""
+      },
+      {
+        "s": "h",
+        "nom": "degré d'hyperstatisme",
+        "u": ""
+      },
+      {
+        "s": "n",
+        "nom": "nombre de solides",
+        "u": ""
+      },
+      {
+        "s": "N_c",
+        "nom": "inconnues statiques par liaison",
+        "u": ""
+      }
+    ],
     "source": "Fiche TC3.2.2"
   },
   {
@@ -554,7 +1721,29 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Relation de Varignon (champ des vitesses)",
     "tex": "[[\\vec{V}(Q,S/R)]] = [[\\vec{V}(P,S/R)|\\vec{V}(Q,R/S)]] + [[\\overrightarrow{QP}|\\overrightarrow{PQ}]] \\wedge [[\\vec{\\Omega}(S/R)|\\vec{\\Omega}(R/S)]]",
-    "legende": "V vitesse d'un point lié au solide S (m/s), Ω vecteur rotation de S/R (rad/s)",
+    "legende": "$\\vec{V}(Q,S/R)$ vitesse du point $Q$ lié au solide $S$ (m/s), $\\vec{\\Omega}(S/R)$ vecteur rotation de $S$ par rapport à $R$ (rad/s)",
+    "grandeurs": [
+      {
+        "s": "\\vec{V}(Q,S/R)",
+        "nom": "vitesse du point Q",
+        "u": "m\\cdot s^{-1}"
+      },
+      {
+        "s": "\\vec{V}(P,S/R)",
+        "nom": "vitesse du point P",
+        "u": "m\\cdot s^{-1}"
+      },
+      {
+        "s": "\\overrightarrow{QP}",
+        "nom": "vecteur position",
+        "u": "m"
+      },
+      {
+        "s": "\\vec{\\Omega}(S/R)",
+        "nom": "vecteur rotation",
+        "u": "rad\\cdot s^{-1}"
+      }
+    ],
     "source": "Fiche TC3.2.2"
   },
   {
@@ -563,7 +1752,29 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Transport du moment (torseur d'actions)",
     "tex": "[[\\vec{M}_B]] = [[\\vec{M}_A|\\vec{M}_O]] + [[\\overrightarrow{BA}|\\overrightarrow{AB}]] \\wedge [[\\vec{R}|\\vec{\\Omega}|\\vec{V}]]",
-    "legende": "M moment (N·m), R résultante (N) — même structure que Varignon (« BABAR »)",
+    "legende": "$\\vec{M}_B$, $\\vec{M}_A$ moments en $B$ et en $A$ (N·m), $\\vec{R}$ résultante (N) — même structure que Varignon (« BABAR »)",
+    "grandeurs": [
+      {
+        "s": "\\vec{M}_B",
+        "nom": "moment en B",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "\\vec{M}_A",
+        "nom": "moment en A",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "\\overrightarrow{BA}",
+        "nom": "vecteur position",
+        "u": "m"
+      },
+      {
+        "s": "\\vec{R}",
+        "nom": "résultante",
+        "u": "N"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -572,7 +1783,24 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Composition des vitesses",
     "tex": "[[\\vec{V}(M,2/0)]] = [[\\vec{V}(M,2/1)|\\vec{V}(M,1/2)]] + [[\\vec{V}(M,1/0)|\\vec{V}(M,0/1)]]",
-    "legende": "V vitesse du point M (m/s) dans chaque mouvement relatif",
+    "legende": "$\\vec{V}(M,i/j)$ vitesse du point $M$ dans le mouvement de $i$ par rapport à $j$ (m/s)",
+    "grandeurs": [
+      {
+        "s": "\\vec{V}(M,2/0)",
+        "nom": "vitesse absolue de M",
+        "u": "m\\cdot s^{-1}"
+      },
+      {
+        "s": "\\vec{V}(M,2/1)",
+        "nom": "vitesse relative de M",
+        "u": "m\\cdot s^{-1}"
+      },
+      {
+        "s": "\\vec{V}(M,1/0)",
+        "nom": "vitesse d'entraînement de M",
+        "u": "m\\cdot s^{-1}"
+      }
+    ],
     "source": "Fiche TC3.2.2"
   },
   {
@@ -581,7 +1809,24 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Composition des vecteurs rotation",
     "tex": "[[\\vec{\\Omega}(2/0)]] = [[\\vec{\\Omega}(2/1)|\\vec{\\Omega}(1/2)]] + [[\\vec{\\Omega}(1/0)|\\vec{\\Omega}(0/1)]]",
-    "legende": "Ω vecteurs rotation (rad/s)",
+    "legende": "$\\vec{\\Omega}(i/j)$ vecteur rotation de $i$ par rapport à $j$ (rad/s)",
+    "grandeurs": [
+      {
+        "s": "\\vec{\\Omega}(2/0)",
+        "nom": "rotation de 2 par rapport à 0",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "\\vec{\\Omega}(2/1)",
+        "nom": "rotation de 2 par rapport à 1",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "\\vec{\\Omega}(1/0)",
+        "nom": "rotation de 1 par rapport à 0",
+        "u": "rad\\cdot s^{-1}"
+      }
+    ],
     "source": "Fiche TC3.2.2"
   },
   {
@@ -590,7 +1835,19 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Formule de dérivation vectorielle (Bour)",
     "tex": "\\left[\\frac{\\mathrm{d}\\vec{u}}{\\mathrm{d}t}\\right]_{[[R_0|R_1]]} = \\left[\\frac{\\mathrm{d}\\vec{u}}{\\mathrm{d}t}\\right]_{[[R_1|R_0]]} + [[\\vec{\\Omega}(R_1/R_0)|\\vec{\\Omega}(R_0/R_1)]] \\wedge [[\\vec{u}|\\dot{\\vec{u}}]]",
-    "legende": "u vecteur quelconque, Ω(R1/R0) vecteur rotation de R1 par rapport à R0 (rad/s)",
+    "legende": "$\\vec{u}$ vecteur quelconque, $\\left[\\frac{\\mathrm{d}\\vec{u}}{\\mathrm{d}t}\\right]_{R_i}$ dérivée dans le repère $R_i$, $\\vec{\\Omega}(R_1/R_0)$ vecteur rotation de $R_1$ par rapport à $R_0$ (rad/s)",
+    "grandeurs": [
+      {
+        "s": "\\vec{u}",
+        "nom": "vecteur quelconque",
+        "u": ""
+      },
+      {
+        "s": "\\vec{\\Omega}(R_1/R_0)",
+        "nom": "vecteur rotation de R1 par rapport à R0",
+        "u": "rad\\cdot s^{-1}"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -599,7 +1856,14 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "PFS — théorème de la résultante statique",
     "tex": "[[\\sum \\vec{F}_{\\mathrm{ext}}]] = [[\\vec{0}|m\\vec{a}(G)|\\vec{\\delta}]]",
-    "legende": "Fext actions extérieures au système isolé (N), référentiel galiléen",
+    "legende": "$\\vec{F}_{\\mathrm{ext}}$ actions mécaniques extérieures au système isolé (N), système en équilibre dans un référentiel galiléen",
+    "grandeurs": [
+      {
+        "s": "\\vec{F}_{\\mathrm{ext}}",
+        "nom": "actions extérieures",
+        "u": "N"
+      }
+    ],
     "source": "Fiche TC3.2.2"
   },
   {
@@ -608,7 +1872,14 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "PFS — théorème du moment statique",
     "tex": "[[\\sum \\vec{M}_O(\\vec{F}_{\\mathrm{ext}})]] = [[\\vec{0}|\\vec{\\delta}(O)|\\vec{\\sigma}(O)]] \\quad [[\\forall O|\\text{en } G \\text{ seulement}]]",
-    "legende": "MO moment en O des actions extérieures (N·m), en tout point O",
+    "legende": "$\\vec{M}_O(\\vec{F}_{\\mathrm{ext}})$ moment en $O$ des actions extérieures (N·m), valable en tout point $O$",
+    "grandeurs": [
+      {
+        "s": "\\vec{M}_O(\\vec{F}_{\\mathrm{ext}})",
+        "nom": "moment des actions extérieures",
+        "u": "N\\cdot m"
+      }
+    ],
     "source": "Fiche TC3.2.2"
   },
   {
@@ -617,7 +1888,24 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Théorème de la résultante dynamique",
     "tex": "[[\\sum \\vec{F}_{\\mathrm{ext}}]] = [[m|J|\\frac{1}{2}m]] \\, [[\\vec{a}(G,\\Sigma/R)|\\vec{V}(G,\\Sigma/R)|\\vec{a}(A,\\Sigma/R)]]",
-    "legende": "m masse (kg), a(G) accélération du centre d'inertie (m/s²), R galiléen",
+    "legende": "$\\vec{F}_{\\mathrm{ext}}$ actions extérieures (N), $m$ masse (kg), $\\vec{a}(G,\\Sigma/R)$ accélération du centre d'inertie (m/s²), $R$ galiléen",
+    "grandeurs": [
+      {
+        "s": "\\vec{F}_{\\mathrm{ext}}",
+        "nom": "actions extérieures",
+        "u": "N"
+      },
+      {
+        "s": "m",
+        "nom": "masse",
+        "u": "kg"
+      },
+      {
+        "s": "\\vec{a}(G,\\Sigma/R)",
+        "nom": "accélération du centre d'inertie",
+        "u": "m\\cdot s^{-2}"
+      }
+    ],
     "source": "Fiche TC3.2.2"
   },
   {
@@ -626,7 +1914,19 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Théorème du moment dynamique",
     "tex": "[[\\sum \\vec{M}_A(\\vec{F}_{\\mathrm{ext}})]] = [[\\vec{\\delta}(A,\\Sigma/R)|\\vec{\\sigma}(A,\\Sigma/R)|\\vec{0}]]",
-    "legende": "MA moment des actions extérieures (N·m), δ moment dynamique (N·m), A fixe dans R ou A = G",
+    "legende": "$\\vec{M}_A$ moment en $A$ des actions extérieures (N·m), $\\vec{\\delta}(A,\\Sigma/R)$ moment dynamique en $A$ (N·m), en tout point $A$, $R$ galiléen",
+    "grandeurs": [
+      {
+        "s": "\\vec{M}_A(\\vec{F}_{\\mathrm{ext}})",
+        "nom": "moment des actions extérieures",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "\\vec{\\delta}(A,\\Sigma/R)",
+        "nom": "moment dynamique",
+        "u": "N\\cdot m"
+      }
+    ],
     "source": "Fiche TC3.2.2"
   },
   {
@@ -635,7 +1935,24 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Moment cinétique d'un solide (A fixe ou A = G)",
     "tex": "[[\\vec{\\sigma}(A,\\Sigma/R)]] = [[I(A,\\Sigma)|m|J_G]] \\cdot [[\\vec{\\Omega}(\\Sigma/R)|\\vec{V}(A,\\Sigma/R)|\\dot{\\vec{\\Omega}}]]",
-    "legende": "σ moment cinétique (kg·m²/s), I(A,Σ) matrice d'inertie en A (kg·m²), Ω vecteur rotation (rad/s)",
+    "legende": "$\\vec{\\sigma}(A,\\Sigma/R)$ moment cinétique (kg·m²/s), $I(A,\\Sigma)$ matrice d'inertie en $A$ (kg·m²), $\\vec{\\Omega}(\\Sigma/R)$ vecteur rotation (rad/s) — $A$ fixe dans $R$ ou $A = G$",
+    "grandeurs": [
+      {
+        "s": "\\vec{\\sigma}(A,\\Sigma/R)",
+        "nom": "moment cinétique",
+        "u": "kg\\cdot m^2\\cdot s^{-1}"
+      },
+      {
+        "s": "I(A,\\Sigma)",
+        "nom": "matrice d'inertie",
+        "u": "kg\\cdot m^2"
+      },
+      {
+        "s": "\\vec{\\Omega}(\\Sigma/R)",
+        "nom": "vecteur rotation",
+        "u": "rad\\cdot s^{-1}"
+      }
+    ],
     "source": "Fiche TC3.2.2"
   },
   {
@@ -644,7 +1961,19 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Moment dynamique (A fixe dans R)",
     "tex": "[[\\vec{\\delta}(A,\\Sigma/R)]] = \\left[\\frac{\\mathrm{d}}{\\mathrm{d}t} [[\\vec{\\sigma}(A,\\Sigma/R)|\\vec{V}(A,\\Sigma/R)|\\vec{\\Omega}(\\Sigma/R)]]\\right]_{[[R|\\Sigma]]}",
-    "legende": "δ moment dynamique (N·m), σ moment cinétique (kg·m²/s), dérivée dans le référentiel galiléen R",
+    "legende": "$\\vec{\\delta}$ moment dynamique (N·m), $\\vec{\\sigma}$ moment cinétique (kg·m²/s), dérivée dans le référentiel galiléen $R$ — $A$ fixe dans $R$ ou $A = G$",
+    "grandeurs": [
+      {
+        "s": "\\vec{\\delta}(A,\\Sigma/R)",
+        "nom": "moment dynamique",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "\\vec{\\sigma}(A,\\Sigma/R)",
+        "nom": "moment cinétique",
+        "u": "kg\\cdot m^2\\cdot s^{-1}"
+      }
+    ],
     "source": "Fiche TC3.2.2"
   },
   {
@@ -653,7 +1982,24 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "TMD projeté sur un axe fixe",
     "tex": "[[\\sum M_{\\Delta}]] = [[J_{\\Delta}|m|J_G]] \\, [[\\ddot{\\theta}|\\dot{\\theta}|\\dot{\\theta}^2]]",
-    "legende": "MΔ moments des actions extérieures sur l'axe (N·m), JΔ moment d'inertie (kg·m²), θ̈ accélération angulaire (rad/s²)",
+    "legende": "$M_{\\Delta}$ moments des actions extérieures sur l'axe fixe $\\Delta$ (N·m), $J_{\\Delta}$ moment d'inertie (kg·m²), $\\ddot{\\theta}$ accélération angulaire (rad/s²)",
+    "grandeurs": [
+      {
+        "s": "M_{\\Delta}",
+        "nom": "moment des actions extérieures sur l'axe",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "J_{\\Delta}",
+        "nom": "moment d'inertie",
+        "u": "kg\\cdot m^2"
+      },
+      {
+        "s": "\\ddot{\\theta}",
+        "nom": "accélération angulaire",
+        "u": "rad\\cdot s^{-2}"
+      }
+    ],
     "source": "Fiche TC3.2.2 ; Sujet 2025 E1 Q42-43"
   },
   {
@@ -662,7 +2008,24 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Énergie cinétique d'un solide en translation",
     "tex": "[[E_c]] = [[\\frac{1}{2}|2|1]] \\, [[m|J|m^2]] \\, [[V^2|V|\\omega^2]]",
-    "legende": "Ec énergie cinétique (J), m masse (kg), V vitesse (m/s)",
+    "legende": "$E_c$ énergie cinétique (J), $m$ masse (kg), $V$ vitesse (m/s)",
+    "grandeurs": [
+      {
+        "s": "E_c",
+        "nom": "énergie cinétique",
+        "u": "J"
+      },
+      {
+        "s": "m",
+        "nom": "masse",
+        "u": "kg"
+      },
+      {
+        "s": "V",
+        "nom": "vitesse",
+        "u": "m\\cdot s^{-1}"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -671,7 +2034,24 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Énergie cinétique d'un solide en rotation autour d'un axe fixe",
     "tex": "[[E_c]] = [[\\frac{1}{2}|2|1]] \\, [[J_{\\Delta}|m|J_{\\Delta}^2]] \\, [[\\omega^2|\\omega|V^2]]",
-    "legende": "Ec énergie cinétique (J), JΔ moment d'inertie (kg·m²), ω vitesse angulaire (rad/s)",
+    "legende": "$E_c$ énergie cinétique (J), $J_{\\Delta}$ moment d'inertie par rapport à l'axe (kg·m²), $\\omega$ vitesse angulaire (rad/s)",
+    "grandeurs": [
+      {
+        "s": "E_c",
+        "nom": "énergie cinétique",
+        "u": "J"
+      },
+      {
+        "s": "J_{\\Delta}",
+        "nom": "moment d'inertie",
+        "u": "kg\\cdot m^2"
+      },
+      {
+        "s": "\\omega",
+        "nom": "vitesse angulaire",
+        "u": "rad\\cdot s^{-1}"
+      }
+    ],
     "source": "Fiche OE3.6"
   },
   {
@@ -680,7 +2060,34 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Énergie cinétique d'un solide (théorème de Koenig)",
     "tex": "[[E_c]] = \\frac{1}{2} [[m|J_G|m^2]] \\, [[V_G^2|V_G|\\omega^2]] + \\frac{1}{2} [[J_G|m|J_O]] \\, [[\\omega^2|\\omega|V_G^2]]",
-    "legende": "m masse (kg), VG vitesse du centre d'inertie (m/s), JG inertie autour de l'axe passant par G (kg·m²), ω (rad/s) — mouvement plan",
+    "legende": "$E_c$ énergie cinétique (J), $m$ masse (kg), $V_G$ vitesse du centre d'inertie (m/s), $J_G$ inertie autour de l'axe passant par $G$ (kg·m²), $\\omega$ vitesse angulaire (rad/s) — mouvement plan",
+    "grandeurs": [
+      {
+        "s": "E_c",
+        "nom": "énergie cinétique",
+        "u": "J"
+      },
+      {
+        "s": "m",
+        "nom": "masse",
+        "u": "kg"
+      },
+      {
+        "s": "V_G",
+        "nom": "vitesse du centre d'inertie",
+        "u": "m\\cdot s^{-1}"
+      },
+      {
+        "s": "J_G",
+        "nom": "moment d'inertie en G",
+        "u": "kg\\cdot m^2"
+      },
+      {
+        "s": "\\omega",
+        "nom": "vitesse angulaire",
+        "u": "rad\\cdot s^{-1}"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -689,7 +2096,24 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Théorème de l'énergie cinétique",
     "tex": "\\frac{\\mathrm{d} [[E_c|E_p|P]]}{\\mathrm{d}t} = [[P_{\\mathrm{ext}}|P_{\\mathrm{int}}|0]] + [[P_{\\mathrm{int}}|P_{\\mathrm{pertes}}|E_c]]",
-    "legende": "Ec énergie cinétique de l'ensemble (J), Pext puissance des actions extérieures (W), Pint puissance des inter-efforts (W, ≤ 0 si dissipatifs)",
+    "legende": "$E_c$ énergie cinétique de l'ensemble (J), $P_{\\mathrm{ext}}$ puissance des actions extérieures (W), $P_{\\mathrm{int}}$ puissance des inter-efforts (W, ≤ 0 si dissipatifs)",
+    "grandeurs": [
+      {
+        "s": "E_c",
+        "nom": "énergie cinétique",
+        "u": "J"
+      },
+      {
+        "s": "P_{\\mathrm{ext}}",
+        "nom": "puissance des actions extérieures",
+        "u": "W"
+      },
+      {
+        "s": "P_{\\mathrm{int}}",
+        "nom": "puissance des inter-efforts",
+        "u": "W"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -698,7 +2122,24 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Puissance mécanique en rotation",
     "tex": "[[P]] = [[C|F|J]] \\cdot [[\\omega|N|\\dot{\\omega}]]",
-    "legende": "P puissance (W), C couple (N·m), ω vitesse angulaire (rad/s)",
+    "legende": "$P$ puissance (W), $C$ couple (N·m), $\\omega$ vitesse angulaire (rad/s)",
+    "grandeurs": [
+      {
+        "s": "P",
+        "nom": "puissance",
+        "u": "W"
+      },
+      {
+        "s": "C",
+        "nom": "couple",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "\\omega",
+        "nom": "vitesse angulaire",
+        "u": "rad\\cdot s^{-1}"
+      }
+    ],
     "source": "Fiche TC3.2.3"
   },
   {
@@ -707,7 +2148,24 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Puissance mécanique en translation",
     "tex": "[[P]] = [[\\vec{F}|m|\\vec{C}]] \\cdot [[\\vec{V}|\\vec{a}|\\vec{\\Omega}]]",
-    "legende": "P puissance (W), F effort (N), V vitesse du point d'application (m/s)",
+    "legende": "$P$ puissance (W), $\\vec{F}$ effort (N), $\\vec{V}$ vitesse du point d'application (m/s)",
+    "grandeurs": [
+      {
+        "s": "P",
+        "nom": "puissance",
+        "u": "W"
+      },
+      {
+        "s": "\\vec{F}",
+        "nom": "effort",
+        "u": "N"
+      },
+      {
+        "s": "\\vec{V}",
+        "nom": "vitesse du point d'application",
+        "u": "m\\cdot s^{-1}"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -715,8 +2173,20 @@
     "bloc": "TC3",
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Vitesse angulaire et fréquence de rotation",
-    "tex": "[[\\omega]] = \\frac{[[2\\pi|\\pi|60]] \\, [[N|f|n]]}{[[60|2\\pi|30]]}",
-    "legende": "ω (rad/s), N fréquence de rotation (tr/min)",
+    "tex": "[[\\omega]] = \\frac{[[2\\pi|\\pi|60]] \\, [[N|f|N^2]]}{[[60|2\\pi|30]]}",
+    "legende": "$\\omega$ vitesse angulaire (rad/s), $N$ fréquence de rotation (tr/min)",
+    "grandeurs": [
+      {
+        "s": "\\omega",
+        "nom": "vitesse angulaire",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "N",
+        "nom": "fréquence de rotation",
+        "u": "tr\\cdot min^{-1}"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -725,7 +2195,24 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Moment d'inertie d'un cylindre plein (axe de révolution)",
     "tex": "[[J]] = [[\\frac{1}{2}|\\frac{2}{5}|1]] \\, [[m|\\rho|m^2]] \\, [[R^2|R|R^4]]",
-    "legende": "J (kg·m²), m masse (kg), R rayon (m)",
+    "legende": "$J$ moment d'inertie (kg·m²), $m$ masse (kg), $R$ rayon (m)",
+    "grandeurs": [
+      {
+        "s": "J",
+        "nom": "moment d'inertie",
+        "u": "kg\\cdot m^2"
+      },
+      {
+        "s": "m",
+        "nom": "masse",
+        "u": "kg"
+      },
+      {
+        "s": "R",
+        "nom": "rayon",
+        "u": "m"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -734,7 +2221,29 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Moment d'inertie d'un cylindre creux épais (axe de révolution)",
     "tex": "[[J]] = [[\\frac{1}{2}|\\frac{1}{4}|1]] \\, [[m|\\rho|m^2]] \\left([[R^2 + r^2|R^2 - r^2|(R - r)^2]]\\right)",
-    "legende": "J (kg·m²), m masse (kg), R rayon extérieur (m), r rayon intérieur (m) — couronne mince : J = mR²",
+    "legende": "$J$ moment d'inertie (kg·m²), $m$ masse (kg), $R$ rayon extérieur (m), $r$ rayon intérieur (m) — couronne mince : $J = mR^2$",
+    "grandeurs": [
+      {
+        "s": "J",
+        "nom": "moment d'inertie",
+        "u": "kg\\cdot m^2"
+      },
+      {
+        "s": "m",
+        "nom": "masse",
+        "u": "kg"
+      },
+      {
+        "s": "R",
+        "nom": "rayon extérieur",
+        "u": "m"
+      },
+      {
+        "s": "r",
+        "nom": "rayon intérieur",
+        "u": "m"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -743,7 +2252,24 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Moment d'inertie d'une sphère pleine (axe diamétral)",
     "tex": "[[J]] = [[\\frac{2}{5}|\\frac{1}{2}|\\frac{2}{3}]] \\, [[m|\\rho|m^2]] \\, [[R^2|R|R^3]]",
-    "legende": "J (kg·m²), m masse (kg), R rayon (m)",
+    "legende": "$J$ moment d'inertie (kg·m²), $m$ masse (kg), $R$ rayon (m)",
+    "grandeurs": [
+      {
+        "s": "J",
+        "nom": "moment d'inertie",
+        "u": "kg\\cdot m^2"
+      },
+      {
+        "s": "m",
+        "nom": "masse",
+        "u": "kg"
+      },
+      {
+        "s": "R",
+        "nom": "rayon",
+        "u": "m"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -752,7 +2278,24 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Moment d'inertie d'une tige (axe perpendiculaire par le centre)",
     "tex": "[[J_G]] = \\frac{[[m|\\rho|m^2]] \\, [[L^2|L|L^3]]}{[[12|3|2]]}",
-    "legende": "JG (kg·m²), m masse (kg), L longueur (m)",
+    "legende": "$J_G$ moment d'inertie (kg·m²), $m$ masse (kg), $L$ longueur (m)",
+    "grandeurs": [
+      {
+        "s": "J_G",
+        "nom": "moment d'inertie au centre",
+        "u": "kg\\cdot m^2"
+      },
+      {
+        "s": "m",
+        "nom": "masse",
+        "u": "kg"
+      },
+      {
+        "s": "L",
+        "nom": "longueur",
+        "u": "m"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -761,7 +2304,24 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Moment d'inertie d'une tige (axe perpendiculaire par une extrémité)",
     "tex": "[[J_O]] = \\frac{[[m|\\rho|m^2]] \\, [[L^2|L|L^3]]}{[[3|12|2]]}",
-    "legende": "JO (kg·m²), m masse (kg), L longueur (m)",
+    "legende": "$J_O$ moment d'inertie (kg·m²), $m$ masse (kg), $L$ longueur (m)",
+    "grandeurs": [
+      {
+        "s": "J_O",
+        "nom": "moment d'inertie à l'extrémité",
+        "u": "kg\\cdot m^2"
+      },
+      {
+        "s": "m",
+        "nom": "masse",
+        "u": "kg"
+      },
+      {
+        "s": "L",
+        "nom": "longueur",
+        "u": "m"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -770,7 +2330,29 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Théorème de Huygens (moments d'inertie)",
     "tex": "[[J_{\\Delta}]] = [[J_{G}|J_O|m]] + [[m|m^2|J_G]] \\, [[d^2|d|d^4]]",
-    "legende": "JΔ inertie / axe Δ (kg·m²), JG inertie / axe parallèle passant par G (kg·m²), m masse (kg), d distance entre axes (m)",
+    "legende": "$J_{\\Delta}$ inertie par rapport à l'axe $\\Delta$ (kg·m²), $J_G$ inertie par rapport à l'axe parallèle passant par $G$ (kg·m²), $m$ masse (kg), $d$ distance entre les axes (m)",
+    "grandeurs": [
+      {
+        "s": "J_{\\Delta}",
+        "nom": "moment d'inertie par rapport à Δ",
+        "u": "kg\\cdot m^2"
+      },
+      {
+        "s": "J_{G}",
+        "nom": "moment d'inertie en G",
+        "u": "kg\\cdot m^2"
+      },
+      {
+        "s": "m",
+        "nom": "masse",
+        "u": "kg"
+      },
+      {
+        "s": "d",
+        "nom": "distance entre axes",
+        "u": "m"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -779,7 +2361,44 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Inertie équivalente ramenée sur l'arbre moteur",
     "tex": "[[J_{\\mathrm{eq}}]] = [[J_m|J_c|m]] + [[k^2|k|\\frac{1}{k^2}]] \\, [[J_c|J_m|m]] + [[M|J_c|M^2]] \\left(\\frac{[[V|\\omega_m|a]]}{[[\\omega_m|V|R]]}\\right)^2",
-    "legende": "Jm inertie moteur, Jc inertie de la charge tournante, k = ωc/ωm rapport de réduction, M masse en translation (kg), V sa vitesse (m/s)",
+    "legende": "$J_m$ inertie du moteur (kg·m²), $J_c$ inertie de la charge tournante (kg·m²), $k = \\frac{\\omega_c}{\\omega_m}$ rapport de réduction, $M$ masse en translation (kg), $V$ sa vitesse (m/s), $\\omega_m$ vitesse du moteur (rad/s)",
+    "grandeurs": [
+      {
+        "s": "J_{\\mathrm{eq}}",
+        "nom": "inertie équivalente",
+        "u": "kg\\cdot m^2"
+      },
+      {
+        "s": "J_m",
+        "nom": "inertie du moteur",
+        "u": "kg\\cdot m^2"
+      },
+      {
+        "s": "k",
+        "nom": "rapport de réduction",
+        "u": ""
+      },
+      {
+        "s": "J_c",
+        "nom": "inertie de la charge",
+        "u": "kg\\cdot m^2"
+      },
+      {
+        "s": "M",
+        "nom": "masse en translation",
+        "u": "kg"
+      },
+      {
+        "s": "V",
+        "nom": "vitesse de la masse",
+        "u": "m\\cdot s^{-1}"
+      },
+      {
+        "s": "\\omega_m",
+        "nom": "vitesse angulaire du moteur",
+        "u": "rad\\cdot s^{-1}"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -787,8 +2406,25 @@
     "bloc": "TC3",
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Loi de Coulomb — glissement",
-    "tex": "[[T]] = [[f|\\frac{1}{f}|\\tan\\varphi^2]] \\, [[N|T_0|m]]",
-    "legende": "T effort tangentiel (N), N effort normal (N), f coefficient de frottement — en adhérence : T ≤ f N",
+    "tex": "[[T]] = [[f|\\frac{1}{f}|\\frac{f}{2}]] \\, [[N|T|m]]",
+    "legende": "$T$ effort tangentiel (N), $N$ effort normal (N), $f$ coefficient de frottement — en glissement ; en adhérence : $T \\leq fN$",
+    "grandeurs": [
+      {
+        "s": "T",
+        "nom": "effort tangentiel",
+        "u": "N"
+      },
+      {
+        "s": "f",
+        "nom": "coefficient de frottement",
+        "u": ""
+      },
+      {
+        "s": "N",
+        "nom": "effort normal",
+        "u": "N"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -797,7 +2433,24 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Loi de Coulomb — adhérence",
     "tex": "[[T]] [[\\leq|\\geq|=]] [[f N|\\frac{N}{f}|f T]]",
-    "legende": "T effort tangentiel (N), N effort normal (N), f coefficient d'adhérence/frottement",
+    "legende": "$T$ effort tangentiel (N), $N$ effort normal (N), $f$ coefficient d'adhérence",
+    "grandeurs": [
+      {
+        "s": "T",
+        "nom": "effort tangentiel",
+        "u": "N"
+      },
+      {
+        "s": "f",
+        "nom": "coefficient d'adhérence",
+        "u": ""
+      },
+      {
+        "s": "N",
+        "nom": "effort normal",
+        "u": "N"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -806,7 +2459,19 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Angle de frottement",
     "tex": "[[f]] = [[\\tan|\\sin|\\cos]] \\, [[\\varphi|2\\varphi|\\frac{\\varphi}{2}]]",
-    "legende": "f coefficient de frottement, φ demi-angle au sommet du cône de frottement (rad)",
+    "legende": "$f$ coefficient de frottement, $\\varphi$ angle de frottement = demi-angle au sommet du cône de frottement (rad)",
+    "grandeurs": [
+      {
+        "s": "f",
+        "nom": "coefficient de frottement",
+        "u": ""
+      },
+      {
+        "s": "\\varphi",
+        "nom": "angle de frottement",
+        "u": "rad"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -814,8 +2479,35 @@
     "bloc": "TC3",
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Couple transmissible par un frein/embrayage à disques",
-    "tex": "[[C]] = [[n|2n|\\frac{n}{2}]] \\, [[f|\\frac{1}{f}|\\mu]] \\, [[F|p|F^2]] \\, [[R_{\\mathrm{moy}}|R_{\\max}|D]]",
-    "legende": "C couple (N·m), n nombre de surfaces de frottement, f coefficient de frottement, F effort presseur (N), Rmoy rayon moyen (m) = (R + r)/2 en usure uniforme",
+    "tex": "[[C]] = [[n|2n|\\frac{n}{2}]] \\, [[f|\\frac{1}{f}|f^2]] \\, [[F|p|F^2]] \\, [[R_{\\mathrm{moy}}|R_{\\max}|D]]",
+    "legende": "$C$ couple (N·m), $n$ nombre de surfaces de frottement, $f$ coefficient de frottement, $F$ effort presseur (N), $R_{\\mathrm{moy}} = \\frac{R + r}{2}$ rayon moyen (m), hypothèse d'usure uniforme",
+    "grandeurs": [
+      {
+        "s": "C",
+        "nom": "couple transmissible",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "n",
+        "nom": "nombre de surfaces de frottement",
+        "u": ""
+      },
+      {
+        "s": "f",
+        "nom": "coefficient de frottement",
+        "u": ""
+      },
+      {
+        "s": "F",
+        "nom": "effort presseur",
+        "u": "N"
+      },
+      {
+        "s": "R_{\\mathrm{moy}}",
+        "nom": "rayon moyen",
+        "u": "m"
+      }
+    ],
     "source": "Fiche TC3.2.2 (Sujet 2025 E1 Q44-46) ; Classique programme"
   },
   {
@@ -824,7 +2516,24 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Pression de contact moyenne",
     "tex": "[[p]] = \\frac{[[F|C|m]]}{[[S|L|S^2]]}",
-    "legende": "p pression (Pa), F effort normal (N), S surface de contact projetée (m²)",
+    "legende": "$p$ pression de contact (Pa), $F$ effort normal (N), $S$ surface de contact projetée (m²)",
+    "grandeurs": [
+      {
+        "s": "p",
+        "nom": "pression de contact",
+        "u": "Pa"
+      },
+      {
+        "s": "F",
+        "nom": "effort normal",
+        "u": "N"
+      },
+      {
+        "s": "S",
+        "nom": "surface projetée",
+        "u": "m^2"
+      }
+    ],
     "source": "Fiche TC3.2.2 (Sujet 2025 E1 Q48-49) ; Classique programme"
   },
   {
@@ -833,7 +2542,24 @@
     "notion": "TC3.2.2 Modèles de connaissance et de comportement des systèmes",
     "nom": "Accélération normale (centripète) en rotation",
     "tex": "[[a_n]] = [[R|\\frac{1}{R}|R^2]] \\, [[\\omega^2|\\omega|\\dot{\\omega}]]",
-    "legende": "an accélération normale (m/s²), R rayon (m), ω vitesse angulaire (rad/s) — tangentielle : at = R ω̇",
+    "legende": "$a_n$ accélération normale (m/s²), $R$ rayon (m), $\\omega$ vitesse angulaire (rad/s) — tangentielle : $a_t = R\\dot{\\omega}$",
+    "grandeurs": [
+      {
+        "s": "a_n",
+        "nom": "accélération normale",
+        "u": "m\\cdot s^{-2}"
+      },
+      {
+        "s": "R",
+        "nom": "rayon",
+        "u": "m"
+      },
+      {
+        "s": "\\omega",
+        "nom": "vitesse angulaire",
+        "u": "rad\\cdot s^{-1}"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -842,7 +2568,24 @@
     "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
     "nom": "Rapport de réduction / transmission",
     "tex": "[[k]] = \\frac{[[\\omega_s|\\omega_e|C_s]]}{[[\\omega_e|\\omega_s|C_e]]}",
-    "legende": "k rapport (sans unité, < 1 pour un réducteur), ωs, ωe vitesses de sortie et d'entrée (rad/s)",
+    "legende": "$k$ rapport de transmission (sans unité, < 1 pour un réducteur), $\\omega_s$ vitesse de sortie, $\\omega_e$ vitesse d'entrée (rad/s)",
+    "grandeurs": [
+      {
+        "s": "k",
+        "nom": "rapport de transmission",
+        "u": ""
+      },
+      {
+        "s": "\\omega_s",
+        "nom": "vitesse angulaire de sortie",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "\\omega_e",
+        "nom": "vitesse angulaire d'entrée",
+        "u": "rad\\cdot s^{-1}"
+      }
+    ],
     "source": "Fiche TC3.2.3"
   },
   {
@@ -850,8 +2593,30 @@
     "bloc": "TC3",
     "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
     "nom": "Conservation de la puissance (transmission idéale)",
-    "tex": "[[C_e]] \\, [[\\omega_e|\\omega_s]] = [[C_s]] \\, [[\\omega_s|\\omega_e]]",
-    "legende": "C couples (N·m), ω vitesses angulaires (rad/s), indices e entrée / s sortie",
+    "tex": "[[C_e|C_s]] \\, [[\\omega_e|\\omega_s]] = [[C_s|C_e]] \\, [[\\omega_s|\\omega_e]]",
+    "legende": "$C_e$, $C_s$ couples d'entrée et de sortie (N·m), $\\omega_e$, $\\omega_s$ vitesses angulaires (rad/s)",
+    "grandeurs": [
+      {
+        "s": "C_e",
+        "nom": "couple d'entrée",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "\\omega_e",
+        "nom": "vitesse angulaire d'entrée",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "C_s",
+        "nom": "couple de sortie",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "\\omega_s",
+        "nom": "vitesse angulaire de sortie",
+        "u": "rad\\cdot s^{-1}"
+      }
+    ],
     "source": "Fiche TC3.2.3"
   },
   {
@@ -860,7 +2625,44 @@
     "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
     "nom": "Rendement d'un étage de transmission",
     "tex": "[[\\eta]] = \\frac{[[P_s|P_e]]}{[[P_e|P_s]]} = \\frac{[[C_s \\omega_s|C_e \\omega_e|C_s \\omega_e]]}{[[C_e \\omega_e|C_s \\omega_s|C_e \\omega_s]]}",
-    "legende": "η rendement (< 1), P puissances (W), C couples (N·m), ω vitesses (rad/s)",
+    "legende": "$\\eta$ rendement (< 1), $P_e$, $P_s$ puissances d'entrée et de sortie (W), $C$ couples (N·m), $\\omega$ vitesses angulaires (rad/s)",
+    "grandeurs": [
+      {
+        "s": "\\eta",
+        "nom": "rendement",
+        "u": ""
+      },
+      {
+        "s": "P_s",
+        "nom": "puissance de sortie",
+        "u": "W"
+      },
+      {
+        "s": "P_e",
+        "nom": "puissance d'entrée",
+        "u": "W"
+      },
+      {
+        "s": "C_s",
+        "nom": "couple de sortie",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "\\omega_s",
+        "nom": "vitesse de sortie",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "C_e",
+        "nom": "couple d'entrée",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "\\omega_e",
+        "nom": "vitesse d'entrée",
+        "u": "rad\\cdot s^{-1}"
+      }
+    ],
     "source": "Fiche TC3.2.3"
   },
   {
@@ -869,7 +2671,29 @@
     "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
     "nom": "Couple de sortie réel d'un réducteur",
     "tex": "[[C_s]] = \\frac{[[\\eta|\\frac{1}{\\eta}|1 - \\eta]] \\cdot [[C_e|C_s|\\omega_e]]}{[[k|k^2|\\frac{1}{k}]]}",
-    "legende": "Cs couple de sortie (N·m), η rendement, Ce couple d'entrée (N·m), k = ωs/ωe",
+    "legende": "$C_s$ couple de sortie (N·m), $\\eta$ rendement, $C_e$ couple d'entrée (N·m), $k = \\frac{\\omega_s}{\\omega_e}$ rapport de transmission",
+    "grandeurs": [
+      {
+        "s": "C_s",
+        "nom": "couple de sortie",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "\\eta",
+        "nom": "rendement",
+        "u": ""
+      },
+      {
+        "s": "C_e",
+        "nom": "couple d'entrée",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "k",
+        "nom": "rapport de transmission",
+        "u": ""
+      }
+    ],
     "source": "Fiche TC3.2.3"
   },
   {
@@ -878,7 +2702,19 @@
     "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
     "nom": "Rapport de réduction global d'une chaîne",
     "tex": "[[k_{\\mathrm{tot}}]] = [[\\prod_{i=1}^{n} k_i|\\sum_{i=1}^{n} k_i|\\frac{1}{n}\\sum_{i=1}^{n} k_i]]",
-    "legende": "ktot rapport global, ki rapport de chaque étage en série",
+    "legende": "$k_{\\mathrm{tot}}$ rapport global, $k_i$ rapport de chaque étage en série",
+    "grandeurs": [
+      {
+        "s": "k_{\\mathrm{tot}}",
+        "nom": "rapport global",
+        "u": ""
+      },
+      {
+        "s": "k_i",
+        "nom": "rapport de l'étage i",
+        "u": ""
+      }
+    ],
     "source": "Fiche TC3.2.3"
   },
   {
@@ -887,7 +2723,24 @@
     "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
     "nom": "Puissance perdue dans une transmission",
     "tex": "[[P_{\\mathrm{pertes}}]] = \\left([[1 - \\eta|\\eta|1 + \\eta]]\\right) [[P_e|P_s|C_e]]",
-    "legende": "Ppertes puissance dissipée (W), η rendement, Pe puissance d'entrée (W)",
+    "legende": "$P_{\\mathrm{pertes}}$ puissance dissipée (W), $\\eta$ rendement, $P_e$ puissance d'entrée (W)",
+    "grandeurs": [
+      {
+        "s": "P_{\\mathrm{pertes}}",
+        "nom": "puissance perdue",
+        "u": "W"
+      },
+      {
+        "s": "\\eta",
+        "nom": "rendement",
+        "u": ""
+      },
+      {
+        "s": "P_e",
+        "nom": "puissance d'entrée",
+        "u": "W"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -896,7 +2749,34 @@
     "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
     "nom": "Rapport d'un engrenage extérieur",
     "tex": "[[k]] = \\frac{[[\\omega_2|\\omega_1]]}{[[\\omega_1|\\omega_2]]} = [[-|+]] \\, \\frac{[[Z_1|Z_2|D_2]]}{[[Z_2|Z_1|D_1]]}",
-    "legende": "k rapport, ω1 pignon menant, ω2 roue menée (rad/s), Z nombres de dents — signe + pour un engrenage intérieur",
+    "legende": "$k$ rapport, $\\omega_1$ vitesse du pignon menant, $\\omega_2$ vitesse de la roue menée (rad/s), $Z_1$, $Z_2$ nombres de dents — signe + pour un engrenage intérieur",
+    "grandeurs": [
+      {
+        "s": "k",
+        "nom": "rapport de transmission",
+        "u": ""
+      },
+      {
+        "s": "\\omega_2",
+        "nom": "vitesse de la roue menée",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "\\omega_1",
+        "nom": "vitesse du pignon menant",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "Z_1",
+        "nom": "nombre de dents du menant",
+        "u": ""
+      },
+      {
+        "s": "Z_2",
+        "nom": "nombre de dents du mené",
+        "u": ""
+      }
+    ],
     "source": "Fiche TC3.2.3 ; Sujet 2024 E3 Q9 ; Fiche TC2.2 (exemple 2021, r_c = ω4/0 / ω3c/0)"
   },
   {
@@ -905,7 +2785,24 @@
     "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
     "nom": "Rapport d'un train d'engrenages simple",
     "tex": "[[k]] = [[(-1)^n|(-1)^{n+1}|-1]] \\, \\frac{[[\\prod Z_{\\mathrm{menantes}}|\\prod Z_{\\mathrm{menées}}|\\sum Z_{\\mathrm{menantes}}]]}{[[\\prod Z_{\\mathrm{menées}}|\\prod Z_{\\mathrm{menantes}}|\\sum Z_{\\mathrm{menées}}]]}",
-    "legende": "n nombre de contacts extérieurs, Z nombres de dents des roues menantes et menées",
+    "legende": "$k$ rapport global, $n$ nombre de contacts extérieurs, $Z$ nombres de dents des roues menantes et menées",
+    "grandeurs": [
+      {
+        "s": "k",
+        "nom": "rapport global",
+        "u": ""
+      },
+      {
+        "s": "n",
+        "nom": "nombre de contacts extérieurs",
+        "u": ""
+      },
+      {
+        "s": "Z",
+        "nom": "nombre de dents",
+        "u": ""
+      }
+    ],
     "source": "Fiche TC2.2 (exemple 2021, rapport global)"
   },
   {
@@ -914,7 +2811,29 @@
     "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
     "nom": "Entraxe d'un engrenage extérieur",
     "tex": "[[a]] = \\frac{[[m|\\pi m|2m]] \\left([[Z_1 + Z_2|Z_2 - Z_1|Z_1 Z_2]]\\right)}{[[2|1|4]]}",
-    "legende": "a entraxe (mm), m module (mm), Z1, Z2 nombres de dents — intérieur : Z2 − Z1",
+    "legende": "$a$ entraxe (m), $m$ module (m), $Z_1$, $Z_2$ nombres de dents — engrenage intérieur : $Z_2 - Z_1$",
+    "grandeurs": [
+      {
+        "s": "a",
+        "nom": "entraxe",
+        "u": "m"
+      },
+      {
+        "s": "m",
+        "nom": "module",
+        "u": "m"
+      },
+      {
+        "s": "Z_1",
+        "nom": "nombre de dents du pignon",
+        "u": ""
+      },
+      {
+        "s": "Z_2",
+        "nom": "nombre de dents de la roue",
+        "u": ""
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -923,7 +2842,24 @@
     "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
     "nom": "Effort tangentiel sur une denture",
     "tex": "[[F_t]] = \\frac{[[2|1|\\frac{1}{2}]] \\, [[C|P|\\omega]]}{[[d|R|d^2]]}",
-    "legende": "Ft effort tangentiel (N), C couple sur la roue (N·m), d diamètre primitif (m)",
+    "legende": "$F_t$ effort tangentiel (N), $C$ couple sur la roue (N·m), $d$ diamètre primitif de cette roue (m)",
+    "grandeurs": [
+      {
+        "s": "F_t",
+        "nom": "effort tangentiel",
+        "u": "N"
+      },
+      {
+        "s": "C",
+        "nom": "couple",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "d",
+        "nom": "diamètre primitif",
+        "u": "m"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -932,7 +2868,24 @@
     "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
     "nom": "Effort radial sur une denture droite",
     "tex": "[[F_r]] = [[F_t|F_a|C]] \\, [[\\tan\\alpha|\\sin\\alpha|\\cos\\alpha]]",
-    "legende": "Fr effort radial (N), Ft effort tangentiel (N), α angle de pression (20° usuel)",
+    "legende": "$F_r$ effort radial (N), $F_t$ effort tangentiel (N), $\\alpha$ angle de pression (20° usuel)",
+    "grandeurs": [
+      {
+        "s": "F_r",
+        "nom": "effort radial",
+        "u": "N"
+      },
+      {
+        "s": "F_t",
+        "nom": "effort tangentiel",
+        "u": "N"
+      },
+      {
+        "s": "\\alpha",
+        "nom": "angle de pression",
+        "u": "rad"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -941,7 +2894,24 @@
     "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
     "nom": "Effort axial d'une denture hélicoïdale",
     "tex": "[[F_a]] = [[F_t|F_r|C]] \\, [[\\tan\\beta|\\cos\\beta|\\sin\\beta]]",
-    "legende": "Fa effort axial (N), Ft effort tangentiel (N), β angle d'hélice",
+    "legende": "$F_a$ effort axial (N), $F_t$ effort tangentiel (N), $\\beta$ angle d'hélice",
+    "grandeurs": [
+      {
+        "s": "F_a",
+        "nom": "effort axial",
+        "u": "N"
+      },
+      {
+        "s": "F_t",
+        "nom": "effort tangentiel",
+        "u": "N"
+      },
+      {
+        "s": "\\beta",
+        "nom": "angle d'hélice",
+        "u": "rad"
+      }
+    ],
     "source": "Fiche TC3.2.3 ; Classique programme"
   },
   {
@@ -950,7 +2920,34 @@
     "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
     "nom": "Rapport d'une transmission poulies-courroie",
     "tex": "[[k]] = \\frac{[[\\omega_2|\\omega_1]]}{[[\\omega_1|\\omega_2]]} = \\frac{[[D_1|D_2|Z_2]]}{[[D_2|D_1|Z_1]]}",
-    "legende": "k rapport (sans glissement), D1 poulie menante, D2 poulie menée (m) — sens de rotation conservé",
+    "legende": "$k$ rapport (sans glissement), $D_1$ diamètre de la poulie menante, $D_2$ de la poulie menée (m) — sens de rotation conservé",
+    "grandeurs": [
+      {
+        "s": "k",
+        "nom": "rapport de transmission",
+        "u": ""
+      },
+      {
+        "s": "\\omega_2",
+        "nom": "vitesse de la poulie menée",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "\\omega_1",
+        "nom": "vitesse de la poulie menante",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "D_1",
+        "nom": "diamètre de la poulie menante",
+        "u": "m"
+      },
+      {
+        "s": "D_2",
+        "nom": "diamètre de la poulie menée",
+        "u": "m"
+      }
+    ],
     "source": "Fiche TC3.2.3"
   },
   {
@@ -959,7 +2956,34 @@
     "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
     "nom": "Vitesse linéaire d'une courroie (sans glissement)",
     "tex": "[[V]] = [[R_1|D_1|R_2]] \\, [[\\omega_1|\\omega_2|N_1]] = [[R_2|D_2|R_1]] \\, [[\\omega_2|\\omega_1|N_2]]",
-    "legende": "V vitesse de la courroie (m/s), R rayons primitifs (m), ω vitesses angulaires (rad/s)",
+    "legende": "$V$ vitesse linéaire de la courroie (m/s), $R_1$, $R_2$ rayons primitifs des poulies (m), $\\omega_1$, $\\omega_2$ vitesses angulaires (rad/s)",
+    "grandeurs": [
+      {
+        "s": "V",
+        "nom": "vitesse de la courroie",
+        "u": "m\\cdot s^{-1}"
+      },
+      {
+        "s": "R_1",
+        "nom": "rayon de la poulie 1",
+        "u": "m"
+      },
+      {
+        "s": "\\omega_1",
+        "nom": "vitesse angulaire de la poulie 1",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "R_2",
+        "nom": "rayon de la poulie 2",
+        "u": "m"
+      },
+      {
+        "s": "\\omega_2",
+        "nom": "vitesse angulaire de la poulie 2",
+        "u": "rad\\cdot s^{-1}"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -968,7 +2992,29 @@
     "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
     "nom": "Couple transmis par une courroie",
     "tex": "[[C]] = \\left([[T_1 - T_2|T_1 + T_2|T_1 T_2]]\\right) \\cdot [[R|D|R^2]]",
-    "legende": "C couple (N·m), T1 tension brin tendu, T2 tension brin mou (N), R rayon de la poulie (m)",
+    "legende": "$C$ couple (N·m), $T_1$ tension du brin tendu, $T_2$ tension du brin mou (N), $R$ rayon de la poulie (m)",
+    "grandeurs": [
+      {
+        "s": "C",
+        "nom": "couple",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "T_1",
+        "nom": "tension du brin tendu",
+        "u": "N"
+      },
+      {
+        "s": "T_2",
+        "nom": "tension du brin mou",
+        "u": "N"
+      },
+      {
+        "s": "R",
+        "nom": "rayon de la poulie",
+        "u": "m"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -977,7 +3023,29 @@
     "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
     "nom": "Relation d'Euler (limite de glissement d'une courroie plate)",
     "tex": "\\frac{[[T_1|T_2]]}{[[T_2|T_1]]} = [[e|10|\\pi]]^{[[f \\theta|\\frac{\\theta}{f}|f/\\theta]]}",
-    "legende": "T1 tension brin tendu, T2 brin mou (N), f coefficient de frottement, θ angle d'enroulement (rad)",
+    "legende": "$T_1$ tension du brin tendu, $T_2$ tension du brin mou (N), $f$ coefficient de frottement, $\\theta$ angle d'enroulement (rad)",
+    "grandeurs": [
+      {
+        "s": "T_1",
+        "nom": "tension du brin tendu",
+        "u": "N"
+      },
+      {
+        "s": "T_2",
+        "nom": "tension du brin mou",
+        "u": "N"
+      },
+      {
+        "s": "f",
+        "nom": "coefficient de frottement",
+        "u": ""
+      },
+      {
+        "s": "\\theta",
+        "nom": "angle d'enroulement",
+        "u": "rad"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -986,7 +3054,24 @@
     "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
     "nom": "Pignon-crémaillère / roue-rail",
     "tex": "[[V]] = [[R|D|\\frac{1}{R}]] \\cdot [[\\omega|N|\\dot{\\omega}]]",
-    "legende": "V vitesse linéaire (m/s), R rayon primitif ou rayon de roue (m), ω vitesse angulaire (rad/s)",
+    "legende": "$V$ vitesse linéaire (m/s), $R$ rayon primitif ou rayon de roue (m), $\\omega$ vitesse angulaire (rad/s)",
+    "grandeurs": [
+      {
+        "s": "V",
+        "nom": "vitesse linéaire",
+        "u": "m\\cdot s^{-1}"
+      },
+      {
+        "s": "R",
+        "nom": "rayon primitif",
+        "u": "m"
+      },
+      {
+        "s": "\\omega",
+        "nom": "vitesse angulaire",
+        "u": "rad\\cdot s^{-1}"
+      }
+    ],
     "source": "Fiche TC3.2.3 (Sujet 2024 E3 Q30-34) ; Classique programme"
   },
   {
@@ -995,7 +3080,24 @@
     "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
     "nom": "Effort à la jante d'une roue motrice",
     "tex": "[[F]] = \\frac{[[C_{\\mathrm{roue}}|C_m|P]]}{[[R_j|D_j|R_j^2]]}",
-    "legende": "F effort tangentiel à la jante (N), C couple sur l'essieu (N·m), Rj rayon de jante (m)",
+    "legende": "$F$ effort tangentiel à la jante (N), $C_{\\mathrm{roue}}$ couple sur l'essieu (N·m), $R_j$ rayon de la roue (m)",
+    "grandeurs": [
+      {
+        "s": "F",
+        "nom": "effort à la jante",
+        "u": "N"
+      },
+      {
+        "s": "C_{\\mathrm{roue}}",
+        "nom": "couple sur la roue",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "R_j",
+        "nom": "rayon de la roue",
+        "u": "m"
+      }
+    ],
     "source": "Fiche TC3.2.3 (Sujet 2024 E3 Q30-34) ; Classique programme"
   },
   {
@@ -1004,7 +3106,24 @@
     "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
     "nom": "Système vis-écrou — vitesse de translation",
     "tex": "[[V]] = \\frac{[[p|\\pi p|2p]] \\, [[\\omega|N|\\dot{\\omega}]]}{[[2\\pi|\\pi|60]]}",
-    "legende": "V vitesse de translation (m/s), p pas de la vis (m), ω vitesse angulaire (rad/s)",
+    "legende": "$V$ vitesse de translation (m/s), $p$ pas de la vis (m, pas hélicoïdal si plusieurs filets), $\\omega$ vitesse angulaire (rad/s)",
+    "grandeurs": [
+      {
+        "s": "V",
+        "nom": "vitesse de translation",
+        "u": "m\\cdot s^{-1}"
+      },
+      {
+        "s": "p",
+        "nom": "pas",
+        "u": "m"
+      },
+      {
+        "s": "\\omega",
+        "nom": "vitesse angulaire",
+        "u": "rad\\cdot s^{-1}"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -1013,7 +3132,29 @@
     "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
     "nom": "Système vis-écrou — effort axial",
     "tex": "[[F]] = \\frac{[[2\\pi|\\pi|2]] \\, [[\\eta|\\frac{1}{\\eta}|1 - \\eta]] \\, [[C|P|\\omega]]}{[[p|p^2|2\\pi p]]}",
-    "legende": "F effort axial (N), η rendement, C couple sur la vis (N·m), p pas (m)",
+    "legende": "$F$ effort axial (N), $\\eta$ rendement (fonctionnement direct), $C$ couple sur la vis (N·m), $p$ pas (m)",
+    "grandeurs": [
+      {
+        "s": "F",
+        "nom": "effort axial",
+        "u": "N"
+      },
+      {
+        "s": "\\eta",
+        "nom": "rendement",
+        "u": ""
+      },
+      {
+        "s": "C",
+        "nom": "couple sur la vis",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "p",
+        "nom": "pas",
+        "u": "m"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -1021,8 +3162,35 @@
     "bloc": "TC3",
     "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
     "nom": "Rapport d'un système roue et vis sans fin",
-    "tex": "[[k]] = \\frac{[[\\omega_{\\mathrm{roue}}|\\omega_{\\mathrm{vis}}]]}{[[\\omega_{\\mathrm{vis}}|\\omega_{\\mathrm{roue}}]]} = \\frac{[[Z_{\\mathrm{vis}}|Z_{\\mathrm{roue}}|1]]}{[[Z_{\\mathrm{roue}}|Z_{\\mathrm{vis}}|p]]}",
-    "legende": "Zvis nombre de filets, Zroue nombre de dents de la roue",
+    "tex": "[[k]] = \\frac{[[\\omega_{\\mathrm{roue}}|\\omega_{\\mathrm{vis}}]]}{[[\\omega_{\\mathrm{vis}}|\\omega_{\\mathrm{roue}}]]} = \\frac{[[Z_{\\mathrm{vis}}|Z_{\\mathrm{roue}}|p]]}{[[Z_{\\mathrm{roue}}|Z_{\\mathrm{vis}}|p]]}",
+    "legende": "$k$ rapport, $\\omega_{\\mathrm{roue}}$, $\\omega_{\\mathrm{vis}}$ vitesses angulaires (rad/s), $Z_{\\mathrm{vis}}$ nombre de filets de la vis, $Z_{\\mathrm{roue}}$ nombre de dents de la roue",
+    "grandeurs": [
+      {
+        "s": "k",
+        "nom": "rapport de transmission",
+        "u": ""
+      },
+      {
+        "s": "\\omega_{\\mathrm{roue}}",
+        "nom": "vitesse de la roue",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "\\omega_{\\mathrm{vis}}",
+        "nom": "vitesse de la vis",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "Z_{\\mathrm{vis}}",
+        "nom": "nombre de filets",
+        "u": ""
+      },
+      {
+        "s": "Z_{\\mathrm{roue}}",
+        "nom": "nombre de dents de la roue",
+        "u": ""
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -1031,7 +3199,29 @@
     "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
     "nom": "Formule de Willis (train épicycloïdal)",
     "tex": "\\frac{[[\\omega_{s} - \\omega_{PS}|\\omega_{s} + \\omega_{PS}|\\omega_{s}]]}{[[\\omega_{e} - \\omega_{PS}|\\omega_{e} + \\omega_{PS}|\\omega_{e}]]} = [[\\lambda|\\frac{1}{\\lambda}|1 - \\lambda]]",
-    "legende": "ωs, ωe vitesses des planétaires, ωPS vitesse du porte-satellites, λ raison basique (rapport du train à porte-satellites fixe)",
+    "legende": "$\\omega_s$, $\\omega_e$ vitesses des planétaires (rad/s), $\\omega_{PS}$ vitesse du porte-satellites (rad/s), $\\lambda$ raison basique (rapport $\\frac{\\omega_s}{\\omega_e}$ à porte-satellites fixe)",
+    "grandeurs": [
+      {
+        "s": "\\omega_{s}",
+        "nom": "vitesse du planétaire de sortie",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "\\omega_{PS}",
+        "nom": "vitesse du porte-satellites",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "\\omega_{e}",
+        "nom": "vitesse du planétaire d'entrée",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "\\lambda",
+        "nom": "raison basique",
+        "u": ""
+      }
+    ],
     "source": "Fiche TC2.2 (exemple 2021, réducteur épicycloïdal 3 étages)"
   },
   {
@@ -1039,8 +3229,25 @@
     "bloc": "TC3",
     "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
     "nom": "Joint de cardan simple — loi entrée-sortie",
-    "tex": "[[\\tan\\theta_s]] = [[\\cos\\delta|\\sin\\delta|\\frac{1}{\\cos\\delta}]] \\cdot [[\\tan\\theta_e|\\sin\\theta_e|\\theta_e]]",
-    "legende": "θs, θe angles de rotation des fourches (rad), δ angle entre les arbres — non homocinétique dès δ ≠ 0",
+    "tex": "[[\\tan\\theta_s]] = [[\\cos\\delta|\\sin\\delta|\\cos^2\\delta]] \\cdot [[\\tan\\theta_e|\\sin\\theta_e|\\theta_e]]",
+    "legende": "$\\theta_s$, $\\theta_e$ angles de rotation des fourches (rad), $\\delta$ angle entre les arbres — selon l'origine des angles, on écrit aussi $\\tan\\theta_e = \\cos\\delta \\tan\\theta_s$ ; non homocinétique dès $\\delta \\neq 0$",
+    "grandeurs": [
+      {
+        "s": "\\theta_s",
+        "nom": "angle de la fourche de sortie",
+        "u": "rad"
+      },
+      {
+        "s": "\\delta",
+        "nom": "angle entre les arbres",
+        "u": "rad"
+      },
+      {
+        "s": "\\theta_e",
+        "nom": "angle de la fourche d'entrée",
+        "u": "rad"
+      }
+    ],
     "source": "Fiche TC3.2.3"
   },
   {
@@ -1049,7 +3256,24 @@
     "notion": "TC3.2.3 Modélisation de composants de transmission de puissance mécanique",
     "nom": "Joint de cardan simple — bornes du rapport instantané",
     "tex": "[[\\cos\\delta|\\sin\\delta|\\cos^2\\delta]] \\leq \\frac{\\omega_s}{\\omega_e} \\leq [[\\frac{1}{\\cos\\delta}|\\frac{1}{\\sin\\delta}|1]]",
-    "legende": "ωs/ωe rapport instantané (oscille deux fois par tour), δ angle entre arbres",
+    "legende": "$\\frac{\\omega_s}{\\omega_e}$ rapport instantané des vitesses (oscille deux fois par tour), $\\delta$ angle entre les arbres",
+    "grandeurs": [
+      {
+        "s": "\\delta",
+        "nom": "angle entre les arbres",
+        "u": "rad"
+      },
+      {
+        "s": "\\omega_s",
+        "nom": "vitesse de sortie",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "\\omega_e",
+        "nom": "vitesse d'entrée",
+        "u": "rad\\cdot s^{-1}"
+      }
+    ],
     "source": "Fiche TC3.2.3 ; Classique programme"
   }
 ]

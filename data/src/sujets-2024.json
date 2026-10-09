@@ -5,7 +5,19 @@
     "notion": "OE1.3 Systèmes asservis linéaires échantillonnés",
     "nom": "Filtre passe-bas numérique du 1er ordre (Euler arrière, K = 1)",
     "tex": "s(n) = [[\\frac{\\tau}{\\tau + T_e}|\\frac{T_e}{\\tau}|\\frac{\\tau}{T_e}]]\\,s(n-1) + [[\\frac{T_e}{\\tau + T_e}|\\frac{\\tau + T_e}{T_e}|\\frac{T_e}{\\tau - T_e}]]\\,e(n)",
-    "legende": "Issu de τ ds/dt + s = e avec ds/dt ≈ (s(n) − s(n−1))/Te ; τ constante de temps, Te période d'échantillonnage",
+    "legende": "Issu de $\\tau\\,\\mathrm{d}s/\\mathrm{d}t + s = e$ avec $\\mathrm{d}s/\\mathrm{d}t \\approx (s(n) - s(n-1))/T_e$ ; $\\tau$ constante de temps (s), $T_e$ période d'échantillonnage (s)",
+    "grandeurs": [
+      {
+        "s": "\\tau",
+        "nom": "constante de temps",
+        "u": "s"
+      },
+      {
+        "s": "T_e",
+        "nom": "période d'échantillonnage",
+        "u": "s"
+      }
+    ],
     "source": "Sujet 2024 E1 (Q6)"
   },
   {
@@ -14,7 +26,34 @@
     "notion": "OE1.5 Capteurs",
     "nom": "Décalage Doppler d'une onde réfléchie (courantomètre ADCP)",
     "tex": "\\Delta f = [[2|1|\\frac{1}{2}]]\\,[[f_0|\\lambda]]\\,\\frac{[[v\\cos\\theta|v\\sin\\theta|v]]}{[[c|c^2]]}",
-    "legende": "f0 fréquence émise (Hz), v vitesse des particules réfléchissantes (m/s), θ angle faisceau/vitesse, c célérité de l'onde (son dans l'eau ≈ 1500 m/s) ; facteur 2 = aller-retour",
+    "legende": "$\\Delta f$ décalage Doppler (Hz), $f_0$ fréquence émise (Hz), $v$ vitesse des particules réfléchissantes (m/s), $\\theta$ angle faisceau/vitesse, $c$ célérité de l'onde (≈ 1500 m/s dans l'eau) ; facteur 2 = aller-retour",
+    "grandeurs": [
+      {
+        "s": "\\Delta f",
+        "nom": "décalage Doppler",
+        "u": "Hz"
+      },
+      {
+        "s": "f_0",
+        "nom": "fréquence émise",
+        "u": "Hz"
+      },
+      {
+        "s": "v",
+        "nom": "vitesse des réflecteurs",
+        "u": "m\\cdot s^{-1}"
+      },
+      {
+        "s": "\\theta",
+        "nom": "angle entre faisceau et vitesse",
+        "u": "rad"
+      },
+      {
+        "s": "c",
+        "nom": "célérité de l'onde",
+        "u": "m\\cdot s^{-1}"
+      }
+    ],
     "source": "Sujet 2024 E1 (Q3-Q5)"
   },
   {
@@ -23,7 +62,8 @@
     "notion": "OE1.4.3 Réseaux",
     "nom": "Classes d'adresses IPv4 (premier octet et masque par défaut)",
     "tex": "\\text{A} : 1 \\text{ à } 126,\\ /[[8|16|24]] \\quad ; \\quad \\text{B} : 128 \\text{ à } 191,\\ /[[16|8|12]] \\quad ; \\quad \\text{C} : [[192|128|224]] \\text{ à } 223,\\ /[[24|16|32]]",
-    "legende": "Premier octet de l'adresse et longueur du masque par défaut ; classe C = 254 hôtes par réseau",
+    "legende": "Valeur du premier octet de l'adresse et longueur du masque par défaut ; classe C : 254 hôtes par réseau",
+    "grandeurs": [],
     "source": "Sujet 2024 E1 (Q2)"
   },
   {
@@ -31,8 +71,9 @@
     "bloc": "OE1",
     "notion": "OE1.4.3 Réseaux",
     "nom": "Codes fonction Modbus usuels",
-    "tex": "\\text{lecture de mots} : [[03|01|04]] \\ ; \\ \\text{écriture d'un bit} : [[05|06|0F]] \\ ; \\ \\text{écriture d'un mot} : [[06|05|10]] \\ ; \\ \\text{bit forcé à 1} : [[\\mathrm{FF00}|\\mathrm{0001}|\\mathrm{00FF}]]",
-    "legende": "Codes en hexadécimal ; 01 lecture de bits, 0F écriture de n bits, 10 écriture de n mots ; forçage à 0 : 0000",
+    "tex": "\\text{lecture de mots} : [[03|01|02]] \\ ; \\ \\text{écriture d'un bit} : [[05|06|0F]] \\ ; \\ \\text{écriture d'un mot} : [[06|05|10]] \\ ; \\ \\text{bit forcé à 1} : [[\\mathrm{FF00}|\\mathrm{0001}|\\mathrm{00FF}]]",
+    "legende": "Codes en hexadécimal ; 03 lecture de registres de maintien (04 : registres d'entrée), 01/02 lecture de bits, 0F écriture de n bits, 10 écriture de n mots ; forçage à 0 : 0000",
+    "grandeurs": [],
     "source": "Sujet 2024 E1 (Q9-Q10)"
   },
   {
@@ -41,7 +82,24 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Gain d'un amplificateur d'instrumentation à 3 AOP (étage différentiel unitaire)",
     "tex": "G = [[1|2|0]] + \\dfrac{[[2R|R|\\frac{R}{2}]]}{[[R_G|R_G^2|2R_G]]}",
-    "legende": "R résistances de contre-réaction des AOP d'entrée, RG résistance de gain externe (INA128 : 2R = 50 kΩ)",
+    "legende": "$G$ gain différentiel, $R$ résistances de contre-réaction des AOP d'entrée (Ω), $R_G$ résistance de gain externe (Ω) (INA128 : $2R = 50$ kΩ)",
+    "grandeurs": [
+      {
+        "s": "G",
+        "nom": "gain différentiel",
+        "u": ""
+      },
+      {
+        "s": "R",
+        "nom": "résistance de contre-réaction",
+        "u": "\\Omega"
+      },
+      {
+        "s": "R_G",
+        "nom": "résistance de gain",
+        "u": "\\Omega"
+      }
+    ],
     "source": "Sujet 2024 E2 (Q7)"
   },
   {
@@ -50,7 +108,24 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Taux de réjection du mode commun (CMRR)",
     "tex": "\\mathrm{CMRR}_{\\mathrm{dB}} = [[20|10]]\\,\\log_{10}\\left(\\dfrac{[[A_d|A_{mc}|1]]}{[[A_{mc}|A_d|A_d + A_{mc}]]}\\right)",
-    "legende": "Ad gain différentiel, Amc gain de mode commun ; v_s = Ad·v_d + Amc·v_mc",
+    "legende": "$A_d$ gain différentiel, $A_{mc}$ gain de mode commun ; $v_s = A_d v_d + A_{mc} v_{mc}$",
+    "grandeurs": [
+      {
+        "s": "\\mathrm{CMRR}_{\\mathrm{dB}}",
+        "nom": "taux de réjection du mode commun",
+        "u": "dB"
+      },
+      {
+        "s": "A_d",
+        "nom": "gain différentiel",
+        "u": ""
+      },
+      {
+        "s": "A_{mc}",
+        "nom": "gain de mode commun",
+        "u": ""
+      }
+    ],
     "source": "Sujet 2024 E2 (Q8)"
   },
   {
@@ -59,7 +134,24 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Théorème de Millman",
     "tex": "V_A = \\dfrac{\\sum_i [[\\dfrac{V_i}{Z_i}|V_i Z_i|\\dfrac{Z_i}{V_i}]]}{\\sum_i [[\\dfrac{1}{Z_i}|Z_i|\\dfrac{1}{Z_i^2}]]}",
-    "legende": "Potentiel du nœud A relié par les impédances Zi aux potentiels Vi (pas de source de courant)",
+    "legende": "Potentiel $V_A$ du nœud relié par les impédances $Z_i$ (Ω) aux potentiels $V_i$ (V), sans source de courant",
+    "grandeurs": [
+      {
+        "s": "V_A",
+        "nom": "potentiel du nœud",
+        "u": "V"
+      },
+      {
+        "s": "V_i",
+        "nom": "potentiel de la branche i",
+        "u": "V"
+      },
+      {
+        "s": "Z_i",
+        "nom": "impédance de la branche i",
+        "u": "\\Omega"
+      }
+    ],
     "source": "Sujet 2024 E2 (Q19, Q64)"
   },
   {
@@ -68,7 +160,29 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Pont diviseur de tension (à vide)",
     "tex": "V_s = [[V_e|I]]\\cdot\\dfrac{[[R_2|R_1]]}{[[R_1 + R_2|R_1 R_2|R_1]]}",
-    "legende": "Ve tension appliquée sur R1 + R2 en série, Vs tension aux bornes de R2 (courant de sortie nul)",
+    "legende": "$V_e$ tension appliquée sur $R_1 + R_2$ en série, $V_s$ tension aux bornes de $R_2$ (V), courant de sortie nul",
+    "grandeurs": [
+      {
+        "s": "V_s",
+        "nom": "tension de sortie",
+        "u": "V"
+      },
+      {
+        "s": "V_e",
+        "nom": "tension d'entrée",
+        "u": "V"
+      },
+      {
+        "s": "R_1",
+        "nom": "résistance amont",
+        "u": "\\Omega"
+      },
+      {
+        "s": "R_2",
+        "nom": "résistance aval",
+        "u": "\\Omega"
+      }
+    ],
     "source": "Sujet 2024 E2 (Q12) ; Sujet 2023 E3 (Q23-24)"
   },
   {
@@ -77,7 +191,29 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Impédance d'un circuit RC parallèle",
     "tex": "\\underline{Z} = \\dfrac{[[R|1|jR]]}{1 + [[jRC\\omega|RC\\omega|\\frac{j\\omega}{RC}]]}",
-    "legende": "R (Ω), C (F), ω pulsation (rad/s) ; base du modèle de Cole-Cole Z = R_E + R_M // C_M",
+    "legende": "$R$ (Ω), $C$ (F), $\\omega$ pulsation (rad/s) ; base du modèle de Cole-Cole $Z = R_E + R_M /\\!/ C_M$",
+    "grandeurs": [
+      {
+        "s": "\\underline{Z}",
+        "nom": "impédance",
+        "u": "\\Omega"
+      },
+      {
+        "s": "R",
+        "nom": "résistance",
+        "u": "\\Omega"
+      },
+      {
+        "s": "C",
+        "nom": "capacité",
+        "u": "F"
+      },
+      {
+        "s": "\\omega",
+        "nom": "pulsation",
+        "u": "rad\\cdot s^{-1}"
+      }
+    ],
     "source": "Sujet 2024 E2 (Q15)"
   },
   {
@@ -86,7 +222,24 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Lieu de Nyquist d'un RC parallèle (demi-cercle)",
     "tex": "\\omega_{\\mathrm{sommet}} = [[\\dfrac{1}{RC}|RC|\\dfrac{2}{RC}]] \\quad ; \\quad \\mathrm{Im}(\\underline{Z})_{\\min} = [[-\\dfrac{R}{2}|-R|-\\dfrac{R}{4}]]",
-    "legende": "Demi-cercle de diamètre R de (R, 0) à ω = 0 vers (0, 0) à ω → ∞ ; sommet atteint pour ωRC = 1",
+    "legende": "Demi-cercle de diamètre $R$ (Ω), de $(R, 0)$ pour $\\omega = 0$ à $(0, 0)$ pour $\\omega \\to \\infty$ ; sommet atteint pour $\\omega RC = 1$",
+    "grandeurs": [
+      {
+        "s": "\\omega_{\\mathrm{sommet}}",
+        "nom": "pulsation au sommet",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "R",
+        "nom": "résistance",
+        "u": "\\Omega"
+      },
+      {
+        "s": "C",
+        "nom": "capacité",
+        "u": "F"
+      }
+    ],
     "source": "Sujet 2024 E2 (Q16-Q17)"
   },
   {
@@ -95,7 +248,8 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Polynômes de Butterworth normalisés (ordres 2 et 3)",
     "tex": "n = 2 : 1 + [[\\sqrt{2}|2|\\sqrt{3}]]\\,s + s^2 \\quad ; \\quad n = 3 : [[(1 + s)|(1 + 2s)|(1 + \\sqrt{2}s)]]\\left(1 + [[s|\\sqrt{2}\\,s|2s]] + s^2\\right)",
-    "legende": "s = jω/ωc ; ordre 5 : (1 + s)(1 + 1,618 s + s²)(1 + 0,618 s + s²)",
+    "legende": "$s = j\\omega/\\omega_c$ ; ordre 5 : $(1 + s)(1 + 1{,}618\\,s + s^2)(1 + 0{,}618\\,s + s^2)$",
+    "grandeurs": [],
     "source": "Sujet 2024 E2 (Q64-Q65)"
   },
   {
@@ -104,7 +258,19 @@
     "notion": "OE2.2.1 Analyse spectrale",
     "nom": "Détection synchrone par référence carrée ±1 (voies I et Q)",
     "tex": "\\overline{V_{S1}} = [[\\dfrac{2}{\\pi}|\\dfrac{4}{\\pi}|\\dfrac{1}{2}]]\\,K V_m\\,[[\\cos\\varphi|\\sin\\varphi|\\tan\\varphi]] \\quad ; \\quad \\overline{V_{S2}} = -\\dfrac{2}{\\pi}\\,K V_m\\,[[\\sin\\varphi|\\cos\\varphi|\\varphi]]",
-    "legende": "Signal mesuré Vm sin(ωt + φ), multiplié par un carré ±1 en phase (I) puis en quadrature retard (Q), puis filtré passe-bas ; fondamental du carré = 4/π",
+    "legende": "Signal $V_m\\sin(\\omega t + \\varphi)$ multiplié par un carré $\\pm 1$ en phase (I) puis en quadrature retard (Q), puis filtré passe-bas ; $K$ gain du multiplieur ; fondamental du carré $= 4/\\pi$",
+    "grandeurs": [
+      {
+        "s": "V_m",
+        "nom": "amplitude du signal mesuré",
+        "u": "V"
+      },
+      {
+        "s": "\\varphi",
+        "nom": "déphasage",
+        "u": "rad"
+      }
+    ],
     "source": "Sujet 2024 E2 (Q26-Q29)"
   },
   {
@@ -113,7 +279,14 @@
     "notion": "OE2.2.1 Analyse spectrale",
     "nom": "Filtre moyenneur glissant sur D échantillons (sinc, intégrateur-dérivateur)",
     "tex": "H(z) = [[\\dfrac{1}{D}|D|\\dfrac{1}{D^2}]]\\cdot\\dfrac{1 - [[z^{-D}|z^{D}|z^{-D+1}]]}{1 - [[z^{-1}|z|z^{-2}]]}",
-    "legende": "D facteur de décimation ; filtre SINC^k = mise en cascade de k filtres identiques (H^k)",
+    "legende": "$D$ nombre d'échantillons moyennés (facteur de décimation) ; filtre SINC$^k$ = cascade de $k$ filtres identiques ($H^k$)",
+    "grandeurs": [
+      {
+        "s": "D",
+        "nom": "nombre d'échantillons moyennés",
+        "u": ""
+      }
+    ],
     "source": "Sujet 2024 E2 (Q33-Q34) ; Sujet 2025 E2 (Q39-Q41)"
   },
   {
@@ -122,7 +295,24 @@
     "notion": "OE2.2.1 Analyse spectrale",
     "nom": "Module du filtre moyenneur (sinc) en fréquence",
     "tex": "\\lVert H(f) \\rVert = \\dfrac{\\lvert \\sin\\left([[\\pi D f/F_e|2\\pi D f/F_e|\\pi f/(D F_e)]]\\right) \\rvert}{[[D|D^2|1]]\\,\\lvert \\sin\\left([[\\pi f/F_e|2\\pi f/F_e|\\pi D f]]\\right) \\rvert}",
-    "legende": "Obtenu avec z^{-1} = e^{-j2πf/Fe} ; zéros de transmission en f = k·Fe/D (k ≠ 0)",
+    "legende": "Obtenu avec $z^{-1} = e^{-j2\\pi f/F_e}$ ; $D$ nombre d'échantillons, $F_e$ fréquence d'échantillonnage (Hz) ; zéros en $f = kF_e/D$ ($k \\neq 0$)",
+    "grandeurs": [
+      {
+        "s": "f",
+        "nom": "fréquence",
+        "u": "Hz"
+      },
+      {
+        "s": "F_e",
+        "nom": "fréquence d'échantillonnage",
+        "u": "Hz"
+      },
+      {
+        "s": "D",
+        "nom": "nombre d'échantillons moyennés",
+        "u": ""
+      }
+    ],
     "source": "Sujet 2024 E2 (Q35-Q36) ; Sujet 2023 E2 (Q34)"
   },
   {
@@ -131,7 +321,19 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Gain en SNR par suréchantillonnage (sans mise en forme du bruit)",
     "tex": "\\Delta\\mathrm{SNR}_{\\mathrm{dB}} = [[10|20|6]]\\,\\log_{10}\\left([[\\mathrm{OSR}|2\\,\\mathrm{OSR}|\\sqrt{\\mathrm{OSR}}]]\\right) \\quad ; \\quad [[0{,}5|1|2]]\\ \\text{bit gagné par doublement de } f_e",
-    "legende": "OSR = fe / (2 fmax) taux de suréchantillonnage ; un ΣΔ d'ordre L ajoute la mise en forme du bruit (gain plus élevé)",
+    "legende": "$\\mathrm{OSR} = f_e/(2f_{max})$ taux de suréchantillonnage ; un $\\Sigma\\Delta$ d'ordre $L$ ajoute la mise en forme du bruit (gain plus élevé)",
+    "grandeurs": [
+      {
+        "s": "\\Delta\\mathrm{SNR}_{\\mathrm{dB}}",
+        "nom": "gain en rapport signal sur bruit",
+        "u": "dB"
+      },
+      {
+        "s": "\\mathrm{OSR}",
+        "nom": "taux de suréchantillonnage",
+        "u": ""
+      }
+    ],
     "source": "Sujet 2024 E2 (Q32)"
   },
   {
@@ -139,8 +341,25 @@
     "bloc": "OE2",
     "notion": "OE2.2.2 Communications et radiofréquences",
     "nom": "Indice de modulation FSK",
-    "tex": "h = \\dfrac{[[2\\,\\Delta f|\\Delta f|4\\,\\Delta f]]}{[[D_b|2D_b|\\frac{D_b}{2}]]}",
-    "legende": "Δf déviation (excursion) de fréquence par rapport à la porteuse (Hz), Db débit binaire (bit/s) ; écart mark-space = 2Δf",
+    "tex": "h = \\dfrac{[[2\\,\\Delta f|\\frac{\\Delta f}{2}|4\\,\\Delta f]]}{[[D_b|2D_b|\\frac{D_b}{2}]]}",
+    "legende": "$h$ indice de modulation, $\\Delta f$ excursion de fréquence par rapport à la porteuse (Hz), $D_b$ débit binaire (bit/s) ; écart entre les deux fréquences $= 2\\Delta f$",
+    "grandeurs": [
+      {
+        "s": "h",
+        "nom": "indice de modulation",
+        "u": ""
+      },
+      {
+        "s": "\\Delta f",
+        "nom": "excursion de fréquence",
+        "u": "Hz"
+      },
+      {
+        "s": "D_b",
+        "nom": "débit binaire",
+        "u": "bit\\cdot s^{-1}"
+      }
+    ],
     "source": "Sujet 2024 E2 (Q41)"
   },
   {
@@ -149,7 +368,29 @@
     "notion": "OE2.2.2 Communications et radiofréquences",
     "nom": "Longueur d'une antenne quart d'onde",
     "tex": "\\ell = \\dfrac{[[\\lambda|c|f]]}{[[4|2|8]]} = \\dfrac{c}{[[4f|2f|f]]}",
-    "legende": "λ longueur d'onde (m), c = 3·10⁸ m/s, f fréquence porteuse (Hz) ; 433 MHz → ℓ ≈ 17 cm",
+    "legende": "$\\ell$ longueur de l'antenne (m), $\\lambda$ longueur d'onde (m), $c = 3\\cdot 10^8$ m/s, $f$ fréquence porteuse (Hz) ; 433 MHz → $\\ell \\approx 17$ cm",
+    "grandeurs": [
+      {
+        "s": "\\ell",
+        "nom": "longueur de l'antenne",
+        "u": "m"
+      },
+      {
+        "s": "\\lambda",
+        "nom": "longueur d'onde",
+        "u": "m"
+      },
+      {
+        "s": "c",
+        "nom": "célérité de la lumière",
+        "u": "m\\cdot s^{-1}"
+      },
+      {
+        "s": "f",
+        "nom": "fréquence porteuse",
+        "u": "Hz"
+      }
+    ],
     "source": "Sujet 2024 E2 (Q42)"
   },
   {
@@ -158,7 +399,29 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Synthétiseur PLL à division fractionnaire (fractional-N)",
     "tex": "F_{RF} = [[F_{PFD}|F_{XTAL}|R\\,F_{PFD}]]\\left([[N_{INT}|N_{FRAC}|R]] + \\dfrac{N_{FRAC}}{[[2^{k}|k|10^{k}]]}\\right)",
-    "legende": "F_PFD = F_XTAL / R fréquence de comparaison, N_INT partie entière, N_FRAC partie fractionnaire codée sur k bits",
+    "legende": "$F_{PFD} = F_{XTAL}/R$ fréquence de comparaison (Hz), $N_{INT}$ partie entière, $N_{FRAC}$ partie fractionnaire codée sur $k$ bits",
+    "grandeurs": [
+      {
+        "s": "F_{RF}",
+        "nom": "fréquence de sortie",
+        "u": "Hz"
+      },
+      {
+        "s": "F_{PFD}",
+        "nom": "fréquence de comparaison",
+        "u": "Hz"
+      },
+      {
+        "s": "N_{INT}",
+        "nom": "partie entière du rapport de division",
+        "u": ""
+      },
+      {
+        "s": "N_{FRAC}",
+        "nom": "partie fractionnaire du rapport de division",
+        "u": ""
+      }
+    ],
     "source": "Sujet 2024 E2 (Q44)"
   },
   {
@@ -167,7 +430,29 @@
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "Gain d'un comparateur phase-fréquence à pompe de charge",
     "tex": "\\langle I_{OUT} \\rangle = [[K_{CP}|K_V]]\\,\\Delta\\varphi \\quad \\text{avec} \\quad K_{CP} = \\dfrac{[[I_{CP}|2I_{CP}|V_{DD}]]}{[[2\\pi|\\pi|4\\pi]]}\\ (\\mathrm{A/rad})",
-    "legende": "ICP courant des sources de la pompe de charge ; caractéristique linéaire pour Δφ ∈ ]−2π ; 2π[",
+    "legende": "$I_{CP}$ courant des sources de la pompe de charge (A), $\\Delta\\varphi$ écart de phase (rad) ; linéaire pour $\\Delta\\varphi \\in\\, ]-2\\pi ; 2\\pi[$",
+    "grandeurs": [
+      {
+        "s": "\\langle I_{OUT} \\rangle",
+        "nom": "courant moyen de sortie",
+        "u": "A"
+      },
+      {
+        "s": "K_{CP}",
+        "nom": "gain du comparateur",
+        "u": "A\\cdot rad^{-1}"
+      },
+      {
+        "s": "\\Delta\\varphi",
+        "nom": "écart de phase",
+        "u": "rad"
+      },
+      {
+        "s": "I_{CP}",
+        "nom": "courant de la pompe de charge",
+        "u": "A"
+      }
+    ],
     "source": "Sujet 2024 E2 (Q48)"
   },
   {
@@ -175,8 +460,25 @@
     "bloc": "OE2",
     "notion": "OE2.1 Fonctions élémentaires de l'électronique",
     "nom": "VCO modélisé en phase dans une PLL (intégrateur)",
-    "tex": "\\theta_{s}(p) = \\dfrac{[[2\\pi K_V|K_V|\\frac{K_V}{2\\pi}]]}{[[p|p^2|1]]}\\,V_c(p)",
-    "legende": "KV gain du VCO (Hz/V), Vc tension de commande ; la phase est l'intégrale de la pulsation ω = 2πKV·Vc",
+    "tex": "\\theta_{s}(p) = \\dfrac{[[2\\pi K_V|\\pi K_V|\\frac{K_V}{2\\pi}]]}{[[p|p^2|1]]}\\,V_c(p)",
+    "legende": "$K_V$ gain du VCO en Hz/V, $V_c$ tension de commande (V), $\\theta_s$ phase (rad) : intégrale de la pulsation $\\omega = 2\\pi K_V V_c$",
+    "grandeurs": [
+      {
+        "s": "\\theta_{s}",
+        "nom": "phase de sortie du VCO",
+        "u": "rad"
+      },
+      {
+        "s": "K_V",
+        "nom": "gain du VCO",
+        "u": "Hz\\cdot V^{-1}"
+      },
+      {
+        "s": "V_c",
+        "nom": "tension de commande",
+        "u": "V"
+      }
+    ],
     "source": "Sujet 2024 E2 (Q52-Q53)"
   },
   {
@@ -185,7 +487,34 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Courant rotorique d'une MAS (R_s et branche magnétisante négligées)",
     "tex": "I_R = \\dfrac{[[V|\\sqrt{3}V|U]]}{\\sqrt{[[\\left(\\dfrac{R_R}{g}\\right)^2|R_R^2|\\left(R_R\\,g\\right)^2]] + [[X^2|X|2X^2]]}}",
-    "legende": "V tension simple efficace, RR résistance rotorique ramenée au stator, g glissement, X = (LS + LR)ωs réactance de fuites totale",
+    "legende": "$I_R$ courant rotorique ramené (A), $V$ tension simple efficace (V), $R_R$ résistance rotorique ramenée au stator (Ω), $g$ glissement, $X = (L_S + L_R)\\omega_s$ réactance de fuites totale (Ω)",
+    "grandeurs": [
+      {
+        "s": "I_R",
+        "nom": "courant rotorique ramené au stator",
+        "u": "A"
+      },
+      {
+        "s": "V",
+        "nom": "tension simple efficace",
+        "u": "V"
+      },
+      {
+        "s": "R_R",
+        "nom": "résistance rotorique ramenée",
+        "u": "\\Omega"
+      },
+      {
+        "s": "g",
+        "nom": "glissement",
+        "u": ""
+      },
+      {
+        "s": "X",
+        "nom": "réactance de fuites totale",
+        "u": "\\Omega"
+      }
+    ],
     "source": "Sujet 2024 E1 (Q26) ; E3 (Q33)"
   },
   {
@@ -194,7 +523,44 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Couple d'une MAS en fonction du glissement (modèle à fuites totalisées)",
     "tex": "C = \\dfrac{[[3p|p|3]]}{[[\\omega_s|\\Omega|2\\pi]]}\\cdot\\dfrac{V^2\\,[[\\dfrac{R_R}{g}|R_R\\,g|\\dfrac{g}{R_R}]]}{\\left(\\dfrac{R_R}{g}\\right)^2 + X^2}",
-    "legende": "p paires de pôles, ωs pulsation statorique (p/ωs = 1/Ωs), V tension simple, X réactance de fuites ; maximum pour g = RR/X",
+    "legende": "$p$ paires de pôles, $\\omega_s$ pulsation statorique (rad/s), $V$ tension simple (V), $R_R$ résistance rotorique ramenée (Ω), $g$ glissement, $X$ réactance de fuites (Ω) ; maximum pour $g = R_R/X$",
+    "grandeurs": [
+      {
+        "s": "C",
+        "nom": "couple électromagnétique",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "p",
+        "nom": "nombre de paires de pôles",
+        "u": ""
+      },
+      {
+        "s": "\\omega_s",
+        "nom": "pulsation statorique",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "V",
+        "nom": "tension simple efficace",
+        "u": "V"
+      },
+      {
+        "s": "R_R",
+        "nom": "résistance rotorique ramenée",
+        "u": "\\Omega"
+      },
+      {
+        "s": "g",
+        "nom": "glissement",
+        "u": ""
+      },
+      {
+        "s": "X",
+        "nom": "réactance de fuites totale",
+        "u": "\\Omega"
+      }
+    ],
     "source": "Sujet 2024 E1 (Q27) ; E3 (Q33)"
   },
   {
@@ -203,7 +569,34 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Fem d'un alternateur à pôles lisses (R négligée, Pythagore sur Fresnel)",
     "tex": "E^2 = \\left([[V|E|U]] + X I\\,[[\\sin\\varphi|\\cos\\varphi|\\tan\\varphi]]\\right)^2 + \\left(X I\\,[[\\cos\\varphi|\\sin\\varphi|1]]\\right)^2",
-    "legende": "V tension simple, I courant débité, X réactance synchrone, φ déphasage (charge inductive φ > 0), convention générateur",
+    "legende": "Convention générateur, $R$ négligée : $E$ fem et $V$ tension simple (V), $I$ courant (A), $X$ réactance synchrone (Ω), $\\varphi$ déphasage ($\\varphi > 0$ charge inductive)",
+    "grandeurs": [
+      {
+        "s": "E",
+        "nom": "fem par phase",
+        "u": "V"
+      },
+      {
+        "s": "V",
+        "nom": "tension simple",
+        "u": "V"
+      },
+      {
+        "s": "X",
+        "nom": "réactance synchrone",
+        "u": "\\Omega"
+      },
+      {
+        "s": "I",
+        "nom": "courant débité",
+        "u": "A"
+      },
+      {
+        "s": "\\varphi",
+        "nom": "déphasage courant/tension",
+        "u": "rad"
+      }
+    ],
     "source": "Sujet 2024 E3 (Q15)"
   },
   {
@@ -212,7 +605,34 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Angle interne d'une machine synchrone à pôles saillants (Blondel)",
     "tex": "\\tan\\delta = \\dfrac{X_q I\\,[[\\cos\\varphi|\\sin\\varphi|\\tan\\varphi]]}{V + [[X_q|X_d|X_d - X_q]]\\,I\\,[[\\sin\\varphi|\\cos\\varphi|1]]}",
-    "legende": "Xd, Xq réactances synchrones d'axe direct et transverse, V tension simple, I courant, φ déphasage (alternateur)",
+    "legende": "Fonctionnement alternateur : $X_d$, $X_q$ réactances synchrones d'axe direct et transverse (Ω), $V$ tension simple (V), $I$ courant (A), $\\varphi$ déphasage, $\\delta$ angle interne",
+    "grandeurs": [
+      {
+        "s": "\\delta",
+        "nom": "angle interne",
+        "u": "rad"
+      },
+      {
+        "s": "X_q",
+        "nom": "réactance synchrone transversale",
+        "u": "\\Omega"
+      },
+      {
+        "s": "I",
+        "nom": "courant",
+        "u": "A"
+      },
+      {
+        "s": "\\varphi",
+        "nom": "déphasage",
+        "u": "rad"
+      },
+      {
+        "s": "V",
+        "nom": "tension simple",
+        "u": "V"
+      }
+    ],
     "source": "Sujet 2024 E3 (Q18)"
   },
   {
@@ -221,7 +641,39 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Puissance active d'une machine synchrone à pôles saillants",
     "tex": "P = \\dfrac{3VE}{[[X_d|X_q|X_d + X_q]]}\\sin\\delta + [[\\dfrac{3V^2}{2}|3V^2|\\dfrac{V^2}{2}]]\\left(\\dfrac{1}{X_q} - \\dfrac{1}{X_d}\\right)\\sin [[2\\delta|\\delta|\\frac{\\delta}{2}]]",
-    "legende": "Second terme = couple de réluctance (nul si Xd = Xq, pôles lisses) ; V tension simple, E fem, δ angle interne",
+    "legende": "Second terme = puissance de réluctance (nulle si $X_d = X_q$) ; $V$ tension simple et $E$ fem (V), $X_d$, $X_q$ réactances (Ω), $\\delta$ angle interne",
+    "grandeurs": [
+      {
+        "s": "P",
+        "nom": "puissance active",
+        "u": "W"
+      },
+      {
+        "s": "V",
+        "nom": "tension simple",
+        "u": "V"
+      },
+      {
+        "s": "E",
+        "nom": "fem par phase",
+        "u": "V"
+      },
+      {
+        "s": "X_d",
+        "nom": "réactance synchrone directe",
+        "u": "\\Omega"
+      },
+      {
+        "s": "X_q",
+        "nom": "réactance synchrone transversale",
+        "u": "\\Omega"
+      },
+      {
+        "s": "\\delta",
+        "nom": "angle interne",
+        "u": "rad"
+      }
+    ],
     "source": "Sujet 2024 E3 (Q16-Q19)"
   },
   {
@@ -230,7 +682,44 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Impédance en valeur réduite (pourcentage, pu)",
     "tex": "X = [[x_{\\%}|\\frac{1}{x_{\\%}}]]\\cdot\\dfrac{[[V_N|U_N]]}{[[I_N|\\sqrt{3}\\,I_N]]} \\quad ; \\quad Z_{\\mathrm{base}} = \\dfrac{[[U_N^2|U_N|V_N^2]]}{[[S_N|P_N|I_N]]}",
-    "legende": "x% réactance réduite (ex. 260 % → 2,6 pu), VN tension simple, IN courant, UN tension composée, SN puissance apparente nominales",
+    "legende": "$x_{\\%}$ réactance réduite exprimée en pu (260 % → 2,6), $V_N$ tension simple, $I_N$ courant, $U_N$ tension composée, $S_N$ puissance apparente nominales",
+    "grandeurs": [
+      {
+        "s": "X",
+        "nom": "réactance",
+        "u": "\\Omega"
+      },
+      {
+        "s": "x_{\\%}",
+        "nom": "réactance réduite",
+        "u": ""
+      },
+      {
+        "s": "V_N",
+        "nom": "tension simple nominale",
+        "u": "V"
+      },
+      {
+        "s": "I_N",
+        "nom": "courant nominal",
+        "u": "A"
+      },
+      {
+        "s": "Z_{\\mathrm{base}}",
+        "nom": "impédance de base",
+        "u": "\\Omega"
+      },
+      {
+        "s": "U_N",
+        "nom": "tension composée nominale",
+        "u": "V"
+      },
+      {
+        "s": "S_N",
+        "nom": "puissance apparente nominale",
+        "u": "V\\cdot A"
+      }
+    ],
     "source": "Sujet 2024 E3 (Q17)"
   },
   {
@@ -239,7 +728,19 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Indice horaire d'un transformateur triphasé",
     "tex": "\\theta = [[h|12 - h|\\frac{h}{2}]] \\times [[30^\\circ|60^\\circ|15^\\circ]]",
-    "legende": "θ retard de la tension BT sur la tension HT homologue, h indice horaire (0 à 11) ; ex. YNd11 : θ = 330° (avance de 30°)",
+    "legende": "$\\theta$ retard de la tension BT sur la tension HT homologue, $h$ indice horaire (0 à 11) ; YNd11 : $\\theta = 330^\\circ$ (avance de 30°)",
+    "grandeurs": [
+      {
+        "s": "\\theta",
+        "nom": "déphasage BT/HT",
+        "u": "^\\circ"
+      },
+      {
+        "s": "h",
+        "nom": "indice horaire",
+        "u": ""
+      }
+    ],
     "source": "Sujet 2024 E3 (Q20)"
   },
   {
@@ -248,7 +749,34 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Rapport de transformation d'un transformateur Yd",
     "tex": "m = \\dfrac{U_{20}}{U_1} = \\dfrac{[[N_2|N_1|\\sqrt{3}N_2]]}{[[\\sqrt{3}\\,N_1|N_1|3N_1]]}",
-    "legende": "Primaire étoile (V1 = U1/√3 par colonne), secondaire triangle (U20 par colonne) ; en Dy : m = √3·N2/N1",
+    "legende": "Primaire étoile ($U_1/\\sqrt{3}$ par colonne), secondaire triangle ($U_{20}$ par colonne) ; $N_1$, $N_2$ spires par colonne ; en Dy : $m = \\sqrt{3}\\,N_2/N_1$",
+    "grandeurs": [
+      {
+        "s": "m",
+        "nom": "rapport de transformation",
+        "u": ""
+      },
+      {
+        "s": "U_{20}",
+        "nom": "tension composée secondaire à vide",
+        "u": "V"
+      },
+      {
+        "s": "U_1",
+        "nom": "tension composée primaire",
+        "u": "V"
+      },
+      {
+        "s": "N_2",
+        "nom": "spires secondaires par colonne",
+        "u": ""
+      },
+      {
+        "s": "N_1",
+        "nom": "spires primaires par colonne",
+        "u": ""
+      }
+    ],
     "source": "Sujet 2024 E3 (Q21, Q24)"
   },
   {
@@ -257,7 +785,24 @@
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Densité de courant dans un conducteur",
     "tex": "[[J|\\rho|\\sigma]] = \\dfrac{[[I|U|P]]}{[[S|L|S^2]]}",
-    "legende": "J densité de courant (A/mm²), I courant efficace (A), S section (mm²) ; ordre de grandeur bobinages ≈ 3 à 5 A/mm²",
+    "legende": "$J$ densité de courant (A/mm²), $I$ courant efficace (A), $S$ section (mm²) ; bobinages : 3 à 5 A/mm²",
+    "grandeurs": [
+      {
+        "s": "J",
+        "nom": "densité de courant",
+        "u": "A\\cdot m^{-2}"
+      },
+      {
+        "s": "I",
+        "nom": "courant efficace",
+        "u": "A"
+      },
+      {
+        "s": "S",
+        "nom": "section du conducteur",
+        "u": "m^2"
+      }
+    ],
     "source": "Sujet 2024 E3 (Q25)"
   },
   {
@@ -266,7 +811,19 @@
     "notion": "OE3.5 Chaînes de conversion électromécanique",
     "nom": "Formule de Davis (résistance à l'avancement d'un train)",
     "tex": "R_{av} = [[A|A\\,V|A\\,V^2]] + [[B\\,V|B\\,V^2|B]] + [[C\\,V^2|C\\,V|C\\,V^3]]",
-    "legende": "A roulement (dépend de la masse), B frottements visqueux, C aérodynamique (surface frontale, longueur) ; V vitesse",
+    "legende": "$R_{av}$ résistance à l'avancement (N), $A$ terme de roulement (selon la masse), $B$ frottements, $C$ terme aérodynamique, $V$ vitesse",
+    "grandeurs": [
+      {
+        "s": "R_{av}",
+        "nom": "résistance à l'avancement",
+        "u": "N"
+      },
+      {
+        "s": "V",
+        "nom": "vitesse du train",
+        "u": "m\\cdot s^{-1}"
+      }
+    ],
     "source": "Sujet 2024 E3 (Q29-Q30)"
   },
   {
@@ -275,7 +832,24 @@
     "notion": "OE3.6 Utilisation de l'énergie électrique et procédés associés",
     "nom": "Autonomie d'un équipement sur batterie",
     "tex": "t_{\\mathrm{auto}} = \\dfrac{[[Q|Q\\,U|E\\,I]]}{[[I_{\\mathrm{moy}}|I_{\\max}|U]]}",
-    "legende": "Q capacité de la batterie (Ah ou mAh), I_moy courant moyen consommé (A ou mA) → t en heures",
+    "legende": "$Q$ capacité de la batterie (Ah ou mAh), $I_{\\mathrm{moy}}$ courant moyen consommé (A ou mA) → $t_{\\mathrm{auto}}$ en heures",
+    "grandeurs": [
+      {
+        "s": "t_{\\mathrm{auto}}",
+        "nom": "autonomie",
+        "u": "h"
+      },
+      {
+        "s": "Q",
+        "nom": "capacité de la batterie",
+        "u": "A\\cdot h"
+      },
+      {
+        "s": "I_{\\mathrm{moy}}",
+        "nom": "courant moyen consommé",
+        "u": "A"
+      }
+    ],
     "source": "Sujet 2024 E2 (Q67)"
   },
   {
@@ -284,7 +858,34 @@
     "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
     "nom": "Premier principe industriel en puissance (écoulement permanent)",
     "tex": "P_{\\mathrm{th}} + P_u = [[q_m|q_v|\\rho]]\\left([[h_s - h_e|h_e - h_s|u_s - u_e]]\\right)",
-    "legende": "qm débit massique (kg/s), h enthalpie massique (J/kg) en sortie et en entrée ; Δec et Δep négligés ; sert au débit de vapeur d'une chaudière",
+    "legende": "Écoulement permanent, $\\Delta e_c$ et $\\Delta e_p$ négligés : $P_{\\mathrm{th}}$ et $P_u$ puissances thermique et utile reçues (W), $q_m$ débit massique (kg/s), $h_s$, $h_e$ enthalpies massiques de sortie et d'entrée (J/kg)",
+    "grandeurs": [
+      {
+        "s": "P_{\\mathrm{th}}",
+        "nom": "puissance thermique reçue",
+        "u": "W"
+      },
+      {
+        "s": "P_u",
+        "nom": "puissance mécanique utile reçue",
+        "u": "W"
+      },
+      {
+        "s": "q_m",
+        "nom": "débit massique",
+        "u": "kg\\cdot s^{-1}"
+      },
+      {
+        "s": "h_s",
+        "nom": "enthalpie massique de sortie",
+        "u": "J\\cdot kg^{-1}"
+      },
+      {
+        "s": "h_e",
+        "nom": "enthalpie massique d'entrée",
+        "u": "J\\cdot kg^{-1}"
+      }
+    ],
     "source": "Sujet 2024 E3 (Q6-Q8)"
   },
   {
@@ -293,7 +894,29 @@
     "notion": "TC3.3.3 Modèles de connaissance et de comportement des échanges énergétiques",
     "nom": "Rendement isentropique d'une turbine",
     "tex": "\\eta_{is} = \\dfrac{[[h_e - h_s|h_s - h_e|h_e - h_{s,is}]]}{[[h_e - h_{s,is}|h_{s,is} - h_e|h_s - h_{s,is}]]}",
-    "legende": "he enthalpie d'entrée, hs enthalpie réelle de sortie, hs,is enthalpie de sortie après détente isentropique ; pour un compresseur le rapport est inversé",
+    "legende": "$h_e$ enthalpie d'entrée, $h_s$ enthalpie réelle de sortie, $h_{s,is}$ enthalpie de sortie après détente isentropique (J/kg) ; pour un compresseur le rapport est inversé",
+    "grandeurs": [
+      {
+        "s": "\\eta_{is}",
+        "nom": "rendement isentropique",
+        "u": ""
+      },
+      {
+        "s": "h_e",
+        "nom": "enthalpie massique d'entrée",
+        "u": "J\\cdot kg^{-1}"
+      },
+      {
+        "s": "h_s",
+        "nom": "enthalpie massique réelle de sortie",
+        "u": "J\\cdot kg^{-1}"
+      },
+      {
+        "s": "h_{s,is}",
+        "nom": "enthalpie massique de sortie isentropique",
+        "u": "J\\cdot kg^{-1}"
+      }
+    ],
     "source": "Sujet 2024 E3 (Q7)"
   },
   {
@@ -301,8 +924,25 @@
     "bloc": "TC3",
     "notion": "TC3.3.2 Flux et efficacité énergétique",
     "nom": "Puissance thermique libérée par une combustion",
-    "tex": "P_f = [[q_m|q_v|m]]\\cdot[[\\mathrm{PCI}|\\mathrm{PCS}|c_p]]",
-    "legende": "qm débit massique de combustible (t/h), PCI pouvoir calorifique inférieur (MWh/t) ; énergie primaire E = m·PCI",
+    "tex": "P_f = [[q_m|q_v|m]]\\cdot[[\\mathrm{PCI}|c_p|\\frac{1}{\\mathrm{PCI}}]]",
+    "legende": "$P_f$ puissance thermique libérée (W), $q_m$ débit massique de combustible (kg/s), $\\mathrm{PCI}$ pouvoir calorifique inférieur (J/kg) ; PCS si la vapeur d'eau est condensée ; énergie primaire $E = m\\cdot\\mathrm{PCI}$",
+    "grandeurs": [
+      {
+        "s": "P_f",
+        "nom": "puissance thermique libérée",
+        "u": "W"
+      },
+      {
+        "s": "q_m",
+        "nom": "débit massique de combustible",
+        "u": "kg\\cdot s^{-1}"
+      },
+      {
+        "s": "\\mathrm{PCI}",
+        "nom": "pouvoir calorifique inférieur",
+        "u": "J\\cdot kg^{-1}"
+      }
+    ],
     "source": "Sujet 2024 E3 (Q3-Q4)"
   }
 ]

@@ -3,9 +3,26 @@
     "id": "oe3-triangle-puissances",
     "bloc": "OE3",
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
-    "nom": "Triangle des puissances",
+    "nom": "Triangle des puissances (régime sinusoïdal)",
     "tex": "[[S^2|S|2S]] = [[P^2|P|\\sqrt{P}]] + [[Q^2|Q|-Q^2]]",
-    "legende": "S puissance apparente (VA), P active (W), Q réactive (VAr) — régime sinusoïdal",
+    "legende": "$S$ puissance apparente (VA), $P$ puissance active (W), $Q$ puissance réactive (var) ; régime sinusoïdal",
+    "grandeurs": [
+      {
+        "s": "S",
+        "nom": "puissance apparente",
+        "u": "VA"
+      },
+      {
+        "s": "P",
+        "nom": "puissance active",
+        "u": "W"
+      },
+      {
+        "s": "Q",
+        "nom": "puissance réactive",
+        "u": "var"
+      }
+    ],
     "source": "Fiche OE3.1"
   },
   {
@@ -14,7 +31,29 @@
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Puissance active monophasée",
     "tex": "[[P|Q|S]] = [[U|\\sqrt{2}U|\\sqrt{3}U]] \\cdot [[I|I^2]] \\cdot [[\\cos\\varphi|\\sin\\varphi|\\tan\\varphi]]",
-    "legende": "P (W), U et I valeurs efficaces (V, A), φ déphasage de i par rapport à u",
+    "legende": "$P$ puissance active (W), $U$ et $I$ valeurs efficaces (V, A), $\\varphi$ déphasage de $i$ par rapport à $u$",
+    "grandeurs": [
+      {
+        "s": "P",
+        "nom": "puissance active",
+        "u": "W"
+      },
+      {
+        "s": "U",
+        "nom": "tension efficace",
+        "u": "V"
+      },
+      {
+        "s": "I",
+        "nom": "courant efficace",
+        "u": "A"
+      },
+      {
+        "s": "\\varphi",
+        "nom": "déphasage courant/tension",
+        "u": "rad"
+      }
+    ],
     "source": "Fiche OE3.1 ; Fiche TC3.3.2"
   },
   {
@@ -23,7 +62,29 @@
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Puissance réactive monophasée",
     "tex": "[[Q|P|S]] = [[U I|\\sqrt{3}UI|2UI]] \\cdot [[\\sin\\varphi|\\cos\\varphi|\\tan\\varphi]]",
-    "legende": "Q (VAr), U et I valeurs efficaces, φ déphasage courant/tension",
+    "legende": "$Q$ puissance réactive (var), $U$ et $I$ valeurs efficaces (V, A), $\\varphi$ déphasage courant/tension",
+    "grandeurs": [
+      {
+        "s": "Q",
+        "nom": "puissance réactive",
+        "u": "var"
+      },
+      {
+        "s": "U",
+        "nom": "tension efficace",
+        "u": "V"
+      },
+      {
+        "s": "I",
+        "nom": "courant efficace",
+        "u": "A"
+      },
+      {
+        "s": "\\varphi",
+        "nom": "déphasage courant/tension",
+        "u": "rad"
+      }
+    ],
     "source": "Fiche OE3.1"
   },
   {
@@ -31,8 +92,25 @@
     "bloc": "OE3",
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Puissance apparente monophasée",
-    "tex": "[[S|P|Q]] = [[U I|\\sqrt{3}UI|UI\\cos\\varphi|\\frac{UI}{2}]]",
-    "legende": "S (VA), U et I valeurs efficaces — grandeur de dimensionnement",
+    "tex": "[[S|P|Q]] = [[U I|\\sqrt{3}UI|UI\\cos\\varphi|\\sqrt{2}\\,UI]]",
+    "legende": "$S$ puissance apparente (VA), $U$ et $I$ valeurs efficaces (V, A) ; grandeur de dimensionnement",
+    "grandeurs": [
+      {
+        "s": "S",
+        "nom": "puissance apparente",
+        "u": "VA"
+      },
+      {
+        "s": "U",
+        "nom": "tension efficace",
+        "u": "V"
+      },
+      {
+        "s": "I",
+        "nom": "courant efficace",
+        "u": "A"
+      }
+    ],
     "source": "Fiche OE3.1"
   },
   {
@@ -40,8 +118,25 @@
     "bloc": "OE3",
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Facteur de puissance",
-    "tex": "[[\\lambda|\\cos\\varphi|\\tan\\varphi]] = \\frac{[[P|Q|S]]}{[[S|P|Q]]}",
-    "legende": "λ facteur de puissance (sans unité), égal à cos φ seulement en régime sinusoïdal",
+    "tex": "[[\\lambda|\\tan\\varphi|\\sin\\varphi]] = \\frac{[[P|Q|S]]}{[[S|P|Q]]}",
+    "legende": "$\\lambda$ facteur de puissance (sans unité), $P$ (W), $S$ (VA) ; $\\lambda = \\cos\\varphi$ seulement en régime sinusoïdal",
+    "grandeurs": [
+      {
+        "s": "\\lambda",
+        "nom": "facteur de puissance",
+        "u": ""
+      },
+      {
+        "s": "P",
+        "nom": "puissance active",
+        "u": "W"
+      },
+      {
+        "s": "S",
+        "nom": "puissance apparente",
+        "u": "VA"
+      }
+    ],
     "source": "Fiche OE3.1"
   },
   {
@@ -50,7 +145,24 @@
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Tangente de φ",
     "tex": "[[\\tan\\varphi|\\cos\\varphi|\\sin\\varphi]] = \\frac{[[Q|P|S]]}{[[P|Q|S]]}",
-    "legende": "Q puissance réactive (VAr), P puissance active (W)",
+    "legende": "$Q$ puissance réactive (var), $P$ puissance active (W), $\\varphi$ déphasage courant/tension",
+    "grandeurs": [
+      {
+        "s": "\\varphi",
+        "nom": "déphasage courant/tension",
+        "u": "rad"
+      },
+      {
+        "s": "Q",
+        "nom": "puissance réactive",
+        "u": "var"
+      },
+      {
+        "s": "P",
+        "nom": "puissance active",
+        "u": "W"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -58,8 +170,35 @@
     "bloc": "OE3",
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Puissance apparente complexe",
-    "tex": "[[\\underline{S}|S]] = [[P + jQ|P - jQ|Q + jP]] = \\underline{V} \\cdot [[\\underline{I}^*|\\underline{I}|\\frac{1}{\\underline{I}}]]",
-    "legende": "S complexe (VA), V et I phaseurs efficaces, I* conjugué du courant",
+    "tex": "[[\\underline{S}|S]] = [[P + jQ|Q + jP|P + Q]] = \\underline{V} \\cdot [[\\underline{I}^*|\\underline{I}|\\frac{1}{\\underline{I}}]]",
+    "legende": "$\\underline{S}$ puissance complexe (VA), $\\underline{V}$ et $\\underline{I}$ phaseurs efficaces, $\\underline{I}^*$ conjugué du courant",
+    "grandeurs": [
+      {
+        "s": "\\underline{S}",
+        "nom": "puissance apparente complexe",
+        "u": "VA"
+      },
+      {
+        "s": "P",
+        "nom": "puissance active",
+        "u": "W"
+      },
+      {
+        "s": "Q",
+        "nom": "puissance réactive",
+        "u": "var"
+      },
+      {
+        "s": "\\underline{V}",
+        "nom": "tension complexe",
+        "u": "V"
+      },
+      {
+        "s": "\\underline{I}",
+        "nom": "courant complexe",
+        "u": "A"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -68,7 +207,19 @@
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Tension composée / tension simple",
     "tex": "[[U|V]] = [[\\sqrt{3}|\\sqrt{2}|3|\\frac{1}{\\sqrt{3}}]] \\, [[V|U|V_{\\max}]]",
-    "legende": "U tension composée (entre phases), V tension simple (phase-neutre), triphasé équilibré",
+    "legende": "$U$ tension composée entre phases (V), $V$ tension simple phase-neutre (V) ; triphasé équilibré",
+    "grandeurs": [
+      {
+        "s": "U",
+        "nom": "tension composée",
+        "u": "V"
+      },
+      {
+        "s": "V",
+        "nom": "tension simple",
+        "u": "V"
+      }
+    ],
     "source": "Fiche OE3.1"
   },
   {
@@ -76,8 +227,30 @@
     "bloc": "OE3",
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Puissance active triphasée équilibrée",
-    "tex": "[[P|Q|S]] = [[\\sqrt{3}|3|\\sqrt{2}]] \\, [[U|V]] \\, I \\, [[\\cos\\varphi|\\sin\\varphi]]",
-    "legende": "U tension composée, I courant de ligne, φ déphasage d'une charge (quel que soit le couplage)",
+    "tex": "[[P|Q|S]] = [[\\sqrt{3}|3|\\sqrt{2}]] \\, [[U|V]] \\, [[I|J]] \\, [[\\cos\\varphi|\\sin\\varphi]]",
+    "legende": "$U$ tension composée (V), $I$ courant de ligne (A), $\\varphi$ déphasage d'une charge, quel que soit le couplage",
+    "grandeurs": [
+      {
+        "s": "P",
+        "nom": "puissance active",
+        "u": "W"
+      },
+      {
+        "s": "U",
+        "nom": "tension composée",
+        "u": "V"
+      },
+      {
+        "s": "I",
+        "nom": "courant de ligne",
+        "u": "A"
+      },
+      {
+        "s": "\\varphi",
+        "nom": "déphasage de la charge",
+        "u": "rad"
+      }
+    ],
     "source": "Fiche OE3.1 ; Fiche TC3.3.2 ; Rapport jury 2024"
   },
   {
@@ -85,8 +258,30 @@
     "bloc": "OE3",
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Puissance réactive triphasée équilibrée",
-    "tex": "[[Q|P|S]] = [[\\sqrt{3}|3|\\sqrt{2}]] \\, U \\, [[I|J]] \\, [[\\sin\\varphi|\\cos\\varphi]]",
-    "legende": "U tension composée (V), I courant de ligne (A), Q en VAr",
+    "tex": "[[Q|P|S]] = [[\\sqrt{3}|3|\\sqrt{2}]] \\, [[U|V]] \\, [[I|J]] \\, [[\\sin\\varphi|\\cos\\varphi]]",
+    "legende": "$Q$ puissance réactive (var), $U$ tension composée (V), $I$ courant de ligne (A), $\\varphi$ déphasage d'une charge",
+    "grandeurs": [
+      {
+        "s": "Q",
+        "nom": "puissance réactive",
+        "u": "var"
+      },
+      {
+        "s": "U",
+        "nom": "tension composée",
+        "u": "V"
+      },
+      {
+        "s": "I",
+        "nom": "courant de ligne",
+        "u": "A"
+      },
+      {
+        "s": "\\varphi",
+        "nom": "déphasage de la charge",
+        "u": "rad"
+      }
+    ],
     "source": "Fiche OE3.1"
   },
   {
@@ -95,7 +290,29 @@
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Puissance apparente triphasée",
     "tex": "[[S|P]] = [[\\sqrt{3}\\,U I|3UI|\\sqrt{2}\\,UI]] = [[3 V I|\\sqrt{3}VI|VI]]",
-    "legende": "U tension composée, V tension simple, I courant de ligne",
+    "legende": "$S$ puissance apparente (VA), $U$ tension composée (V), $V$ tension simple (V), $I$ courant de ligne (A)",
+    "grandeurs": [
+      {
+        "s": "S",
+        "nom": "puissance apparente",
+        "u": "VA"
+      },
+      {
+        "s": "U",
+        "nom": "tension composée",
+        "u": "V"
+      },
+      {
+        "s": "V",
+        "nom": "tension simple",
+        "u": "V"
+      },
+      {
+        "s": "I",
+        "nom": "courant de ligne",
+        "u": "A"
+      }
+    ],
     "source": "Fiche OE3.1"
   },
   {
@@ -103,8 +320,30 @@
     "bloc": "OE3",
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Puissance active triphasée (tension simple)",
-    "tex": "P = [[3|\\sqrt{3}|1]] \\, [[V|U]] \\, I \\, [[\\cos\\varphi|\\sin\\varphi]]",
-    "legende": "V tension simple, I courant de ligne (charge étoile ou étoile équivalente)",
+    "tex": "[[P|Q]] = [[3|\\sqrt{3}|1]] \\, [[V|U]] \\, [[I|J]] \\, [[\\cos\\varphi|\\sin\\varphi]]",
+    "legende": "$V$ tension simple (V), $I$ courant de ligne (A), $\\varphi$ déphasage d'une charge (étoile ou étoile équivalente)",
+    "grandeurs": [
+      {
+        "s": "P",
+        "nom": "puissance active",
+        "u": "W"
+      },
+      {
+        "s": "V",
+        "nom": "tension simple",
+        "u": "V"
+      },
+      {
+        "s": "I",
+        "nom": "courant de ligne",
+        "u": "A"
+      },
+      {
+        "s": "\\varphi",
+        "nom": "déphasage de la charge",
+        "u": "rad"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -113,7 +352,19 @@
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Courant de ligne / courant de branche (triangle)",
     "tex": "[[I|J]] = [[\\sqrt{3}|\\sqrt{2}|3|\\frac{1}{\\sqrt{3}}]] \\, [[J|I]]",
-    "legende": "I courant de ligne, J courant dans une branche du triangle, système équilibré",
+    "legende": "$I$ courant de ligne (A), $J$ courant dans une branche du triangle (A) ; système équilibré",
+    "grandeurs": [
+      {
+        "s": "I",
+        "nom": "courant de ligne",
+        "u": "A"
+      },
+      {
+        "s": "J",
+        "nom": "courant de branche",
+        "u": "A"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -122,7 +373,24 @@
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Valeur efficace d'un courant déformé",
     "tex": "[[I_{\\mathrm{eff}}|I_1]] = [[I_1|I_{\\max}]] \\, [[\\sqrt{1 + \\mathrm{THD}_I^2}|1 + \\mathrm{THD}_I|\\sqrt{1 - \\mathrm{THD}_I^2}]]",
-    "legende": "I_eff = √(Σ I_h²), I_1 fondamental efficace",
+    "legende": "$I_{\\mathrm{eff}} = \\sqrt{\\sum I_h^2}$ (A), $I_1$ fondamental efficace (A), $\\mathrm{THD}_I$ rapporté au fondamental",
+    "grandeurs": [
+      {
+        "s": "I_{\\mathrm{eff}}",
+        "nom": "courant efficace total",
+        "u": "A"
+      },
+      {
+        "s": "I_1",
+        "nom": "courant fondamental efficace",
+        "u": "A"
+      },
+      {
+        "s": "\\mathrm{THD}_I",
+        "nom": "taux de distorsion harmonique du courant",
+        "u": ""
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -130,8 +398,25 @@
     "bloc": "OE3",
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Facteur de puissance en régime harmonique",
-    "tex": "[[\\lambda|\\cos\\varphi_1]] \\approx \\frac{[[\\cos\\varphi_1|\\sin\\varphi_1]]}{[[\\sqrt{1 + \\mathrm{THD}_I^2}|1 + \\mathrm{THD}_I^2|\\sqrt{1 - \\mathrm{THD}_I^2}]]}",
-    "legende": "φ1 déphasage du fondamental, tension supposée sinusoïdale",
+    "tex": "[[\\lambda|\\cos\\varphi_1]] = \\frac{[[\\cos\\varphi_1|\\sin\\varphi_1]]}{[[\\sqrt{1 + \\mathrm{THD}_I^2}|1 + \\mathrm{THD}_I^2|\\sqrt{1 - \\mathrm{THD}_I^2}]]}",
+    "legende": "$\\lambda$ facteur de puissance, $\\varphi_1$ déphasage du fondamental, $\\mathrm{THD}_I$ rapporté au fondamental ; tension sinusoïdale",
+    "grandeurs": [
+      {
+        "s": "\\lambda",
+        "nom": "facteur de puissance",
+        "u": ""
+      },
+      {
+        "s": "\\varphi_1",
+        "nom": "déphasage du fondamental",
+        "u": "rad"
+      },
+      {
+        "s": "\\mathrm{THD}_I",
+        "nom": "taux de distorsion harmonique du courant",
+        "u": ""
+      }
+    ],
     "source": "Fiche OE3.1"
   },
   {
@@ -139,8 +424,30 @@
     "bloc": "OE3",
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Puissance déformante (Budeanu)",
-    "tex": "[[S^2|S]] = P^2 + [[Q^2|Q]] + [[D^2|D|-D^2]]",
-    "legende": "D puissance déformante (VAd) due aux harmoniques de courant, tension sinusoïdale",
+    "tex": "[[S^2|S]] = [[P^2|P]] + [[Q^2|Q]] + [[D^2|D|-D^2]]",
+    "legende": "$S$ (VA), $P$ (W), $Q$ (var), $D$ puissance déformante (VA) due aux harmoniques de courant ; tension sinusoïdale",
+    "grandeurs": [
+      {
+        "s": "S",
+        "nom": "puissance apparente",
+        "u": "VA"
+      },
+      {
+        "s": "P",
+        "nom": "puissance active",
+        "u": "W"
+      },
+      {
+        "s": "Q",
+        "nom": "puissance réactive",
+        "u": "var"
+      },
+      {
+        "s": "D",
+        "nom": "puissance déformante",
+        "u": "VA"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -148,8 +455,20 @@
     "bloc": "OE3",
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Courant de neutre (triphasé déséquilibré)",
-    "tex": "[[\\underline{I}_N|I_N]] = [[-|+|\\frac{1}{3}]] \\left( [[\\underline{I}_1 + \\underline{I}_2 + \\underline{I}_3|I_1 + I_2 + I_3]] \\right)",
-    "legende": "Somme vectorielle des courants de phase (convention : courants sortant du neutre vers les charges)",
+    "tex": "[[\\underline{I}_N|I_N]] = [[\\underline{I}_1 + \\underline{I}_2 + \\underline{I}_3|I_1 + I_2 + I_3|\\frac{1}{3}\\left(\\underline{I}_1 + \\underline{I}_2 + \\underline{I}_3\\right)]]",
+    "legende": "Somme vectorielle des courants de phase (A) ; $\\underline{I}_N$ orienté des charges vers la source",
+    "grandeurs": [
+      {
+        "s": "\\underline{I}_N",
+        "nom": "courant de neutre",
+        "u": "A"
+      },
+      {
+        "s": "\\underline{I}_1",
+        "nom": "courant de la phase 1",
+        "u": "A"
+      }
+    ],
     "source": "Fiche OE3.1"
   },
   {
@@ -158,7 +477,8 @@
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Opérateur de rotation a (Fortescue)",
     "tex": "[[a|j]] = e^{\\,j [[\\frac{2\\pi}{3}|\\frac{\\pi}{3}|\\frac{\\pi}{2}]]} \\quad ; \\quad 1 + a + a^2 = [[0|1|3]]",
-    "legende": "a opérateur de rotation de 120° utilisé dans les composantes symétriques",
+    "legende": "$a$ opérateur de rotation de 120° utilisé dans les composantes symétriques",
+    "grandeurs": [],
     "source": "Classique programme"
   },
   {
@@ -167,7 +487,19 @@
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Composante directe (Fortescue)",
     "tex": "[[\\underline{V}_d|\\underline{V}_0]] = [[\\frac{1}{3}|\\frac{1}{\\sqrt{3}}|\\frac{1}{2}]] \\left( \\underline{V}_1 + [[a|a^2]] \\, \\underline{V}_2 + [[a^2|a]] \\, \\underline{V}_3 \\right)",
-    "legende": "V_d composante directe ; la composante inverse s'obtient en échangeant a et a²",
+    "legende": "$\\underline{V}_d$ composante directe (V), $a = e^{j2\\pi/3}$ ; la composante inverse s'obtient en échangeant $a$ et $a^2$",
+    "grandeurs": [
+      {
+        "s": "\\underline{V}_d",
+        "nom": "composante directe",
+        "u": "V"
+      },
+      {
+        "s": "\\underline{V}_1",
+        "nom": "tension de la phase 1",
+        "u": "V"
+      }
+    ],
     "source": "Fiche OE3.1 (composantes symétriques) ; Classique programme"
   },
   {
@@ -176,7 +508,19 @@
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Composante homopolaire (Fortescue)",
     "tex": "[[\\underline{V}_0|\\underline{V}_d]] = [[\\frac{1}{3}|\\frac{1}{\\sqrt{3}}|1]] \\left( [[\\underline{V}_1 + \\underline{V}_2 + \\underline{V}_3|\\underline{V}_1 + a\\underline{V}_2 + a^2\\underline{V}_3]] \\right)",
-    "legende": "Composante homopolaire : circule dans le neutre et la terre",
+    "legende": "$\\underline{V}_0$ composante homopolaire (V) : circule dans le neutre et la terre",
+    "grandeurs": [
+      {
+        "s": "\\underline{V}_0",
+        "nom": "composante homopolaire",
+        "u": "V"
+      },
+      {
+        "s": "\\underline{V}_1",
+        "nom": "tension de la phase 1",
+        "u": "V"
+      }
+    ],
     "source": "Fiche OE3.1 ; Classique programme"
   },
   {
@@ -185,7 +529,24 @@
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Condition de coupure en régime TN",
     "tex": "[[Z_s|R_A]] \\cdot [[I_a|I_{\\Delta n}]] \\leq [[U_0|U_L|U]]",
-    "legende": "Z_s impédance de boucle de défaut, I_a courant assurant la coupure dans le temps normalisé, U_0 tension simple",
+    "legende": "$Z_s$ impédance de la boucle de défaut (Ω), $I_a$ courant de coupure dans le temps normalisé (A), $U_0$ tension simple (V)",
+    "grandeurs": [
+      {
+        "s": "Z_s",
+        "nom": "impédance de boucle de défaut",
+        "u": "\\Omega"
+      },
+      {
+        "s": "I_a",
+        "nom": "courant assurant la coupure",
+        "u": "A"
+      },
+      {
+        "s": "U_0",
+        "nom": "tension simple",
+        "u": "V"
+      }
+    ],
     "source": "Fiche OE3.1"
   },
   {
@@ -194,7 +555,24 @@
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Condition de protection en régime TT",
     "tex": "[[R_A|Z_s]] \\cdot [[I_{\\Delta n}|I_a]] \\leq [[U_L|U_0]]",
-    "legende": "R_A résistance de la prise de terre des masses, I_Δn sensibilité du DDR, U_L tension limite de sécurité",
+    "legende": "$R_A$ résistance de la prise de terre des masses (Ω), $I_{\\Delta n}$ sensibilité du DDR (A), $U_L$ tension limite de sécurité (V)",
+    "grandeurs": [
+      {
+        "s": "R_A",
+        "nom": "résistance de prise de terre des masses",
+        "u": "\\Omega"
+      },
+      {
+        "s": "I_{\\Delta n}",
+        "nom": "courant différentiel assigné",
+        "u": "A"
+      },
+      {
+        "s": "U_L",
+        "nom": "tension limite de sécurité",
+        "u": "V"
+      }
+    ],
     "source": "Classique programme (NF C 15-100)"
   },
   {
@@ -202,8 +580,20 @@
     "bloc": "OE3",
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Seuils de protection des personnes",
-    "tex": "U_L = [[50|25|230|120]]\\ \\mathrm{V}_{\\sim} \\quad ; \\quad I_{\\Delta n} \\leq [[30|300|10|500]]\\ \\mathrm{mA}",
-    "legende": "Tension limite de sécurité en alternatif (locaux secs), sensibilité DDR protection des personnes",
+    "tex": "U_L = [[50|25|230|120]]\\ \\mathrm{V}_{\\sim} \\quad ; \\quad I_{\\Delta n} \\leq [[30|300|500]]\\ \\mathrm{mA}",
+    "legende": "$U_L$ tension limite de sécurité en alternatif (locaux secs), $I_{\\Delta n}$ sensibilité DDR pour la protection des personnes",
+    "grandeurs": [
+      {
+        "s": "U_L",
+        "nom": "tension limite de sécurité",
+        "u": "V"
+      },
+      {
+        "s": "I_{\\Delta n}",
+        "nom": "courant différentiel assigné",
+        "u": "A"
+      }
+    ],
     "source": "Fiche OE3.1"
   },
   {
@@ -212,7 +602,8 @@
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Domaines de tension (alternatif)",
     "tex": "\\mathrm{BT} \\leq [[1|0{,}4|50]]\\ \\mathrm{kV} < \\mathrm{HTA} \\leq [[50|20|63|1]]\\ \\mathrm{kV} < \\mathrm{HTB}",
-    "legende": "NF C 18-510 : BT 50 V à 1 kV, HTA 1 à 50 kV, HTB au-delà de 50 kV (alternatif)",
+    "legende": "NF C 18-510 : BT de 50 V à 1 kV, HTA de 1 à 50 kV, HTB au-delà de 50 kV (alternatif)",
+    "grandeurs": [],
     "source": "Fiche OE3.1"
   },
   {
@@ -220,8 +611,25 @@
     "bloc": "OE3",
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Limite de THD en tension (NF EN 50160)",
-    "tex": "\\mathrm{THD}_u \\leq [[8|5|3|10]]\\,\\% \\quad ; \\quad V_5 \\leq [[6|8|3]]\\,\\% \\quad ; \\quad V_7 \\leq [[5|6|2]]\\,\\%",
-    "legende": "Qualité de la fourniture en basse tension : THD global et harmoniques de rangs 5 et 7",
+    "tex": "\\mathrm{THD}_u \\leq [[8|5|3|10]]\\,\\% \\quad ; \\quad V_5 \\leq [[6|8|3]]\\,\\% \\quad ; \\quad V_7 \\leq [[5|2|10]]\\,\\%",
+    "legende": "Qualité de la fourniture en basse tension : $\\mathrm{THD}_u$ global et harmoniques de rangs 5 et 7 ($V_5$, $V_7$ en % du fondamental)",
+    "grandeurs": [
+      {
+        "s": "\\mathrm{THD}_u",
+        "nom": "taux de distorsion harmonique de la tension",
+        "u": "\\%"
+      },
+      {
+        "s": "V_5",
+        "nom": "taux d'harmonique de rang 5",
+        "u": "\\%"
+      },
+      {
+        "s": "V_7",
+        "nom": "taux d'harmonique de rang 7",
+        "u": "\\%"
+      }
+    ],
     "source": "Fiche OE3.1"
   },
   {
@@ -230,7 +638,34 @@
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Chute de tension en ligne (approchée)",
     "tex": "[[\\Delta V|\\Delta U]] \\approx [[R|X]] I \\, [[\\cos\\varphi|\\sin\\varphi]] + [[X|R]] I \\, [[\\sin\\varphi|\\cos\\varphi|\\tan\\varphi]]",
-    "legende": "ΔV chute de tension simple, R et X résistance et réactance de la ligne par phase, I courant de ligne",
+    "legende": "$\\Delta V$ chute de tension simple (V), $R$ et $X$ résistance et réactance de ligne par phase (Ω), $I$ courant de ligne (A)",
+    "grandeurs": [
+      {
+        "s": "\\Delta V",
+        "nom": "chute de tension simple",
+        "u": "V"
+      },
+      {
+        "s": "R",
+        "nom": "résistance de ligne par phase",
+        "u": "\\Omega"
+      },
+      {
+        "s": "X",
+        "nom": "réactance de ligne par phase",
+        "u": "\\Omega"
+      },
+      {
+        "s": "I",
+        "nom": "courant de ligne",
+        "u": "A"
+      },
+      {
+        "s": "\\varphi",
+        "nom": "déphasage de la charge",
+        "u": "rad"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -239,7 +674,34 @@
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Chute de tension composée en triphasé",
     "tex": "[[\\Delta U|\\Delta V]] \\approx [[\\sqrt{3}|3|\\sqrt{2}|1]] \\, I \\left( R [[\\cos\\varphi|\\sin\\varphi]] + X [[\\sin\\varphi|\\cos\\varphi]] \\right)",
-    "legende": "ΔU chute de tension entre phases, R et X par phase",
+    "legende": "$\\Delta U$ chute de tension entre phases (V), $R$ et $X$ par phase (Ω), $I$ courant de ligne (A)",
+    "grandeurs": [
+      {
+        "s": "\\Delta U",
+        "nom": "chute de tension composée",
+        "u": "V"
+      },
+      {
+        "s": "I",
+        "nom": "courant de ligne",
+        "u": "A"
+      },
+      {
+        "s": "R",
+        "nom": "résistance de ligne par phase",
+        "u": "\\Omega"
+      },
+      {
+        "s": "X",
+        "nom": "réactance de ligne par phase",
+        "u": "\\Omega"
+      },
+      {
+        "s": "\\varphi",
+        "nom": "déphasage de la charge",
+        "u": "rad"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -247,8 +709,40 @@
     "bloc": "OE3",
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Chute de tension relative (triphasé)",
-    "tex": "\\frac{\\Delta U}{U} \\approx \\frac{[[R P + X Q|R Q + X P|R P - X Q]]}{[[U^2|U|3U^2|\\sqrt{3}U^2]]}",
-    "legende": "P et Q puissances transitées (W, VAr), R et X par phase, U tension composée",
+    "tex": "\\frac{[[\\Delta U|\\Delta V]]}{[[U|V]]} \\approx \\frac{[[R P + X Q|R Q + X P|R P - X Q]]}{[[U^2|3U^2|\\sqrt{3}U^2]]}",
+    "legende": "$P$ et $Q$ puissances transitées (W, var), $R$ et $X$ par phase (Ω), $U$ tension composée (V)",
+    "grandeurs": [
+      {
+        "s": "\\Delta U",
+        "nom": "chute de tension composée",
+        "u": "V"
+      },
+      {
+        "s": "U",
+        "nom": "tension composée",
+        "u": "V"
+      },
+      {
+        "s": "R",
+        "nom": "résistance de ligne par phase",
+        "u": "\\Omega"
+      },
+      {
+        "s": "X",
+        "nom": "réactance de ligne par phase",
+        "u": "\\Omega"
+      },
+      {
+        "s": "P",
+        "nom": "puissance active transitée",
+        "u": "W"
+      },
+      {
+        "s": "Q",
+        "nom": "puissance réactive transitée",
+        "u": "var"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -257,7 +751,39 @@
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Pertes Joule d'une ligne triphasée",
     "tex": "[[p_J|P]] = [[3|\\sqrt{3}|1]] R I^2 = \\frac{R \\, [[P^2|P|S]]}{[[U^2 \\cos^2\\varphi|U^2|U \\cos\\varphi|3U^2\\cos^2\\varphi]]}",
-    "legende": "R résistance par phase, P puissance transportée, U tension composée — intérêt de la haute tension",
+    "legende": "$p_J$ pertes (W), $R$ résistance par phase (Ω), $P$ puissance transportée (W), $U$ tension composée (V) ; intérêt de la haute tension",
+    "grandeurs": [
+      {
+        "s": "p_J",
+        "nom": "pertes Joule en ligne",
+        "u": "W"
+      },
+      {
+        "s": "R",
+        "nom": "résistance de ligne par phase",
+        "u": "\\Omega"
+      },
+      {
+        "s": "I",
+        "nom": "courant de ligne",
+        "u": "A"
+      },
+      {
+        "s": "P",
+        "nom": "puissance active transportée",
+        "u": "W"
+      },
+      {
+        "s": "U",
+        "nom": "tension composée",
+        "u": "V"
+      },
+      {
+        "s": "\\varphi",
+        "nom": "déphasage de la charge",
+        "u": "rad"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -266,7 +792,29 @@
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Résistance d'un conducteur",
     "tex": "[[R|G]] = \\frac{[[\\rho|\\sigma]] \\, [[L|S]]}{[[S|L|S^2]]}",
-    "legende": "ρ résistivité (Ω·m), L longueur (m), S section (m²)",
+    "legende": "$R$ résistance (Ω), $\\rho$ résistivité (Ω·m), $L$ longueur (m), $S$ section (m²)",
+    "grandeurs": [
+      {
+        "s": "R",
+        "nom": "résistance",
+        "u": "\\Omega"
+      },
+      {
+        "s": "\\rho",
+        "nom": "résistivité",
+        "u": "\\Omega\\cdot m"
+      },
+      {
+        "s": "L",
+        "nom": "longueur",
+        "u": "m"
+      },
+      {
+        "s": "S",
+        "nom": "section",
+        "u": "m^2"
+      }
+    ],
     "source": "Fiche TC3.1.1"
   },
   {
@@ -275,7 +823,34 @@
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Puissance transitée par une ligne inductive",
     "tex": "[[P|Q]] = \\frac{[[U_1 U_2|U_1^2|U_1 - U_2]]}{[[X|R|Z]]} \\, [[\\sin\\delta|\\cos\\delta|\\tan\\delta]]",
-    "legende": "U_1, U_2 tensions composées aux extrémités, X réactance de ligne par phase, δ angle de transport (R négligée)",
+    "legende": "$U_1$, $U_2$ tensions composées aux extrémités (V), $X$ réactance de ligne par phase (Ω), $\\delta$ angle de transport ; $R$ négligée",
+    "grandeurs": [
+      {
+        "s": "P",
+        "nom": "puissance active transitée",
+        "u": "W"
+      },
+      {
+        "s": "U_1",
+        "nom": "tension composée au départ",
+        "u": "V"
+      },
+      {
+        "s": "U_2",
+        "nom": "tension composée à l'arrivée",
+        "u": "V"
+      },
+      {
+        "s": "X",
+        "nom": "réactance de ligne par phase",
+        "u": "\\Omega"
+      },
+      {
+        "s": "\\delta",
+        "nom": "angle de transport",
+        "u": "rad"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -283,8 +858,30 @@
     "bloc": "OE3",
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Puissance réactive de compensation",
-    "tex": "[[Q_C|P]] = [[P|Q|S]] \\left( [[\\tan\\varphi - \\tan\\varphi'|\\cos\\varphi - \\cos\\varphi'|\\tan\\varphi' - \\tan\\varphi]] \\right)",
-    "legende": "Q_C réactif à fournir par les condensateurs pour passer de φ à φ' (P inchangée)",
+    "tex": "[[Q_C|P]] = [[P|Q|S]] \\left( [[\\tan\\varphi - \\tan\\varphi'|\\cos\\varphi - \\cos\\varphi'|\\sin\\varphi - \\sin\\varphi']] \\right)",
+    "legende": "$Q_C$ réactif (var) à fournir par les condensateurs pour passer de $\\varphi$ à $\\varphi'$, $P$ (W) inchangée",
+    "grandeurs": [
+      {
+        "s": "Q_C",
+        "nom": "puissance réactive des condensateurs",
+        "u": "var"
+      },
+      {
+        "s": "P",
+        "nom": "puissance active",
+        "u": "W"
+      },
+      {
+        "s": "\\varphi",
+        "nom": "déphasage initial",
+        "u": "rad"
+      },
+      {
+        "s": "\\varphi'",
+        "nom": "déphasage visé",
+        "u": "rad"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -293,7 +890,29 @@
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Réactif d'une batterie de condensateurs en triangle",
     "tex": "[[Q_C|C]] = [[3|\\sqrt{3}|1]] \\, [[C|L]] \\, [[\\omega|f|\\frac{1}{\\omega}]] \\, [[U^2|V^2|U]]",
-    "legende": "C capacité par branche (F), U tension composée ; en étoile remplacer U par V (C 3 fois plus grand)",
+    "legende": "$Q_C$ (var), $C$ capacité par branche (F), $\\omega$ pulsation (rad/s), $U$ tension composée (V) ; en étoile, $V$ remplace $U$ ($C$ 3 fois plus grand)",
+    "grandeurs": [
+      {
+        "s": "Q_C",
+        "nom": "puissance réactive de la batterie",
+        "u": "var"
+      },
+      {
+        "s": "C",
+        "nom": "capacité par branche",
+        "u": "F"
+      },
+      {
+        "s": "\\omega",
+        "nom": "pulsation",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "U",
+        "nom": "tension composée",
+        "u": "V"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -302,7 +921,24 @@
     "notion": "OE3.1 Transport et distribution de l'énergie électrique",
     "nom": "Courant de court-circuit triphasé",
     "tex": "[[I_{cc}|S_{cc}]] = \\frac{[[U|V|\\sqrt{3}U]]}{[[\\sqrt{3}|3|\\sqrt{2}]] \\, [[Z_{cc}|R]]}",
-    "legende": "U tension composée, Z_cc impédance de court-circuit amont par phase ; S_cc = √3 U I_cc",
+    "legende": "$I_{cc}$ courant de court-circuit (A), $U$ tension composée (V), $Z_{cc}$ impédance de court-circuit amont par phase (Ω) ; $S_{cc} = \\sqrt{3}\\,U I_{cc}$",
+    "grandeurs": [
+      {
+        "s": "I_{cc}",
+        "nom": "courant de court-circuit triphasé",
+        "u": "A"
+      },
+      {
+        "s": "U",
+        "nom": "tension composée",
+        "u": "V"
+      },
+      {
+        "s": "Z_{cc}",
+        "nom": "impédance de court-circuit par phase",
+        "u": "\\Omega"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -311,7 +947,29 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Loi d'Hopkinson",
     "tex": "[[N I|N\\Phi|\\frac{N}{I}]] = [[\\mathcal{R}|\\frac{1}{\\mathcal{R}}|L]] \\, [[\\Phi|B|H]]",
-    "legende": "NI force magnétomotrice (A·tr), ℛ réluctance totale (H⁻¹), Φ flux (Wb)",
+    "legende": "$NI$ force magnétomotrice (A·tr), $\\mathcal{R}$ réluctance totale (H⁻¹), $\\Phi$ flux (Wb)",
+    "grandeurs": [
+      {
+        "s": "N",
+        "nom": "nombre de spires",
+        "u": ""
+      },
+      {
+        "s": "I",
+        "nom": "courant",
+        "u": "A"
+      },
+      {
+        "s": "\\mathcal{R}",
+        "nom": "réluctance",
+        "u": "H^{-1}"
+      },
+      {
+        "s": "\\Phi",
+        "nom": "flux magnétique",
+        "u": "Wb"
+      }
+    ],
     "source": "Fiche OE3.2"
   },
   {
@@ -320,7 +978,34 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Réluctance d'un tronçon",
     "tex": "[[\\mathcal{R}|L]] = \\frac{[[l|A|l^2]]}{[[\\mu_0 \\mu_r|\\mu_0|\\mu_r]] \\, [[A|l|A^2]]}",
-    "legende": "l longueur moyenne (m), A section (m²), μ0 = 4π·10⁻⁷ H/m, μr perméabilité relative",
+    "legende": "$\\mathcal{R}$ réluctance (H⁻¹), $l$ longueur moyenne (m), $A$ section (m²), $\\mu_0 = 4\\pi\\cdot10^{-7}$ H/m, $\\mu_r$ perméabilité relative",
+    "grandeurs": [
+      {
+        "s": "\\mathcal{R}",
+        "nom": "réluctance",
+        "u": "H^{-1}"
+      },
+      {
+        "s": "l",
+        "nom": "longueur moyenne",
+        "u": "m"
+      },
+      {
+        "s": "\\mu_0",
+        "nom": "perméabilité du vide",
+        "u": "H\\cdot m^{-1}"
+      },
+      {
+        "s": "\\mu_r",
+        "nom": "perméabilité relative",
+        "u": ""
+      },
+      {
+        "s": "A",
+        "nom": "section",
+        "u": "m^2"
+      }
+    ],
     "source": "Fiche OE3.2"
   },
   {
@@ -329,7 +1014,29 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Relation B-H (régime linéaire)",
     "tex": "[[B|H]] = [[\\mu_0 \\mu_r|\\mu_0|\\frac{\\mu_r}{\\mu_0}]] \\, [[H|B|\\Phi]]",
-    "legende": "B induction (T), H excitation (A/m) — valable sous le coude de saturation",
+    "legende": "$B$ induction (T), $H$ excitation (A/m), $\\mu_0\\mu_r$ perméabilité (H/m) ; valable sous le coude de saturation",
+    "grandeurs": [
+      {
+        "s": "B",
+        "nom": "induction magnétique",
+        "u": "T"
+      },
+      {
+        "s": "\\mu_0",
+        "nom": "perméabilité du vide",
+        "u": "H\\cdot m^{-1}"
+      },
+      {
+        "s": "\\mu_r",
+        "nom": "perméabilité relative",
+        "u": ""
+      },
+      {
+        "s": "H",
+        "nom": "excitation magnétique",
+        "u": "A\\cdot m^{-1}"
+      }
+    ],
     "source": "Fiche OE3.2"
   },
   {
@@ -338,7 +1045,29 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Théorème d'Ampère sur un circuit magnétique",
     "tex": "\\sum_i [[H_i|B_i]] \\, [[l_i|A_i]] = [[N I|\\Phi|\\frac{I}{N}]]",
-    "legende": "H_i excitation dans le tronçon i (A/m), l_i longueur (m), NI fmm (A·tr)",
+    "legende": "$H_i$ excitation dans le tronçon $i$ (A/m), $l_i$ longueur du tronçon (m), $NI$ force magnétomotrice (A·tr)",
+    "grandeurs": [
+      {
+        "s": "H_i",
+        "nom": "excitation dans le tronçon i",
+        "u": "A\\cdot m^{-1}"
+      },
+      {
+        "s": "l_i",
+        "nom": "longueur du tronçon i",
+        "u": "m"
+      },
+      {
+        "s": "N",
+        "nom": "nombre de spires",
+        "u": ""
+      },
+      {
+        "s": "I",
+        "nom": "courant",
+        "u": "A"
+      }
+    ],
     "source": "Fiche OE3.2 ; Classique programme"
   },
   {
@@ -346,8 +1075,25 @@
     "bloc": "OE3",
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Flux à travers une section",
-    "tex": "[[\\Phi|B]] = [[B|H|\\mu_0 H]] \\cdot [[A|l|A^2]]",
-    "legende": "Φ (Wb), B induction uniforme (T), A section (m²)",
+    "tex": "[[\\Phi|B]] = [[B|H|B^2]] \\cdot [[A|l|A^2]]",
+    "legende": "$\\Phi$ flux (Wb), $B$ induction uniforme normale à la section (T), $A$ section (m²)",
+    "grandeurs": [
+      {
+        "s": "\\Phi",
+        "nom": "flux magnétique",
+        "u": "Wb"
+      },
+      {
+        "s": "B",
+        "nom": "induction magnétique",
+        "u": "T"
+      },
+      {
+        "s": "A",
+        "nom": "section",
+        "u": "m^2"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -356,7 +1102,34 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Inductance d'une bobine sur circuit magnétique",
     "tex": "[[L|\\mathcal{R}]] = \\frac{[[N^2|N|2N]]}{[[\\mathcal{R}|\\mathcal{R}^2|\\mu_0]]} = \\frac{N \\, [[\\Phi|B|\\Phi^2]]}{[[I|N|I^2]]}",
-    "legende": "L (H), N nombre de spires, ℛ réluctance totale (H⁻¹), Φ flux, I courant",
+    "legende": "$L$ inductance (H), $N$ nombre de spires, $\\mathcal{R}$ réluctance totale (H⁻¹), $\\Phi$ flux (Wb), $I$ courant (A)",
+    "grandeurs": [
+      {
+        "s": "L",
+        "nom": "inductance",
+        "u": "H"
+      },
+      {
+        "s": "N",
+        "nom": "nombre de spires",
+        "u": ""
+      },
+      {
+        "s": "\\mathcal{R}",
+        "nom": "réluctance",
+        "u": "H^{-1}"
+      },
+      {
+        "s": "\\Phi",
+        "nom": "flux magnétique",
+        "u": "Wb"
+      },
+      {
+        "s": "I",
+        "nom": "courant",
+        "u": "A"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -365,7 +1138,24 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Loi de Faraday-Lenz",
     "tex": "[[e|\\Phi]] = [[-|+]] \\, [[N|\\frac{1}{N}|N^2]] \\, \\frac{d[[\\Phi|B|e]]}{dt}",
-    "legende": "e fem induite (V, convention générateur), N spires, Φ flux par spire (Wb)",
+    "legende": "$e$ fem induite (V), orientée comme le courant qui crée $\\Phi$ (tire-bouchon), $N$ spires, $\\Phi$ flux par spire (Wb)",
+    "grandeurs": [
+      {
+        "s": "e",
+        "nom": "force électromotrice induite",
+        "u": "V"
+      },
+      {
+        "s": "N",
+        "nom": "nombre de spires",
+        "u": ""
+      },
+      {
+        "s": "\\Phi",
+        "nom": "flux par spire",
+        "u": "Wb"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -374,7 +1164,34 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Formule de Boucherot (transformateur, bobine)",
     "tex": "[[V|V_{\\max}]] = [[4{,}44|2\\pi|\\sqrt{2}|4]] \\, [[N|N^2]] \\, [[f|\\omega]] \\, [[B_{\\max}|B_{\\mathrm{eff}}|H_{\\max}]] \\, [[A|l]]",
-    "legende": "V tension efficace sinusoïdale (V), 4,44 = 2π/√2, N spires, f (Hz), B_max induction crête (T), A section (m²)",
+    "legende": "$V$ tension efficace sinusoïdale (V), $4{,}44 = 2\\pi/\\sqrt{2}$, $N$ spires, $f$ fréquence (Hz), $B_{\\max}$ induction crête (T), $A$ section (m²)",
+    "grandeurs": [
+      {
+        "s": "V",
+        "nom": "tension efficace",
+        "u": "V"
+      },
+      {
+        "s": "N",
+        "nom": "nombre de spires",
+        "u": ""
+      },
+      {
+        "s": "f",
+        "nom": "fréquence",
+        "u": "Hz"
+      },
+      {
+        "s": "B_{\\max}",
+        "nom": "induction crête",
+        "u": "T"
+      },
+      {
+        "s": "A",
+        "nom": "section du circuit magnétique",
+        "u": "m^2"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -383,7 +1200,24 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Décomposition des pertes fer",
     "tex": "[[p_{\\mathrm{fer}}|p_J]] = [[p_{\\mathrm{hyst}}|p_J]] + [[p_{\\mathrm{Foucault}}|p_{\\text{méca}}]]",
-    "legende": "Pertes fer = hystérésis + courants de Foucault (W)",
+    "legende": "Pertes fer = pertes par hystérésis + pertes par courants de Foucault (W)",
+    "grandeurs": [
+      {
+        "s": "p_{\\mathrm{fer}}",
+        "nom": "pertes fer",
+        "u": "W"
+      },
+      {
+        "s": "p_{\\mathrm{hyst}}",
+        "nom": "pertes par hystérésis",
+        "u": "W"
+      },
+      {
+        "s": "p_{\\mathrm{Foucault}}",
+        "nom": "pertes par courants de Foucault",
+        "u": "W"
+      }
+    ],
     "source": "Fiche OE3.2"
   },
   {
@@ -392,7 +1226,29 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Pertes par hystérésis",
     "tex": "[[p_{\\mathrm{hyst}}|p_{\\mathrm{Foucault}}]] = k_h \\, [[f|f^2|\\sqrt{f}]] \\, [[B_{\\max}^{\\alpha}|B_{\\max}|H_{\\max}]]",
-    "legende": "Proportionnelles à f (aire du cycle × volume × f), α ≈ 1,6 à 2 (Steinmetz)",
+    "legende": "$p_{\\mathrm{hyst}}$ (W) proportionnelles à $f$ (aire du cycle × volume × $f$), $B_{\\max}$ induction crête (T), $\\alpha \\approx 1{,}6$ à 2 (Steinmetz)",
+    "grandeurs": [
+      {
+        "s": "p_{\\mathrm{hyst}}",
+        "nom": "pertes par hystérésis",
+        "u": "W"
+      },
+      {
+        "s": "k_h",
+        "nom": "coefficient d'hystérésis",
+        "u": ""
+      },
+      {
+        "s": "f",
+        "nom": "fréquence",
+        "u": "Hz"
+      },
+      {
+        "s": "B_{\\max}",
+        "nom": "induction crête",
+        "u": "T"
+      }
+    ],
     "source": "Fiche OE3.2 ; Classique programme"
   },
   {
@@ -401,7 +1257,29 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Pertes par courants de Foucault",
     "tex": "[[p_{\\mathrm{Foucault}}|p_{\\mathrm{hyst}}]] = k_F \\, [[f^2|f|\\sqrt{f}]] \\, [[B_{\\max}^2|B_{\\max}|B_{\\max}^{1{,}6}]]",
-    "legende": "k_F croît avec l'épaisseur² des tôles et décroît avec la résistivité (d'où tôles feuilletées, ferrites)",
+    "legende": "$k_F$ croît avec le carré de l'épaisseur des tôles et décroît avec la résistivité (d'où tôles feuilletées, ferrites)",
+    "grandeurs": [
+      {
+        "s": "p_{\\mathrm{Foucault}}",
+        "nom": "pertes par courants de Foucault",
+        "u": "W"
+      },
+      {
+        "s": "k_F",
+        "nom": "coefficient de Foucault",
+        "u": ""
+      },
+      {
+        "s": "f",
+        "nom": "fréquence",
+        "u": "Hz"
+      },
+      {
+        "s": "B_{\\max}",
+        "nom": "induction crête",
+        "u": "T"
+      }
+    ],
     "source": "Fiche OE3.2"
   },
   {
@@ -410,7 +1288,24 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Densité volumique d'énergie magnétique",
     "tex": "[[w_m|W]] = \\frac{[[B^2|B|H^2]]}{[[2\\mu_0|\\mu_0|\\mu_0^2]]}",
-    "legende": "w_m (J/m³) dans l'air ou un milieu linéaire de perméabilité μ0 ; en général w = B²/(2μ)",
+    "legende": "$w_m$ (J/m³) dans l'air, $B$ induction (T) ; dans un milieu linéaire $w_m = B^2/(2\\mu)$",
+    "grandeurs": [
+      {
+        "s": "w_m",
+        "nom": "densité volumique d'énergie magnétique",
+        "u": "J\\cdot m^{-3}"
+      },
+      {
+        "s": "B",
+        "nom": "induction magnétique",
+        "u": "T"
+      },
+      {
+        "s": "\\mu_0",
+        "nom": "perméabilité du vide",
+        "u": "H\\cdot m^{-1}"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -419,7 +1314,34 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Énergie stockée dans un entrefer",
     "tex": "[[W|e]] = \\frac{[[B_{\\max}^2|B_{\\max}|H^2]]}{[[2\\mu_0|\\mu_0|4\\mu_0]]} \\, [[A_e \\, e|A_e^2|\\frac{A_e}{e}]]",
-    "legende": "A_e section (m²), e longueur d'entrefer (m) ; d'où e = 2μ0 W/(A_e B²) pour un entrefer unique (la fiche OE3.2/sujet 2023 donne μ0 W/(A_e B²), sans le facteur 2)",
+    "legende": "$W$ énergie (J), $B_{\\max}$ induction dans l'entrefer (T), $A_e$ section (m²), $e$ longueur d'entrefer (m) ; la fiche OE3.2 / sujet 2023 omet le facteur 2",
+    "grandeurs": [
+      {
+        "s": "W",
+        "nom": "énergie magnétique stockée",
+        "u": "J"
+      },
+      {
+        "s": "B_{\\max}",
+        "nom": "induction dans l'entrefer",
+        "u": "T"
+      },
+      {
+        "s": "\\mu_0",
+        "nom": "perméabilité du vide",
+        "u": "H\\cdot m^{-1}"
+      },
+      {
+        "s": "A_e",
+        "nom": "section de l'entrefer",
+        "u": "m^2"
+      },
+      {
+        "s": "e",
+        "nom": "longueur d'entrefer",
+        "u": "m"
+      }
+    ],
     "source": "Fiche OE3.2 (corrigée) ; Sujet 2023 E3 Q25-40"
   },
   {
@@ -428,7 +1350,29 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Force portante d'un électroaimant",
     "tex": "[[F|W]] = \\frac{[[B^2|B|H^2]] \\, [[S|S^2|e]]}{[[2\\mu_0|\\mu_0|4\\pi]]}",
-    "legende": "F (N) par surface polaire S (m²), B induction dans l'entrefer (T)",
+    "legende": "$F$ force (N) par surface polaire $S$ (m²), $B$ induction dans l'entrefer (T)",
+    "grandeurs": [
+      {
+        "s": "F",
+        "nom": "force portante",
+        "u": "N"
+      },
+      {
+        "s": "B",
+        "nom": "induction dans l'entrefer",
+        "u": "T"
+      },
+      {
+        "s": "S",
+        "nom": "surface polaire",
+        "u": "m^2"
+      },
+      {
+        "s": "\\mu_0",
+        "nom": "perméabilité du vide",
+        "u": "H\\cdot m^{-1}"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -437,7 +1381,34 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Rapport de transformation (tensions)",
     "tex": "[[m|\\frac{1}{m}]] = \\frac{[[n_2|n_1]]}{[[n_1|n_2]]} = \\frac{[[V_{20}|V_1]]}{[[V_1|V_{20}]]}",
-    "legende": "m rapport de transformation, n spires, V_20 tension secondaire à vide",
+    "legende": "$m$ rapport de transformation, $n_1$, $n_2$ spires primaire et secondaire, $V_{20}$ tension secondaire à vide (V)",
+    "grandeurs": [
+      {
+        "s": "m",
+        "nom": "rapport de transformation",
+        "u": ""
+      },
+      {
+        "s": "n_1",
+        "nom": "nombre de spires primaire",
+        "u": ""
+      },
+      {
+        "s": "n_2",
+        "nom": "nombre de spires secondaire",
+        "u": ""
+      },
+      {
+        "s": "V_{20}",
+        "nom": "tension secondaire à vide",
+        "u": "V"
+      },
+      {
+        "s": "V_1",
+        "nom": "tension primaire",
+        "u": "V"
+      }
+    ],
     "source": "Fiche OE3.2"
   },
   {
@@ -446,7 +1417,24 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Rapport des courants (transformateur parfait)",
     "tex": "[[m|\\frac{1}{m}|m^2]] = \\frac{[[I_1|I_2]]}{[[I_2|I_1]]}",
-    "legende": "Transformateur parfait : conservation des ampères-tours n1 I1 = n2 I2",
+    "legende": "Transformateur parfait : conservation des ampères-tours $n_1 I_1 = n_2 I_2$ ; $I_1$, $I_2$ courants (A)",
+    "grandeurs": [
+      {
+        "s": "m",
+        "nom": "rapport de transformation",
+        "u": ""
+      },
+      {
+        "s": "I_1",
+        "nom": "courant primaire",
+        "u": "A"
+      },
+      {
+        "s": "I_2",
+        "nom": "courant secondaire",
+        "u": "A"
+      }
+    ],
     "source": "Fiche OE3.2"
   },
   {
@@ -455,7 +1443,34 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Impédance ramenée au secondaire",
     "tex": "[[R_s|X_s]] = R_2 + [[m^2|m|\\frac{1}{m^2}]] \\, [[R_1|R_2]] \\quad ; \\quad X_s = X_2 + [[m^{2}\\,X_1|m\\,X_1|\\frac{X_1}{m^2}]]",
-    "legende": "Primaire ramené au secondaire : une impédance primaire est multipliée par m²",
+    "legende": "Primaire ramené au secondaire : une impédance primaire est multipliée par $m^2$ ; $R$ et $X$ en Ω",
+    "grandeurs": [
+      {
+        "s": "R_s",
+        "nom": "résistance ramenée au secondaire",
+        "u": "\\Omega"
+      },
+      {
+        "s": "X_s",
+        "nom": "réactance ramenée au secondaire",
+        "u": "\\Omega"
+      },
+      {
+        "s": "m",
+        "nom": "rapport de transformation",
+        "u": ""
+      },
+      {
+        "s": "R_1",
+        "nom": "résistance du primaire",
+        "u": "\\Omega"
+      },
+      {
+        "s": "X_1",
+        "nom": "réactance de fuites du primaire",
+        "u": "\\Omega"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -464,7 +1479,34 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Formule de Kapp (chute de tension)",
     "tex": "[[\\Delta V_2|V_2]] = V_{20} - V_2 \\approx [[R_s|X_s]] I_2 [[\\cos\\varphi_2|\\sin\\varphi_2]] + [[X_s|R_s]] I_2 [[\\sin\\varphi_2|\\cos\\varphi_2|\\tan\\varphi_2]]",
-    "legende": "R_s, X_s ramenées au secondaire, I_2 courant secondaire, φ2 déphasage de la charge",
+    "legende": "$R_s$, $X_s$ ramenées au secondaire (Ω), $I_2$ courant secondaire (A), $\\varphi_2$ déphasage de la charge",
+    "grandeurs": [
+      {
+        "s": "\\Delta V_2",
+        "nom": "chute de tension secondaire",
+        "u": "V"
+      },
+      {
+        "s": "R_s",
+        "nom": "résistance ramenée au secondaire",
+        "u": "\\Omega"
+      },
+      {
+        "s": "X_s",
+        "nom": "réactance ramenée au secondaire",
+        "u": "\\Omega"
+      },
+      {
+        "s": "I_2",
+        "nom": "courant secondaire",
+        "u": "A"
+      },
+      {
+        "s": "\\varphi_2",
+        "nom": "déphasage de la charge",
+        "u": "rad"
+      }
+    ],
     "source": "Fiche OE3.2"
   },
   {
@@ -472,8 +1514,45 @@
     "bloc": "OE3",
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Tension secondaire en charge (Kapp)",
-    "tex": "[[V_2|\\Delta V_2]] \\approx [[m V_1|V_1|\\frac{V_1}{m}]] [[-|+]] R_s I_2 \\cos\\varphi_2 - X_s I_2 [[\\sin\\varphi_2|\\cos\\varphi_2]]",
-    "legende": "Modèle ramené au secondaire : source m·V1 en série avec R_s + jX_s",
+    "tex": "[[V_2|\\Delta V_2]] \\approx [[m V_1|V_1|\\frac{V_1}{m}]] [[-|+]] [[R_s|X_s]] I_2 \\cos\\varphi_2 - [[X_s|R_s]] I_2 [[\\sin\\varphi_2|\\cos\\varphi_2]]",
+    "legende": "Modèle ramené au secondaire : source $mV_1$ en série avec $R_s + jX_s$ ; $I_2$ courant secondaire (A)",
+    "grandeurs": [
+      {
+        "s": "V_2",
+        "nom": "tension secondaire en charge",
+        "u": "V"
+      },
+      {
+        "s": "m",
+        "nom": "rapport de transformation",
+        "u": ""
+      },
+      {
+        "s": "V_1",
+        "nom": "tension primaire",
+        "u": "V"
+      },
+      {
+        "s": "R_s",
+        "nom": "résistance ramenée au secondaire",
+        "u": "\\Omega"
+      },
+      {
+        "s": "X_s",
+        "nom": "réactance ramenée au secondaire",
+        "u": "\\Omega"
+      },
+      {
+        "s": "I_2",
+        "nom": "courant secondaire",
+        "u": "A"
+      },
+      {
+        "s": "\\varphi_2",
+        "nom": "déphasage de la charge",
+        "u": "rad"
+      }
+    ],
     "source": "Fiche OE3.2"
   },
   {
@@ -481,8 +1560,30 @@
     "bloc": "OE3",
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Essai à vide du transformateur",
-    "tex": "[[P_{10}|P_{cc}]] \\approx [[p_{\\mathrm{fer}}|p_J]] \\quad ; \\quad m = \\frac{[[V_{20}|V_2]]}{[[V_1|V_{1cc}]]}",
-    "legende": "Sous tension nominale, secondaire ouvert : P_10 mesure les pertes fer",
+    "tex": "[[P_{10}|P_{cc}]] \\approx [[p_{\\mathrm{fer}}|p_J]] \\quad ; \\quad m = \\frac{[[V_{20}|V_1]]}{[[V_1|V_{20}]]}",
+    "legende": "Sous tension nominale, secondaire ouvert : $P_{10}$ puissance absorbée à vide (W) mesure les pertes fer",
+    "grandeurs": [
+      {
+        "s": "P_{10}",
+        "nom": "puissance absorbée à vide",
+        "u": "W"
+      },
+      {
+        "s": "p_{\\mathrm{fer}}",
+        "nom": "pertes fer",
+        "u": "W"
+      },
+      {
+        "s": "V_{20}",
+        "nom": "tension secondaire à vide",
+        "u": "V"
+      },
+      {
+        "s": "V_1",
+        "nom": "tension primaire",
+        "u": "V"
+      }
+    ],
     "source": "Fiche OE3.2"
   },
   {
@@ -491,7 +1592,24 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Essai en court-circuit : résistance ramenée",
     "tex": "[[R_s|X_s|Z_s]] = \\frac{[[P_{cc}|P_{10}|Q_{cc}]]}{[[I_{2cc}^2|I_{2cc}|I_{1cc}^2]]}",
-    "legende": "P_cc pertes Joule à courant nominal (pertes fer négligeables sous tension réduite)",
+    "legende": "$P_{cc}$ pertes Joule à courant nominal (W), $I_{2cc}$ courant secondaire (A) ; pertes fer négligeables sous tension réduite",
+    "grandeurs": [
+      {
+        "s": "R_s",
+        "nom": "résistance ramenée au secondaire",
+        "u": "\\Omega"
+      },
+      {
+        "s": "P_{cc}",
+        "nom": "puissance absorbée en court-circuit",
+        "u": "W"
+      },
+      {
+        "s": "I_{2cc}",
+        "nom": "courant secondaire de court-circuit",
+        "u": "A"
+      }
+    ],
     "source": "Fiche OE3.2"
   },
   {
@@ -500,7 +1618,39 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Essai en court-circuit : impédance ramenée",
     "tex": "[[Z_s|R_s]] = \\frac{[[m|\\frac{1}{m}|m^2]] \\, [[V_{1cc}|V_{20}]]}{[[I_{2cc}|I_{1cc}]]} \\quad ; \\quad X_s = \\sqrt{[[Z_s^2 - R_s^2|Z_s^2 + R_s^2|Z_s - R_s]]}",
-    "legende": "V_1cc tension primaire réduite, I_2cc courant secondaire de court-circuit (nominal)",
+    "legende": "$V_{1cc}$ tension primaire réduite (V), $I_{2cc}$ courant secondaire de court-circuit nominal (A), $Z_s$, $R_s$, $X_s$ ramenées au secondaire (Ω)",
+    "grandeurs": [
+      {
+        "s": "Z_s",
+        "nom": "impédance ramenée au secondaire",
+        "u": "\\Omega"
+      },
+      {
+        "s": "m",
+        "nom": "rapport de transformation",
+        "u": ""
+      },
+      {
+        "s": "V_{1cc}",
+        "nom": "tension primaire de court-circuit",
+        "u": "V"
+      },
+      {
+        "s": "I_{2cc}",
+        "nom": "courant secondaire de court-circuit",
+        "u": "A"
+      },
+      {
+        "s": "X_s",
+        "nom": "réactance ramenée au secondaire",
+        "u": "\\Omega"
+      },
+      {
+        "s": "R_s",
+        "nom": "résistance ramenée au secondaire",
+        "u": "\\Omega"
+      }
+    ],
     "source": "Fiche OE3.2"
   },
   {
@@ -509,7 +1659,24 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Tension de court-circuit relative",
     "tex": "[[u_{cc}|I_{cc}]] = \\frac{[[U_{cc}|U_{1n}]]}{[[U_{1n}|U_{cc}]]} \\approx [[4|0{,}5|30]] \\text{ à } [[10|50|1]]\\,\\%",
-    "legende": "U_cc tension primaire donnant I nominal secondaire en court-circuit",
+    "legende": "$U_{cc}$ tension primaire donnant le courant nominal secondaire en court-circuit (V), $U_{1n}$ tension primaire nominale (V)",
+    "grandeurs": [
+      {
+        "s": "u_{cc}",
+        "nom": "tension de court-circuit relative",
+        "u": ""
+      },
+      {
+        "s": "U_{cc}",
+        "nom": "tension de court-circuit",
+        "u": "V"
+      },
+      {
+        "s": "U_{1n}",
+        "nom": "tension primaire nominale",
+        "u": "V"
+      }
+    ],
     "source": "Fiche OE3.2"
   },
   {
@@ -518,7 +1685,24 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Courant de court-circuit franc d'un transformateur",
     "tex": "[[I_{cc}|u_{cc}]] = \\frac{[[I_n|U_n]]}{[[u_{cc}|u_{cc}^2|1 - u_{cc}]]}",
-    "legende": "Court-circuit franc sous tension nominale, u_cc en valeur relative",
+    "legende": "$I_{cc}$ courant de court-circuit franc sous tension nominale (A), $I_n$ courant nominal (A), $u_{cc}$ en valeur relative",
+    "grandeurs": [
+      {
+        "s": "I_{cc}",
+        "nom": "courant de court-circuit",
+        "u": "A"
+      },
+      {
+        "s": "I_n",
+        "nom": "courant nominal",
+        "u": "A"
+      },
+      {
+        "s": "u_{cc}",
+        "nom": "tension de court-circuit relative",
+        "u": ""
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -527,7 +1711,29 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Rendement d'un transformateur",
     "tex": "[[\\eta|\\lambda]] = \\frac{[[P_2|P_1]]}{P_2 + [[p_{\\mathrm{fer}}|p_{\\text{méca}}]] + [[p_{\\mathrm{Joule}}|Q_2]]}",
-    "legende": "P_2 puissance active utile, p_fer (essai à vide), p_Joule (essai en court-circuit) ; ≈ 97-98 % en distribution HTA/BT",
+    "legende": "$P_2$ puissance active utile (W), $p_{\\mathrm{fer}}$ (essai à vide), $p_{\\mathrm{Joule}}$ (essai en court-circuit) ; $\\eta \\approx 97$ à 98 % en distribution HTA/BT",
+    "grandeurs": [
+      {
+        "s": "\\eta",
+        "nom": "rendement",
+        "u": ""
+      },
+      {
+        "s": "P_2",
+        "nom": "puissance active utile",
+        "u": "W"
+      },
+      {
+        "s": "p_{\\mathrm{fer}}",
+        "nom": "pertes fer",
+        "u": "W"
+      },
+      {
+        "s": "p_{\\mathrm{Joule}}",
+        "nom": "pertes Joule",
+        "u": "W"
+      }
+    ],
     "source": "Fiche OE3.2"
   },
   {
@@ -536,7 +1742,24 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Condition de rendement maximal",
     "tex": "\\eta = \\eta_{\\max} \\iff [[p_{\\mathrm{Joule}}|R_s I_2]] = [[p_{\\mathrm{fer}}|0|P_2]]",
-    "legende": "À tension et cos φ fixés, rendement maximal lorsque pertes variables (Joule) = pertes constantes (fer)",
+    "legende": "À tension et $\\cos\\varphi$ fixés, rendement maximal quand pertes variables (Joule) = pertes constantes (fer)",
+    "grandeurs": [
+      {
+        "s": "\\eta",
+        "nom": "rendement",
+        "u": ""
+      },
+      {
+        "s": "p_{\\mathrm{Joule}}",
+        "nom": "pertes Joule",
+        "u": "W"
+      },
+      {
+        "s": "p_{\\mathrm{fer}}",
+        "nom": "pertes fer",
+        "u": "W"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -545,7 +1768,24 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Énergie stockée dans un condensateur",
     "tex": "[[E|Q]] = [[\\frac{1}{2}|2|1]] \\, [[C|L]] \\, [[V^2|V|I^2]]",
-    "legende": "E (J), C capacité (F), V tension (V)",
+    "legende": "$E$ énergie (J), $C$ capacité (F), $V$ tension (V)",
+    "grandeurs": [
+      {
+        "s": "E",
+        "nom": "énergie stockée",
+        "u": "J"
+      },
+      {
+        "s": "C",
+        "nom": "capacité",
+        "u": "F"
+      },
+      {
+        "s": "V",
+        "nom": "tension",
+        "u": "V"
+      }
+    ],
     "source": "Fiche OE3.2 ; Rapport jury 2023"
   },
   {
@@ -554,7 +1794,24 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Énergie stockée dans une inductance",
     "tex": "[[E|P]] = [[\\frac{1}{2}|2|1]] \\, [[L|C]] \\, [[I^2|I|V^2]]",
-    "legende": "E (J), L inductance (H), I courant (A)",
+    "legende": "$E$ énergie (J), $L$ inductance (H), $I$ courant (A)",
+    "grandeurs": [
+      {
+        "s": "E",
+        "nom": "énergie stockée",
+        "u": "J"
+      },
+      {
+        "s": "L",
+        "nom": "inductance",
+        "u": "H"
+      },
+      {
+        "s": "I",
+        "nom": "courant",
+        "u": "A"
+      }
+    ],
     "source": "Fiche OE3.2 ; Sujet 2023 E3 ; Rapport jury 2023"
   },
   {
@@ -563,7 +1820,24 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Relation courant-tension d'un condensateur",
     "tex": "[[i|v]] = [[C|\\frac{1}{C}|L]] \\, \\frac{d[[v|i]]}{dt}",
-    "legende": "Convention récepteur ; la tension d'un condensateur est continue",
+    "legende": "Convention récepteur : $i$ courant (A), $C$ capacité (F), $v$ tension (V) ; la tension d'un condensateur est continue",
+    "grandeurs": [
+      {
+        "s": "i",
+        "nom": "courant",
+        "u": "A"
+      },
+      {
+        "s": "C",
+        "nom": "capacité",
+        "u": "F"
+      },
+      {
+        "s": "v",
+        "nom": "tension",
+        "u": "V"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -572,7 +1846,24 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Relation tension-courant d'une inductance",
     "tex": "[[v|i]] = [[L|\\frac{1}{L}|C]] \\, \\frac{d[[i|v]]}{dt}",
-    "legende": "Convention récepteur ; le courant dans une inductance est continu",
+    "legende": "Convention récepteur : $v$ tension (V), $L$ inductance (H), $i$ courant (A) ; le courant dans une inductance est continu",
+    "grandeurs": [
+      {
+        "s": "v",
+        "nom": "tension",
+        "u": "V"
+      },
+      {
+        "s": "L",
+        "nom": "inductance",
+        "u": "H"
+      },
+      {
+        "s": "i",
+        "nom": "courant",
+        "u": "A"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -581,7 +1872,34 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Impédances complexes L et C",
     "tex": "\\underline{Z}_L = [[jL\\omega|\\frac{1}{jL\\omega}|L\\omega]] \\quad ; \\quad \\underline{Z}_C = [[\\frac{1}{jC\\omega}|jC\\omega|\\frac{j}{C\\omega}]]",
-    "legende": "ω pulsation (rad/s), L (H), C (F)",
+    "legende": "$\\underline{Z}$ impédance (Ω), $\\omega$ pulsation (rad/s), $L$ inductance (H), $C$ capacité (F)",
+    "grandeurs": [
+      {
+        "s": "\\underline{Z}_L",
+        "nom": "impédance de l'inductance",
+        "u": "\\Omega"
+      },
+      {
+        "s": "\\underline{Z}_C",
+        "nom": "impédance du condensateur",
+        "u": "\\Omega"
+      },
+      {
+        "s": "L",
+        "nom": "inductance",
+        "u": "H"
+      },
+      {
+        "s": "C",
+        "nom": "capacité",
+        "u": "F"
+      },
+      {
+        "s": "\\omega",
+        "nom": "pulsation",
+        "u": "rad\\cdot s^{-1}"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -590,7 +1908,34 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Capacité d'un condensateur plan",
     "tex": "[[C|L]] = \\frac{[[\\varepsilon_0 \\varepsilon_r|\\mu_0 \\mu_r|\\varepsilon_0]] \\, [[S|e]]}{[[e|S|e^2]]}",
-    "legende": "S surface des armatures (m²), e épaisseur du diélectrique (m), ε0 = 8,85·10⁻¹² F/m",
+    "legende": "$C$ capacité (F), $S$ surface des armatures (m²), $e$ épaisseur du diélectrique (m), $\\varepsilon_0 = 8{,}85\\cdot10^{-12}$ F/m, $\\varepsilon_r$ permittivité relative",
+    "grandeurs": [
+      {
+        "s": "C",
+        "nom": "capacité",
+        "u": "F"
+      },
+      {
+        "s": "\\varepsilon_0",
+        "nom": "permittivité du vide",
+        "u": "F\\cdot m^{-1}"
+      },
+      {
+        "s": "\\varepsilon_r",
+        "nom": "permittivité relative",
+        "u": ""
+      },
+      {
+        "s": "S",
+        "nom": "surface des armatures",
+        "u": "m^2"
+      },
+      {
+        "s": "e",
+        "nom": "épaisseur du diélectrique",
+        "u": "m"
+      }
+    ],
     "source": "Fiche TC3.1.1"
   },
   {
@@ -599,7 +1944,39 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Épaisseur de peau",
     "tex": "[[\\delta|\\rho]] = \\sqrt{\\frac{[[2\\rho|\\rho|2\\sigma]]}{[[\\omega \\mu|\\omega|f \\mu]]}} = \\frac{1}{\\sqrt{[[\\pi f \\mu \\sigma|2\\pi f \\mu \\sigma|f \\mu \\sigma]]}}",
-    "legende": "δ (m), ρ résistivité = 1/σ, μ perméabilité ; δ ≈ 9 mm dans le cuivre à 50 Hz",
+    "legende": "$\\delta$ épaisseur de peau (m), $\\rho = 1/\\sigma$ résistivité (Ω·m), $\\mu$ perméabilité (H/m) ; $\\delta \\approx 9$ mm dans le cuivre à 50 Hz",
+    "grandeurs": [
+      {
+        "s": "\\delta",
+        "nom": "épaisseur de peau",
+        "u": "m"
+      },
+      {
+        "s": "\\rho",
+        "nom": "résistivité",
+        "u": "\\Omega\\cdot m"
+      },
+      {
+        "s": "\\omega",
+        "nom": "pulsation",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "\\mu",
+        "nom": "perméabilité",
+        "u": "H\\cdot m^{-1}"
+      },
+      {
+        "s": "f",
+        "nom": "fréquence",
+        "u": "Hz"
+      },
+      {
+        "s": "\\sigma",
+        "nom": "conductivité",
+        "u": "S\\cdot m^{-1}"
+      }
+    ],
     "source": "Fiche OE3.2 (effet de peau) ; Fiche OE3.6"
   },
   {
@@ -608,7 +1985,34 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Droite de charge d'un aimant (fer idéal)",
     "tex": "[[B_a|H_a]] = [[-|+]] \\, [[\\mu_0|\\mu_r|\\mu_0 \\mu_r]] \\, [[\\frac{l_a}{e}|\\frac{e}{l_a}|l_a e]] \\, H_a",
-    "legende": "Aimant de longueur l_a, entrefer e, sections égales, fer de perméabilité infinie (H_a l_a + H_e e = 0)",
+    "legende": "Aimant de longueur $l_a$ (m), entrefer $e$ (m), sections égales, fer de perméabilité infinie ($H_a l_a + H_e e = 0$)",
+    "grandeurs": [
+      {
+        "s": "B_a",
+        "nom": "induction dans l'aimant",
+        "u": "T"
+      },
+      {
+        "s": "\\mu_0",
+        "nom": "perméabilité du vide",
+        "u": "H\\cdot m^{-1}"
+      },
+      {
+        "s": "l_a",
+        "nom": "longueur de l'aimant",
+        "u": "m"
+      },
+      {
+        "s": "e",
+        "nom": "longueur d'entrefer",
+        "u": "m"
+      },
+      {
+        "s": "H_a",
+        "nom": "excitation dans l'aimant",
+        "u": "A\\cdot m^{-1}"
+      }
+    ],
     "source": "Fiche OE3.2 ; Classique programme"
   },
   {
@@ -617,7 +2021,19 @@
     "notion": "OE3.2 Modélisations électriques et énergétiques",
     "nom": "Ordres de grandeur d'induction (rémanence, saturation)",
     "tex": "B_r^{\\mathrm{NdFeB}} \\approx [[1{,}2|0{,}3|2{,}5]]\\ \\mathrm{T} \\quad ; \\quad B_r^{\\mathrm{ferrite}} \\approx [[0{,}3|1{,}2|0{,}05]]\\ \\mathrm{T} \\quad ; \\quad B_{\\mathrm{sat}}^{\\mathrm{FeSi}} \\approx [[1{,}8|0{,}4|5]]\\ \\mathrm{T}",
-    "legende": "NdFeB 1,0-1,4 T, ferrite 0,2-0,4 T, saturation Fe-Si 1,6-2,2 T (ferrites douces 0,2-0,5 T)",
+    "legende": "NdFeB 1,0 à 1,4 T, ferrite 0,2 à 0,4 T, saturation Fe-Si 1,6 à 2,0 T (ferrites douces 0,2 à 0,5 T)",
+    "grandeurs": [
+      {
+        "s": "B_r",
+        "nom": "induction rémanente",
+        "u": "T"
+      },
+      {
+        "s": "B_{\\mathrm{sat}}",
+        "nom": "induction de saturation",
+        "u": "T"
+      }
+    ],
     "source": "Fiche OE3.2"
   },
   {
@@ -626,7 +2042,34 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Bilan de puissance d'une machine (moteur)",
     "tex": "[[P_{\\text{méca}}|P_{\\text{élec}}]] = [[P_{\\text{élec}}|P_{\\text{méca}}]] [[-|+]] p_{\\mathrm{Joule}} - p_{\\mathrm{fer}} - p_{\\mathrm{m}}",
-    "legende": "Pertes Joule (enroulements), fer (hystérésis + Foucault), mécaniques (frottements, ventilation)",
+    "legende": "$P_{\\text{méca}}$ puissance utile (W), $P_{\\text{élec}}$ absorbée (W) ; pertes Joule (enroulements), fer (hystérésis + Foucault), mécaniques $p_{\\mathrm{m}}$ (frottements, ventilation)",
+    "grandeurs": [
+      {
+        "s": "P_{\\text{méca}}",
+        "nom": "puissance mécanique utile",
+        "u": "W"
+      },
+      {
+        "s": "P_{\\text{élec}}",
+        "nom": "puissance électrique absorbée",
+        "u": "W"
+      },
+      {
+        "s": "p_{\\mathrm{Joule}}",
+        "nom": "pertes Joule",
+        "u": "W"
+      },
+      {
+        "s": "p_{\\mathrm{fer}}",
+        "nom": "pertes fer",
+        "u": "W"
+      },
+      {
+        "s": "p_{\\mathrm{m}}",
+        "nom": "pertes mécaniques",
+        "u": "W"
+      }
+    ],
     "source": "Fiche OE3.3"
   },
   {
@@ -635,7 +2078,24 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Rendement d'un moteur",
     "tex": "[[\\eta|\\lambda]] = \\frac{[[P_u|P_a]]}{[[P_a|P_u]]} = \\frac{P_u}{P_u + [[\\sum p|p_J]]}",
-    "legende": "P_u puissance utile mécanique, P_a puissance absorbée électrique, Σp somme des pertes",
+    "legende": "$P_u$ puissance utile mécanique (W), $P_a$ puissance absorbée électrique (W), $\\sum p$ somme des pertes (W)",
+    "grandeurs": [
+      {
+        "s": "\\eta",
+        "nom": "rendement",
+        "u": ""
+      },
+      {
+        "s": "P_u",
+        "nom": "puissance utile",
+        "u": "W"
+      },
+      {
+        "s": "P_a",
+        "nom": "puissance absorbée",
+        "u": "W"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -644,7 +2104,29 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Fem d'une machine à courant continu",
     "tex": "[[E|T_{em}]] = k \\, [[\\Phi|I]] \\, [[\\Omega|I|\\Omega^2]]",
-    "legende": "E fem (V), k constante de construction, Φ flux inducteur (Wb), Ω (rad/s)",
+    "legende": "$E$ fem (V), $k$ constante de construction, $\\Phi$ flux inducteur (Wb), $\\Omega$ vitesse angulaire (rad/s)",
+    "grandeurs": [
+      {
+        "s": "E",
+        "nom": "force électromotrice",
+        "u": "V"
+      },
+      {
+        "s": "k",
+        "nom": "constante de construction",
+        "u": ""
+      },
+      {
+        "s": "\\Phi",
+        "nom": "flux inducteur",
+        "u": "Wb"
+      },
+      {
+        "s": "\\Omega",
+        "nom": "vitesse angulaire",
+        "u": "rad\\cdot s^{-1}"
+      }
+    ],
     "source": "Fiche OE3.3 ; Fiche TC3.3.3"
   },
   {
@@ -653,7 +2135,29 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Couple d'une machine à courant continu",
     "tex": "[[T_{em}|E]] = k \\, [[\\Phi|\\Omega]] \\, [[I|\\Omega|I^2]]",
-    "legende": "T_em (N·m), même constante k que pour la fem (k Φ en N·m/A = V·s/rad)",
+    "legende": "$T_{em}$ couple électromagnétique (N·m), même $k$ que pour la fem ($k\\Phi$ en N·m/A = V·s/rad), $I$ courant d'induit (A)",
+    "grandeurs": [
+      {
+        "s": "T_{em}",
+        "nom": "couple électromagnétique",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "k",
+        "nom": "constante de construction",
+        "u": ""
+      },
+      {
+        "s": "\\Phi",
+        "nom": "flux inducteur",
+        "u": "Wb"
+      },
+      {
+        "s": "I",
+        "nom": "courant d'induit",
+        "u": "A"
+      }
+    ],
     "source": "Fiche OE3.3 ; Fiche TC3.3.3"
   },
   {
@@ -662,7 +2166,34 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Puissance électromagnétique (MCC)",
     "tex": "[[P_{em}|P_u]] = [[E|U]] \\, I = [[T_{em}|T_u]] \\, \\Omega",
-    "legende": "Conservation de la puissance électromagnétique, justifie le même k pour E et T_em",
+    "legende": "Conservation de la puissance électromagnétique (W), justifie le même $k$ pour $E$ et $T_{em}$",
+    "grandeurs": [
+      {
+        "s": "P_{em}",
+        "nom": "puissance électromagnétique",
+        "u": "W"
+      },
+      {
+        "s": "E",
+        "nom": "force électromotrice",
+        "u": "V"
+      },
+      {
+        "s": "I",
+        "nom": "courant d'induit",
+        "u": "A"
+      },
+      {
+        "s": "T_{em}",
+        "nom": "couple électromagnétique",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "\\Omega",
+        "nom": "vitesse angulaire",
+        "u": "rad\\cdot s^{-1}"
+      }
+    ],
     "source": "Fiche OE3.3 ; Fiche TC3.3.3"
   },
   {
@@ -671,7 +2202,29 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Équation de l'induit (moteur)",
     "tex": "[[U|E]] = [[E|U]] [[+|-]] [[R I|R I^2|\\frac{R}{I}]]",
-    "legende": "Fonctionnement moteur, convention récepteur : U tension d'induit, R résistance d'induit",
+    "legende": "Fonctionnement moteur, convention récepteur : $U$ tension d'induit (V), $E$ fem (V), $R$ résistance d'induit (Ω), $I$ courant (A)",
+    "grandeurs": [
+      {
+        "s": "U",
+        "nom": "tension d'induit",
+        "u": "V"
+      },
+      {
+        "s": "E",
+        "nom": "force électromotrice",
+        "u": "V"
+      },
+      {
+        "s": "R",
+        "nom": "résistance d'induit",
+        "u": "\\Omega"
+      },
+      {
+        "s": "I",
+        "nom": "courant d'induit",
+        "u": "A"
+      }
+    ],
     "source": "Fiche OE3.3 ; Fiche TC3.3.3"
   },
   {
@@ -680,7 +2233,29 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Équation de l'induit (génératrice)",
     "tex": "[[U|E]] = [[E|U]] [[-|+]] [[R I|R I^2|\\frac{R}{I}]]",
-    "legende": "Fonctionnement génératrice, convention générateur",
+    "legende": "Fonctionnement génératrice, convention générateur : $U$ tension d'induit (V), $E$ fem (V), $R$ résistance d'induit (Ω)",
+    "grandeurs": [
+      {
+        "s": "U",
+        "nom": "tension d'induit",
+        "u": "V"
+      },
+      {
+        "s": "E",
+        "nom": "force électromotrice",
+        "u": "V"
+      },
+      {
+        "s": "R",
+        "nom": "résistance d'induit",
+        "u": "\\Omega"
+      },
+      {
+        "s": "I",
+        "nom": "courant d'induit",
+        "u": "A"
+      }
+    ],
     "source": "Fiche OE3.3"
   },
   {
@@ -689,7 +2264,39 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Vitesse d'un moteur à courant continu",
     "tex": "[[\\Omega|E]] = \\frac{[[U - R I|U + R I|U]]}{[[k \\Phi|k I|R]]}",
-    "legende": "Réglage de vitesse par U (flux constant) ou par défluxage",
+    "legende": "$\\Omega$ vitesse (rad/s) ; réglage par $U$ à flux constant ou par défluxage",
+    "grandeurs": [
+      {
+        "s": "\\Omega",
+        "nom": "vitesse angulaire",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "U",
+        "nom": "tension d'induit",
+        "u": "V"
+      },
+      {
+        "s": "R",
+        "nom": "résistance d'induit",
+        "u": "\\Omega"
+      },
+      {
+        "s": "I",
+        "nom": "courant d'induit",
+        "u": "A"
+      },
+      {
+        "s": "k",
+        "nom": "constante de construction",
+        "u": ""
+      },
+      {
+        "s": "\\Phi",
+        "nom": "flux inducteur",
+        "u": "Wb"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -698,7 +2305,29 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Courant de démarrage d'un MCC",
     "tex": "[[I_d|I_n]] = \\frac{[[U|E]]}{[[R|k\\Phi]]} \\quad (\\Omega = [[0|\\Omega_n]])",
-    "legende": "À l'arrêt E = 0 : courant limité par la seule résistance d'induit",
+    "legende": "À l'arrêt $E = 0$ : courant $I_d$ (A) limité par la seule résistance d'induit $R$ (Ω)",
+    "grandeurs": [
+      {
+        "s": "I_d",
+        "nom": "courant de démarrage",
+        "u": "A"
+      },
+      {
+        "s": "U",
+        "nom": "tension d'induit",
+        "u": "V"
+      },
+      {
+        "s": "R",
+        "nom": "résistance d'induit",
+        "u": "\\Omega"
+      },
+      {
+        "s": "\\Omega",
+        "nom": "vitesse angulaire",
+        "u": "rad\\cdot s^{-1}"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -707,7 +2336,24 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Couple du moteur série (non saturé)",
     "tex": "[[T_{em}|E]] = k' \\, [[I^2|I|\\sqrt{I}]]",
-    "legende": "Excitation série non saturée : Φ proportionnel à I",
+    "legende": "Excitation série non saturée : $\\Phi$ proportionnel à $I$ ; $T_{em}$ (N·m), $I$ (A)",
+    "grandeurs": [
+      {
+        "s": "T_{em}",
+        "nom": "couple électromagnétique",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "k'",
+        "nom": "constante du moteur série",
+        "u": "N\\cdot m\\cdot A^{-2}"
+      },
+      {
+        "s": "I",
+        "nom": "courant",
+        "u": "A"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -716,7 +2362,29 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Principe fondamental de la dynamique en rotation",
     "tex": "[[J|m]] \\, \\frac{d[[\\Omega|\\theta]]}{dt} = [[T_m - T_r|T_m + T_r|T_r - T_m]]",
-    "legende": "J inertie (kg·m²), T_m couple moteur, T_r couple résistant (N·m)",
+    "legende": "$J$ moment d'inertie (kg·m²), $\\Omega$ vitesse (rad/s), $T_m$ couple moteur, $T_r$ couple résistant (N·m)",
+    "grandeurs": [
+      {
+        "s": "J",
+        "nom": "moment d'inertie",
+        "u": "kg\\cdot m^2"
+      },
+      {
+        "s": "\\Omega",
+        "nom": "vitesse angulaire",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "T_m",
+        "nom": "couple moteur",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "T_r",
+        "nom": "couple résistant",
+        "u": "N\\cdot m"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -725,7 +2393,24 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Vitesse de synchronisme (rad/s)",
     "tex": "[[\\Omega_s|\\omega]] = \\frac{[[\\omega|2\\pi|f]]}{[[p|2p|\\frac{1}{p}]]}",
-    "legende": "ω pulsation statorique (rad/s), p nombre de paires de pôles",
+    "legende": "$\\Omega_s$ vitesse de synchronisme (rad/s), $\\omega$ pulsation statorique (rad/s), $p$ nombre de paires de pôles",
+    "grandeurs": [
+      {
+        "s": "\\Omega_s",
+        "nom": "vitesse de synchronisme",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "\\omega",
+        "nom": "pulsation statorique",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "p",
+        "nom": "nombre de paires de pôles",
+        "u": ""
+      }
+    ],
     "source": "Fiche OE3.3 ; Fiche TC3.3.3"
   },
   {
@@ -733,8 +2418,25 @@
     "bloc": "OE3",
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Vitesse de synchronisme (tr/min)",
-    "tex": "[[N_s|f]] = \\frac{[[60|2\\pi|120]] \\, [[f|\\omega]]}{[[p|2p|60]]}",
-    "legende": "f fréquence (Hz), p nombre de paires de pôles (N_s = 1500 tr/min pour p = 2 à 50 Hz)",
+    "tex": "[[N_s|f]] = \\frac{[[60|2\\pi|30]] \\, [[f|\\omega]]}{[[p|2p|60]]}",
+    "legende": "$N_s$ vitesse de synchronisme (tr/min), $f$ fréquence (Hz), $p$ nombre de paires de pôles ($N_s = 1500$ tr/min pour $p = 2$ à 50 Hz)",
+    "grandeurs": [
+      {
+        "s": "N_s",
+        "nom": "vitesse de synchronisme",
+        "u": "tr\\cdot min^{-1}"
+      },
+      {
+        "s": "f",
+        "nom": "fréquence",
+        "u": "Hz"
+      },
+      {
+        "s": "p",
+        "nom": "nombre de paires de pôles",
+        "u": ""
+      }
+    ],
     "source": "Fiche OE3.3 ; Sujet 2025 E1"
   },
   {
@@ -742,8 +2444,35 @@
     "bloc": "OE3",
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Modèle de Behn-Eschenburg (alternateur)",
-    "tex": "[[\\underline{V}|\\underline{E}]] = [[\\underline{E}|\\underline{V}]] [[-|+]] \\left( R + [[jX|X|\\frac{1}{jX}]] \\right) \\underline{I}",
-    "legende": "Par phase, convention générateur : E fem à vide, X réactance synchrone, V tension aux bornes",
+    "tex": "[[\\underline{V}|\\underline{E}]] = [[\\underline{E}|\\underline{V}]] [[-|+]] \\left( [[R|X]] + [[jX|X|\\frac{1}{jX}]] \\right) \\underline{I}",
+    "legende": "Par phase, convention générateur : $\\underline{E}$ fem à vide (V), $X$ réactance synchrone (Ω), $R$ résistance statorique (Ω), $\\underline{V}$ tension aux bornes (V)",
+    "grandeurs": [
+      {
+        "s": "\\underline{V}",
+        "nom": "tension simple aux bornes",
+        "u": "V"
+      },
+      {
+        "s": "\\underline{E}",
+        "nom": "force électromotrice à vide",
+        "u": "V"
+      },
+      {
+        "s": "R",
+        "nom": "résistance statorique",
+        "u": "\\Omega"
+      },
+      {
+        "s": "X",
+        "nom": "réactance synchrone",
+        "u": "\\Omega"
+      },
+      {
+        "s": "\\underline{I}",
+        "nom": "courant statorique",
+        "u": "A"
+      }
+    ],
     "source": "Fiche OE3.3 ; Sujet 2025 E1 Q9-13 ; Fiche TC3.3.3"
   },
   {
@@ -752,7 +2481,29 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Modèle de Behn-Eschenburg (moteur synchrone)",
     "tex": "[[\\underline{V}|\\underline{E}]] = [[\\underline{E}|\\underline{V}]] [[+|-]] [[jX|R|\\frac{1}{jX}]] \\, \\underline{I}",
-    "legende": "Par phase, convention récepteur, R négligée",
+    "legende": "Par phase, convention récepteur, $R$ négligée : $X$ réactance synchrone (Ω)",
+    "grandeurs": [
+      {
+        "s": "\\underline{V}",
+        "nom": "tension simple aux bornes",
+        "u": "V"
+      },
+      {
+        "s": "\\underline{E}",
+        "nom": "force électromotrice",
+        "u": "V"
+      },
+      {
+        "s": "X",
+        "nom": "réactance synchrone",
+        "u": "\\Omega"
+      },
+      {
+        "s": "\\underline{I}",
+        "nom": "courant statorique",
+        "u": "A"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -761,7 +2512,39 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Impédance synchrone (essais vide / court-circuit)",
     "tex": "[[Z_s|X_s]] = \\frac{[[E_0(I_e)|V_n]]}{[[I_{cc}(I_e)|I_n]]} \\quad ; \\quad X = \\sqrt{[[Z_s^2 - R^2|Z_s^2 + R^2|Z_s - R]]}",
-    "legende": "E_0 fem à vide et I_cc courant de court-circuit pour le même courant d'excitation I_e (zone linéaire)",
+    "legende": "$E_0$ fem à vide (V) et $I_{cc}$ courant de court-circuit (A) pour le même courant d'excitation $I_e$ (zone linéaire)",
+    "grandeurs": [
+      {
+        "s": "Z_s",
+        "nom": "impédance synchrone",
+        "u": "\\Omega"
+      },
+      {
+        "s": "E_0",
+        "nom": "force électromotrice à vide",
+        "u": "V"
+      },
+      {
+        "s": "I_{cc}",
+        "nom": "courant de court-circuit",
+        "u": "A"
+      },
+      {
+        "s": "I_e",
+        "nom": "courant d'excitation",
+        "u": "A"
+      },
+      {
+        "s": "X",
+        "nom": "réactance synchrone",
+        "u": "\\Omega"
+      },
+      {
+        "s": "R",
+        "nom": "résistance statorique",
+        "u": "\\Omega"
+      }
+    ],
     "source": "Fiche OE3.3 ; Sujet 2025 E1 Q9-10"
   },
   {
@@ -770,7 +2553,34 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Puissance active d'une machine synchrone",
     "tex": "[[P_{em}|Q]] = \\frac{[[3|\\sqrt{3}|1]] \\, [[V E|V^2|E^2]]}{[[X|R|X^2]]} \\, [[\\sin\\delta|\\cos\\delta|\\tan\\delta]]",
-    "legende": "V tension simple, E fem par phase, X réactance synchrone, δ angle interne (R négligée)",
+    "legende": "$V$ tension simple (V), $E$ fem par phase (V), $X$ réactance synchrone (Ω), $\\delta$ angle interne ; $R$ négligée",
+    "grandeurs": [
+      {
+        "s": "P_{em}",
+        "nom": "puissance électromagnétique",
+        "u": "W"
+      },
+      {
+        "s": "V",
+        "nom": "tension simple",
+        "u": "V"
+      },
+      {
+        "s": "E",
+        "nom": "force électromotrice par phase",
+        "u": "V"
+      },
+      {
+        "s": "X",
+        "nom": "réactance synchrone",
+        "u": "\\Omega"
+      },
+      {
+        "s": "\\delta",
+        "nom": "angle interne",
+        "u": "rad"
+      }
+    ],
     "source": "Fiche OE3.3 ; Fiche TC3.3.3"
   },
   {
@@ -778,8 +2588,35 @@
     "bloc": "OE3",
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Puissance réactive d'un alternateur",
-    "tex": "[[Q|P]] = \\frac{3V}{X} \\left( [[E \\cos\\delta|E \\sin\\delta|E]] [[-|+]] [[V|E]] \\right)",
-    "legende": "Convention générateur, R négligée : Q > 0 (fournie) si l'alternateur est surexcité (E cos δ > V)",
+    "tex": "[[Q|P]] = \\frac{[[3|\\sqrt{3}]] V}{[[X|R]]} \\left( [[E \\cos\\delta|E \\sin\\delta|E]] [[-|+]] [[V|E]] \\right)",
+    "legende": "Convention générateur, $R$ négligée : $Q > 0$ (fournie, var) si l'alternateur est surexcité ($E\\cos\\delta > V$)",
+    "grandeurs": [
+      {
+        "s": "Q",
+        "nom": "puissance réactive fournie",
+        "u": "var"
+      },
+      {
+        "s": "V",
+        "nom": "tension simple",
+        "u": "V"
+      },
+      {
+        "s": "X",
+        "nom": "réactance synchrone",
+        "u": "\\Omega"
+      },
+      {
+        "s": "E",
+        "nom": "force électromotrice par phase",
+        "u": "V"
+      },
+      {
+        "s": "\\delta",
+        "nom": "angle interne",
+        "u": "rad"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -788,7 +2625,34 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Limite de stabilité statique (machine synchrone)",
     "tex": "[[P_{\\max}|Q_{\\max}]] = \\frac{3 V E}{[[X|R]]} \\quad \\text{atteinte pour } \\delta = [[\\frac{\\pi}{2}|\\pi|\\frac{\\pi}{4}]]",
-    "legende": "Fonctionnement stable pour δ < π/2",
+    "legende": "$P_{\\max}$ (W), $X$ réactance synchrone (Ω) ; fonctionnement stable pour $\\delta < \\pi/2$",
+    "grandeurs": [
+      {
+        "s": "P_{\\max}",
+        "nom": "puissance maximale",
+        "u": "W"
+      },
+      {
+        "s": "V",
+        "nom": "tension simple",
+        "u": "V"
+      },
+      {
+        "s": "E",
+        "nom": "force électromotrice par phase",
+        "u": "V"
+      },
+      {
+        "s": "X",
+        "nom": "réactance synchrone",
+        "u": "\\Omega"
+      },
+      {
+        "s": "\\delta",
+        "nom": "angle interne",
+        "u": "rad"
+      }
+    ],
     "source": "Fiche OE3.3"
   },
   {
@@ -797,7 +2661,54 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Couple électromagnétique d'une machine synchrone",
     "tex": "[[T_{em}|P_{em}]] = \\frac{[[P_{em}|Q]]}{[[\\Omega_s|\\omega|\\Omega]]} = \\frac{3 [[p|\\frac{1}{p}]] V E}{\\omega X} \\sin\\delta",
-    "legende": "Ω_s = ω/p vitesse de synchronisme (rad/s)",
+    "legende": "$T_{em}$ (N·m), $\\Omega_s = \\omega/p$ vitesse de synchronisme (rad/s), $p$ paires de pôles",
+    "grandeurs": [
+      {
+        "s": "T_{em}",
+        "nom": "couple électromagnétique",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "P_{em}",
+        "nom": "puissance électromagnétique",
+        "u": "W"
+      },
+      {
+        "s": "\\Omega_s",
+        "nom": "vitesse de synchronisme",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "p",
+        "nom": "nombre de paires de pôles",
+        "u": ""
+      },
+      {
+        "s": "V",
+        "nom": "tension simple",
+        "u": "V"
+      },
+      {
+        "s": "E",
+        "nom": "force électromotrice par phase",
+        "u": "V"
+      },
+      {
+        "s": "\\omega",
+        "nom": "pulsation statorique",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "X",
+        "nom": "réactance synchrone",
+        "u": "\\Omega"
+      },
+      {
+        "s": "\\delta",
+        "nom": "angle interne",
+        "u": "rad"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -805,8 +2716,25 @@
     "bloc": "OE3",
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Glissement d'une machine asynchrone",
-    "tex": "[[g|s]] = \\frac{[[N_s - n|n - N_s|N_s + n]]}{[[N_s|n]]}",
-    "legende": "N_s vitesse de synchronisme, n vitesse du rotor (même unité) ; 0 < g < 1 moteur, g < 0 génératrice, g > 1 frein",
+    "tex": "[[g]] = \\frac{[[N_s - n|n - N_s|N_s + n]]}{[[N_s|n]]}",
+    "legende": "$N_s$ vitesse de synchronisme, $n$ vitesse du rotor (même unité) ; $0 < g < 1$ moteur, $g < 0$ génératrice, $g > 1$ frein",
+    "grandeurs": [
+      {
+        "s": "g",
+        "nom": "glissement",
+        "u": ""
+      },
+      {
+        "s": "N_s",
+        "nom": "vitesse de synchronisme",
+        "u": "tr\\cdot min^{-1}"
+      },
+      {
+        "s": "n",
+        "nom": "vitesse du rotor",
+        "u": "tr\\cdot min^{-1}"
+      }
+    ],
     "source": "Fiche OE3.3 ; Fiche TC3.3.3 ; Sujet 2021 E1 Q19-23"
   },
   {
@@ -815,7 +2743,24 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Vitesse du rotor en fonction du glissement",
     "tex": "[[n|N_s]] = [[N_s|n]] \\, [[(1 - g)|(1 + g)|g]]",
-    "legende": "n vitesse rotor, N_s vitesse de synchronisme",
+    "legende": "$n$ vitesse du rotor, $N_s$ vitesse de synchronisme (tr/min), $g$ glissement",
+    "grandeurs": [
+      {
+        "s": "n",
+        "nom": "vitesse du rotor",
+        "u": "tr\\cdot min^{-1}"
+      },
+      {
+        "s": "N_s",
+        "nom": "vitesse de synchronisme",
+        "u": "tr\\cdot min^{-1}"
+      },
+      {
+        "s": "g",
+        "nom": "glissement",
+        "u": ""
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -824,7 +2769,24 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Fréquence des courants rotoriques",
     "tex": "[[f_r|f]] = [[g|1 - g|p]] \\, [[f|f_r]]",
-    "legende": "f fréquence statorique (Hz), g glissement",
+    "legende": "$f_r$ fréquence rotorique (Hz), $f$ fréquence statorique (Hz), $g$ glissement",
+    "grandeurs": [
+      {
+        "s": "f_r",
+        "nom": "fréquence des courants rotoriques",
+        "u": "Hz"
+      },
+      {
+        "s": "g",
+        "nom": "glissement",
+        "u": ""
+      },
+      {
+        "s": "f",
+        "nom": "fréquence statorique",
+        "u": "Hz"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -833,7 +2795,24 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Puissance transmise au rotor",
     "tex": "[[P_{tr}|P_u]] = [[T_{em}|T_u]] \\cdot [[\\Omega_s|\\Omega]]",
-    "legende": "P_tr = P_a − p_Js − p_fer,s ; le couple électromagnétique s'exerce au synchronisme",
+    "legende": "$P_{tr} = P_a - p_{Js} - p_{\\mathrm{fer},s}$ (W) ; le couple électromagnétique $T_{em}$ (N·m) s'exerce au synchronisme $\\Omega_s$ (rad/s)",
+    "grandeurs": [
+      {
+        "s": "P_{tr}",
+        "nom": "puissance transmise au rotor",
+        "u": "W"
+      },
+      {
+        "s": "T_{em}",
+        "nom": "couple électromagnétique",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "\\Omega_s",
+        "nom": "vitesse de synchronisme",
+        "u": "rad\\cdot s^{-1}"
+      }
+    ],
     "source": "Sujet 2021 E1 Q20-21"
   },
   {
@@ -842,7 +2821,24 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Pertes Joule rotoriques",
     "tex": "[[p_{Jr}|P_{tr}]] = [[g|1 - g|g^2]] \\, [[P_{tr}|P_a|P_u]]",
-    "legende": "g glissement, P_tr puissance transmise au rotor",
+    "legende": "$p_{Jr}$ pertes Joule rotor (W), $g$ glissement, $P_{tr}$ puissance transmise au rotor (W)",
+    "grandeurs": [
+      {
+        "s": "p_{Jr}",
+        "nom": "pertes Joule rotoriques",
+        "u": "W"
+      },
+      {
+        "s": "g",
+        "nom": "glissement",
+        "u": ""
+      },
+      {
+        "s": "P_{tr}",
+        "nom": "puissance transmise au rotor",
+        "u": "W"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -851,7 +2847,34 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Puissance mécanique totale (MAS)",
     "tex": "[[P_{\\text{méca}}|P_{tr}]] = [[(1 - g)|g|(1 + g)]] \\, [[P_{tr}|P_a]] = T_{em} \\, [[\\Omega|\\Omega_s]]",
-    "legende": "D'où un rendement rotor η ≤ 1 − g",
+    "legende": "$P_{\\text{méca}}$ puissance mécanique totale (W), $\\Omega$ vitesse du rotor (rad/s) ; d'où un rendement $\\eta < 1 - g$",
+    "grandeurs": [
+      {
+        "s": "P_{\\text{méca}}",
+        "nom": "puissance mécanique totale",
+        "u": "W"
+      },
+      {
+        "s": "g",
+        "nom": "glissement",
+        "u": ""
+      },
+      {
+        "s": "P_{tr}",
+        "nom": "puissance transmise au rotor",
+        "u": "W"
+      },
+      {
+        "s": "T_{em}",
+        "nom": "couple électromagnétique",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "\\Omega",
+        "nom": "vitesse du rotor",
+        "u": "rad\\cdot s^{-1}"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -860,7 +2883,39 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Couple asynchrone à faible glissement",
     "tex": "[[T_{em}|g]] \\approx \\frac{3 \\, [[p|\\frac{1}{p}]] \\, [[V^2|V|I^2]]}{\\omega} \\cdot \\frac{[[g|1 - g]]}{[[R_2'|X_2']]}",
-    "legende": "Zone linéaire : couple proportionnel à g ; V tension simple, R_2' résistance rotorique ramenée (R_1 et fuites négligées)",
+    "legende": "Zone linéaire : couple proportionnel à $g$ ; $V$ tension simple (V), $R_2'$ résistance rotorique ramenée (Ω) ; $R_1$ et fuites négligées",
+    "grandeurs": [
+      {
+        "s": "T_{em}",
+        "nom": "couple électromagnétique",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "p",
+        "nom": "nombre de paires de pôles",
+        "u": ""
+      },
+      {
+        "s": "V",
+        "nom": "tension simple",
+        "u": "V"
+      },
+      {
+        "s": "\\omega",
+        "nom": "pulsation statorique",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "g",
+        "nom": "glissement",
+        "u": ""
+      },
+      {
+        "s": "R_2'",
+        "nom": "résistance rotorique ramenée au stator",
+        "u": "\\Omega"
+      }
+    ],
     "source": "Sujet 2021 E1 Q21-22"
   },
   {
@@ -869,7 +2924,24 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Glissement de couple maximal",
     "tex": "[[g_{\\max}|T_{\\max}]] = \\frac{[[R_2'|X]]}{[[X|R_2']]}",
-    "legende": "X réactance de fuites totale ramenée (R_1 négligée) : g_max ∝ R_2', T_max indépendant de R_2'",
+    "legende": "$X$ réactance de fuites totale ramenée (Ω), $R_1$ négligée : $g_{\\max}$ proportionnel à $R_2'$, $T_{\\max}$ indépendant de $R_2'$",
+    "grandeurs": [
+      {
+        "s": "g_{\\max}",
+        "nom": "glissement de couple maximal",
+        "u": ""
+      },
+      {
+        "s": "R_2'",
+        "nom": "résistance rotorique ramenée au stator",
+        "u": "\\Omega"
+      },
+      {
+        "s": "X",
+        "nom": "réactance de fuites totale ramenée",
+        "u": "\\Omega"
+      }
+    ],
     "source": "Fiche OE3.3 ; Classique programme"
   },
   {
@@ -877,8 +2949,35 @@
     "bloc": "OE3",
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Couple maximal (décrochage) d'une machine asynchrone",
-    "tex": "[[T_{\\max}|g_{\\max}]] = \\frac{3 p \\, [[V^2|V]]}{[[2|1|4]] \\, \\omega \\, [[X|R_2']]}",
-    "legende": "Indépendant de R_2' ; proportionnel à (V/f)² à loi V/f constante",
+    "tex": "[[T_{\\max}|g_{\\max}]] = \\frac{3 [[p|\\frac{1}{p}]] \\, [[V^2|V]]}{[[2|1|4]] \\, \\omega \\, [[X|R_2']]}",
+    "legende": "Indépendant de $R_2'$ ; proportionnel à $(V/f)^2$ à loi $V/f$ constante ; $X$ réactance de fuites totale ramenée (Ω), $R_1$ négligée",
+    "grandeurs": [
+      {
+        "s": "T_{\\max}",
+        "nom": "couple maximal",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "p",
+        "nom": "nombre de paires de pôles",
+        "u": ""
+      },
+      {
+        "s": "V",
+        "nom": "tension simple",
+        "u": "V"
+      },
+      {
+        "s": "\\omega",
+        "nom": "pulsation statorique",
+        "u": "rad\\cdot s^{-1}"
+      },
+      {
+        "s": "X",
+        "nom": "réactance de fuites totale ramenée",
+        "u": "\\Omega"
+      }
+    ],
     "source": "Fiche OE3.3 ; Classique programme"
   },
   {
@@ -887,7 +2986,29 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Formule de Kloss",
     "tex": "\\frac{[[T|g]]}{T_{\\max}} = \\frac{[[2|1|\\frac{1}{2}]]}{\\frac{g}{[[g_{\\max}|g^2|T_{\\max}]]} + \\frac{g_{\\max}}{g}}",
-    "legende": "Caractéristique couple/glissement (R_1 négligée)",
+    "legende": "Caractéristique couple/glissement ($R_1$ négligée) : $T$ couple (N·m), $g$ glissement, $g_{\\max}$ glissement de décrochage",
+    "grandeurs": [
+      {
+        "s": "T",
+        "nom": "couple électromagnétique",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "T_{\\max}",
+        "nom": "couple maximal",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "g",
+        "nom": "glissement",
+        "u": ""
+      },
+      {
+        "s": "g_{\\max}",
+        "nom": "glissement de couple maximal",
+        "u": ""
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -896,7 +3017,29 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Démarrage étoile-triangle",
     "tex": "[[I_{d,Y}|T_{d,Y}]] = \\frac{I_{d,\\Delta}}{[[3|\\sqrt{3}|2]]} \\quad ; \\quad T_{d,Y} = [[\\frac{T_{d,\\Delta}}{3}|\\frac{T_{d,\\Delta}}{\\sqrt{3}}|\\frac{T_{d,\\Delta}}{9}]]",
-    "legende": "Courant de ligne et couple de démarrage divisés par 3 (tension par enroulement divisée par √3)",
+    "legende": "Courant de ligne (A) et couple de démarrage (N·m) divisés par 3 (tension par enroulement divisée par $\\sqrt{3}$)",
+    "grandeurs": [
+      {
+        "s": "I_{d,Y}",
+        "nom": "courant de démarrage en étoile",
+        "u": "A"
+      },
+      {
+        "s": "I_{d,\\Delta}",
+        "nom": "courant de démarrage en triangle",
+        "u": "A"
+      },
+      {
+        "s": "T_{d,Y}",
+        "nom": "couple de démarrage en étoile",
+        "u": "N\\cdot m"
+      },
+      {
+        "s": "T_{d,\\Delta}",
+        "nom": "couple de démarrage en triangle",
+        "u": "N\\cdot m"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -905,7 +3048,34 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Formule de Boucherot (fem par phase d'un bobinage)",
     "tex": "[[E|E_{\\max}]] = [[4{,}44|2\\pi|\\sqrt{2}]] \\, [[k_b|k_d]] \\, N \\, [[f|\\omega]] \\, [[\\Phi_{\\max}|\\Phi_{\\mathrm{eff}}|B_{\\max}]]",
-    "legende": "E efficace (V), k_b facteur de bobinage, N spires en série par phase, Φ_max flux maximal sous un pôle (Wb)",
+    "legende": "$E$ fem efficace (V), $k_b$ facteur de bobinage, $N$ spires en série par phase, $f$ fréquence (Hz), $\\Phi_{\\max}$ flux maximal sous un pôle (Wb)",
+    "grandeurs": [
+      {
+        "s": "E",
+        "nom": "force électromotrice efficace par phase",
+        "u": "V"
+      },
+      {
+        "s": "k_b",
+        "nom": "facteur de bobinage",
+        "u": ""
+      },
+      {
+        "s": "N",
+        "nom": "nombre de spires en série par phase",
+        "u": ""
+      },
+      {
+        "s": "f",
+        "nom": "fréquence",
+        "u": "Hz"
+      },
+      {
+        "s": "\\Phi_{\\max}",
+        "nom": "flux maximal sous un pôle",
+        "u": "Wb"
+      }
+    ],
     "source": "Fiche OE3.3"
   },
   {
@@ -914,7 +3084,24 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Facteur de bobinage",
     "tex": "[[k_b|k_r]] = [[k_d|q]] \\cdot [[k_r|k_d^2]]",
-    "legende": "k_d facteur de distribution, k_r facteur de raccourcissement (k_b ≤ 1)",
+    "legende": "$k_b$ facteur de bobinage ($\\leq 1$), $k_d$ facteur de distribution, $k_r$ facteur de raccourcissement",
+    "grandeurs": [
+      {
+        "s": "k_b",
+        "nom": "facteur de bobinage",
+        "u": ""
+      },
+      {
+        "s": "k_d",
+        "nom": "facteur de distribution",
+        "u": ""
+      },
+      {
+        "s": "k_r",
+        "nom": "facteur de raccourcissement",
+        "u": ""
+      }
+    ],
     "source": "Fiche OE3.3"
   },
   {
@@ -923,7 +3110,29 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Nombre d'encoches par pôle et par phase",
     "tex": "[[q|k_d]] = \\frac{[[N_{\\mathrm{enc}}|N]]}{[[2 p m|p m|2 p]]}",
-    "legende": "N_enc nombre total d'encoches, p paires de pôles, m nombre de phases",
+    "legende": "$q$ encoches par pôle et par phase, $N_{\\mathrm{enc}}$ nombre total d'encoches, $p$ paires de pôles, $m$ nombre de phases",
+    "grandeurs": [
+      {
+        "s": "q",
+        "nom": "nombre d'encoches par pôle et par phase",
+        "u": ""
+      },
+      {
+        "s": "N_{\\mathrm{enc}}",
+        "nom": "nombre total d'encoches",
+        "u": ""
+      },
+      {
+        "s": "p",
+        "nom": "nombre de paires de pôles",
+        "u": ""
+      },
+      {
+        "s": "m",
+        "nom": "nombre de phases",
+        "u": ""
+      }
+    ],
     "source": "Fiche OE3.3"
   },
   {
@@ -931,8 +3140,25 @@
     "bloc": "OE3",
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Facteur de distribution",
-    "tex": "[[k_d|k_r]] = \\frac{\\sin\\left( [[\\frac{q\\alpha}{2}|q\\alpha|\\frac{\\alpha}{2}]] \\right)}{[[q|2q|1]] \\, \\sin\\left( [[\\frac{\\alpha}{2}|\\alpha|\\frac{q\\alpha}{2q}]] \\right)}",
-    "legende": "q encoches par pôle et par phase, α angle électrique entre deux encoches voisines",
+    "tex": "[[k_d|k_r]] = \\frac{\\sin\\left( [[\\frac{q\\alpha}{2}|q\\alpha|\\frac{\\alpha}{2}]] \\right)}{[[q|2q|1]] \\, \\sin\\left( [[\\frac{\\alpha}{2}|\\alpha|\\frac{\\alpha}{2q}]] \\right)}",
+    "legende": "$q$ encoches par pôle et par phase, $\\alpha$ angle électrique entre deux encoches voisines (rad)",
+    "grandeurs": [
+      {
+        "s": "k_d",
+        "nom": "facteur de distribution",
+        "u": ""
+      },
+      {
+        "s": "q",
+        "nom": "nombre d'encoches par pôle et par phase",
+        "u": ""
+      },
+      {
+        "s": "\\alpha",
+        "nom": "angle électrique entre encoches voisines",
+        "u": "rad"
+      }
+    ],
     "source": "Classique programme"
   },
   {
@@ -941,7 +3167,24 @@
     "notion": "OE3.3 Convertisseurs électromécaniques",
     "nom": "Facteur de raccourcissement",
     "tex": "[[k_r|k_d]] = [[\\sin|\\cos]] \\left( \\frac{[[y|\\tau]]}{[[\\tau|y]]} \\, [[\\frac{\\pi}{2}|\\pi|2\\pi]] \\right)",
-    "legende": "y pas d'enroulement, τ pas polaire (pas diamétral : y = τ, k_r = 1)",
+    "legende": "$y$ pas d'enroulement, $\\tau$ pas polaire (même unité) ; pas diamétral : $y = \\tau$, $k_r = 1$",
+    "grandeurs": [
+      {
+        "s": "k_r",
+        "nom": "facteur de raccourcissement",
+        "u": ""
+      },
+      {
+        "s": "y",
+        "nom": "pas d'enroulement",
+        "u": ""
+      },
+      {
+        "s": "\\tau",
+        "nom": "pas polaire",
+        "u": ""
+      }
+    ],
     "source": "Fiche OE3.3 ; Classique programme"
   }
 ]
